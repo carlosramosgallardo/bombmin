@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mathsmine3.xyz/sitemap.xml
+
