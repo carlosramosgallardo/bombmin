@@ -60,6 +60,7 @@ export default function Page() {
 
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-lg font-mono text-white bg-black">
+    <hr className="mb-4 w-full max-w-3xl border-t border-gray-700/50" />  
       {/* Wallet / Donation */}
       <div className="mb-6">
         <ConnectAndPlay
@@ -121,6 +122,7 @@ export default function Page() {
           allowFullScreen
         ></iframe>
       </div>
+      <hr className="mt-12 w-full max-w-3xl border-t border-gray-700/50" />
     </main>
   );
 }
