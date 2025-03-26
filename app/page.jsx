@@ -60,9 +60,12 @@ export default function Page() {
 
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-lg font-mono text-white bg-black">
-      
+
+      {/* Line below header */}
+      <div className="w-full max-w-3xl border-t border-gray-700/50 mb-10" />
+
       {/* Connect & Play */}
-      <div className="bg-black/30 backdrop-blur-md border border-gray-800 rounded-2xl shadow-inner p-6 mb-12 w-full max-w-3xl">
+      <div className="mb-12 w-full max-w-3xl">
         <ConnectAndPlay
           account={account}
           setAccount={setAccount}
@@ -72,7 +75,7 @@ export default function Page() {
       </div>
 
       {/* Game Board */}
-      <div className="bg-black/30 backdrop-blur-md border border-gray-800 rounded-2xl shadow-inner p-6 mb-12 w-full max-w-md">
+      <div className="w-full max-w-md">
         <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
           Solve fast to mine!
         </p>
@@ -90,16 +93,16 @@ export default function Page() {
       </div>
 
       {/* Token Chart */}
-      <div className="bg-black/30 backdrop-blur-md border border-gray-800 rounded-2xl shadow-inner p-6 mb-12 w-full max-w-2xl">
+      <div className="w-full max-w-2xl my-16">
         <TokenChart />
       </div>
 
       {/* Leaderboard */}
-      <div className="bg-black/30 backdrop-blur-md border border-gray-800 rounded-2xl shadow-inner p-6 mb-12 w-full max-w-3xl">
+      <div className="w-full max-w-3xl mb-16">
         <Leaderboard itemsPerPage={10} />
       </div>
 
-      {/* Promo Video */}
+      {/* Promo Video (still stylized) */}
       <div className="bg-black/30 backdrop-blur-md border border-gray-800 rounded-2xl shadow-inner p-4 mb-12 w-full max-w-sm aspect-[9/16]">
         <iframe
           className="w-full h-full rounded-xl shadow-lg"
@@ -111,8 +114,8 @@ export default function Page() {
         ></iframe>
       </div>
 
-      {/* Final separator (optional) */}
-      <div className="w-full max-w-3xl border-t border-dashed border-gray-600 opacity-40 mt-12" />
+      {/* Line above footer */}
+      <div className="w-full max-w-3xl border-t border-gray-700/50 mt-12" />
     </main>
   );
 }
