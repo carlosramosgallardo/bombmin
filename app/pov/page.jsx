@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { WagmiConfig, createConfig } from 'wagmi'; // Asegúrate de importar solo lo necesario
+import { WagmiConfig, createConfig } from 'wagmi';
 import { useAccount } from 'wagmi';
 import supabase from '@/lib/supabaseClient';
 
@@ -18,25 +18,23 @@ export default function PoVPage() {
   useEffect(() => {
     async function fetchPolls() {
       try {
-        // Obtener las encuestas activas desde Supabase directamente
         const { data, error } = await supabase
-          .from('polls') // Asegúrate de que la tabla se llame 'polls'
+          .from('polls')
           .select('id, question, created_at')
           .eq('active', true)
           .order('created_at', { ascending: false });
 
-        if (error) {
-          throw error;
-        }
+        if (error) throw error;
 
-        setPollData(data);
+        // Filtrar encuestas malformadas o incompletas
+        setPollData(data.filter(p => p && p.id && p.question));
       } catch (error) {
         console.error('Error fetching polls', error);
       }
     }
 
     fetchPolls();
-  }, []); // Se ejecutará solo una vez al cargar el componente
+  }, []);
 
   const handleVote = async (pollId, vote) => {
     if (!isConnected || !address) {
@@ -45,7 +43,7 @@ export default function PoVPage() {
     }
 
     try {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('poll_votes')
         .insert([{ poll_id: pollId, wallet_address: address, vote }]);
 
@@ -62,7 +60,7 @@ export default function PoVPage() {
   };
 
   return (
-    <WagmiConfig config={wagmiConfig}> {/* Solo envuelve el contenido principal aquí */}
+    <WagmiConfig config={wagmiConfig}>
       <div className="pov-container">
         <h1 className="text-3xl font-bold">Proof of Vote (PoV)</h1>
         <div>
