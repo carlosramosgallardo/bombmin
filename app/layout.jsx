@@ -1,6 +1,13 @@
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { WagmiProvider } from 'wagmi'; // Asegúrate de importar WagmiProvider
+import { createConfig } from 'wagmi'; // Importa la configuración que usas
+
+const wagmiConfig = createConfig({
+  chains: [], // Asegúrate de añadir las chains configuradas previamente
+  // cualquier otra configuración que hayas definido
+});
 
 export const metadata = {
   title: 'MathsMine3',
@@ -33,9 +40,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-black text-white font-mono">
-        <Header />
-        {children}
-        <Footer />
+        <WagmiProvider config={wagmiConfig}> {/* Envuelve tu contenido con WagmiProvider */}
+          <Header />
+          {children}
+          <Footer />
+        </WagmiProvider>
       </body>
     </html>
   );
