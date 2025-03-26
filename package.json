@@ -22,7 +22,7 @@
     "recharts": "^2.15.1",
     "viem": "^2.23.13",
     "wagmi": "^2.14.15",
-    "uuid": "^9.0.0"
+    "uuid": "^7.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
