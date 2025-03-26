@@ -75,7 +75,7 @@ export default function Page() {
 
       {/* Game Board */}
       <div className="w-full max-w-md">
-        <p>Solve fast to mine!</p>
+        <p className="text-sm text-gray-400 text-center mb-4">Solve fast to mine!</p>
         <Board
           account={account}
           setGameMessage={setGameMessage}
