@@ -3,8 +3,7 @@
 import { useState, useEffect } from 'react';
 import { WagmiConfig, createConfig } from 'wagmi'; // Asegúrate de importar solo lo necesario
 import { useAccount } from 'wagmi';
-import { supabase } from '@/lib/supabaseClient';
-import { getDataFromPolls } from '@/lib/povApi'; // Asumiendo que tienes esta función
+import { supabase } from '@/lib/supabaseClient'; // Ya lo estás importando
 
 const wagmiConfig = createConfig({
   chains: [],
@@ -19,14 +18,25 @@ export default function PoVPage() {
   useEffect(() => {
     async function fetchPolls() {
       try {
-        const data = await getDataFromPolls();
+        // Obtener las encuestas activas desde Supabase directamente
+        const { data, error } = await supabase
+          .from('polls') // Asegúrate de que la tabla se llame 'polls'
+          .select('id, question, created_at')
+          .eq('active', true)
+          .order('created_at', { ascending: false });
+
+        if (error) {
+          throw error;
+        }
+
         setPollData(data);
       } catch (error) {
         console.error('Error fetching polls', error);
       }
     }
+
     fetchPolls();
-  }, []);
+  }, []); // Se ejecutará solo una vez al cargar el componente
 
   const handleVote = async (pollId, vote) => {
     if (!isConnected || !address) {

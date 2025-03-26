@@ -1,20 +1,18 @@
 'use client';
 
-import { useState } from 'react';
-import { WagmiConfig, createConfig } from 'wagmi'; // Aquí solo importamos lo necesario
-import { useWeb3Modal } from '@web3modal/wagmi/react';
+import { useState, useEffect } from 'react';
+import { WagmiConfig, createConfig, useAccount, useConnect, useWalletClient } from 'wagmi'; // Aquí solo importamos lo necesario
 import { BrowserProvider, parseEther } from 'ethers';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import supabase from '@/lib/supabaseClient';
+import Web3Modal from '@web3modal/wagmi/react';
 
 const queryClient = new QueryClient();
 
 const wagmiConfig = createConfig({
-  chains: [],
-  // Otras configuraciones necesarias
+  chains: [], // Otras configuraciones necesarias
+  // Incluye las configuraciones adicionales necesarias para wagmi
 });
-
-createWeb3Modal({ wagmiConfig, projectId, chains });
 
 export default function ConnectAndPlayContent({ gameCompleted, gameData }) {
   const { open } = useWeb3Modal();
@@ -25,11 +23,11 @@ export default function ConnectAndPlayContent({ gameCompleted, gameData }) {
   const [isPaying, setIsPaying] = useState(false);
 
   const handleMobileConnect = () => {
-    const walletConnect = connectors.find(c => c.id === 'walletConnect');
+    const walletConnect = connectors.find((c) => c.id === 'walletConnect');
     if (walletConnect) {
       connect({ connector: walletConnect });
     } else {
-      open(); // fallback to modal
+      open(); // Fallback to modal
     }
   };
 
@@ -76,10 +74,40 @@ export default function ConnectAndPlayContent({ gameCompleted, gameData }) {
     }
   };
 
+  useEffect(() => {
+    // Aquí puedes hacer cualquier configuración adicional que necesites para el modal
+    createWeb3Modal({
+      wagmiConfig,
+      projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID,
+      chains: [], // configura las chains necesarias
+    });
+  }, []);
+
   return (
-    <WagmiConfig config={wagmiConfig}> {/* Aquí solo envuelves el componente en WagmiConfig */}
+    <WagmiConfig config={wagmiConfig}>
       <div className="text-center my-4 space-y-4">
-        {/* El resto del código */}
+        {!isConnected ? (
+          <button
+            onClick={handleMobileConnect}
+            className="px-4 py-2 mt-2 ml-2 rounded bg-black text-white hover:bg-gray-900 transition"
+          >
+            Connect Wallet
+          </button>
+        ) : (
+          <button
+            onClick={handlePay}
+            disabled={isPaying}
+            className={`px-4 py-2 mt-2 ml-2 rounded transition ${
+              isPaying
+                ? 'bg-slate-700 cursor-not-allowed text-white'
+                : 'bg-slate-800 text-white hover:bg-slate-700'
+            }`}
+          >
+            {isPaying ? 'Processing...' : 'Power up MathsMine3 with your donation!'}
+          </button>
+        )}
+
+        {statusMessage && <p className="text-sm text-red-500 mt-2">{statusMessage}</p>}
       </div>
     </WagmiConfig>
   );
