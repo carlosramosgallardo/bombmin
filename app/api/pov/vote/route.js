@@ -1,78 +1,81 @@
 import { createClient } from '@supabase/supabase-js'
+import {
+  RATE_LIMIT_MAX,
+  RATE_LIMIT_WINDOW_MS,
+  getRateLimitHeaders
+} from '@/lib/rateLimitConfig'
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 )
 
-// Rate limiting config
-import {
-  RATE_LIMIT_MAX,
-  RATE_LIMIT_WINDOW_MS,
-} from '@/lib/rateLimitConfig'
+export async function GET(req) {
+  const { searchParams } = new URL(req.url)
+  const poll_id = searchParams.get('poll_id')
+  const wallet = searchParams.get('wallet')?.toLowerCase()
 
-function getClientIP(req) {
-  const fwd = req.headers.get('x-forwarded-for')
-  return fwd ? fwd.split(',')[0] : 'unknown'
-}
+  const ip =
+    req.headers.get('x-forwarded-for') ?? req.headers.get('x-real-ip') ?? 'unknown'
+  const endpoint = '/api/pov/has-voted'
 
-export async function POST(req) {
-  const ip = getClientIP(req)
-  const endpoint = '/api/pov/vote'
+  // Registrar petición
+  await supabase.from('api_requests').insert({ ip, endpoint })
 
-  // Registrar la petición
-  await supabase.from('api_requests').insert([
-    { ip, endpoint }
-  ])
+  // Verificar límites
+  const since = new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString()
 
-  // Verificar cuántas peticiones ha hecho esa IP en el último minuto
-  const { data: recentRequests, error: rateError } = await supabase
+  const { count, error: countError } = await supabase
     .from('api_requests')
-    .select('id')
+    .select('*', { count: 'exact', head: true })
     .eq('ip', ip)
     .eq('endpoint', endpoint)
-    .gte('created_at', new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString())
+    .gte('created_at', since)
 
-  if (rateError) {
-    console.warn('Rate limit check failed:', rateError.message)
-    return new Response(JSON.stringify({ error: 'Rate limit check failed' }), { status: 500 })
+  if (countError) {
+    return new Response(JSON.stringify({ error: 'Rate limit check failed' }), {
+      status: 500,
+      headers: getRateLimitHeaders(count ?? 0)
+    })
   }
 
-  if (recentRequests.length >= RATE_LIMIT_MAX) {
-    return new Response(JSON.stringify({ error: 'Too many requests' }), { status: 429 })
+  if (count >= RATE_LIMIT_MAX) {
+    return new Response(JSON.stringify({ error: 'Too many requests' }), {
+      status: 429,
+      headers: getRateLimitHeaders(count)
+    })
   }
 
-  // Parsear body y validar
-  const { poll_id, wallet_address, vote } = await req.json()
-
-  if (!poll_id || !wallet_address || !['yes', 'no'].includes(vote)) {
-    return new Response(JSON.stringify({ error: 'Invalid input' }), { status: 400 })
+  // Validación básica
+  if (!poll_id || !wallet) {
+    return new Response(JSON.stringify({ error: 'Missing poll_id or wallet' }), {
+      status: 400,
+      headers: getRateLimitHeaders(count)
+    })
   }
 
-  // Validar que la wallet esté registrada y tenga un saldo mínimo (por ejemplo)
-  const { data: contributor, error: contribErr } = await supabase
-    .from('polls')
-    .select('id, wallet_address') // Asegúrate de tener la wallet en la tabla de polls
-    .eq('wallet_address', wallet_address.toLowerCase()) // Asegúrate de comparar en minúsculas
-    .single()
+  // Buscar si ya votó
+  const { data, error } = await supabase
+    .from('poll_votes')
+    .select('id')
+    .eq('poll_id', poll_id)
+    .eq('wallet_address', wallet)
+    .maybeSingle()
 
-  if (contribErr || !contributor) {
-    return new Response(JSON.stringify({ error: 'Wallet not registered or invalid' }), { status: 403 })
+  if (error) {
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: getRateLimitHeaders(count)
+    })
   }
 
-  // Insertar voto en la base de datos
-  const { error: insertError } = await supabase.from('poll_votes').insert([
-    {
-      poll_id,
-      wallet_address: wallet_address.toLowerCase(),
-      vote
+  const hasVoted = !!data
+
+  return new Response(JSON.stringify({ hasVoted }), {
+    status: 200,
+    headers: {
+      ...getRateLimitHeaders(count + 1),
+      'Cache-Control': 'public, max-age=30'
     }
-  ])
-
-  if (insertError) {
-    return new Response(JSON.stringify({ error: insertError.message }), { status: 400 })
-  }
-
-  return new Response(JSON.stringify({ success: true }), { status: 200 })
+  })
 }
-
