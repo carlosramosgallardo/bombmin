@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabaseClient'
+import supabase from '@/lib/supabaseClient';
 
 /**
  * Checks if a given wallet is eligible to vote in Proof of Vote.

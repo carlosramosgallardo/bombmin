@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { WagmiConfig, createConfig } from 'wagmi'; // Asegúrate de importar solo lo necesario
 import { useAccount } from 'wagmi';
-import { supabase } from '@/lib/supabaseClient'; // Ya lo estás importando
+import supabase from '@/lib/supabaseClient';
 
 const wagmiConfig = createConfig({
   chains: [],
