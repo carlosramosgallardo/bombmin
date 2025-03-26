@@ -7,8 +7,6 @@ import { mainnet } from 'wagmi/chains';
 import supabase from '@/lib/supabaseClient';
 
 const chains = [mainnet];
-const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
-
 const wagmiConfig = createConfig({
   chains,
   transports: {
@@ -27,24 +25,41 @@ export default function PoVPage() {
 function PoVClientComponent() {
   const { address, isConnected } = useAccount();
   const [pollData, setPollData] = useState([]);
+  const [resultsData, setResultsData] = useState({});
   const [statusMessage, setStatusMessage] = useState('');
 
   useEffect(() => {
-    async function fetchPolls() {
+    const fetchPollsAndResults = async () => {
       try {
-        const { data, error } = await supabase
+        const { data: polls, error: pollError } = await supabase
           .from('polls')
-          .select('id, question, created_at')
+          .select('id, question')
           .eq('active', true)
           .order('created_at', { ascending: false });
 
-        if (error) throw error;
-        setPollData(data);
+        if (pollError) throw pollError;
+
+        const { data: results, error: resultsError } = await supabase
+          .from('poll_results')
+          .select('*');
+
+        if (resultsError) throw resultsError;
+
+        // Agrupar resultados por poll_id
+        const groupedResults = results.reduce((acc, row) => {
+          if (!acc[row.poll_id]) acc[row.poll_id] = [];
+          acc[row.poll_id].push(row);
+          return acc;
+        }, {});
+
+        setPollData(polls);
+        setResultsData(groupedResults);
       } catch (error) {
-        console.error('Error fetching polls', error);
+        console.error('Error fetching data:', error);
       }
-    }
-    fetchPolls();
+    };
+
+    fetchPollsAndResults();
   }, []);
 
   const handleVote = async (pollId, vote) => {
@@ -78,31 +93,61 @@ function PoVClientComponent() {
         {pollData.length === 0 ? (
           <p className="text-gray-400">Loading poll data...</p>
         ) : (
-          pollData.map((poll) => (
-            <div key={poll.id} className="mb-12">
-              <h2 className="text-2xl font-semibold mb-4">{poll.question}</h2>
-              <div className="flex justify-center gap-4">
-                <button
-                  onClick={() => handleVote(poll.id, 'yes')}
-                  className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
-                >
-                  Yes
-                </button>
-                <button
-                  onClick={() => handleVote(poll.id, 'no')}
-                  className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
-                >
-                  No
-                </button>
+          pollData.map((poll) => {
+            const results = resultsData[poll.id] || [];
+            const totalVotes = results.reduce((sum, r) => sum + r.total_votes, 0);
+
+            return (
+              <div key={poll.id} className="mb-16">
+                <h2 className="text-2xl font-semibold mb-4">{poll.question}</h2>
+
+                <div className="flex justify-center gap-4 mb-4">
+                  <button
+                    onClick={() => handleVote(poll.id, 'yes')}
+                    className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
+                  >
+                    Yes
+                  </button>
+                  <button
+                    onClick={() => handleVote(poll.id, 'no')}
+                    className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
+                  >
+                    No
+                  </button>
+                </div>
+
+                {/* Resultado gráfico */}
+                {totalVotes > 0 && (
+                  <div className="space-y-2 mt-6">
+                    {results.map((r) => {
+                      const percentage = ((r.total_votes / totalVotes) * 100).toFixed(1);
+                      return (
+                        <div key={r.vote} className="text-left">
+                          <div className="flex justify-between text-sm mb-1">
+                            <span className="capitalize">{r.vote}</span>
+                            <span>{r.total_votes} votes ({percentage}%)</span>
+                          </div>
+                          <div className="w-full bg-gray-700 rounded h-3">
+                            <div
+                              className={`h-3 rounded ${r.vote === 'yes' ? 'bg-green-500' : 'bg-red-500'}`}
+                              style={{ width: `${percentage}%` }}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
-            </div>
-          ))
+            );
+          })
         )}
 
         {statusMessage && (
           <p className="mt-4 text-sm text-gray-300">{statusMessage}</p>
         )}
-      <Link href="/" className="text-blue-400 underline mt-10 inline-block">← Back</Link>
+
+        <Link href="/" className="text-blue-400 underline mt-10 inline-block">← Back</Link>
       </div>
     </main>
   );
