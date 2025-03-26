@@ -61,10 +61,6 @@ export default function Leaderboard() {
   return (
     <div className="mt-8 w-full max-w-3xl mx-auto">
 
-      <div className="text-center mb-6 text-sm text-gray-400">
-        <p>Could a fake Web3 math game destabilize the global economy?</p>
-      </div>
-
       <div className="overflow-x-auto">
         <table className="w-full border border-white text-sm md:text-base">
           <thead className="bg-black text-white">

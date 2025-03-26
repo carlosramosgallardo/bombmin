@@ -71,15 +71,11 @@ export default function Page() {
         />
       </div>
 
-      {/* Tagline */}
-      <div className="text-center mb-6 text-sm text-gray-400">
-        <p>Solve fast to mine!</p>
-      </div>
-
       <hr className="my-12 w-full max-w-3xl border-t border-gray-700/50" />
 
       {/* Game Board */}
       <div className="w-full max-w-md">
+        <p>Solve fast to mine!</p>
         <Board
           account={account}
           setGameMessage={setGameMessage}

@@ -70,22 +70,39 @@ function PoVClientComponent() {
   };
 
   return (
-    <div className="pov-container">
-      <h1 className="text-3xl font-bold">Proof of Vote (PoV)</h1>
-      <div>
+    <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
+      <div className="max-w-3xl w-full text-center">
+        <h1 className="text-3xl font-bold mb-8">🗳️ Proof of Vote</h1>
+
         {pollData.length === 0 ? (
-          <p>Loading poll data...</p>
+          <p className="text-gray-400">Loading poll data...</p>
         ) : (
           pollData.map((poll) => (
-            <div key={poll.id}>
-              <h2>{poll.question}</h2>
-              <button onClick={() => handleVote(poll.id, 'yes')}>Yes</button>
-              <button onClick={() => handleVote(poll.id, 'no')}>No</button>
+            <div key={poll.id} className="mb-12">
+              <h2 className="text-2xl font-semibold mb-4">{poll.question}</h2>
+              <div className="flex justify-center gap-4">
+                <button
+                  onClick={() => handleVote(poll.id, 'yes')}
+                  className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
+                >
+                  Yes
+                </button>
+                <button
+                  onClick={() => handleVote(poll.id, 'no')}
+                  className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
+                >
+                  No
+                </button>
+              </div>
             </div>
           ))
         )}
+
+        {statusMessage && (
+          <p className="mt-4 text-sm text-gray-300">{statusMessage}</p>
+        )}
+      <Link href="/" className="text-blue-400 underline mt-10 inline-block">← Back</Link>
       </div>
-      {statusMessage && <p>{statusMessage}</p>}
-    </div>
+    </main>
   );
 }
