@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { WagmiConfig, createConfig, http, useAccount } from 'wagmi';
 import { mainnet } from 'wagmi/chains';
