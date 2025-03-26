@@ -1,3 +1,6 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import { WagmiConfig, createConfig } from 'wagmi';
 import { useAccount } from 'wagmi';
 import supabase from '@/lib/supabaseClient';
