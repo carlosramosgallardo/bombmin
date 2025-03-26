@@ -1,6 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
 
-// Config Supabase
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
@@ -10,7 +9,6 @@ const supabase = createClient(
 import {
   RATE_LIMIT_MAX,
   RATE_LIMIT_WINDOW_MS,
-  getRateLimitHeaders
 } from '@/lib/rateLimitConfig'
 
 function getClientIP(req) {
@@ -23,7 +21,9 @@ export async function POST(req) {
   const endpoint = '/api/pov/vote'
 
   // Registrar la petición
-  await supabase.from('api_requests').insert([{ ip, endpoint }])
+  await supabase.from('api_requests').insert([
+    { ip, endpoint }
+  ])
 
   // Verificar cuántas peticiones ha hecho esa IP en el último minuto
   const { data: recentRequests, error: rateError } = await supabase
@@ -49,32 +49,18 @@ export async function POST(req) {
     return new Response(JSON.stringify({ error: 'Invalid input' }), { status: 400 })
   }
 
-  // Verificar que es contribuidor válido
+  // Validar que la wallet esté registrada y tenga un saldo mínimo (por ejemplo)
   const { data: contributor, error: contribErr } = await supabase
-    .from('leaderboard')
-    .select('total_eth')
-    .eq('wallet', wallet_address.toLowerCase())
+    .from('polls')
+    .select('id, wallet_address') // Asegúrate de tener la wallet en la tabla de polls
+    .eq('wallet_address', wallet_address.toLowerCase()) // Asegúrate de comparar en minúsculas
     .single()
 
-  if (contribErr || !contributor || parseFloat(contributor.total_eth) <= 0) {
-    return new Response(JSON.stringify({ error: 'Not eligible to vote' }), { status: 403 })
+  if (contribErr || !contributor) {
+    return new Response(JSON.stringify({ error: 'Wallet not registered or invalid' }), { status: 403 })
   }
 
-  // Verificar si ya ha votado
-  const { data: existingVote } = await supabase
-    .from('poll_votes')
-    .select('id')
-    .eq('poll_id', poll_id)
-    .eq('wallet_address', wallet_address.toLowerCase())
-    .maybeSingle()
-
-  if (existingVote) {
-    return new Response(JSON.stringify({ error: 'You have already voted in this poll' }), {
-      status: 409
-    })
-  }
-
-  // Insertar voto
+  // Insertar voto en la base de datos
   const { error: insertError } = await supabase.from('poll_votes').insert([
     {
       poll_id,
