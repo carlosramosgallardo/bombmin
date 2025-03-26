@@ -1,17 +1,32 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { WagmiConfig, createConfig, useAccount } from 'wagmi';
-import supabase from '@/lib/supabaseClient';
+import {
+  WagmiConfig,
+  createConfig,
+  useAccount,
+} from 'wagmi';
 import { mainnet } from 'wagmi/chains';
-import { http } from 'wagmi/transports';
+import { createWeb3Modal } from '@web3modal/wagmi/react';
+import supabase from '@/lib/supabaseClient';
+
+const chains = [mainnet];
+const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
 
 const wagmiConfig = createConfig({
-  chains: [mainnet],
+  chains,
   transports: {
-    [mainnet.id]: http(),
+    [mainnet.id]: {
+      rpcUrls: {
+        default: {
+          http: ['https://rpc.ankr.com/eth'],
+        },
+      },
+    },
   },
 });
+
+createWeb3Modal({ wagmiConfig, projectId, chains });
 
 export default function PoVPage() {
   const { address, isConnected } = useAccount();
@@ -29,7 +44,7 @@ export default function PoVPage() {
 
         if (error) throw error;
 
-        setPollData(data || []);
+        setPollData(data);
       } catch (error) {
         console.error('Error fetching polls', error);
       }
@@ -47,7 +62,7 @@ export default function PoVPage() {
     try {
       const { error } = await supabase
         .from('poll_votes')
-        .insert([{ poll_id: pollId, wallet_address: address.toLowerCase(), vote }]);
+        .insert([{ poll_id: pollId, wallet_address: address, vote }]);
 
       if (error) {
         setStatusMessage('Error submitting your vote.');
@@ -65,31 +80,33 @@ export default function PoVPage() {
     <WagmiConfig config={wagmiConfig}>
       <div className="pov-container p-4 text-white">
         <h1 className="text-3xl font-bold mb-4">Proof of Vote (PoV)</h1>
-        {pollData.length === 0 ? (
-          <p>Loading poll data...</p>
-        ) : (
-          pollData.map((poll) => (
-            <div key={poll.id} className="mb-6">
-              <h2 className="text-xl mb-2">{poll.question}</h2>
-              <div className="space-x-2">
-                <button
-                  onClick={() => handleVote(poll.id, 'yes')}
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded"
-                >
-                  Yes
-                </button>
-                <button
-                  onClick={() => handleVote(poll.id, 'no')}
-                  className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded"
-                >
-                  No
-                </button>
+        <div className="space-y-4">
+          {pollData.length === 0 ? (
+            <p>Loading poll data...</p>
+          ) : (
+            pollData.map((poll) => (
+              <div key={poll.id} className="border-b border-gray-700 pb-4">
+                <h2 className="text-xl font-semibold">{poll.question}</h2>
+                <div className="mt-2 space-x-2">
+                  <button
+                    onClick={() => handleVote(poll.id, 'yes')}
+                    className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white"
+                  >
+                    Yes
+                  </button>
+                  <button
+                    onClick={() => handleVote(poll.id, 'no')}
+                    className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded text-white"
+                  >
+                    No
+                  </button>
+                </div>
               </div>
-            </div>
-          ))
-        )}
+            ))
+          )}
+        </div>
         {statusMessage && (
-          <p className="mt-4 text-yellow-400 font-semibold">{statusMessage}</p>
+          <p className="text-yellow-400 font-semibold mt-6">{statusMessage}</p>
         )}
       </div>
     </WagmiConfig>
