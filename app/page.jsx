@@ -60,9 +60,9 @@ export default function Page() {
 
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-lg font-mono text-white bg-black">
-    <hr className="mb-4 w-full max-w-3xl border-t border-gray-700/50" />  
-      {/* Wallet / Donation */}
-      <div className="mb-6">
+      
+      {/* Connect & Play */}
+      <div className="bg-black/30 backdrop-blur-md border border-gray-800 rounded-2xl shadow-inner p-6 mb-12 w-full max-w-3xl">
         <ConnectAndPlay
           account={account}
           setAccount={setAccount}
@@ -71,44 +71,36 @@ export default function Page() {
         />
       </div>
 
-      <hr className="my-12 w-full max-w-3xl border-t border-gray-700/50" />
-
       {/* Game Board */}
-      <div className="w-full max-w-md">
-        <p className="text-sm text-gray-400 text-center mb-4">Solve fast to mine!</p>
+      <div className="bg-black/30 backdrop-blur-md border border-gray-800 rounded-2xl shadow-inner p-6 mb-12 w-full max-w-md">
+        <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
+          Solve fast to mine!
+        </p>
         <Board
           account={account}
           setGameMessage={setGameMessage}
           setGameCompleted={setGameCompleted}
           setGameData={setGameData}
         />
+        {gameMessage && (
+          <div className="text-yellow-400 font-bold text-center mt-6 whitespace-pre-line animate-fade-in">
+            {gameMessage}
+          </div>
+        )}
       </div>
 
-      {/* Game Message */}
-      {gameMessage && (
-        <div className="text-yellow-400 font-bold text-center mt-6 whitespace-pre-line">
-          {gameMessage}
-        </div>
-      )}
-
-      <hr className="my-12 w-full max-w-3xl border-t border-gray-700/50" />
-
       {/* Token Chart */}
-      <div className="w-full max-w-2xl">
+      <div className="bg-black/30 backdrop-blur-md border border-gray-800 rounded-2xl shadow-inner p-6 mb-12 w-full max-w-2xl">
         <TokenChart />
       </div>
 
-      <hr className="my-12 w-full max-w-3xl border-t border-gray-700/50" />
-
       {/* Leaderboard */}
-      <div className="w-full max-w-3xl">
+      <div className="bg-black/30 backdrop-blur-md border border-gray-800 rounded-2xl shadow-inner p-6 mb-12 w-full max-w-3xl">
         <Leaderboard itemsPerPage={10} />
       </div>
 
-      <hr className="my-12 w-full max-w-3xl border-t border-gray-700/50" />
-
       {/* Promo Video */}
-      <div className="w-full max-w-sm aspect-[9/16]">
+      <div className="bg-black/30 backdrop-blur-md border border-gray-800 rounded-2xl shadow-inner p-4 mb-12 w-full max-w-sm aspect-[9/16]">
         <iframe
           className="w-full h-full rounded-xl shadow-lg"
           src="https://www.youtube.com/embed/08jfpGlzeeg"
@@ -118,7 +110,9 @@ export default function Page() {
           allowFullScreen
         ></iframe>
       </div>
-      <hr className="mt-12 w-full max-w-3xl border-t border-gray-700/50" />
+
+      {/* Final separator (optional) */}
+      <div className="w-full max-w-3xl border-t border-dashed border-gray-600 opacity-40 mt-12" />
     </main>
   );
 }
