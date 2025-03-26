@@ -1,4 +1,4 @@
-git add next.config.js
-git commit -m "Fix next.config.js - remove appDir option"
-git push
-
+// next.config.js
+module.exports = {
+  reactStrictMode: true,
+}
