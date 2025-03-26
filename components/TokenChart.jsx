@@ -18,22 +18,17 @@ export default function TokenChart() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('/api/token-value')
+        const res = await fetch('/api/token-history')
         const json = await res.json()
 
         if (!res.ok) {
-          console.error('Token API error:', json.error)
+          console.error('Token history API error:', json.error)
           return
         }
 
-        setRawData([
-          {
-            hour: json.updatedAt,
-            cumulative_reward: json.value
-          }
-        ])
+        setRawData(json)
       } catch (err) {
-        console.error('Unexpected error fetching token data:', err)
+        console.error('Unexpected error fetching token history:', err)
       }
     }
 
@@ -147,9 +142,12 @@ export default function TokenChart() {
             </AreaChart>
           </ResponsiveContainer>
         ) : (
-          <p className="text-center text-sm text-gray-400">No chart data available yet.</p>
+          <p className="text-center text-sm text-gray-400">
+            No chart data available yet.
+          </p>
         )}
       </div>
     </div>
   )
 }
+
