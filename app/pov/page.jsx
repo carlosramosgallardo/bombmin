@@ -1,8 +1,15 @@
-'use client';
-
-import { useState, useEffect } from 'react';
+import { WagmiConfig, createConfig } from 'wagmi';
 import { useAccount } from 'wagmi';
 import supabase from '@/lib/supabaseClient';
+import { mainnet } from 'wagmi/chains';
+import { http } from 'wagmi';
+
+const wagmiConfig = createConfig({
+  chains: [mainnet],
+  transports: {
+    [mainnet.id]: http(),
+  },
+});
 
 export default function PoVPage() {
   const { address, isConnected } = useAccount();
@@ -76,57 +83,59 @@ export default function PoVPage() {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen justify-center bg-black text-white p-4">
-      <h1 className="text-3xl font-bold mb-6">Proof of Vote (PoV)</h1>
+    <WagmiConfig config={wagmiConfig}>
+      <div className="flex flex-col items-center min-h-screen justify-center bg-black text-white p-4">
+        <h1 className="text-3xl font-bold mb-6">Proof of Vote (PoV)</h1>
 
-      {pollData.length === 0 ? (
-        <p>Loading poll data...</p>
-      ) : (
-        pollData.map((poll) => (
-          <div key={poll.id} className="mb-8 w-full max-w-md text-center">
-            <h2 className="text-xl font-semibold mb-4">{poll.question}</h2>
-            {votedPollId === poll.id ? (
-              <div className="mt-4">
-                <p className="text-green-400 mb-2">✅ Thanks for voting!</p>
-                <div className="w-full bg-gray-700 rounded overflow-hidden h-6 mb-2">
-                  <div
-                    className="bg-green-500 h-full text-sm text-black text-center"
-                    style={{ width: `${(voteResults.yes / voteResults.total) * 100 || 0}%` }}
-                  >
-                    Yes ({voteResults.yes})
+        {pollData.length === 0 ? (
+          <p>Loading poll data...</p>
+        ) : (
+          pollData.map((poll) => (
+            <div key={poll.id} className="mb-8 w-full max-w-md text-center">
+              <h2 className="text-xl font-semibold mb-4">{poll.question}</h2>
+              {votedPollId === poll.id ? (
+                <div className="mt-4">
+                  <p className="text-green-400 mb-2">✅ Thanks for voting!</p>
+                  <div className="w-full bg-gray-700 rounded overflow-hidden h-6 mb-2">
+                    <div
+                      className="bg-green-500 h-full text-sm text-black text-center"
+                      style={{ width: `${(voteResults.yes / voteResults.total) * 100 || 0}%` }}
+                    >
+                      Yes ({voteResults.yes})
+                    </div>
                   </div>
-                </div>
-                <div className="w-full bg-gray-700 rounded overflow-hidden h-6">
-                  <div
-                    className="bg-red-500 h-full text-sm text-black text-center"
-                    style={{ width: `${(voteResults.no / voteResults.total) * 100 || 0}%` }}
-                  >
-                    No ({voteResults.no})
+                  <div className="w-full bg-gray-700 rounded overflow-hidden h-6">
+                    <div
+                      className="bg-red-500 h-full text-sm text-black text-center"
+                      style={{ width: `${(voteResults.no / voteResults.total) * 100 || 0}%` }}
+                    >
+                      No ({voteResults.no})
+                    </div>
                   </div>
+                  <p className="text-sm text-gray-400 mt-2">Total votes: {voteResults.total}</p>
                 </div>
-                <p className="text-sm text-gray-400 mt-2">Total votes: {voteResults.total}</p>
-              </div>
-            ) : (
-              <>
-                <button
-                  onClick={() => handleVote(poll.id, 'yes')}
-                  className="px-4 py-2 bg-green-600 rounded mr-2 hover:bg-green-700"
-                >
-                  Yes
-                </button>
-                <button
-                  onClick={() => handleVote(poll.id, 'no')}
-                  className="px-4 py-2 bg-red-600 rounded hover:bg-red-700"
-                >
-                  No
-                </button>
-              </>
-            )}
-          </div>
-        ))
-      )}
+              ) : (
+                <>
+                  <button
+                    onClick={() => handleVote(poll.id, 'yes')}
+                    className="px-4 py-2 bg-green-600 rounded mr-2 hover:bg-green-700"
+                  >
+                    Yes
+                  </button>
+                  <button
+                    onClick={() => handleVote(poll.id, 'no')}
+                    className="px-4 py-2 bg-red-600 rounded hover:bg-red-700"
+                  >
+                    No
+                  </button>
+                </>
+              )}
+            </div>
+          ))
+        )}
 
-      {statusMessage && <p className="text-yellow-400 mt-4">{statusMessage}</p>}
-    </div>
+        {statusMessage && <p className="text-yellow-400 mt-4">{statusMessage}</p>}
+      </div>
+    </WagmiConfig>
   );
 }
