@@ -1,88 +1,75 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import { useAccount } from 'wagmi'
+import { useState, useEffect } from 'react';
+import { WagmiConfig, createConfig } from 'wagmi'; // Asegúrate de importar solo lo necesario
+import { useAccount } from 'wagmi';
+import { supabase } from '@/lib/supabaseClient';
+import { getDataFromPolls } from '@/lib/povApi'; // Asumiendo que tienes esta función
 
-export default function PovPage() {
-  const [poll, setPoll] = useState(null)
-  const [voted, setVoted] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const { address, isConnected } = useAccount()
+const wagmiConfig = createConfig({
+  chains: [],
+  // ...otras configuraciones de wagmi
+});
+
+export default function PoVPage() {
+  const { address, isConnected } = useAccount();
+  const [pollData, setPollData] = useState([]);
+  const [statusMessage, setStatusMessage] = useState('');
 
   useEffect(() => {
-    const fetchPoll = async () => {
-      const res = await fetch('/api/pov/get')
-      const data = await res.json()
-      if (data?.length > 0) {
-        setPoll(data[0])
+    async function fetchPolls() {
+      try {
+        const data = await getDataFromPolls();
+        setPollData(data);
+      } catch (error) {
+        console.error('Error fetching polls', error);
       }
     }
+    fetchPolls();
+  }, []);
 
-    fetchPoll()
-  }, [])
-
-  const submitVote = async (vote) => {
+  const handleVote = async (pollId, vote) => {
     if (!isConnected || !address) {
-      alert('Please connect your wallet to vote.')
-      return
+      setStatusMessage('Please connect your wallet first.');
+      return;
     }
 
-    setLoading(true)
+    try {
+      const { data, error } = await supabase
+        .from('poll_votes')
+        .insert([{ poll_id: pollId, wallet_address: address, vote }]);
 
-    const res = await fetch('/api/pov/vote', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        poll_id: poll.id,
-        wallet_address: address,
-        vote
-      })
-    })
-
-    const result = await res.json()
-    setLoading(false)
-
-    if (res.ok) {
-      alert('✅ Vote recorded!')
-      setVoted(true)
-    } else {
-      alert(`❌ ${result.error || 'Unable to vote'}`)
+      if (error) {
+        setStatusMessage('Error submitting your vote.');
+        console.error(error);
+      } else {
+        setStatusMessage('Vote submitted successfully!');
+      }
+    } catch (err) {
+      console.error('Unexpected error:', err);
+      setStatusMessage('An error occurred. Please try again.');
     }
-  }
+  };
 
   return (
-    <div className="max-w-3xl mx-auto py-12 px-6">
-      <h1 className="text-4xl font-bold text-center mb-6">Proof of Vote</h1>
-
-      {!isConnected ? (
-        <p className="text-center text-gray-500 italic">Connect your wallet to vote.</p>
-      ) : poll ? (
-        voted ? (
-          <p className="text-center text-green-500 text-lg">✅ Thanks for voting!</p>
-        ) : (
-          <div className="text-center">
-            <p className="text-xl font-semibold mb-4">{poll.question}</p>
-            <div className="flex justify-center gap-4">
-              <button
-                className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
-                onClick={() => submitVote('yes')}
-                disabled={loading}
-              >
-                Yes
-              </button>
-              <button
-                className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
-                onClick={() => submitVote('no')}
-                disabled={loading}
-              >
-                No
-              </button>
-            </div>
-          </div>
-        )
-      ) : (
-        <p className="text-center text-gray-600 italic">Loading poll...</p>
-      )}
-    </div>
-  )
+    <WagmiConfig config={wagmiConfig}> {/* Solo envuelve el contenido principal aquí */}
+      <div className="pov-container">
+        <h1 className="text-3xl font-bold">Proof of Vote (PoV)</h1>
+        <div>
+          {pollData.length === 0 ? (
+            <p>Loading poll data...</p>
+          ) : (
+            pollData.map((poll) => (
+              <div key={poll.id}>
+                <h2>{poll.question}</h2>
+                <button onClick={() => handleVote(poll.id, 'yes')}>Yes</button>
+                <button onClick={() => handleVote(poll.id, 'no')}>No</button>
+              </div>
+            ))
+          )}
+        </div>
+        {statusMessage && <p>{statusMessage}</p>}
+      </div>
+    </WagmiConfig>
+  );
 }

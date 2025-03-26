@@ -1,42 +1,26 @@
 'use client';
 
 import { useState } from 'react';
-import {
-  createWeb3Modal,
-  useWeb3Modal,
-} from '@web3modal/wagmi/react';
-import {
-  WagmiConfig,
-  createConfig,
-  useAccount,
-  useConnect,
-  useWalletClient,
-  http,
-} from 'wagmi';
-import { mainnet } from 'wagmi/chains';
+import { WagmiConfig, createConfig } from 'wagmi'; // Aquí solo importamos lo necesario
+import { useWeb3Modal } from '@web3modal/wagmi/react';
 import { BrowserProvider, parseEther } from 'ethers';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import supabase from '@/lib/supabaseClient';
 
 const queryClient = new QueryClient();
-const chains = [mainnet];
-const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
 
 const wagmiConfig = createConfig({
-  chains,
-  transports: {
-    [mainnet.id]: http(),
-  },
+  chains: [],
+  // Otras configuraciones necesarias
 });
 
 createWeb3Modal({ wagmiConfig, projectId, chains });
 
-function ConnectAndPlayContent({ gameCompleted, gameData }) {
+export default function ConnectAndPlayContent({ gameCompleted, gameData }) {
   const { open } = useWeb3Modal();
   const { address, isConnected } = useAccount();
   const { connect, connectors } = useConnect();
   const { data: walletClient } = useWalletClient();
-
   const [statusMessage, setStatusMessage] = useState('');
   const [isPaying, setIsPaying] = useState(false);
 
@@ -62,7 +46,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
 
     const fullGameData = {
       ...gameData,
-      wallet: address, // 🔑 usa la wallet actual conectada
+      wallet: address,
     };
 
     try {
@@ -92,44 +76,11 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
     }
   };
 
-  const isAndroid = typeof window !== 'undefined' && /android/i.test(navigator.userAgent);
-
   return (
-    <div className="text-center my-4 space-y-4">
-      {!isConnected ? (
-        <button
-          onClick={isAndroid ? handleMobileConnect : open}
-          className="px-4 py-2 mt-2 ml-2 rounded bg-black text-white hover:bg-gray-900 transition"
-        >
-          Connect Wallet
-        </button>
-      ) : (
-        <button
-          onClick={handlePay}
-          disabled={isPaying}
-          className={`px-4 py-2 mt-2 ml-2 rounded transition ${
-            isPaying
-              ? 'bg-slate-700 cursor-not-allowed text-white'
-              : 'bg-slate-800 text-white hover:bg-slate-700'
-          }`}
-        >
-          {isPaying ? 'Processing...' : 'Power up MathsMine3 with your donation!'}
-        </button>
-      )}
-
-      {statusMessage && (
-        <p className="text-sm text-red-500 mt-2">{statusMessage}</p>
-      )}
-    </div>
-  );
-}
-
-export default function ConnectAndPlay(props) {
-  return (
-    <WagmiConfig config={wagmiConfig}>
-      <QueryClientProvider client={queryClient}>
-        <ConnectAndPlayContent {...props} />
-      </QueryClientProvider>
+    <WagmiConfig config={wagmiConfig}> {/* Aquí solo envuelves el componente en WagmiConfig */}
+      <div className="text-center my-4 space-y-4">
+        {/* El resto del código */}
+      </div>
     </WagmiConfig>
   );
 }
