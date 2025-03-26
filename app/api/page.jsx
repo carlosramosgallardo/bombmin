@@ -6,7 +6,6 @@ export default function ApiPage() {
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-lg font-mono text-white bg-black">
       <div className="max-w-2xl w-full">
-        <Link href="/" className="text-blue-400 underline mb-6 inline-block">← Back</Link>
         <h1 className="text-2xl font-bold mb-4">Public API Documentation</h1>
 
         <p className="mb-4">
