@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { WagmiConfig, createConfig, http, useAccount } from 'wagmi';
 import { mainnet } from 'wagmi/chains';
 import supabase from '@/lib/supabaseClient';
-import { checkContributorEligibility } from '@/pov/lib/contributors';
+import { checkContributorEligibility } from './lib/contributors';
 
 const chains = [mainnet];
 const wagmiConfig = createConfig({
