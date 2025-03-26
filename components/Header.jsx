@@ -1,11 +1,12 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from 'next/image'
+import Link from 'next/link'
+import NavLinks from '@/components/NavLinks'
 
 export default function Header() {
   return (
-    <header className="w-full flex justify-center py-10">
+    <header className="w-full flex flex-col items-center py-8 space-y-2">
       <Link href="/" aria-label="Go to homepage">
         <Image
           src="/MM.jpg"
@@ -16,6 +17,8 @@ export default function Header() {
           priority
         />
       </Link>
+
+      <NavLinks className="mt-2" />
     </header>
-  );
+  )
 }

@@ -1,6 +1,6 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 import {
   AreaChart,
   Area,
@@ -8,108 +8,84 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
-  CartesianGrid,
-} from 'recharts';
-import supabase from '@/lib/supabaseClient';
-
-const RATE_LIMIT_MAX = 10;
-const RATE_LIMIT_WINDOW_SECONDS = 60;
+  CartesianGrid
+} from 'recharts'
 
 export default function TokenChart() {
-  const [rawData, setRawData] = useState([]);
-  const [range, setRange] = useState('24h');
-  const [isRateLimited, setIsRateLimited] = useState(false);
+  const [rawData, setRawData] = useState([])
+  const [range, setRange] = useState('24h')
 
   useEffect(() => {
     const fetchData = async () => {
-      const ip = window?.location?.hostname || 'unknown';
+      try {
+        const res = await fetch('/api/token-value')
+        const json = await res.json()
 
-      await supabase.from('api_requests').insert({
-        ip,
-        endpoint: '/api/token-value',
-      });
+        if (!res.ok) {
+          console.error('Token API error:', json.error)
+          return
+        }
 
-      const since = new Date(Date.now() - RATE_LIMIT_WINDOW_SECONDS * 1000).toISOString();
-
-      const { count, error: countError } = await supabase
-        .from('api_requests')
-        .select('*', { count: 'exact', head: true })
-        .eq('ip', ip)
-        .eq('endpoint', '/api/token-value')
-        .gte('created_at', since);
-
-      if (countError) {
-        console.error('Rate check error:', countError.message);
-        return;
+        setRawData([
+          {
+            hour: json.updatedAt,
+            cumulative_reward: json.value
+          }
+        ])
+      } catch (err) {
+        console.error('Unexpected error fetching token data:', err)
       }
+    }
 
-      if (count >= RATE_LIMIT_MAX) {
-        setIsRateLimited(true);
-        return;
-      } else {
-        setIsRateLimited(false);
-      }
-
-      const { data: tokenData, error } = await supabase
-        .from('token_value_timeseries')
-        .select('*')
-        .order('hour', { ascending: true });
-
-      if (error) {
-        console.error('Error fetching token chart data:', error);
-        return;
-      }
-
-      setRawData(tokenData || []);
-    };
-
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
 
   const getVisibleData = () => {
-    if (!rawData || rawData.length === 0) return [];
+    if (!rawData || rawData.length === 0) return []
 
-    const now = new Date();
+    const now = new Date()
     const filtered = rawData.filter(({ hour }) => {
-      const h = new Date(hour);
-      const diffHours = (now - h) / (1000 * 60 * 60);
+      const h = new Date(hour)
+      const diffHours = (now - h) / (1000 * 60 * 60)
 
-      if (range === '24h') return diffHours <= 24;
-      if (range === '7d') return diffHours <= 24 * 7;
-      if (range === '30d') return diffHours <= 24 * 30;
-      return true;
-    });
+      if (range === '24h') return diffHours <= 24
+      if (range === '7d') return diffHours <= 24 * 7
+      if (range === '30d') return diffHours <= 24 * 30
+      return true
+    })
 
     if (range === '24h') {
       return filtered.map((entry) => ({
         time: new Date(entry.hour).toLocaleTimeString('en-GB', {
           hour: '2-digit',
           minute: '2-digit',
-          timeZone: 'UTC',
+          timeZone: 'UTC'
         }),
-        value: parseFloat(entry.cumulative_reward),
-      }));
+        value: parseFloat(entry.cumulative_reward)
+      }))
     } else {
-      const grouped = {};
+      const grouped = {}
       filtered.forEach(({ hour, cumulative_reward }) => {
-        const day = new Date(hour).toISOString().slice(0, 10);
-        grouped[day] = parseFloat(cumulative_reward);
-      });
+        const day = new Date(hour).toISOString().slice(0, 10)
+        grouped[day] = parseFloat(cumulative_reward)
+      })
 
       return Object.entries(grouped).map(([day, value]) => ({
         time: day,
-        value,
-      }));
+        value
+      }))
     }
-  };
+  }
 
-  const data = getVisibleData();
+  const data = getVisibleData()
 
   return (
     <div className="w-full mt-10 bg-gray-900 p-4 rounded-xl shadow-lg">
       <div className="bg-[#0b0f19] rounded-xl overflow-hidden">
         <div className="text-sm text-right mb-3 p-2">
-          <label htmlFor="range" className="mr-2 text-gray-300">View range:</label>
+          <label htmlFor="range" className="mr-2 text-gray-300">
+            View range:
+          </label>
           <select
             id="range"
             value={range}
@@ -123,9 +99,7 @@ export default function TokenChart() {
           </select>
         </div>
 
-        {isRateLimited ? (
-          <div className="text-center text-red-500 mb-4">You have exceeded the rate limit. Please try again later.</div>
-        ) : data.length > 0 ? (
+        {data.length > 0 ? (
           <ResponsiveContainer width="100%" height={300}>
             <AreaChart data={data}>
               <defs>
@@ -154,7 +128,7 @@ export default function TokenChart() {
                   backgroundColor: '#111827',
                   borderRadius: '8px',
                   border: 'none',
-                  color: '#e5e7eb',
+                  color: '#e5e7eb'
                 }}
                 labelStyle={{ color: '#22d3ee' }}
                 formatter={(value) => [`${value} ETH`, 'Value']}
@@ -177,5 +151,5 @@ export default function TokenChart() {
         )}
       </div>
     </div>
-  );
+  )
 }
