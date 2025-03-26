@@ -13,7 +13,6 @@ import {
   getRateLimitHeaders
 } from '@/lib/rateLimitConfig'
 
-
 function getClientIP(req) {
   const fwd = req.headers.get('x-forwarded-for')
   return fwd ? fwd.split(',')[0] : 'unknown'
@@ -24,9 +23,7 @@ export async function POST(req) {
   const endpoint = '/api/pov/vote'
 
   // Registrar la petición
-  await supabase.from('api_requests').insert([
-    { ip, endpoint }
-  ])
+  await supabase.from('api_requests').insert([{ ip, endpoint }])
 
   // Verificar cuántas peticiones ha hecho esa IP en el último minuto
   const { data: recentRequests, error: rateError } = await supabase
@@ -45,13 +42,14 @@ export async function POST(req) {
     return new Response(JSON.stringify({ error: 'Too many requests' }), { status: 429 })
   }
 
-  // Resto del código: parsear body y validar
+  // Parsear body y validar
   const { poll_id, wallet_address, vote } = await req.json()
 
   if (!poll_id || !wallet_address || !['yes', 'no'].includes(vote)) {
     return new Response(JSON.stringify({ error: 'Invalid input' }), { status: 400 })
   }
 
+  // Verificar que es contribuidor válido
   const { data: contributor, error: contribErr } = await supabase
     .from('leaderboard')
     .select('total_eth')
@@ -62,6 +60,21 @@ export async function POST(req) {
     return new Response(JSON.stringify({ error: 'Not eligible to vote' }), { status: 403 })
   }
 
+  // Verificar si ya ha votado
+  const { data: existingVote } = await supabase
+    .from('poll_votes')
+    .select('id')
+    .eq('poll_id', poll_id)
+    .eq('wallet_address', wallet_address.toLowerCase())
+    .maybeSingle()
+
+  if (existingVote) {
+    return new Response(JSON.stringify({ error: 'You have already voted in this poll' }), {
+      status: 409
+    })
+  }
+
+  // Insertar voto
   const { error: insertError } = await supabase.from('poll_votes').insert([
     {
       poll_id,
