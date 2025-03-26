@@ -1,33 +1,51 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { WagmiConfig, createConfig, useAccount, useConnect, useWalletClient } from 'wagmi'; // Aquí solo importamos lo necesario
+import { useState } from 'react';
+import {
+  createWeb3Modal,
+  useWeb3Modal,
+} from '@web3modal/wagmi/react';
+import {
+  WagmiConfig,
+  createConfig,
+  useAccount,
+  useConnect,
+  useWalletClient,
+  http,
+} from 'wagmi';
+import { mainnet } from 'wagmi/chains';
 import { BrowserProvider, parseEther } from 'ethers';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import supabase from '@/lib/supabaseClient';
-import Web3Modal from '@web3modal/wagmi/react';
 
 const queryClient = new QueryClient();
+const chains = [mainnet];
+const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
 
 const wagmiConfig = createConfig({
-  chains: [], // Otras configuraciones necesarias
-  // Incluye las configuraciones adicionales necesarias para wagmi
+  chains,
+  transports: {
+    [mainnet.id]: http(),
+  },
 });
 
-export default function ConnectAndPlayContent({ gameCompleted, gameData }) {
+createWeb3Modal({ wagmiConfig, projectId, chains });
+
+function ConnectAndPlayContent({ gameCompleted, gameData }) {
   const { open } = useWeb3Modal();
   const { address, isConnected } = useAccount();
   const { connect, connectors } = useConnect();
   const { data: walletClient } = useWalletClient();
+
   const [statusMessage, setStatusMessage] = useState('');
   const [isPaying, setIsPaying] = useState(false);
 
   const handleMobileConnect = () => {
-    const walletConnect = connectors.find((c) => c.id === 'walletConnect');
+    const walletConnect = connectors.find(c => c.id === 'walletConnect');
     if (walletConnect) {
       connect({ connector: walletConnect });
     } else {
-      open(); // Fallback to modal
+      open(); // fallback to modal
     }
   };
 
@@ -44,7 +62,7 @@ export default function ConnectAndPlayContent({ gameCompleted, gameData }) {
 
     const fullGameData = {
       ...gameData,
-      wallet: address,
+      wallet: address, // 🔑 usa la wallet actual conectada
     };
 
     try {
@@ -74,41 +92,44 @@ export default function ConnectAndPlayContent({ gameCompleted, gameData }) {
     }
   };
 
-  useEffect(() => {
-    // Aquí puedes hacer cualquier configuración adicional que necesites para el modal
-    createWeb3Modal({
-      wagmiConfig,
-      projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID,
-      chains: [], // configura las chains necesarias
-    });
-  }, []);
+  const isAndroid = typeof window !== 'undefined' && /android/i.test(navigator.userAgent);
 
   return (
-    <WagmiConfig config={wagmiConfig}>
-      <div className="text-center my-4 space-y-4">
-        {!isConnected ? (
-          <button
-            onClick={handleMobileConnect}
-            className="px-4 py-2 mt-2 ml-2 rounded bg-black text-white hover:bg-gray-900 transition"
-          >
-            Connect Wallet
-          </button>
-        ) : (
-          <button
-            onClick={handlePay}
-            disabled={isPaying}
-            className={`px-4 py-2 mt-2 ml-2 rounded transition ${
-              isPaying
-                ? 'bg-slate-700 cursor-not-allowed text-white'
-                : 'bg-slate-800 text-white hover:bg-slate-700'
-            }`}
-          >
-            {isPaying ? 'Processing...' : 'Power up MathsMine3 with your donation!'}
-          </button>
-        )}
+    <div className="text-center my-4 space-y-4">
+      {!isConnected ? (
+        <button
+          onClick={isAndroid ? handleMobileConnect : open}
+          className="px-4 py-2 mt-2 ml-2 rounded bg-black text-white hover:bg-gray-900 transition"
+        >
+          Connect Wallet
+        </button>
+      ) : (
+        <button
+          onClick={handlePay}
+          disabled={isPaying}
+          className={`px-4 py-2 mt-2 ml-2 rounded transition ${
+            isPaying
+              ? 'bg-slate-700 cursor-not-allowed text-white'
+              : 'bg-slate-800 text-white hover:bg-slate-700'
+          }`}
+        >
+          {isPaying ? 'Processing...' : 'Power up MathsMine3 with your donation!'}
+        </button>
+      )}
 
-        {statusMessage && <p className="text-sm text-red-500 mt-2">{statusMessage}</p>}
-      </div>
+      {statusMessage && (
+        <p className="text-sm text-red-500 mt-2">{statusMessage}</p>
+      )}
+    </div>
+  );
+}
+
+export default function ConnectAndPlay(props) {
+  return (
+    <WagmiConfig config={wagmiConfig}>
+      <QueryClientProvider client={queryClient}>
+        <ConnectAndPlayContent {...props} />
+      </QueryClientProvider>
     </WagmiConfig>
   );
 }
