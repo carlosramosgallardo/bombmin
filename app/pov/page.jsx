@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { WagmiConfig, createConfig, http, useAccount } from 'wagmi';
 import { mainnet } from 'wagmi/chains';
 import supabase from '@/lib/supabaseClient';
+import { checkContributorEligibility } from '@/pov/lib/contributors';
 
 const chains = [mainnet];
 const wagmiConfig = createConfig({
@@ -27,6 +28,8 @@ function PoVClientComponent() {
   const [pollData, setPollData] = useState([]);
   const [resultsData, setResultsData] = useState({});
   const [statusMessage, setStatusMessage] = useState('');
+  const [canVote, setCanVote] = useState(false);
+  const [eligibilityChecked, setEligibilityChecked] = useState(false);
 
   useEffect(() => {
     const fetchPollsAndResults = async () => {
@@ -45,7 +48,6 @@ function PoVClientComponent() {
 
         if (resultsError) throw resultsError;
 
-        // Agrupar resultados por poll_id
         const groupedResults = results.reduce((acc, row) => {
           if (!acc[row.poll_id]) acc[row.poll_id] = [];
           acc[row.poll_id].push(row);
@@ -62,9 +64,25 @@ function PoVClientComponent() {
     fetchPollsAndResults();
   }, []);
 
+  useEffect(() => {
+    async function checkEligibility() {
+      if (isConnected && address) {
+        const eligible = await checkContributorEligibility(address);
+        setCanVote(eligible);
+        setEligibilityChecked(true);
+      }
+    }
+    checkEligibility();
+  }, [isConnected, address]);
+
   const handleVote = async (pollId, vote) => {
     if (!isConnected || !address) {
-      setStatusMessage('Please connect your wallet first.');
+      setStatusMessage('Please connect your wallet to vote.');
+      return;
+    }
+
+    if (!canVote) {
+      setStatusMessage('You must have contributed at least 0.00001 ETH to vote.');
       return;
     }
 
@@ -74,14 +92,18 @@ function PoVClientComponent() {
         .insert([{ poll_id: pollId, wallet_address: address, vote }]);
 
       if (error) {
-        setStatusMessage('Error submitting your vote.');
+        if (error.code === '23505') {
+          setStatusMessage('You have already voted in this poll.');
+        } else {
+          setStatusMessage('Error submitting your vote.');
+        }
         console.error(error);
       } else {
-        setStatusMessage('Vote submitted successfully!');
+        setStatusMessage('✅ Vote submitted successfully!');
       }
     } catch (err) {
       console.error('Unexpected error:', err);
-      setStatusMessage('An error occurred. Please try again.');
+      setStatusMessage('An unexpected error occurred. Please try again.');
     }
   };
 
@@ -101,22 +123,29 @@ function PoVClientComponent() {
               <div key={poll.id} className="mb-16">
                 <h2 className="text-2xl font-semibold mb-4">{poll.question}</h2>
 
-                <div className="flex justify-center gap-4 mb-4">
-                  <button
-                    onClick={() => handleVote(poll.id, 'yes')}
-                    className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
-                  >
-                    Yes
-                  </button>
-                  <button
-                    onClick={() => handleVote(poll.id, 'no')}
-                    className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
-                  >
-                    No
-                  </button>
-                </div>
+                {eligibilityChecked && canVote ? (
+                  <div className="flex justify-center gap-4 mb-4">
+                    <button
+                      onClick={() => handleVote(poll.id, 'yes')}
+                      className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
+                    >
+                      Yes
+                    </button>
+                    <button
+                      onClick={() => handleVote(poll.id, 'no')}
+                      className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
+                    >
+                      No
+                    </button>
+                  </div>
+                ) : (
+                  eligibilityChecked && (
+                    <p className="text-sm text-gray-500 italic mb-4">
+                      You must have contributed at least 0.00001 ETH to vote.
+                    </p>
+                  )
+                )}
 
-                {/* Resultado gráfico */}
                 {totalVotes > 0 && (
                   <div className="space-y-2 mt-6">
                     {results.map((r) => {
