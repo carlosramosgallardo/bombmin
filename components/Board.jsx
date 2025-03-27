@@ -94,8 +94,8 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
       const message =
         miningAmount >= 0
-          ? `✅ Inject Value now: ${displayAmount}`
-          : `✅ Inject Value now: ${displayAmount}`;
+          ? `Inject Value now: ${displayAmount}`
+          : `Inject Value now: ${displayAmount}`;
 
       setGameMessage(message);
     } else {
@@ -121,39 +121,41 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
   return (
     <div className="text-center mt-4">
-      {problem && (
-        <>
-          <p className="text-xl">
-            {problem.num1} {problem.operation} {problem.num2} = ?
-          </p>
-          <p className="text-sm text-gray-400">
-            Time elapsed: <span className="text-yellow-300">{preGameCountdown > 0 ? 0 : elapsedTime} ms</span>
-          </p>
+  {problem && (
+    <>
+      <p className="text-xl">
+        {problem.num1} {problem.operation} {problem.num2} = ?
+      </p>
+      <p className="text-sm text-gray-400">
+        Time elapsed: <span className="text-yellow-300">{preGameCountdown > 0 ? 0 : elapsedTime} ms</span>
+      </p>
 
-          {preGameCountdown > 0 && (
-            <p className="text-gray-500 mt-2">Please wait {preGameCountdown} second(s)...</p>
-          )}
-
-          <input
-            type="number"
-            value={userAnswer}
-            onChange={(e) => setUserAnswer(e.target.value)}
-            className="border border-gray-300 p-2 rounded mt-2 text-black"
-            disabled={isDisabled}
-            placeholder="Your answer"
-          />
-
-          <button
-            onClick={checkAnswer}
-            className={`px-4 py-2 mt-2 ml-2 rounded ${
-              isDisabled ? 'bg-gray-600 cursor-not-allowed' : 'bg-black text-white'
-            }`}
-            disabled={isDisabled}
-          >
-            Submit
-          </button>
-        </>
+      {preGameCountdown > 0 && (
+        <p className="text-gray-500 mt-2">Please wait {preGameCountdown} second(s)...</p>
       )}
-    </div>
+
+      <div className="flex justify-center items-center gap-2 mt-4">
+        <input
+          type="number"
+          value={userAnswer}
+          onChange={(e) => setUserAnswer(e.target.value)}
+          className="w-24 border border-gray-300 px-2 py-1 rounded text-black text-center"
+          disabled={isDisabled}
+          placeholder="Answer"
+        />
+        <button
+          onClick={checkAnswer}
+          className={`px-4 py-1 rounded ${
+            isDisabled ? 'bg-gray-600 cursor-not-allowed' : 'bg-black text-white hover:bg-gray-800'
+          }`}
+          disabled={isDisabled}
+        >
+          Submit
+        </button>
+      </div>
+    </>
+  )}
+</div>
+
   );
 }
