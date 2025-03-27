@@ -23,11 +23,6 @@ export default function ManifestoPage() {
           This is not a financial product. This is a game. This is a rebellion.
           </p>
       </section>
-
-        <p className="text-gray-400 italic mb-6">
-          This is not a financial product.
-        </p>
-
         <Link href="/" className="text-blue-400 underline mt-10 inline-block">← Back</Link>
       </div>
     </main>
