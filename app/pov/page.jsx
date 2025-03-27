@@ -115,7 +115,7 @@ function PoVClientComponent() {
         {pollData.length === 0 ? (
           <p className="text-gray-400">Loading poll data...</p>
         ) : (
-          pollData.map((poll) => {
+          pollData.map((poll, index) => {
             const results = resultsData[poll.id] || [];
             const totalVotes = results.reduce((sum, r) => sum + r.total_votes, 0);
 
@@ -166,6 +166,10 @@ function PoVClientComponent() {
                       );
                     })}
                   </div>
+                )}
+
+                {index < pollData.length - 1 && (
+                  <div className="w-full border-t border-gray-700/50 my-12 opacity-50" />
                 )}
               </div>
             );
