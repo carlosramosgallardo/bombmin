@@ -99,7 +99,7 @@ function PoVClientComponent() {
         }
         console.error(error);
       } else {
-        setStatusMessage('✅ Vote submitted successfully!');
+        setStatusMessage('Vote submitted successfully!');
       }
     } catch (err) {
       console.error('Unexpected error:', err);

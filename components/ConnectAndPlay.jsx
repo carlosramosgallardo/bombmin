@@ -56,7 +56,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
     }
 
     if (!gameCompleted || !gameData) {
-      setStatusMessage('❌ You must complete a round before sending a donation.');
+      setStatusMessage('You must interact before you can interfere.');
       return;
     }
 
@@ -70,8 +70,8 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
 
       const { error } = await supabase.from('games').insert([fullGameData]);
       if (error) {
-        console.error('❌ Supabase insert error:', error.message);
-        setStatusMessage('❌ Error saving game data. Transaction aborted.');
+        console.error('Supabase insert error:', error.message);
+        setStatusMessage('Error saving game data. Transaction aborted.');
         return;
       }
 
@@ -85,7 +85,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
 
       setStatusMessage('Signal registered. You’ve altered the value field.');
     } catch (err) {
-      console.error('❌ Transaction error:', err);
+      console.error('Transaction error:', err);
       setStatusMessage('Even hesitation shapes the system. Token field disturbed.');
     } finally {
       setIsPaying(false);
@@ -113,7 +113,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
               : 'bg-slate-800 text-white hover:bg-slate-700'
           }`}
         >
-          {isPaying ? 'Processing...' : 'Power up MathsMine3 with your donation!'}
+          {isPaying ? 'Processing...' : 'Pulse system'}
         </button>
       )}
 

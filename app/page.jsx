@@ -44,14 +44,14 @@ export default function Page() {
       try {
         const { error } = await supabase.from('games').insert([gameData]);
         if (error) {
-          console.error('❌ Supabase insert error:', error.message);
-          setGameMessage('❌ Error saving game data. Transaction aborted.');
+          console.error('Supabase insert error:', error.message);
+          setGameMessage('Error saving game data. Transaction aborted.');
         } else {
-          console.log('✅ Game saved successfully');
+          console.log('Game saved successfully');
         }
       } catch (e) {
-        console.error('❌ Unexpected error saving game:', e);
-        setGameMessage('❌ Unexpected error. Try again.');
+        console.error('Unexpected error saving game:', e);
+        setGameMessage('Unexpected error. Try again.');
       }
     };
 

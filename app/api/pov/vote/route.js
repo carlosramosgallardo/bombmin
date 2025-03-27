@@ -39,7 +39,7 @@ export async function POST(req) {
 
   // ⚠️ Otro error
   if (error) {
-    console.error('❌ Vote insert error:', error.message);
+    console.error('Vote insert error:', error.message);
     return new Response(JSON.stringify({ error: 'Unexpected database error' }), {
       status: 500,
     });
