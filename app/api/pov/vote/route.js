@@ -1,81 +1,52 @@
-import { createClient } from '@supabase/supabase-js'
-import {
-  RATE_LIMIT_MAX,
-  RATE_LIMIT_WINDOW_MS,
-  getRateLimitHeaders
-} from '@/lib/rateLimitConfig'
+import { createClient } from '@supabase/supabase-js';
+import { checkContributorEligibility } from '../../../../pov/lib/contributors';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-)
+);
 
-export async function GET(req) {
-  const { searchParams } = new URL(req.url)
-  const poll_id = searchParams.get('poll_id')
-  const wallet = searchParams.get('wallet')?.toLowerCase()
+export async function POST(req) {
+  const { poll_id, wallet_address, vote } = await req.json();
+  const wallet = wallet_address?.toLowerCase();
 
-  const ip =
-    req.headers.get('x-forwarded-for') ?? req.headers.get('x-real-ip') ?? 'unknown'
-  const endpoint = '/api/pov/has-voted'
-
-  // Registrar petición
-  await supabase.from('api_requests').insert({ ip, endpoint })
-
-  // Verificar límites
-  const since = new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString()
-
-  const { count, error: countError } = await supabase
-    .from('api_requests')
-    .select('*', { count: 'exact', head: true })
-    .eq('ip', ip)
-    .eq('endpoint', endpoint)
-    .gte('created_at', since)
-
-  if (countError) {
-    return new Response(JSON.stringify({ error: 'Rate limit check failed' }), {
-      status: 500,
-      headers: getRateLimitHeaders(count ?? 0)
-    })
-  }
-
-  if (count >= RATE_LIMIT_MAX) {
-    return new Response(JSON.stringify({ error: 'Too many requests' }), {
-      status: 429,
-      headers: getRateLimitHeaders(count)
-    })
-  }
-
-  // Validación básica
-  if (!poll_id || !wallet) {
-    return new Response(JSON.stringify({ error: 'Missing poll_id or wallet' }), {
+  // 🛡️ Validación básica
+  if (!poll_id || !wallet || !vote) {
+    return new Response(JSON.stringify({ error: 'Missing parameters' }), {
       status: 400,
-      headers: getRateLimitHeaders(count)
-    })
+    });
   }
 
-  // Buscar si ya votó
-  const { data, error } = await supabase
+  // ✅ Verificar elegibilidad usando la vista `leaderboard`
+  const eligible = await checkContributorEligibility(wallet);
+  if (!eligible) {
+    return new Response(JSON.stringify({ error: 'Wallet not eligible to vote (must have ≥ 0.00001 ETH)' }), {
+      status: 403,
+    });
+  }
+
+  // ✅ Intentar insertar el voto
+  const { error } = await supabase
     .from('poll_votes')
-    .select('id')
-    .eq('poll_id', poll_id)
-    .eq('wallet_address', wallet)
-    .maybeSingle()
+    .insert([{ poll_id, wallet_address: wallet, vote }]);
 
-  if (error) {
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 500,
-      headers: getRateLimitHeaders(count)
-    })
+  // ⚠️ Ya votó
+  if (error?.code === '23505') {
+    return new Response(JSON.stringify({ error: 'You have already voted in this poll' }), {
+      status: 409,
+    });
   }
 
-  const hasVoted = !!data
+  // ⚠️ Otro error
+  if (error) {
+    console.error('❌ Vote insert error:', error.message);
+    return new Response(JSON.stringify({ error: 'Unexpected database error' }), {
+      status: 500,
+    });
+  }
 
-  return new Response(JSON.stringify({ hasVoted }), {
+  // ✅ Éxito
+  return new Response(JSON.stringify({ success: true }), {
     status: 200,
-    headers: {
-      ...getRateLimitHeaders(count + 1),
-      'Cache-Control': 'public, max-age=30'
-    }
-  })
+  });
 }
