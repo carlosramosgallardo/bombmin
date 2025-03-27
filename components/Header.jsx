@@ -19,6 +19,8 @@ export default function Header() {
       </Link>
 
       <NavLinks className="mt-2" />
+
+      <div className="w-full max-w-3xl border-t border-gray-700/50 mt-6 opacity-50" />
     </header>
   )
 }

@@ -8,6 +8,8 @@ export default function Footer() {
 
   return (
     <footer className="text-center text-sm text-gray-400 mt-12 mb-4 space-y-4">
+      <div className="w-full max-w-3xl border-t border-gray-700/50 mb-6 opacity-50 mx-auto" />
+
       <div className="flex justify-center gap-4 text-blue-500 underline">
         <a href="https://www.youtube.com/@FreakingAI" target="_blank" rel="noopener noreferrer">YouTube</a>
         <a href="https://www.tiktok.com/@freakingai" target="_blank" rel="noopener noreferrer">TikTok</a>

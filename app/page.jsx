@@ -61,9 +61,6 @@ export default function Page() {
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-lg font-mono text-white bg-black">
 
-      {/* Line below header */}
-      <div className="w-full max-w-3xl border-t border-gray-700/50 mb-10" />
-
       {/* Connect & Play */}
       <div className="mb-12 w-full max-w-3xl">
         <ConnectAndPlay
@@ -114,8 +111,6 @@ export default function Page() {
         ></iframe>
       </div>
 
-      {/* Line above footer */}
-      <div className="w-full max-w-3xl border-t border-gray-700/50 mt-12" />
     </main>
   );
 }
