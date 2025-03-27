@@ -12,17 +12,26 @@ export default function ManifestoPage() {
           <p>
           As the global economy teeters under scrutiny, the desire for personal financial sovereignty grows stronger. 
           MathsMine3 offers a symbolic stage: here, anyone can "mine" a fake token and interact with the ecosystem using the only identity that truly matters in Web3 — a wallet.
+          </p>
 
+          <p>
           Participation is completely free. 
           You can mine with a balance of zero, cancel the symbolic 0.00001 ETH transaction at any time, and still affect the system. Donations are optional — impact is not.
+          </p>
 
+          <p>
           Join the Proof of Vote: respond anonymously yet nomically (by wallet) to yes/no questions on global issues.
+          </p>
+          
+          <p>
           Does one person have multiple wallets? Of course. So what?
           The wife of the Spanish Prime Minister has seven accounts and absolutely nothing happens.
+          </p>
 
+          <p>
           This is not a financial product. This is a game. This is a rebellion.
           </p>
-      </section>
+        </section>
         <Link href="/" className="text-blue-400 underline mt-10 inline-block">← Back</Link>
       </div>
     </main>
