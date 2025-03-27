@@ -83,10 +83,10 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
         value: parseEther(process.env.NEXT_PUBLIC_PARTICIPATION_PRICE),
       });
 
-      setStatusMessage('🟢 Donation sent and game data saved!');
+      setStatusMessage('Signal registered. You’ve altered the value field.');
     } catch (err) {
       console.error('❌ Transaction error:', err);
-      setStatusMessage('❌ Transaction cancelled or failed.');
+      setStatusMessage('Even hesitation shapes the system. Token field disturbed.');
     } finally {
       setIsPaying(false);
     }
