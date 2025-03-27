@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-import { checkContributorEligibility } from '../../../../pov/lib/contributors';
+import { checkContributorEligibility } from '../../../pov/lib/contributors';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
