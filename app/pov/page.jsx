@@ -115,65 +115,67 @@ function PoVClientComponent() {
         {pollData.length === 0 ? (
           <p className="text-gray-400">Loading poll data...</p>
         ) : (
-          pollData.map((poll, index) => {
-            const results = resultsData[poll.id] || [];
-            const totalVotes = results.reduce((sum, r) => sum + r.total_votes, 0);
+          <>
+            {eligibilityChecked && !canVote && (
+              <p className="text-sm text-gray-500 italic mb-8">
+                You must have contributed at least 0.00001 ETH to vote.
+              </p>
+            )}
 
-            return (
-              <div key={poll.id} className="mb-16">
-                <h2 className="text-lg font-medium mb-4">{poll.question}</h2>
+            {pollData.map((poll, index) => {
+              const results = resultsData[poll.id] || [];
+              const totalVotes = results.reduce((sum, r) => sum + r.total_votes, 0);
 
-                {eligibilityChecked && canVote ? (
-                  <div className="flex justify-center gap-4 mb-4">
-                    <button
-                      onClick={() => handleVote(poll.id, 'yes')}
-                      className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
-                    >
-                      Yes
-                    </button>
-                    <button
-                      onClick={() => handleVote(poll.id, 'no')}
-                      className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
-                    >
-                      No
-                    </button>
-                  </div>
-                ) : (
-                  eligibilityChecked && (
-                    <p className="text-sm text-gray-500 italic mb-4">
-                      You must have contributed at least 0.00001 ETH to vote.
-                    </p>
-                  )
-                )}
+              return (
+                <div key={poll.id} className="mb-16">
+                  <h2 className="text-lg font-medium mb-4">{poll.question}</h2>
 
-                {totalVotes > 0 && (
-                  <div className="space-y-2 mt-6">
-                    {results.map((r) => {
-                      const percentage = ((r.total_votes / totalVotes) * 100).toFixed(1);
-                      return (
-                        <div key={r.vote} className="text-left">
-                          <div className="flex justify-between text-sm mb-1">
-                            <span className="capitalize">{r.vote}</span>
-                            <span>{r.total_votes} votes ({percentage}%)</span>
+                  {eligibilityChecked && canVote && (
+                    <div className="flex justify-center gap-4 mb-4">
+                      <button
+                        onClick={() => handleVote(poll.id, 'yes')}
+                        className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
+                      >
+                        Yes
+                      </button>
+                      <button
+                        onClick={() => handleVote(poll.id, 'no')}
+                        className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
+                      >
+                        No
+                      </button>
+                    </div>
+                  )}
+
+                  {totalVotes > 0 && (
+                    <div className="space-y-2 mt-6">
+                      {results.map((r) => {
+                        const percentage = ((r.total_votes / totalVotes) * 100).toFixed(1);
+                        return (
+                          <div key={r.vote} className="text-left">
+                            <div className="flex justify-between text-sm mb-1">
+                              <span className="capitalize">{r.vote}</span>
+                              <span>{r.total_votes} votes ({percentage}%)</span>
+                            </div>
+                            <div className="w-full bg-gray-700 rounded h-3">
+                              <div
+                                className={`h-3 rounded ${r.vote === 'yes' ? 'bg-green-500' : 'bg-red-500'}`}
+                                style={{ width: `${percentage}%` }}
+                              />
+                            </div>
                           </div>
-                          <div className="w-full bg-gray-700 rounded h-3">
-                            <div
-                              className={`h-3 rounded ${r.vote === 'yes' ? 'bg-green-500' : 'bg-red-500'}`}
-                              style={{ width: `${percentage}%` }}
-                            />
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
+                        );
+                      })}
+                    </div>
+                  )}
 
-                {index < pollData.length - 1 && (
-                  <div className="w-full border-t border-gray-700/50 my-12 opacity-50" />
-                )}
-              </div>
-            );
-          })
+                  {index < pollData.length - 1 && (
+                    <div className="w-full border-t border-gray-700/50 my-12 opacity-50" />
+                  )}
+                </div>
+              );
+            })}
+          </>
         )}
 
         {statusMessage && (
