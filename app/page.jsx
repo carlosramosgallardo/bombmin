@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-
 import ConnectAndPlay from '@/components/ConnectAndPlay';
 import Board from '@/components/Board';
 import Leaderboard from '@/components/Leaderboard';
@@ -60,7 +59,6 @@ export default function Page() {
 
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-lg font-mono text-white bg-black">
-
       {/* Connect & Play */}
       <div className="mb-12 w-full max-w-3xl">
         <ConnectAndPlay
@@ -73,6 +71,10 @@ export default function Page() {
 
       {/* Game Board */}
       <div className="w-full max-w-md">
+        {account && (
+          <p className="text-xs text-gray-500 text-center mb-2">Connected as: {account}</p>
+        )}
+
         <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
           Solve fast to mine!
         </p>
@@ -99,7 +101,7 @@ export default function Page() {
         <Leaderboard itemsPerPage={10} />
       </div>
 
-      {/* Promo Video (still stylized) */}
+      {/* Promo Video */}
       <div className="bg-black/30 backdrop-blur-md border border-gray-800 rounded-2xl shadow-inner p-4 mb-12 w-full max-w-sm aspect-[9/16]">
         <iframe
           className="w-full h-full rounded-xl shadow-lg"
@@ -110,7 +112,6 @@ export default function Page() {
           allowFullScreen
         ></iframe>
       </div>
-
     </main>
   );
 }

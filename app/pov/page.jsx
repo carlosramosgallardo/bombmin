@@ -111,10 +111,16 @@ function PoVClientComponent() {
           <p className="text-gray-400">Loading poll data...</p>
         ) : (
           <>
-            {eligibilityChecked && !canVote && (
-              <p className="text-sm text-gray-500 italic mb-8">
-                You must have mined at least 0.00001 ETH to vote.
-              </p>
+            {eligibilityChecked && (
+              !canVote ? (
+                <p className="text-sm text-gray-500 italic mb-8">
+                  {address}: You must have mined at least 0.00001 ETH to vote.
+                </p>
+              ) : (
+                <p className="text-sm text-green-500 italic mb-8">
+                  {address}: Please, vote.
+                </p>
+              )
             )}
 
             {pollData.map((poll, index) => {
