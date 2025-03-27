@@ -2,6 +2,8 @@
 
 import { useState } from 'react'
 import NavLinks from '@/components/NavLinks'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Footer() {
   const [revealed, setRevealed] = useState(false)
