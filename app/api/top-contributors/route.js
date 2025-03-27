@@ -76,7 +76,12 @@ export async function GET(req) {
     })
   }
 
-  return new Response(JSON.stringify(data), {
+  const mapped = data.map(({ wallet, total_eth }) => ({
+    wallet,
+    totalImpact: parseFloat(total_eth)
+  }))
+
+  return new Response(JSON.stringify(mapped), {
     headers: {
       'Content-Type': 'application/json',
       'Cache-Control': 'public, s-maxage=60',
