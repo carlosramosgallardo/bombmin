@@ -81,11 +81,6 @@ function PoVClientComponent() {
       return;
     }
 
-    if (!canVote) {
-      setStatusMessage('You must have contributed at least 0.00001 ETH to vote.');
-      return;
-    }
-
     try {
       const { error } = await supabase
         .from('poll_votes')
@@ -118,7 +113,7 @@ function PoVClientComponent() {
           <>
             {eligibilityChecked && !canVote && (
               <p className="text-sm text-gray-500 italic mb-8">
-                You must have contributed at least 0.00001 ETH to vote.
+                You must have mined at least 0.00001 ETH to vote.
               </p>
             )}
 
