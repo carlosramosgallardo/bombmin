@@ -116,7 +116,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
               : 'bg-slate-800 text-white hover:bg-slate-700'
           }`}
         >
-          {isPaying ? 'Processing...' : 'Pulse system'}
+          {isPaying ? 'Processing...' : 'Inject value'}
         </button>
       )}
 
