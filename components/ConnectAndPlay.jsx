@@ -59,7 +59,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
     }
 
     if (!isEligible) {
-      setStatusMessage('⛔ You must answer correctly to send a pulse.');
+      setStatusMessage('You must answer correctly to send a pulse.');
       return;
     }
 
@@ -74,7 +74,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
       const { error } = await supabase.from('games').insert([fullGameData]);
       if (error) {
         console.error('Supabase insert error:', error.message);
-        setStatusMessage('❌ Error saving game data. Transaction aborted.');
+        setStatusMessage('Error saving game data. Transaction aborted.');
         return;
       }
 
@@ -86,10 +86,10 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
         value: parseEther(process.env.NEXT_PUBLIC_PARTICIPATION_PRICE),
       });
 
-      setStatusMessage('🧠 Signal sent. The token has been disturbed.');
+      setStatusMessage('Signal sent. The token has been disturbed.');
     } catch (err) {
-      console.error('Transaction error:', err);
-      setStatusMessage('❌ Transaction cancelled or failed.');
+      console.error('Even hesitation shapes the system. Token field disturbed.', err);
+      setStatusMessage('Even hesitation shapes the system. Token field disturbed.');
     } finally {
       setIsPaying(false);
     }
