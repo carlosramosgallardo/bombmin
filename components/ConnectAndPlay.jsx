@@ -40,6 +40,9 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
   const [statusMessage, setStatusMessage] = useState('');
   const [isPaying, setIsPaying] = useState(false);
 
+  // ✅ Solo si respuesta fue correcta
+  const isEligible = gameCompleted && gameData?.is_correct === true;
+
   const handleMobileConnect = () => {
     const walletConnect = connectors.find(c => c.id === 'walletConnect');
     if (walletConnect) {
@@ -55,14 +58,14 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
       return;
     }
 
-    if (!gameCompleted || !gameData) {
-      setStatusMessage('You must interact before you can interfere.');
+    if (!isEligible) {
+      setStatusMessage('⛔ You must answer correctly to send a pulse.');
       return;
     }
 
     const fullGameData = {
       ...gameData,
-      wallet: address, // 🔑 usa la wallet actual conectada
+      wallet: address,
     };
 
     try {
@@ -71,7 +74,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
       const { error } = await supabase.from('games').insert([fullGameData]);
       if (error) {
         console.error('Supabase insert error:', error.message);
-        setStatusMessage('Error saving game data. Transaction aborted.');
+        setStatusMessage('❌ Error saving game data. Transaction aborted.');
         return;
       }
 
@@ -83,10 +86,10 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
         value: parseEther(process.env.NEXT_PUBLIC_PARTICIPATION_PRICE),
       });
 
-      setStatusMessage('Signal registered. You’ve altered the value field.');
+      setStatusMessage('🧠 Signal sent. The token has been disturbed.');
     } catch (err) {
       console.error('Transaction error:', err);
-      setStatusMessage('Even hesitation shapes the system. Token field disturbed.');
+      setStatusMessage('❌ Transaction cancelled or failed.');
     } finally {
       setIsPaying(false);
     }
@@ -106,9 +109,9 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
       ) : (
         <button
           onClick={handlePay}
-          disabled={isPaying}
+          disabled={!isEligible || isPaying}
           className={`px-4 py-2 mt-2 ml-2 rounded transition ${
-            isPaying
+            !isEligible || isPaying
               ? 'bg-slate-700 cursor-not-allowed text-white'
               : 'bg-slate-800 text-white hover:bg-slate-700'
           }`}
