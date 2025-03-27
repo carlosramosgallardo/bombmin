@@ -40,7 +40,6 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
   const [statusMessage, setStatusMessage] = useState('');
   const [isPaying, setIsPaying] = useState(false);
 
-  // ✅ Actualizar account en componente padre
   useEffect(() => {
     if (isConnected && address && setAccount) {
       setAccount(address);
@@ -126,12 +125,6 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
           {isPaying ? 'Calibrating entropy...' : 'Inject entropy'}
         </button>
       )}
-  
-      {statusMessage && (
-        <p className="text-sm text-red-500 mt-2">{statusMessage}</p>
-      )}
-    </div>
-  );
 
       {statusMessage && (
         <p className="text-sm text-red-500 mt-2">{statusMessage}</p>
