@@ -9,12 +9,13 @@ export default function ApiPage() {
         <h1 className="text-2xl font-bold mb-6">Public API Documentation</h1>
 
         <p className="mb-6">
-          MathsMine3 provides a public, read-only API that exposes real-time data related to token metrics, game contributions, and community polls. All endpoints return JSON responses.
+          MathsMine3 provides a public, read-only API for real-time data related to token metrics,
+          gameplay contributions, and active community polls. All endpoints return JSON responses.
         </p>
 
         {/* /api/token-value */}
         <h2 className="text-xl font-semibold mt-8 mb-2">Token Value</h2>
-        <p>Returns the current simulated token value:</p>
+        <p>Returns the current token mining value:</p>
         <code className="block bg-gray-800 p-2 rounded my-2">
           <a href="/api/token-value" className="text-blue-400" target="_blank">GET /api/token-value</a>
         </code>
@@ -42,7 +43,7 @@ export default function ApiPage() {
 
         {/* /api/top-contributors */}
         <h2 className="text-xl font-semibold mt-8 mb-2">Top Contributors</h2>
-        <p>List of wallet addresses with the highest positive mining impact:</p>
+        <p>List of wallet addresses with the highest mining impact:</p>
         <code className="block bg-gray-800 p-2 rounded my-2">
           <a href="/api/top-contributors" className="text-blue-400" target="_blank">GET /api/top-contributors</a>
         </code>
@@ -69,18 +70,6 @@ export default function ApiPage() {
     "created_at": "2025-03-26T23:35:23Z"
   }
 ]`}
-        </pre>
-
-        {/* /api/pov/has-voted */}
-        <h2 className="text-xl font-semibold mt-8 mb-2">Voting Status</h2>
-        <p>Check if a given wallet has already voted in a specified poll:</p>
-        <code className="block bg-gray-800 p-2 rounded my-2">
-          <span className="text-blue-400">GET /api/pov/has-voted?poll_id=&lt;uuid&gt;&wallet=&lt;address&gt;</span>
-        </code>
-        <pre className="bg-gray-900 p-3 rounded overflow-auto mb-6">
-{`{
-  "hasVoted": true
-}`}
         </pre>
 
         <Link href="/" className="text-blue-400 underline mt-10 inline-block">← Back</Link>

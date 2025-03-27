@@ -1,15 +1,15 @@
-# 📊 SQL Schema — MathsMine3
+# Database Schema – MathsMine3
 
-This folder contains the SQL logic used to support the backend of **MathsMine3**, including tables and views that simulate the token mining system and protect public endpoints from abuse.
+This directory contains the SQL logic behind the MathsMine3 backend.
 
-All SQL is designed to work with **Supabase (PostgreSQL)**.
+All schema definitions are written for **PostgreSQL** and deployed using **Supabase**.
 
 ---
 
-## 🧩 Tables
+## Tables
 
-### 1. `games`
-Stores each completed math challenge with results and metadata.
+### `games`
+Stores individual math round results, including reward and accuracy.
 
 ```sql
 CREATE TABLE games (
@@ -24,21 +24,10 @@ CREATE TABLE games (
 );
 ```
 
-- **wallet**: user's connected wallet address
-- **problem**: the math operation shown
-- **user_answer**: their submitted response
-- **is_correct**: whether the answer was correct
-- **mining_reward**: positive or negative ETH simulated
-- **time_ms**: time in milliseconds
-
----
-
-### 2. `api_requests`
-Stores each incoming call to an API endpoint, used for persistent rate limiting.
+### `api_requests`
+Used for rate limiting. One row per request.
 
 ```sql
-CREATE EXTENSION IF NOT EXISTS "pgcrypto";
-
 CREATE TABLE api_requests (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   ip TEXT NOT NULL,
@@ -47,16 +36,12 @@ CREATE TABLE api_requests (
 );
 ```
 
-- **ip**: client IP address
-- **endpoint**: the requested API route (e.g., `/api/token-value`)
-- **created_at**: when the request occurred
-
 ---
 
-## 📈 Views
+## Views
 
-### 3. `leaderboard`
-Aggregates total ETH per wallet (correct answers only):
+### `leaderboard`
+ETH contribution per wallet (correct answers only).
 
 ```sql
 CREATE VIEW leaderboard AS
@@ -68,10 +53,8 @@ WHERE is_correct = TRUE
 GROUP BY wallet;
 ```
 
----
-
-### 4. `token_value`
-Cumulative token simulation:
+### `token_value`
+Total ETH mined (cumulative).
 
 ```sql
 CREATE VIEW token_value AS
@@ -81,10 +64,8 @@ FROM games
 WHERE is_correct = TRUE;
 ```
 
----
-
-### 5. `token_value_timeseries`
-Hourly time series of token value (for charting):
+### `token_value_timeseries`
+Hourly reward time series (for charts).
 
 ```sql
 CREATE OR REPLACE VIEW token_value_timeseries AS
@@ -118,13 +99,7 @@ FROM final;
 
 ---
 
-## 📁 Notes
+## Notes
 
-- All views are read-only and auto-updating based on the `games` table.
-- These queries are used in Supabase + Next.js to build the chart and leaderboard.
-
----
-
-## 🧠 License
-
-MIT — See root LICENSE file.
+- All views are read-only and update automatically from `games`.
+- Used by charts, leaderboard, token logic and API endpoints.

@@ -6,46 +6,46 @@
 
 ---
 
-## 📌 What is MathsMine3?
+## What is MathsMine3?
 
 **MathsMine3** is a social experiment and educational game that simulates token mining based on how fast you can solve math problems. Your performance (and speed!) directly impacts a fictional token’s value.
 
-No real blockchain. No actual tokens. Just Web3-style logic, wallet connection, and math fun.
+No real blockchain. No actual tokens. Just Web3-style logic, wallet connection, and math logic.
 
 ---
 
-## 🧩 Core Features
+## Core Features
 
-- ⏱ Timed math challenges
-- 🧠 Token mining simulation based on reaction speed
-- 📊 Token chart with time series
-- 🏆 Leaderboard for top contributors
-- 👛 Wallet connection via WalletConnect / MetaMask
-- 💸 Optional symbolic donation using ETH
-- 🔗 [Manifesto](https://mathsmine3.xyz/manifesto) — Learn the philosophy behind the project
-- 🚁 [Public API](https://mathsmine3.xyz/api) — Query token value and top contributors
+- Timed math-based mining
+- Token value reacts to your speed: fast = up, slow = down
+- Real-time token chart with historical series
+- Leaderboard tracking contributors by impact
+- Wallet connection via WalletConnect / MetaMask
+- Optional ETH donation to "inject value"
+- Proof of Vote (PoV): contribute, qualify, vote
+- Public API for charts, top miners, polls
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 - **Next.js (App Router)**
 - **React + TailwindCSS**
 - **Supabase** (PostgreSQL + API)
 - **Ethers + Wagmi + Web3Modal**
-- **Recharts** (charting)
+- **Recharts** for time series data
 - **Vercel** for deployment
-- **GitLab** for CI/CD integration
+- **GitLab** CI/CD pipelines
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
-🌍 [https://mathsmine3.xyz](https://mathsmine3.xyz)
+[https://mathsmine3.xyz](https://mathsmine3.xyz)
 
 ---
 
-## 🛠️ Local Setup
+## Local Setup
 
 ```bash
 git clone https://github.com/carlosramosgallardo/MathsMine3.git
@@ -57,7 +57,7 @@ npm run dev
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 `.env.example`:
 
@@ -71,59 +71,67 @@ NEXT_PUBLIC_GA_ENABLED=true
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 ```
 
-> ⚠️ Do **not** commit `.env.local`. It is gitignored.
+> Do **not** commit `.env.local`. It is already `.gitignore`d.
 
 ---
 
-## ⚖️ Legal Pages
+## Deployment
 
-- [/legal](https://mathsmine3.xyz/legal) — Privacy, terms, disclaimer
-- [/manifesto](https://mathsmine3.xyz/manifesto) — Project philosophy
-- [/api](https://mathsmine3.xyz/api) — Public API docs
-- [/robots.txt](https://mathsmine3.xyz/robots.txt)
-- [/sitemap.xml](https://mathsmine3.xyz/sitemap.xml)
+- Hosted on [Vercel](https://vercel.com)
+- Automated deploy via GitLab CI/CD
 
 ---
 
-## ☁️ Deployment
+## Database Schema (PostgreSQL)
 
-- Deployed with [Vercel](https://vercel.com)
-- Integrated with GitLab for CI/CD
+SQL migrations are under `/sql`:
 
----
-
-## 🧠 Database Schema
-
-All logic lives in `/sql`, including:
-
-- `games` table
-- `leaderboard` view
-- `token_value` view
-- `token_value_timeseries` view
+- `games` — stores each math round result
+- `leaderboard` — view aggregating ETH earned per wallet
+- `token_value` — current token value logic
+- `token_value_timeseries` — historical hourly token stats
+- `polls` — active questions for PoV
+- `poll_votes` — one vote per wallet per poll
+- `poll_results` — total votes and distribution per poll
 
 ---
 
-## 🤝 Contributing
+## Public API
 
-Feedback and PRs welcome! Open an issue if you have ideas or improvements.
+Public, read-only endpoints returning JSON:
+
+| Endpoint | Description |
+|----------|-------------|
+| [`/api/token-value`](https://mathsmine3.xyz/api/token-value) | Latest token value |
+| [`/api/token-history`](https://mathsmine3.xyz/api/token-history) | Hour-by-hour mining totals |
+| [`/api/top-contributors`](https://mathsmine3.xyz/api/top-contributors) | Wallets ranked by positive mining impact |
+| [`/api/pov/get`](https://mathsmine3.xyz/api/pov/get) | List of active polls (PoV) |
+
+See [API Docs](https://mathsmine3.xyz/api) for response examples.
 
 ---
 
-## 📬 Contact
+## Contributing
+
+Pull requests are welcome. Open an issue for suggestions or bugs.
+
+---
+
+## Contact
 
 📧 botsandpods@gmail.com  
 🐦 [@freakingai](https://x.com/freakingai)
 
 ---
 
-## 🧪 Disclaimer
+## Disclaimer
 
 This is a fictional and educational project.  
-No actual cryptocurrency is mined, created, or exchanged.  
+No real tokens are mined or exchanged.  
 MathsMine3 is **not** a financial product.
 
 ---
 
-## 📘 License
+## License
 
 MIT © [botsandpods@gmail.com](https://github.com/carlosramosgallardo)

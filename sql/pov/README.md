@@ -1,27 +1,71 @@
-# 🗳️ Proof of Vote (PoV) – SQL Schema
+# Proof of Vote (PoV) – SQL Schema
 
-This folder defines the isolated database schema for the **Proof of Vote** (PoV) system in MathsMine3.xyz.
+Schema for the **PoV** system in MathsMine3.xyz. Built to allow voting by verified participants only.
 
-## 📋 Purpose
+---
 
-PoV is a public voting system where only wallets that have **contributed to the MathsMine3 game** (even symbolically) can vote. The voting data is persistent, transparent, and provable.
+## Tables
 
-## 📦 Structure
+### `polls`
+Stores poll metadata.
 
-- `polls`: stores poll questions
-- `poll_votes`: stores votes (1 per wallet per poll)
-- `poll_results`: view with aggregated results
+```sql
+CREATE TABLE polls (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  question TEXT NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  active BOOLEAN DEFAULT TRUE
+);
+```
 
-## ✅ Voting Requirements (handled in app logic)
+### `poll_votes`
+Stores each vote. One vote per wallet per poll.
+
+```sql
+CREATE TABLE poll_votes (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  poll_id UUID REFERENCES polls(id) ON DELETE CASCADE,
+  wallet_address TEXT NOT NULL,
+  vote TEXT CHECK (vote IN ('yes', 'no')),
+  voted_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  UNIQUE (poll_id, wallet_address)
+);
+```
+
+---
+
+## Views
+
+### `poll_results`
+Aggregated vote results per poll.
+
+```sql
+CREATE VIEW poll_results AS
+SELECT
+  p.id AS poll_id,
+  p.question,
+  v.vote,
+  COUNT(*) AS total_votes
+FROM polls p
+JOIN poll_votes v ON v.poll_id = p.id
+GROUP BY p.id, p.question, v.vote;
+```
+
+---
+
+## Voting Logic (handled in frontend)
 
 - Wallet must be connected
-- Must exist in the `contributors` view
-- Must meet a minimum contribution score (e.g. `score >= 1`)
+- Must exist in the `leaderboard` view
+- Must have mined ≥ `0.00001 ETH`
 
-## 🧩 Notes
+---
 
-- This module is fully **self-contained**.
-- It does **not affect** the main game's logic or data.
-- Frontend route: `/pov`
-- API endpoints: `/api/pov/vote`, `/api/pov/get`
+## Integration
 
+- App route: `/pov`
+- API:  
+  - `GET /api/pov/get`  
+  - `GET /api/pov/has-voted` *(not public)*
+
+This module is standalone and does not affect mining mechanics.
