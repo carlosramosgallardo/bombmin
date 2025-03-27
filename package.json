@@ -2,7 +2,7 @@
   "name": "MathsMine3",
   "version": "1.0",
   "description": "Solve fast to Mine!",
-  "author": "Tu Nombre",
+  "author": "botsandpods@gmail.com",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
