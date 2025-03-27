@@ -94,8 +94,8 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
       const message =
         miningAmount >= 0
-          ? `✅ Correct! Mined: ${displayAmount} ETH (⏱ ${totalTime} ms)`
-          : `✅ Correct... but slow! Penalty: ${displayAmount} ETH (⏱ ${totalTime} ms)`;
+          ? `✅ Inject Value now: ${displayAmount}`
+          : `✅ Inject Value now: ${displayAmount}`;
 
       setGameMessage(message);
     } else {
