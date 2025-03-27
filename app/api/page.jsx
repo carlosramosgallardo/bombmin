@@ -71,7 +71,6 @@ export default function ApiPage() {
 ]`}
         </pre>
 
-        <Link href="/" className="text-blue-400 underline mt-10 inline-block">← Back</Link>
       </div>
     </main>
   );
