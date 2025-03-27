@@ -1,71 +1,24 @@
-# Proof of Vote (PoV) – SQL Schema
+# Proof of Vote (PoV) SQL Schema
 
-Schema for the **PoV** system in MathsMine3.xyz. Built to allow voting by verified participants only.
+This schema defines the structure for the Proof of Vote (PoV) module on MathsMine3.xyz.
 
----
+## Overview
 
-## Tables
+PoV allows users to vote on community questions — but only if they've contributed to the game (even symbolic/fake mining counts).
 
-### `polls`
-Stores poll metadata.
+## Structure
 
-```sql
-CREATE TABLE polls (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  question TEXT NOT NULL,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  active BOOLEAN DEFAULT TRUE
-);
-```
+- `polls`: Stores public questions.
+- `poll_votes`: Stores individual votes (1 per poll + wallet).
+- `poll_results`: View showing vote counts per poll and choice.
 
-### `poll_votes`
-Stores each vote. One vote per wallet per poll.
+## Voting Requirements
 
-```sql
-CREATE TABLE poll_votes (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  poll_id UUID REFERENCES polls(id) ON DELETE CASCADE,
-  wallet_address TEXT NOT NULL,
-  vote TEXT CHECK (vote IN ('yes', 'no')),
-  voted_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-  UNIQUE (poll_id, wallet_address)
-);
-```
+- Wallet connected
+- Wallet listed in the `contributors` view
+- Minimum score requirement (e.g., 1)
 
----
+## Notes
 
-## Views
-
-### `poll_results`
-Aggregated vote results per poll.
-
-```sql
-CREATE VIEW poll_results AS
-SELECT
-  p.id AS poll_id,
-  p.question,
-  v.vote,
-  COUNT(*) AS total_votes
-FROM polls p
-JOIN poll_votes v ON v.poll_id = p.id
-GROUP BY p.id, p.question, v.vote;
-```
-
----
-
-## Voting Logic (handled in frontend)
-
-- Wallet must be connected
-- Must exist in the `leaderboard` view
-- Must have mined ≥ `0.00001 ETH`
-
----
-
-## Integration
-
-- App route: `/pov`
-- API:  
-  - `GET /api/pov/get`  
-  - `GET /api/pov/has-voted` *(not public)*
-
-This module is standalone and does not affect mining mechanics.
+- No interference with core MathsMine3 logic or data
+- This module is fully self-contained

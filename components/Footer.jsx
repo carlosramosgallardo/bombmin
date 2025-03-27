@@ -34,7 +34,18 @@ export default function Footer() {
         )}
       </div>
 
-      <NavLinks />
+      <NavLinks className="mt-2" />
+
+      <Link href="/" aria-label="Go to homepage">
+        <Image
+          src="/MM.jpg"
+          alt="MathsMine3 Logo"
+          width={160}
+          height={160}
+          className="rounded-full shadow-2xl hover:scale-105 transition-transform duration-300"
+          priority
+        />
+      </Link>
     </footer>
   )
 }

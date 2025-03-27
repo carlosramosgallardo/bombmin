@@ -1,8 +1,4 @@
--- ========================================
--- 🗳️ Proof of Vote (PoV) - Schema definition
--- ========================================
 
--- 1. Table: polls
 create table if not exists polls (
   id uuid primary key default gen_random_uuid(),
   question text not null,
@@ -10,7 +6,6 @@ create table if not exists polls (
   active boolean default true
 );
 
--- 2. Table: poll_votes
 create table if not exists poll_votes (
   id uuid primary key default gen_random_uuid(),
   poll_id uuid references polls(id) on delete cascade,
@@ -20,7 +15,6 @@ create table if not exists poll_votes (
   unique (poll_id, wallet_address)
 );
 
--- 3. View: poll_results
 create or replace view poll_results as
 select
   p.id as poll_id,
