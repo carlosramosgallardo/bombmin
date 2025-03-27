@@ -116,15 +116,22 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
         <button
           onClick={handlePay}
           disabled={!isEligible || isPaying}
-          className={`px-4 py-2 mt-2 ml-2 rounded transition ${
-            !isEligible || isPaying
-              ? 'bg-slate-700 cursor-not-allowed text-white'
-              : 'bg-slate-800 text-white hover:bg-slate-700'
-          }`}
+          className={`px-5 py-2 mt-2 ml-2 rounded-xl text-sm font-mono transition-transform duration-300
+            ${
+              !isEligible || isPaying
+                ? 'bg-gray-700 text-white cursor-not-allowed'
+                : 'bg-[#0ea5e9] text-black hover:bg-[#22d3ee] hover:scale-105 shadow-lg'
+            }`}
         >
-          {isPaying ? 'Processing...' : 'Inject value'}
+          {isPaying ? 'Calibrating entropy...' : 'Inject entropy'}
         </button>
       )}
+  
+      {statusMessage && (
+        <p className="text-sm text-red-500 mt-2">{statusMessage}</p>
+      )}
+    </div>
+  );
 
       {statusMessage && (
         <p className="text-sm text-red-500 mt-2">{statusMessage}</p>
