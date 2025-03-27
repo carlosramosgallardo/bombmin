@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   createWeb3Modal,
   useWeb3Modal,
@@ -31,7 +31,7 @@ const wagmiConfig = createConfig({
 
 createWeb3Modal({ wagmiConfig, projectId, chains });
 
-function ConnectAndPlayContent({ gameCompleted, gameData }) {
+function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount }) {
   const { open } = useWeb3Modal();
   const { address, isConnected } = useAccount();
   const { connect, connectors } = useConnect();
@@ -40,7 +40,13 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
   const [statusMessage, setStatusMessage] = useState('');
   const [isPaying, setIsPaying] = useState(false);
 
-  // ✅ Solo si respuesta fue correcta
+  // ✅ Actualizar account en componente padre
+  useEffect(() => {
+    if (isConnected && address && setAccount) {
+      setAccount(address);
+    }
+  }, [isConnected, address, setAccount]);
+
   const isEligible = gameCompleted && gameData?.is_correct === true;
 
   const handleMobileConnect = () => {
@@ -48,7 +54,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData }) {
     if (walletConnect) {
       connect({ connector: walletConnect });
     } else {
-      open(); // fallback to modal
+      open();
     }
   };
 
