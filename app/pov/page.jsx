@@ -121,7 +121,7 @@ function PoVClientComponent() {
 
             return (
               <div key={poll.id} className="mb-16">
-                <h2 className="text-2xl font-semibold mb-4">{poll.question}</h2>
+                <h2 className="text-lg font-medium mb-4">{poll.question}</h2>
 
                 {eligibilityChecked && canVote ? (
                   <div className="flex justify-center gap-4 mb-4">
