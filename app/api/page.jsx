@@ -6,14 +6,14 @@ export default function ApiPage() {
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-sm font-mono text-white bg-black">
       <div className="max-w-2xl w-full">
-        <h1 className="text-2xl font-bold mb-6">📡 Public API Documentation</h1>
+        <h1 className="text-2xl font-bold mb-6">Public API Documentation</h1>
 
         <p className="mb-6">
           MathsMine3 exposes a public read-only API for token, poll, and game data. All responses are in JSON format.
         </p>
 
         {/* /api/token-value */}
-        <h2 className="text-xl font-semibold mt-8 mb-2">🔹 Token Value</h2>
+        <h2 className="text-xl font-semibold mt-8 mb-2">Token Value</h2>
         <p>Get the current in-game token value:</p>
         <code className="block bg-gray-800 p-2 rounded my-2">
           <a href="/api/token-value" className="text-blue-400" target="_blank">GET /api/token-value</a>
@@ -26,7 +26,7 @@ export default function ApiPage() {
         </pre>
 
         {/* /api/token-history */}
-        <h2 className="text-xl font-semibold mt-8 mb-2">🔹 Token History</h2>
+        <h2 className="text-xl font-semibold mt-8 mb-2">Token History</h2>
         <p>Hourly cumulative ETH mined data:</p>
         <code className="block bg-gray-800 p-2 rounded my-2">
           <a href="/api/token-history" className="text-blue-400" target="_blank">GET /api/token-history</a>
@@ -41,7 +41,7 @@ export default function ApiPage() {
         </pre>
 
         {/* /api/top-contributors */}
-        <h2 className="text-xl font-semibold mt-8 mb-2">🔹 Top Contributors</h2>
+        <h2 className="text-xl font-semibold mt-8 mb-2">Top Contributors</h2>
         <p>Wallets with the most positive mining impact:</p>
         <code className="block bg-gray-800 p-2 rounded my-2">
           <a href="/api/top-contributors" className="text-blue-400" target="_blank">GET /api/top-contributors</a>
@@ -56,7 +56,7 @@ export default function ApiPage() {
         </pre>
 
         {/* /api/pov/get */}
-        <h2 className="text-xl font-semibold mt-8 mb-2">🔹 Get Active Polls</h2>
+        <h2 className="text-xl font-semibold mt-8 mb-2">Get Active Polls</h2>
         <p>Returns all currently active polls:</p>
         <code className="block bg-gray-800 p-2 rounded my-2">
           <a href="/api/pov/get" className="text-blue-400" target="_blank">GET /api/pov/get</a>
@@ -72,7 +72,7 @@ export default function ApiPage() {
         </pre>
 
         {/* /api/pov/has-voted */}
-        <h2 className="text-xl font-semibold mt-8 mb-2">🔹 Check If Voted</h2>
+        <h2 className="text-xl font-semibold mt-8 mb-2">Check If Voted</h2>
         <p>Check if a wallet has already voted on a given poll:</p>
         <code className="block bg-gray-800 p-2 rounded my-2">
           <span className="text-blue-400">GET /api/pov/has-voted?poll_id=&lt;uuid&gt;&wallet=&lt;address&gt;</span>
@@ -84,7 +84,7 @@ export default function ApiPage() {
         </pre>
 
         {/* /api/pov/vote */}
-        <h2 className="text-xl font-semibold mt-8 mb-2">🔹 Submit Vote</h2>
+        <h2 className="text-xl font-semibold mt-8 mb-2">Submit Vote</h2>
         <p>Submit a vote in a poll (wallet must have ≥ 0.00001 ETH mined):</p>
         <code className="block bg-gray-800 p-2 rounded my-2">
           <span className="text-blue-400">POST /api/pov/vote</span>

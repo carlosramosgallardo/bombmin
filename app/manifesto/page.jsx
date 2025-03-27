@@ -6,7 +6,7 @@ export default function ManifestoPage() {
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
       <div className="max-w-3xl w-full">
-        <h1 className="text-3xl font-bold mb-8">📜 MathsMine3: Principles of Play & Rebellion</h1>
+        <h1 className="text-3xl font-bold mb-8">MathsMine3: Principles of Play & Rebellion</h1>
 
         <p className="mb-6">
           MathsMine3 is more than a game. It's a symbolic system — a digital thought experiment disguised as entertainment.
@@ -14,7 +14,7 @@ export default function ManifestoPage() {
         </p>
 
         <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-2">🧱 Foundational Ideas</h2>
+          <h2 className="text-xl font-semibold mb-2">Foundational Ideas</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Truth is hidden in simplicity. Math reveals what systems conceal.</li>
             <li>Speed is impact. Hesitation is cost. Every second matters.</li>
@@ -25,7 +25,7 @@ export default function ManifestoPage() {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-2">⚖️ Digital Rebellion</h2>
+          <h2 className="text-xl font-semibold mb-2">Digital Rebellion</h2>
           <p>
             The system is broken. Middlemen monetize inefficiency. Institutions inflate value by inflating complexity.
             MathsMine3 proposes an absurd alternative: a fake token, mined through mental speed, affecting value directly.
@@ -34,7 +34,7 @@ export default function ManifestoPage() {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-2">📈 Speculation as Survival</h2>
+          <h2 className="text-xl font-semibold mb-2">Speculation as Survival</h2>
           <p>
             The future is not earned. It is simulated, iterated, and gamified.
             MathsMine3 models a system where speculation and skill are inseparable.
@@ -43,7 +43,7 @@ export default function ManifestoPage() {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-2">📖 The Unwritten Rules</h2>
+          <h2 className="text-xl font-semibold mb-2">The Unwritten Rules</h2>
           <ol className="list-decimal list-inside space-y-2">
             <li>Do not wait for permission to play.</li>
             <li>Do not play to win. Play to affect.</li>
