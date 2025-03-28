@@ -75,7 +75,7 @@ export default function Leaderboard() {
         ) : currentItems.length > 0 ? (
           currentItems.map((entry, index) => (
             <tr key={index} className="hover:bg-[#1e293b] transition">
-              <td className="border border-[#22d3ee] border-dotted px-4 py-2 font-mono">
+              <td className="border border-[#22d3ee] border-dotted px-4 py-2 font-mono whitespace-normal break-words">
                 {entry.wallet}
               </td>
               <td className="border border-[#22d3ee] border-dotted px-4 py-2 font-mono text-right">
