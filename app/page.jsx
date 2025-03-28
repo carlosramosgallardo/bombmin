@@ -59,48 +59,50 @@ export default function Page() {
 
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-lg font-mono text-white bg-black">
-      {/* Connect & Play */}
-      <div className="mb-12 w-full max-w-3xl">
-        <ConnectAndPlay
-          account={account}
-          setAccount={setAccount}
-          gameCompleted={gameCompleted}
-          gameData={gameData}
-        />
+      <div className="w-full max-w-3xl mx-auto">
+        {/* Connect & Play */}
+        <div className="mb-12">
+          <ConnectAndPlay
+            account={account}
+            setAccount={setAccount}
+            gameCompleted={gameCompleted}
+            gameData={gameData}
+          />
+        </div>
+
+        {/* Game Board */}
+        <div className="mb-12">
+          {account && (
+            <p className="text-xs text-gray-500 text-center mb-2">
+              Connected as: {account}
+            </p>
+          )}
+          <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
+            Solve fast to mine!
+          </p>
+          <Board
+            account={account}
+            setGameMessage={setGameMessage}
+            setGameCompleted={setGameCompleted}
+            setGameData={setGameData}
+          />
+          {gameMessage && (
+            <div className="text-yellow-400 font-bold text-center mt-6 whitespace-pre-line animate-fade-in">
+              {gameMessage}
+            </div>
+          )}
+        </div>
+
+        {/* Token Chart */}
+        <div className="mb-16">
+          <TokenChart />
+        </div>
+
+        {/* Leaderboard */}
+        <div className="mb-16">
+          <Leaderboard itemsPerPage={10} />
+        </div>
       </div>
-
-      {/* Game Board */}
-      <div className="w-full max-w-md">
-        {account && (
-          <p className="text-xs text-gray-500 text-center mb-2">Connected as: {account}</p>
-        )}
-
-        <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
-          Solve fast to mine!
-        </p>
-        <Board
-          account={account}
-          setGameMessage={setGameMessage}
-          setGameCompleted={setGameCompleted}
-          setGameData={setGameData}
-        />
-        {gameMessage && (
-          <div className="text-yellow-400 font-bold text-center mt-6 whitespace-pre-line animate-fade-in">
-            {gameMessage}
-          </div>
-        )}
-      </div>
-
-      {/* Token Chart */}
-      <div className="w-full max-w-2xl my-16">
-        <TokenChart />
-      </div>
-
-      {/* Leaderboard */}
-      <div className="w-full max-w-3xl mb-16">
-        <Leaderboard itemsPerPage={10} />
-      </div>
-
     </main>
   );
 }
