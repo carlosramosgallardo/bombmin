@@ -101,17 +101,6 @@ export default function Page() {
         <Leaderboard itemsPerPage={10} />
       </div>
 
-      {/* Promo Video */}
-      <div className="bg-black/30 backdrop-blur-md border border-gray-800 rounded-2xl shadow-inner p-4 mb-12 w-full max-w-sm aspect-[9/16]">
-        <iframe
-          className="w-full h-full rounded-xl shadow-lg"
-          src="https://www.youtube.com/embed/08jfpGlzeeg"
-          title="MathsMine3 Promo Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
     </main>
   );
 }
