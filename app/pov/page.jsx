@@ -111,8 +111,8 @@ function PoVClientComponent() {
           <p className="text-gray-400">Loading poll data...</p>
         ) : (
           <>
-            {eligibilityChecked && (
-              !canVote ? (
+            {eligibilityChecked &&
+              (!canVote ? (
                 <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
                   {address}: You must have mined at least 0.00001 ETH to vote.
                 </p>
@@ -120,8 +120,7 @@ function PoVClientComponent() {
                 <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
                   {address}: Please, vote.
                 </p>
-              )
-            )}
+              ))}
 
             {pollData.map((poll, index) => {
               const results = resultsData[poll.id] || [];
@@ -135,13 +134,13 @@ function PoVClientComponent() {
                     <div className="flex justify-center gap-4 mb-4">
                       <button
                         onClick={() => handleVote(poll.id, 'yes')}
-                        className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
+                        className="px-6 py-2 rounded-lg bg-[#22d3ee] text-black hover:bg-[#1dbbe0] transition"
                       >
                         Yes
                       </button>
                       <button
                         onClick={() => handleVote(poll.id, 'no')}
-                        className="px-6 py-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition"
+                        className="px-6 py-2 rounded-lg bg-[#1e86d1] text-black hover:bg-[#1a7ebd] transition"
                       >
                         No
                       </button>
@@ -156,11 +155,13 @@ function PoVClientComponent() {
                           <div key={r.vote} className="text-left">
                             <div className="flex justify-between text-sm mb-1">
                               <span className="capitalize">{r.vote}</span>
-                              <span>{r.total_votes} votes ({percentage}%)</span>
+                              <span>
+                                {r.total_votes} votes ({percentage}%)
+                              </span>
                             </div>
                             <div className="w-full bg-gray-700 rounded h-3">
                               <div
-                                className={`h-3 rounded ${r.vote === 'yes' ? 'bg-green-500' : 'bg-red-500'}`}
+                                className={`h-3 rounded ${r.vote === 'yes' ? 'bg-[#22d3ee]' : 'bg-[#1e86d1]'}`}
                                 style={{ width: `${percentage}%` }}
                               />
                             </div>
@@ -182,7 +183,6 @@ function PoVClientComponent() {
         {statusMessage && (
           <p className="mt-4 text-sm text-gray-300">{statusMessage}</p>
         )}
-
       </div>
     </main>
   );
