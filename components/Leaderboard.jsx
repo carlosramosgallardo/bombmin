@@ -9,8 +9,8 @@ export default function Leaderboard() {
   const itemsPerPage = 10;
   const [isLoading, setIsLoading] = useState(true);
 
-  // Cache the leaderboard data for 60 seconds
-  const cacheDuration = 60 * 1000; // 60 seconds
+  // Cache settings: 60 segundos
+  const cacheDuration = 60 * 1000;
   const cacheKey = 'leaderboard_data';
   const lastFetchTimeKey = 'leaderboard_last_fetch_time';
 
@@ -54,40 +54,40 @@ export default function Leaderboard() {
   const totalPages = Math.ceil(leaderboard.length / itemsPerPage);
 
   return (
-    <div className="mt-8 w-full max-w-3xl mx-auto">
+    <div className="mt-8 mx-auto p-4 bg-[#0b0f19] rounded-xl shadow-lg">
       <div className="overflow-x-auto">
-        <table className="w-full border border-green-500 border-dotted text-sm md:text-base bg-black">
-          <thead className="bg-black text-green-500">
+        <table className="table-auto w-auto border border-[#22d3ee] border-dotted text-sm md:text-base">
+          <thead className="bg-black text-[#22d3ee]">
             <tr>
-              <th className="border border-green-500 border-dotted px-4 py-2 text-left font-mono">
+              <th className="border border-[#22d3ee] border-dotted px-4 py-2 text-left font-mono">
                 Wallet
               </th>
-              <th className="border border-green-500 border-dotted px-4 py-2 text-right font-mono">
+              <th className="border border-[#22d3ee] border-dotted px-4 py-2 text-right font-mono">
                 ETH
               </th>
             </tr>
           </thead>
-          <tbody className="bg-black text-green-500">
+          <tbody className="bg-[#0b0f19] text-[#22d3ee]">
             {isLoading ? (
               <tr>
-                <td colSpan="2" className="border border-green-500 border-dotted px-4 py-2 text-center">
+                <td colSpan="2" className="border border-[#22d3ee] border-dotted px-4 py-2 text-center">
                   Loading leaderboard...
                 </td>
               </tr>
             ) : currentItems.length > 0 ? (
               currentItems.map((entry, index) => (
-                <tr key={index} className="hover:bg-green-900 transition">
-                  <td className="border border-green-500 border-dotted px-4 py-2 font-mono break-all">
+                <tr key={index} className="hover:bg-[#1e293b] transition">
+                  <td className="border border-[#22d3ee] border-dotted px-4 py-2 font-mono">
                     {entry.wallet}
                   </td>
-                  <td className="border border-green-500 border-dotted px-4 py-2 font-mono text-right">
+                  <td className="border border-[#22d3ee] border-dotted px-4 py-2 font-mono text-right">
                     {Number(entry.total_eth).toFixed(6)}
                   </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="2" className="border border-green-500 border-dotted px-4 py-2 text-center">
+                <td colSpan="2" className="border border-[#22d3ee] border-dotted px-4 py-2 text-center">
                   No leaderboard data available.
                 </td>
               </tr>
@@ -102,10 +102,10 @@ export default function Leaderboard() {
             <button
               key={i}
               onClick={() => setCurrentPage(i + 1)}
-              className={`px-3 py-1 border border-green-500 rounded font-mono transition ${
+              className={`px-3 py-1 border border-[#22d3ee] rounded font-mono transition ${
                 currentPage === i + 1
-                  ? 'bg-green-500 text-black font-bold'
-                  : 'bg-black text-green-500 hover:bg-green-500 hover:text-black'
+                  ? 'bg-[#22d3ee] text-black font-bold'
+                  : 'bg-black text-[#22d3ee] hover:bg-[#22d3ee] hover:text-black'
               }`}
               aria-label={`Go to page ${i + 1}`}
             >
