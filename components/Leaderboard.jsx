@@ -16,12 +16,10 @@ export default function Leaderboard() {
 
   useEffect(() => {
     const fetchLeaderboard = async () => {
-      // Check if cached data is available and valid
       const lastFetchTime = localStorage.getItem(lastFetchTimeKey);
       const currentTime = Date.now();
 
       if (lastFetchTime && currentTime - lastFetchTime < cacheDuration) {
-        // If the data is cached and it's still valid, use the cached data
         const cachedData = JSON.parse(localStorage.getItem(cacheKey));
         if (cachedData) {
           setLeaderboard(cachedData);
@@ -30,7 +28,6 @@ export default function Leaderboard() {
         }
       }
 
-      // Fetch the leaderboard data from the API if not cached or cache expired
       const { data, error } = await supabase
         .from('leaderboard')
         .select('wallet, total_eth')
@@ -41,12 +38,10 @@ export default function Leaderboard() {
         console.error('Failed to load leaderboard:', error);
         setLeaderboard([]);
       } else {
-        // Cache the response and set the fetch time
         localStorage.setItem(cacheKey, JSON.stringify(data));
         localStorage.setItem(lastFetchTimeKey, currentTime.toString());
         setLeaderboard(data);
       }
-
       setIsLoading(false);
     };
 
@@ -60,36 +55,39 @@ export default function Leaderboard() {
 
   return (
     <div className="mt-8 w-full max-w-3xl mx-auto">
-
       <div className="overflow-x-auto">
-        <table className="w-full border border-white text-sm md:text-base">
-          <thead className="bg-black text-white">
+        <table className="w-full border border-green-500 border-dotted text-sm md:text-base bg-black">
+          <thead className="bg-black text-green-500">
             <tr>
-              <th className="border border-white px-4 py-2 text-left">Wallet</th>
-              <th className="border border-white px-4 py-2 text-right">ETH</th>
+              <th className="border border-green-500 border-dotted px-4 py-2 text-left font-mono">
+                Wallet
+              </th>
+              <th className="border border-green-500 border-dotted px-4 py-2 text-right font-mono">
+                ETH
+              </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="bg-black text-green-500">
             {isLoading ? (
               <tr>
-                <td colSpan="2" className="border border-white px-4 py-2 text-center text-gray-400">
+                <td colSpan="2" className="border border-green-500 border-dotted px-4 py-2 text-center">
                   Loading leaderboard...
                 </td>
               </tr>
             ) : currentItems.length > 0 ? (
               currentItems.map((entry, index) => (
-                <tr key={index} className="hover:bg-gray-800 transition">
-                  <td className="border border-white px-4 py-2 font-mono break-all">
+                <tr key={index} className="hover:bg-green-900 transition">
+                  <td className="border border-green-500 border-dotted px-4 py-2 font-mono break-all">
                     {entry.wallet}
                   </td>
-                  <td className="border border-white px-4 py-2 font-mono text-right">
+                  <td className="border border-green-500 border-dotted px-4 py-2 font-mono text-right">
                     {Number(entry.total_eth).toFixed(6)}
                   </td>
                 </tr>
               ))
             ) : (
               <tr>
-                <td colSpan="2" className="border border-white px-4 py-2 text-center text-gray-400">
+                <td colSpan="2" className="border border-green-500 border-dotted px-4 py-2 text-center">
                   No leaderboard data available.
                 </td>
               </tr>
@@ -104,9 +102,10 @@ export default function Leaderboard() {
             <button
               key={i}
               onClick={() => setCurrentPage(i + 1)}
-              className={`px-3 py-1 border rounded ${currentPage === i + 1
-                ? 'bg-white text-black font-bold'
-                : 'border-white text-white hover:bg-white hover:text-black transition'
+              className={`px-3 py-1 border border-green-500 rounded font-mono transition ${
+                currentPage === i + 1
+                  ? 'bg-green-500 text-black font-bold'
+                  : 'bg-black text-green-500 hover:bg-green-500 hover:text-black'
               }`}
               aria-label={`Go to page ${i + 1}`}
             >
