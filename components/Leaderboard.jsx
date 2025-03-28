@@ -54,7 +54,7 @@ export default function Leaderboard() {
   const totalPages = Math.ceil(leaderboard.length / itemsPerPage);
 
   return (
-    <table className="table-auto w-auto mx-auto border border-[#22d3ee] border-dotted border-separate rounded-xl border-spacing-0 text-sm md:text-base">
+    <table className="table-auto w-auto mx-auto border border-[#22d3ee] border-dotted border-separate rounded-xl border-spacing-2 text-sm md:text-base">
       <thead className="bg-[#0b0f19] text-[#22d3ee]">
         <tr>
           <th className="border border-[#22d3ee] border-dotted px-4 py-2 text-left font-mono">
