@@ -35,38 +35,61 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   }, []);
 
   const generateNewProblem = () => {
-    const num1 = Math.floor(Math.random() * 50) + 10;
-    const num2 = Math.floor(Math.random() * 20) + 5;
-    const operation = ['+', '-', '*'][Math.floor(Math.random() * 3)];
-
-    let result;
-    if (operation === '+') result = num1 + num2;
-    if (operation === '-') result = num1 - num2;
-    if (operation === '*') result = num1 * num2;
-
-    setProblem({ num1, num2, operation, result });
+    // Escoge aleatoriamente un patrón entre aritmético, geométrico o alterno
+    const patternType = ['aritmético', 'geométrico', 'alterno'][Math.floor(Math.random() * 3)];
+  
+    let sequence = [];
+    let answer;
+    
+    if (patternType === 'aritmético') {
+      const first = Math.floor(Math.random() * 20) + 1;
+      const diff = Math.floor(Math.random() * 10) + 1;
+      // Genera 4 números y el quinto es el que se debe adivinar
+      for (let i = 0; i < 4; i++) {
+        sequence.push(first + diff * i);
+      }
+      answer = first + diff * 4;
+    }
+    
+    if (patternType === 'geométrico') {
+      const first = Math.floor(Math.random() * 10) + 1;
+      const factor = Math.floor(Math.random() * 3) + 2;
+      for (let i = 0; i < 4; i++) {
+        sequence.push(first * Math.pow(factor, i));
+      }
+      answer = first * Math.pow(factor, 4);
+    }
+    
+    if (patternType === 'alterno') {
+      // Ejemplo: posición impar aumenta en 1, posición par es el doble del anterior
+      const start = Math.floor(Math.random() * 10) + 1;
+      sequence.push(start);
+      for (let i = 1; i < 4; i++) {
+        if (i % 2 === 0) {
+          // posición par: duplicar el número anterior
+          sequence.push(sequence[i - 1] * 2);
+        } else {
+          // posición impar: incrementar en 1 el valor anterior
+          sequence.push(sequence[i - 1] + 1);
+        }
+      }
+      // Calcula el siguiente número siguiendo la misma lógica
+      if (sequence.length % 2 === 0) {
+        answer = sequence[sequence.length - 1] + 1;
+      } else {
+        answer = sequence[sequence.length - 1] * 2;
+      }
+    }
+    
+    // Guarda el problema y la respuesta correcta.
+    // Por simplicidad, guardamos el patrón y la secuencia en lugar de dos números y una operación.
+    setProblem({ sequence, answer, patternType });
     setUserAnswer('');
     setElapsedTime(0);
     setGameCompleted(false);
     setGameData(null);
   };
-
-  const startSolveTimer = () => {
-    setIsDisabled(false);
-    const startTime = Date.now();
-
-    solveIntervalRef.current = setInterval(() => {
-      const timePassed = Date.now() - startTime;
-      setElapsedTime(timePassed);
-
-      if (timePassed >= 10000) {
-        clearInterval(solveIntervalRef.current);
-        setGameMessage('⏳ Time exceeded! No mining reward.');
-        finalizeGame(false, 0);
-      }
-    }, 100);
-  };
-
+  
   const checkAnswer = () => {
     if (!problem || isDisabled) return;
 
