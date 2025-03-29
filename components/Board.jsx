@@ -35,106 +35,16 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   }, []);
 
   const generateNewProblem = () => {
-    const gameTypes = ['normal', 'primes', 'hex', 'mixed', 'divisionClean'];
-    const randomGame = gameTypes[Math.floor(Math.random() * gameTypes.length)];
+    const num1 = Math.floor(Math.random() * 50) + 10;
+    const num2 = Math.floor(Math.random() * 20) + 5;
+    const operation = ['+', '-', '*'][Math.floor(Math.random() * 3)];
 
-    let sequence = [];
-    let answer;
-    let patternType = randomGame;
+    let result;
+    if (operation === '+') result = num1 + num2;
+    if (operation === '-') result = num1 - num2;
+    if (operation === '*') result = num1 * num2;
 
-    const getRandomPrime = () => {
-      const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53];
-      return primes[Math.floor(Math.random() * primes.length)];
-    };
-
-    const getRandomOperator = () => {
-      return ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
-    };
-
-    const emojiByType = {
-      normal: '🧠',
-      primes: '🧬',
-      hex: '👾',
-      mixed: '🔀',
-      divisionClean: '📏',
-    };
-
-    const formatMathProblem = (a, op, b, type) => {
-      let left = a;
-      let right = b;
-      let operator = op;
-
-      if (op === '*') operator = '×';
-      if (op === '/') operator = '÷';
-      if (op === '+') operator = '+';
-      if (op === '-') operator = '−';
-
-      if (type === 'hex' || type === 'mixed') {
-        if (type === 'hex') {
-          left = `𝙷𝚎𝚡(0x${a.toString(16).toUpperCase()})`;
-          right = `𝙷𝚎𝚡(0x${b.toString(16).toUpperCase()})`;
-        } else {
-          left = `𝙷𝚎𝚡(0x${a.toString(16).toUpperCase()})`;
-          right = `𝓟(${b})`;
-        }
-      }
-
-      if (type === 'primes') {
-        left = `𝓟(${a})`;
-        right = `𝓟(${b})`;
-      }
-
-      const emoji = emojiByType[type] || '🧠';
-      return `${emoji} Solve:   ${left}  ${operator}  ${right}  =  ?`;
-    };
-
-    if (randomGame === 'normal') {
-      const a = Math.floor(Math.random() * 50) + 1;
-      const b = Math.floor(Math.random() * 50) + 1;
-      const op = getRandomOperator();
-      let expr = `${a} ${op} ${b}`;
-      answer = eval(expr);
-      if (op === '/') answer = Math.floor(answer);
-      sequence = [formatMathProblem(a, op, b, randomGame)];
-    }
-
-    if (randomGame === 'primes') {
-      const a = getRandomPrime();
-      const b = getRandomPrime();
-      const op = getRandomOperator();
-      let expr = `${a} ${op} ${b}`;
-      answer = eval(expr);
-      if (op === '/') answer = Math.floor(answer);
-      sequence = [formatMathProblem(a, op, b, randomGame)];
-    }
-
-    if (randomGame === 'hex') {
-      const a = Math.floor(Math.random() * 15) + 1;
-      const b = Math.floor(Math.random() * 15) + 1;
-      const op = getRandomOperator();
-      answer = eval(`${a} ${op} ${b}`);
-      if (op === '/') answer = Math.floor(answer);
-      sequence = [formatMathProblem(a, op, b, randomGame)];
-    }
-
-    if (randomGame === 'mixed') {
-      const a = Math.floor(Math.random() * 15) + 1;
-      const b = getRandomPrime();
-      const op = getRandomOperator();
-      answer = eval(`${a} ${op} ${b}`);
-      if (op === '/') answer = Math.floor(answer);
-      sequence = [formatMathProblem(a, op, b, randomGame)];
-    }
-
-    if (randomGame === 'divisionClean') {
-      const b = Math.floor(Math.random() * 12) + 1;
-      const a = b * (Math.floor(Math.random() * 10) + 1);
-      answer = a / b;
-      sequence = [formatMathProblem(a, '/', b, randomGame)];
-    }
-
-    answer = Math.floor(answer); // Ensure integer
-    setProblem({ sequence, answer, patternType });
+    setProblem({ num1, num2, operation, result });
     setUserAnswer('');
     setElapsedTime(0);
     setGameCompleted(false);
@@ -144,6 +54,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   const startSolveTimer = () => {
     setIsDisabled(false);
     const startTime = Date.now();
+
     solveIntervalRef.current = setInterval(() => {
       const timePassed = Date.now() - startTime;
       setElapsedTime(timePassed);
@@ -161,14 +72,16 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
     clearInterval(solveIntervalRef.current);
     const totalTime = elapsedTime;
-    const correct = parseInt(userAnswer, 10) === problem.answer;
+    const correct = parseInt(userAnswer, 10) === problem.result;
 
     let miningAmount = 0;
 
     if (correct) {
       if (totalTime <= 5000) {
+        // Positive reward based on speed
         miningAmount = PARTICIPATION_PRICE * ((5000 - totalTime) / 5000);
       } else {
+        // Penalty for slow answer (up to -10% of token value)
         const overTime = Math.min(totalTime - 5000, 5000);
         const penaltyRatio = overTime / 5000;
         miningAmount = -PARTICIPATION_PRICE * 0.10 * penaltyRatio;
@@ -179,7 +92,11 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
           ? '< 0.00000001'
           : miningAmount.toFixed(8);
 
-      const message = `Inject Value now: ${displayAmount}`;
+      const message =
+        miningAmount >= 0
+          ? `Inject Value now: ${displayAmount}`
+          : `Inject Value now: ${displayAmount}`;
+
       setGameMessage(message);
     } else {
       setGameMessage('❌ Incorrect! No mining reward.');
@@ -194,7 +111,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
     setGameData({
       wallet: account,
-      problem: problem.sequence[0],
+      problem: `${problem.num1} ${problem.operation} ${problem.num2}`,
       user_answer: userAnswer,
       is_correct: isCorrect,
       time_ms: elapsedTime,
@@ -204,40 +121,41 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
   return (
     <div className="text-center mt-4">
-      {problem && (
-        <>
-          <p className="text-xl">
-            {problem.sequence[0]}
-          </p>
-          <p className="text-sm text-gray-400">
-            Time elapsed: <span className="text-yellow-300">{preGameCountdown > 0 ? 0 : elapsedTime} ms</span>
-          </p>
+  {problem && (
+    <>
+      <p className="text-xl">
+        {problem.num1} {problem.operation} {problem.num2} = ?
+      </p>
+      <p className="text-sm text-gray-400">
+        Time elapsed: <span className="text-yellow-300">{preGameCountdown > 0 ? 0 : elapsedTime} ms</span>
+      </p>
 
-          {preGameCountdown > 0 && (
-            <p className="text-gray-500 mt-2">Please wait {preGameCountdown} second(s)...</p>
-          )}
-
-          <div className="flex justify-center items-center gap-2 mt-4">
-            <input
-              type="number"
-              value={userAnswer}
-              onChange={(e) => setUserAnswer(e.target.value)}
-              className="w-24 border border-gray-300 px-2 py-1 rounded text-black text-center"
-              disabled={isDisabled}
-              placeholder="Answer"
-            />
-            <button
-              onClick={checkAnswer}
-              className={`px-4 py-1 rounded ${
-                isDisabled ? 'bg-gray-600 cursor-not-allowed' : 'bg-black text-white hover:bg-gray-800'
-              }`}
-              disabled={isDisabled}
-            >
-              Submit
-            </button>
-          </div>
-        </>
+      {preGameCountdown > 0 && (
+        <p className="text-gray-500 mt-2">Please wait {preGameCountdown} second(s)...</p>
       )}
-    </div>
+
+      <div className="flex justify-center items-center gap-2 mt-4">
+        <input
+          type="number"
+          value={userAnswer}
+          onChange={(e) => setUserAnswer(e.target.value)}
+          className="w-24 border border-gray-300 px-2 py-1 rounded text-black text-center"
+          disabled={isDisabled}
+          placeholder="Answer"
+        />
+        <button
+          onClick={checkAnswer}
+          className={`px-4 py-1 rounded ${
+            isDisabled ? 'bg-gray-600 cursor-not-allowed' : 'bg-black text-white hover:bg-gray-800'
+          }`}
+          disabled={isDisabled}
+        >
+          Submit
+        </button>
+      </div>
+    </>
+  )}
+</div>
+
   );
 }
