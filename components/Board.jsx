@@ -14,106 +14,116 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   const solveIntervalRef = useRef(null);
 
   useEffect(() => {
-    generateNewProblem();
-
-    // Pre-game countdown: 3 segundos
-    preGameIntervalRef.current = setInterval(() => {
-      setPreGameCountdown((prev) => {
-        if (prev <= 1) {
-          clearInterval(preGameIntervalRef.current);
-          startSolveTimer();
-          return 0;
+    const generateNewProblem = () => {
+      const gameTypes = ['normal', 'primes', 'hex', 'mixed', 'divisionClean'];
+      const randomGame = gameTypes[Math.floor(Math.random() * gameTypes.length)];
+    
+      let sequence = [];
+      let answer;
+      let patternType = randomGame;
+    
+      const getRandomPrime = () => {
+        const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53];
+        return primes[Math.floor(Math.random() * primes.length)];
+      };
+    
+      const getRandomOperator = () => {
+        return ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
+      };
+    
+      const emojiByType = {
+        normal: '🧠',
+        primes: '🧬',
+        hex: '👾',
+        mixed: '🔀',
+        divisionClean: '📏'
+      };
+    
+      const formatMathProblem = (a, op, b, type) => {
+        let left = a;
+        let right = b;
+        let operator = op;
+    
+        if (op === '*') operator = '×';
+        if (op === '/') operator = '÷';
+        if (op === '+') operator = '+';
+        if (op === '-') operator = '−';
+    
+        // Handle hex
+        if (type === 'hex' || type === 'mixed') {
+          if (type === 'hex') {
+            left = `𝙷𝚎𝚡(0x${a.toString(16).toUpperCase()})`;
+            right = `𝙷𝚎𝚡(0x${b.toString(16).toUpperCase()})`;
+          } else {
+            left = `𝙷𝚎𝚡(0x${a.toString(16).toUpperCase()})`;
+            right = `𝓟(${b})`;
+          }
         }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => {
-      clearInterval(preGameIntervalRef.current);
-      clearInterval(solveIntervalRef.current);
+    
+        // Handle primes
+        if (type === 'primes') {
+          left = `𝓟(${a})`;
+          right = `𝓟(${b})`;
+        }
+    
+        const emoji = emojiByType[type] || '🧠';
+        return `${emoji} Solve:   ${left}  ${operator}  ${right}  =  ?`;
+      };
+    
+      // GAME TYPES
+      if (randomGame === 'normal') {
+        const a = Math.floor(Math.random() * 50) + 1;
+        const b = Math.floor(Math.random() * 50) + 1;
+        const op = getRandomOperator();
+        let expr = `${a} ${op} ${b}`;
+        answer = eval(expr);
+        if (op === '/') answer = Math.floor(answer);
+        sequence = [formatMathProblem(a, op, b, randomGame)];
+      }
+    
+      if (randomGame === 'primes') {
+        const a = getRandomPrime();
+        const b = getRandomPrime();
+        const op = getRandomOperator();
+        let expr = `${a} ${op} ${b}`;
+        answer = eval(expr);
+        if (op === '/') answer = Math.floor(answer);
+        sequence = [formatMathProblem(a, op, b, randomGame)];
+      }
+    
+      if (randomGame === 'hex') {
+        const a = Math.floor(Math.random() * 15) + 1;
+        const b = Math.floor(Math.random() * 15) + 1;
+        const op = getRandomOperator();
+        answer = eval(`${a} ${op} ${b}`);
+        if (op === '/') answer = Math.floor(answer);
+        sequence = [formatMathProblem(a, op, b, randomGame)];
+      }
+    
+      if (randomGame === 'mixed') {
+        const a = Math.floor(Math.random() * 15) + 1;
+        const b = getRandomPrime();
+        const op = getRandomOperator();
+        answer = eval(`${a} ${op} ${b}`);
+        if (op === '/') answer = Math.floor(answer);
+        sequence = [formatMathProblem(a, op, b, randomGame)];
+      }
+    
+      if (randomGame === 'divisionClean') {
+        const b = Math.floor(Math.random() * 12) + 1;
+        const a = b * (Math.floor(Math.random() * 10) + 1);
+        answer = a / b;
+        sequence = [formatMathProblem(a, '/', b, randomGame)];
+      }
+    
+      answer = Math.floor(answer); // ensure integer
+      setProblem({ sequence, answer, patternType });
+      setUserAnswer('');
+      setElapsedTime(0);
+      setGameCompleted(false);
+      setGameData(null);
     };
-  }, []);
-
-  const generateNewProblem = () => {
-    const gameTypes = ['normal', 'primes', 'hex', 'mixed', 'divisionClean'];
-    const randomGame = gameTypes[Math.floor(Math.random() * gameTypes.length)];
-  
-    let sequence = [];
-    let answer;
-    let patternType = randomGame;
-  
-    const getRandomPrime = () => {
-      const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41];
-      return primes[Math.floor(Math.random() * primes.length)];
-    };
-  
-    const getRandomOperator = () => {
-      return ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
-    };
-  
-    if (randomGame === 'normal') {
-      const a = Math.floor(Math.random() * 50) + 1;
-      const b = Math.floor(Math.random() * 50) + 1;
-      const op = getRandomOperator();
-  
-      let expr = `${a} ${op} ${b}`;
-      answer = eval(expr);
-      if (op === '/') answer = Math.floor(answer); // keep it whole
-      sequence = [`${a} ${op} ${b} = ?`];
-    }
-  
-    if (randomGame === 'primes') {
-      const a = getRandomPrime();
-      const b = getRandomPrime();
-      const op = getRandomOperator();
-  
-      let expr = `${a} ${op} ${b}`;
-      answer = eval(expr);
-      if (op === '/') answer = Math.floor(answer);
-      sequence = [`${a} ${op} ${b} = ?`];
-    }
-  
-    if (randomGame === 'hex') {
-      const a = Math.floor(Math.random() * 15) + 1;
-      const b = Math.floor(Math.random() * 15) + 1;
-      const op = getRandomOperator();
-      const expr = `${a} ${op} ${b}`;
-      answer = eval(expr);
-      if (op === '/') answer = Math.floor(answer);
-  
-      const hexA = '0x' + a.toString(16).toUpperCase();
-      const hexB = '0x' + b.toString(16).toUpperCase();
-  
-      sequence = [`${hexA} ${op} ${hexB} = ? (decimal)`];
-    }
-  
-    if (randomGame === 'mixed') {
-      const a = parseInt(Math.floor(Math.random() * 15) + 1); // hex as decimal
-      const b = getRandomPrime();
-      const op = getRandomOperator();
-  
-      let expr = `${a} ${op} ${b}`;
-      answer = eval(expr);
-      if (op === '/') answer = Math.floor(answer);
-  
-      const hexA = '0x' + a.toString(16).toUpperCase();
-      sequence = [`${hexA} ${op} ${b} = ? (decimal)`];
-    }
-  
-    if (randomGame === 'divisionClean') {
-      const b = Math.floor(Math.random() * 12) + 1;
-      const a = b * (Math.floor(Math.random() * 10) + 1); // ensure divisible
-      answer = a / b;
-      sequence = [`${a} ÷ ${b} = ?`];
-    }
-  
-    answer = Math.floor(answer); // always clean whole numbers
-    setProblem({ sequence, answer, patternType });
-    setUserAnswer('');
-    setElapsedTime(0);
-    setGameCompleted(false);
-    setGameData(null);
-  };
+    
   
     
   
