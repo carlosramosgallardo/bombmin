@@ -16,7 +16,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   useEffect(() => {
     generateNewProblem();
 
-    // Pre-game countdown: 3 seconds
+    // Pre-game countdown: 3 segundos
     preGameIntervalRef.current = setInterval(() => {
       setPreGameCountdown((prev) => {
         if (prev <= 1) {
@@ -61,7 +61,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
     }
     
     if (patternType === 'alterno') {
-      // Ejemplo: posición impar aumenta en 1, posición par es el doble del anterior
+      // Ejemplo: en posiciones impares se incrementa en 1, en posiciones pares se duplica el valor anterior
       const start = Math.floor(Math.random() * 10) + 1;
       sequence.push(start);
       for (let i = 1; i < 4; i++) {
@@ -82,29 +82,45 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
     }
     
     // Guarda el problema y la respuesta correcta.
-    // Por simplicidad, guardamos el patrón y la secuencia en lugar de dos números y una operación.
+    // Se guarda la secuencia, el valor correcto y el tipo de patrón.
     setProblem({ sequence, answer, patternType });
     setUserAnswer('');
     setElapsedTime(0);
     setGameCompleted(false);
     setGameData(null);
   };
-  
+
+  const startSolveTimer = () => {
+    setIsDisabled(false);
+    const startTime = Date.now();
+    solveIntervalRef.current = setInterval(() => {
+      const timePassed = Date.now() - startTime;
+      setElapsedTime(timePassed);
+
+      if (timePassed >= 10000) {
+        clearInterval(solveIntervalRef.current);
+        setGameMessage('⏳ Time exceeded! No mining reward.');
+        finalizeGame(false, 0);
+      }
+    }, 100);
+  };
+
   const checkAnswer = () => {
     if (!problem || isDisabled) return;
 
     clearInterval(solveIntervalRef.current);
     const totalTime = elapsedTime;
-    const correct = parseInt(userAnswer, 10) === problem.result;
+    // Compara la respuesta del usuario con problem.answer
+    const correct = parseInt(userAnswer, 10) === problem.answer;
 
     let miningAmount = 0;
 
     if (correct) {
       if (totalTime <= 5000) {
-        // Positive reward based on speed
+        // Recompensa positiva basada en la velocidad
         miningAmount = PARTICIPATION_PRICE * ((5000 - totalTime) / 5000);
       } else {
-        // Penalty for slow answer (up to -10% of token value)
+        // Penalización por respuesta lenta (hasta -10% del valor del token)
         const overTime = Math.min(totalTime - 5000, 5000);
         const penaltyRatio = overTime / 5000;
         miningAmount = -PARTICIPATION_PRICE * 0.10 * penaltyRatio;
@@ -115,11 +131,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
           ? '< 0.00000001'
           : miningAmount.toFixed(8);
 
-      const message =
-        miningAmount >= 0
-          ? `Inject Value now: ${displayAmount}`
-          : `Inject Value now: ${displayAmount}`;
-
+      const message = `Inject Value now: ${displayAmount}`;
       setGameMessage(message);
     } else {
       setGameMessage('❌ Incorrect! No mining reward.');
@@ -132,9 +144,11 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
     setIsDisabled(true);
     setGameCompleted(true);
 
+    // Guarda los datos del juego.
+    // En este ejemplo, se almacena la secuencia y el valor correcto para referencia.
     setGameData({
       wallet: account,
-      problem: `${problem.num1} ${problem.operation} ${problem.num2}`,
+      problem: problem.sequence.join(', ') + ' , ?',
       user_answer: userAnswer,
       is_correct: isCorrect,
       time_ms: elapsedTime,
@@ -144,41 +158,40 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
   return (
     <div className="text-center mt-4">
-  {problem && (
-    <>
-      <p className="text-xl">
-        {problem.num1} {problem.operation} {problem.num2} = ?
-      </p>
-      <p className="text-sm text-gray-400">
-        Time elapsed: <span className="text-yellow-300">{preGameCountdown > 0 ? 0 : elapsedTime} ms</span>
-      </p>
+      {problem && (
+        <>
+          <p className="text-xl">
+            {problem.sequence.join(', ')} , ?
+          </p>
+          <p className="text-sm text-gray-400">
+            Time elapsed: <span className="text-yellow-300">{preGameCountdown > 0 ? 0 : elapsedTime} ms</span>
+          </p>
 
-      {preGameCountdown > 0 && (
-        <p className="text-gray-500 mt-2">Please wait {preGameCountdown} second(s)...</p>
+          {preGameCountdown > 0 && (
+            <p className="text-gray-500 mt-2">Please wait {preGameCountdown} second(s)...</p>
+          )}
+
+          <div className="flex justify-center items-center gap-2 mt-4">
+            <input
+              type="number"
+              value={userAnswer}
+              onChange={(e) => setUserAnswer(e.target.value)}
+              className="w-24 border border-gray-300 px-2 py-1 rounded text-black text-center"
+              disabled={isDisabled}
+              placeholder="Answer"
+            />
+            <button
+              onClick={checkAnswer}
+              className={`px-4 py-1 rounded ${
+                isDisabled ? 'bg-gray-600 cursor-not-allowed' : 'bg-black text-white hover:bg-gray-800'
+              }`}
+              disabled={isDisabled}
+            >
+              Submit
+            </button>
+          </div>
+        </>
       )}
-
-      <div className="flex justify-center items-center gap-2 mt-4">
-        <input
-          type="number"
-          value={userAnswer}
-          onChange={(e) => setUserAnswer(e.target.value)}
-          className="w-24 border border-gray-300 px-2 py-1 rounded text-black text-center"
-          disabled={isDisabled}
-          placeholder="Answer"
-        />
-        <button
-          onClick={checkAnswer}
-          className={`px-4 py-1 rounded ${
-            isDisabled ? 'bg-gray-600 cursor-not-allowed' : 'bg-black text-white hover:bg-gray-800'
-          }`}
-          disabled={isDisabled}
-        >
-          Submit
-        </button>
-      </div>
-    </>
-  )}
-</div>
-
+    </div>
   );
 }
