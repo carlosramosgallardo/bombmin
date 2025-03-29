@@ -35,77 +35,86 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   }, []);
 
   const generateNewProblem = () => {
-    const gameTypes = ['arithmetic', 'geometric', 'missingAngle', 'equation', 'missingFactor', 'digitSum'];
+    const gameTypes = ['normal', 'primes', 'hex', 'mixed', 'divisionClean'];
     const randomGame = gameTypes[Math.floor(Math.random() * gameTypes.length)];
   
     let sequence = [];
     let answer;
     let patternType = randomGame;
   
-    if (randomGame === 'arithmetic') {
-      const start = Math.floor(Math.random() * 50) + 1;
-      const step = Math.floor(Math.random() * 10) + 1;
-      for (let i = 0; i < 4; i++) {
-        sequence.push(start + i * step);
-      }
-      answer = start + 4 * step;
+    const getRandomPrime = () => {
+      const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41];
+      return primes[Math.floor(Math.random() * primes.length)];
+    };
+  
+    const getRandomOperator = () => {
+      return ['+', '-', '*', '/'][Math.floor(Math.random() * 4)];
+    };
+  
+    if (randomGame === 'normal') {
+      const a = Math.floor(Math.random() * 50) + 1;
+      const b = Math.floor(Math.random() * 50) + 1;
+      const op = getRandomOperator();
+  
+      let expr = `${a} ${op} ${b}`;
+      answer = eval(expr);
+      if (op === '/') answer = Math.floor(answer); // keep it whole
+      sequence = [`${a} ${op} ${b} = ?`];
     }
   
-    if (randomGame === 'geometric') {
-      const base = Math.floor(Math.random() * 5) + 2;
-      const ratio = Math.floor(Math.random() * 3) + 2;
-      for (let i = 0; i < 4; i++) {
-        sequence.push(base * Math.pow(ratio, i));
-      }
-      answer = base * Math.pow(ratio, 4);
+    if (randomGame === 'primes') {
+      const a = getRandomPrime();
+      const b = getRandomPrime();
+      const op = getRandomOperator();
+  
+      let expr = `${a} ${op} ${b}`;
+      answer = eval(expr);
+      if (op === '/') answer = Math.floor(answer);
+      sequence = [`${a} ${op} ${b} = ?`];
     }
   
-    if (randomGame === 'missingAngle') {
-      const a = Math.floor(Math.random() * 80) + 20;
-      const b = Math.floor(Math.random() * (180 - a - 20)) + 10;
-      const c = 180 - a - b;
-      sequence = [`A triangle has angles ${a}° and ${b}°. What is the missing angle?`];
-      answer = c;
+    if (randomGame === 'hex') {
+      const a = Math.floor(Math.random() * 15) + 1;
+      const b = Math.floor(Math.random() * 15) + 1;
+      const op = getRandomOperator();
+      const expr = `${a} ${op} ${b}`;
+      answer = eval(expr);
+      if (op === '/') answer = Math.floor(answer);
+  
+      const hexA = '0x' + a.toString(16).toUpperCase();
+      const hexB = '0x' + b.toString(16).toUpperCase();
+  
+      sequence = [`${hexA} ${op} ${hexB} = ? (decimal)`];
     }
   
-    if (randomGame === 'equation') {
-      const x = Math.floor(Math.random() * 20) + 1;
-      const m = Math.floor(Math.random() * 10) + 1;
-      const b = Math.floor(Math.random() * 10);
-      const result = m * x + b;
-      sequence = [`Solve for x: ${m}x + ${b} = ${result}`];
-      answer = x;
+    if (randomGame === 'mixed') {
+      const a = parseInt(Math.floor(Math.random() * 15) + 1); // hex as decimal
+      const b = getRandomPrime();
+      const op = getRandomOperator();
+  
+      let expr = `${a} ${op} ${b}`;
+      answer = eval(expr);
+      if (op === '/') answer = Math.floor(answer);
+  
+      const hexA = '0x' + a.toString(16).toUpperCase();
+      sequence = [`${hexA} ${op} ${b} = ? (decimal)`];
     }
   
-    if (randomGame === 'missingFactor') {
-      const a = Math.floor(Math.random() * 12) + 1;
+    if (randomGame === 'divisionClean') {
       const b = Math.floor(Math.random() * 12) + 1;
-      const hideLeft = Math.random() < 0.5;
-      const product = a * b;
-  
-      sequence = hideLeft
-        ? [`? × ${b} = ${product}`]
-        : [`${a} × ? = ${product}`];
-  
-      answer = hideLeft ? a : b;
+      const a = b * (Math.floor(Math.random() * 10) + 1); // ensure divisible
+      answer = a / b;
+      sequence = [`${a} ÷ ${b} = ?`];
     }
   
-    if (randomGame === 'digitSum') {
-      const num = Math.floor(Math.random() * 9000) + 1000;
-      const sum = num
-        .toString()
-        .split('')
-        .reduce((acc, d) => acc + parseInt(d), 0);
-      sequence = [`What is the sum of the digits of ${num}?`];
-      answer = sum;
-    }
-  
+    answer = Math.floor(answer); // always clean whole numbers
     setProblem({ sequence, answer, patternType });
     setUserAnswer('');
     setElapsedTime(0);
     setGameCompleted(false);
     setGameData(null);
   };
+  
     
   
   const startSolveTimer = () => {
