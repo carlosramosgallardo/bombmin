@@ -1,153 +1,160 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  CartesianGrid
-} from 'recharts'
+import { useState, useEffect, useRef } from 'react';
 
-export default function TokenChart() {
-  const [rawData, setRawData] = useState([])
-  const [range, setRange] = useState('24h')
+export default function Board({ account, setGameMessage, setGameCompleted, setGameData }) {
+  const [problem, setProblem] = useState(null);
+  const [userAnswer, setUserAnswer] = useState('');
+  const [elapsedTime, setElapsedTime] = useState(0);
+  const [preGameCountdown, setPreGameCountdown] = useState(3);
+  const [isDisabled, setIsDisabled] = useState(true);
+
+  const PARTICIPATION_PRICE = parseFloat(process.env.NEXT_PUBLIC_PARTICIPATION_PRICE);
+  const preGameIntervalRef = useRef(null);
+  const solveIntervalRef = useRef(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/token-history')
-        const json = await res.json()
+    generateNewProblem();
 
-        if (!res.ok) {
-          console.error('Token history API error:', json.error)
-          return
+    // Pre-game countdown: 3 seconds
+    preGameIntervalRef.current = setInterval(() => {
+      setPreGameCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(preGameIntervalRef.current);
+          startSolveTimer();
+          return 0;
         }
+        return prev - 1;
+      });
+    }, 1000);
 
-        setRawData(json)
-      } catch (err) {
-        console.error('Unexpected error fetching token history:', err)
+    return () => {
+      clearInterval(preGameIntervalRef.current);
+      clearInterval(solveIntervalRef.current);
+    };
+  }, []);
+
+  const generateNewProblem = () => {
+    const num1 = Math.floor(Math.random() * 50) + 10;
+    const num2 = Math.floor(Math.random() * 20) + 5;
+    const operation = ['+', '-', '*'][Math.floor(Math.random() * 3)];
+
+    let result;
+    if (operation === '+') result = num1 + num2;
+    if (operation === '-') result = num1 - num2;
+    if (operation === '*') result = num1 * num2;
+
+    setProblem({ num1, num2, operation, result });
+    setUserAnswer('');
+    setElapsedTime(0);
+    setGameCompleted(false);
+    setGameData(null);
+  };
+
+  const startSolveTimer = () => {
+    setIsDisabled(false);
+    const startTime = Date.now();
+
+    solveIntervalRef.current = setInterval(() => {
+      const timePassed = Date.now() - startTime;
+      setElapsedTime(timePassed);
+
+      if (timePassed >= 10000) {
+        clearInterval(solveIntervalRef.current);
+        setGameMessage('⏳ Time exceeded! No mining reward.');
+        finalizeGame(false, 0);
       }
-    }
+    }, 100);
+  };
 
-    fetchData()
-  }, [])
+  const checkAnswer = () => {
+    if (!problem || isDisabled) return;
 
-  const getVisibleData = () => {
-    if (!rawData || rawData.length === 0) return []
+    clearInterval(solveIntervalRef.current);
+    const totalTime = elapsedTime;
+    const correct = parseInt(userAnswer, 10) === problem.result;
 
-    const now = new Date()
-    const filtered = rawData.filter(({ hour }) => {
-      const h = new Date(hour)
-      const diffHours = (now - h) / (1000 * 60 * 60)
+    let miningAmount = 0;
 
-      if (range === '24h') return diffHours <= 24
-      if (range === '7d') return diffHours <= 24 * 7
-      if (range === '30d') return diffHours <= 24 * 30
-      return true
-    })
+    if (correct) {
+      if (totalTime <= 5000) {
+        // Positive reward based on speed
+        miningAmount = PARTICIPATION_PRICE * ((5000 - totalTime) / 5000);
+      } else {
+        // Penalty for slow answer (up to -10% of token value)
+        const overTime = Math.min(totalTime - 5000, 5000);
+        const penaltyRatio = overTime / 5000;
+        miningAmount = -PARTICIPATION_PRICE * 0.10 * penaltyRatio;
+      }
 
-    if (range === '24h') {
-      return filtered.map((entry) => ({
-        time: new Date(entry.hour).toLocaleTimeString('en-GB', {
-          hour: '2-digit',
-          minute: '2-digit',
-          timeZone: 'UTC'
-        }),
-        value: parseFloat(entry.cumulative_reward)
-      }))
+      const displayAmount =
+        Math.abs(miningAmount) < 0.00000001
+          ? '< 0.00000001'
+          : miningAmount.toFixed(8);
+
+      const message =
+        miningAmount >= 0
+          ? `Inject Value now: ${displayAmount}`
+          : `Inject Value now: ${displayAmount}`;
+
+      setGameMessage(message);
     } else {
-      const grouped = {}
-      filtered.forEach(({ hour, cumulative_reward }) => {
-        const day = new Date(hour).toISOString().slice(0, 10)
-        grouped[day] = parseFloat(cumulative_reward)
-      })
-
-      return Object.entries(grouped).map(([day, value]) => ({
-        time: day,
-        value
-      }))
+      setGameMessage('❌ Incorrect! No mining reward.');
     }
-  }
 
-  const data = getVisibleData()
+    finalizeGame(correct, miningAmount);
+  };
+
+  const finalizeGame = (isCorrect, miningAmount) => {
+    setIsDisabled(true);
+    setGameCompleted(true);
+
+    setGameData({
+      wallet: account,
+      problem: `${problem.num1} ${problem.operation} ${problem.num2}`,
+      user_answer: userAnswer,
+      is_correct: isCorrect,
+      time_ms: elapsedTime,
+      mining_reward: miningAmount,
+    });
+  };
 
   return (
-    <div className="w-full mt-10 bg-gray-900 p-4 rounded-xl shadow-lg">
-      <div className="bg-[#0b0f19] rounded-xl overflow-hidden">
-        <div className="text-sm text-right mb-3 p-2">
-          <label htmlFor="range" className="mr-2 text-gray-300">
-            View range:
-          </label>
-          <select
-            id="range"
-            value={range}
-            onChange={(e) => setRange(e.target.value)}
-            className="bg-black border border-white p-1 rounded text-white"
-          >
-            <option value="24h">Last 24h</option>
-            <option value="7d">Last 7 days</option>
-            <option value="30d">Last 30 days</option>
-            <option value="all">All time</option>
-          </select>
-        </div>
-
-        {data.length > 0 ? (
-          <ResponsiveContainer width="100%" height={300}>
-            <AreaChart data={data}>
-              <defs>
-                <linearGradient id="colorToken" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#22d3ee" stopOpacity={0.9} />
-                  <stop offset="70%" stopColor="#22d3ee" stopOpacity={0.1} />
-                </linearGradient>
-              </defs>
-
-              <XAxis
-                dataKey="time"
-                tick={{ fill: '#ccc', fontSize: 12 }}
-                axisLine={false}
-                tickLine={false}
-              />
-              <YAxis
-                tickFormatter={(val) => `${val} ETH`}
-                tick={{ fill: '#ccc', fontSize: 12 }}
-                axisLine={false}
-                tickLine={false}
-                domain={['auto', 'auto']}
-              />
-              <CartesianGrid strokeDasharray="3 3" strokeOpacity={0.05} />
-              <Tooltip
-                contentStyle={{
-                  backgroundColor: '#111827',
-                  borderRadius: '8px',
-                  border: 'none',
-                  color: '#e5e7eb'
-                }}
-                labelStyle={{ color: '#22d3ee' }}
-                formatter={(value) => [`${value} ETH`, 'Value']}
-                labelFormatter={(label) => `Time: ${label}`}
-              />
-              <Area
-                type="monotone"
-                dataKey="value"
-                stroke="#22d3ee"
-                fillOpacity={1}
-                fill="url(#colorToken)"
-                strokeWidth={2}
-                dot={false}
-                isAnimationActive
-              />
-            </AreaChart>
-          </ResponsiveContainer>
-        ) : (
-          <p className="text-center text-sm text-gray-400">
-            No chart data available yet.
+    <div className="w-full mt-10 border-2 border-blue-500 p-4 rounded-xl shadow-lg">
+      {problem && (
+        <>
+          <p className="text-xl">
+            {problem.num1} {problem.operation} {problem.num2} = ?
           </p>
-        )}
-      </div>
-    </div>
-  )
-}
+          <p className="text-sm text-gray-400">
+            Time elapsed: <span className="text-yellow-300">{preGameCountdown > 0 ? 0 : elapsedTime} ms</span>
+          </p>
 
+          {preGameCountdown > 0 && (
+            <p className="text-gray-500 mt-2">Please wait {preGameCountdown} second(s)...</p>
+          )}
+
+          <div className="flex justify-center items-center gap-2 mt-4">
+            <input
+              type="number"
+              value={userAnswer}
+              onChange={(e) => setUserAnswer(e.target.value)}
+              className="w-24 border border-gray-300 px-2 py-1 rounded text-black text-center"
+              disabled={isDisabled}
+              placeholder="Answer"
+            />
+            <button
+              onClick={checkAnswer}
+              className={`px-4 py-1 rounded ${
+                isDisabled ? 'bg-gray-600 cursor-not-allowed' : 'bg-black text-white hover:bg-gray-800'
+              }`}
+              disabled={isDisabled}
+            >
+              Submit
+            </button>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
