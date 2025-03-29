@@ -35,85 +35,78 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   }, []);
 
   const generateNewProblem = () => {
-    const gameTypes = ['aritmetica', 'geometrica', 'factores', 'angulo', 'ecuacion', 'producto'];
+    const gameTypes = ['arithmetic', 'geometric', 'missingAngle', 'equation', 'missingFactor', 'digitSum'];
     const randomGame = gameTypes[Math.floor(Math.random() * gameTypes.length)];
   
     let sequence = [];
     let answer;
     let patternType = randomGame;
   
-    if (randomGame === 'aritmetica') {
-      const first = Math.floor(Math.random() * 20) + 1;
-      const diff = Math.floor(Math.random() * 10) + 1;
+    if (randomGame === 'arithmetic') {
+      const start = Math.floor(Math.random() * 50) + 1;
+      const step = Math.floor(Math.random() * 10) + 1;
       for (let i = 0; i < 4; i++) {
-        sequence.push(first + diff * i);
+        sequence.push(start + i * step);
       }
-      answer = first + diff * 4;
+      answer = start + 4 * step;
     }
   
-    if (randomGame === 'geometrica') {
-      const first = Math.floor(Math.random() * 10) + 1;
-      const factor = Math.floor(Math.random() * 3) + 2;
+    if (randomGame === 'geometric') {
+      const base = Math.floor(Math.random() * 5) + 2;
+      const ratio = Math.floor(Math.random() * 3) + 2;
       for (let i = 0; i < 4; i++) {
-        sequence.push(first * Math.pow(factor, i));
+        sequence.push(base * Math.pow(ratio, i));
       }
-      answer = first * Math.pow(factor, 4);
+      answer = base * Math.pow(ratio, 4);
     }
   
-    if (randomGame === 'factores') {
-      const num = Math.floor(Math.random() * 100) + 20;
-      let count = 0;
-      let n = num;
-      for (let i = 2; i <= n; i++) {
-        while (n % i === 0) {
-          count++;
-          n /= i;
-        }
-      }
-      sequence = [`¿Cuántos factores primos tiene ${num}?`];
-      answer = count;
+    if (randomGame === 'missingAngle') {
+      const a = Math.floor(Math.random() * 80) + 20;
+      const b = Math.floor(Math.random() * (180 - a - 20)) + 10;
+      const c = 180 - a - b;
+      sequence = [`A triangle has angles ${a}° and ${b}°. What is the missing angle?`];
+      answer = c;
     }
   
-    if (randomGame === 'angulo') {
-      const angle1 = Math.floor(Math.random() * 80) + 30;
-      const angle2 = Math.floor(Math.random() * (180 - angle1 - 30)) + 20;
-      const missing = 180 - angle1 - angle2;
-      sequence = [`Triángulo con ángulos ${angle1}° y ${angle2}°. ¿Cuánto falta?`];
-      answer = missing;
-    }
-  
-    if (randomGame === 'ecuacion') {
-      const x = Math.floor(Math.random() * 10) + 1;
-      const a = Math.floor(Math.random() * 5) + 1;
-      const b = Math.floor(Math.random() * 10) + 1;
-      const c = a * x + b;
-      sequence = [`Resuelve: ${a}x + ${b} = ${c}`];
+    if (randomGame === 'equation') {
+      const x = Math.floor(Math.random() * 20) + 1;
+      const m = Math.floor(Math.random() * 10) + 1;
+      const b = Math.floor(Math.random() * 10);
+      const result = m * x + b;
+      sequence = [`Solve for x: ${m}x + ${b} = ${result}`];
       answer = x;
     }
   
-    if (randomGame === 'producto') {
-      const a = Math.floor(Math.random() * 10) + 1;
-      const b = Math.floor(Math.random() * 10) + 1;
-      const product = a * b;
+    if (randomGame === 'missingFactor') {
+      const a = Math.floor(Math.random() * 12) + 1;
+      const b = Math.floor(Math.random() * 12) + 1;
       const hideLeft = Math.random() < 0.5;
+      const product = a * b;
   
-      if (hideLeft) {
-        sequence = [`? x ${b} = ${product}`];
-        answer = a;
-      } else {
-        sequence = [`${a} x ? = ${product}`];
-        answer = b;
-      }
+      sequence = hideLeft
+        ? [`? × ${b} = ${product}`]
+        : [`${a} × ? = ${product}`];
+  
+      answer = hideLeft ? a : b;
     }
   
-    // Guardar problema
+    if (randomGame === 'digitSum') {
+      const num = Math.floor(Math.random() * 9000) + 1000;
+      const sum = num
+        .toString()
+        .split('')
+        .reduce((acc, d) => acc + parseInt(d), 0);
+      sequence = [`What is the sum of the digits of ${num}?`];
+      answer = sum;
+    }
+  
     setProblem({ sequence, answer, patternType });
     setUserAnswer('');
     setElapsedTime(0);
     setGameCompleted(false);
     setGameData(null);
   };
-  
+    
   
   const startSolveTimer = () => {
     setIsDisabled(false);
