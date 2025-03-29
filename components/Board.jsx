@@ -35,23 +35,23 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   }, []);
 
   const generateNewProblem = () => {
-    // Escoge aleatoriamente un patrón entre aritmético, geométrico o alterno
-    const patternType = ['aritmético', 'geométrico', 'alterno'][Math.floor(Math.random() * 3)];
+    const gameTypes = ['aritmetica', 'geometrica', 'factores', 'angulo', 'ecuacion', 'producto'];
+    const randomGame = gameTypes[Math.floor(Math.random() * gameTypes.length)];
   
     let sequence = [];
     let answer;
-    
-    if (patternType === 'aritmético') {
+    let patternType = randomGame;
+  
+    if (randomGame === 'aritmetica') {
       const first = Math.floor(Math.random() * 20) + 1;
       const diff = Math.floor(Math.random() * 10) + 1;
-      // Genera 4 números y el quinto es el que se debe adivinar
       for (let i = 0; i < 4; i++) {
         sequence.push(first + diff * i);
       }
       answer = first + diff * 4;
     }
-    
-    if (patternType === 'geométrico') {
+  
+    if (randomGame === 'geometrica') {
       const first = Math.floor(Math.random() * 10) + 1;
       const factor = Math.floor(Math.random() * 3) + 2;
       for (let i = 0; i < 4; i++) {
@@ -59,37 +59,62 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
       }
       answer = first * Math.pow(factor, 4);
     }
-    
-    if (patternType === 'alterno') {
-      // Ejemplo: en posiciones impares se incrementa en 1, en posiciones pares se duplica el valor anterior
-      const start = Math.floor(Math.random() * 10) + 1;
-      sequence.push(start);
-      for (let i = 1; i < 4; i++) {
-        if (i % 2 === 0) {
-          // posición par: duplicar el número anterior
-          sequence.push(sequence[i - 1] * 2);
-        } else {
-          // posición impar: incrementar en 1 el valor anterior
-          sequence.push(sequence[i - 1] + 1);
+  
+    if (randomGame === 'factores') {
+      const num = Math.floor(Math.random() * 100) + 20;
+      let count = 0;
+      let n = num;
+      for (let i = 2; i <= n; i++) {
+        while (n % i === 0) {
+          count++;
+          n /= i;
         }
       }
-      // Calcula el siguiente número siguiendo la misma lógica
-      if (sequence.length % 2 === 0) {
-        answer = sequence[sequence.length - 1] + 1;
+      sequence = [`¿Cuántos factores primos tiene ${num}?`];
+      answer = count;
+    }
+  
+    if (randomGame === 'angulo') {
+      const angle1 = Math.floor(Math.random() * 80) + 30;
+      const angle2 = Math.floor(Math.random() * (180 - angle1 - 30)) + 20;
+      const missing = 180 - angle1 - angle2;
+      sequence = [`Triángulo con ángulos ${angle1}° y ${angle2}°. ¿Cuánto falta?`];
+      answer = missing;
+    }
+  
+    if (randomGame === 'ecuacion') {
+      const x = Math.floor(Math.random() * 10) + 1;
+      const a = Math.floor(Math.random() * 5) + 1;
+      const b = Math.floor(Math.random() * 10) + 1;
+      const c = a * x + b;
+      sequence = [`Resuelve: ${a}x + ${b} = ${c}`];
+      answer = x;
+    }
+  
+    if (randomGame === 'producto') {
+      const a = Math.floor(Math.random() * 10) + 1;
+      const b = Math.floor(Math.random() * 10) + 1;
+      const product = a * b;
+      const hideLeft = Math.random() < 0.5;
+  
+      if (hideLeft) {
+        sequence = [`? x ${b} = ${product}`];
+        answer = a;
       } else {
-        answer = sequence[sequence.length - 1] * 2;
+        sequence = [`${a} x ? = ${product}`];
+        answer = b;
       }
     }
-    
-    // Guarda el problema y la respuesta correcta.
-    // Se guarda la secuencia, el valor correcto y el tipo de patrón.
+  
+    // Guardar problema
     setProblem({ sequence, answer, patternType });
     setUserAnswer('');
     setElapsedTime(0);
     setGameCompleted(false);
     setGameData(null);
   };
-
+  
+  
   const startSolveTimer = () => {
     setIsDisabled(false);
     const startTime = Date.now();
