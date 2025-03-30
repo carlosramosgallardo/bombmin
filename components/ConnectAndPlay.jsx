@@ -108,7 +108,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
       {!isConnected ? (
         <button
           onClick={isAndroid ? handleMobileConnect : open}
-          className="px-4 py-2 mt-2 ml-2 rounded font-mono border border-[#22d3ee] bg-[#22d3ee] text-[#0b0f19] hover:bg-[#1e293b] transition"
+          className="inline-block px-4 py-2 mt-2 rounded font-mono border border-[#22d3ee] bg-[#22d3ee] text-[#0b0f19] hover:bg-[#1e293b] transition"
         >
           Connect Wallet
         </button>
@@ -116,7 +116,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
         <button
           onClick={handlePay}
           disabled={!isEligible || isPaying}
-          className={`px-4 py-2 mt-2 ml-2 rounded font-mono border border-[#22d3ee] transition ${
+          className={`inline-block px-4 py-2 mt-2 rounded font-mono border border-[#22d3ee] transition ${
             !isEligible || isPaying
               ? 'bg-slate-700 cursor-not-allowed text-gray-300'
               : 'bg-[#22d3ee] text-[#0b0f19] hover:bg-[#1e293b]'
