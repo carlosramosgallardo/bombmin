@@ -95,7 +95,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
       // Si no hay wallet conectada, muestra mensaje alternativo
       const message = account
       ? `Inject MM3 now: ${displayAmount}`
-      : `Connect your wallet to proceed with injecting MM3: ${displayAmount}`;    
+      : `Connect your wallet to proceed with injecting MM3: ${displayAmount}. Metamask wallets are free, and MathsMine3 is completely free to play. No funds needed.`;    
       setGameMessage(message);
     } else {
       setGameMessage('❌ Incorrect! No mining reward.');
