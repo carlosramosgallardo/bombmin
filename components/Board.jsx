@@ -116,43 +116,50 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   };
 
   return (
-    <div className="w-full mt-10 border border-[#22d3ee] border-dotted bg-[#0b0f19] p-4 rounded-xl shadow-lg text-center">
-      {problem && (
-        <>
-          <p className="text-xl font-mono text-[#22d3ee]">
-            {problem.num1} {problem.operation} {problem.num2} = ?
-          </p>
-          <p className="text-sm text-[#22d3ee]">
-            Time elapsed: <span className="text-yellow-300">{preGameCountdown > 0 ? 0 : elapsedTime} ms</span>
-          </p>
+    <div className="w-full mt-10 bg-gray-900 p-4 rounded-xl shadow-lg text-center">
+      <div className="bg-[#0b0f19] p-4 rounded-xl">
+        {problem && (
+          <>
+            <p className="text-xl font-mono text-[#22d3ee]">
+              {problem.num1} {problem.operation} {problem.num2} = ?
+            </p>
+            <p className="text-sm text-[#22d3ee]">
+              Time elapsed:{' '}
+              <span className="text-yellow-300">
+                {preGameCountdown > 0 ? 0 : elapsedTime} ms
+              </span>
+            </p>
 
-          {preGameCountdown > 0 && (
-            <p className="mt-2 text-[#22d3ee]">Please wait {preGameCountdown} second(s)...</p>
-          )}
+            {preGameCountdown > 0 && (
+              <p className="mt-2 text-[#22d3ee]">
+                Please wait {preGameCountdown} second(s)...
+              </p>
+            )}
 
-          <div className="flex justify-center items-center gap-2 mt-4">
-            <input
-              type="number"
-              value={userAnswer}
-              onChange={(e) => setUserAnswer(e.target.value)}
-              className="w-24 border border-dotted border-[#22d3ee] bg-transparent px-2 py-1 rounded text-[#22d3ee] text-center font-mono focus:outline-none"
-              disabled={isDisabled}
-              placeholder="Answer"
-            />
-            <button
-              onClick={checkAnswer}
-              className={`px-4 py-1 rounded font-mono border border-dotted border-[#22d3ee] ${
-                isDisabled
-                  ? 'bg-gray-600 cursor-not-allowed text-gray-300'
-                  : 'bg-[#22d3ee] text-[#0b0f19] hover:bg-[#1e293b]'
-              }`}
-              disabled={isDisabled}
-            >
-              Submit
-            </button>
-          </div>
-        </>
-      )}
+            <div className="flex justify-center items-center gap-2 mt-4">
+              <input
+                type="number"
+                value={userAnswer}
+                onChange={(e) => setUserAnswer(e.target.value)}
+                className="w-24 border border-[#22d3ee] bg-transparent px-2 py-1 rounded text-[#22d3ee] text-center font-mono focus:outline-none"
+                disabled={isDisabled}
+                placeholder="Answer"
+              />
+              <button
+                onClick={checkAnswer}
+                className={`px-4 py-1 rounded font-mono border border-[#22d3ee] ${
+                  isDisabled
+                    ? 'bg-gray-600 cursor-not-allowed text-gray-300'
+                    : 'bg-[#22d3ee] text-[#0b0f19] hover:bg-[#1e293b]'
+                }`}
+                disabled={isDisabled}
+              >
+                Submit
+              </button>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }
