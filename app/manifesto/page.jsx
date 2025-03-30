@@ -39,7 +39,7 @@ export default function ManifestoPage() {
 
         <section className="mb-8">
           <p>
-            The platform is completely transparent, providing a public <a href="/api" className="text-blue-400 underline">API</a>: that lets you query, at any moment, real-time and historical data on the token’s value, wallet contributions, polls, and voting results.
+            The platform is completely transparent, providing a public <a href="/api" className="text-blue-400 underline">API</a> that lets you query, at any moment, real-time and historical data on the token’s value, wallet contributions, polls, and voting results.
           </p>
         </section>
 
