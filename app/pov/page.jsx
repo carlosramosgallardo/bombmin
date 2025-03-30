@@ -34,7 +34,7 @@ function PoVClientComponent() {
   useEffect(() => {
     const fetchPollsAndVotes = async () => {
       try {
-        // Consulta la tabla polls incluyendo el campo wallet_address.
+        // Query polls with the wallet_address field.
         const { data: polls, error: pollError } = await supabase
           .from('polls')
           .select('id, question, wallet_address')
@@ -43,14 +43,14 @@ function PoVClientComponent() {
 
         if (pollError) throw pollError;
 
-        // Consulta la tabla poll_votes para obtener los votos.
+        // Query poll_votes to get vote details.
         const { data: votes, error: votesError } = await supabase
           .from('poll_votes')
           .select('*');
 
         if (votesError) throw votesError;
 
-        // Agrupar los votos por poll_id.
+        // Group votes by poll_id.
         const groupedVotes = votes.reduce((acc, vote) => {
           if (!acc[vote.poll_id]) acc[vote.poll_id] = [];
           acc[vote.poll_id].push(vote);
@@ -106,9 +106,9 @@ function PoVClientComponent() {
   };
 
   return (
-    <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
+    <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-sm font-mono bg-black">
       <div className="max-w-3xl w-full text-center">
-        <h1 className="text-3xl font-bold mb-8">Proof of Vote</h1>
+        <h1 className="text-3xl font-bold mb-8 text-white">Proof of Vote</h1>
 
         {pollData.length === 0 ? (
           <p className="text-gray-400">Loading poll data...</p>
@@ -116,29 +116,32 @@ function PoVClientComponent() {
           <>
             {eligibilityChecked &&
               (!canVote ? (
-                <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
+                <p className="text-xs text-gray-400 italic tracking-wide mb-4">
                   Connected as {address}. You must have mined at least 0.00001 MM3 to vote.
                 </p>
               ) : (
-                <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
+                <p className="text-xs text-gray-400 italic tracking-wide mb-4">
                   Connected as: {address}
                 </p>
               ))}
 
             {pollData.map((poll, index) => {
-              // Obtenemos los votos para cada poll.
+              // Get votes for each poll.
               const votes = resultsData[poll.id] || [];
               const totalVotes = votes.length;
-              // Contabilizamos votos para "yes" y "no".
+              // Tally votes for "yes" and "no".
               const voteCounts = votes.reduce((acc, v) => {
                 acc[v.vote] = (acc[v.vote] || 0) + 1;
                 return acc;
               }, {});
 
               return (
-                <div key={poll.id} className="mb-16">
-                  <h2 className="text-lg font-medium mb-1">{poll.question}</h2>
-                  <p className="text-xs text-gray-500 mb-4">
+                <div
+                  key={poll.id}
+                  className="mb-16 p-6 bg-blue-800 border border-blue-600 rounded-lg shadow-lg"
+                >
+                  <h2 className="text-lg font-medium mb-1 text-white">{poll.question}</h2>
+                  <p className="text-xs text-blue-200 mb-4">
                     Created by: {poll.wallet_address}
                   </p>
 
@@ -167,8 +170,8 @@ function PoVClientComponent() {
                         return (
                           <div key={option} className="text-left">
                             <div className="flex justify-between text-sm mb-1">
-                              <span className="capitalize">{option}</span>
-                              <span>
+                              <span className="capitalize text-blue-100">{option}</span>
+                              <span className="text-blue-100">
                                 {count} votes ({percentage}%)
                               </span>
                             </div>
