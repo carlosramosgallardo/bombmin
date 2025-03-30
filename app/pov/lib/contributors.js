@@ -2,7 +2,7 @@ import supabase from '@/lib/supabaseClient';
 
 /**
  * Checks if a given wallet is eligible to vote in Proof of Vote.
- * It queries the `leaderboard` view, which sums ETH mined per wallet.
+ * It queries the `leaderboard` view, which sums MM3 mined per wallet.
  *
  * @param {string} wallet - The wallet address (0x...)
  * @returns {Promise<boolean>} - true if total_eth >= 0.00001

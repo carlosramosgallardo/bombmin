@@ -114,7 +114,7 @@ function PoVClientComponent() {
             {eligibilityChecked &&
               (!canVote ? (
                 <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
-                  {address}: You must have mined at least 0.00001 ETH to vote.
+                  {address}: You must have mined at least 0.00001 MM3 to vote.
                 </p>
               ) : (
                 <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">

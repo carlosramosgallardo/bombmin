@@ -61,7 +61,7 @@ export default function Leaderboard() {
             Wallet
           </th>
           <th className="border border-[#22d3ee] px-4 py-2 text-right font-mono">
-            ETH
+           MM3
           </th>
         </tr>
       </thead>

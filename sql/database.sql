@@ -10,7 +10,7 @@ CREATE TABLE games (
   created_at TIMESTAMP DEFAULT NOW()
 );
 
--- View to calculate the leaderboard: total ETH mined per normalized wallet
+-- View to calculate the leaderboard: total MM3 mined per normalized wallet
 CREATE OR REPLACE VIEW leaderboard AS
 SELECT
   LOWER(wallet) AS wallet,
