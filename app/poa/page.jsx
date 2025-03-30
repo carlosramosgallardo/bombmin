@@ -99,7 +99,7 @@ function PoAClientComponent() {
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
       <div className="max-w-3xl w-full text-center">
-        <h1 className="text-3xl font-bold mb-8">Proof of Ask (PoA)</h1>
+        <h1 className="text-3xl font-bold mb-8">Proof of Ask</h1>
 
         {eligibilityChecked && !canAsk && (
           <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">

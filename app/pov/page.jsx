@@ -34,9 +34,10 @@ function PoVClientComponent() {
   useEffect(() => {
     const fetchPollsAndResults = async () => {
       try {
+        // Query polls with the wallet_address field as well.
         const { data: polls, error: pollError } = await supabase
           .from('polls')
-          .select('id, question')
+          .select('id, question, wallet_address')
           .eq('active', true)
           .order('created_at', { ascending: false });
 
@@ -128,7 +129,11 @@ function PoVClientComponent() {
 
               return (
                 <div key={poll.id} className="mb-16">
-                  <h2 className="text-lg font-medium mb-4">{poll.question}</h2>
+                  <h2 className="text-lg font-medium mb-1">{poll.question}</h2>
+                  {/* Display the wallet address of the poll creator */}
+                  <p className="text-xs text-gray-500 mb-4">
+                    Created by: {poll.wallet_address}
+                  </p>
 
                   {eligibilityChecked && canVote && (
                     <div className="flex justify-center gap-4 mb-4">
