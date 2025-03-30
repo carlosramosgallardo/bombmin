@@ -34,7 +34,7 @@ function PoVClientComponent() {
   useEffect(() => {
     const fetchPollsAndResults = async () => {
       try {
-        // Query polls with the wallet_address field as well.
+        // Query polls with the wallet_address field.
         const { data: polls, error: pollError } = await supabase
           .from('polls')
           .select('id, question, wallet_address')
@@ -43,12 +43,14 @@ function PoVClientComponent() {
 
         if (pollError) throw pollError;
 
+        // Query the poll_results view.
         const { data: results, error: resultsError } = await supabase
           .from('poll_results')
           .select('*');
 
         if (resultsError) throw resultsError;
 
+        // Group results by poll_id.
         const groupedResults = results.reduce((acc, row) => {
           if (!acc[row.poll_id]) acc[row.poll_id] = [];
           acc[row.poll_id].push(row);
@@ -130,7 +132,6 @@ function PoVClientComponent() {
               return (
                 <div key={poll.id} className="mb-16">
                   <h2 className="text-lg font-medium mb-1">{poll.question}</h2>
-                  {/* Display the wallet address of the poll creator */}
                   <p className="text-xs text-gray-500 mb-4">
                     Created by: {poll.wallet_address}
                   </p>
@@ -166,7 +167,9 @@ function PoVClientComponent() {
                             </div>
                             <div className="w-full bg-gray-700 rounded h-3">
                               <div
-                                className={`h-3 rounded ${r.vote === 'yes' ? 'bg-[#22d3ee]' : 'bg-[#1e86d1]'}`}
+                                className={`h-3 rounded ${
+                                  r.vote === 'yes' ? 'bg-[#22d3ee]' : 'bg-[#1e86d1]'
+                                }`}
                                 style={{ width: `${percentage}%` }}
                               />
                             </div>
