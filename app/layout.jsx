@@ -4,11 +4,11 @@ import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'MathsMine3',
-  description: 'Solve fast to mine! A fake Web3 mining game where your speed changes everything.',
+  description: 'The fake Web3 platform where mining means solving math challenges and people around the world propose and vote on ideas freely, openly, and transparently.',
   metadataBase: new URL('https://mathsmine3.xyz'),
   openGraph: {
     title: 'MathsMine3',
-    description: 'Solve fast to mine! A fake Web3 mining game where your speed changes everything.',
+    description: 'The fake Web3 platform where mining means solving math challenges and people around the world propose and vote on ideas freely, openly, and transparently.',
     url: 'https://mathsmine3.xyz',
     siteName: 'MathsMine3',
     images: [
@@ -24,7 +24,7 @@ export const metadata = {
     card: 'summary_large_image',
     creator: '@FreakingAI',
     title: 'MathsMine3',
-    description: 'Solve fast to mine! A fake Web3 mining game where your speed changes everything.',
+    description: 'The fake Web3 platform where mining means solving math challenges and people around the world propose and vote on ideas freely, openly, and transparently.',
     images: ['/MM.jpg'],
   },
 };

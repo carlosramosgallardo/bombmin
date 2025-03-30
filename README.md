@@ -2,15 +2,11 @@
 
 ![MathsMine3 logo](public/MM.jpg)
 
-*Solve fast to mine! A fake Web3 mining game where your speed changes everything.*
-
 ---
 
 ## What is MathsMine3?
 
-**MathsMine3** is a social experiment and educational game that simulates token mining based on how fast you can solve math problems. Your performance (and speed!) directly impacts a fictional token’s value.
-
-No real blockchain. No actual tokens. Just Web3-style logic, wallet connection, and math challenges.
+The fake Web3 platform where mining means solving math challenges and people around the world propose and vote on ideas freely, openly, and transparently.
 
 ---
 
