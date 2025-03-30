@@ -1,6 +1,3 @@
-Aquí tienes el README formateado en Markdown para Canvas, sin cortes:
-
-```markdown
 # MathsMine3
 
 ![MathsMine3 logo](public/MM.jpg)
@@ -157,6 +154,3 @@ MathsMine3 is **not** a financial product.
 ## License
 
 MIT © [botsandpods@gmail.com](https://github.com/carlosramosgallardo)
-```
-
-Este README está pensado para que no se corte en Canvas y refleje la estructura y características actuales del proyecto. Puedes ajustarlo según tus necesidades.
