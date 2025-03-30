@@ -37,7 +37,7 @@ function PoAClientComponent() {
         setCanAsk(eligible);
         setEligibilityChecked(true);
 
-        // Consulta la tabla polls para saber si ya existe una poll para esta wallet.
+        // Query the polls table to see if a poll already exists for this wallet.
         const { data, error } = await supabase
           .from('polls')
           .select('id')
@@ -62,14 +62,14 @@ function PoAClientComponent() {
       return;
     }
 
-    // Valida que la pregunta tenga un máximo de 20 palabras.
+    // Validate that the question has a maximum of 20 words.
     const wordCount = question.trim().split(/\s+/).length;
     if (wordCount > 20) {
       setStatusMessage('The question must not exceed 20 words.');
       return;
     }
 
-    // Si ya existe una poll para esta wallet, no permite crear otra.
+    // If a poll has already been created for this wallet, do not allow another.
     if (hasCreatedPoll) {
       setStatusMessage('Only one poll per wallet is allowed.');
       return;
@@ -95,12 +95,12 @@ function PoAClientComponent() {
   };
 
   return (
-    <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-sm font-mono text-blue-100 bg-blue-900">
-      <div className="max-w-3xl w-full text-center">
-        <h1 className="text-3xl font-bold mb-8 text-blue-200">Proof of Ask</h1>
+    <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 bg-black">
+      <div className="max-w-xl w-full text-center">
+        <h1 className="text-3xl font-bold mb-8 text-white">Proof of Ask</h1>
 
         {eligibilityChecked && !canAsk && (
-          <p className="text-xs text-blue-300 text-center italic tracking-wide mb-4">
+          <p className="text-xs text-gray-400 italic tracking-wide mb-4">
             {address}: You must have mined at least 0.00001 MM3 to create a poll.
           </p>
         )}
@@ -108,13 +108,13 @@ function PoAClientComponent() {
         {eligibilityChecked && canAsk && (
           <>
             {hasCreatedPoll ? (
-              <p className="text-xs text-blue-300 text-center italic tracking-wide mb-4">
+              <p className="text-xs text-gray-400 italic tracking-wide mb-4">
                 Only one poll per wallet is allowed.
               </p>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col items-center">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <textarea
-                  className="w-full max-w-md p-2 rounded border border-blue-500 bg-blue-50 text-blue-900 placeholder-blue-400 focus:outline-none focus:border-blue-300"
+                  className="w-full p-2 rounded border border-gray-600 bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:border-gray-400"
                   placeholder="Write your yes/no question (max. 20 words). Only one poll per wallet is allowed."
                   value={question}
                   onChange={(e) => setQuestion(e.target.value)}
@@ -122,7 +122,7 @@ function PoAClientComponent() {
                 />
                 <button
                   type="submit"
-                  className="mt-4 px-6 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition"
+                  className="px-4 py-2 rounded bg-black text-white hover:bg-gray-900 transition"
                 >
                   Submit Poll
                 </button>
@@ -132,7 +132,7 @@ function PoAClientComponent() {
         )}
 
         {statusMessage && (
-          <p className="mt-4 text-sm text-blue-200">{statusMessage}</p>
+          <p className="mt-4 text-sm text-red-500">{statusMessage}</p>
         )}
       </div>
     </main>
