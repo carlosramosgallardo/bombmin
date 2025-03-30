@@ -92,7 +92,10 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
           ? '< 0.00000001'
           : miningAmount.toFixed(8);
 
-      const message = `Inject Value now: ${displayAmount}`;
+      // Si no hay wallet conectada, muestra mensaje alternativo
+      const message = account
+      ? `Inject Value now: ${displayAmount}`
+      : `Please connect your wallet to proceed with injecting a value of ${displayAmount}`;    
       setGameMessage(message);
     } else {
       setGameMessage('❌ Incorrect! No mining reward.');
