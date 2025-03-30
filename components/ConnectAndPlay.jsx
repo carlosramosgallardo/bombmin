@@ -122,7 +122,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
               : 'bg-slate-800 text-white hover:bg-slate-700'
           }`}
         >
-          {isPaying ? 'Processing...' : 'Inject value'}
+          {isPaying ? 'Processing...' : 'Inject MM3'}
         </button>
       )}
 

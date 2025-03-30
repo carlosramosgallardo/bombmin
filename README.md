@@ -21,7 +21,6 @@ No real blockchain. No actual tokens. Just Web3-style logic, wallet connection, 
 - Real-time token chart with historical series
 - Leaderboard tracking contributors by impact
 - Wallet connection via WalletConnect / MetaMask
-- Optional ETH donation to "inject value"
 - Proof of Vote (PoV): contribute, qualify, vote
 - Public API for charts, top miners, polls
 
