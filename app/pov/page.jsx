@@ -121,7 +121,7 @@ function PoVClientComponent() {
                 </p>
               ) : (
                 <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
-                  {address}: Please, vote.
+                  Connected as: {address}
                 </p>
               ))}
 
