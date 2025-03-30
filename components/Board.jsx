@@ -16,7 +16,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   useEffect(() => {
     generateNewProblem();
 
-    // Pre-game countdown: 3 seconds
+    // Pre-game countdown: 3 segundos
     preGameIntervalRef.current = setInterval(() => {
       setPreGameCountdown((prev) => {
         if (prev <= 1) {
@@ -78,10 +78,10 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
     if (correct) {
       if (totalTime <= 5000) {
-        // Positive reward based on speed
+        // Recompensa positiva basada en la rapidez
         miningAmount = PARTICIPATION_PRICE * ((5000 - totalTime) / 5000);
       } else {
-        // Penalty for slow answer (up to -10% of token value)
+        // Penalización por respuesta lenta (hasta -10% del valor del token)
         const overTime = Math.min(totalTime - 5000, 5000);
         const penaltyRatio = overTime / 5000;
         miningAmount = -PARTICIPATION_PRICE * 0.10 * penaltyRatio;
@@ -120,7 +120,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   };
 
   return (
-    <div className="w-full mt-10 border-2 border-blue-500 p-4 rounded-xl shadow-lg">
+    <div className="w-full mt-10 border-2 border-[#007BFF] bg-blue-50 p-4 rounded-xl shadow-lg text-center">
       {problem && (
         <>
           <p className="text-xl">
