@@ -1,3 +1,7 @@
+Aquí tienes el README actualizado:
+
+---
+
 # Proof of Vote (PoV) SQL Schema
 
 This schema defines the structure for the Proof of Vote (PoV) module on MathsMine3.xyz.
@@ -8,17 +12,18 @@ PoV allows users to vote on community questions — but only if they've contribu
 
 ## Structure
 
-- `polls`: Stores public questions.
-- `poll_votes`: Stores individual votes (1 per poll + wallet).
-- `poll_results`: View showing vote counts per poll and choice.
+- **polls:** Stores public questions. Now includes a `wallet_address` column to record the creator's wallet, with a unique constraint ensuring that each wallet can create only one poll.
+- **poll_votes:** Stores individual votes, limited to one vote per poll and wallet.
 
 ## Voting Requirements
 
-- Wallet connected
-- Wallet listed in the `contributors` view
-- Minimum score requirement (e.g., 1)
+- Wallet connected.
+- Wallet listed in the `contributors` view.
+- Minimum score requirement (e.g., 1).
 
 ## Notes
 
-- No interference with core MathsMine3 logic or data
-- This module is fully self-contained
+- No interference with core MathsMine3 logic or data.
+- This module is fully self-contained.
+
+---

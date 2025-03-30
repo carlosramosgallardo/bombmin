@@ -14,14 +14,3 @@ create table if not exists poll_votes (
   voted_at timestamp with time zone default now(),
   unique (poll_id, wallet_address)
 );
-
-create or replace view poll_results as
-select
-  p.id as poll_id,
-  p.question,
-  v.vote,
-  count(*) as total_votes
-from polls p
-join poll_votes v on v.poll_id = p.id
-group by p.id, p.question, v.vote;
-
