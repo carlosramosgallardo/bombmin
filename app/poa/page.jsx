@@ -58,7 +58,7 @@ function PoAClientComponent() {
     e.preventDefault();
 
     if (!isConnected || !address) {
-      setStatusMessage('Please connect your wallet to create a poll.');
+      setStatusMessage('Connect your wallet to create a poll.');
       return;
     }
 

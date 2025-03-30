@@ -60,7 +60,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
 
   const handlePay = async () => {
     if (!isConnected || !address) {
-      setStatusMessage('Please connect your wallet first.');
+      setStatusMessage('Connect your wallet first! Metamask wallets are free, and MathsMine3 is completely free to play—no funds needed.');
       return;
     }
 

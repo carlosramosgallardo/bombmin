@@ -80,7 +80,7 @@ function PoVClientComponent() {
 
   const handleVote = async (pollId, vote) => {
     if (!isConnected || !address) {
-      setStatusMessage('Please connect your wallet to vote.');
+      setStatusMessage('Connect your wallet to vote.');
       return;
     }
 

@@ -95,7 +95,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
       // Si no hay wallet conectada, muestra mensaje alternativo
       const message = account
       ? `Inject MM3 now: ${displayAmount}`
-      : `Please connect your wallet to proceed with injecting MM3: ${displayAmount}`;    
+      : `Connect your wallet to proceed with injecting MM3: ${displayAmount}`;    
       setGameMessage(message);
     } else {
       setGameMessage('❌ Incorrect! No mining reward.');
