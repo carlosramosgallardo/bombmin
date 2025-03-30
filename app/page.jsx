@@ -68,9 +68,6 @@ export default function Page() {
               Connected as: {account}
             </p>
           )}
-          <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
-            Solve fast to mine!
-          </p>
           <Board
             account={account}
             setGameMessage={setGameMessage}

@@ -101,7 +101,7 @@ function PoAClientComponent() {
 
         {eligibilityChecked && !canAsk && (
           <p className="text-xs text-gray-400 italic tracking-wide mb-4">
-            {address}: You must have mined at least 0.00001 MM3 to create a poll.
+             Connected as {address}. You must have mined at least 0.00001 MM3 to create a poll.
           </p>
         )}
 
@@ -109,7 +109,7 @@ function PoAClientComponent() {
           <>
             {hasCreatedPoll ? (
               <p className="text-xs text-gray-400 italic tracking-wide mb-4">
-                Only one poll per wallet is allowed.
+                Connected as {address}. Only one poll per wallet is allowed.
               </p>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
