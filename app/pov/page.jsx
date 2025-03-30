@@ -34,7 +34,7 @@ function PoVClientComponent() {
   useEffect(() => {
     const fetchPollsAndVotes = async () => {
       try {
-        // Query polls with the wallet_address field.
+        // Consulta la tabla polls incluyendo el campo wallet_address.
         const { data: polls, error: pollError } = await supabase
           .from('polls')
           .select('id, question, wallet_address')
@@ -43,14 +43,14 @@ function PoVClientComponent() {
 
         if (pollError) throw pollError;
 
-        // Query poll_votes to get vote details.
+        // Consulta la tabla poll_votes para obtener los votos.
         const { data: votes, error: votesError } = await supabase
           .from('poll_votes')
           .select('*');
 
         if (votesError) throw votesError;
 
-        // Group votes by poll_id.
+        // Agrupar los votos por poll_id.
         const groupedVotes = votes.reduce((acc, vote) => {
           if (!acc[vote.poll_id]) acc[vote.poll_id] = [];
           acc[vote.poll_id].push(vote);
@@ -126,10 +126,10 @@ function PoVClientComponent() {
               ))}
 
             {pollData.map((poll, index) => {
-              // Get votes for each poll.
+              // Obtenemos los votos para cada poll.
               const votes = resultsData[poll.id] || [];
               const totalVotes = votes.length;
-              // Tally votes for "yes" and "no".
+              // Contabilizamos votos para "yes" y "no".
               const voteCounts = votes.reduce((acc, v) => {
                 acc[v.vote] = (acc[v.vote] || 0) + 1;
                 return acc;
@@ -138,10 +138,10 @@ function PoVClientComponent() {
               return (
                 <div
                   key={poll.id}
-                  className="mb-16 p-6 bg-blue-800 border border-blue-600 rounded-lg shadow-lg"
+                  className="mb-16 p-6 bg-[#0b0f19] border border-[#22d3ee] rounded-lg shadow-lg"
                 >
                   <h2 className="text-lg font-medium mb-1 text-white">{poll.question}</h2>
-                  <p className="text-xs text-blue-200 mb-4">
+                  <p className="text-xs text-[#22d3ee] mb-4">
                     Created by: {poll.wallet_address}
                   </p>
 
