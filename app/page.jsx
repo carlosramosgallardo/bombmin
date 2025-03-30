@@ -60,16 +60,7 @@ export default function Page() {
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-lg font-mono text-white bg-black">
       <div className="w-full max-w-3xl mx-auto">
-        {/* Connect & Play */}
-        <div className="mb-12">
-          <ConnectAndPlay
-            account={account}
-            setAccount={setAccount}
-            gameCompleted={gameCompleted}
-            gameData={gameData}
-          />
-        </div>
-
+       
         {/* Game Board */}
         <div className="mb-12">
           {account && (
@@ -91,6 +82,16 @@ export default function Page() {
               {gameMessage}
             </div>
           )}
+        </div>
+
+         {/* Connect & Play */}
+         <div className="mb-12">
+          <ConnectAndPlay
+            account={account}
+            setAccount={setAccount}
+            gameCompleted={gameCompleted}
+            gameData={gameData}
+          />
         </div>
 
         {/* Token Chart */}

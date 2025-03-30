@@ -40,7 +40,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
   const [statusMessage, setStatusMessage] = useState('');
   const [isPaying, setIsPaying] = useState(false);
 
-  // Actualizar account en componente padre
+  // ✅ Actualizar account en componente padre
   useEffect(() => {
     if (isConnected && address && setAccount) {
       setAccount(address);
@@ -104,11 +104,11 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
   const isAndroid = typeof window !== 'undefined' && /android/i.test(navigator.userAgent);
 
   return (
-    <div className="w-full mt-10 bg-[#0b0f19] p-4 rounded-xl shadow-lg text-center border border-[#22d3ee]">
+    <div className="text-center my-4 space-y-4">
       {!isConnected ? (
         <button
           onClick={isAndroid ? handleMobileConnect : open}
-          className="inline-block px-4 py-2 mt-2 rounded font-mono border border-[#22d3ee] bg-[#22d3ee] text-[#0b0f19] hover:bg-[#1e293b] transition"
+          className="px-4 py-2 mt-2 ml-2 rounded bg-black text-white hover:bg-gray-900 transition"
         >
           Connect Wallet
         </button>
@@ -116,10 +116,10 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
         <button
           onClick={handlePay}
           disabled={!isEligible || isPaying}
-          className={`inline-block px-4 py-2 mt-2 rounded font-mono border border-[#22d3ee] transition ${
+          className={`px-4 py-2 mt-2 ml-2 rounded transition ${
             !isEligible || isPaying
-              ? 'bg-slate-700 cursor-not-allowed text-gray-300'
-              : 'bg-[#22d3ee] text-[#0b0f19] hover:bg-[#1e293b]'
+              ? 'bg-slate-700 cursor-not-allowed text-white'
+              : 'bg-slate-800 text-white hover:bg-slate-700'
           }`}
         >
           {isPaying ? 'Processing...' : 'Inject value'}
