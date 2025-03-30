@@ -92,11 +92,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
           ? '< 0.00000001'
           : miningAmount.toFixed(8);
 
-      const message =
-        miningAmount >= 0
-          ? `Inject Value now: ${displayAmount}`
-          : `Inject Value now: ${displayAmount}`;
-
+      const message = `Inject Value now: ${displayAmount}`;
       setGameMessage(message);
     } else {
       setGameMessage('❌ Incorrect! No mining reward.');
@@ -120,18 +116,18 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   };
 
   return (
-    <div className="w-full mt-10 border-2 border-[#007BFF] bg-blue-50 p-4 rounded-xl shadow-lg text-center">
+    <div className="w-full mt-10 border-2 border-dotted border-[#22d3ee] bg-[#0b0f19] p-4 rounded-xl shadow-lg text-center">
       {problem && (
         <>
-          <p className="text-xl">
+          <p className="text-xl font-mono text-[#22d3ee]">
             {problem.num1} {problem.operation} {problem.num2} = ?
           </p>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-[#22d3ee]">
             Time elapsed: <span className="text-yellow-300">{preGameCountdown > 0 ? 0 : elapsedTime} ms</span>
           </p>
 
           {preGameCountdown > 0 && (
-            <p className="text-gray-500 mt-2">Please wait {preGameCountdown} second(s)...</p>
+            <p className="mt-2 text-[#22d3ee]">Please wait {preGameCountdown} second(s)...</p>
           )}
 
           <div className="flex justify-center items-center gap-2 mt-4">
@@ -139,14 +135,16 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
               type="number"
               value={userAnswer}
               onChange={(e) => setUserAnswer(e.target.value)}
-              className="w-24 border border-gray-300 px-2 py-1 rounded text-black text-center"
+              className="w-24 border border-dotted border-[#22d3ee] bg-transparent px-2 py-1 rounded text-[#22d3ee] text-center font-mono focus:outline-none"
               disabled={isDisabled}
               placeholder="Answer"
             />
             <button
               onClick={checkAnswer}
-              className={`px-4 py-1 rounded ${
-                isDisabled ? 'bg-gray-600 cursor-not-allowed' : 'bg-black text-white hover:bg-gray-800'
+              className={`px-4 py-1 rounded font-mono border border-dotted border-[#22d3ee] ${
+                isDisabled
+                  ? 'bg-gray-600 cursor-not-allowed text-gray-300'
+                  : 'bg-[#22d3ee] text-[#0b0f19] hover:bg-[#1e293b]'
               }`}
               disabled={isDisabled}
             >

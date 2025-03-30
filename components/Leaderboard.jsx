@@ -1,158 +1,96 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
+import supabase from '@/lib/supabaseClient';
 
-export default function Board({ account, setGameMessage, setGameCompleted, setGameData }) {
-  const [problem, setProblem] = useState(null);
-  const [userAnswer, setUserAnswer] = useState('');
-  const [elapsedTime, setElapsedTime] = useState(0);
-  const [preGameCountdown, setPreGameCountdown] = useState(3);
-  const [isDisabled, setIsDisabled] = useState(true);
+export default function Leaderboard() {
+  const [leaderboard, setLeaderboard] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+  const [isLoading, setIsLoading] = useState(true);
 
-  const PARTICIPATION_PRICE = parseFloat(process.env.NEXT_PUBLIC_PARTICIPATION_PRICE);
-  const preGameIntervalRef = useRef(null);
-  const solveIntervalRef = useRef(null);
+  // Cache settings: 60 segundos
+  const cacheDuration = 60 * 1000;
+  const cacheKey = 'leaderboard_data';
+  const lastFetchTimeKey = 'leaderboard_last_fetch_time';
 
   useEffect(() => {
-    generateNewProblem();
+    const fetchLeaderboard = async () => {
+      const lastFetchTime = localStorage.getItem(lastFetchTimeKey);
+      const currentTime = Date.now();
 
-    // Pre-game countdown: 3 segundos
-    preGameIntervalRef.current = setInterval(() => {
-      setPreGameCountdown((prev) => {
-        if (prev <= 1) {
-          clearInterval(preGameIntervalRef.current);
-          startSolveTimer();
-          return 0;
+      if (lastFetchTime && currentTime - lastFetchTime < cacheDuration) {
+        const cachedData = JSON.parse(localStorage.getItem(cacheKey));
+        if (cachedData) {
+          setLeaderboard(cachedData);
+          setIsLoading(false);
+          return;
         }
-        return prev - 1;
-      });
-    }, 1000);
+      }
 
-    return () => {
-      clearInterval(preGameIntervalRef.current);
-      clearInterval(solveIntervalRef.current);
+      const { data, error } = await supabase
+        .from('leaderboard')
+        .select('wallet, total_eth')
+        .order('total_eth', { ascending: false })
+        .limit(10);
+
+      if (error) {
+        console.error('Failed to load leaderboard:', error);
+        setLeaderboard([]);
+      } else {
+        localStorage.setItem(cacheKey, JSON.stringify(data));
+        localStorage.setItem(lastFetchTimeKey, currentTime.toString());
+        setLeaderboard(data);
+      }
+      setIsLoading(false);
     };
+
+    fetchLeaderboard();
   }, []);
 
-  const generateNewProblem = () => {
-    const num1 = Math.floor(Math.random() * 50) + 10;
-    const num2 = Math.floor(Math.random() * 20) + 5;
-    const operation = ['+', '-', '*'][Math.floor(Math.random() * 3)];
-
-    let result;
-    if (operation === '+') result = num1 + num2;
-    if (operation === '-') result = num1 - num2;
-    if (operation === '*') result = num1 * num2;
-
-    setProblem({ num1, num2, operation, result });
-    setUserAnswer('');
-    setElapsedTime(0);
-    setGameCompleted(false);
-    setGameData(null);
-  };
-
-  const startSolveTimer = () => {
-    setIsDisabled(false);
-    const startTime = Date.now();
-
-    solveIntervalRef.current = setInterval(() => {
-      const timePassed = Date.now() - startTime;
-      setElapsedTime(timePassed);
-
-      if (timePassed >= 10000) {
-        clearInterval(solveIntervalRef.current);
-        setGameMessage('⏳ Time exceeded! No mining reward.');
-        finalizeGame(false, 0);
-      }
-    }, 100);
-  };
-
-  const checkAnswer = () => {
-    if (!problem || isDisabled) return;
-
-    clearInterval(solveIntervalRef.current);
-    const totalTime = elapsedTime;
-    const correct = parseInt(userAnswer, 10) === problem.result;
-
-    let miningAmount = 0;
-
-    if (correct) {
-      if (totalTime <= 5000) {
-        // Recompensa positiva basada en la rapidez
-        miningAmount = PARTICIPATION_PRICE * ((5000 - totalTime) / 5000);
-      } else {
-        // Penalización por respuesta lenta (hasta -10% del valor del token)
-        const overTime = Math.min(totalTime - 5000, 5000);
-        const penaltyRatio = overTime / 5000;
-        miningAmount = -PARTICIPATION_PRICE * 0.10 * penaltyRatio;
-      }
-
-      const displayAmount =
-        Math.abs(miningAmount) < 0.00000001
-          ? '< 0.00000001'
-          : miningAmount.toFixed(8);
-
-      const message = `Inject Value now: ${displayAmount}`;
-      setGameMessage(message);
-    } else {
-      setGameMessage('❌ Incorrect! No mining reward.');
-    }
-
-    finalizeGame(correct, miningAmount);
-  };
-
-  const finalizeGame = (isCorrect, miningAmount) => {
-    setIsDisabled(true);
-    setGameCompleted(true);
-
-    setGameData({
-      wallet: account,
-      problem: `${problem.num1} ${problem.operation} ${problem.num2}`,
-      user_answer: userAnswer,
-      is_correct: isCorrect,
-      time_ms: elapsedTime,
-      mining_reward: miningAmount,
-    });
-  };
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = leaderboard.slice(indexOfFirstItem, indexOfLastItem);
+  const totalPages = Math.ceil(leaderboard.length / itemsPerPage);
 
   return (
-    <div className="w-full mt-10 border-2 border-dotted border-[#22d3ee] bg-[#0b0f19] p-4 rounded-xl shadow-lg text-center">
-      {problem && (
-        <>
-          <p className="text-xl font-mono text-[#22d3ee]">
-            {problem.num1} {problem.operation} {problem.num2} = ?
-          </p>
-          <p className="text-sm text-[#22d3ee]">
-            Time elapsed: <span className="text-yellow-300">{preGameCountdown > 0 ? 0 : elapsedTime} ms</span>
-          </p>
-
-          {preGameCountdown > 0 && (
-            <p className="mt-2 text-[#22d3ee]">Please wait {preGameCountdown} second(s)...</p>
-          )}
-
-          <div className="flex justify-center items-center gap-2 mt-4">
-            <input
-              type="number"
-              value={userAnswer}
-              onChange={(e) => setUserAnswer(e.target.value)}
-              className="w-24 border border-dotted border-[#22d3ee] bg-transparent px-2 py-1 rounded text-[#22d3ee] text-center font-mono focus:outline-none"
-              disabled={isDisabled}
-              placeholder="Answer"
-            />
-            <button
-              onClick={checkAnswer}
-              className={`px-4 py-1 rounded font-mono border border-dotted border-[#22d3ee] ${
-                isDisabled
-                  ? 'bg-gray-600 cursor-not-allowed text-gray-300'
-                  : 'bg-[#22d3ee] text-[#0b0f19] hover:bg-[#1e293b]'
-              }`}
-              disabled={isDisabled}
-            >
-              Submit
-            </button>
-          </div>
-        </>
-      )}
-    </div>
+    <table className="table-fixed w-full mx-auto border border-[#22d3ee] border-dotted border-separate rounded-xl border-spacing-2 text-sm md:text-base">
+      <thead className="bg-[#0b0f19] text-[#22d3ee]">
+        <tr>
+          <th className="border border-[#22d3ee] border-dotted px-4 py-2 text-left font-mono">
+            Wallet
+          </th>
+          <th className="border border-[#22d3ee] border-dotted px-4 py-2 text-right font-mono">
+            ETH
+          </th>
+        </tr>
+      </thead>
+      <tbody className="bg-[#0b0f19] text-[#22d3ee]">
+        {isLoading ? (
+          <tr>
+            <td colSpan="2" className="border border-[#22d3ee] border-dotted px-4 py-2 text-center">
+              Loading leaderboard...
+            </td>
+          </tr>
+        ) : currentItems.length > 0 ? (
+          currentItems.map((entry, index) => (
+            <tr key={index} className="hover:bg-[#1e293b] transition">
+              <td className="border border-[#22d3ee] border-dotted px-4 py-2 font-mono whitespace-normal break-words">
+                {entry.wallet}
+              </td>
+              <td className="border border-[#22d3ee] border-dotted px-4 py-2 font-mono text-right">
+                {Number(entry.total_eth).toFixed(6)}
+              </td>
+            </tr>
+          ))
+        ) : (
+          <tr>
+            <td colSpan="2" className="border border-[#22d3ee] border-dotted px-4 py-2 text-center">
+              No leaderboard data available.
+            </td>
+          </tr>
+        )}
+      </tbody>
+    </table>
   );
 }
