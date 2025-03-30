@@ -93,7 +93,7 @@ function PoAClientComponent() {
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
       <div className="max-w-3xl w-full text-center">
-        <h1 className="text-3xl font-bold mb-8">Proof of Ask (PoA)</h1>
+        <h1 className="text-3xl font-bold mb-8">Proof of Ask</h1>
 
         {eligibilityChecked && !canAsk && (
           <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
@@ -110,7 +110,7 @@ function PoAClientComponent() {
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col items-center">
                 <textarea
-                  className="w-full max-w-md p-2 rounded text-black"
+                  className="w-full max-w-md p-2 rounded border border-blue-300 bg-white text-black placeholder-gray-500 focus:outline-none focus:border-blue-500"
                   placeholder="Write your yes/no question (max. 20 words). Only one poll per wallet is allowed."
                   value={question}
                   onChange={(e) => setQuestion(e.target.value)}
@@ -118,7 +118,7 @@ function PoAClientComponent() {
                 />
                 <button
                   type="submit"
-                  className="mt-4 px-6 py-2 rounded-lg bg-[#22d3ee] text-black hover:bg-[#1dbbe0] transition"
+                  className="mt-4 px-6 py-2 rounded-lg bg-[#22d3ee] text-white hover:bg-[#1dbbe0] transition"
                 >
                   Submit Poll
                 </button>
@@ -134,4 +134,3 @@ function PoAClientComponent() {
     </main>
   );
 }
-
