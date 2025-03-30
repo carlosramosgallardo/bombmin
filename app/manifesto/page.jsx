@@ -26,14 +26,20 @@ export default function ManifestoPage() {
         <section className="mb-8">
           <p>
             Join the <a href="/pov" className="text-blue-400 underline">Proof of Vote</a>:
-            respond anonymously yet nomically (by wallet) to <strong>yes/no</strong> questions on global issues.
+            respond anonymously yet nomically (by wallet) to yes/no questions on global issues.
           </p>
         </section>
 
         <section className="mb-8">
           <p>
-            Create your own anonymous <strong>yes/no</strong> questions via <a href="/poa" className="text-blue-400 underline">Proof of Ask</a>:
+            Create your own anonymous yes/no questions via <a href="/poa" className="text-blue-400 underline">Proof of Ask</a>:
             submit polls to the community anonymously and see how the world responds to your ideas.
+          </p>
+        </section>
+
+        <section className="mb-8">
+          <p>
+            The platform is completely transparent, providing a public <a href="/api" className="text-blue-400 underline">API</a>: that lets you query, at any moment, real-time and historical data on the token’s value, wallet contributions, polls, and voting results.
           </p>
         </section>
 
