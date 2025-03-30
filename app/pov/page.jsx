@@ -32,9 +32,9 @@ function PoVClientComponent() {
   const [eligibilityChecked, setEligibilityChecked] = useState(false);
 
   useEffect(() => {
-    const fetchPollsAndResults = async () => {
+    const fetchPollsAndVotes = async () => {
       try {
-        // Query polls with the wallet_address field.
+        // Consulta la tabla polls incluyendo el campo wallet_address.
         const { data: polls, error: pollError } = await supabase
           .from('polls')
           .select('id, question, wallet_address')
@@ -43,28 +43,28 @@ function PoVClientComponent() {
 
         if (pollError) throw pollError;
 
-        // Query the poll_results view.
-        const { data: results, error: resultsError } = await supabase
-          .from('poll_results')
+        // Consulta la tabla poll_votes para obtener los votos.
+        const { data: votes, error: votesError } = await supabase
+          .from('poll_votes')
           .select('*');
 
-        if (resultsError) throw resultsError;
+        if (votesError) throw votesError;
 
-        // Group results by poll_id.
-        const groupedResults = results.reduce((acc, row) => {
-          if (!acc[row.poll_id]) acc[row.poll_id] = [];
-          acc[row.poll_id].push(row);
+        // Agrupar los votos por poll_id.
+        const groupedVotes = votes.reduce((acc, vote) => {
+          if (!acc[vote.poll_id]) acc[vote.poll_id] = [];
+          acc[vote.poll_id].push(vote);
           return acc;
         }, {});
 
         setPollData(polls);
-        setResultsData(groupedResults);
+        setResultsData(groupedVotes);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
 
-    fetchPollsAndResults();
+    fetchPollsAndVotes();
   }, []);
 
   useEffect(() => {
@@ -126,8 +126,14 @@ function PoVClientComponent() {
               ))}
 
             {pollData.map((poll, index) => {
-              const results = resultsData[poll.id] || [];
-              const totalVotes = results.reduce((sum, r) => sum + r.total_votes, 0);
+              // Obtenemos los votos para cada poll.
+              const votes = resultsData[poll.id] || [];
+              const totalVotes = votes.length;
+              // Contabilizamos votos para "yes" y "no".
+              const voteCounts = votes.reduce((acc, v) => {
+                acc[v.vote] = (acc[v.vote] || 0) + 1;
+                return acc;
+              }, {});
 
               return (
                 <div key={poll.id} className="mb-16">
@@ -155,20 +161,21 @@ function PoVClientComponent() {
 
                   {totalVotes > 0 && (
                     <div className="space-y-2 mt-6">
-                      {results.map((r) => {
-                        const percentage = ((r.total_votes / totalVotes) * 100).toFixed(1);
+                      {['yes', 'no'].map((option) => {
+                        const count = voteCounts[option] || 0;
+                        const percentage = ((count / totalVotes) * 100).toFixed(1);
                         return (
-                          <div key={r.vote} className="text-left">
+                          <div key={option} className="text-left">
                             <div className="flex justify-between text-sm mb-1">
-                              <span className="capitalize">{r.vote}</span>
+                              <span className="capitalize">{option}</span>
                               <span>
-                                {r.total_votes} votes ({percentage}%)
+                                {count} votes ({percentage}%)
                               </span>
                             </div>
                             <div className="w-full bg-gray-700 rounded h-3">
                               <div
                                 className={`h-3 rounded ${
-                                  r.vote === 'yes' ? 'bg-[#22d3ee]' : 'bg-[#1e86d1]'
+                                  option === 'yes' ? 'bg-[#22d3ee]' : 'bg-[#1e86d1]'
                                 }`}
                                 style={{ width: `${percentage}%` }}
                               />
