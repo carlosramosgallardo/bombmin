@@ -116,7 +116,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   };
 
   return (
-    <div className="w-full mt-10 border-2 border-dotted border-[#22d3ee] bg-[#0b0f19] p-4 rounded-xl shadow-lg text-center">
+    <div className="w-full mt-10 border border-[#22d3ee] border-dotted bg-[#0b0f19] p-4 rounded-xl shadow-lg text-center">
       {problem && (
         <>
           <p className="text-xl font-mono text-[#22d3ee]">
