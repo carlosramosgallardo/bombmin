@@ -30,7 +30,7 @@ export default function ManifestoPage() {
         <section className="mb-8">
         <p>
           Does one person have multiple wallets? Of course. So what?
-          The wife of the Spanish Prime Minister has seven accounts and absolutely nothing happens.
+          The wife of the Spanish Prime Minister has seven bank accounts and absolutely nothing happens.
         </p>
         <section className="mb-8">
         </section>
