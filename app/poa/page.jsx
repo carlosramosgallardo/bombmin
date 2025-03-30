@@ -31,20 +31,28 @@ function PoAClientComponent() {
   const [hasCreatedPoll, setHasCreatedPoll] = useState(false);
 
   useEffect(() => {
-    async function checkEligibility() {
+    async function checkEligibilityAndPoll() {
       if (isConnected && address) {
+        // Check contributor eligibility as before.
         const eligible = await checkContributorEligibility(address);
         setCanAsk(eligible);
         setEligibilityChecked(true);
 
-        // Check if this wallet has already created a poll (using local storage)
-        const stored = localStorage.getItem(`createdPoll_${address}`);
-        if (stored) {
+        // Query the polls table to see if a poll already exists for this wallet.
+        const { data, error } = await supabase
+          .from('polls')
+          .select('id')
+          .eq('wallet_address', address)
+          .maybeSingle();
+
+        if (error) {
+          console.error('Error checking poll existence:', error);
+        } else if (data) {
           setHasCreatedPoll(true);
         }
       }
     }
-    checkEligibility();
+    checkEligibilityAndPoll();
   }, [isConnected, address]);
 
   const handleSubmit = async (e) => {
@@ -55,24 +63,24 @@ function PoAClientComponent() {
       return;
     }
 
-    // Validate that the question has a maximum of 20 words
+    // Validate that the question has a maximum of 20 words.
     const wordCount = question.trim().split(/\s+/).length;
     if (wordCount > 20) {
       setStatusMessage('The question must not exceed 20 words.');
       return;
     }
 
-    // Enforce one poll per wallet using local storage
+    // Enforce one poll per wallet by checking if a poll already exists.
     if (hasCreatedPoll) {
       setStatusMessage('Only one poll per wallet is allowed.');
       return;
     }
 
-    // Insert the new poll (question) into the polls table
+    // Insert the new poll along with the wallet address.
     try {
       const { error } = await supabase
         .from('polls')
-        .insert([{ question }]);
+        .insert([{ question, wallet_address: address }]);
 
       if (error) {
         setStatusMessage('Error submitting your poll.');
@@ -80,8 +88,6 @@ function PoAClientComponent() {
       } else {
         setStatusMessage('Poll created successfully!');
         setQuestion('');
-        // Mark that this wallet has created a poll
-        localStorage.setItem(`createdPoll_${address}`, 'true');
         setHasCreatedPoll(true);
       }
     } catch (err) {
@@ -93,7 +99,7 @@ function PoAClientComponent() {
   return (
     <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
       <div className="max-w-3xl w-full text-center">
-        <h1 className="text-3xl font-bold mb-8">Proof of Ask</h1>
+        <h1 className="text-3xl font-bold mb-8">Proof of Ask (PoA)</h1>
 
         {eligibilityChecked && !canAsk && (
           <p className="text-xs text-gray-500 text-center italic tracking-wide mb-4">
