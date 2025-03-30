@@ -111,7 +111,7 @@ export default function TokenChart() {
                 tickLine={false}
               />
               <YAxis
-                tickFormatter={(val) => `${val} ETH`}
+                tickFormatter={(val) => `${val} MM3`}
                 tick={{ fill: '#ccc', fontSize: 12 }}
                 axisLine={false}
                 tickLine={false}
@@ -126,7 +126,7 @@ export default function TokenChart() {
                   color: '#e5e7eb'
                 }}
                 labelStyle={{ color: '#22d3ee' }}
-                formatter={(value) => [`${value} ETH`, 'Value']}
+                formatter={(value) => [`${value} MM3`, 'Value']}
                 labelFormatter={(label) => `Time: ${label}`}
               />
               <Area
