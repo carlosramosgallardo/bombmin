@@ -2,6 +2,7 @@
 create table if not exists polls (
   id uuid primary key default gen_random_uuid(),
   question text not null,
+  wallet_address text not null,
   created_at timestamp with time zone default now(),
   active boolean default true
 );
