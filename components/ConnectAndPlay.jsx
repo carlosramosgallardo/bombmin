@@ -5,7 +5,6 @@ import {
   createWeb3Modal,
   useWeb3Modal,
 } from '@web3modal/wagmi/react';
-
 import {
   WagmiConfig,
   createConfig,
@@ -14,14 +13,11 @@ import {
   useWalletClient,
   http,
 } from 'wagmi';
-
 import { mainnet } from 'wagmi/chains';
 import { BrowserProvider, parseEther } from 'ethers';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
 import supabase from '@/lib/supabaseClient';
 
-// Configure WAGMI + Web3Modal
 const queryClient = new QueryClient();
 const chains = [mainnet];
 const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
@@ -42,16 +38,15 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
   const { data: walletClient } = useWalletClient();
 
   const [statusMessage, setStatusMessage] = useState('');
-  const [isPaying, setIsPaying] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [isDonating, setIsDonating] = useState(false);
 
-  // ✅ Update parent component with the current wallet address
   useEffect(() => {
     if (isConnected && address && setAccount) {
       setAccount(address);
     }
   }, [isConnected, address, setAccount]);
 
-  // Eligible if game completed + the answer is correct
   const isEligible = gameCompleted && gameData?.is_correct === true;
 
   const handleMobileConnect = () => {
@@ -63,55 +58,73 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
     }
   };
 
-  const handlePay = async () => {
+  const handleGameSubmit = async () => {
     if (!isConnected || !address) {
-      setStatusMessage(
-        'Connect your wallet first! Metamask wallets are free, and MathsMine3 is completely free to play—no funds needed.'
-      );
+      setStatusMessage('Connect your wallet first to save your play.');
       return;
     }
 
     if (!isEligible) {
-      setStatusMessage('You must answer correctly to send a pulse.');
+      setStatusMessage('Answer correctly before submitting your play.');
       return;
     }
 
-    // Prepare data to be stored
-    const fullGameData = {
-      ...gameData,
-      wallet: address,
-    };
-
     try {
-      setIsPaying(true);
+      setIsProcessing(true);
 
-      // Insert gameplay record into Supabase
+      const fullGameData = {
+        ...gameData,
+        wallet: address,
+      };
+
       const { error } = await supabase.from('games').insert([fullGameData]);
       if (error) {
         console.error('Supabase insert error:', error.message);
-        setStatusMessage('Error saving game data. Transaction aborted.');
+        setStatusMessage('Oops! Could not save your play.');
         return;
       }
 
-      // If you choose to call an ETH transaction
+      setStatusMessage('Your play has been recorded. Thank you for shaping the system.');
+    } catch (err) {
+      console.error('Error saving play:', err);
+      setStatusMessage('A glitch in the grid. Play was not saved.');
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  const handleDonation = async () => {
+    if (!isConnected || !address) {
+      setStatusMessage('Connect your wallet before donating.');
+      return;
+    }
+
+    try {
+      setIsDonating(true);
+
+      if (!walletClient?.transport?.request) {
+        setStatusMessage('This wallet does not support symbolic donations.');
+        return;
+      }
+
       const provider = new BrowserProvider(walletClient);
       const signer = await provider.getSigner();
+
       await signer.sendTransaction({
         to: process.env.NEXT_PUBLIC_ADMIN_WALLET,
         value: parseEther(process.env.NEXT_PUBLIC_PARTICIPATION_PRICE),
       });
 
-      setStatusMessage('Signal sent. The token has been disturbed.');
+      setStatusMessage('Signal received. A ripple echoes through the field.');
     } catch (err) {
-      console.error('Even hesitation shapes the system. Token field disturbed.', err);
-      setStatusMessage('Even hesitation shapes the system. Token field disturbed.');
+      console.error('Donation failed:', err);
+      setStatusMessage('Even hesitation shapes the system. Donation aborted.');
     } finally {
-      setIsPaying(false);
+      setIsDonating(false);
     }
   };
 
-  const isAndroid =
-    typeof window !== 'undefined' && /android/i.test(navigator.userAgent);
+  const isAndroid = typeof window !== 'undefined' && /android/i.test(navigator.userAgent);
 
   return (
     <div className="text-center my-4 space-y-4">
@@ -123,21 +136,35 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
           Connect Wallet
         </button>
       ) : (
-        <button
-          onClick={handlePay}
-          disabled={!isEligible || isPaying}
-          className={`px-4 py-2 mt-2 ml-2 rounded transition ${
-            !isEligible || isPaying
-              ? 'bg-slate-700 cursor-not-allowed text-white'
-              : 'bg-slate-800 text-white hover:bg-slate-700'
-          }`}
-        >
-          {isPaying ? 'Processing...' : 'Inject MM3'}
-        </button>
+        <>
+          <button
+            onClick={handleGameSubmit}
+            disabled={!isEligible || isProcessing}
+            className={`px-4 py-2 mt-2 ml-2 rounded transition ${
+              !isEligible || isProcessing
+                ? 'bg-slate-700 cursor-not-allowed text-white'
+                : 'bg-slate-800 text-white hover:bg-slate-700'
+            }`}
+          >
+            {isProcessing ? 'Saving...' : 'Mine MM3'}
+          </button>
+
+          <button
+            onClick={handleDonation}
+            disabled={isDonating}
+            className={`px-4 py-2 mt-2 ml-2 rounded transition ${
+              isDonating
+                ? 'bg-purple-700 cursor-wait text-white'
+                : 'bg-purple-800 text-white hover:bg-purple-700'
+            }`}
+          >
+            {isDonating ? 'Rippling...' : 'Symbolic Disturbance'}
+          </button>
+        </>
       )}
 
       {statusMessage && (
-        <p className="text-sm text-red-500 mt-2">{statusMessage}</p>
+        <p className="text-sm text-indigo-500 mt-2">{statusMessage}</p>
       )}
     </div>
   );
