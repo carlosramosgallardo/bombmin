@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 export default function ManifestoPage() {
   return (
-    <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
-      <div className="max-w-3xl w-full">
+    <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-white bg-black">
+      <div className="max-w-2xl w-full">
         <h1 className="text-3xl font-bold mb-8">Principles of Play & Rebellion</h1>
 
         <section className="mb-8">

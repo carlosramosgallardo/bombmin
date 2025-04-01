@@ -95,12 +95,12 @@ function PoAClientComponent() {
   };
 
   return (
-    <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 bg-black">
+    <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-white bg-black">
       <div className="max-w-xl w-full text-center">
-        <h1 className="text-3xl font-bold mb-8 text-white">Proof of Ask</h1>
+        <h1 className="text-3xl font-bold mb-8">Proof of Ask</h1>
 
         {eligibilityChecked && !canAsk && (
-          <p className="text-base text-gray-400 italic tracking-wide mb-4">
+          <p className="text-base italic tracking-wide mb-4">
             Connected as {address}. You must have mined at least 0.00001 MM3 to create a poll.
           </p>
         )}
@@ -108,7 +108,7 @@ function PoAClientComponent() {
         {eligibilityChecked && canAsk && (
           <>
             {hasCreatedPoll ? (
-              <p className="text-base text-gray-400 italic tracking-wide mb-4">
+              <p className="text-base italic tracking-wide mb-4">
                 Connected as {address}. Only one poll per wallet is allowed.
               </p>
             ) : (
