@@ -154,8 +154,8 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
             disabled={isDonating}
             className={`px-4 py-2 mt-2 ml-2 rounded transition ${
               isDonating
-                ? 'bg-purple-700 cursor-wait text-white'
-                : 'bg-purple-800 text-white hover:bg-purple-700'
+                ? 'bg-slate-700 cursor-wait text-white'
+                : 'bg-slate-800 text-white hover:bg-slate-700'
             }`}
           >
             {isDonating ? 'Rippling...' : 'Symbolic Disturbance'}
