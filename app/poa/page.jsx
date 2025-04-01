@@ -95,7 +95,7 @@ function PoAClientComponent() {
   };
 
   return (
-    <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
+    <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black min-h-screen">
       <div className="max-w-3xl w-full">
         <h1 className="text-3xl font-bold mb-6">Proof of Ask</h1>
 
