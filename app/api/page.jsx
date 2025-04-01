@@ -70,7 +70,6 @@ export default function ApiPage() {
   }
 ]`}
         </pre>
-
       </div>
     </main>
   );

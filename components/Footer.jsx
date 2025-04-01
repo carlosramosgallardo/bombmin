@@ -14,14 +14,6 @@ export default function Footer() {
       <div className="w-full h-1 bg-gray-700" />
 
       <footer className="text-center text-sm text-gray-400 py-4 space-y-4">
-        <div className="flex justify-center gap-4 text-blue-500 underline">
-          <a href="https://www.youtube.com/@FreakingAI" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a href="https://www.tiktok.com/@freakingai" target="_blank" rel="noopener noreferrer">TikTok</a>
-          <a href="https://www.instagram.com/freakingai" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://x.com/freakingai" target="_blank" rel="noopener noreferrer">X</a>
-          <a href="https://github.com/carlosramosgallardo/MathsMine3" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </div>
-
         <div>
           {!revealed ? (
             <button
@@ -56,6 +48,13 @@ export default function Footer() {
 
       {/* Borde inferior de ancho completo */}
       <div className="w-full h-1 bg-gray-700" />
+      <div className="flex justify-center gap-4 text-blue-500 underline">
+          <a href="https://www.youtube.com/@FreakingAI" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.tiktok.com/@freakingai" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://www.instagram.com/freakingai" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://x.com/freakingai" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://github.com/carlosramosgallardo/MathsMine3" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
     </>
   )
 }

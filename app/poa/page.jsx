@@ -101,7 +101,7 @@ function PoAClientComponent() {
 
         {eligibilityChecked && !canAsk && (
           <p className="text-base text-gray-400 italic tracking-wide mb-4">
-             Connected as {address}. You must have mined at least 0.00001 MM3 to create a poll.
+            Connected as {address}. You must have mined at least 0.00001 MM3 to create a poll.
           </p>
         )}
 

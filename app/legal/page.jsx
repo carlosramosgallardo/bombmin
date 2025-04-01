@@ -79,7 +79,6 @@ export default function LegalPage() {
             </a>
           </p>
         </section>
-
       </div>
     </main>
   );

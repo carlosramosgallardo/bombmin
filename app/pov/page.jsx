@@ -177,9 +177,7 @@ function PoVClientComponent() {
                             </div>
                             <div className="w-full bg-gray-700 rounded h-3">
                               <div
-                                className={`h-3 rounded ${
-                                  option === 'yes' ? 'bg-[#22d3ee]' : 'bg-[#1e86d1]'
-                                }`}
+                                className={`h-3 rounded ${option === 'yes' ? 'bg-[#22d3ee]' : 'bg-[#1e86d1]'}`}
                                 style={{ width: `${percentage}%` }}
                               />
                             </div>
