@@ -64,7 +64,7 @@ export default function Page() {
         {/* Game Board */}
         <div className="mb-12">
           {account && (
-            <p className="text-xs text-gray-500 text-center mb-2">
+            <p className="text-base text-gray-500 text-center mb-2">
               Connected as: {account}
             </p>
           )}

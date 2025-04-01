@@ -116,11 +116,11 @@ function PoVClientComponent() {
           <>
             {eligibilityChecked &&
               (!canVote ? (
-                <p className="text-xs text-gray-400 italic tracking-wide mb-4">
+                <p className="text-base text-gray-400 italic tracking-wide mb-4">
                   Connected as {address}. You must have mined at least 0.00001 MM3 to vote.
                 </p>
               ) : (
-                <p className="text-xs text-gray-400 italic tracking-wide mb-4">
+                <p className="text-base text-gray-400 italic tracking-wide mb-4">
                   Connected as: {address}
                 </p>
               ))}
@@ -141,7 +141,7 @@ function PoVClientComponent() {
                   className="mb-16 p-6 bg-[#0b0f19] border border-[#22d3ee] rounded-lg shadow-lg"
                 >
                   <h2 className="text-lg font-medium mb-1 text-white">{poll.question}</h2>
-                  <p className="text-xs text-[#22d3ee] mb-4">
+                  <p className="text-base text-[#22d3ee] mb-4">
                     Created by: {poll.wallet_address}
                   </p>
 

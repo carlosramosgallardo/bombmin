@@ -57,7 +57,7 @@ export default function ManifestoPage() {
         </section>
 
         <section className="mb-8">
-          <p className="text-xs italic">
+          <p className="text-base italic">
             MathsMine3 reserves the right to remove any offensive or inappropriate content. Users are responsible for the content they publish.
           </p>
         </section>
