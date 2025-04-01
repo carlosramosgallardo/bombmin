@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <>
       {/* Borde superior de ancho completo */}
-      <div className="w-full h-1 bg-black" />
+      <div className="w-full h-1 bg-gray-700" />
 
       <header className="w-full flex flex-col items-center py-8 space-y-2">
         <Link href="/" aria-label="Go to homepage">
@@ -26,7 +26,7 @@ export default function Header() {
       </header>
 
       {/* Borde inferior de ancho completo */}
-      <div className="w-full h-1 bg-black" />
+      <div className="w-full h-1 bg-gray-700" />
     </>
   )
 }

@@ -11,9 +11,9 @@ export default function Footer() {
   return (
     <>
       {/* Borde superior de ancho completo */}
-      <div className="w-full h-1 bg-black" />
+      <div className="w-full h-1 bg-gray-700" />
 
-      <footer className="text-center text-sm text-gray-400 mt-12 mb-4 space-y-4">
+      <footer className="text-center text-sm text-gray-400 py-4 space-y-4">
         <div className="flex justify-center gap-4 text-blue-500 underline">
           <a href="https://www.youtube.com/@FreakingAI" target="_blank" rel="noopener noreferrer">YouTube</a>
           <a href="https://www.tiktok.com/@freakingai" target="_blank" rel="noopener noreferrer">TikTok</a>
@@ -55,7 +55,7 @@ export default function Footer() {
       </footer>
 
       {/* Borde inferior de ancho completo */}
-      <div className="w-full h-1 bg-black" />
+      <div className="w-full h-1 bg-gray-700" />
     </>
   )
 }
