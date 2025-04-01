@@ -112,9 +112,9 @@ function PoVClientComponent() {
   };
 
   return (
-    <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono bg-black">
-      <div className="max-w-3xl w-full text-center">
-        <h1 className="text-3xl font-bold mb-8 text-white">Proof of Vote</h1>
+    <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
+      <div className="max-w-3xl w-full">
+        <h1 className="text-3xl font-bold mb-6">Proof of Vote</h1>
 
         {pollData.length === 0 ? (
           <p className="text-gray-400">Loading poll data...</p>
