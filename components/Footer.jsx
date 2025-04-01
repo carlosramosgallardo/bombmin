@@ -14,21 +14,6 @@ export default function Footer() {
       <div className="w-full h-1 bg-gray-700" />
 
       <footer className="text-center text-sm text-gray-400 py-4 space-y-4">
-        <div>
-          {!revealed ? (
-            <button
-              onClick={() => setRevealed(true)}
-              className="underline text-blue-400 focus:outline-none"
-              aria-label="Reveal email"
-            >
-              Contact
-            </button>
-          ) : (
-            <a href="mailto:botsandpods@gmail.com" className="underline text-blue-400">
-              botsandpods@gmail.com
-            </a>
-          )}
-        </div>
 
         <NavLinks className="mt-2" />
 
@@ -55,6 +40,21 @@ export default function Footer() {
           <a href="https://x.com/freakingai" target="_blank" rel="noopener noreferrer">X</a>
           <a href="https://github.com/carlosramosgallardo/MathsMine3" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-    </>
+        <div>
+          {!revealed ? (
+            <button
+              onClick={() => setRevealed(true)}
+              className="underline text-blue-400 focus:outline-none"
+              aria-label="Reveal email"
+            >
+              Contact
+            </button>
+          ) : (
+            <a href="mailto:botsandpods@gmail.com" className="underline text-blue-400">
+              botsandpods@gmail.com
+            </a>
+          )}
+        </div>
+   </>
   )
 }
