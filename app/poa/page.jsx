@@ -37,7 +37,7 @@ function PoAClientComponent() {
         setCanAsk(eligible);
         setEligibilityChecked(true);
 
-        // Query the polls table to see if a poll already exists for this wallet.
+        // Consulta la tabla polls para ver si ya existe una encuesta para este wallet.
         const { data, error } = await supabase
           .from('polls')
           .select('id')
@@ -62,14 +62,14 @@ function PoAClientComponent() {
       return;
     }
 
-    // Validate that the question has a maximum of 20 words.
+    // Valida que la pregunta tenga máximo 20 palabras.
     const wordCount = question.trim().split(/\s+/).length;
     if (wordCount > 20) {
       setStatusMessage('The question must not exceed 20 words.');
       return;
     }
 
-    // If a poll has already been created for this wallet, do not allow another.
+    // Si ya se creó una encuesta para este wallet, no se permite otra.
     if (hasCreatedPoll) {
       setStatusMessage('Only one poll per wallet is allowed.');
       return;
@@ -95,7 +95,7 @@ function PoAClientComponent() {
   };
 
   return (
-    <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 bg-black">
+    <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 bg-black">
       <div className="max-w-xl w-full text-center">
         <h1 className="text-3xl font-bold mb-8 text-white">Proof of Ask</h1>
 

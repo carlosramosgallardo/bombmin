@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function ApiPage() {
   return (
-    <main className="flex flex-col items-center min-h-screen w-full px-4 pt-10 pb-20 text-sm font-mono text-white bg-black">
+    <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-white bg-black">
       <div className="max-w-2xl w-full">
         <h1 className="text-2xl font-bold mb-6">Public API Documentation</h1>
 
@@ -16,7 +16,9 @@ export default function ApiPage() {
         <h2 className="text-xl font-semibold mt-8 mb-2">Token Value</h2>
         <p>Returns the current token mining value:</p>
         <code className="block bg-gray-800 p-2 rounded my-2">
-          <a href="/api/token-value" className="text-blue-400" target="_blank">GET /api/token-value</a>
+          <a href="/api/token-value" className="text-blue-400" target="_blank">
+            GET /api/token-value
+          </a>
         </code>
         <pre className="bg-gray-900 p-3 rounded overflow-auto mb-6">
 {`{
@@ -29,7 +31,9 @@ export default function ApiPage() {
         <h2 className="text-xl font-semibold mt-8 mb-2">Token History</h2>
         <p>Hourly cumulative token mining values:</p>
         <code className="block bg-gray-800 p-2 rounded my-2">
-          <a href="/api/token-history" className="text-blue-400" target="_blank">GET /api/token-history</a>
+          <a href="/api/token-history" className="text-blue-400" target="_blank">
+            GET /api/token-history
+          </a>
         </code>
         <pre className="bg-gray-900 p-3 rounded overflow-auto mb-6">
 {`[
@@ -44,7 +48,9 @@ export default function ApiPage() {
         <h2 className="text-xl font-semibold mt-8 mb-2">Top Contributors</h2>
         <p>List of wallet addresses with the highest mining impact (positive or negative):</p>
         <code className="block bg-gray-800 p-2 rounded my-2">
-          <a href="/api/top-contributors" className="text-blue-400" target="_blank">GET /api/top-contributors</a>
+          <a href="/api/top-contributors" className="text-blue-400" target="_blank">
+            GET /api/top-contributors
+          </a>
         </code>
         <pre className="bg-gray-900 p-3 rounded overflow-auto mb-6">
 {`[
@@ -59,7 +65,9 @@ export default function ApiPage() {
         <h2 className="text-xl font-semibold mt-8 mb-2">Active Polls</h2>
         <p>Returns all polls currently open for voting:</p>
         <code className="block bg-gray-800 p-2 rounded my-2">
-          <a href="/api/pov/get" className="text-blue-400" target="_blank">GET /api/pov/get</a>
+          <a href="/api/pov/get" className="text-blue-400" target="_blank">
+            GET /api/pov/get
+          </a>
         </code>
         <pre className="bg-gray-900 p-3 rounded overflow-auto mb-6">
 {`[
