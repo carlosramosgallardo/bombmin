@@ -20,7 +20,7 @@ export default function Header() {
 
       <NavLinks className="mt-2" />
 
-      <div className="w-full max-w-3xl border-t border-gray-700/50 mt-6 opacity-50" />
+      <div className="w-full max-w-3xl h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mt-6 rounded-full" />
     </header>
   )
 }
