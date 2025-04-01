@@ -51,6 +51,8 @@ export default function LegalPage() {
             By using MathsMine3, you agree not to abuse the system through automation, scripting, or spammy
             interactions. All gameplay data is public and transparent. The site is provided as-is, with no guarantees
             regarding uptime, data retention, or gameplay outcomes.
+            MathsMine3 reserves the right to remove any offensive or inappropriate content. 
+            Users are responsible for the content they publish.
           </p>
         </section>
 

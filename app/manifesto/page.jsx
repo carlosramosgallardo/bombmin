@@ -55,12 +55,6 @@ export default function ManifestoPage() {
             This is not a financial product. This is a game. This is a rebellion.
           </p>
         </section>
-
-        <section className="mb-8">
-          <p className="text-base italic">
-            MathsMine3 reserves the right to remove any offensive or inappropriate content. Users are responsible for the content they publish.
-          </p>
-        </section>
       </div>
     </main>
   );

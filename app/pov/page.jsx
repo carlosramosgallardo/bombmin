@@ -84,6 +84,12 @@ function PoVClientComponent() {
       return;
     }
 
+    // Verificación de elegibilidad para votar
+    if (!canVote) {
+      setStatusMessage('You are not eligible to vote. You must have mined at least 0.00001 MM3.');
+      return;
+    }
+
     try {
       const { error } = await supabase
         .from('poll_votes')
