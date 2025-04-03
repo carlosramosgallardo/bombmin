@@ -19,7 +19,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
     // Se carga aleatoriamente una frase (problem) desde un JSON de frases
     const fetchPhrase = async () => {
       try {
-        const res = await fetch('/word_phrases.json');
+        const res = await fetch('/math_phrases.json');
         const phrases = await res.json();
         const chosen = phrases[Math.floor(Math.random() * phrases.length)];
         setProblem(chosen);
