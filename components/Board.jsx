@@ -3,22 +3,23 @@
 import { useState, useEffect, useRef } from 'react';
 
 export default function Board({ account, setGameMessage, setGameCompleted, setGameData }) {
-  const [problem, setProblem] = useState(null); // Ahora contendrá { masked, answer, source }
+  // problem contiene { masked, answer, source }
+  const [problem, setProblem] = useState(null);
   const [userAnswer, setUserAnswer] = useState('');
   const [elapsedTime, setElapsedTime] = useState(0);
   const [preGameCountdown, setPreGameCountdown] = useState(3);
   const [isDisabled, setIsDisabled] = useState(true);
 
-  // Puedes usar el precio de participación si deseas mantener la lógica de recompensa
+  // Se utiliza el precio de participación para calcular el minado
   const PARTICIPATION_PRICE = parseFloat(process.env.NEXT_PUBLIC_PARTICIPATION_PRICE);
   const preGameIntervalRef = useRef(null);
   const solveIntervalRef = useRef(null);
 
   useEffect(() => {
-    // Se carga la frase (problem) desde el JSON
+    // Se carga aleatoriamente una frase (problem) desde un JSON de frases
     const fetchPhrase = async () => {
       try {
-        const res = await fetch('/math_phrases.json');
+        const res = await fetch('/word_phrases.json');
         const phrases = await res.json();
         const chosen = phrases[Math.floor(Math.random() * phrases.length)];
         setProblem(chosen);
@@ -50,14 +51,13 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   const startSolveTimer = () => {
     setIsDisabled(false);
     const startTime = Date.now();
-
     solveIntervalRef.current = setInterval(() => {
       const timePassed = Date.now() - startTime;
       setElapsedTime(timePassed);
 
-      if (timePassed >= 10000) { // Límite de 10 segundos para adivinar
+      if (timePassed >= 10000) { // Límite de 10 segundos
         clearInterval(solveIntervalRef.current);
-        setGameMessage('⏳ Time exceeded! No reward.');
+        setGameMessage('⏳ Time exceeded! No mining reward.');
         finalizeGame(false, 0);
       }
     }, 100);
@@ -68,49 +68,46 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
     clearInterval(solveIntervalRef.current);
     const totalTime = elapsedTime;
-    // Comparamos ignorando espacios y mayúsculas/minúsculas
+    // Validación de la respuesta sin considerar mayúsculas o espacios extra
     const correct = userAnswer.trim().toLowerCase() === problem.answer.trim().toLowerCase();
-
-    let reward = 0;
+    let miningAmount = 0;
 
     if (correct) {
       if (totalTime <= 5000) {
-        // Recompensa positiva basada en la rapidez
-        reward = PARTICIPATION_PRICE * ((5000 - totalTime) / 5000);
+        // Recompensa positiva proporcional a la rapidez
+        miningAmount = PARTICIPATION_PRICE * ((5000 - totalTime) / 5000);
       } else {
         // Penalización por respuesta lenta (hasta -10% del valor)
         const overTime = Math.min(totalTime - 5000, 5000);
         const penaltyRatio = overTime / 5000;
-        reward = -PARTICIPATION_PRICE * 0.10 * penaltyRatio;
+        miningAmount = -PARTICIPATION_PRICE * 0.10 * penaltyRatio;
       }
 
-      const displayReward =
-        Math.abs(reward) < 0.00000001
-          ? '< 0.00000001'
-          : reward.toFixed(8);
-
+      const displayAmount =
+        Math.abs(miningAmount) < 0.00000001 ? '< 0.00000001' : miningAmount.toFixed(8);
       const message = account
-        ? `Inject MM3 now: ${displayReward}`
-        : `Connect your wallet to proceed with injecting MM3: ${displayReward}.`;
+        ? `Inject MM3 now: ${displayAmount}`
+        : `Connect your wallet to proceed with injecting MM3: ${displayAmount}.`;
       setGameMessage(message);
     } else {
-      setGameMessage('❌ Incorrect! No reward.');
+      setGameMessage('❌ Incorrect! No mining reward.');
     }
 
-    finalizeGame(correct, reward);
+    finalizeGame(correct, miningAmount);
   };
 
-  const finalizeGame = (isCorrect, reward) => {
+  const finalizeGame = (isCorrect, miningAmount) => {
     setIsDisabled(true);
     setGameCompleted(true);
 
+    // Se inserta en la BBDD el valor calculado en la columna "mining_reward"
     setGameData({
       wallet: account,
-      problem: problem.masked, // Guardamos la frase con la palabra oculta
+      problem: problem.masked, // La frase con la palabra oculta
       user_answer: userAnswer,
       is_correct: isCorrect,
       time_ms: elapsedTime,
-      reward: reward,
+      mining_reward: miningAmount,
     });
   };
 
