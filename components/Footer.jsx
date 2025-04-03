@@ -15,8 +15,6 @@ export default function Footer() {
 
       <footer className="text-center text-sm text-gray-400 py-4 space-y-4">
 
-        <NavLinks className="mt-2" />
-
         <Link href="/" aria-label="Go to homepage">
           <div className="flex justify-center mt-4">
             <Image
@@ -29,10 +27,7 @@ export default function Footer() {
             />
           </div>
         </Link>
-      </footer>
-
-      {/* Borde inferior de ancho completo */}
-      <div className="w-full h-1 bg-gray-700" />
+     
       <div className="flex justify-center gap-4 text-blue-500 underline">
           <a href="https://www.youtube.com/@FreakingAI" target="_blank" rel="noopener noreferrer">YouTube</a>
           <a href="https://www.tiktok.com/@freakingai" target="_blank" rel="noopener noreferrer">TikTok</a>
@@ -55,6 +50,7 @@ export default function Footer() {
             </a>
           )}
         </div>
-   </>
+   </footer>
+    </>
   )
 }

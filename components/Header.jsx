@@ -7,8 +7,6 @@ import NavLinks from '@/components/NavLinks'
 export default function Header() {
   return (
     <>
-      {/* Borde superior de ancho completo */}
-      <div className="w-full h-1 bg-gray-700" />
 
       <header className="w-full flex flex-col items-center py-8 space-y-2">
         <Link href="/" aria-label="Go to homepage">
