@@ -54,43 +54,45 @@ export default function Leaderboard() {
   const totalPages = Math.ceil(leaderboard.length / itemsPerPage);
 
   return (
-    <table className="table-fixed w-full mx-auto border border-[#22d3ee] rounded-xl text-sm md:text-base">
-      <thead className="bg-[#0b0f19] text-[#22d3ee]">
-        <tr>
-          <th className="border border-[#22d3ee] px-4 py-2 text-left font-mono">
-            Wallet
-          </th>
-          <th className="border border-[#22d3ee] px-4 py-2 text-right font-mono">
-           MM3
-          </th>
-        </tr>
-      </thead>
-      <tbody className="bg-[#0b0f19] text-[#22d3ee]">
-        {isLoading ? (
+    <div className="w-full overflow-auto">
+      <table className="table-fixed w-full mx-auto border border-[#22d3ee] rounded-xl text-sm md:text-base">
+        <thead className="bg-[#0b0f19] text-[#22d3ee]">
           <tr>
-            <td colSpan="2" className="border border-[#22d3ee] px-4 py-2 text-center">
-              Loading leaderboard...
-            </td>
+            <th className="border border-[#22d3ee] px-4 py-2 text-left font-mono">
+              Wallet
+            </th>
+            <th className="border border-[#22d3ee] px-4 py-2 text-right font-mono">
+              MM3
+            </th>
           </tr>
-        ) : currentItems.length > 0 ? (
-          currentItems.map((entry, index) => (
-            <tr key={index} className="hover:bg-[#1e293b] transition">
-              <td className="border border-[#22d3ee] px-4 py-2 font-mono whitespace-normal break-words">
-                {entry.wallet}
-              </td>
-              <td className="border border-[#22d3ee] px-4 py-2 font-mono text-right">
-                {Number(entry.total_eth).toFixed(6)}
+        </thead>
+        <tbody className="bg-[#0b0f19] text-[#22d3ee]">
+          {isLoading ? (
+            <tr>
+              <td colSpan="2" className="border border-[#22d3ee] px-4 py-2 text-center">
+                Loading leaderboard...
               </td>
             </tr>
-          ))
-        ) : (
-          <tr>
-            <td colSpan="2" className="border border-[#22d3ee] px-4 py-2 text-center">
-              No leaderboard data available.
-            </td>
-          </tr>
-        )}
-      </tbody>
-    </table>
+          ) : currentItems.length > 0 ? (
+            currentItems.map((entry, index) => (
+              <tr key={index} className="hover:bg-[#1e293b] transition">
+                <td className="border border-[#22d3ee] px-4 py-2 font-mono whitespace-normal break-words">
+                  {entry.wallet}
+                </td>
+                <td className="border border-[#22d3ee] px-4 py-2 font-mono text-right">
+                  {Number(entry.total_eth).toFixed(6)}
+                </td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="2" className="border border-[#22d3ee] px-4 py-2 text-center">
+                No leaderboard data available.
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </div>
   );
 }

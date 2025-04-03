@@ -112,8 +112,9 @@ function PoVClientComponent() {
   };
 
   return (
-    <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
-      <div className="max-w-3xl w-full">
+    <main className="flex flex-col items-center w-full pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
+      {/* Contenedor interno con padding horizontal */}
+      <div className="w-full max-w-3xl px-4">
         <h1 className="text-3xl font-bold mb-6">Proof of Vote</h1>
 
         {pollData.length === 0 ? (
