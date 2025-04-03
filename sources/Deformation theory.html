@@ -1,0 +1,3626 @@
+<div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none">Branch of mathematics</div>
+<p>In <a href="/wiki/Mathematics" title="Mathematics">mathematics</a>, <b>deformation theory</b> is the study of <a href="/wiki/Infinitesimal" title="Infinitesimal">infinitesimal</a> conditions associated with varying a solution <i>P</i> of a problem to slightly different solutions <i>P</i><sub>ε</sub>, where ε is a small number, or a vector of small quantities. The infinitesimal conditions are the result of applying the approach of <a href="/wiki/Differential_calculus" title="Differential calculus">differential calculus</a> to solving a problem with <a href="/wiki/Constraint_(mathematics)" title="Constraint (mathematics)">constraints</a>. The name is an analogy to non-rigid structures that <a href="/wiki/Deformation_(physics)" title="Deformation (physics)">deform</a> slightly to accommodate external forces.
+</p><p>Some characteristic phenomena are: the derivation of first-order equations by treating the ε quantities as having negligible squares; the possibility of <i>isolated solutions</i>, in that varying a solution may not be possible, <i>or</i> does not bring anything new; and the question of whether the infinitesimal constraints actually 'integrate', so that their solution does provide small variations. In some form these considerations have a history of centuries in mathematics, but also in <a href="/wiki/Physics" title="Physics">physics</a> and <a href="/wiki/Engineering" title="Engineering">engineering</a>. For example, in the <a href="/wiki/Geometry_of_numbers" title="Geometry of numbers">geometry of numbers</a> a class of results called <i>isolation theorems</i> was recognised, with the topological interpretation of an <i>open orbit</i> (of a <a class="mw-redirect" href="/wiki/Group_action_(mathematics)" title="Group action (mathematics)">group action</a>) around a given solution. <a href="/wiki/Perturbation_theory" title="Perturbation theory">Perturbation theory</a> also looks at deformations, in general of <a href="/wiki/Operator_(mathematics)" title="Operator (mathematics)">operators</a>.
+</p>
+<meta property="mw:PageProp/toc">
+<div class="mw-heading mw-heading2"><h2 id="Deformations_of_complex_manifolds">Deformations of complex manifolds</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=1" title="Edit section: Deformations of complex manifolds"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The most salient deformation theory in mathematics has been that of <a href="/wiki/Complex_manifold" title="Complex manifold">complex manifolds</a> and <a class="mw-redirect" href="/wiki/Algebraic_varieties" title="Algebraic varieties">algebraic varieties</a>. This was put on a firm basis by foundational work of <a href="/wiki/Kunihiko_Kodaira" title="Kunihiko Kodaira">Kunihiko Kodaira</a> and <a href="/wiki/Donald_C._Spencer" title="Donald C. Spencer">Donald C. Spencer</a>, after deformation techniques had received a great deal of more tentative application in the <a href="/wiki/Italian_school_of_algebraic_geometry" title="Italian school of algebraic geometry">Italian school of algebraic geometry</a>. One expects, intuitively, that deformation theory of the first order should equate the <a href="/wiki/Zariski_tangent_space" title="Zariski tangent space">Zariski tangent space</a> with a <a href="/wiki/Moduli_space" title="Moduli space">moduli space</a>. The phenomena turn out to be rather subtle, though, in the general case.
+</p><p>In the case of <a href="/wiki/Riemann_surface" title="Riemann surface">Riemann surfaces</a>, one can explain that the complex structure on the <a href="/wiki/Riemann_sphere" title="Riemann sphere">Riemann sphere</a> is isolated (no moduli). For genus 1, an <a href="/wiki/Elliptic_curve" title="Elliptic curve">elliptic curve</a> has a one-parameter family of complex structures, as shown in <a href="/wiki/Elliptic_function" title="Elliptic function">elliptic function</a> theory. The general Kodaira–Spencer theory identifies as the key to the deformation theory the <a href="/wiki/Sheaf_cohomology" title="Sheaf cohomology">sheaf cohomology</a> group
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle H^{1}(\Theta )\,}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>H</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi mathvariant="normal">Θ<!-- Θ --></mi>
+<mo stretchy="false">)</mo>
+<mspace width="thinmathspace"></mspace>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle H^{1}(\Theta )\,}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle H^{1}(\Theta )\,}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a37121345f12ddfccec85cb5e9586048250dffe6" style="vertical-align: -0.838ex; width:7.162ex; height:3.176ex;"/></span></dd></dl>
+<p>where Θ is (the sheaf of <a href="/wiki/Germ_(mathematics)" title="Germ (mathematics)">germs</a> of sections of) the holomorphic <a href="/wiki/Tangent_bundle" title="Tangent bundle">tangent bundle</a>. There is an obstruction in the <i>H</i><sup>2</sup> of the same sheaf; which is always zero in case of a curve, for general reasons of dimension. In the case of genus 0 the <i>H</i><sup>1</sup> vanishes, also. For genus 1 the dimension is the <a class="mw-redirect" href="/wiki/Hodge_number" title="Hodge number">Hodge number</a> <i>h</i><sup>1,0</sup> which is therefore 1.  It is known that all curves of genus one have equations of form <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + <i>ax</i> + <i>b</i>.  These obviously depend on two parameters, a and b, whereas the isomorphism classes of such curves have only one parameter.  Hence there must be an equation relating those a and b which describe isomorphic elliptic curves.  It turns out that curves for which <i>b</i><sup>2</sup><i>a</i><sup>−3</sup> has the same value, describe isomorphic curves.  I.e. varying a and b is one way to deform the structure of the curve <i>y</i><sup>2</sup> = <i>x</i><sup>3</sup> + <i>ax</i> + <i>b</i>, but not all variations of <i>a,b</i> actually change the isomorphism class of the curve.
+</p><p>One can go further with the case of genus <i>g</i> &gt; 1, using <a href="/wiki/Serre_duality" title="Serre duality">Serre duality</a> to relate the  <i>H</i><sup>1</sup> to
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle H^{0}(\Omega ^{[2]})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>H</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<msup>
+<mi mathvariant="normal">Ω<!-- Ω --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">[</mo>
+<mn>2</mn>
+<mo stretchy="false">]</mo>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle H^{0}(\Omega ^{[2]})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle H^{0}(\Omega ^{[2]})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2e190e960f1cff29d89ba309c0aee3d01500988f" style="vertical-align: -0.838ex; width:8.614ex; height:3.343ex;"/></span></dd></dl>
+<p>where Ω is the holomorphic <a href="/wiki/Cotangent_bundle" title="Cotangent bundle">cotangent bundle</a> and the notation Ω<sup>[2]</sup> means the <i>tensor square</i> (<i>not</i> the second <a class="mw-redirect" href="/wiki/Exterior_power" title="Exterior power">exterior power</a>). In other words, deformations are regulated by holomorphic <a href="/wiki/Quadratic_differential" title="Quadratic differential">quadratic differentials</a> on a Riemann surface, again something known classically. The dimension of the moduli space, called <a href="/wiki/Teichm%C3%BCller_space" title="Teichmüller space">Teichmüller space</a> in this case, is computed as 3<i>g</i> − 3, by the <a href="/wiki/Riemann%E2%80%93Roch_theorem" title="Riemann–Roch theorem">Riemann–Roch theorem</a>.
+</p><p>These examples are the beginning of a theory applying to holomorphic families of complex manifolds, of any dimension. Further developments included: the extension by Spencer of the techniques to other structures of <a href="/wiki/Differential_geometry" title="Differential geometry">differential geometry</a>; the assimilation of the Kodaira–Spencer theory into the abstract algebraic geometry of <a class="mw-redirect" href="/wiki/Grothendieck" title="Grothendieck">Grothendieck</a>, with a consequent substantive clarification of earlier work; and deformation theory of other structures, such as algebras.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Deformations_and_flat_maps">Deformations and flat maps</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=2" title="Edit section: Deformations and flat maps"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div><p>
+The most general form of a deformation is a flat map <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle f:X\to S}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>f</mi>
+<mo>:</mo>
+<mi>X</mi>
+<mo stretchy="false">→<!-- → --></mo>
+<mi>S</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle f:X\to S}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle f:X\to S}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a21a941b35354b73f5a62849067deac7ee9794dc" style="vertical-align: -0.671ex; width:10.309ex; height:2.509ex;"/></span> of complex-analytic spaces, <a href="/wiki/Scheme_(mathematics)" title="Scheme (mathematics)">schemes</a>, or germs of functions on a space. Grothendieck<sup class="reference" id="cite_ref-:0_1-0"><a href="#cite_note-:0-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup> was the first to find this far-reaching generalization for deformations and developed the theory in that context. The general idea is there should exist a <b>universal family</b> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {X}}\to B}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">X</mi>
+</mrow>
+</mrow>
+<mo stretchy="false">→<!-- → --></mo>
+<mi>B</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {X}}\to B}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {X}}\to B}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a58ea69b44a234648007165739e36f33b090d17b" style="vertical-align: -0.338ex; width:7.049ex; height:2.176ex;"/></span> such that any deformation can be found as a <i>unique</i> <a class="mw-redirect" href="/wiki/Pullback_square" title="Pullback square">pullback square</a></p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}\\\downarrow &amp;&amp;\downarrow \\S&amp;\to &amp;B\end{matrix}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<mi>X</mi>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">X</mi>
+</mrow>
+</mrow>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+<mtd></mtd>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>S</mi>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>B</mi>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}\\\downarrow &amp;&amp;\downarrow \\S&amp;\to &amp;B\end{matrix}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}\\\downarrow &amp;&amp;\downarrow \\S&amp;\to &amp;B\end{matrix}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e57c29dddba678d42381879239c96413b101d368" style="vertical-align: -4.005ex; width:11.464ex; height:9.176ex;"/></span></p></blockquote><p>In many cases, this universal family is either a <a href="/wiki/Hilbert_scheme" title="Hilbert scheme">Hilbert scheme</a> or <a href="/wiki/Quot_scheme" title="Quot scheme">Quot scheme</a>, or a quotient of one of them. For example, in the construction of the <a class="mw-redirect" href="/wiki/Moduli_of_curves" title="Moduli of curves">moduli of curves</a>, it is constructed as a quotient of the smooth curves in the Hilbert scheme. If the pullback square is not unique, then the family is only <b>versal</b>.
+</p><div class="mw-heading mw-heading2"><h2 id="Deformations_of_germs_of_analytic_algebras">Deformations of germs of analytic algebras</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=3" title="Edit section: Deformations of germs of analytic algebras"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div><p>
+One of the useful and readily computable areas of deformation theory comes from the deformation theory of germs of complex spaces, such as <a href="/wiki/Stein_manifold" title="Stein manifold">Stein manifolds</a>, <a href="/wiki/Complex_manifold" title="Complex manifold">complex manifolds</a>, or <a href="/wiki/Complex_analytic_variety" title="Complex analytic variety">complex analytic varieties</a>.<sup class="reference" id="cite_ref-:0_1-1"><a href="#cite_note-:0-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup> Note that this theory can be <b>globalized</b> to complex manifolds and complex analytic spaces by considering the sheaves of germs of holomorphic functions, tangent spaces, etc. Such algebras are of the form</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A\cong {\frac {\mathbb {C} \{z_{1},\ldots ,z_{n}\}}{I}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>A</mi>
+<mo>≅<!-- ≅ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mo fence="false" stretchy="false">{</mo>
+<msub>
+<mi>z</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<mo>…<!-- … --></mo>
+<mo>,</mo>
+<msub>
+<mi>z</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo fence="false" stretchy="false">}</mo>
+</mrow>
+<mi>I</mi>
+</mfrac>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A\cong {\frac {\mathbb {C} \{z_{1},\ldots ,z_{n}\}}{I}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A\cong {\frac {\mathbb {C} \{z_{1},\ldots ,z_{n}\}}{I}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b3bf025aa5719957b09aeb2eca2f58da22a4f367" style="vertical-align: -1.838ex; width:19.294ex; height:5.676ex;"/></span> </p></blockquote><p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {C} \{z_{1},\ldots ,z_{n}\}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mo fence="false" stretchy="false">{</mo>
+<msub>
+<mi>z</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<mo>…<!-- … --></mo>
+<mo>,</mo>
+<msub>
+<mi>z</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo fence="false" stretchy="false">}</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {C} \{z_{1},\ldots ,z_{n}\}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {C} \{z_{1},\ldots ,z_{n}\}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fa0bf501bf45b76ad89c5643052af06f032f0a61" style="vertical-align: -0.838ex; width:13.616ex; height:2.843ex;"/></span> is the ring of convergent power-series and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle I}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>I</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle I}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle I}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/535ea7fc4134a31cbe2251d9d3511374bc41be9f" style="vertical-align: -0.338ex; width:1.172ex; height:2.176ex;"/></span> is an ideal. For example, many authors study the germs of functions of a singularity, such as the algebra</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A\cong {\frac {\mathbb {C} \{z_{1},\ldots ,z_{n}\}}{(y^{2}-x^{n})}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>A</mi>
+<mo>≅<!-- ≅ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mo fence="false" stretchy="false">{</mo>
+<msub>
+<mi>z</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<mo>…<!-- … --></mo>
+<mo>,</mo>
+<msub>
+<mi>z</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo fence="false" stretchy="false">}</mo>
+</mrow>
+<mrow>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mrow>
+</mfrac>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A\cong {\frac {\mathbb {C} \{z_{1},\ldots ,z_{n}\}}{(y^{2}-x^{n})}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A\cong {\frac {\mathbb {C} \{z_{1},\ldots ,z_{n}\}}{(y^{2}-x^{n})}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f5e81ae48d8bdc3311e9d3d9bffe90ae9f8cb771" style="vertical-align: -2.671ex; width:19.294ex; height:6.509ex;"/></span></p></blockquote><p>representing a plane-curve singularity. A <b>germ of analytic algebras</b> is then an object in the opposite category of such algebras. Then, a <b>deformation</b> of a germ of analytic algebras <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle X_{0}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>X</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle X_{0}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle X_{0}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6381fdad2b9f11954b1fc2db08bbaccf634ededa" style="vertical-align: -0.671ex; width:2.979ex; height:2.509ex;"/></span> is given by a flat map of germs of analytic algebras <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle f:X\to S}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>f</mi>
+<mo>:</mo>
+<mi>X</mi>
+<mo stretchy="false">→<!-- → --></mo>
+<mi>S</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle f:X\to S}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle f:X\to S}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a21a941b35354b73f5a62849067deac7ee9794dc" style="vertical-align: -0.671ex; width:10.309ex; height:2.509ex;"/></span> where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle S}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>S</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle S}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle S}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4611d85173cd3b508e67077d4a1252c9c05abca2" style="vertical-align: -0.338ex; width:1.499ex; height:2.176ex;"/></span> has a distinguished point <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle 0}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mn>0</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle 0}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle 0}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2aae8864a3c1fec9585261791a809ddec1489950" style="vertical-align: -0.338ex; width:1.162ex; height:2.176ex;"/></span> such that the <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle X_{0}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>X</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle X_{0}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle X_{0}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6381fdad2b9f11954b1fc2db08bbaccf634ededa" style="vertical-align: -0.671ex; width:2.979ex; height:2.509ex;"/></span> fits into the pullback square</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{matrix}X_{0}&amp;\to &amp;X\\\downarrow &amp;&amp;\downarrow \\*&amp;{\xrightarrow[{0}]{}}&amp;S\end{matrix}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<msub>
+<mi>X</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>X</mi>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+<mtd></mtd>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo>∗<!-- ∗ --></mo>
+</mtd>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<munderover>
+<mo>→</mo>
+<mpadded lspace="0.278em" voffset="-.24em" width="+0.611em">
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</mpadded>
+<mpadded lspace="0.278em" voffset=".15em" width="+0.611em"></mpadded>
+</munderover>
+</mrow>
+</mtd>
+<mtd>
+<mi>S</mi>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{matrix}X_{0}&amp;\to &amp;X\\\downarrow &amp;&amp;\downarrow \\*&amp;{\xrightarrow[{0}]{}}&amp;S\end{matrix}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{matrix}X_{0}&amp;\to &amp;X\\\downarrow &amp;&amp;\downarrow \\*&amp;{\xrightarrow[{0}]{}}&amp;S\end{matrix}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/40f50bbe379d432fb164636023cd161eb7f92727" style="vertical-align: -4.504ex; margin-bottom: -0.5ex; width:12.679ex; height:10.843ex;"/></span></p></blockquote><p>These deformations have an equivalence relation given by commutative squares</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{matrix}X'&amp;\to &amp;X\\\downarrow &amp;&amp;\downarrow \\S'&amp;\to &amp;S\end{matrix}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<msup>
+<mi>X</mi>
+<mo>′</mo>
+</msup>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>X</mi>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+<mtd></mtd>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<msup>
+<mi>S</mi>
+<mo>′</mo>
+</msup>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>S</mi>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{matrix}X'&amp;\to &amp;X\\\downarrow &amp;&amp;\downarrow \\S'&amp;\to &amp;S\end{matrix}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{matrix}X'&amp;\to &amp;X\\\downarrow &amp;&amp;\downarrow \\S'&amp;\to &amp;S\end{matrix}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/39b1f57fa9ceae4070da653dfde133df9b761670" style="vertical-align: -4.005ex; width:12.382ex; height:9.176ex;"/></span></p></blockquote><p>where the horizontal arrows are isomorphisms. For example, there is a deformation of the plane curve singularity given by the opposite diagram of the commutative diagram of analytic algebras</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{matrix}{\frac {\mathbb {C} \{x,y\}}{(y^{2}-x^{n})}}&amp;\leftarrow &amp;{\frac {\mathbb {C} \{x,y,s\}}{(y^{2}-x^{n}+s)}}\\\uparrow &amp;&amp;\uparrow \\\mathbb {C} &amp;\leftarrow &amp;\mathbb {C} \{s\}\end{matrix}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mo fence="false" stretchy="false">{</mo>
+<mi>x</mi>
+<mo>,</mo>
+<mi>y</mi>
+<mo fence="false" stretchy="false">}</mo>
+</mrow>
+<mrow>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mrow>
+</mfrac>
+</mrow>
+</mtd>
+<mtd>
+<mo stretchy="false">←<!-- ← --></mo>
+</mtd>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mo fence="false" stretchy="false">{</mo>
+<mi>x</mi>
+<mo>,</mo>
+<mi>y</mi>
+<mo>,</mo>
+<mi>s</mi>
+<mo fence="false" stretchy="false">}</mo>
+</mrow>
+<mrow>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>s</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+</mfrac>
+</mrow>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↑<!-- ↑ --></mo>
+</mtd>
+<mtd></mtd>
+<mtd>
+<mo stretchy="false">↑<!-- ↑ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+</mtd>
+<mtd>
+<mo stretchy="false">←<!-- ← --></mo>
+</mtd>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mo fence="false" stretchy="false">{</mo>
+<mi>s</mi>
+<mo fence="false" stretchy="false">}</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{matrix}{\frac {\mathbb {C} \{x,y\}}{(y^{2}-x^{n})}}&amp;\leftarrow &amp;{\frac {\mathbb {C} \{x,y,s\}}{(y^{2}-x^{n}+s)}}\\\uparrow &amp;&amp;\uparrow \\\mathbb {C} &amp;\leftarrow &amp;\mathbb {C} \{s\}\end{matrix}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{matrix}{\frac {\mathbb {C} \{x,y\}}{(y^{2}-x^{n})}}&amp;\leftarrow &amp;{\frac {\mathbb {C} \{x,y,s\}}{(y^{2}-x^{n}+s)}}\\\uparrow &amp;&amp;\uparrow \\\mathbb {C} &amp;\leftarrow &amp;\mathbb {C} \{s\}\end{matrix}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a33c1e3acaeee1ff9f4a2e9159994379861e22b3" style="vertical-align: -5.171ex; width:23.673ex; height:11.509ex;"/></span></p></blockquote><p>In fact, Milnor studied such deformations, where a singularity is deformed by a constant, hence the fiber over a non-zero <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle s}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>s</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle s}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle s}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/01d131dfd7673938b947072a13a9744fe997e632" style="vertical-align: -0.338ex; width:1.09ex; height:1.676ex;"/></span> is called the <b>Milnor fiber</b>.
+</p><div class="mw-heading mw-heading3"><h3 id="Cohomological_Interpretation_of_deformations">Cohomological Interpretation of deformations</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=4" title="Edit section: Cohomological Interpretation of deformations"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div><p>
+It should be clear there could be many deformations of a single germ of analytic functions. Because of this, there are some book-keeping devices required to organize all of this information. These organizational devices are constructed using tangent cohomology.<sup class="reference" id="cite_ref-:0_1-2"><a href="#cite_note-:0-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup> This is formed by using the <a href="/wiki/Koszul%E2%80%93Tate_resolution" title="Koszul–Tate resolution">Koszul–Tate resolution</a>, and potentially modifying it by adding additional generators for non-regular algebras <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>A</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7daff47fa58cdfd29dc333def748ff5fa4c923e3" style="vertical-align: -0.338ex; width:1.743ex; height:2.176ex;"/></span>. In the case of analytic algebras these resolutions are called the <b>Tjurina resolution</b> for the mathematician who first studied such objects, <a href="/wiki/Galina_Tyurina" title="Galina Tyurina">Galina Tyurina</a>. This is a graded-commutative differential graded algebra <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (R_{\bullet },s)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<msub>
+<mi>R</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>∙<!-- ∙ --></mo>
+</mrow>
+</msub>
+<mo>,</mo>
+<mi>s</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (R_{\bullet },s)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (R_{\bullet },s)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a047674d3cebbc8616d31f490b9ed8349c0e52b5" style="vertical-align: -0.838ex; width:6.752ex; height:2.843ex;"/></span> such that <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle R_{0}\to A}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>R</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo stretchy="false">→<!-- → --></mo>
+<mi>A</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle R_{0}\to A}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle R_{0}\to A}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/88fa32efd981cdfc46362729721f8d109a562b4f" style="vertical-align: -0.671ex; width:8.175ex; height:2.509ex;"/></span> is a surjective map of analytic algebras, and this map fits into an exact sequence</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \cdots \xrightarrow {s} R_{-2}\xrightarrow {s} R_{-1}\xrightarrow {s} R_{0}\xrightarrow {p} A\to 0}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo>⋯<!-- ⋯ --></mo>
+<mover>
+<mo>→</mo>
+<mpadded lspace="0.278em" voffset=".15em" width="+0.611em">
+<mi>s</mi>
+</mpadded>
+</mover>
+<msub>
+<mi>R</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>−<!-- − --></mo>
+<mn>2</mn>
+</mrow>
+</msub>
+<mover>
+<mo>→</mo>
+<mpadded lspace="0.278em" voffset=".15em" width="+0.611em">
+<mi>s</mi>
+</mpadded>
+</mover>
+<msub>
+<mi>R</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<mover>
+<mo>→</mo>
+<mpadded lspace="0.278em" voffset=".15em" width="+0.611em">
+<mi>s</mi>
+</mpadded>
+</mover>
+<msub>
+<mi>R</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mover>
+<mo>→</mo>
+<mpadded lspace="0.278em" voffset=".15em" width="+0.611em">
+<mi>p</mi>
+</mpadded>
+</mover>
+<mi>A</mi>
+<mo stretchy="false">→<!-- → --></mo>
+<mn>0</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \cdots \xrightarrow {s} R_{-2}\xrightarrow {s} R_{-1}\xrightarrow {s} R_{0}\xrightarrow {p} A\to 0}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \cdots \xrightarrow {s} R_{-2}\xrightarrow {s} R_{-1}\xrightarrow {s} R_{0}\xrightarrow {p} A\to 0}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/15edc82117c3c976ea9a48aa555d882a42d86e9f" style="vertical-align: -0.671ex; margin-top: -0.442ex; width:34.711ex; height:3.843ex;"/></span></p></blockquote><p>Then, by taking the differential graded module of derivations <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle ({\text{Der}}(R_{\bullet }),d)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>Der</mtext>
+</mrow>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>R</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>∙<!-- ∙ --></mo>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+<mo>,</mo>
+<mi>d</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle ({\text{Der}}(R_{\bullet }),d)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle ({\text{Der}}(R_{\bullet }),d)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c548a8e7205fe7e804b985a87141e26b67e75fbd" style="vertical-align: -0.838ex; width:12.406ex; height:2.843ex;"/></span>, its cohomology forms the <b>tangent cohomology</b> of the germ of analytic algebras <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>A</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7daff47fa58cdfd29dc333def748ff5fa4c923e3" style="vertical-align: -0.338ex; width:1.743ex; height:2.176ex;"/></span>. These cohomology groups are denoted <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle T^{k}(A)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>T</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle T^{k}(A)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle T^{k}(A)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d19d998f0e24a75b553053af9042221df8f0ce96" style="vertical-align: -0.838ex; width:6.361ex; height:3.176ex;"/></span>. The <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle T^{1}(A)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>T</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle T^{1}(A)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle T^{1}(A)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/519d1321004f133c5fef651b2d1ad7097457710f" style="vertical-align: -0.838ex; width:6.327ex; height:3.176ex;"/></span> contains information about all of the deformations of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>A</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7daff47fa58cdfd29dc333def748ff5fa4c923e3" style="vertical-align: -0.338ex; width:1.743ex; height:2.176ex;"/></span> and can be readily computed using the exact sequence</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle 0\to T^{0}(A)\to {\text{Der}}(R_{0})\xrightarrow {d} {\text{Hom}}_{R_{0}}(I,A)\to T^{1}(A)\to 0}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mn>0</mn>
+<mo stretchy="false">→<!-- → --></mo>
+<msup>
+<mi>T</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">→<!-- → --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>Der</mtext>
+</mrow>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>R</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+<mover>
+<mo>→</mo>
+<mpadded lspace="0.278em" voffset=".15em" width="+0.611em">
+<mi>d</mi>
+</mpadded>
+</mover>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>Hom</mtext>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<msub>
+<mi>R</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>I</mi>
+<mo>,</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">→<!-- → --></mo>
+<msup>
+<mi>T</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">→<!-- → --></mo>
+<mn>0</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle 0\to T^{0}(A)\to {\text{Der}}(R_{0})\xrightarrow {d} {\text{Hom}}_{R_{0}}(I,A)\to T^{1}(A)\to 0}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle 0\to T^{0}(A)\to {\text{Der}}(R_{0})\xrightarrow {d} {\text{Hom}}_{R_{0}}(I,A)\to T^{1}(A)\to 0}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b9a129c42c4c654443a1866c9b7d79375f7c67c6" style="vertical-align: -1.005ex; margin-top: -0.311ex; width:54.306ex; height:4.343ex;"/></span></p></blockquote><p>If <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>A</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7daff47fa58cdfd29dc333def748ff5fa4c923e3" style="vertical-align: -0.338ex; width:1.743ex; height:2.176ex;"/></span> is isomorphic to the algebra</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\frac {\mathbb {C} \{z_{1},\ldots ,z_{n}\}}{(f_{1},\ldots ,f_{m})}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mo fence="false" stretchy="false">{</mo>
+<msub>
+<mi>z</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<mo>…<!-- … --></mo>
+<mo>,</mo>
+<msub>
+<mi>z</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo fence="false" stretchy="false">}</mo>
+</mrow>
+<mrow>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>f</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<mo>…<!-- … --></mo>
+<mo>,</mo>
+<msub>
+<mi>f</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>m</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mrow>
+</mfrac>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\frac {\mathbb {C} \{z_{1},\ldots ,z_{n}\}}{(f_{1},\ldots ,f_{m})}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\frac {\mathbb {C} \{z_{1},\ldots ,z_{n}\}}{(f_{1},\ldots ,f_{m})}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ed22ec28017ba08d548e37473674cb9719a44404" style="vertical-align: -2.671ex; width:14.452ex; height:6.509ex;"/></span></p></blockquote><p>then its deformations are equal to</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle T^{1}(A)\cong {\frac {A^{m}}{df\cdot A^{n}}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>T</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+<mo>≅<!-- ≅ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<msup>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>m</mi>
+</mrow>
+</msup>
+<mrow>
+<mi>d</mi>
+<mi>f</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<msup>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msup>
+</mrow>
+</mfrac>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle T^{1}(A)\cong {\frac {A^{m}}{df\cdot A^{n}}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle T^{1}(A)\cong {\frac {A^{m}}{df\cdot A^{n}}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e166897191fb7e0a86fac2050258ee4bbaa012c8" style="vertical-align: -2.505ex; width:17.396ex; height:6.009ex;"/></span></p></blockquote><p>were <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle df}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>d</mi>
+<mi>f</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle df}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle df}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/53181e2067a93b6bbf150042723cb059d9d2d26f" style="vertical-align: -0.671ex; width:2.494ex; height:2.509ex;"/></span> is the jacobian matrix of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle f=(f_{1},\ldots ,f_{m}):\mathbb {C} ^{n}\to \mathbb {C} ^{m}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>f</mi>
+<mo>=</mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>f</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<mo>…<!-- … --></mo>
+<mo>,</mo>
+<msub>
+<mi>f</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>m</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+<mo>:</mo>
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msup>
+<mo stretchy="false">→<!-- → --></mo>
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>m</mi>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle f=(f_{1},\ldots ,f_{m}):\mathbb {C} ^{n}\to \mathbb {C} ^{m}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle f=(f_{1},\ldots ,f_{m}):\mathbb {C} ^{n}\to \mathbb {C} ^{m}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f5f836884fa55b42b6cd300cb764bfac1d0ac574" style="vertical-align: -0.838ex; width:28.173ex; height:2.843ex;"/></span>. For example, the deformations of a hypersurface given by <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle f}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>f</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle f}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle f}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/132e57acb643253e7810ee9702d9581f159a1c61" style="vertical-align: -0.671ex; width:1.279ex; height:2.509ex;"/></span> has the deformations</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle T^{1}(A)\cong {\frac {A^{n}}{\left({\frac {\partial f}{\partial z_{1}}},\ldots ,{\frac {\partial f}{\partial z_{n}}}\right)}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>T</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+<mo>≅<!-- ≅ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<msup>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msup>
+<mrow>
+<mo>(</mo>
+<mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<mi mathvariant="normal">∂<!-- ∂ --></mi>
+<mi>f</mi>
+</mrow>
+<mrow>
+<mi mathvariant="normal">∂<!-- ∂ --></mi>
+<msub>
+<mi>z</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</mrow>
+<mo>,</mo>
+<mo>…<!-- … --></mo>
+<mo>,</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<mi mathvariant="normal">∂<!-- ∂ --></mi>
+<mi>f</mi>
+</mrow>
+<mrow>
+<mi mathvariant="normal">∂<!-- ∂ --></mi>
+<msub>
+<mi>z</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</mrow>
+</mrow>
+<mo>)</mo>
+</mrow>
+</mfrac>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle T^{1}(A)\cong {\frac {A^{n}}{\left({\frac {\partial f}{\partial z_{1}}},\ldots ,{\frac {\partial f}{\partial z_{n}}}\right)}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle T^{1}(A)\cong {\frac {A^{n}}{\left({\frac {\partial f}{\partial z_{1}}},\ldots ,{\frac {\partial f}{\partial z_{n}}}\right)}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/17467b3632b7301d666837affd4128c71880418a" style="vertical-align: -4.505ex; width:25.077ex; height:8.009ex;"/></span></p></blockquote><p>For the singularity <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle y^{2}-x^{3}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle y^{2}-x^{3}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle y^{2}-x^{3}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d7ed786b806e6cc994a6039e8342fbcea3e16622" style="vertical-align: -0.671ex; width:7.439ex; height:3.009ex;"/></span> this is the module</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\frac {A^{2}}{(y,x^{2})}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<msup>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mrow>
+<mo stretchy="false">(</mo>
+<mi>y</mi>
+<mo>,</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mrow>
+</mfrac>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\frac {A^{2}}{(y,x^{2})}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\frac {A^{2}}{(y,x^{2})}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/41387f47eed1855137882fd015ca2cfea415cc49" style="vertical-align: -2.671ex; width:7.219ex; height:6.509ex;"/></span></p></blockquote><p>hence the only deformations are given by adding constants or linear factors, so a general deformation of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle f(x,y)=y^{2}-x^{3}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>f</mi>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo>,</mo>
+<mi>y</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle f(x,y)=y^{2}-x^{3}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle f(x,y)=y^{2}-x^{3}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9b9e32426a35dcdb6067657e0372b2c4cd49084d" style="vertical-align: -0.838ex; width:17.144ex; height:3.176ex;"/></span> is <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle F(x,y,a_{1},a_{2})=y^{2}-x^{3}+a_{1}+a_{2}x}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>F</mi>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo>,</mo>
+<mi>y</mi>
+<mo>,</mo>
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mi>x</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle F(x,y,a_{1},a_{2})=y^{2}-x^{3}+a_{1}+a_{2}x}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle F(x,y,a_{1},a_{2})=y^{2}-x^{3}+a_{1}+a_{2}x}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/50b37b8462fdddf954e7585ae615b338e2fe104b" style="vertical-align: -0.838ex; width:35.821ex; height:3.176ex;"/></span> where the <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle a_{i}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle a_{i}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle a_{i}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0bc77764b2e74e64a63341054fa90f3e07db275f" style="vertical-align: -0.671ex; width:2.029ex; height:2.009ex;"/></span> are deformation parameters.
+</p><div class="mw-heading mw-heading2"><h2 id="Functorial_description">Functorial description</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=5" title="Edit section: Functorial description"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Another method for formalizing deformation theory is using <a href="/wiki/Functor" title="Functor">functors</a> on the <a href="/wiki/Category_(mathematics)" title="Category (mathematics)">category</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\text{Art}}_{k}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>Art</mtext>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\text{Art}}_{k}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\text{Art}}_{k}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6556156fa9d8a64b2258b2a1cff2cc1db31bd93b" style="vertical-align: -0.671ex; width:4.648ex; height:2.509ex;"/></span> of <a href="/wiki/Local_ring" title="Local ring">local</a> <a href="/wiki/Artin_algebra" title="Artin algebra">Artin algebras</a> over a field. A <b>pre-deformation functor</b> is defined as a functor
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle F:{\text{Art}}_{k}\to {\text{Sets}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>F</mi>
+<mo>:</mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>Art</mtext>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+</mrow>
+</msub>
+<mo stretchy="false">→<!-- → --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>Sets</mtext>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle F:{\text{Art}}_{k}\to {\text{Sets}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle F:{\text{Art}}_{k}\to {\text{Sets}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/621205492250137b1e2008da141e22b7cd5ccdc9" style="vertical-align: -0.671ex; width:16.086ex; height:2.509ex;"/></span></dd></dl>
+<p>such that <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle F(k)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>F</mi>
+<mo stretchy="false">(</mo>
+<mi>k</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle F(k)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle F(k)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7dec6bbbe0cc9a7b198ca9850537dda20a95ddda" style="vertical-align: -0.838ex; width:4.761ex; height:2.843ex;"/></span> is a point. The idea is that we want to study the infinitesimal structure of some <a href="/wiki/Moduli_space" title="Moduli space">moduli space</a> around a point where lying above that point is the space of interest. It is typically the case that it is easier to describe the functor for a moduli problem instead of finding an actual space. For example, if we want to consider the moduli-space of hypersurfaces of degree <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle d}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>d</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle d}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle d}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e85ff03cbe0c7341af6b982e47e9f90d235c66ab" style="vertical-align: -0.338ex; width:1.216ex; height:2.176ex;"/></span> in <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {P} ^{n}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">P</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {P} ^{n}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {P} ^{n}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7e712abd7ff167cfb12ffa7c8c9bf7b0029cf192" style="vertical-align: -0.338ex; width:2.639ex; height:2.343ex;"/></span>, then we could consider the functor
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle F:{\text{Sch}}\to {\text{Sets}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>F</mi>
+<mo>:</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>Sch</mtext>
+</mrow>
+<mo stretchy="false">→<!-- → --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>Sets</mtext>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle F:{\text{Sch}}\to {\text{Sets}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle F:{\text{Sch}}\to {\text{Sets}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/275039efb0d832b0eddbf4072d7f2596867671d8" style="vertical-align: -0.338ex; width:15.055ex; height:2.176ex;"/></span></dd></dl>
+<p>where
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle F(S)=\left\{{\begin{matrix}X\\\downarrow \\S\end{matrix}}:{\text{ each fiber is a degree }}d{\text{ hypersurface in }}\mathbb {P} ^{n}\right\}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>F</mi>
+<mo stretchy="false">(</mo>
+<mi>S</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mrow>
+<mo>{</mo>
+<mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<mi>X</mi>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>S</mi>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+<mo>:</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext> each fiber is a degree </mtext>
+</mrow>
+<mi>d</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext> hypersurface in </mtext>
+</mrow>
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">P</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msup>
+</mrow>
+<mo>}</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle F(S)=\left\{{\begin{matrix}X\\\downarrow \\S\end{matrix}}:{\text{ each fiber is a degree }}d{\text{ hypersurface in }}\mathbb {P} ^{n}\right\}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle F(S)=\left\{{\begin{matrix}X\\\downarrow \\S\end{matrix}}:{\text{ each fiber is a degree }}d{\text{ hypersurface in }}\mathbb {P} ^{n}\right\}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c92c7105beb3ee99fd2368611f7460bbb35d2167" style="vertical-align: -4.005ex; width:59.088ex; height:9.176ex;"/></span></dd></dl>
+<p>Although in general, it is more convenient/required to work with functors of <a href="/wiki/Groupoid" title="Groupoid">groupoids</a> instead of sets. This is true for moduli of curves.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Technical_remarks_about_infinitesimals">Technical remarks about infinitesimals</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=6" title="Edit section: Technical remarks about infinitesimals"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Infinitesimals have long been in use by mathematicians for non-rigorous arguments in calculus. The idea is that if we consider polynomials <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle F(x,\varepsilon )}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>F</mi>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo>,</mo>
+<mi>ε<!-- ε --></mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle F(x,\varepsilon )}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle F(x,\varepsilon )}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c998348aee980542dd304129e56f5e78986e4a96" style="vertical-align: -0.838ex; width:6.997ex; height:2.843ex;"/></span> with an infinitesimal <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \varepsilon }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ε<!-- ε --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \varepsilon }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \varepsilon }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a30c89172e5b88edbd45d3e2772c7f5e562e5173" style="vertical-align: -0.338ex; width:1.083ex; height:1.676ex;"/></span>, then only the first order terms really matter; that is, we can consider
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle F(x,\varepsilon )\equiv f(x)+\varepsilon g(x)+O(\varepsilon ^{2})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>F</mi>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo>,</mo>
+<mi>ε<!-- ε --></mi>
+<mo stretchy="false">)</mo>
+<mo>≡<!-- ≡ --></mo>
+<mi>f</mi>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>+</mo>
+<mi>ε<!-- ε --></mi>
+<mi>g</mi>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>+</mo>
+<mi>O</mi>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>ε<!-- ε --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle F(x,\varepsilon )\equiv f(x)+\varepsilon g(x)+O(\varepsilon ^{2})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle F(x,\varepsilon )\equiv f(x)+\varepsilon g(x)+O(\varepsilon ^{2})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/12a17110b6ce655104ef4c83e5e8ead1135c4b09" style="vertical-align: -0.838ex; width:31.253ex; height:3.176ex;"/></span></dd></dl>
+<p>A simple application of this is that we can find the derivatives of <a href="/wiki/Monomial" title="Monomial">monomials</a> using infinitesimals:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (x+\varepsilon )^{3}=x^{3}+3x^{2}\varepsilon +O(\varepsilon ^{2})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo>+</mo>
+<mi>ε<!-- ε --></mi>
+<msup>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>=</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mn>3</mn>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mi>ε<!-- ε --></mi>
+<mo>+</mo>
+<mi>O</mi>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>ε<!-- ε --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (x+\varepsilon )^{3}=x^{3}+3x^{2}\varepsilon +O(\varepsilon ^{2})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (x+\varepsilon )^{3}=x^{3}+3x^{2}\varepsilon +O(\varepsilon ^{2})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3e24cce64a525ecde537384bd7ea8e209520a68b" style="vertical-align: -0.838ex; width:29.63ex; height:3.176ex;"/></span></dd></dl>
+<p>the <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \varepsilon }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ε<!-- ε --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \varepsilon }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \varepsilon }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a30c89172e5b88edbd45d3e2772c7f5e562e5173" style="vertical-align: -0.338ex; width:1.083ex; height:1.676ex;"/></span> term contains the derivative of the monomial, demonstrating its use in calculus. We could also interpret this equation as the first two terms of the <a class="mw-redirect" href="/wiki/Taylor_expansion" title="Taylor expansion">Taylor expansion</a> of the monomial. Infinitesimals can be made rigorous using <a class="mw-redirect" href="/wiki/Nilpotent_element" title="Nilpotent element">nilpotent elements</a> in local artin algebras. In the ring <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle k[y]/(y^{2})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>k</mi>
+<mo stretchy="false">[</mo>
+<mi>y</mi>
+<mo stretchy="false">]</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle k[y]/(y^{2})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle k[y]/(y^{2})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7925bee4a1b7495afdb70269af8cfe114e09a9fa" style="vertical-align: -0.838ex; width:8.847ex; height:3.176ex;"/></span> we see that arguments with infinitesimals can work. This motivates the notation <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle k[\varepsilon ]=k[y]/(y^{2})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>k</mi>
+<mo stretchy="false">[</mo>
+<mi>ε<!-- ε --></mi>
+<mo stretchy="false">]</mo>
+<mo>=</mo>
+<mi>k</mi>
+<mo stretchy="false">[</mo>
+<mi>y</mi>
+<mo stretchy="false">]</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle k[\varepsilon ]=k[y]/(y^{2})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle k[\varepsilon ]=k[y]/(y^{2})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8b51cdb1041331ecff13d6dbee4aa64a9d9a92fc" style="vertical-align: -0.838ex; width:15.534ex; height:3.176ex;"/></span>, which is called the <a class="mw-redirect" href="/wiki/Ring_of_dual_numbers" title="Ring of dual numbers">ring of dual numbers</a>. 
+</p><p>Moreover, if we want to consider higher-order terms of a Taylor approximation then we could consider the artin algebras <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle k[y]/(y^{k})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>k</mi>
+<mo stretchy="false">[</mo>
+<mi>y</mi>
+<mo stretchy="false">]</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle k[y]/(y^{k})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle k[y]/(y^{k})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0a106f1e1654d361a5fa63be8964f7389f611892" style="vertical-align: -0.838ex; width:8.881ex; height:3.176ex;"/></span>. For our monomial, suppose we want to write out the second order expansion, then
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (x+\varepsilon )^{3}=x^{3}+3x^{2}\varepsilon +3x\varepsilon ^{2}+\varepsilon ^{3}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo>+</mo>
+<mi>ε<!-- ε --></mi>
+<msup>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>=</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mn>3</mn>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mi>ε<!-- ε --></mi>
+<mo>+</mo>
+<mn>3</mn>
+<mi>x</mi>
+<msup>
+<mi>ε<!-- ε --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<msup>
+<mi>ε<!-- ε --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (x+\varepsilon )^{3}=x^{3}+3x^{2}\varepsilon +3x\varepsilon ^{2}+\varepsilon ^{3}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (x+\varepsilon )^{3}=x^{3}+3x^{2}\varepsilon +3x\varepsilon ^{2}+\varepsilon ^{3}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3ccb846dcea0e9617933b27169e7dcf172f5b060" style="vertical-align: -0.838ex; width:33.518ex; height:3.176ex;"/></span></dd></dl>
+<p>Recall that a Taylor expansion (at zero) can be written out as
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle f(x)=f(0)+{\frac {f^{(1)}(0)}{1!}}x+{\frac {f^{(2)}(0)}{2!}}x^{2}+{\frac {f^{(3)}(0)}{3!}}x^{3}+\cdots }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>f</mi>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>f</mi>
+<mo stretchy="false">(</mo>
+<mn>0</mn>
+<mo stretchy="false">)</mo>
+<mo>+</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<msup>
+<mi>f</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">(</mo>
+<mn>1</mn>
+<mo stretchy="false">)</mo>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mn>0</mn>
+<mo stretchy="false">)</mo>
+</mrow>
+<mrow>
+<mn>1</mn>
+<mo>!</mo>
+</mrow>
+</mfrac>
+</mrow>
+<mi>x</mi>
+<mo>+</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<msup>
+<mi>f</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">(</mo>
+<mn>2</mn>
+<mo stretchy="false">)</mo>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mn>0</mn>
+<mo stretchy="false">)</mo>
+</mrow>
+<mrow>
+<mn>2</mn>
+<mo>!</mo>
+</mrow>
+</mfrac>
+</mrow>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<msup>
+<mi>f</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">(</mo>
+<mn>3</mn>
+<mo stretchy="false">)</mo>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mn>0</mn>
+<mo stretchy="false">)</mo>
+</mrow>
+<mrow>
+<mn>3</mn>
+<mo>!</mo>
+</mrow>
+</mfrac>
+</mrow>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mo>⋯<!-- ⋯ --></mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle f(x)=f(0)+{\frac {f^{(1)}(0)}{1!}}x+{\frac {f^{(2)}(0)}{2!}}x^{2}+{\frac {f^{(3)}(0)}{3!}}x^{3}+\cdots }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle f(x)=f(0)+{\frac {f^{(1)}(0)}{1!}}x+{\frac {f^{(2)}(0)}{2!}}x^{2}+{\frac {f^{(3)}(0)}{3!}}x^{3}+\cdots }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/aea980d479925b0d02dd8712e82b788d1f48833a" style="vertical-align: -2.005ex; width:54.335ex; height:6.176ex;"/></span></dd></dl>
+<p>hence the previous two equations show that the second derivative of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle x^{3}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle x^{3}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle x^{3}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4e2d4389a3b6f20cb8a118506601a68c2263143a" style="vertical-align: -0.338ex; width:2.384ex; height:2.676ex;"/></span> is <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle 6x}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mn>6</mn>
+<mi>x</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle 6x}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle 6x}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/13923aa435b529956eb3f12d292e3d72f60fb114" style="vertical-align: -0.338ex; width:2.492ex; height:2.176ex;"/></span>.
+</p><p>In general, since we want to consider arbitrary order Taylor expansions in any number of variables, we will consider the category of all local artin algebras over a field.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Motivation">Motivation</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=7" title="Edit section: Motivation"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>To motivate the definition of a pre-deformation functor, consider the projective hypersurface over a field
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{matrix}\operatorname {Proj} \left({\dfrac {\mathbb {C} [x_{0},x_{1},x_{2},x_{3}]}{(x_{0}^{4}+x_{1}^{4}+x_{2}^{4}+x_{3}^{4})}}\right)\\\downarrow \\\operatorname {Spec} (k)\end{matrix}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<mi>Proj</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mrow>
+<mo>(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mfrac>
+<mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mo stretchy="false">[</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msub>
+<mo stretchy="false">]</mo>
+</mrow>
+<mrow>
+<mo stretchy="false">(</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo stretchy="false">)</mo>
+</mrow>
+</mfrac>
+</mstyle>
+</mrow>
+<mo>)</mo>
+</mrow>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>k</mi>
+<mo stretchy="false">)</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{matrix}\operatorname {Proj} \left({\dfrac {\mathbb {C} [x_{0},x_{1},x_{2},x_{3}]}{(x_{0}^{4}+x_{1}^{4}+x_{2}^{4}+x_{3}^{4})}}\right)\\\downarrow \\\operatorname {Spec} (k)\end{matrix}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{matrix}\operatorname {Proj} \left({\dfrac {\mathbb {C} [x_{0},x_{1},x_{2},x_{3}]}{(x_{0}^{4}+x_{1}^{4}+x_{2}^{4}+x_{3}^{4})}}\right)\\\downarrow \\\operatorname {Spec} (k)\end{matrix}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/089106bf1fab74f6b0efc3f0ff4701c2556267d5" style="vertical-align: -6.505ex; width:29.504ex; height:14.176ex;"/></span></dd></dl>
+<p>If we want to consider an infinitesimal deformation of this space, then we could write down a Cartesian square
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{matrix}\operatorname {Proj} \left({\dfrac {\mathbb {C} [x_{0},x_{1},x_{2},x_{3}]}{(x_{0}^{4}+x_{1}^{4}+x_{2}^{4}+x_{3}^{4})}}\right)&amp;\to &amp;\operatorname {Proj} \left({\dfrac {\mathbb {C} [x_{0},x_{1},x_{2},x_{3}][\varepsilon ]}{(x_{0}^{4}+x_{1}^{4}+x_{2}^{4}+x_{3}^{4}+\varepsilon x_{0}^{a_{0}}x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}})}}\right)\\\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (k)&amp;\to &amp;\operatorname {Spec} (k[\varepsilon ])\end{matrix}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<mi>Proj</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mrow>
+<mo>(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mfrac>
+<mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mo stretchy="false">[</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msub>
+<mo stretchy="false">]</mo>
+</mrow>
+<mrow>
+<mo stretchy="false">(</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo stretchy="false">)</mo>
+</mrow>
+</mfrac>
+</mstyle>
+</mrow>
+<mo>)</mo>
+</mrow>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>Proj</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mrow>
+<mo>(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mfrac>
+<mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mo stretchy="false">[</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msub>
+<mo stretchy="false">]</mo>
+<mo stretchy="false">[</mo>
+<mi>ε<!-- ε --></mi>
+<mo stretchy="false">]</mo>
+</mrow>
+<mrow>
+<mo stretchy="false">(</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<mi>ε<!-- ε --></mi>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+</mrow>
+</msubsup>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+</mrow>
+</msubsup>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+</mrow>
+</msubsup>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msub>
+</mrow>
+</msubsup>
+<mo stretchy="false">)</mo>
+</mrow>
+</mfrac>
+</mstyle>
+</mrow>
+<mo>)</mo>
+</mrow>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+<mtd></mtd>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>k</mi>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>k</mi>
+<mo stretchy="false">[</mo>
+<mi>ε<!-- ε --></mi>
+<mo stretchy="false">]</mo>
+<mo stretchy="false">)</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{matrix}\operatorname {Proj} \left({\dfrac {\mathbb {C} [x_{0},x_{1},x_{2},x_{3}]}{(x_{0}^{4}+x_{1}^{4}+x_{2}^{4}+x_{3}^{4})}}\right)&amp;\to &amp;\operatorname {Proj} \left({\dfrac {\mathbb {C} [x_{0},x_{1},x_{2},x_{3}][\varepsilon ]}{(x_{0}^{4}+x_{1}^{4}+x_{2}^{4}+x_{3}^{4}+\varepsilon x_{0}^{a_{0}}x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}})}}\right)\\\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (k)&amp;\to &amp;\operatorname {Spec} (k[\varepsilon ])\end{matrix}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{matrix}\operatorname {Proj} \left({\dfrac {\mathbb {C} [x_{0},x_{1},x_{2},x_{3}]}{(x_{0}^{4}+x_{1}^{4}+x_{2}^{4}+x_{3}^{4})}}\right)&amp;\to &amp;\operatorname {Proj} \left({\dfrac {\mathbb {C} [x_{0},x_{1},x_{2},x_{3}][\varepsilon ]}{(x_{0}^{4}+x_{1}^{4}+x_{2}^{4}+x_{3}^{4}+\varepsilon x_{0}^{a_{0}}x_{1}^{a_{1}}x_{2}^{a_{2}}x_{3}^{a_{3}})}}\right)\\\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (k)&amp;\to &amp;\operatorname {Spec} (k[\varepsilon ])\end{matrix}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0dd3019f4a2888b83a581bb817f2a270e10bfdb1" style="vertical-align: -6.505ex; width:82.202ex; height:14.176ex;"/></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle a_{0}+a_{1}+a_{2}+a_{3}=4}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mn>4</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle a_{0}+a_{1}+a_{2}+a_{3}=4}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle a_{0}+a_{1}+a_{2}+a_{3}=4}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4941a5c950ad9e5b113386f1e5573c57ea7b6f98" style="vertical-align: -0.671ex; width:21.918ex; height:2.509ex;"/></span>. Then, the space on the right hand corner is one example of an infinitesimal deformation: the extra scheme theoretic structure of the nilpotent elements in <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \operatorname {Spec} (k[\varepsilon ])}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>k</mi>
+<mo stretchy="false">[</mo>
+<mi>ε<!-- ε --></mi>
+<mo stretchy="false">]</mo>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \operatorname {Spec} (k[\varepsilon ])}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \operatorname {Spec} (k[\varepsilon ])}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/83cb53362fc80a693263a4e4d4121af6c5fc047b" style="vertical-align: -0.838ex; width:10.048ex; height:2.843ex;"/></span> (which is topologically a point) allows us to organize this infinitesimal data. Since we want to consider all possible expansions, we will let our predeformation functor be defined on objects as
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle F(A)=\left\{{\begin{matrix}\operatorname {Proj} \left({\dfrac {\mathbb {C} [x_{0},x_{1},x_{2},x_{3}]}{(x_{0}^{4}+x_{1}^{4}+x_{2}^{4}+x_{3}^{4})}}\right)&amp;\to &amp;{\mathfrak {X}}\\\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (k)&amp;\to &amp;\operatorname {Spec} (A)\end{matrix}}\right\}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>F</mi>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mrow>
+<mo>{</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<mi>Proj</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mrow>
+<mo>(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mfrac>
+<mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">C</mi>
+</mrow>
+<mo stretchy="false">[</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msub>
+<mo stretchy="false">]</mo>
+</mrow>
+<mrow>
+<mo stretchy="false">(</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo>+</mo>
+<msubsup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msubsup>
+<mo stretchy="false">)</mo>
+</mrow>
+</mfrac>
+</mstyle>
+</mrow>
+<mo>)</mo>
+</mrow>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">X</mi>
+</mrow>
+</mrow>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+<mtd></mtd>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>k</mi>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+<mo>}</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle F(A)=\left\{{\begin{matrix}\operatorname {Proj} \left({\dfrac {\mathbb {C} [x_{0},x_{1},x_{2},x_{3}]}{(x_{0}^{4}+x_{1}^{4}+x_{2}^{4}+x_{3}^{4})}}\right)&amp;\to &amp;{\mathfrak {X}}\\\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (k)&amp;\to &amp;\operatorname {Spec} (A)\end{matrix}}\right\}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle F(A)=\left\{{\begin{matrix}\operatorname {Proj} \left({\dfrac {\mathbb {C} [x_{0},x_{1},x_{2},x_{3}]}{(x_{0}^{4}+x_{1}^{4}+x_{2}^{4}+x_{3}^{4})}}\right)&amp;\to &amp;{\mathfrak {X}}\\\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (k)&amp;\to &amp;\operatorname {Spec} (A)\end{matrix}}\right\}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/82c3beba684a63815b458d6541ed8f2fe461d841" style="vertical-align: -6.505ex; width:57.199ex; height:14.176ex;"/></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>A</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7daff47fa58cdfd29dc333def748ff5fa4c923e3" style="vertical-align: -0.338ex; width:1.743ex; height:2.176ex;"/></span> is a local Artin <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle k}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>k</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle k}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle k}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c3c9a2c7b599b37105512c5d570edc034056dd40" style="vertical-align: -0.338ex; width:1.211ex; height:2.176ex;"/></span>-algebra.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Smooth_pre-deformation_functors">Smooth pre-deformation functors</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=8" title="Edit section: Smooth pre-deformation functors"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>A pre-deformation functor is called <b>smooth</b> if for any surjection <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A'\to A}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>A</mi>
+<mo>′</mo>
+</msup>
+<mo stretchy="false">→<!-- → --></mo>
+<mi>A</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A'\to A}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A'\to A}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1d5254a3fa0983f4087458e79a462a7e093fe263" style="vertical-align: -0.338ex; width:7.785ex; height:2.509ex;"/></span> such that the square of any element in the kernel is zero, there is a surjection
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle F(A')\to F(A)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>F</mi>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>A</mi>
+<mo>′</mo>
+</msup>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">→<!-- → --></mo>
+<mi>F</mi>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle F(A')\to F(A)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle F(A')\to F(A)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d5c0b739781f663064dac0c7fe075f236b9c257f" style="vertical-align: -0.838ex; width:14.885ex; height:3.009ex;"/></span></dd></dl>
+<p>This is motivated by the following question: given a deformation
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}\\\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (k)&amp;\to &amp;\operatorname {Spec} (A)\end{matrix}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<mi>X</mi>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">X</mi>
+</mrow>
+</mrow>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+<mtd></mtd>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>k</mi>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}\\\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (k)&amp;\to &amp;\operatorname {Spec} (A)\end{matrix}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}\\\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (k)&amp;\to &amp;\operatorname {Spec} (A)\end{matrix}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/570e5b7fe3a88c7742bef8bda066408481ebe633" style="vertical-align: -4.171ex; width:23.593ex; height:9.509ex;"/></span></dd></dl>
+<p>does there exist an extension of this cartesian diagram to the cartesian diagrams
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}&amp;\to &amp;{\mathfrak {X}}'\\\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (k)&amp;\to &amp;\operatorname {Spec} (A)&amp;\to &amp;\operatorname {Spec} (A')\end{matrix}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<mi>X</mi>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">X</mi>
+</mrow>
+</mrow>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">X</mi>
+</mrow>
+</mrow>
+<mo>′</mo>
+</msup>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+<mtd></mtd>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+<mtd></mtd>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>k</mi>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>A</mi>
+<mo>′</mo>
+</msup>
+<mo stretchy="false">)</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}&amp;\to &amp;{\mathfrak {X}}'\\\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (k)&amp;\to &amp;\operatorname {Spec} (A)&amp;\to &amp;\operatorname {Spec} (A')\end{matrix}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}&amp;\to &amp;{\mathfrak {X}}'\\\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (k)&amp;\to &amp;\operatorname {Spec} (A)&amp;\to &amp;\operatorname {Spec} (A')\end{matrix}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d5d5c523dec2fc09a5e7d2ddf52535178d7a301b" style="vertical-align: -4.171ex; width:39.449ex; height:9.509ex;"/></span></dd></dl>
+<p>the name smooth comes from the lifting criterion of a smooth morphism of schemes.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Tangent_space">Tangent space</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=9" title="Edit section: Tangent space"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Recall that the tangent space of a scheme <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle X}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>X</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle X}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle X}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/68baa052181f707c662844a465bfeeb135e82bab" style="vertical-align: -0.338ex; width:1.98ex; height:2.176ex;"/></span> can be described as the <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \operatorname {Hom} }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>Hom</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \operatorname {Hom} }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \operatorname {Hom} }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5d0830df5db5d5e66a6c5701fbff3beb967fab55" style="vertical-align: -0.338ex; width:4.841ex; height:2.176ex;"/></span>-set
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle TX:=\operatorname {Hom} _{{\text{Sch}}/k}(\operatorname {Spec} (k[\varepsilon ]),X)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>T</mi>
+<mi>X</mi>
+<mo>:=</mo>
+<msub>
+<mi>Hom</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>Sch</mtext>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<mi>k</mi>
+</mrow>
+</msub>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>k</mi>
+<mo stretchy="false">[</mo>
+<mi>ε<!-- ε --></mi>
+<mo stretchy="false">]</mo>
+<mo stretchy="false">)</mo>
+<mo>,</mo>
+<mi>X</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle TX:=\operatorname {Hom} _{{\text{Sch}}/k}(\operatorname {Spec} (k[\varepsilon ]),X)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle TX:=\operatorname {Hom} _{{\text{Sch}}/k}(\operatorname {Spec} (k[\varepsilon ]),X)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/17d481c8f707d7e7a11234d25aea972fd84e934b" style="vertical-align: -1.171ex; width:31.542ex; height:3.176ex;"/></span></dd></dl>
+<p>where the source is the ring of <a href="/wiki/Dual_number#Dual_numbers_over_an_arbitrary_ring" title="Dual number">dual numbers</a>. Since we are considering the tangent space of a point of some moduli space, we can define the tangent space of our (pre-)deformation functor as
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle T_{F}:=F(k[\varepsilon ]).}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>T</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>F</mi>
+</mrow>
+</msub>
+<mo>:=</mo>
+<mi>F</mi>
+<mo stretchy="false">(</mo>
+<mi>k</mi>
+<mo stretchy="false">[</mo>
+<mi>ε<!-- ε --></mi>
+<mo stretchy="false">]</mo>
+<mo stretchy="false">)</mo>
+<mo>.</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle T_{F}:=F(k[\varepsilon ]).}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle T_{F}:=F(k[\varepsilon ]).}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1a2555f19f71585aaeb4c841b1df0501a36a4be8" style="vertical-align: -0.838ex; width:14.351ex; height:2.843ex;"/></span></dd></dl>
+<div class="mw-heading mw-heading2"><h2 id="Applications_of_deformation_theory">Applications of deformation theory</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=10" title="Edit section: Applications of deformation theory"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Dimension_of_moduli_of_curves">Dimension of moduli of curves</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=11" title="Edit section: Dimension of moduli of curves"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div><p>
+One of the first properties of the <a href="/wiki/Moduli_of_algebraic_curves" title="Moduli of algebraic curves">moduli of algebraic curves</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathcal {M}}_{g}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">M</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>g</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathcal {M}}_{g}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathcal {M}}_{g}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/43d9ec21af6dbbe97151cd1f34d8d153e57c38d5" style="vertical-align: -1.005ex; width:3.812ex; height:2.843ex;"/></span> can be deduced using elementary deformation theory. Its dimension can be computed as</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \dim({\mathcal {M}}_{g})=\dim H^{1}(C,T_{C})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>dim</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">M</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>g</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>dim</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<msup>
+<mi>H</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>C</mi>
+<mo>,</mo>
+<msub>
+<mi>T</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \dim({\mathcal {M}}_{g})=\dim H^{1}(C,T_{C})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \dim({\mathcal {M}}_{g})=\dim H^{1}(C,T_{C})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e92f7cee3fc96175431b082649a01dba6b2bd129" style="vertical-align: -1.005ex; width:27.463ex; height:3.343ex;"/></span></p></blockquote><p>for an arbitrary smooth curve of genus <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle g}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>g</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle g}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle g}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d3556280e66fe2c0d0140df20935a6f057381d77" style="vertical-align: -0.671ex; width:1.116ex; height:2.009ex;"/></span> because the deformation space is the tangent space of the moduli space. Using <a href="/wiki/Serre_duality" title="Serre duality">Serre duality</a> the tangent space is isomorphic to</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{aligned}H^{1}(C,T_{C})&amp;\cong H^{0}(C,T_{C}^{*}\otimes \omega _{C})^{\vee }\\&amp;\cong H^{0}(C,\omega _{C}^{\otimes 2})^{\vee }\end{aligned}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnalign="right left right left right left right left right left right left" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true" rowspacing="3pt">
+<mtr>
+<mtd>
+<msup>
+<mi>H</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>C</mi>
+<mo>,</mo>
+<msub>
+<mi>T</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>≅<!-- ≅ --></mo>
+<msup>
+<mi>H</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>C</mi>
+<mo>,</mo>
+<msubsup>
+<mi>T</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>∗<!-- ∗ --></mo>
+</mrow>
+</msubsup>
+<mo>⊗<!-- ⊗ --></mo>
+<msub>
+<mi>ω<!-- ω --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+</msub>
+<msup>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>∨<!-- ∨ --></mo>
+</mrow>
+</msup>
+</mtd>
+</mtr>
+<mtr>
+<mtd></mtd>
+<mtd>
+<mi></mi>
+<mo>≅<!-- ≅ --></mo>
+<msup>
+<mi>H</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>C</mi>
+<mo>,</mo>
+<msubsup>
+<mi>ω<!-- ω --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>⊗<!-- ⊗ --></mo>
+<mn>2</mn>
+</mrow>
+</msubsup>
+<msup>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>∨<!-- ∨ --></mo>
+</mrow>
+</msup>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}H^{1}(C,T_{C})&amp;\cong H^{0}(C,T_{C}^{*}\otimes \omega _{C})^{\vee }\\&amp;\cong H^{0}(C,\omega _{C}^{\otimes 2})^{\vee }\end{aligned}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{aligned}H^{1}(C,T_{C})&amp;\cong H^{0}(C,T_{C}^{*}\otimes \omega _{C})^{\vee }\\&amp;\cong H^{0}(C,\omega _{C}^{\otimes 2})^{\vee }\end{aligned}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/73e6322ffe5d9c434626504b31c03ed503d80184" style="vertical-align: -2.838ex; width:32.158ex; height:6.843ex;"/></span></p></blockquote><p>Hence the <a href="/wiki/Riemann%E2%80%93Roch_theorem" title="Riemann–Roch theorem">Riemann–Roch theorem</a> gives</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{aligned}h^{0}(C,\omega _{C}^{\otimes 2})-h^{1}(C,\omega _{C}^{\otimes 2})&amp;=2(2g-2)-g+1\\&amp;=3g-3\end{aligned}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnalign="right left right left right left right left right left right left" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true" rowspacing="3pt">
+<mtr>
+<mtd>
+<msup>
+<mi>h</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>C</mi>
+<mo>,</mo>
+<msubsup>
+<mi>ω<!-- ω --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>⊗<!-- ⊗ --></mo>
+<mn>2</mn>
+</mrow>
+</msubsup>
+<mo stretchy="false">)</mo>
+<mo>−<!-- − --></mo>
+<msup>
+<mi>h</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>C</mi>
+<mo>,</mo>
+<msubsup>
+<mi>ω<!-- ω --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>⊗<!-- ⊗ --></mo>
+<mn>2</mn>
+</mrow>
+</msubsup>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mn>2</mn>
+<mo stretchy="false">(</mo>
+<mn>2</mn>
+<mi>g</mi>
+<mo>−<!-- − --></mo>
+<mn>2</mn>
+<mo stretchy="false">)</mo>
+<mo>−<!-- − --></mo>
+<mi>g</mi>
+<mo>+</mo>
+<mn>1</mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd></mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mn>3</mn>
+<mi>g</mi>
+<mo>−<!-- − --></mo>
+<mn>3</mn>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}h^{0}(C,\omega _{C}^{\otimes 2})-h^{1}(C,\omega _{C}^{\otimes 2})&amp;=2(2g-2)-g+1\\&amp;=3g-3\end{aligned}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{aligned}h^{0}(C,\omega _{C}^{\otimes 2})-h^{1}(C,\omega _{C}^{\otimes 2})&amp;=2(2g-2)-g+1\\&amp;=3g-3\end{aligned}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6b43f56f49f96a5af0f6913722c723848854c0dc" style="vertical-align: -2.671ex; width:45.465ex; height:6.509ex;"/></span></p></blockquote><p>For curves of genus <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle g\geq 2}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>g</mi>
+<mo>≥<!-- ≥ --></mo>
+<mn>2</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle g\geq 2}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle g\geq 2}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b84b2394f64ae9927e09ee51b848be213edecafe" style="vertical-align: -0.671ex; width:5.377ex; height:2.509ex;"/></span> the <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle h^{1}(C,\omega _{C}^{\otimes 2})=0}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>h</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>C</mi>
+<mo>,</mo>
+<msubsup>
+<mi>ω<!-- ω --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>⊗<!-- ⊗ --></mo>
+<mn>2</mn>
+</mrow>
+</msubsup>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mn>0</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle h^{1}(C,\omega _{C}^{\otimes 2})=0}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle h^{1}(C,\omega _{C}^{\otimes 2})=0}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/89cd61a67042a3fb906c5077f596960cd54c7cef" style="vertical-align: -1.005ex; width:15.042ex; height:3.343ex;"/></span> because</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle h^{1}(C,\omega _{C}^{\otimes 2})=h^{0}(C,(\omega _{C}^{\otimes 2})^{\vee }\otimes \omega _{C})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>h</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>C</mi>
+<mo>,</mo>
+<msubsup>
+<mi>ω<!-- ω --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>⊗<!-- ⊗ --></mo>
+<mn>2</mn>
+</mrow>
+</msubsup>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<msup>
+<mi>h</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>C</mi>
+<mo>,</mo>
+<mo stretchy="false">(</mo>
+<msubsup>
+<mi>ω<!-- ω --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>⊗<!-- ⊗ --></mo>
+<mn>2</mn>
+</mrow>
+</msubsup>
+<msup>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>∨<!-- ∨ --></mo>
+</mrow>
+</msup>
+<mo>⊗<!-- ⊗ --></mo>
+<msub>
+<mi>ω<!-- ω --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle h^{1}(C,\omega _{C}^{\otimes 2})=h^{0}(C,(\omega _{C}^{\otimes 2})^{\vee }\otimes \omega _{C})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle h^{1}(C,\omega _{C}^{\otimes 2})=h^{0}(C,(\omega _{C}^{\otimes 2})^{\vee }\otimes \omega _{C})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/da840ea77cb1798830f393fa7f983ccb739b3b2a" style="vertical-align: -1.005ex; width:33.566ex; height:3.343ex;"/></span></p></blockquote><p>the degree is</p><blockquote><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{aligned}{\text{deg}}((\omega _{C}^{\otimes 2})^{\vee }\otimes \omega _{C})&amp;=4-4g+2g-2\\&amp;=2-2g\end{aligned}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnalign="right left right left right left right left right left right left" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true" rowspacing="3pt">
+<mtr>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>deg</mtext>
+</mrow>
+<mo stretchy="false">(</mo>
+<mo stretchy="false">(</mo>
+<msubsup>
+<mi>ω<!-- ω --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>⊗<!-- ⊗ --></mo>
+<mn>2</mn>
+</mrow>
+</msubsup>
+<msup>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>∨<!-- ∨ --></mo>
+</mrow>
+</msup>
+<mo>⊗<!-- ⊗ --></mo>
+<msub>
+<mi>ω<!-- ω --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>C</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mn>4</mn>
+<mo>−<!-- − --></mo>
+<mn>4</mn>
+<mi>g</mi>
+<mo>+</mo>
+<mn>2</mn>
+<mi>g</mi>
+<mo>−<!-- − --></mo>
+<mn>2</mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd></mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mn>2</mn>
+<mo>−<!-- − --></mo>
+<mn>2</mn>
+<mi>g</mi>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}{\text{deg}}((\omega _{C}^{\otimes 2})^{\vee }\otimes \omega _{C})&amp;=4-4g+2g-2\\&amp;=2-2g\end{aligned}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{aligned}{\text{deg}}((\omega _{C}^{\otimes 2})^{\vee }\otimes \omega _{C})&amp;=4-4g+2g-2\\&amp;=2-2g\end{aligned}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/daf54045186447f32896a64d2ce80084ec14c6fe" style="vertical-align: -2.671ex; width:37.233ex; height:6.509ex;"/></span></p></blockquote><p>and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle h^{0}(L)=0}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>h</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>L</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mn>0</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle h^{0}(L)=0}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle h^{0}(L)=0}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/000787060ced23e583d369d1f9694a44f14bdf76" style="vertical-align: -0.838ex; width:10.046ex; height:3.176ex;"/></span> for line bundles of negative degree. Therefore the dimension of the moduli space is <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle 3g-3}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mn>3</mn>
+<mi>g</mi>
+<mo>−<!-- − --></mo>
+<mn>3</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle 3g-3}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle 3g-3}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/51b7e403f1ff25717b4a5b7d16a53968129fc94a" style="vertical-align: -0.671ex; width:6.281ex; height:2.509ex;"/></span>.
+</p><div class="mw-heading mw-heading3"><h3 id="Bend-and-break">Bend-and-break</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=12" title="Edit section: Bend-and-break"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Deformation theory was famously applied in <a href="/wiki/Birational_geometry" title="Birational geometry">birational geometry</a> by <a href="/wiki/Shigefumi_Mori" title="Shigefumi Mori">Shigefumi Mori</a> to study the existence of <a class="mw-redirect" href="/wiki/Rational_curve" title="Rational curve">rational curves</a> on <a href="/wiki/Algebraic_variety" title="Algebraic variety">varieties</a>.<sup class="reference" id="cite_ref-2"><a href="#cite_note-2"><span class="cite-bracket">[</span>2<span class="cite-bracket">]</span></a></sup> For a <a href="/wiki/Fano_variety" title="Fano variety">Fano variety</a> of positive dimension Mori showed that there is a rational curve passing through every point. The method of the proof later became known as <b>Mori's bend-and-break</b>. The rough idea is to start with some curve <i>C</i> through a chosen point and keep deforming it until it breaks into several <a href="/wiki/Irreducible_component" title="Irreducible component">components</a>. Replacing <i>C</i> by one of the components has the effect of decreasing either the   <a class="mw-redirect" href="/wiki/Genus_of_a_curve" title="Genus of a curve">genus</a> or the <a href="/wiki/Degree_of_an_algebraic_variety" title="Degree of an algebraic variety">degree</a> of <i>C</i>. So after several repetitions of the procedure, eventually we'll obtain a curve of genus 0, i.e. a rational curve. The existence and the properties of deformations of <i>C</i> require arguments from deformation theory and a reduction to <a class="mw-redirect" href="/wiki/Positive_characteristic" title="Positive characteristic">positive characteristic</a>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Arithmetic_deformations">Arithmetic deformations</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=13" title="Edit section: Arithmetic deformations"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>One of the major applications of deformation theory is in arithmetic. It can be used to answer the following question: if we have a variety <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle X/\mathbb {F} _{p}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>X</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">F</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle X/\mathbb {F} _{p}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle X/\mathbb {F} _{p}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/013a47007083bba07299775fe99c495477a71afb" style="vertical-align: -1.005ex; width:5.622ex; height:3.009ex;"/></span>, what are the possible extensions <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {X}}/\mathbb {Z} _{p}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">X</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {X}}/\mathbb {Z} _{p}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {X}}/\mathbb {Z} _{p}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b891288100809ec9c14d443b0285b64e8a0c70e4" style="vertical-align: -1.005ex; width:5.443ex; height:3.009ex;"/></span>? If our variety is a curve, then the vanishing <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle H^{2}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>H</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle H^{2}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle H^{2}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4b83c19c3fd9d50029b321e1d964aeba09f984e3" style="vertical-align: -0.338ex; width:3.158ex; height:2.676ex;"/></span> implies that every deformation induces a variety over <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {Z} _{p}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {Z} _{p}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {Z} _{p}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dbc1df7227ef11fe88dccd2dae3adc7bbdeae5f4" style="vertical-align: -1.005ex; width:2.609ex; height:2.843ex;"/></span>; that is, if we have a smooth curve
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{matrix}X\\\downarrow \\\operatorname {Spec} (\mathbb {F} _{p})\end{matrix}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<mi>X</mi>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">F</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{matrix}X\\\downarrow \\\operatorname {Spec} (\mathbb {F} _{p})\end{matrix}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{matrix}X\\\downarrow \\\operatorname {Spec} (\mathbb {F} _{p})\end{matrix}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/95429707bf9d38acc3de0a1f2088a04071366851" style="vertical-align: -3.934ex; margin-bottom: -0.237ex; width:9.69ex; height:9.509ex;"/></span></dd></dl>
+<p>and a deformation
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}_{2}\\\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (\mathbb {F} _{p})&amp;\to &amp;\operatorname {Spec} (\mathbb {Z} /(p^{2}))\end{matrix}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<mi>X</mi>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">X</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+<mtd></mtd>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">F</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>p</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">)</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}_{2}\\\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (\mathbb {F} _{p})&amp;\to &amp;\operatorname {Spec} (\mathbb {Z} /(p^{2}))\end{matrix}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}_{2}\\\downarrow &amp;&amp;\downarrow \\\operatorname {Spec} (\mathbb {F} _{p})&amp;\to &amp;\operatorname {Spec} (\mathbb {Z} /(p^{2}))\end{matrix}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e01d8791680dea7f19e40d6f40ddfe9a13d8f9e3" style="vertical-align: -4.171ex; width:29.864ex; height:9.509ex;"/></span></dd></dl>
+<p>then we can always extend it to a diagram of the form
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}_{2}&amp;\to &amp;{\mathfrak {X}}_{3}&amp;\to \cdots \\\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow &amp;\\\operatorname {Spec} (\mathbb {F} _{p})&amp;\to &amp;\operatorname {Spec} (\mathbb {Z} /(p^{2}))&amp;\to &amp;\operatorname {Spec} (\mathbb {Z} /(p^{3}))&amp;\to \cdots \end{matrix}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<mi>X</mi>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">X</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">X</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msub>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+<mo>⋯<!-- ⋯ --></mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+<mtd></mtd>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+<mtd></mtd>
+<mtd>
+<mo stretchy="false">↓<!-- ↓ --></mo>
+</mtd>
+<mtd></mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">F</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>p</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+</mtd>
+<mtd>
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>p</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mo stretchy="false">→<!-- → --></mo>
+<mo>⋯<!-- ⋯ --></mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}_{2}&amp;\to &amp;{\mathfrak {X}}_{3}&amp;\to \cdots \\\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow &amp;\\\operatorname {Spec} (\mathbb {F} _{p})&amp;\to &amp;\operatorname {Spec} (\mathbb {Z} /(p^{2}))&amp;\to &amp;\operatorname {Spec} (\mathbb {Z} /(p^{3}))&amp;\to \cdots \end{matrix}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{matrix}X&amp;\to &amp;{\mathfrak {X}}_{2}&amp;\to &amp;{\mathfrak {X}}_{3}&amp;\to \cdots \\\downarrow &amp;&amp;\downarrow &amp;&amp;\downarrow &amp;\\\operatorname {Spec} (\mathbb {F} _{p})&amp;\to &amp;\operatorname {Spec} (\mathbb {Z} /(p^{2}))&amp;\to &amp;\operatorname {Spec} (\mathbb {Z} /(p^{3}))&amp;\to \cdots \end{matrix}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/278643925a3308d0ee06dcebbae9257d2f8d4d6d" style="vertical-align: -4.171ex; width:58.052ex; height:9.509ex;"/></span></dd></dl>
+<p>This implies that we can construct a <a href="/wiki/Formal_scheme" title="Formal scheme">formal scheme</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {X}}=\operatorname {Spet} ({\mathfrak {X}}_{\bullet })}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">X</mi>
+</mrow>
+</mrow>
+<mo>=</mo>
+<mi>Spet</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">X</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>∙<!-- ∙ --></mo>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {X}}=\operatorname {Spet} ({\mathfrak {X}}_{\bullet })}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {X}}=\operatorname {Spet} ({\mathfrak {X}}_{\bullet })}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a4d290ce675691a811b3ba7710f50043b2f1f974" style="vertical-align: -0.838ex; width:13.826ex; height:2.843ex;"/></span> giving a curve over <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {Z} _{p}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {Z} _{p}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {Z} _{p}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dbc1df7227ef11fe88dccd2dae3adc7bbdeae5f4" style="vertical-align: -1.005ex; width:2.609ex; height:2.843ex;"/></span>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Deformations_of_abelian_schemes">Deformations of abelian schemes</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=14" title="Edit section: Deformations of abelian schemes"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The <a href="/wiki/Serre%E2%80%93Tate_theorem" title="Serre–Tate theorem">Serre–Tate theorem</a> asserts, roughly speaking, that the deformations of <a class="mw-redirect" href="/wiki/Abelian_scheme" title="Abelian scheme">abelian scheme</a> <i>A</i> is controlled by deformations of the <a class="mw-redirect" href="/wiki/P-divisible_group" title="P-divisible group"><i>p</i>-divisible group</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A[p^{\infty }]}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>A</mi>
+<mo stretchy="false">[</mo>
+<msup>
+<mi>p</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="normal">∞<!-- ∞ --></mi>
+</mrow>
+</msup>
+<mo stretchy="false">]</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A[p^{\infty }]}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A[p^{\infty }]}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e8f099c8858d5f0bc4197fdd7b63c2d254a828c9" style="vertical-align: -0.838ex; width:6.082ex; height:2.843ex;"/></span> consisting of its <i>p</i>-power torsion points.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Galois_deformations">Galois deformations</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=15" title="Edit section: Galois deformations"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1236090951">.mw-parser-output .hatnote{font-style:italic}.mw-parser-output div.hatnote{padding-left:1.6em;margin-bottom:0.5em}.mw-parser-output .hatnote i{font-style:normal}.mw-parser-output .hatnote+link+.hatnote{margin-top:-0.5em}@media print{body.ns-0 .mw-parser-output .hatnote{display:none!important}}</style><div class="hatnote navigation-not-searchable" role="note">Further information: <a href="/wiki/Deformation_ring" title="Deformation ring">Deformation ring</a></div>
+<p>Another application of deformation theory is with Galois deformations. It allows us to answer the question: If we have a <a href="/wiki/Galois_representation" title="Galois representation">Galois representation</a>
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle G\to \operatorname {GL} _{n}(\mathbb {F} _{p})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>G</mi>
+<mo stretchy="false">→<!-- → --></mo>
+<msub>
+<mi>GL</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">F</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle G\to \operatorname {GL} _{n}(\mathbb {F} _{p})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle G\to \operatorname {GL} _{n}(\mathbb {F} _{p})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f7be719c22ed1b2344db6d09287be83964e33954" style="vertical-align: -1.005ex; width:14.225ex; height:3.009ex;"/></span></dd></dl>
+<p>how can we extend it to a representation
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle G\to \operatorname {GL} _{n}(\mathbb {Z} _{p}){\text{?}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>G</mi>
+<mo stretchy="false">→<!-- → --></mo>
+<msub>
+<mi>GL</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>?</mtext>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle G\to \operatorname {GL} _{n}(\mathbb {Z} _{p}){\text{?}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle G\to \operatorname {GL} _{n}(\mathbb {Z} _{p}){\text{?}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e86dce1291ada1ffc53740e83b98fce5dfa7375c" style="vertical-align: -1.005ex; width:15.453ex; height:3.009ex;"/></span></dd></dl>
+<div class="mw-heading mw-heading2"><h2 id="Relationship_to_string_theory">Relationship to string theory</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=16" title="Edit section: Relationship to string theory"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The so-called <a class="mw-redirect" href="/wiki/Deligne_conjecture" title="Deligne conjecture">Deligne conjecture</a> arising in the context of algebras (and <a class="mw-redirect" href="/wiki/Hochschild_cohomology" title="Hochschild cohomology">Hochschild cohomology</a>) stimulated much interest in deformation theory in relation to <a href="/wiki/String_theory" title="String theory">string theory</a> (roughly speaking, to formalise the idea that a string theory can be regarded as a deformation of a point-particle theory)<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (July 2021)">citation needed</span></a></i>]</sup>. This is now accepted as proved, after some hitches with early announcements. <a href="/wiki/Maxim_Kontsevich" title="Maxim Kontsevich">Maxim Kontsevich</a> is among those who have offered a generally accepted proof of this<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (July 2021)">citation needed</span></a></i>]</sup>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=17" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="/wiki/Kodaira%E2%80%93Spencer_map" title="Kodaira–Spencer map">Kodaira–Spencer map</a></li>
+<li><a href="/wiki/Dual_number" title="Dual number">Dual number</a></li>
+<li><a href="/wiki/Schlessinger%27s_theorem" title="Schlessinger's theorem">Schlessinger's theorem</a></li>
+<li><a href="/wiki/Exalcomm" title="Exalcomm">Exalcomm</a></li>
+<li><a href="/wiki/Cotangent_complex" title="Cotangent complex">Cotangent complex</a></li>
+<li><a href="/wiki/Gromov%E2%80%93Witten_invariant" title="Gromov–Witten invariant">Gromov–Witten invariant</a></li>
+<li><a href="/wiki/Moduli_of_algebraic_curves" title="Moduli of algebraic curves">Moduli of algebraic curves</a></li>
+<li><a href="/wiki/Degeneration_(algebraic_geometry)" title="Degeneration (algebraic geometry)">Degeneration (algebraic geometry)</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Notes">Notes</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=18" title="Edit section: Notes"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1239543626">.mw-parser-output .reflist{margin-bottom:0.5em;list-style-type:decimal}@media screen{.mw-parser-output .reflist{font-size:90%}}.mw-parser-output .reflist .references{font-size:100%;margin-bottom:0;list-style-type:inherit}.mw-parser-output .reflist-columns-2{column-width:30em}.mw-parser-output .reflist-columns-3{column-width:25em}.mw-parser-output .reflist-columns{margin-top:0.3em}.mw-parser-output .reflist-columns ol{margin-top:0}.mw-parser-output .reflist-columns li{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .reflist-upper-alpha{list-style-type:upper-alpha}.mw-parser-output .reflist-upper-roman{list-style-type:upper-roman}.mw-parser-output .reflist-lower-alpha{list-style-type:lower-alpha}.mw-parser-output .reflist-lower-greek{list-style-type:lower-greek}.mw-parser-output .reflist-lower-roman{list-style-type:lower-roman}</style><div class="reflist">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-:0-1"><span class="mw-cite-backlink">^ <a href="#cite_ref-:0_1-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-:0_1-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-:0_1-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><style data-mw-deduplicate="TemplateStyles:r1238218222">.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#d33)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#d33)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite class="citation book cs1" id="CITEREFPalamodov1990">Palamodov (1990). "Deformations of Complex Spaces". <i>Several Complex Variables IV</i>. Encyclopaedia of Mathematical Sciences. Vol. 10. pp. <span class="nowrap">105–</span>194. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2F978-3-642-61263-3_3" rel="nofollow">10.1007/978-3-642-61263-3_3</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-3-642-64766-6" title="Special:BookSources/978-3-642-64766-6"><bdi>978-3-642-64766-6</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Deformations+of+Complex+Spaces&amp;rft.btitle=Several+Complex+Variables+IV&amp;rft.series=Encyclopaedia+of+Mathematical+Sciences&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E105-%3C%2Fspan%3E194&amp;rft.date=1990&amp;rft_id=info%3Adoi%2F10.1007%2F978-3-642-61263-3_3&amp;rft.isbn=978-3-642-64766-6&amp;rft.au=Palamodov&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ADeformation+%28mathematics%29"></span></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFDebarre2001"><a href="/wiki/Olivier_Debarre" title="Olivier Debarre">Debarre, Olivier</a> (2001). "3. Bend-and-Break Lemmas". <i>Higher-Dimensional Algebraic Geometry</i>. Universitext. Springer.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=3.+Bend-and-Break+Lemmas&amp;rft.btitle=Higher-Dimensional+Algebraic+Geometry&amp;rft.series=Universitext&amp;rft.pub=Springer&amp;rft.date=2001&amp;rft.aulast=Debarre&amp;rft.aufirst=Olivier&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ADeformation+%28mathematics%29"></span></link></span>
+</li>
+</ol></div></div>
+<div class="mw-heading mw-heading2"><h2 id="Sources">Sources</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=19" title="Edit section: Sources"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2"><a class="external text" href="https://www.encyclopediaofmath.org/index.php?title=deformation" rel="nofollow">"deformation"</a>, <i><a href="/wiki/Encyclopedia_of_Mathematics" title="Encyclopedia of Mathematics">Encyclopedia of Mathematics</a></i>, <a href="/wiki/European_Mathematical_Society" title="European Mathematical Society">EMS Press</a>, 2001 [1994]</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=deformation&amp;rft.btitle=Encyclopedia+of+Mathematics&amp;rft.pub=EMS+Press&amp;rft.date=2001&amp;rft_id=https%3A%2F%2Fwww.encyclopediaofmath.org%2Findex.php%3Ftitle%3Ddeformation&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ADeformation+%28mathematics%29"></span></link></li>
+<li><a href="/wiki/Murray_Gerstenhaber" title="Murray Gerstenhaber">Gerstenhaber, Murray</a> and <a href="/wiki/Jim_Stasheff" title="Jim Stasheff">Stasheff,  James</a>, eds. (1992). <i>Deformation Theory and Quantum Groups with Applications to Mathematical Physics</i>, <a href="/wiki/American_Mathematical_Society" title="American Mathematical Society">American Mathematical Society</a> (Google eBook) <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0821851411" title="Special:BookSources/0821851411">0821851411</a></link></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Pedagogical">Pedagogical</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=20" title="Edit section: Pedagogical"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>Palamodov, V. P., III. <a class="external text" href="https://link-springer-com.colorado.idm.oclc.org/chapter/10.1007/978-3-642-61263-3_3" rel="nofollow">Deformations of complex spaces</a>. <i>Complex Variables IV</i> (very down to earth intro)</li>
+<li><a class="external text" href="https://web.archive.org/web/20191118215705/https://www.maths.ed.ac.uk/~ssierra/artin_notes_deformationthy.pdf" rel="nofollow">Course Notes on Deformation Theory (Artin)</a></li>
+<li><a class="external text" href="https://math.stackexchange.com/a/1124227/251222" rel="nofollow">Studying Deformation Theory of Schemes</a></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFSernesi">Sernesi, Eduardo, <i>Deformations of Algebraic Schemes</i></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Deformations+of+Algebraic+Schemes&amp;rft.aulast=Sernesi&amp;rft.aufirst=Eduardo&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ADeformation+%28mathematics%29"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFHartshorne">Hartshorne, Robin, <i>Deformation Theory</i></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Deformation+Theory&amp;rft.aulast=Hartshorne&amp;rft.aufirst=Robin&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ADeformation+%28mathematics%29"></span></link></li>
+<li><a class="external text" href="https://math.berkeley.edu/~robin/math274root.pdf" rel="nofollow">Notes from Hartshorne's Course on Deformation Theory</a></li>
+<li><a class="external text" href="http://www.msri.org/summer_schools/419" rel="nofollow">MSRI – Deformation Theory and Moduli in Algebraic Geometry</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Survey_articles">Survey articles</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=21" title="Edit section: Survey articles"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFMazur2004"><a href="/wiki/Barry_Mazur" title="Barry Mazur">Mazur, Barry</a> (2004), <a class="external text" href="https://www.ams.org/journals/bull/2004-41-03/S0273-0979-04-01024-9/S0273-0979-04-01024-9.pdf" rel="nofollow">"Perturbations, Deformations, and Variations (and "Near-Misses" in Geometry, Physics, and Number Theory"</a> <span class="cs1-format">(PDF)</span>, <i><a href="/wiki/Bulletin_of_the_American_Mathematical_Society" title="Bulletin of the American Mathematical Society">Bulletin of the American Mathematical Society</a></i>, <b>41</b> (3): <span class="nowrap">307–</span>336, <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://doi.org/10.1090%2FS0273-0979-04-01024-9" rel="nofollow">10.1090/S0273-0979-04-01024-9</a></span>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=2058289" rel="nofollow">2058289</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Bulletin+of+the+American+Mathematical+Society&amp;rft.atitle=Perturbations%2C+Deformations%2C+and+Variations+%28and+%22Near-Misses%22+in+Geometry%2C+Physics%2C+and+Number+Theory&amp;rft.volume=41&amp;rft.issue=3&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E307-%3C%2Fspan%3E336&amp;rft.date=2004&amp;rft_id=info%3Adoi%2F10.1090%2FS0273-0979-04-01024-9&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D2058289%23id-name%3DMR&amp;rft.aulast=Mazur&amp;rft.aufirst=Barry&amp;rft_id=https%3A%2F%2Fwww.ams.org%2Fjournals%2Fbull%2F2004-41-03%2FS0273-0979-04-01024-9%2FS0273-0979-04-01024-9.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ADeformation+%28mathematics%29"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFAnel">Anel, M., <a class="external text" href="http://mathieu.anel.free.fr/mat/doc/Anel%20-%20WhyDeformationAreCohomological.pdf" rel="nofollow"><i>Why deformations are cohomological</i></a> <span class="cs1-format">(PDF)</span></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Why+deformations+are+cohomological&amp;rft.aulast=Anel&amp;rft.aufirst=M.&amp;rft_id=http%3A%2F%2Fmathieu.anel.free.fr%2Fmat%2Fdoc%2FAnel%2520-%2520WhyDeformationAreCohomological.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ADeformation+%28mathematics%29"></span></link></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="External_links">External links</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Deformation_(mathematics)&amp;action=edit&amp;section=22" title="Edit section: External links"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation web cs1"><a class="external text" href="http://www.math.ucdavis.edu/~osserman/classes/256A/notes/deform.pdf" rel="nofollow">"A glimpse of deformation theory"</a> <span class="cs1-format">(PDF)</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=A+glimpse+of+deformation+theory&amp;rft_id=http%3A%2F%2Fwww.math.ucdavis.edu%2F~osserman%2Fclasses%2F256A%2Fnotes%2Fdeform.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ADeformation+%28mathematics%29"></span>, lecture notes by Brian Osserman</link></li></ul>
+<!-- 
+NewPP limit report
+Parsed by mw‐web.eqiad.main‐6df8dbf59d‐pm9h8
+Cached time: 20250331061228
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.336 seconds
+Real time usage: 0.697 seconds
+Preprocessor visited node count: 1781/1000000
+Post‐expand include size: 18965/2097152 bytes
+Template argument size: 1746/2097152 bytes
+Highest expansion depth: 14/100
+Expensive parser function count: 3/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 27541/5000000 bytes
+Lua time usage: 0.153/10.000 seconds
+Lua memory usage: 5121640/52428800 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  433.820      1 -total
+ 48.69%  211.225      1 Template:Short_description
+ 32.85%  142.493      7 Template:Main_other
+ 32.21%  139.741      1 Template:SDcat
+ 21.61%   93.757      1 Template:Reflist
+ 18.51%   80.281      2 Template:Cite_book
+ 13.24%   57.428      2 Template:Pagetype
+ 10.16%   44.056      2 Template:Citation_needed
+  8.53%   37.020      2 Template:Fix
+  5.57%   24.175      4 Template:Category_handler
+-->
+<!-- Saved in parser cache with key enwiki:pcache:679351:|#|:idhash:canonical and timestamp 20250331061228 and revision id 1218721287. Rendering was triggered because: page-view
+ -->
+</meta></div>

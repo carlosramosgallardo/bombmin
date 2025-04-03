@@ -1,0 +1,1980 @@
+<div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none">Ways to estimate the size of sifted sets of integers</div>
+<p><b>Sieve theory</b> is a set of general techniques in <a href="/wiki/Number_theory" title="Number theory">number theory</a>, designed to count, or more realistically to estimate the size of, <b>sifted sets</b> of integers. The prototypical example of a sifted set is the set of <a href="/wiki/Prime_number" title="Prime number">prime numbers</a> up to some prescribed limit <i>X</i>.  Correspondingly, the prototypical example of a sieve is the <a href="/wiki/Sieve_of_Eratosthenes" title="Sieve of Eratosthenes">sieve of Eratosthenes</a>, or the more general <a href="/wiki/Legendre_sieve" title="Legendre sieve">Legendre sieve</a>. The direct attack on prime numbers using these methods soon reaches apparently insuperable obstacles, in the way of the accumulation of error terms.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (May 2018)">citation needed</span></a></i>]</sup> In one of the major strands of number theory in the twentieth century, ways were found of avoiding some of the difficulties of a frontal attack with a naive idea of what sieving should be.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (May 2018)">citation needed</span></a></i>]</sup>
+</p><p>One successful approach is to approximate a specific sifted set of numbers (e.g. the set of prime numbers) by another, simpler set (e.g. the set of <a href="/wiki/Almost_prime" title="Almost prime">almost prime</a> numbers), which is typically somewhat larger than the original set, and easier to analyze. More sophisticated sieves also do not work directly with sets <i>per se</i>, but instead count them according to carefully chosen <a href="/wiki/Weight_function" title="Weight function">weight functions</a> on these sets (options for giving some elements of these sets more "weight" than others). Furthermore, in some modern applications, sieves are used not to estimate the size of a sifted
+set, but to produce a function that is large on the set and mostly small outside it, while being easier to analyze than the <a href="/wiki/Indicator_function" title="Indicator function">characteristic function</a> of the set.
+</p><p>The term <i>sieve</i> was first used by the <a href="/wiki/Norway" title="Norway">Norwegian</a> mathematician <a href="/wiki/Viggo_Brun" title="Viggo Brun">Viggo Brun</a> in 1915.<sup class="reference" id="cite_ref-1"><a href="#cite_note-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup> However Brun's work was inspired by the works of the <a href="/wiki/France" title="France">French</a> mathematician <a class="new" href="/w/index.php?title=Jean_Merlin&amp;action=edit&amp;redlink=1" title="Jean Merlin (page does not exist)">Jean Merlin</a> who died in the <a href="/wiki/World_War_I" title="World War I">World War I</a> and only two of his manuscripts survived.<sup class="reference" id="cite_ref-2"><a href="#cite_note-2"><span class="cite-bracket">[</span>2<span class="cite-bracket">]</span></a></sup>
+</p>
+<meta property="mw:PageProp/toc">
+<div class="mw-heading mw-heading2"><h2 id="Basic_sieve_theory">Basic sieve theory</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Sieve_theory&amp;action=edit&amp;section=1" title="Edit section: Basic sieve theory"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>For information on notation see at the end. We follow the <a href="/wiki/Ansatz" title="Ansatz">Ansatz</a> from <i>Opera de Cribro</i> by <a href="/wiki/John_Friedlander" title="John Friedlander">John Friedlander</a> and <a href="/wiki/Henryk_Iwaniec" title="Henryk Iwaniec">Henryk Iwaniec</a>.<sup class="reference" id="cite_ref-3"><a href="#cite_note-3"><span class="cite-bracket">[</span>3<span class="cite-bracket">]</span></a></sup>
+</p><p>We start with some <a class="mw-redirect" href="/wiki/Countable" title="Countable">countable</a> sequence of non-negative numbers <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathcal {A}}=(a_{n})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">A</mi>
+</mrow>
+</mrow>
+<mo>=</mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathcal {A}}=(a_{n})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathcal {A}}=(a_{n})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/14a816a8065c3fe75ceca293bf866e88b6ac3fdb" style="vertical-align: -0.838ex; width:9.259ex; height:2.843ex;"/></span>. In the most basic case this sequence is just the <a href="/wiki/Indicator_function" title="Indicator function">indicator function</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle a_{n}=1_{A}(n)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<msub>
+<mn>1</mn>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>A</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>n</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle a_{n}=1_{A}(n)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle a_{n}=1_{A}(n)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/aec1507dddc78ce2b7700a213cf8bb079e1b695b" style="vertical-align: -0.838ex; width:11.378ex; height:2.843ex;"/></span> of some set <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A=\{s:s\leq x\}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>A</mi>
+<mo>=</mo>
+<mo fence="false" stretchy="false">{</mo>
+<mi>s</mi>
+<mo>:</mo>
+<mi>s</mi>
+<mo>≤<!-- ≤ --></mo>
+<mi>x</mi>
+<mo fence="false" stretchy="false">}</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A=\{s:s\leq x\}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A=\{s:s\leq x\}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e4873c532463136f0c4af8caf938a5f4915b74dd" style="vertical-align: -0.838ex; width:15.713ex; height:2.843ex;"/></span> we want to sieve. However this abstraction allows for more general situations. Next we introduce a general set of prime numbers called the <i>sifting range</i> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathcal {P}}\subseteq \mathbb {P} }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+<mo>⊆<!-- ⊆ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">P</mi>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathcal {P}}\subseteq \mathbb {P} }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathcal {P}}\subseteq \mathbb {P} }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/147b77911672829daeb403c7d8f6a66b81c14c3e" style="vertical-align: -0.505ex; width:6.222ex; height:2.343ex;"/></span> and their product up to <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle z}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>z</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle z}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle z}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/bf368e72c009decd9b6686ee84a375632e11de98" style="vertical-align: -0.338ex; width:1.088ex; height:1.676ex;"/></span> as a function <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P(z)=\prod \limits _{p\in {\mathcal {P}},p&lt;z}p}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>P</mi>
+<mo stretchy="false">(</mo>
+<mi>z</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<munder>
+<mo movablelimits="false">∏<!-- ∏ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+<mo>∈<!-- ∈ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+<mo>,</mo>
+<mi>p</mi>
+<mo>&lt;</mo>
+<mi>z</mi>
+</mrow>
+</munder>
+<mi>p</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P(z)=\prod \limits _{p\in {\mathcal {P}},p&lt;z}p}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P(z)=\prod \limits _{p\in {\mathcal {P}},p&lt;z}p}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ba8aefa279164ab81e96ac8f1f26b309ce4945a7" style="vertical-align: -3.338ex; width:15.758ex; height:5.843ex;"/></span>.
+</p><p>The goal of sieve theory is to estimate the <i>sifting function</i>
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle S({\mathcal {A}},{\mathcal {P}},z)=\sum \limits _{n\leq x,{\text{gcd}}(n,P(z))=1}a_{n}.}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>S</mi>
+<mo stretchy="false">(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">A</mi>
+</mrow>
+</mrow>
+<mo>,</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+<mo>,</mo>
+<mi>z</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<munder>
+<mo movablelimits="false">∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>≤<!-- ≤ --></mo>
+<mi>x</mi>
+<mo>,</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>gcd</mtext>
+</mrow>
+<mo stretchy="false">(</mo>
+<mi>n</mi>
+<mo>,</mo>
+<mi>P</mi>
+<mo stretchy="false">(</mo>
+<mi>z</mi>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mn>1</mn>
+</mrow>
+</munder>
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>.</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle S({\mathcal {A}},{\mathcal {P}},z)=\sum \limits _{n\leq x,{\text{gcd}}(n,P(z))=1}a_{n}.}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle S({\mathcal {A}},{\mathcal {P}},z)=\sum \limits _{n\leq x,{\text{gcd}}(n,P(z))=1}a_{n}.}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8b630df69e8d2186502e2d4f0aab4d1d21070311" style="vertical-align: -3.505ex; width:30.887ex; height:6.009ex;"/></span></dd></dl>
+<p>In the case of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle a_{n}=1_{A}(n)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<msub>
+<mn>1</mn>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>A</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>n</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle a_{n}=1_{A}(n)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle a_{n}=1_{A}(n)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/aec1507dddc78ce2b7700a213cf8bb079e1b695b" style="vertical-align: -0.838ex; width:11.378ex; height:2.843ex;"/></span> this just counts the <a href="/wiki/Cardinality" title="Cardinality">cardinality</a> of a subset <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A_{\operatorname {sift} }\subseteq A}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>sift</mi>
+</mrow>
+</msub>
+<mo>⊆<!-- ⊆ --></mo>
+<mi>A</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A_{\operatorname {sift} }\subseteq A}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A_{\operatorname {sift} }\subseteq A}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0a0a0569419ac7fb07acf0505ed5956369aa88c0" style="vertical-align: -0.671ex; width:9.065ex; height:2.509ex;"/></span> of numbers, that are <a class="mw-redirect" href="/wiki/Coprime" title="Coprime">coprime</a> to the <a class="mw-redirect" href="/wiki/Prime_factor" title="Prime factor">prime factors</a> of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P(z)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>P</mi>
+<mo stretchy="false">(</mo>
+<mi>z</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P(z)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P(z)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2ace59286128b75d9170a45c011806a670f36469" style="vertical-align: -0.838ex; width:4.643ex; height:2.843ex;"/></span>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="The_inclusion–exclusion_principle"><span id="The_inclusion.E2.80.93exclusion_principle"></span>The inclusion–exclusion principle</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Sieve_theory&amp;action=edit&amp;section=2" title="Edit section: The inclusion–exclusion principle"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>For <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathcal {P}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathcal {P}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathcal {P}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/10d6ec962de5797ba4f161c40e66dca74ae95cc6" style="vertical-align: -0.338ex; width:1.704ex; height:2.176ex;"/></span> define
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A_{\operatorname {sift} }:=\{a\in A|(a,p_{1}\cdots p_{k})=1\},\quad p_{1},\dots ,p_{k}\in {\mathcal {P}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>sift</mi>
+</mrow>
+</msub>
+<mo>:=</mo>
+<mo fence="false" stretchy="false">{</mo>
+<mi>a</mi>
+<mo>∈<!-- ∈ --></mo>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo stretchy="false">(</mo>
+<mi>a</mi>
+<mo>,</mo>
+<msub>
+<mi>p</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>⋯<!-- ⋯ --></mo>
+<msub>
+<mi>p</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mn>1</mn>
+<mo fence="false" stretchy="false">}</mo>
+<mo>,</mo>
+<mspace width="1em"></mspace>
+<msub>
+<mi>p</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<mo>…<!-- … --></mo>
+<mo>,</mo>
+<msub>
+<mi>p</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+</mrow>
+</msub>
+<mo>∈<!-- ∈ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A_{\operatorname {sift} }:=\{a\in A|(a,p_{1}\cdots p_{k})=1\},\quad p_{1},\dots ,p_{k}\in {\mathcal {P}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A_{\operatorname {sift} }:=\{a\in A|(a,p_{1}\cdots p_{k})=1\},\quad p_{1},\dots ,p_{k}\in {\mathcal {P}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/712ac5b416cc575d619f8dabcc0f990986dd6bd3" style="vertical-align: -0.838ex; width:50.628ex; height:2.843ex;"/></span></dd></dl>
+<p>and for each prime <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle p\in {\mathcal {P}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>p</mi>
+<mo>∈<!-- ∈ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle p\in {\mathcal {P}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle p\in {\mathcal {P}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b7e2c46d3c723d2e8ccc606a4d3333927e6b375e" style="vertical-align: -0.671ex; margin-left: -0.089ex; width:5.803ex; height:2.509ex;"/></span> denote the subset <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle E_{p}\subseteq A}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+<mo>⊆<!-- ⊆ --></mo>
+<mi>A</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle E_{p}\subseteq A}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle E_{p}\subseteq A}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/95c13156115e96d83ec5d99193cb1391bee5a1e9" style="vertical-align: -1.005ex; width:7.616ex; height:2.843ex;"/></span> of multiples <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle E_{p}:=\{pn:n\in \mathbb {N} \}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+<mo>:=</mo>
+<mo fence="false" stretchy="false">{</mo>
+<mi>p</mi>
+<mi>n</mi>
+<mo>:</mo>
+<mi>n</mi>
+<mo>∈<!-- ∈ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">N</mi>
+</mrow>
+<mo fence="false" stretchy="false">}</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle E_{p}:=\{pn:n\in \mathbb {N} \}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle E_{p}:=\{pn:n\in \mathbb {N} \}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/df81dcaee1e07ec3610d6de105b97f2f042e5b5a" style="vertical-align: -1.005ex; width:19.259ex; height:3.009ex;"/></span> and let <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |E_{p}|}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |E_{p}|}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |E_{p}|}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e7556463ecfa4eb35fb4306debc2842adb042c4f" style="vertical-align: -1.005ex; width:4.068ex; height:3.009ex;"/></span> be the cardinality.
+</p><p>We now introduce a way to calculate the cardinality of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A_{\operatorname {sift} }}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>sift</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A_{\operatorname {sift} }}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A_{\operatorname {sift} }}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/83af2a26767e0e4a80b3b83608fdab68289c5da0" style="vertical-align: -0.671ex; width:4.224ex; height:2.509ex;"/></span>. For this the sifting range <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathcal {P}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathcal {P}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathcal {P}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/10d6ec962de5797ba4f161c40e66dca74ae95cc6" style="vertical-align: -0.338ex; width:1.704ex; height:2.176ex;"/></span> will be a concrete example of primes of the form <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathcal {P}}:=\{2,3,5,7,11,13\dots \}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+<mo>:=</mo>
+<mo fence="false" stretchy="false">{</mo>
+<mn>2</mn>
+<mo>,</mo>
+<mn>3</mn>
+<mo>,</mo>
+<mn>5</mn>
+<mo>,</mo>
+<mn>7</mn>
+<mo>,</mo>
+<mn>11</mn>
+<mo>,</mo>
+<mn>13</mn>
+<mo>…<!-- … --></mo>
+<mo fence="false" stretchy="false">}</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathcal {P}}:=\{2,3,5,7,11,13\dots \}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathcal {P}}:=\{2,3,5,7,11,13\dots \}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1a1c85a77cb7f121172c20a996594445645b602e" style="vertical-align: -0.838ex; width:25.354ex; height:2.843ex;"/></span>.
+</p><p>If one wants to calculate the cardinality of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A_{\operatorname {sift} }}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>sift</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A_{\operatorname {sift} }}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A_{\operatorname {sift} }}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/83af2a26767e0e4a80b3b83608fdab68289c5da0" style="vertical-align: -0.671ex; width:4.224ex; height:2.509ex;"/></span>, one can apply the <a href="/wiki/Inclusion%E2%80%93exclusion_principle" title="Inclusion–exclusion principle">inclusion–exclusion principle</a>. This algorithm works like this: first one removes from the cardinality of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |A|}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |A|}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |A|}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/648fce92f29d925f04d39244ccfe435320dfc6de" style="vertical-align: -0.838ex; width:3.037ex; height:2.843ex;"/></span> the cardinality <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |E_{2}|}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |E_{2}|}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |E_{2}|}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9fc4fdd1461b8ecef3bfe4bcee2756915b59c7a0" style="vertical-align: -0.838ex; width:4.063ex; height:2.843ex;"/></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |E_{3}|}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |E_{3}|}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |E_{3}|}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d3e0fbce5c3a7ea642524ecc35c7d29e380ad6b1" style="vertical-align: -0.838ex; width:4.063ex; height:2.843ex;"/></span>. Now since one has removed the numbers that are divisible by <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle 2}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mn>2</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle 2}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle 2}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/901fc910c19990d0dbaaefe4726ceb1a4e217a0f" style="vertical-align: -0.338ex; width:1.162ex; height:2.176ex;"/></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle 3}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mn>3</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle 3}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle 3}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/991e33c6e207b12546f15bdfee8b5726eafbbb2f" style="vertical-align: -0.338ex; width:1.162ex; height:2.176ex;"/></span> twice, one has to add the cardinality <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |E_{6}|}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>6</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |E_{6}|}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |E_{6}|}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4e817f353ed7ca7a971281732423d0dcf9a761cf" style="vertical-align: -0.838ex; width:4.063ex; height:2.843ex;"/></span>. In the next step one removes <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |E_{5}|}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>5</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |E_{5}|}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |E_{5}|}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e2e5ad753cebb59647215ed940ce10e8fc963f13" style="vertical-align: -0.838ex; width:4.063ex; height:2.843ex;"/></span> and adds <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |E_{10}|}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>10</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |E_{10}|}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |E_{10}|}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9552588a3c43c2494cecc16e75347a875a128b87" style="vertical-align: -0.838ex; width:4.885ex; height:2.843ex;"/></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |E_{15}|}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>15</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |E_{15}|}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |E_{15}|}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/058ad1a8738e805fcf354c33a7ea934a4a16728c" style="vertical-align: -0.838ex; width:4.885ex; height:2.843ex;"/></span> again. Additionally one has now to remove <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |E_{30}|}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>30</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |E_{30}|}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |E_{30}|}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2124fdebdb938fcbc7ca8a97a8386c1eeea2b8ec" style="vertical-align: -0.838ex; width:4.885ex; height:2.843ex;"/></span>, i.e. the cardinality of all numbers divisible by <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle 2,3}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mn>2</mn>
+<mo>,</mo>
+<mn>3</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle 2,3}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle 2,3}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/16fa50a8eaffb4a621b3da63d5af1a056a091ad1" style="vertical-align: -0.671ex; width:3.359ex; height:2.509ex;"/></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle 5}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mn>5</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle 5}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle 5}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/29483407999b8763f0ea335cf715a6a5e809f44b" style="vertical-align: -0.338ex; width:1.162ex; height:2.176ex;"/></span>. This leads to the inclusion–exclusion principle
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |A_{\operatorname {sift} }|=|A|-|E_{2}|-|E_{3}|+|E_{6}|-|E_{5}|+|E_{10}|+|E_{15}|-|E_{30}|+\cdots }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>sift</mi>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>−<!-- − --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>−<!-- − --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>+</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>6</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>−<!-- − --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>5</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>+</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>10</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>+</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>15</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>−<!-- − --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>30</mn>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>+</mo>
+<mo>⋯<!-- ⋯ --></mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |A_{\operatorname {sift} }|=|A|-|E_{2}|-|E_{3}|+|E_{6}|-|E_{5}|+|E_{10}|+|E_{15}|-|E_{30}|+\cdots }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |A_{\operatorname {sift} }|=|A|-|E_{2}|-|E_{3}|+|E_{6}|-|E_{5}|+|E_{10}|+|E_{15}|-|E_{30}|+\cdots }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d89fc2b63a90802e74371923df8bdc761dbcc7a1" style="vertical-align: -0.838ex; width:68.007ex; height:2.843ex;"/></span></dd></dl>
+<p>Notice that one can write this as
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |A_{\operatorname {sift} }|=\sum \limits _{d|P}\mu (d)|E_{d}|}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>sift</mi>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mo>=</mo>
+<munder>
+<mo movablelimits="false">∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mi>P</mi>
+</mrow>
+</munder>
+<mi>μ<!-- μ --></mi>
+<mo stretchy="false">(</mo>
+<mi>d</mi>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |A_{\operatorname {sift} }|=\sum \limits _{d|P}\mu (d)|E_{d}|}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |A_{\operatorname {sift} }|=\sum \limits _{d|P}\mu (d)|E_{d}|}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/be162985f1570ade293af48a4abea7ac98c6f7d6" style="vertical-align: -3.505ex; width:20.886ex; height:6.009ex;"/></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mu }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>μ<!-- μ --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mu }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mu }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9fd47b2a39f7a7856952afec1f1db72c67af6161" style="vertical-align: -0.838ex; width:1.402ex; height:2.176ex;"/></span> is the <a href="/wiki/M%C3%B6bius_function" title="Möbius function">Möbius function</a> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P:=\prod \limits _{p\in {\mathcal {P}}}p}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>P</mi>
+<mo>:=</mo>
+<munder>
+<mo movablelimits="false">∏<!-- ∏ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+<mo>∈<!-- ∈ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+</mrow>
+</munder>
+<mi>p</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P:=\prod \limits _{p\in {\mathcal {P}}}p}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P:=\prod \limits _{p\in {\mathcal {P}}}p}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f77ed4b4e59f84cead5d86082f92edef3f4b3de6" style="vertical-align: -3.338ex; width:10.175ex; height:5.843ex;"/></span> the product of all primes in <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathcal {P}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathcal {P}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathcal {P}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/10d6ec962de5797ba4f161c40e66dca74ae95cc6" style="vertical-align: -0.338ex; width:1.704ex; height:2.176ex;"/></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle E_{1}:=A}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>:=</mo>
+<mi>A</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle E_{1}:=A}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle E_{1}:=A}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2c8e628aa81ed39846660691ff4789d8a04a2f8f" style="vertical-align: -0.671ex; width:8.258ex; height:2.509ex;"/></span>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Legendre's_identity"><span id="Legendre.27s_identity"></span>Legendre's identity</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Sieve_theory&amp;action=edit&amp;section=3" title="Edit section: Legendre's identity"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>We can rewrite the sifting function with <i>Legendre's identity</i>
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle S({\mathcal {A}},{\mathcal {P}},z)=\sum \limits _{d\mid P(z)}\mu (d)A_{d}(x)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>S</mi>
+<mo stretchy="false">(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">A</mi>
+</mrow>
+</mrow>
+<mo>,</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+<mo>,</mo>
+<mi>z</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<munder>
+<mo movablelimits="false">∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+<mo>∣<!-- ∣ --></mo>
+<mi>P</mi>
+<mo stretchy="false">(</mo>
+<mi>z</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+</munder>
+<mi>μ<!-- μ --></mi>
+<mo stretchy="false">(</mo>
+<mi>d</mi>
+<mo stretchy="false">)</mo>
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle S({\mathcal {A}},{\mathcal {P}},z)=\sum \limits _{d\mid P(z)}\mu (d)A_{d}(x)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle S({\mathcal {A}},{\mathcal {P}},z)=\sum \limits _{d\mid P(z)}\mu (d)A_{d}(x)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fa63fce84a0dcf50cb523ccd1f01d54fce2aa8e7" style="vertical-align: -3.505ex; width:28.558ex; height:6.009ex;"/></span></dd></dl>
+<p>by using the <a href="/wiki/M%C3%B6bius_function" title="Möbius function">Möbius function</a> and some functions <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A_{d}(x)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A_{d}(x)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A_{d}(x)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b67b631546a06438baf6abada4f3c454425cfc43" style="vertical-align: -0.838ex; width:5.974ex; height:2.843ex;"/></span> induced by the elements of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathcal {P}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathcal {P}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathcal {P}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/10d6ec962de5797ba4f161c40e66dca74ae95cc6" style="vertical-align: -0.338ex; width:1.704ex; height:2.176ex;"/></span>
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A_{d}(x)=\sum \limits _{n\leq x,n\equiv 0{\pmod {d}}}a_{n}.}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<munder>
+<mo movablelimits="false">∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>≤<!-- ≤ --></mo>
+<mi>x</mi>
+<mo>,</mo>
+<mi>n</mi>
+<mo>≡<!-- ≡ --></mo>
+<mn>0</mn>
+<mrow class="MJX-TeXAtom-ORD">
+<mspace width="0.444em"></mspace>
+<mo stretchy="false">(</mo>
+<mi>mod</mi>
+<mspace width="0.333em"></mspace>
+<mi>d</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+</mrow>
+</munder>
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>.</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A_{d}(x)=\sum \limits _{n\leq x,n\equiv 0{\pmod {d}}}a_{n}.}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A_{d}(x)=\sum \limits _{n\leq x,n\equiv 0{\pmod {d}}}a_{n}.}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4e94cd1b4f2660f84c65032df80866663eff0c46" style="vertical-align: -3.505ex; width:26.454ex; height:6.009ex;"/></span></dd></dl>
+<div class="mw-heading mw-heading4"><h4 id="Example">Example</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Sieve_theory&amp;action=edit&amp;section=4" title="Edit section: Example"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Let <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle z=7}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>z</mi>
+<mo>=</mo>
+<mn>7</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle z=7}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle z=7}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/eaff9920f968d2d5f3490f1ba560e69819c0521e" style="vertical-align: -0.338ex; width:5.349ex; height:2.176ex;"/></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathcal {P}}=\mathbb {P} }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">P</mi>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathcal {P}}=\mathbb {P} }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathcal {P}}=\mathbb {P} }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e3d2a5e15c518fa39a640040d65ebfc4fcdb6328" style="vertical-align: -0.338ex; width:6.222ex; height:2.176ex;"/></span>. The Möbius function is negative for every prime, so we get
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{aligned}S({\mathcal {A}},\mathbb {P} ,7)&amp;=A_{1}(x)-A_{2}(x)-A_{3}(x)-A_{5}(x)+A_{6}(x)+A_{10}(x)+A_{15}(x)-A_{30}(x).\end{aligned}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnalign="right left right left right left right left right left right left" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true" rowspacing="3pt">
+<mtr>
+<mtd>
+<mi>S</mi>
+<mo stretchy="false">(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">A</mi>
+</mrow>
+</mrow>
+<mo>,</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">P</mi>
+</mrow>
+<mo>,</mo>
+<mn>7</mn>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>−<!-- − --></mo>
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>−<!-- − --></mo>
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>−<!-- − --></mo>
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>5</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>+</mo>
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>6</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>+</mo>
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>10</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>+</mo>
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>15</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>−<!-- − --></mo>
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>30</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>.</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}S({\mathcal {A}},\mathbb {P} ,7)&amp;=A_{1}(x)-A_{2}(x)-A_{3}(x)-A_{5}(x)+A_{6}(x)+A_{10}(x)+A_{15}(x)-A_{30}(x).\end{aligned}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{aligned}S({\mathcal {A}},\mathbb {P} ,7)&amp;=A_{1}(x)-A_{2}(x)-A_{3}(x)-A_{5}(x)+A_{6}(x)+A_{10}(x)+A_{15}(x)-A_{30}(x).\end{aligned}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7513543a1431f30f4abd0b9cfcf334afe45ca7ec" style="vertical-align: -0.838ex; width:84.199ex; height:2.843ex;"/></span></dd></dl>
+<div class="mw-heading mw-heading3"><h3 id="Approximation_of_the_congruence_sum">Approximation of the congruence sum</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Sieve_theory&amp;action=edit&amp;section=5" title="Edit section: Approximation of the congruence sum"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>One assumes then that <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A_{d}(x)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A_{d}(x)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A_{d}(x)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b67b631546a06438baf6abada4f3c454425cfc43" style="vertical-align: -0.838ex; width:5.974ex; height:2.843ex;"/></span> can be written as
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A_{d}(x)=g(d)X+r_{d}(x)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>g</mi>
+<mo stretchy="false">(</mo>
+<mi>d</mi>
+<mo stretchy="false">)</mo>
+<mi>X</mi>
+<mo>+</mo>
+<msub>
+<mi>r</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A_{d}(x)=g(d)X+r_{d}(x)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A_{d}(x)=g(d)X+r_{d}(x)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/bb7f6cd16d7b2c996d9aee979dc3b21e79b15ec2" style="vertical-align: -0.838ex; width:23.314ex; height:2.843ex;"/></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle g(d)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>g</mi>
+<mo stretchy="false">(</mo>
+<mi>d</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle g(d)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle g(d)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/efbdcc6231e6d7bf0f57d2fbcad29c23fe012468" style="vertical-align: -0.838ex; width:4.141ex; height:2.843ex;"/></span> is a <i>density</i>, meaning a <a href="/wiki/Multiplicative_function" title="Multiplicative function">multiplicative function</a> such that
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle g(1)=1,\qquad 0\leq g(p)&lt;1\qquad p\in \mathbb {P} }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>g</mi>
+<mo stretchy="false">(</mo>
+<mn>1</mn>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mn>1</mn>
+<mo>,</mo>
+<mspace width="2em"></mspace>
+<mn>0</mn>
+<mo>≤<!-- ≤ --></mo>
+<mi>g</mi>
+<mo stretchy="false">(</mo>
+<mi>p</mi>
+<mo stretchy="false">)</mo>
+<mo>&lt;</mo>
+<mn>1</mn>
+<mspace width="2em"></mspace>
+<mi>p</mi>
+<mo>∈<!-- ∈ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">P</mi>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle g(1)=1,\qquad 0\leq g(p)&lt;1\qquad p\in \mathbb {P} }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle g(1)=1,\qquad 0\leq g(p)&lt;1\qquad p\in \mathbb {P} }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/69bbb3721eb92887dc7ab7a56785d40461858133" style="vertical-align: -0.838ex; width:36.72ex; height:2.843ex;"/></span></dd></dl>
+<p>and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle X}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>X</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle X}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle X}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/68baa052181f707c662844a465bfeeb135e82bab" style="vertical-align: -0.338ex; width:1.98ex; height:2.176ex;"/></span> is an approximation of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A_{1}(x)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A_{1}(x)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A_{1}(x)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5dbe4c9b5e67a73188ef450825f42c0cbf0d5fa3" style="vertical-align: -0.838ex; width:5.936ex; height:2.843ex;"/></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle r_{d}(x)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>r</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle r_{d}(x)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle r_{d}(x)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a41c712095a5ca2af40a6518295322e20bcd74b2" style="vertical-align: -0.838ex; width:5.28ex; height:2.843ex;"/></span> is some remainder term. The sifting function becomes
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle S({\mathcal {A}},{\mathcal {P}},z)=X\sum \limits _{d\mid P(z)}\mu (d)g(d)+\sum \limits _{d\mid P(z)}\mu (d)r_{d}(x)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>S</mi>
+<mo stretchy="false">(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">A</mi>
+</mrow>
+</mrow>
+<mo>,</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+<mo>,</mo>
+<mi>z</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>X</mi>
+<munder>
+<mo movablelimits="false">∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+<mo>∣<!-- ∣ --></mo>
+<mi>P</mi>
+<mo stretchy="false">(</mo>
+<mi>z</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+</munder>
+<mi>μ<!-- μ --></mi>
+<mo stretchy="false">(</mo>
+<mi>d</mi>
+<mo stretchy="false">)</mo>
+<mi>g</mi>
+<mo stretchy="false">(</mo>
+<mi>d</mi>
+<mo stretchy="false">)</mo>
+<mo>+</mo>
+<munder>
+<mo movablelimits="false">∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+<mo>∣<!-- ∣ --></mo>
+<mi>P</mi>
+<mo stretchy="false">(</mo>
+<mi>z</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+</munder>
+<mi>μ<!-- μ --></mi>
+<mo stretchy="false">(</mo>
+<mi>d</mi>
+<mo stretchy="false">)</mo>
+<msub>
+<mi>r</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle S({\mathcal {A}},{\mathcal {P}},z)=X\sum \limits _{d\mid P(z)}\mu (d)g(d)+\sum \limits _{d\mid P(z)}\mu (d)r_{d}(x)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle S({\mathcal {A}},{\mathcal {P}},z)=X\sum \limits _{d\mid P(z)}\mu (d)g(d)+\sum \limits _{d\mid P(z)}\mu (d)r_{d}(x)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f98d522b72ba0f5c2ee11919ce7d4599ad29ac9c" style="vertical-align: -3.505ex; width:46.626ex; height:6.009ex;"/></span></dd></dl>
+<p>or in short
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle S({\mathcal {A}},{\mathcal {P}},z)=XG(x,z)+R(x,z).}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>S</mi>
+<mo stretchy="false">(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">A</mi>
+</mrow>
+</mrow>
+<mo>,</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+</mrow>
+</mrow>
+<mo>,</mo>
+<mi>z</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>X</mi>
+<mi>G</mi>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo>,</mo>
+<mi>z</mi>
+<mo stretchy="false">)</mo>
+<mo>+</mo>
+<mi>R</mi>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo>,</mo>
+<mi>z</mi>
+<mo stretchy="false">)</mo>
+<mo>.</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle S({\mathcal {A}},{\mathcal {P}},z)=XG(x,z)+R(x,z).}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle S({\mathcal {A}},{\mathcal {P}},z)=XG(x,z)+R(x,z).}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/04aacce2a7760a865f7152a8a0ed101e69f94900" style="vertical-align: -0.838ex; width:32.75ex; height:2.843ex;"/></span></dd></dl>
+<p>One tries then to estimate the sifting function by finding upper and lower <a href="/wiki/Upper_and_lower_bounds" title="Upper and lower bounds">bounds</a> for <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle S}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>S</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle S}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle S}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4611d85173cd3b508e67077d4a1252c9c05abca2" style="vertical-align: -0.338ex; width:1.499ex; height:2.176ex;"/></span> respectively <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle G}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>G</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle G}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle G}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f5f3c8921a3b352de45446a6789b104458c9f90b" style="vertical-align: -0.338ex; width:1.827ex; height:2.176ex;"/></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle R}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>R</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle R}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle R}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4b0bfb3769bf24d80e15374dc37b0441e2616e33" style="vertical-align: -0.338ex; width:1.764ex; height:2.176ex;"/></span>.
+</p><p>The partial sum of the sifting function alternately over- and undercounts, so the remainder term will be huge. <a href="/wiki/Viggo_Brun" title="Viggo Brun">Brun</a>'s idea to improve this was to replace <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mu (d)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>μ<!-- μ --></mi>
+<mo stretchy="false">(</mo>
+<mi>d</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mu (d)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mu (d)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c8535d78d4cb9fceb62067127ef328f7b316ba42" style="vertical-align: -0.838ex; width:4.427ex; height:2.843ex;"/></span> in the sifting function with a weight sequence <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (\lambda _{d})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (\lambda _{d})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (\lambda _{d})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2c0371adc3a8a030d41d83094ff16d9090de27a6" style="vertical-align: -0.838ex; width:4.257ex; height:2.843ex;"/></span> consisting of restricted Möbius functions. Choosing two appropriate sequences <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (\lambda _{d}^{-})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<msubsup>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>−<!-- − --></mo>
+</mrow>
+</msubsup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (\lambda _{d}^{-})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (\lambda _{d}^{-})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7450ffb49a7402320a117c8123e7b614e138df6c" style="vertical-align: -1.005ex; width:4.675ex; height:3.176ex;"/></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (\lambda _{d}^{+})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<msubsup>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>+</mo>
+</mrow>
+</msubsup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (\lambda _{d}^{+})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (\lambda _{d}^{+})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1a1cf0362c036348224821b470374723fe3f4ed8" style="vertical-align: -1.005ex; width:4.675ex; height:3.176ex;"/></span> and denoting the sifting functions with <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle S^{-}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>S</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>−<!-- − --></mo>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle S^{-}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle S^{-}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/269e3e6c1fe2d2dfa225d8535e76cc8846a5c8fb" style="vertical-align: -0.338ex; width:3.032ex; height:2.509ex;"/></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle S^{+}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>S</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>+</mo>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle S^{+}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle S^{+}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8fb8e791330b1f1aabb7d9ab514afa5b879190a9" style="vertical-align: -0.338ex; width:3.032ex; height:2.509ex;"/></span>, one can get lower and upper bounds for the original sifting functions
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle S^{-}\leq S\leq S^{+}.}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>S</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>−<!-- − --></mo>
+</mrow>
+</msup>
+<mo>≤<!-- ≤ --></mo>
+<mi>S</mi>
+<mo>≤<!-- ≤ --></mo>
+<msup>
+<mi>S</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>+</mo>
+</mrow>
+</msup>
+<mo>.</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle S^{-}\leq S\leq S^{+}.}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle S^{-}\leq S\leq S^{+}.}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/503cfb2ec84eb6155fcba0d354dc104988a11b0d" style="vertical-align: -0.505ex; width:14.408ex; height:2.676ex;"/></span><sup class="reference" id="cite_ref-4"><a href="#cite_note-4"><span class="cite-bracket">[</span>4<span class="cite-bracket">]</span></a></sup></dd></dl>
+<p>Since <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle g}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>g</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle g}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle g}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d3556280e66fe2c0d0140df20935a6f057381d77" style="vertical-align: -0.671ex; width:1.116ex; height:2.009ex;"/></span> is multiplicative, one can also work with the identity
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \sum \limits _{d\mid n}\mu (d)g(d)=\prod \limits _{\begin{array}{c}p|n;\;p\in \mathbb {P} \end{array}}(1-g(p)),\quad \forall \;n\in \mathbb {N} .}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<munder>
+<mo movablelimits="false">∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+<mo>∣<!-- ∣ --></mo>
+<mi>n</mi>
+</mrow>
+</munder>
+<mi>μ<!-- μ --></mi>
+<mo stretchy="false">(</mo>
+<mi>d</mi>
+<mo stretchy="false">)</mo>
+<mi>g</mi>
+<mo stretchy="false">(</mo>
+<mi>d</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<munder>
+<mo movablelimits="false">∏<!-- ∏ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnspacing="1em" rowspacing="4pt">
+<mtr>
+<mtd>
+<mi>p</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mi>n</mi>
+<mo>;</mo>
+<mspace width="thickmathspace"></mspace>
+<mi>p</mi>
+<mo>∈<!-- ∈ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">P</mi>
+</mrow>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</munder>
+<mo stretchy="false">(</mo>
+<mn>1</mn>
+<mo>−<!-- − --></mo>
+<mi>g</mi>
+<mo stretchy="false">(</mo>
+<mi>p</mi>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">)</mo>
+<mo>,</mo>
+<mspace width="1em"></mspace>
+<mi mathvariant="normal">∀<!-- ∀ --></mi>
+<mspace width="thickmathspace"></mspace>
+<mi>n</mi>
+<mo>∈<!-- ∈ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">N</mi>
+</mrow>
+<mo>.</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \sum \limits _{d\mid n}\mu (d)g(d)=\prod \limits _{\begin{array}{c}p|n;\;p\in \mathbb {P} \end{array}}(1-g(p)),\quad \forall \;n\in \mathbb {N} .}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \sum \limits _{d\mid n}\mu (d)g(d)=\prod \limits _{\begin{array}{c}p|n;\;p\in \mathbb {P} \end{array}}(1-g(p)),\quad \forall \;n\in \mathbb {N} .}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/673efa59c8076c8c1bbe5c8f8d7c7f4374cf4e0e" style="vertical-align: -3.671ex; width:44.222ex; height:6.176ex;"/></span></dd></dl>
+<p><b>Notation:</b> a word of caution regarding the notation, in the literature one often identifies the set of sequences <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathcal {A}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">A</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathcal {A}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathcal {A}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/280ae03440942ab348c2ca9b8db6b56ffa9618f8" style="vertical-align: -0.338ex; width:1.903ex; height:2.343ex;"/></span> with the set <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>A</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7daff47fa58cdfd29dc333def748ff5fa4c923e3" style="vertical-align: -0.338ex; width:1.743ex; height:2.176ex;"/></span> itself. This means one writes <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathcal {A}}=\{s:s\leq x\}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">A</mi>
+</mrow>
+</mrow>
+<mo>=</mo>
+<mo fence="false" stretchy="false">{</mo>
+<mi>s</mi>
+<mo>:</mo>
+<mi>s</mi>
+<mo>≤<!-- ≤ --></mo>
+<mi>x</mi>
+<mo fence="false" stretchy="false">}</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathcal {A}}=\{s:s\leq x\}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathcal {A}}=\{s:s\leq x\}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/93743771e9b8d4035343d02607489f06e6a94ce6" style="vertical-align: -0.838ex; width:15.873ex; height:2.843ex;"/></span> to define a sequence <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathcal {A}}=(a_{n})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi class="MJX-tex-caligraphic" mathvariant="script">A</mi>
+</mrow>
+</mrow>
+<mo>=</mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathcal {A}}=(a_{n})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathcal {A}}=(a_{n})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/14a816a8065c3fe75ceca293bf866e88b6ac3fdb" style="vertical-align: -0.838ex; width:9.259ex; height:2.843ex;"/></span>. Also in the literature the sum <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A_{d}(x)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A_{d}(x)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A_{d}(x)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b67b631546a06438baf6abada4f3c454425cfc43" style="vertical-align: -0.838ex; width:5.974ex; height:2.843ex;"/></span> is sometimes notated as the cardinality <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |A_{d}(x)|}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |A_{d}(x)|}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |A_{d}(x)|}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a92cc7e53f57e9b72c258dc5ce069f07ea7c4b36" style="vertical-align: -0.838ex; width:7.268ex; height:2.843ex;"/></span> of some set <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A_{d}(x)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A_{d}(x)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A_{d}(x)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b67b631546a06438baf6abada4f3c454425cfc43" style="vertical-align: -0.838ex; width:5.974ex; height:2.843ex;"/></span>, while we have defined <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A_{d}(x)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>A</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>d</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A_{d}(x)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A_{d}(x)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b67b631546a06438baf6abada4f3c454425cfc43" style="vertical-align: -0.838ex; width:5.974ex; height:2.843ex;"/></span> to be already the cardinality of this set. We used 
+<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {P} }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">P</mi>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {P} }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {P} }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1053af9e662ceaf56c4455f90e0f67273422eded" style="vertical-align: -0.338ex; width:1.42ex; height:2.176ex;"/></span> to denote the set of primes and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (a,b)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<mi>a</mi>
+<mo>,</mo>
+<mi>b</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (a,b)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (a,b)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d7e5710198f33b00695903460983021e75860e2c" style="vertical-align: -0.838ex; width:5.071ex; height:2.843ex;"/></span> for the <a href="/wiki/Greatest_common_divisor" title="Greatest common divisor">greatest common divisor</a> of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle a}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>a</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle a}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle a}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ffd2487510aa438433a2579450ab2b3d557e5edc" style="vertical-align: -0.338ex; width:1.23ex; height:1.676ex;"/></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle b}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>b</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle b}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle b}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f11423fbb2e967f986e36804a8ae4271734917c3" style="vertical-align: -0.338ex; width:0.998ex; height:2.176ex;"/></span>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Types_of_sieving">Types of sieving</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Sieve_theory&amp;action=edit&amp;section=6" title="Edit section: Types of sieving"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Modern sieves include the <a href="/wiki/Brun_sieve" title="Brun sieve">Brun sieve</a>, the <a href="/wiki/Selberg_sieve" title="Selberg sieve">Selberg sieve</a>, the <a href="/wiki/Tur%C3%A1n_sieve" title="Turán sieve">Turán sieve</a>, the <a href="/wiki/Large_sieve" title="Large sieve">large sieve</a>, the <a href="/wiki/Larger_sieve" title="Larger sieve">larger sieve</a> and the <a href="/wiki/Goldston%E2%80%93Pintz%E2%80%93Y%C4%B1ld%C4%B1r%C4%B1m_sieve" title="Goldston–Pintz–Yıldırım sieve">Goldston–Pintz–Yıldırım sieve</a>. One of the original purposes of sieve theory was to try to prove conjectures in number theory such as the <a class="mw-redirect" href="/wiki/Twin_prime_conjecture" title="Twin prime conjecture">twin prime conjecture</a>.  While the original broad aims of sieve theory still are largely unachieved, there have been some partial successes, especially in combination with other number theoretic tools.  Highlights include:
+</p>
+<ol><li><i><a href="/wiki/Brun%27s_theorem" title="Brun's theorem">Brun's theorem</a></i>, which shows that the sum of the reciprocals of the twin primes converges (whereas the sum of the reciprocals of all primes diverges);</li>
+<li><i><a href="/wiki/Chen%27s_theorem" title="Chen's theorem">Chen's theorem</a></i>, which shows that there are infinitely many primes <i>p</i> such that <i>p</i> + 2 is either a prime or a <a href="/wiki/Semiprime" title="Semiprime">semiprime</a> (the product of two primes); a closely related theorem of <a href="/wiki/Chen_Jingrun" title="Chen Jingrun">Chen Jingrun</a> asserts that every <a class="mw-redirect" href="/wiki/Sufficiently_large" title="Sufficiently large">sufficiently large</a> even number is the sum of a prime and another number which is either a prime or a semiprime.  These can be considered to be near-misses to the <a class="mw-redirect" href="/wiki/Twin_prime_conjecture" title="Twin prime conjecture">twin prime conjecture</a> and the <a class="mw-redirect" href="/wiki/Goldbach_conjecture" title="Goldbach conjecture">Goldbach conjecture</a> respectively.</li>
+<li>The <i><a href="/wiki/Fundamental_lemma_of_sieve_theory" title="Fundamental lemma of sieve theory">fundamental lemma of sieve theory</a></i>, which asserts that if one is sifting a set of <i>N</i> numbers, then one can accurately estimate the number of elements left in the sieve after <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle N^{\varepsilon }}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>N</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ε<!-- ε --></mi>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle N^{\varepsilon }}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle N^{\varepsilon }}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/63a18cb44db58add214622c0f586a541f8a5da9b" style="vertical-align: -0.338ex; width:3.121ex; height:2.343ex;"/></span> iterations provided that <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \varepsilon }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ε<!-- ε --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \varepsilon }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \varepsilon }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a30c89172e5b88edbd45d3e2772c7f5e562e5173" style="vertical-align: -0.338ex; width:1.083ex; height:1.676ex;"/></span> is sufficiently small (fractions such as 1/10 are quite typical here). This lemma is usually too weak to sieve out primes (which generally require something like <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle N^{1/2}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>N</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<mn>2</mn>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle N^{1/2}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle N^{1/2}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9740345a2176dccf01b2005cb4c38c206ddbb13f" style="vertical-align: -0.338ex; width:4.821ex; height:2.843ex;"/></span> iterations), but can be enough to obtain results regarding almost primes.</li>
+<li>The <i><a href="/wiki/Friedlander%E2%80%93Iwaniec_theorem" title="Friedlander–Iwaniec theorem">Friedlander–Iwaniec theorem</a></i>, which asserts that there are infinitely many primes of the form <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle a^{2}+b^{4}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>a</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<msup>
+<mi>b</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle a^{2}+b^{4}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle a^{2}+b^{4}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/96b2c019d658682d9dc9e496abaee7516a6057bb" style="vertical-align: -0.505ex; width:7.176ex; height:2.843ex;"/></span>.</li>
+<li><a href="/wiki/Yitang_Zhang" title="Yitang Zhang">Zhang</a>'s theorem (<a href="#CITEREFZhang2014">Zhang 2014</a>), which shows that there are infinitely many <a href="/wiki/Prime_gap" title="Prime gap">pairs of primes within a bounded distance</a>. The Maynard–Tao theorem (<a href="#CITEREFMaynard2015">Maynard 2015</a>) generalizes Zhang's theorem to arbitrarily long sequences of primes.</li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Techniques_of_sieve_theory">Techniques of sieve theory</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Sieve_theory&amp;action=edit&amp;section=7" title="Edit section: Techniques of sieve theory"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The techniques of sieve theory can be quite powerful, but they seem to be limited by an obstacle known as the <i><a href="/wiki/Parity_problem_(sieve_theory)" title="Parity problem (sieve theory)">parity problem</a></i>, which roughly speaking asserts that sieve theory methods have extreme difficulty distinguishing between numbers with an odd number of prime factors and numbers with an even number of prime factors. This parity problem is still not very well understood.
+</p><p>Compared with other methods in number theory, sieve theory is comparatively <i>elementary</i>, in the sense that it does not necessarily require sophisticated concepts from either <a href="/wiki/Algebraic_number_theory" title="Algebraic number theory">algebraic number theory</a> or <a href="/wiki/Analytic_number_theory" title="Analytic number theory">analytic number theory</a>. Nevertheless, the more advanced sieves can still get very intricate and delicate (especially when combined with other deep techniques in number theory), and entire textbooks have been devoted to this single subfield of number theory; a classic reference is (<a href="#CITEREFHalberstamRichert1974">Halberstam &amp; Richert 1974</a>) and a more modern text is (<a href="#CITEREFIwaniecFriedlander2010">Iwaniec &amp; Friedlander 2010</a>).
+</p><p>The sieve methods discussed in this article are not closely related to the <a href="/wiki/Integer_factorization" title="Integer factorization">integer factorization</a> sieve methods such as the <a href="/wiki/Quadratic_sieve" title="Quadratic sieve">quadratic sieve</a> and the <a href="/wiki/General_number_field_sieve" title="General number field sieve">general number field sieve</a>. Those factorization methods use the idea of the <a href="/wiki/Sieve_of_Eratosthenes" title="Sieve of Eratosthenes">sieve of Eratosthenes</a> to determine efficiently which members of a list of numbers can be completely factored into small primes.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Literature">Literature</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Sieve_theory&amp;action=edit&amp;section=8" title="Edit section: Literature"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><style data-mw-deduplicate="TemplateStyles:r1238218222">.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#d33)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#d33)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite class="citation cs2" id="CITEREFCojocaruMurty2006"><a href="/wiki/Alina_Carmen_Cojocaru" title="Alina Carmen Cojocaru">Cojocaru, Alina Carmen</a>; <a href="/wiki/M._Ram_Murty" title="M. Ram Murty">Murty, M. Ram</a> (2006), <i>An introduction to sieve methods and their applications</i>, London Mathematical Society Student Texts, vol. 66, <a href="/wiki/Cambridge_University_Press" title="Cambridge University Press">Cambridge University Press</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-521-84816-4" title="Special:BookSources/0-521-84816-4"><bdi>0-521-84816-4</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=2200366" rel="nofollow">2200366</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=An+introduction+to+sieve+methods+and+their+applications&amp;rft.series=London+Mathematical+Society+Student+Texts&amp;rft.pub=Cambridge+University+Press&amp;rft.date=2006&amp;rft.isbn=0-521-84816-4&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D2200366%23id-name%3DMR&amp;rft.aulast=Cojocaru&amp;rft.aufirst=Alina+Carmen&amp;rft.au=Murty%2C+M.+Ram&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFMotohashi1983">Motohashi, Yoichi (1983), <i>Lectures on Sieve Methods and Prime Number Theory</i>, Tata Institute of Fundamental Research Lectures on Mathematics and Physics, vol. 72, Berlin: <a class="mw-redirect" href="/wiki/Springer-Verlag" title="Springer-Verlag">Springer-Verlag</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/3-540-12281-8" title="Special:BookSources/3-540-12281-8"><bdi>3-540-12281-8</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=0735437" rel="nofollow">0735437</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Lectures+on+Sieve+Methods+and+Prime+Number+Theory&amp;rft.place=Berlin&amp;rft.series=Tata+Institute+of+Fundamental+Research+Lectures+on+Mathematics+and+Physics&amp;rft.pub=Springer-Verlag&amp;rft.date=1983&amp;rft.isbn=3-540-12281-8&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D0735437%23id-name%3DMR&amp;rft.aulast=Motohashi&amp;rft.aufirst=Yoichi&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFGreaves2001">Greaves, George (2001), <i>Sieves in number theory</i>, Ergebnisse der Mathematik und ihrer Grenzgebiete (3), vol. 43, Berlin: <a class="mw-redirect" href="/wiki/Springer-Verlag" title="Springer-Verlag">Springer-Verlag</a>, <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2F978-3-662-04658-6" rel="nofollow">10.1007/978-3-662-04658-6</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/3-540-41647-1" title="Special:BookSources/3-540-41647-1"><bdi>3-540-41647-1</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=1836967" rel="nofollow">1836967</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Sieves+in+number+theory&amp;rft.place=Berlin&amp;rft.series=Ergebnisse+der+Mathematik+und+ihrer+Grenzgebiete+%283%29&amp;rft.pub=Springer-Verlag&amp;rft.date=2001&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D1836967%23id-name%3DMR&amp;rft_id=info%3Adoi%2F10.1007%2F978-3-662-04658-6&amp;rft.isbn=3-540-41647-1&amp;rft.aulast=Greaves&amp;rft.aufirst=George&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFHarman2007"><a href="/wiki/Glyn_Harman" title="Glyn Harman">Harman, Glyn</a> (2007). <i>Prime-detecting sieves</i>. London Mathematical Society Monographs. Vol. 33. Princeton, NJ: Princeton University Press. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-691-12437-7" title="Special:BookSources/978-0-691-12437-7"><bdi>978-0-691-12437-7</bdi></a>. <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=2331072" rel="nofollow">2331072</a>. <a class="mw-redirect" href="/wiki/Zbl_(identifier)" title="Zbl (identifier)">Zbl</a> <a class="external text" href="https://zbmath.org/?format=complete&amp;q=an:1220.11118" rel="nofollow">1220.11118</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Prime-detecting+sieves&amp;rft.place=Princeton%2C+NJ&amp;rft.series=London+Mathematical+Society+Monographs&amp;rft.pub=Princeton+University+Press&amp;rft.date=2007&amp;rft_id=https%3A%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A1220.11118%23id-name%3DZbl&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D2331072%23id-name%3DMR&amp;rft.isbn=978-0-691-12437-7&amp;rft.aulast=Harman&amp;rft.aufirst=Glyn&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFHalberstamRichert1974"><a href="/wiki/Heini_Halberstam" title="Heini Halberstam">Halberstam, Heini</a>; <a href="/wiki/Hans-Egon_Richert" title="Hans-Egon Richert">Richert, Hans-Egon</a> (1974). <i>Sieve Methods</i>. London Mathematical Society Monographs. Vol. 4. London-New York: <a href="/wiki/Academic_Press" title="Academic Press">Academic Press</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-12-318250-6" title="Special:BookSources/0-12-318250-6"><bdi>0-12-318250-6</bdi></a>. <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=0424730" rel="nofollow">0424730</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Sieve+Methods&amp;rft.place=London-New+York&amp;rft.series=London+Mathematical+Society+Monographs&amp;rft.pub=Academic+Press&amp;rft.date=1974&amp;rft.isbn=0-12-318250-6&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D0424730%23id-name%3DMR&amp;rft.aulast=Halberstam&amp;rft.aufirst=Heini&amp;rft.au=Richert%2C+Hans-Egon&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFIwaniecFriedlander2010"><a href="/wiki/Henryk_Iwaniec" title="Henryk Iwaniec">Iwaniec, Henryk</a>; <a href="/wiki/John_Friedlander" title="John Friedlander">Friedlander, John</a> (2010), <i>Opera de cribro</i>, American Mathematical Society Colloquium Publications, vol. 57, Providence, RI: <a href="/wiki/American_Mathematical_Society" title="American Mathematical Society">American Mathematical Society</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-8218-4970-5" title="Special:BookSources/978-0-8218-4970-5"><bdi>978-0-8218-4970-5</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=2647984" rel="nofollow">2647984</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Opera+de+cribro&amp;rft.place=Providence%2C+RI&amp;rft.series=American+Mathematical+Society+Colloquium+Publications&amp;rft.pub=American+Mathematical+Society&amp;rft.date=2010&amp;rft.isbn=978-0-8218-4970-5&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D2647984%23id-name%3DMR&amp;rft.aulast=Iwaniec&amp;rft.aufirst=Henryk&amp;rft.au=Friedlander%2C+John&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFHooley1976"><a href="/wiki/Christopher_Hooley" title="Christopher Hooley">Hooley, Christopher</a> (1976), <i>Applications of sieve methods to the theory of numbers</i>, Cambridge Tracts in Mathematics, vol. 70, Cambridge-New York-Melbourne: <a href="/wiki/Cambridge_University_Press" title="Cambridge University Press">Cambridge University Press</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-521-20915-3" title="Special:BookSources/0-521-20915-3"><bdi>0-521-20915-3</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=0404173" rel="nofollow">0404173</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Applications+of+sieve+methods+to+the+theory+of+numbers&amp;rft.place=Cambridge-New+York-Melbourne&amp;rft.series=Cambridge+Tracts+in+Mathematics&amp;rft.pub=Cambridge+University+Press&amp;rft.date=1976&amp;rft.isbn=0-521-20915-3&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D0404173%23id-name%3DMR&amp;rft.aulast=Hooley&amp;rft.aufirst=Christopher&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation journal cs1" id="CITEREFMaynard2015"><a class="mw-redirect" href="/wiki/James_Maynard_(mathematician)" title="James Maynard (mathematician)">Maynard, James</a> (2015). "Small gaps between primes". <i><a href="/wiki/Annals_of_Mathematics" title="Annals of Mathematics">Annals of Mathematics</a></i>. <b>181</b> (1): <span class="nowrap">383–</span>413. <a class="mw-redirect" href="/wiki/ArXiv_(identifier)" title="ArXiv (identifier)">arXiv</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://arxiv.org/abs/1311.4600" rel="nofollow">1311.4600</a></span>. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.4007%2Fannals.2015.181.1.7" rel="nofollow">10.4007/annals.2015.181.1.7</a>. <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=3272929" rel="nofollow">3272929</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Annals+of+Mathematics&amp;rft.atitle=Small+gaps+between+primes&amp;rft.volume=181&amp;rft.issue=1&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E383-%3C%2Fspan%3E413&amp;rft.date=2015&amp;rft_id=info%3Aarxiv%2F1311.4600&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D3272929%23id-name%3DMR&amp;rft_id=info%3Adoi%2F10.4007%2Fannals.2015.181.1.7&amp;rft.aulast=Maynard&amp;rft.aufirst=James&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFTenenbaum1995">Tenenbaum, Gérald (1995), <i>Introduction to Analytic and Probabilistic Number Theory</i>, Cambridge studies in advanced mathematics, vol. 46, Translated from the second French edition (1995) by C. B. Thomas, <a href="/wiki/Cambridge_University_Press" title="Cambridge University Press">Cambridge University Press</a>, pp. <span class="nowrap">56–</span>79, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-521-41261-7" title="Special:BookSources/0-521-41261-7"><bdi>0-521-41261-7</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=1342300" rel="nofollow">1342300</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Introduction+to+Analytic+and+Probabilistic+Number+Theory&amp;rft.series=Cambridge+studies+in+advanced+mathematics&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E56-%3C%2Fspan%3E79&amp;rft.pub=Cambridge+University+Press&amp;rft.date=1995&amp;rft.isbn=0-521-41261-7&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D1342300%23id-name%3DMR&amp;rft.aulast=Tenenbaum&amp;rft.aufirst=G%C3%A9rald&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation journal cs1" id="CITEREFZhang2014"><a href="/wiki/Yitang_Zhang" title="Yitang Zhang">Zhang, Yitang</a> (2014). <a class="external text" href="https://doi.org/10.4007%2Fannals.2014.179.3.7" rel="nofollow">"Bounded gaps between primes"</a>. <i><a href="/wiki/Annals_of_Mathematics" title="Annals of Mathematics">Annals of Mathematics</a></i>. <b>179</b> (3): <span class="nowrap">1121–</span>1174. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://doi.org/10.4007%2Fannals.2014.179.3.7" rel="nofollow">10.4007/annals.2014.179.3.7</a></span>. <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=3171761" rel="nofollow">3171761</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Annals+of+Mathematics&amp;rft.atitle=Bounded+gaps+between+primes&amp;rft.volume=179&amp;rft.issue=3&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E1121-%3C%2Fspan%3E1174&amp;rft.date=2014&amp;rft_id=info%3Adoi%2F10.4007%2Fannals.2014.179.3.7&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D3171761%23id-name%3DMR&amp;rft.aulast=Zhang&amp;rft.aufirst=Yitang&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.4007%252Fannals.2014.179.3.7&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></link></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="External_links">External links</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Sieve_theory&amp;action=edit&amp;section=9" title="Edit section: External links"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFBredikhin2001">Bredikhin, B.M. (2001) [1994], <a class="external text" href="https://www.encyclopediaofmath.org/index.php?title=Sieve_method" rel="nofollow">"Sieve method"</a>, <i><a href="/wiki/Encyclopedia_of_Mathematics" title="Encyclopedia of Mathematics">Encyclopedia of Mathematics</a></i>, <a href="/wiki/European_Mathematical_Society" title="European Mathematical Society">EMS Press</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Sieve+method&amp;rft.btitle=Encyclopedia+of+Mathematics&amp;rft.pub=EMS+Press&amp;rft.date=2001&amp;rft.aulast=Bredikhin&amp;rft.aufirst=B.M.&amp;rft_id=https%3A%2F%2Fwww.encyclopediaofmath.org%2Findex.php%3Ftitle%3DSieve_method&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></link></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="References">References</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Sieve_theory&amp;action=edit&amp;section=10" title="Edit section: References"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation journal cs1" id="CITEREFBrun1915">Brun, Viggo (1915). "Über das Goldbachsche Gesetz und die Anzahl der Primzahlpaare". <i>Archiv for Math. Naturvidenskab</i>. <b>34</b>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Archiv+for+Math.+Naturvidenskab&amp;rft.atitle=%C3%9Cber+das+Goldbachsche+Gesetz+und+die+Anzahl+der+Primzahlpaare&amp;rft.volume=34&amp;rft.date=1915&amp;rft.aulast=Brun&amp;rft.aufirst=Viggo&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></link></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFCojocaruMurty2005">Cojocaru, Alina Carmen; Murty, M. Ram (2005). <i>An Introduction to Sieve Methods and Their Applications</i>. Cambridge University Press. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1017%2FCBO9780511615993" rel="nofollow">10.1017/CBO9780511615993</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-521-84816-9" title="Special:BookSources/978-0-521-84816-9"><bdi>978-0-521-84816-9</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=An+Introduction+to+Sieve+Methods+and+Their+Applications&amp;rft.pub=Cambridge+University+Press&amp;rft.date=2005&amp;rft_id=info%3Adoi%2F10.1017%2FCBO9780511615993&amp;rft.isbn=978-0-521-84816-9&amp;rft.aulast=Cojocaru&amp;rft.aufirst=Alina+Carmen&amp;rft.au=Murty%2C+M.+Ram&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFFriedlanderIwaniec2010">Friedlander, John; Iwaniec, Henryk (2010). <i>Opera de Cribro</i>. American Mathematical Society Colloquium Publications. Vol. 57. American Mathematical Society. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-8218-4970-5" title="Special:BookSources/978-0-8218-4970-5"><bdi>978-0-8218-4970-5</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Opera+de+Cribro&amp;rft.series=American+Mathematical+Society+Colloquium+Publications&amp;rft.pub=American+Mathematical+Society&amp;rft.date=2010&amp;rft.isbn=978-0-8218-4970-5&amp;rft.aulast=Friedlander&amp;rft.aufirst=John&amp;rft.au=Iwaniec%2C+Henryk&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFFriedlanderIwaniec2010">Friedlander, John; Iwaniec, Henryk (2010). <i>Opera de Cribro</i>. American Mathematical Society Colloquium Publications. Vol. 57. American Mathematical Society. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-8218-4970-5" title="Special:BookSources/978-0-8218-4970-5"><bdi>978-0-8218-4970-5</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Opera+de+Cribro&amp;rft.series=American+Mathematical+Society+Colloquium+Publications&amp;rft.pub=American+Mathematical+Society&amp;rft.date=2010&amp;rft.isbn=978-0-8218-4970-5&amp;rft.aulast=Friedlander&amp;rft.aufirst=John&amp;rft.au=Iwaniec%2C+Henryk&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASieve+theory"></span></span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Parsed by mw‐api‐int.eqiad.main‐998c54df4‐pmgv7
+Cached time: 20250329210808
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.338 seconds
+Real time usage: 0.609 seconds
+Preprocessor visited node count: 1747/1000000
+Post‐expand include size: 35520/2097152 bytes
+Template argument size: 1748/2097152 bytes
+Highest expansion depth: 12/100
+Expensive parser function count: 2/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 40600/5000000 bytes
+Lua time usage: 0.185/10.000 seconds
+Lua memory usage: 7041159/52428800 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  327.786      1 -total
+ 29.78%   97.616      6 Template:Citation
+ 26.03%   85.310      1 Template:Short_description
+ 15.50%   50.793      2 Template:Pagetype
+ 15.02%   49.221      2 Template:Citation_needed
+ 12.88%   42.208      2 Template:Fix
+ 10.01%   32.807      4 Template:Harv
+  8.42%   27.591      4 Template:Category_handler
+  7.13%   23.360      5 Template:Cite_book
+  6.24%   20.470      5 Template:Main_other
+-->
+<!-- Saved in parser cache with key enwiki:pcache:1035915:|#|:idhash:canonical and timestamp 20250329210808 and revision id 1264161168. Rendering was triggered because: api-parse
+ -->
+</meta></div>

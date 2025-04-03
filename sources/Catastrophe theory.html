@@ -1,0 +1,827 @@
+<div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none">Area of mathematics</div>
+<style data-mw-deduplicate="TemplateStyles:r1236090951">.mw-parser-output .hatnote{font-style:italic}.mw-parser-output div.hatnote{padding-left:1.6em;margin-bottom:0.5em}.mw-parser-output .hatnote i{font-style:normal}.mw-parser-output .hatnote+link+.hatnote{margin-top:-0.5em}@media print{body.ns-0 .mw-parser-output .hatnote{display:none!important}}</style><div class="hatnote navigation-not-searchable" role="note">"Catastrophic event" redirects here. For other uses, see <a class="mw-redirect mw-disambig" href="/wiki/Catastrophe_(disambiguation)" title="Catastrophe (disambiguation)">Catastrophe</a>.</div>
+<p>In <a href="/wiki/Mathematics" title="Mathematics">mathematics</a>, <b>catastrophe theory</b> is a branch of <a href="/wiki/Bifurcation_theory" title="Bifurcation theory">bifurcation theory</a> in the study of <a href="/wiki/Dynamical_system" title="Dynamical system">dynamical systems</a>; it is also a particular special case of more general <a href="/wiki/Singularity_theory" title="Singularity theory">singularity theory</a> in <a href="/wiki/Geometry" title="Geometry">geometry</a>.
+</p><p>Bifurcation theory studies and classifies phenomena characterized by sudden shifts in behavior arising from small changes in circumstances, analysing how the <a class="mw-redirect" href="/wiki/Qualitative_data" title="Qualitative data">qualitative</a> nature of equation solutions depends on the parameters that appear in the equation.  This may lead to sudden and dramatic changes, for example the unpredictable timing and <a href="/wiki/Magnitude_(mathematics)" title="Magnitude (mathematics)">magnitude</a> of a <a href="/wiki/Landslide" title="Landslide">landslide</a>.
+</p><p>Catastrophe theory originated with the work of the French mathematician <a href="/wiki/Ren%C3%A9_Thom" title="René Thom">René Thom</a> in the 1960s, and became very popular due to the efforts of <a href="/wiki/Christopher_Zeeman" title="Christopher Zeeman">Christopher Zeeman</a> in the 1970s. It considers the special case where the long-run stable equilibrium can be identified as the minimum of a smooth, well-defined <a href="/wiki/Scalar_potential" title="Scalar potential">potential</a> function (<a href="/wiki/Lyapunov_function" title="Lyapunov function">Lyapunov function</a>).
+Small changes in certain parameters of a nonlinear system can cause equilibria to appear or disappear, or to change from attracting to repelling and vice versa, leading to large and sudden changes of the behaviour of the system.  However, examined in a larger <a href="/wiki/Parameter_space" title="Parameter space">parameter space</a>, catastrophe theory reveals that such bifurcation points tend to occur as part of well-defined qualitative geometrical structures.
+</p><p>In the late 1970s, applications of catastrophe theory to areas outside its scope began to be criticized, especially in biology and social sciences.<sup class="reference" id="cite_ref-1"><a href="#cite_note-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-2"><a href="#cite_note-2"><span class="cite-bracket">[</span>2<span class="cite-bracket">]</span></a></sup> Zahler and Sussmann, in a 1977 article in <i><a href="/wiki/Nature_(journal)" title="Nature (journal)">Nature</a></i>, referred to such applications as being "characterised by incorrect reasoning, far-fetched assumptions, erroneous consequences, and exaggerated claims".<sup class="reference" id="cite_ref-3"><a href="#cite_note-3"><span class="cite-bracket">[</span>3<span class="cite-bracket">]</span></a></sup> As a result, catastrophe theory has become less popular in applications.<sup class="reference" id="cite_ref-4"><a href="#cite_note-4"><span class="cite-bracket">[</span>4<span class="cite-bracket">]</span></a></sup>
+</p>
+<meta property="mw:PageProp/toc">
+<div class="mw-heading mw-heading2"><h2 id="Elementary_catastrophes">Elementary catastrophes</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=1" title="Edit section: Elementary catastrophes"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Catastrophe theory analyzes <i>degenerate critical points</i> of the potential function — points where not just the first derivative, but one or more higher derivatives of the potential function are also zero.  These are called the <a href="/wiki/Germ_(mathematics)" title="Germ (mathematics)">germs</a> of the catastrophe geometries. The degeneracy of these critical points can be <i>unfolded</i> by expanding the potential function as a <a href="/wiki/Taylor_series" title="Taylor series">Taylor series</a> in small perturbations of the parameters.
+</p><p>When the degenerate points are not merely accidental, but are <a href="/wiki/Structural_stability" title="Structural stability">structurally stable</a>, the degenerate points exist as organising centres for particular geometric structures of lower degeneracy, with critical features in the parameter space around them.  If the potential function depends on two or fewer active variables, and four or fewer active parameters, then there are only seven generic structures for these bifurcation geometries, with corresponding standard forms into which the Taylor series around the catastrophe germs can be transformed by <a href="/wiki/Diffeomorphism" title="Diffeomorphism">diffeomorphism</a> (a smooth transformation whose inverse is also smooth).<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (May 2010)">citation needed</span></a></i>]</sup>  These seven fundamental types are now presented, with the names that Thom gave them.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Potential_functions_of_one_active_variable">Potential functions of one active variable</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=2" title="Edit section: Potential functions of one active variable"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Catastrophe theory studies dynamical systems that describe the evolution<sup class="reference" id="cite_ref-5"><a href="#cite_note-5"><span class="cite-bracket">[</span>5<span class="cite-bracket">]</span></a></sup> of a state variable <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle x}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>x</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle x}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle x}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/87f9e315fd7e2ba406057a97300593c4802b53e4" style="vertical-align: -0.338ex; width:1.33ex; height:1.676ex;"/></span>  over time <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle t}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>t</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle t}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle t}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/65658b7b223af9e1acc877d848888ecdb4466560" style="vertical-align: -0.338ex; width:0.84ex; height:2.009ex;"/></span>:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\dot {x}}={\dfrac {dx}{dt}}=-{\dfrac {dV(u,x)}{dx}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mover>
+<mi>x</mi>
+<mo>˙<!-- ˙ --></mo>
+</mover>
+</mrow>
+</mrow>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mfrac>
+<mrow>
+<mi>d</mi>
+<mi>x</mi>
+</mrow>
+<mrow>
+<mi>d</mi>
+<mi>t</mi>
+</mrow>
+</mfrac>
+</mstyle>
+</mrow>
+<mo>=</mo>
+<mo>−<!-- − --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mfrac>
+<mrow>
+<mi>d</mi>
+<mi>V</mi>
+<mo stretchy="false">(</mo>
+<mi>u</mi>
+<mo>,</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+<mrow>
+<mi>d</mi>
+<mi>x</mi>
+</mrow>
+</mfrac>
+</mstyle>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\dot {x}}={\dfrac {dx}{dt}}=-{\dfrac {dV(u,x)}{dx}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\dot {x}}={\dfrac {dx}{dt}}=-{\dfrac {dV(u,x)}{dx}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/55ca0c7a814bc5830efe71fb09cd7f493fee3385" style="vertical-align: -2.005ex; width:22.058ex; height:5.843ex;"/></span></dd></dl>
+<p>In the above equation, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/af0f6064540e84211d0ffe4dac72098adfa52845" style="vertical-align: -0.338ex; width:1.787ex; height:2.176ex;"/></span> is referred to as the potential function, and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle u}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>u</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle u}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle u}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c3e6bb763d22c20916ed4f0bb6bd49d7470cffd8" style="vertical-align: -0.338ex; width:1.33ex; height:1.676ex;"/></span> is often a vector or a scalar which parameterise the potential function. The value of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle u}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>u</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle u}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle u}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c3e6bb763d22c20916ed4f0bb6bd49d7470cffd8" style="vertical-align: -0.338ex; width:1.33ex; height:1.676ex;"/></span> may change over time, and it can also be referred to as the <a href="/wiki/Control_theory" title="Control theory">control</a> variable. In the following examples, parameters like <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle a,b}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>a</mi>
+<mo>,</mo>
+<mi>b</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle a,b}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle a,b}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/181523deba732fda302fd176275a0739121d3bc8" style="vertical-align: -0.671ex; width:3.261ex; height:2.509ex;"/></span> are such controls.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Fold_catastrophe">Fold catastrophe</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=3" title="Edit section: Fold catastrophe"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Fold_catastrophe_animation.gif"><img class="mw-file-element" data-file-height="480" data-file-width="480" decoding="async" height="220" src="//upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Fold_catastrophe_animation.gif/220px-Fold_catastrophe_animation.gif" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Fold_catastrophe_animation.gif/330px-Fold_catastrophe_animation.gif 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Fold_catastrophe_animation.gif/440px-Fold_catastrophe_animation.gif 2x" width="220"/></a><figcaption>Fold catastrophe, with surface <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle z=-y^{2}-0.1x^{4}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>z</mi>
+<mo>=</mo>
+<mo>−<!-- − --></mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<mn>0.1</mn>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle z=-y^{2}-0.1x^{4}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle z=-y^{2}-0.1x^{4}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9632e5784d5a4f9104dd4269676a309eeb4b5033" style="vertical-align: -0.671ex; width:16.406ex; height:3.009ex;"/></span>.</figcaption></figure>
+<figure class="mw-halign-right" typeof="mw:File/Frame"><a class="mw-file-description" href="/wiki/File:Fold_bifurcation.svg"><img class="mw-file-element" data-file-height="180" data-file-width="240" decoding="async" height="180" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/10/Fold_bifurcation.svg/240px-Fold_bifurcation.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/10/Fold_bifurcation.svg/360px-Fold_bifurcation.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/10/Fold_bifurcation.svg/480px-Fold_bifurcation.svg.png 2x" width="240"/></a><figcaption>Stable and unstable pair of extrema disappear at a fold bifurcation</figcaption></figure>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V=x^{3}+ax\,}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+<mo>=</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>a</mi>
+<mi>x</mi>
+<mspace width="thinmathspace"></mspace>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V=x^{3}+ax\,}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V=x^{3}+ax\,}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/99aa6fa642585f81c951bf9e5ffde2323de63ef7" style="vertical-align: -0.505ex; width:13.057ex; height:2.843ex;"/></span></dd></dl>
+<p>When <span class="nowrap"><i>a</i> &lt; 0</span>, the potential <i>V</i> has two extrema - one stable, and one unstable.  If the parameter <i>a</i> is slowly increased, the system can follow the stable minimum point.  But at <span class="nowrap"><i>a</i> = 0</span> the stable and unstable extrema meet, and annihilate.  This is the bifurcation point.  At <span class="nowrap"><i>a</i> &gt; 0</span> there is no longer a stable solution.  If a physical system is followed through a fold bifurcation, one therefore finds that as <i>a</i> reaches 0, the stability of the <span class="nowrap"><i>a</i> &lt; 0</span> solution is suddenly lost, and the system will make a sudden transition to a new, very different behaviour.  <span class="anchor" id="Tipping_point"></span>This bifurcation value of the parameter <i>a</i> is sometimes called the "<a class="mw-redirect" href="/wiki/Tipping_point_(physics)" title="Tipping point (physics)">tipping point</a>".
+</p>
+<div class="" style="clear:both;"></div>
+<div class="mw-heading mw-heading3"><h3 id="Cusp_catastrophe">Cusp catastrophe</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=4" title="Edit section: Cusp catastrophe"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1273380762/mw-parser-output/.tmulti">.mw-parser-output .tmulti .multiimageinner{display:flex;flex-direction:column}.mw-parser-output .tmulti .trow{display:flex;flex-direction:row;clear:left;flex-wrap:wrap;width:100%;box-sizing:border-box}.mw-parser-output .tmulti .tsingle{margin:1px;float:left}.mw-parser-output .tmulti .theader{clear:both;font-weight:bold;text-align:center;align-self:center;background-color:transparent;width:100%}.mw-parser-output .tmulti .thumbcaption{background-color:transparent}.mw-parser-output .tmulti .text-align-left{text-align:left}.mw-parser-output .tmulti .text-align-right{text-align:right}.mw-parser-output .tmulti .text-align-center{text-align:center}@media all and (max-width:720px){.mw-parser-output .tmulti .thumbinner{width:100%!important;box-sizing:border-box;max-width:none!important;align-items:center}.mw-parser-output .tmulti .trow{justify-content:center}.mw-parser-output .tmulti .tsingle{float:none!important;max-width:100%!important;box-sizing:border-box;text-align:center}.mw-parser-output .tmulti .tsingle .thumbcaption{text-align:left}.mw-parser-output .tmulti .trow>.thumbcaption{text-align:center}}@media screen{html.skin-theme-clientpref-night .mw-parser-output .tmulti .multiimageinner span:not(.skin-invert-image):not(.skin-invert):not(.bg-transparent) img{background-color:white}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .tmulti .multiimageinner span:not(.skin-invert-image):not(.skin-invert):not(.bg-transparent) img{background-color:white}}</style><div class="thumb tmulti tright"><div class="thumbinner multiimageinner" style="width:342px;max-width:342px"><div class="trow"><div class="tsingle" style="width:340px;max-width:340px"><div class="thumbimage" style="height:253px;overflow:hidden"><span typeof="mw:File"><a class="mw-file-description" href="/wiki/File:Cusp_catastrophe.svg"><img alt="" class="mw-file-element" data-file-height="360" data-file-width="480" decoding="async" height="254" src="//upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Cusp_catastrophe.svg/338px-Cusp_catastrophe.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Cusp_catastrophe.svg/507px-Cusp_catastrophe.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Cusp_catastrophe.svg/676px-Cusp_catastrophe.svg.png 2x" width="338"/></a></span></div><div class="thumbcaption">Diagram of cusp catastrophe, showing curves (brown, red) of <i>x</i> satisfying <i>dV</i>/<i>dx</i> = <i>0</i> for parameters (<i>a</i>,<i>b</i>), drawn for parameter <i>b</i> continuously varied, for several values of parameter <i>a</i>.<p>
+Outside the cusp locus of bifurcations (blue), for each point (<i>a</i>,<i>b</i>) in parameter space there is only one extremising value of <i>x</i>. Inside the cusp, there are two different values of <i>x</i> giving local minima of <i>V</i>(<i>x</i>) for each (<i>a</i>,<i>b</i>), separated by a value of <i>x</i> giving a local maximum.</p></div></div></div><div class="trow"><div class="tsingle" style="width:169px;max-width:169px"><div class="thumbimage" style="height:125px;overflow:hidden"><span typeof="mw:File"><a class="mw-file-description" href="/wiki/File:Cusp_shape.svg"><img alt="" class="mw-file-element" data-file-height="180" data-file-width="240" decoding="async" height="125" src="//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Cusp_shape.svg/167px-Cusp_shape.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Cusp_shape.svg/251px-Cusp_shape.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Cusp_shape.svg/334px-Cusp_shape.svg.png 2x" width="167"/></a></span></div><div class="thumbcaption">Cusp shape in parameter space (<i>a</i>,<i>b</i>) near the catastrophe point, showing the locus of fold bifurcations separating the region with two stable solutions from the region with one.</div></div><div class="tsingle" style="width:169px;max-width:169px"><div class="thumbimage" style="height:125px;overflow:hidden"><span typeof="mw:File"><a class="mw-file-description" href="/wiki/File:Pitchfork_bifurcation_left.svg"><img alt="" class="mw-file-element" data-file-height="180" data-file-width="240" decoding="async" height="125" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Pitchfork_bifurcation_left.svg/167px-Pitchfork_bifurcation_left.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Pitchfork_bifurcation_left.svg/251px-Pitchfork_bifurcation_left.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Pitchfork_bifurcation_left.svg/334px-Pitchfork_bifurcation_left.svg.png 2x" width="167"/></a></span></div><div class="thumbcaption">Pitchfork bifurcation at <span class="nowrap"><i>a</i> = 0</span> on the surface <span class="nowrap"><i>b</i> = 0</span></div></div></div></div></div>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Cusp_catastrophe_animation_gif.gif"><img class="mw-file-element" data-file-height="480" data-file-width="480" decoding="async" height="220" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Cusp_catastrophe_animation_gif.gif/220px-Cusp_catastrophe_animation_gif.gif" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Cusp_catastrophe_animation_gif.gif/330px-Cusp_catastrophe_animation_gif.gif 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Cusp_catastrophe_animation_gif.gif/440px-Cusp_catastrophe_animation_gif.gif 2x" width="220"/></a><figcaption>Cusp catastrophe, with surface <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle z=-0.1(x^{4}+y^{4})-y^{3}+xy}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>z</mi>
+<mo>=</mo>
+<mo>−<!-- − --></mo>
+<mn>0.1</mn>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+<mo>−<!-- − --></mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>x</mi>
+<mi>y</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle z=-0.1(x^{4}+y^{4})-y^{3}+xy}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle z=-0.1(x^{4}+y^{4})-y^{3}+xy}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/20e3b23c2290c2816f0e7c1e5ab13dfc67b7aad4" style="vertical-align: -0.838ex; width:28.596ex; height:3.176ex;"/></span>.</figcaption></figure><p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V=x^{4}+ax^{2}+bx\,}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+<mo>=</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>a</mi>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>b</mi>
+<mi>x</mi>
+<mspace width="thinmathspace"></mspace>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V=x^{4}+ax^{2}+bx\,}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V=x^{4}+ax^{2}+bx\,}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8248677bc9b9a62b2aaed8a23422537ec39a81ac" style="vertical-align: -0.505ex; width:19.278ex; height:2.843ex;"/></span>
+</p><p>The cusp geometry is very common when one explores what happens to a fold bifurcation if a second parameter, <i>b</i>, is added to the control space.  Varying the parameters, one finds that there is now a <i>curve</i> (blue) of points in (<i>a</i>,<i>b</i>) space where stability is lost, where the stable solution will suddenly jump to an alternate outcome.
+</p><p>But in a cusp geometry the bifurcation curve loops back on itself, giving a second branch where this alternate solution itself loses stability, and will make a jump back to the original solution set.  By repeatedly increasing <i>b</i> and then decreasing it, one can therefore observe <a href="/wiki/Hysteresis" title="Hysteresis">hysteresis</a> loops, as the system alternately follows one solution, jumps to the other, follows the other back, and then jumps back to the first.
+</p><p>However, this is only possible in the region of parameter space <span class="nowrap"><i>a</i> &lt; 0</span>.  As <i>a</i> is increased, the hysteresis loops become smaller and smaller, until above <span class="nowrap"><i>a</i> = 0</span> they disappear altogether (the cusp catastrophe), and there is only one stable solution.
+</p><p>One can also consider what happens if one holds <i>b</i> constant and varies <i>a</i>.  In the symmetrical case <span class="nowrap"><i>b</i> = 0</span>, one observes a <a href="/wiki/Pitchfork_bifurcation" title="Pitchfork bifurcation">pitchfork bifurcation</a> as <i>a</i> is reduced, with one stable solution suddenly splitting into two stable solutions and one unstable solution as the physical system passes to <span class="nowrap"><i>a</i> &lt; 0</span> through the cusp point (0,0) (an example of <a href="/wiki/Spontaneous_symmetry_breaking" title="Spontaneous symmetry breaking">spontaneous symmetry breaking</a>).  Away from the cusp point, there is no sudden change in a physical solution being followed: when passing through the curve of fold bifurcations, all that happens is an alternate second solution becomes available.
+</p><p>A famous suggestion is that the cusp catastrophe can be used to model the behaviour of a stressed dog, which may respond by becoming cowed or becoming angry.<sup class="reference" id="cite_ref-6"><a href="#cite_note-6"><span class="cite-bracket">[</span>6<span class="cite-bracket">]</span></a></sup>  The suggestion is that at moderate stress (<span class="nowrap"><i>a</i> &gt; 0</span>), the dog will exhibit a smooth transition of response from cowed to angry, depending on how it is provoked.  But higher stress levels correspond to moving to the region (<span class="nowrap"><i>a</i> &lt; 0</span>).  Then, if the dog starts cowed, it will remain cowed as it is irritated more and more, until it reaches the 'fold' point, when it will suddenly, discontinuously snap through to angry mode.  Once in 'angry' mode, it will remain angry, even if the direct irritation parameter is considerably reduced.
+</p><p>A simple mechanical system, the "Zeeman Catastrophe Machine", nicely illustrates a cusp catastrophe.  In this device, smooth variations in the position of the end of a spring can cause sudden changes in the rotational position of an attached wheel.<sup class="reference" id="cite_ref-7"><a href="#cite_note-7"><span class="cite-bracket">[</span>7<span class="cite-bracket">]</span></a></sup>
+</p><p>Catastrophic failure of a <a href="/wiki/Complex_system" title="Complex system">complex system</a> with parallel redundancy can be evaluated based on the relationship between local and external stresses. The model of the <a href="/wiki/Structural_fracture_mechanics" title="Structural fracture mechanics">structural fracture mechanics</a> is similar to the cusp catastrophe behavior. The model predicts reserve ability of a complex system.
+</p><p>Other applications include the <a href="/wiki/Outer_sphere_electron_transfer" title="Outer sphere electron transfer">outer sphere electron transfer</a> frequently encountered in chemical and biological systems,<sup class="reference" id="cite_ref-8"><a href="#cite_note-8"><span class="cite-bracket">[</span>8<span class="cite-bracket">]</span></a></sup> modelling the dynamics of <a href="/wiki/Cloud_condensation_nuclei" title="Cloud condensation nuclei">cloud condensation nuclei</a> in the atmosphere,<sup class="reference" id="cite_ref-9"><a href="#cite_note-9"><span class="cite-bracket">[</span>9<span class="cite-bracket">]</span></a></sup> and modelling real estate prices.<sup class="reference" id="cite_ref-10"><a href="#cite_note-10"><span class="cite-bracket">[</span>10<span class="cite-bracket">]</span></a></sup>
+</p><p>Fold bifurcations and the cusp geometry are by far the most important practical consequences of catastrophe theory.  They are patterns which reoccur again and again in physics, engineering and mathematical modelling.
+They produce the strong gravitational lensing events and provide astronomers with one of the methods used for detecting <a class="mw-redirect" href="/wiki/Black_holes" title="Black holes">black holes</a> and the <a href="/wiki/Dark_matter" title="Dark matter">dark matter</a> of the universe, via the phenomenon of <a class="mw-redirect" href="/wiki/Gravitational_lensing" title="Gravitational lensing">gravitational lensing</a> producing multiple images of distant <a href="/wiki/Quasar" title="Quasar">quasars</a>.<sup class="reference" id="cite_ref-11"><a href="#cite_note-11"><span class="cite-bracket">[</span>11<span class="cite-bracket">]</span></a></sup>
+</p><p>The remaining simple catastrophe geometries are very specialised in comparison.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Swallowtail_catastrophe">Swallowtail catastrophe</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=5" title="Edit section: Swallowtail catastrophe"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Swallowtail_catastrophe_animation_gif.gif"><img class="mw-file-element" data-file-height="480" data-file-width="480" decoding="async" height="220" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/41/Swallowtail_catastrophe_animation_gif.gif/250px-Swallowtail_catastrophe_animation_gif.gif" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/41/Swallowtail_catastrophe_animation_gif.gif/330px-Swallowtail_catastrophe_animation_gif.gif 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/41/Swallowtail_catastrophe_animation_gif.gif/440px-Swallowtail_catastrophe_animation_gif.gif 2x" width="220"/></a><figcaption>Swallowtail catastrophe, with surface <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle z=-y^{4}-0.1x^{4}+(1-x^{2})y^{2}+0.4xy}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>z</mi>
+<mo>=</mo>
+<mo>−<!-- − --></mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<mn>0.1</mn>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mo stretchy="false">(</mo>
+<mn>1</mn>
+<mo>−<!-- − --></mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mn>0.4</mn>
+<mi>x</mi>
+<mi>y</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle z=-y^{4}-0.1x^{4}+(1-x^{2})y^{2}+0.4xy}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle z=-y^{4}-0.1x^{4}+(1-x^{2})y^{2}+0.4xy}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/427e2819dca5194a2607d60ccc333deed4b6498e" style="vertical-align: -0.838ex; width:37.954ex; height:3.176ex;"/></span></figcaption></figure>
+<figure class="mw-halign-right" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Swallow_tail.jpg"><img class="mw-file-element" data-file-height="678" data-file-width="670" decoding="async" height="162" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Swallow_tail.jpg/250px-Swallow_tail.jpg" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Swallow_tail.jpg/330px-Swallow_tail.jpg 2x" width="160"/></a><figcaption>Swallowtail catastrophe surface</figcaption></figure>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V=x^{5}+ax^{3}+bx^{2}+cx\,}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+<mo>=</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>5</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>a</mi>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>b</mi>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>c</mi>
+<mi>x</mi>
+<mspace width="thinmathspace"></mspace>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V=x^{5}+ax^{3}+bx^{2}+cx\,}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V=x^{5}+ax^{3}+bx^{2}+cx\,}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fa172c04b521d7953b342a5a8c337a6dceae4861" style="vertical-align: -0.505ex; width:25.51ex; height:2.843ex;"/></span></dd></dl>
+<p>The control parameter space is three-dimensional.  The bifurcation set in parameter space is made up of three surfaces of fold bifurcations, which meet in two lines of cusp bifurcations, which in turn meet at a single swallowtail bifurcation point.
+</p><p>As the parameters go through the surface of fold bifurcations, one minimum and one maximum of the potential function disappear.  At the cusp bifurcations, two minima and one maximum are replaced by one minimum; beyond them the fold bifurcations disappear.  At the swallowtail point, two minima and two maxima all meet at a single value of <i>x</i>.  For values of <span class="nowrap"><i>a</i> &gt; 0</span>, beyond the swallowtail, there is either one maximum-minimum pair, or none at all, depending on the values of <i>b</i> and <i>c</i>. Two of the surfaces of fold bifurcations, and the two lines of cusp bifurcations where they meet for <span class="nowrap"><i>a</i> &lt; 0</span>, therefore disappear at the swallowtail point, to be replaced with only a single surface of fold bifurcations remaining. <a href="/wiki/Salvador_Dal%C3%AD" title="Salvador Dalí">Salvador Dalí's</a> last painting, <i><a href="/wiki/The_Swallow%27s_Tail" title="The Swallow's Tail">The Swallow's Tail</a></i>, was based on this catastrophe.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Butterfly_catastrophe">Butterfly catastrophe</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=6" title="Edit section: Butterfly catastrophe"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Butterfly_catastrophe_animation_gif.gif"><img class="mw-file-element" data-file-height="480" data-file-width="480" decoding="async" height="220" src="//upload.wikimedia.org/wikipedia/commons/thumb/7/72/Butterfly_catastrophe_animation_gif.gif/250px-Butterfly_catastrophe_animation_gif.gif" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/7/72/Butterfly_catastrophe_animation_gif.gif/330px-Butterfly_catastrophe_animation_gif.gif 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/72/Butterfly_catastrophe_animation_gif.gif/440px-Butterfly_catastrophe_animation_gif.gif 2x" width="220"/></a><figcaption>Butterfly catastrophe, with surface <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle z=-20x^{5}+4x^{3}-2xy-0.5(x^{4}+y^{4})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>z</mi>
+<mo>=</mo>
+<mo>−<!-- − --></mo>
+<mn>20</mn>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>5</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mn>4</mn>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<mn>2</mn>
+<mi>x</mi>
+<mi>y</mi>
+<mo>−<!-- − --></mo>
+<mn>0.5</mn>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle z=-20x^{5}+4x^{3}-2xy-0.5(x^{4}+y^{4})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle z=-20x^{5}+4x^{3}-2xy-0.5(x^{4}+y^{4})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/180089b94af9f9543461c4b69d67851d047bf70a" style="vertical-align: -0.838ex; width:38.639ex; height:3.176ex;"/></span>.</figcaption></figure>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V=x^{6}+ax^{4}+bx^{3}+cx^{2}+dx\,}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+<mo>=</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>6</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>a</mi>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>b</mi>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>c</mi>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>d</mi>
+<mi>x</mi>
+<mspace width="thinmathspace"></mspace>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V=x^{6}+ax^{4}+bx^{3}+cx^{2}+dx\,}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V=x^{6}+ax^{4}+bx^{3}+cx^{2}+dx\,}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6e396e218068ad501115437249142de1c3d1b825" style="vertical-align: -0.505ex; width:31.95ex; height:2.843ex;"/></span></dd></dl>
+<p>Depending on the parameter values, the potential function may have three, two, or one different local minima, separated by the loci of fold bifurcations.  At the butterfly point, the different 3-surfaces of fold bifurcations, the 2-surfaces of cusp bifurcations, and the lines of swallowtail bifurcations all meet up and disappear, leaving a single cusp structure remaining when <span class="nowrap"><i>a</i> &gt; 0</span>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Potential_functions_of_two_active_variables">Potential functions of two active variables</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=7" title="Edit section: Potential functions of two active variables"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Hyperbolic_umbilic_focal_surface.png"><img class="mw-file-element" data-file-height="580" data-file-width="534" decoding="async" height="239" src="//upload.wikimedia.org/wikipedia/commons/thumb/2/27/Hyperbolic_umbilic_focal_surface.png/250px-Hyperbolic_umbilic_focal_surface.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/27/Hyperbolic_umbilic_focal_surface.png/330px-Hyperbolic_umbilic_focal_surface.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/27/Hyperbolic_umbilic_focal_surface.png/500px-Hyperbolic_umbilic_focal_surface.png 2x" width="220"/></a><figcaption>A surface with a hyperbolic umbilic and its focal surface. The hyperbolic umbilic catastrophe is just the upper part of this image.</figcaption></figure>
+<figure class="mw-default-size mw-halign-right" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Elliptical_umbilic_focal_surface.png"><img class="mw-file-element" data-file-height="559" data-file-width="463" decoding="async" height="266" src="//upload.wikimedia.org/wikipedia/commons/thumb/6/62/Elliptical_umbilic_focal_surface.png/250px-Elliptical_umbilic_focal_surface.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/62/Elliptical_umbilic_focal_surface.png/330px-Elliptical_umbilic_focal_surface.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/62/Elliptical_umbilic_focal_surface.png/440px-Elliptical_umbilic_focal_surface.png 2x" width="220"/></a><figcaption>A surface with an elliptical umbilic, and its focal surface. The elliptic umbilic catastrophe is just the upper part of this image.</figcaption></figure>
+<p>Umbilic catastrophes are examples of corank 2 catastrophes. They can be observed in <a href="/wiki/Optics" title="Optics">optics</a> in the <a href="/wiki/Focal_surface" title="Focal surface">focal surfaces</a> created by light reflecting off a surface in three dimensions and are intimately connected with the geometry of nearly spherical surfaces: <a href="/wiki/Umbilical_point" title="Umbilical point">umbilical point</a>.
+Thom proposed that the hyperbolic umbilic catastrophe modeled the breaking of a wave and the elliptical umbilic modeled the creation of hair-like structures.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Hyperbolic_umbilic_catastrophe">Hyperbolic umbilic catastrophe</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=8" title="Edit section: Hyperbolic umbilic catastrophe"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V=x^{3}+y^{3}+axy+bx+cy\,}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+<mo>=</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>a</mi>
+<mi>x</mi>
+<mi>y</mi>
+<mo>+</mo>
+<mi>b</mi>
+<mi>x</mi>
+<mo>+</mo>
+<mi>c</mi>
+<mi>y</mi>
+<mspace width="thinmathspace"></mspace>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V=x^{3}+y^{3}+axy+bx+cy\,}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V=x^{3}+y^{3}+axy+bx+cy\,}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8ea3620ab63554eedbb769760d1ffb40020cabec" style="vertical-align: -0.671ex; width:29.438ex; height:3.009ex;"/></span></dd></dl>
+<div class="mw-heading mw-heading3"><h3 id="Elliptic_umbilic_catastrophe">Elliptic umbilic catastrophe</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=9" title="Edit section: Elliptic umbilic catastrophe"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V={\frac {x^{3}}{3}}-xy^{2}+a(x^{2}+y^{2})+bx+cy\,}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mn>3</mn>
+</mfrac>
+</mrow>
+<mo>−<!-- − --></mo>
+<mi>x</mi>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>a</mi>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+<mo>+</mo>
+<mi>b</mi>
+<mi>x</mi>
+<mo>+</mo>
+<mi>c</mi>
+<mi>y</mi>
+<mspace width="thinmathspace"></mspace>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V={\frac {x^{3}}{3}}-xy^{2}+a(x^{2}+y^{2})+bx+cy\,}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V={\frac {x^{3}}{3}}-xy^{2}+a(x^{2}+y^{2})+bx+cy\,}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/62faaa4d01e5480d40f10086d963b52c5a2e04e9" style="vertical-align: -1.838ex; width:38.367ex; height:5.676ex;"/></span></dd></dl>
+<div class="mw-heading mw-heading3"><h3 id="Parabolic_umbilic_catastrophe">Parabolic umbilic catastrophe</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=10" title="Edit section: Parabolic umbilic catastrophe"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V=x^{2}y+y^{4}+ax^{2}+by^{2}+cx+dy\,}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+<mo>=</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mi>y</mi>
+<mo>+</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>a</mi>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>b</mi>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>c</mi>
+<mi>x</mi>
+<mo>+</mo>
+<mi>d</mi>
+<mi>y</mi>
+<mspace width="thinmathspace"></mspace>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V=x^{2}y+y^{4}+ax^{2}+by^{2}+cx+dy\,}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V=x^{2}y+y^{4}+ax^{2}+by^{2}+cx+dy\,}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ec2064c501444cc7ceecc828d5ac9f24dc994bca" style="vertical-align: -0.671ex; width:36.763ex; height:3.009ex;"/></span></dd></dl>
+<div class="mw-heading mw-heading2"><h2 id="Arnold's_notation"><span id="Arnold.27s_notation"></span>Arnold's notation</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=11" title="Edit section: Arnold's notation"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><a href="/wiki/Vladimir_Arnold" title="Vladimir Arnold">Vladimir Arnold</a> gave the catastrophes the <a href="/wiki/ADE_classification" title="ADE classification">ADE classification</a>, due to a deep connection with <a href="/wiki/Simple_Lie_group" title="Simple Lie group">simple Lie groups</a>. <sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (June 2020)">citation needed</span></a></i>]</sup>
+</p>
+<ul><li><i>A</i><sub>0</sub> - a non-singular point: <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V=x}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+<mo>=</mo>
+<mi>x</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V=x}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V=x}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c4e559020e90690107552583e519ece0cf5a2c15" style="vertical-align: -0.338ex; width:6.215ex; height:2.176ex;"/></span>.</li>
+<li><i>A</i><sub>1</sub> - a local extremum, either a stable minimum or unstable maximum <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V=\pm x^{2}+ax}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+<mo>=</mo>
+<mo>±<!-- ± --></mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>a</mi>
+<mi>x</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V=\pm x^{2}+ax}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V=\pm x^{2}+ax}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8e48696c6dc1593c01c738f5f55bb28fbb384fbe" style="vertical-align: -0.505ex; width:14.478ex; height:2.843ex;"/></span>.</li>
+<li><i>A</i><sub>2</sub> - the fold</li>
+<li><i>A</i><sub>3</sub> - the cusp</li>
+<li><i>A</i><sub>4</sub> - the swallowtail</li>
+<li><i>A</i><sub>5</sub> - the butterfly</li>
+<li><i>A</i><sub>k</sub> - a representative of an infinite sequence of one variable forms <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V=x^{k+1}+\cdots }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+<mo>=</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+<mo>+</mo>
+<mn>1</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mo>⋯<!-- ⋯ --></mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V=x^{k+1}+\cdots }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V=x^{k+1}+\cdots }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/40b053040827de5279c559f8ae3a6398cece101e" style="vertical-align: -0.505ex; width:14.968ex; height:2.843ex;"/></span></li>
+<li><i>D</i><sub>4</sub><sup>−</sup> - the elliptical umbilic</li>
+<li><i>D</i><sub>4</sub><sup>+</sup> - the hyperbolic umbilic</li>
+<li><i>D</i><sub>5</sub> - the parabolic umbilic</li>
+<li><i>D</i><sub>k</sub> - a representative of an infinite sequence of further umbilic forms</li>
+<li><i>E</i><sub>6</sub> - the symbolic umbilic <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V=x^{3}+y^{4}+axy^{2}+bxy+cx+dy+ey^{2}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+<mo>=</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>a</mi>
+<mi>x</mi>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mi>b</mi>
+<mi>x</mi>
+<mi>y</mi>
+<mo>+</mo>
+<mi>c</mi>
+<mi>x</mi>
+<mo>+</mo>
+<mi>d</mi>
+<mi>y</mi>
+<mo>+</mo>
+<mi>e</mi>
+<msup>
+<mi>y</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V=x^{3}+y^{4}+axy^{2}+bxy+cx+dy+ey^{2}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V=x^{3}+y^{4}+axy^{2}+bxy+cx+dy+ey^{2}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dc75ff09e78e64a8bd3b1567bb09b9cf4c467c21" style="vertical-align: -0.671ex; width:42.79ex; height:3.009ex;"/></span></li>
+<li><i>E</i><sub>7</sub></li>
+<li><i>E</i><sub>8</sub></li></ul>
+<p>There are objects in singularity theory which correspond to most of the other simple Lie groups.
+</p>
+<div class="" style="clear:both;"></div>
+<div class="mw-heading mw-heading2"><h2 id="Optics">Optics</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=12" title="Edit section: Optics"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><span><video class="mw-file-element" controls="" data-durationhint="18" data-mw-tmh="" data-mwprovider="wikimediacommons" data-mwtitle="Caustic_Shallow_Water.webm" height="124" id="mwe_player_0" poster="//upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Caustic_Shallow_Water.webm/220px--Caustic_Shallow_Water.webm.jpg" preload="none" resource="/wiki/File:Caustic_Shallow_Water.webm" width="220"><source data-height="480" data-transcodekey="480p.vp9.webm" data-width="854" src="//upload.wikimedia.org/wikipedia/commons/transcoded/9/9a/Caustic_Shallow_Water.webm/Caustic_Shallow_Water.webm.480p.vp9.webm" type='video/webm; codecs="vp9, opus"'/><source data-height="720" data-transcodekey="720p.vp9.webm" data-width="1280" src="//upload.wikimedia.org/wikipedia/commons/transcoded/9/9a/Caustic_Shallow_Water.webm/Caustic_Shallow_Water.webm.720p.vp9.webm" type='video/webm; codecs="vp9, opus"'/><source data-height="1080" data-transcodekey="1080p.vp9.webm" data-width="1920" src="//upload.wikimedia.org/wikipedia/commons/transcoded/9/9a/Caustic_Shallow_Water.webm/Caustic_Shallow_Water.webm.1080p.vp9.webm" type='video/webm; codecs="vp9, opus"'/><source data-height="1080" data-width="1920" src="//upload.wikimedia.org/wikipedia/commons/9/9a/Caustic_Shallow_Water.webm" type='video/webm; codecs="vp9, vorbis"'/><source data-height="144" data-transcodekey="144p.mjpeg.mov" data-width="256" src="//upload.wikimedia.org/wikipedia/commons/transcoded/9/9a/Caustic_Shallow_Water.webm/Caustic_Shallow_Water.webm.144p.mjpeg.mov" type="video/quicktime"/><source data-height="240" data-transcodekey="240p.vp9.webm" data-width="426" src="//upload.wikimedia.org/wikipedia/commons/transcoded/9/9a/Caustic_Shallow_Water.webm/Caustic_Shallow_Water.webm.240p.vp9.webm" type='video/webm; codecs="vp9, opus"'/><source data-height="360" data-transcodekey="360p.vp9.webm" data-width="640" src="//upload.wikimedia.org/wikipedia/commons/transcoded/9/9a/Caustic_Shallow_Water.webm/Caustic_Shallow_Water.webm.360p.vp9.webm" type='video/webm; codecs="vp9, opus"'/><source data-height="360" data-transcodekey="360p.webm" data-width="640" src="//upload.wikimedia.org/wikipedia/commons/transcoded/9/9a/Caustic_Shallow_Water.webm/Caustic_Shallow_Water.webm.360p.webm" type='video/webm; codecs="vp8, vorbis"'/></video></span><figcaption>Caustics underwater are catastrophes, and their singular points are the same even as the surface of the water is everchanging.</figcaption></figure>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Supernumerary-rainbows-jb.jpg"><img class="mw-file-element" data-file-height="3327" data-file-width="4671" decoding="async" height="157" src="//upload.wikimedia.org/wikipedia/commons/thumb/2/24/Supernumerary-rainbows-jb.jpg/220px-Supernumerary-rainbows-jb.jpg" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/24/Supernumerary-rainbows-jb.jpg/330px-Supernumerary-rainbows-jb.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/24/Supernumerary-rainbows-jb.jpg/440px-Supernumerary-rainbows-jb.jpg 2x" width="220"/></a><figcaption>The edge of the rainbow is a fold catastrophe, and so it has a diffraction pattern described by the Airy function. This is generic and stable for any shape of the water droplet.</figcaption></figure>
+<p>As predicted by catastrophe theory, singularities are generic, and stable under perturbation. This explains how the bright lines and surfaces are stable under perturbation. The <a href="/wiki/Caustic_(optics)" title="Caustic (optics)">caustics</a> one sees at the bottom of a swimming pool, for example, have a distinctive texture and only has a few types of singular points, even though the surface of the water is ever changing.<sup class="reference" id="cite_ref-12"><a href="#cite_note-12"><span class="cite-bracket">[</span>12<span class="cite-bracket">]</span></a></sup>
+</p><p>The edge of the <a href="/wiki/Rainbow" title="Rainbow">rainbow</a>, for example, has a fold catastrophe. Due to the wave nature of light, the catastrophe has fine diffraction details described by the <a href="/wiki/Airy_function" title="Airy function">Airy function</a>. This is a generic result and does not depend on the precise shape of the water droplet, and so the edge of the rainbow always has the shape of an Airy function.<sup class="reference" id="cite_ref-13"><a href="#cite_note-13"><span class="cite-bracket">[</span>13<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-14"><a href="#cite_note-14"><span class="cite-bracket">[</span>14<span class="cite-bracket">]</span></a></sup> The same Airy function fold catastrophe can be seen in <a class="new" href="/w/index.php?title=Nuclear-nuclear_scattering&amp;action=edit&amp;redlink=1" title="Nuclear-nuclear scattering (page does not exist)">nuclear-nuclear scattering</a> ("nuclear rainbow").<sup class="reference" id="cite_ref-15"><a href="#cite_note-15"><span class="cite-bracket">[</span>15<span class="cite-bracket">]</span></a></sup>
+</p><p>The cusp catastrophe is the next-simplest to observe. Due to the wave nature of light, the catastrophe has fine diffraction details described by the <a href="/wiki/Pearcey_integral" title="Pearcey integral">Pearcey function</a>.<sup class="reference" id="cite_ref-16"><a href="#cite_note-16"><span class="cite-bracket">[</span>16<span class="cite-bracket">]</span></a></sup> Higher-order catastrophes, such as the swallowtail and the butterfly, have also been observed.<sup class="reference" id="cite_ref-17"><a href="#cite_note-17"><span class="cite-bracket">[</span>17<span class="cite-bracket">]</span></a></sup>
+</p>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Circle_caustic.png"><img class="mw-file-element" data-file-height="250" data-file-width="250" decoding="async" height="220" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Circle_caustic.png/220px-Circle_caustic.png" srcset="//upload.wikimedia.org/wikipedia/commons/1/1a/Circle_caustic.png 1.5x" width="220"/></a><figcaption>Cusp catastrophe caustic, generated from a circle and parallel rays.</figcaption></figure>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:A_photograph_of_a_cusp_caustic.png"><img class="mw-file-element" data-file-height="512" data-file-width="512" decoding="async" height="220" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b3/A_photograph_of_a_cusp_caustic.png/220px-A_photograph_of_a_cusp_caustic.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/b/b3/A_photograph_of_a_cusp_caustic.png/330px-A_photograph_of_a_cusp_caustic.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/b/b3/A_photograph_of_a_cusp_caustic.png/440px-A_photograph_of_a_cusp_caustic.png 2x" width="220"/></a><figcaption>A photograph of a cusp caustic produced by illuminating a flat surface with a laser beam through a droplet of water. This is a Pearcey function and stable under perturbations.</figcaption></figure>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=13" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1184024115">.mw-parser-output .div-col{margin-top:0.3em;column-width:30em}.mw-parser-output .div-col-small{font-size:90%}.mw-parser-output .div-col-rules{column-rule:1px solid #aaa}.mw-parser-output .div-col dl,.mw-parser-output .div-col ol,.mw-parser-output .div-col ul{margin-top:0}.mw-parser-output .div-col li,.mw-parser-output .div-col dd{page-break-inside:avoid;break-inside:avoid-column}</style><div class="div-col" style="column-width: 20em;">
+<ul><li><a class="mw-redirect" href="/wiki/Broken_symmetry" title="Broken symmetry">Broken symmetry</a> – Physical process transitioning a system from a symmetric state to a more ordered state<span class="category-annotation-with-redirected-description" style="display:none">Pages displaying short descriptions of redirect targets</span></li>
+<li><a href="/wiki/Butterfly_effect" title="Butterfly effect">Butterfly effect</a> – Idea that small causes can have large effects</li>
+<li><a href="/wiki/Chaos_theory" title="Chaos theory">Chaos theory</a> – Field of mathematics and science based on non-linear systems and initial conditions</li>
+<li><a href="/wiki/Domino_effect" title="Domino effect">Domino effect</a> – Cumulative effect produced when one event sets off a chain of other events</li>
+<li><a href="/wiki/Inflection_point" title="Inflection point">Inflection point</a> – Point where the curvature of a curve changes sign</li>
+<li><a href="/wiki/Morphology_(biology)" title="Morphology (biology)">Morphology</a> – Study of external forms and structures of organisms</li>
+<li><a href="/wiki/Phase_transition" title="Phase transition">Phase transition</a> – Physical process of transition between basic states of matter</li>
+<li><a href="/wiki/Punctuated_equilibrium" title="Punctuated equilibrium">Punctuated equilibrium</a> – Theory in evolutionary biology</li>
+<li><a href="/wiki/Snowball_effect" title="Snowball effect">Snowball effect</a> – Metaphorical term for a process that builds upon itself</li>
+<li><a href="/wiki/Spontaneous_symmetry_breaking" title="Spontaneous symmetry breaking">Spontaneous symmetry breaking</a> – Symmetry breaking through the vacuum state</li></ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="References">References</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=14" title="Edit section: References"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1239543626">.mw-parser-output .reflist{margin-bottom:0.5em;list-style-type:decimal}@media screen{.mw-parser-output .reflist{font-size:90%}}.mw-parser-output .reflist .references{font-size:100%;margin-bottom:0;list-style-type:inherit}.mw-parser-output .reflist-columns-2{column-width:30em}.mw-parser-output .reflist-columns-3{column-width:25em}.mw-parser-output .reflist-columns{margin-top:0.3em}.mw-parser-output .reflist-columns ol{margin-top:0}.mw-parser-output .reflist-columns li{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .reflist-upper-alpha{list-style-type:upper-alpha}.mw-parser-output .reflist-upper-roman{list-style-type:upper-roman}.mw-parser-output .reflist-lower-alpha{list-style-type:lower-alpha}.mw-parser-output .reflist-lower-greek{list-style-type:lower-greek}.mw-parser-output .reflist-lower-roman{list-style-type:lower-roman}</style><div class="reflist reflist-columns references-column-width" style="column-width: 25em;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"><style data-mw-deduplicate="TemplateStyles:r1238218222">.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#d33)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#d33)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite class="citation encyclopaedia cs1" id="CITEREFMurray">Murray, Stacey R. <a class="external text" href="https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/rise-and-fall-catastrophe-theory" rel="nofollow">"The Rise and Fall of Catastrophe Theory"</a>. <i><a href="/wiki/Encyclopedia.com" title="Encyclopedia.com">Encyclopedia.com</a></i><span class="reference-accessdate">. Retrieved <span class="nowrap">2 November</span> 2021</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=The+Rise+and+Fall+of+Catastrophe+Theory&amp;rft.btitle=Encyclopedia.com&amp;rft.aulast=Murray&amp;rft.aufirst=Stacey+R.&amp;rft_id=https%3A%2F%2Fwww.encyclopedia.com%2Fscience%2Fencyclopedias-almanacs-transcripts-and-maps%2Frise-and-fall-catastrophe-theory&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFHorgan2015">Horgan, John (2015). <i>The End of Science: Facing the Limits of Knowledge in the Twilight of the Scientific Age</i>. New York: Basic Books. p. 213. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-465-05085-7" title="Special:BookSources/978-0-465-05085-7"><bdi>978-0-465-05085-7</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+End+of+Science%3A+Facing+the+Limits+of+Knowledge+in+the+Twilight+of+the+Scientific+Age&amp;rft.place=New+York&amp;rft.pages=213&amp;rft.pub=Basic+Books&amp;rft.date=2015&amp;rft.isbn=978-0-465-05085-7&amp;rft.aulast=Horgan&amp;rft.aufirst=John&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></link></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation journal cs1" id="CITEREFZahlerSussmann1977">Zahler, Raphael S.; Sussmann, Hector J. (1977). <a class="external text" href="https://www.nature.com/articles/269759a0" rel="nofollow">"Claims and accomplishments of applied catastrophe theory"</a>. <i>Nature</i>. <b>269</b> (5631): <span class="nowrap">759–</span>763. <a class="mw-redirect" href="/wiki/Bibcode_(identifier)" title="Bibcode (identifier)">Bibcode</a>:<a class="external text" href="https://ui.adsabs.harvard.edu/abs/1977Natur.269..759Z" rel="nofollow">1977Natur.269..759Z</a>. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1038%2F269759a0" rel="nofollow">10.1038/269759a0</a>. <a class="mw-redirect" href="/wiki/ISSN_(identifier)" title="ISSN (identifier)">ISSN</a> <a class="external text" href="https://search.worldcat.org/issn/1476-4687" rel="nofollow">1476-4687</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:4205198" rel="nofollow">4205198</a><span class="reference-accessdate">. Retrieved <span class="nowrap">2021-11-02</span></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Nature&amp;rft.atitle=Claims+and+accomplishments+of+applied+catastrophe+theory&amp;rft.volume=269&amp;rft.issue=5631&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E759-%3C%2Fspan%3E763&amp;rft.date=1977&amp;rft_id=info%3Adoi%2F10.1038%2F269759a0&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A4205198%23id-name%3DS2CID&amp;rft.issn=1476-4687&amp;rft_id=info%3Abibcode%2F1977Natur.269..759Z&amp;rft.aulast=Zahler&amp;rft.aufirst=Raphael+S.&amp;rft.au=Sussmann%2C+Hector+J.&amp;rft_id=https%3A%2F%2Fwww.nature.com%2Farticles%2F269759a0&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></link></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation journal cs1" id="CITEREFRosser2007">Rosser, J. Barkley (October 2007). "The rise and fall of catastrophe theory applications in economics: Was the baby thrown out with the bathwater?". <i>Journal of Economic Dynamics and Control</i>. <b>31</b> (10): <span class="nowrap">3255–</span>3280. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1016%2Fj.jedc.2006.09.013" rel="nofollow">10.1016/j.jedc.2006.09.013</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Journal+of+Economic+Dynamics+and+Control&amp;rft.atitle=The+rise+and+fall+of+catastrophe+theory+applications+in+economics%3A+Was+the+baby+thrown+out+with+the+bathwater%3F&amp;rft.volume=31&amp;rft.issue=10&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E3255-%3C%2Fspan%3E3280&amp;rft.date=2007-10&amp;rft_id=info%3Adoi%2F10.1016%2Fj.jedc.2006.09.013&amp;rft.aulast=Rosser&amp;rft.aufirst=J.+Barkley&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></link></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation encyclopaedia cs1" id="CITEREFWagenmakersvan_der_MaasMolenaar2005">Wagenmakers, E. J.; van der Maas, H. L. J.; Molenaar, P. C. M. (2005). <a class="external text" href="https://dare.uva.nl/search?identifier=f85f2044-56b3-498f-980c-75939d89a737" rel="nofollow">"Fitting the cusp catastrophe model"</a>. <i>Encyclopedia of Statistics in Behavioral Science</i>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Fitting+the+cusp+catastrophe+model&amp;rft.btitle=Encyclopedia+of+Statistics+in+Behavioral+Science&amp;rft.date=2005&amp;rft.aulast=Wagenmakers&amp;rft.aufirst=E.+J.&amp;rft.au=van+der+Maas%2C+H.+L.+J.&amp;rft.au=Molenaar%2C+P.+C.+M.&amp;rft_id=https%3A%2F%2Fdare.uva.nl%2Fsearch%3Fidentifier%3Df85f2044-56b3-498f-980c-75939d89a737&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></link></span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text"><a class="mw-redirect" href="/wiki/E.C._Zeeman" title="E.C. Zeeman">E.C. Zeeman</a>, <a class="external text" href="http://www.gaianxaos.com/pdf/dynamics/zeeman-catastrophe_theory.pdf" rel="nofollow">Catastrophe Theory</a>, <i><a href="/wiki/Scientific_American" title="Scientific American">Scientific American</a></i>, April 1976; pp. 65–70, 75–83</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text">Cross, Daniel J., <a class="external text" href="https://www.geneva.edu/dept/chemistry-math-physics/physics-research/catastrophe-machine/index" rel="nofollow">Interactive rendering of Zeeman's Catastrophe Machine</a></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation journal cs1" id="CITEREFXu1990">Xu, F (1990). "Application of catastrophe theory to the ∆G<sup>≠</sup> to -∆G relationship in electron transfer reactions". <i>Zeitschrift für Physikalische Chemie</i>. Neue Folge. <b>166</b>: <span class="nowrap">79–</span>91. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1524%2Fzpch.1990.166.Part_1.079" rel="nofollow">10.1524/zpch.1990.166.Part_1.079</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:101078817" rel="nofollow">101078817</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Zeitschrift+f%C3%BCr+Physikalische+Chemie&amp;rft.atitle=Application+of+catastrophe+theory+to+the+%E2%88%86G%3Csup%3E%E2%89%A0%3C%2Fsup%3E+to+-%E2%88%86G+relationship+in+electron+transfer+reactions&amp;rft.volume=166&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E79-%3C%2Fspan%3E91&amp;rft.date=1990&amp;rft_id=info%3Adoi%2F10.1524%2Fzpch.1990.166.Part_1.079&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A101078817%23id-name%3DS2CID&amp;rft.aulast=Xu&amp;rft.aufirst=F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></link></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation journal cs1" id="CITEREFArabasShima,_S.2017">Arabas, S; Shima, S. (2017). <a class="external text" href="https://doi.org/10.5194%2Fnpg-24-535-2017" rel="nofollow">"On the CCN (de)activation nonlinearities"</a>. <i>Nonlinear Processes in Geophysics</i>. <b>24</b> (3): <span class="nowrap">535–</span>542. <a class="mw-redirect" href="/wiki/ArXiv_(identifier)" title="ArXiv (identifier)">arXiv</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://arxiv.org/abs/1608.08187" rel="nofollow">1608.08187</a></span>. <a class="mw-redirect" href="/wiki/Bibcode_(identifier)" title="Bibcode (identifier)">Bibcode</a>:<a class="external text" href="https://ui.adsabs.harvard.edu/abs/2017NPGeo..24..535A" rel="nofollow">2017NPGeo..24..535A</a>. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://doi.org/10.5194%2Fnpg-24-535-2017" rel="nofollow">10.5194/npg-24-535-2017</a></span>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:24669360" rel="nofollow">24669360</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Nonlinear+Processes+in+Geophysics&amp;rft.atitle=On+the+CCN+%28de%29activation+nonlinearities&amp;rft.volume=24&amp;rft.issue=3&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E535-%3C%2Fspan%3E542&amp;rft.date=2017&amp;rft_id=info%3Aarxiv%2F1608.08187&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A24669360%23id-name%3DS2CID&amp;rft_id=info%3Adoi%2F10.5194%2Fnpg-24-535-2017&amp;rft_id=info%3Abibcode%2F2017NPGeo..24..535A&amp;rft.aulast=Arabas&amp;rft.aufirst=S&amp;rft.au=Shima%2C+S.&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.5194%252Fnpg-24-535-2017&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></link></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation journal cs1" id="CITEREFBełejKulesza,_Sławomir2012">Bełej, Mirosław; Kulesza, Sławomir (2012). <a class="external text" href="https://doi.org/10.2478%2Fv10031-012-0008-7" rel="nofollow">"Modeling the Real Estate Prices in Olsztyn under Instability Conditions"</a>. <i>Folia Oeconomica Stetinensia</i>. <b>11</b> (1): <span class="nowrap">61–</span>72. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://doi.org/10.2478%2Fv10031-012-0008-7" rel="nofollow">10.2478/v10031-012-0008-7</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Folia+Oeconomica+Stetinensia&amp;rft.atitle=Modeling+the+Real+Estate+Prices+in+Olsztyn+under+Instability+Conditions&amp;rft.volume=11&amp;rft.issue=1&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E61-%3C%2Fspan%3E72&amp;rft.date=2012&amp;rft_id=info%3Adoi%2F10.2478%2Fv10031-012-0008-7&amp;rft.aulast=Be%C5%82ej&amp;rft.aufirst=Miros%C5%82aw&amp;rft.au=Kulesza%2C+S%C5%82awomir&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.2478%252Fv10031-012-0008-7&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></link></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11">^</a></b></span> <span class="reference-text">A.O. Petters, H. Levine and J. Wambsganss, Singularity Theory and Gravitational Lensing", Birkhäuser Boston (2001)</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-12">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFBerryUpstill1980">Berry, M. V.; Upstill, C. (1980-01-01), Wolf, E. (ed.), <a class="external text" href="https://www.sciencedirect.com/science/article/pii/S0079663808702154" rel="nofollow">"IV Catastrophe Optics: Morphologies of Caustics and Their Diffraction Patterns"</a>, <i>Progess in Optics</i>, Progress in Optics, <b>18</b>, Elsevier: <span class="nowrap">257–</span>346, <a class="mw-redirect" href="/wiki/Bibcode_(identifier)" title="Bibcode (identifier)">Bibcode</a>:<a class="external text" href="https://ui.adsabs.harvard.edu/abs/1980PrOpt..18..257B" rel="nofollow">1980PrOpt..18..257B</a>, <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1016%2FS0079-6638%2808%2970215-4" rel="nofollow">10.1016/S0079-6638(08)70215-4</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-444-85445-2" title="Special:BookSources/978-0-444-85445-2"><bdi>978-0-444-85445-2</bdi></a><span class="reference-accessdate">, retrieved <span class="nowrap">2024-04-25</span></span></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Progess+in+Optics&amp;rft.atitle=IV+Catastrophe+Optics%3A+Morphologies+of+Caustics+and+Their+Diffraction+Patterns&amp;rft.volume=18&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E257-%3C%2Fspan%3E346&amp;rft.date=1980-01-01&amp;rft_id=info%3Adoi%2F10.1016%2FS0079-6638%2808%2970215-4&amp;rft_id=info%3Abibcode%2F1980PrOpt..18..257B&amp;rft.isbn=978-0-444-85445-2&amp;rft.aulast=Berry&amp;rft.aufirst=M.+V.&amp;rft.au=Upstill%2C+C.&amp;rft_id=https%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS0079663808702154&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></link></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation journal cs1" id="CITEREFAdam2002">Adam, John A. (2002-01-01). <a class="external text" href="https://www.sciencedirect.com/science/article/pii/S037015730100076X" rel="nofollow">"The mathematical physics of rainbows and glories"</a>. <i>Physics Reports</i>. <b>356</b> (4): <span class="nowrap">229–</span>365. <a class="mw-redirect" href="/wiki/Bibcode_(identifier)" title="Bibcode (identifier)">Bibcode</a>:<a class="external text" href="https://ui.adsabs.harvard.edu/abs/2002PhR...356..229A" rel="nofollow">2002PhR...356..229A</a>. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1016%2FS0370-1573%2801%2900076-X" rel="nofollow">10.1016/S0370-1573(01)00076-X</a>. <a class="mw-redirect" href="/wiki/ISSN_(identifier)" title="ISSN (identifier)">ISSN</a> <a class="external text" href="https://search.worldcat.org/issn/0370-1573" rel="nofollow">0370-1573</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Physics+Reports&amp;rft.atitle=The+mathematical+physics+of+rainbows+and+glories&amp;rft.volume=356&amp;rft.issue=4&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E229-%3C%2Fspan%3E365&amp;rft.date=2002-01-01&amp;rft.issn=0370-1573&amp;rft_id=info%3Adoi%2F10.1016%2FS0370-1573%2801%2900076-X&amp;rft_id=info%3Abibcode%2F2002PhR...356..229A&amp;rft.aulast=Adam&amp;rft.aufirst=John+A.&amp;rft_id=https%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fpii%2FS037015730100076X&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></link></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-14">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation web cs1"><a class="external text" href="https://www.ams.org/publicoutreach/feature-column/fc-2015-02" rel="nofollow">"AMS :: Feature Column :: The Mathematics of the Rainbow, Part II"</a>. <i>American Mathematical Society</i><span class="reference-accessdate">. Retrieved <span class="nowrap">2024-04-25</span></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=American+Mathematical+Society&amp;rft.atitle=AMS+%3A%3A+Feature+Column+%3A%3A+The+Mathematics+of+the+Rainbow%2C+Part+II&amp;rft_id=https%3A%2F%2Fwww.ams.org%2Fpublicoutreach%2Ffeature-column%2Ffc-2015-02&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></link></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation journal cs1" id="CITEREFKhoaOertzenBohlenOhkubo2007">Khoa, Dao T; Oertzen, W von; Bohlen, H G; Ohkubo, S (2007-03-01). <a class="external text" href="https://iopscience.iop.org/article/10.1088/0954-3899/34/3/R01" rel="nofollow">"Nuclear rainbow scattering and nucleus–nucleus potential"</a>. <i>Journal of Physics G: Nuclear and Particle Physics</i>. <b>34</b> (3): <span class="nowrap">R111 –</span> <span class="nowrap">R164</span>. <a class="mw-redirect" href="/wiki/ArXiv_(identifier)" title="ArXiv (identifier)">arXiv</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://arxiv.org/abs/nucl-th/0612100" rel="nofollow">nucl-th/0612100</a></span>. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1088%2F0954-3899%2F34%2F3%2FR01" rel="nofollow">10.1088/0954-3899/34/3/R01</a>. <a class="mw-redirect" href="/wiki/ISSN_(identifier)" title="ISSN (identifier)">ISSN</a> <a class="external text" href="https://search.worldcat.org/issn/0954-3899" rel="nofollow">0954-3899</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Journal+of+Physics+G%3A+Nuclear+and+Particle+Physics&amp;rft.atitle=Nuclear+rainbow+scattering+and+nucleus%E2%80%93nucleus+potential&amp;rft.volume=34&amp;rft.issue=3&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3ER111+-%3C%2Fspan%3E+%3Cspan+class%3D%22nowrap%22%3ER164%3C%2Fspan%3E&amp;rft.date=2007-03-01&amp;rft_id=info%3Aarxiv%2Fnucl-th%2F0612100&amp;rft.issn=0954-3899&amp;rft_id=info%3Adoi%2F10.1088%2F0954-3899%2F34%2F3%2FR01&amp;rft.aulast=Khoa&amp;rft.aufirst=Dao+T&amp;rft.au=Oertzen%2C+W+von&amp;rft.au=Bohlen%2C+H+G&amp;rft.au=Ohkubo%2C+S&amp;rft_id=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.1088%2F0954-3899%2F34%2F3%2FR01&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></link></span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-16">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation thesis cs1" id="CITEREFMacBeath2016">MacBeath, Darryl (November 2016). <a class="external text" href="https://macsphere.mcmaster.ca/handle/11375/20436" rel="nofollow"><i>The Pearcey function and the cusp catastrophe</i></a> (Thesis thesis).</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adissertation&amp;rft.title=The+Pearcey+function+and+the+cusp+catastrophe&amp;rft.degree=Thesis&amp;rft.date=2016-11&amp;rft.aulast=MacBeath&amp;rft.aufirst=Darryl&amp;rft_id=https%3A%2F%2Fmacsphere.mcmaster.ca%2Fhandle%2F11375%2F20436&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></link></span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><b><a href="#cite_ref-17">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFZannottiDiebelBoguslawskiDenz2017">Zannotti, Alessandro; Diebel, Falko; Boguslawski, Martin; Denz, Cornelia (May 2017). <a class="external text" href="https://dx.doi.org/10.1088/1367-2630/aa6ecd" rel="nofollow">"Optical catastrophes of the swallowtail and butterfly beams"</a>. <i>New Journal of Physics</i>. <b>19</b> (5): 053004. <a class="mw-redirect" href="/wiki/ArXiv_(identifier)" title="ArXiv (identifier)">arXiv</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://arxiv.org/abs/1703.07716" rel="nofollow">1703.07716</a></span>. <a class="mw-redirect" href="/wiki/Bibcode_(identifier)" title="Bibcode (identifier)">Bibcode</a>:<a class="external text" href="https://ui.adsabs.harvard.edu/abs/2017NJPh...19e3004Z" rel="nofollow">2017NJPh...19e3004Z</a>. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1088%2F1367-2630%2Faa6ecd" rel="nofollow">10.1088/1367-2630/aa6ecd</a>. <a class="mw-redirect" href="/wiki/ISSN_(identifier)" title="ISSN (identifier)">ISSN</a> <a class="external text" href="https://search.worldcat.org/issn/1367-2630" rel="nofollow">1367-2630</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=New+Journal+of+Physics&amp;rft.atitle=Optical+catastrophes+of+the+swallowtail+and+butterfly+beams&amp;rft.volume=19&amp;rft.issue=5&amp;rft.pages=053004&amp;rft.date=2017-05&amp;rft_id=info%3Aarxiv%2F1703.07716&amp;rft.issn=1367-2630&amp;rft_id=info%3Adoi%2F10.1088%2F1367-2630%2Faa6ecd&amp;rft_id=info%3Abibcode%2F2017NJPh...19e3004Z&amp;rft.aulast=Zannotti&amp;rft.aufirst=Alessandro&amp;rft.au=Diebel%2C+Falko&amp;rft.au=Boguslawski%2C+Martin&amp;rft.au=Denz%2C+Cornelia&amp;rft_id=https%3A%2F%2Fdx.doi.org%2F10.1088%2F1367-2630%2Faa6ecd&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACatastrophe+theory"></span></span>
+</li>
+</ol></div>
+<div class="mw-heading mw-heading2"><h2 id="Bibliography">Bibliography</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=15" title="Edit section: Bibliography"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="/wiki/Vladimir_Arnold" title="Vladimir Arnold">Arnold, Vladimir Igorevich</a> (1992) <i>Catastrophe Theory</i>, 3rd ed. Berlin: Springer-Verlag</li>
+<li><a href="/wiki/Valentin_Afraimovich" title="Valentin Afraimovich">V. S. Afrajmovich</a>, V. I. Arnold, et al., <i>Bifurcation Theory And Catastrophe Theory</i>, <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/3-540-65379-1" title="Special:BookSources/3-540-65379-1">3-540-65379-1</a></li>
+<li>Bełej, M. Kulesza, S. (2013) M"odeling the Real Estate Prices in Olsztyn under Instability Conditions", <i>Folia Oeconomica Stetinensia</i> 11(1): 61–72, ISSN (Online) 1898–0198, ISSN (Print) 1730–4237, <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.2478%2Fv10031-012-0008-7" rel="nofollow">10.2478/v10031-012-0008-7</a></li>
+<li>Castrigiano, Domenico P. L. and Hayes, Sandra A. (2004) <i>Catastrophe Theory</i>, second edition, Boulder: Westview <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-8133-4126-4" title="Special:BookSources/0-8133-4126-4">0-8133-4126-4</a></li>
+<li>Gilmore, Robert (1993) <i>Catastrophe Theory for Scientists and Engineers</i>, New York: Dover</li>
+<li>Petters, Arlie O., Levine, Harold and Wambsganss, Joachim (2001) <i>Singularity Theory and Gravitational Lensing</i>, Boston: Birkhäuser <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-8176-3668-4" title="Special:BookSources/0-8176-3668-4">0-8176-3668-4</a></li>
+<li>Postle, Denis (1980) <i>Catastrophe Theory – Predict and avoid personal disasters</i>, Fontana Paperbacks <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-00-635559-5" title="Special:BookSources/0-00-635559-5">0-00-635559-5</a></li>
+<li><a href="/wiki/Tim_Poston" title="Tim Poston">Poston, Tim</a> and <a href="/wiki/Ian_Stewart_(mathematician)" title="Ian Stewart (mathematician)">Stewart, Ian</a> (1998) <i>Catastrophe: Theory and Its Applications</i>, New York: Dover <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-486-69271-X" title="Special:BookSources/0-486-69271-X">0-486-69271-X</a></li>
+<li>Sanns, Werner (2000) <i>Catastrophe Theory with Mathematica: A Geometric Approach</i>, Germany: DAV</li>
+<li>Saunders, Peter Timothy (1980) <i>An Introduction to Catastrophe Theory</i>, Cambridge, England: Cambridge University Press</li>
+<li><a href="/wiki/Ren%C3%A9_Thom" title="René Thom">Thom, René</a> (1989) <i>Structural Stability and Morphogenesis: An Outline of a General Theory of Models</i>, Reading, MA: Addison-Wesley <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-201-09419-3" title="Special:BookSources/0-201-09419-3">0-201-09419-3</a></li>
+<li>Woodcock, Alexander Edward Richard and Davis, Monte.  (1978) <i>Catastrophe Theory</i>, New York: E. P. Dutton <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-525-07812-6" title="Special:BookSources/0-525-07812-6">0-525-07812-6</a></li>
+<li><a class="mw-redirect" href="/wiki/Erik_Christopher_Zeeman" title="Erik Christopher Zeeman">Zeeman, E.C.</a> (1977) <i>Catastrophe Theory-Selected Papers 1972–1977</i>, Reading, MA: Addison-Wesley</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="External_links">External links</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Catastrophe_theory&amp;action=edit&amp;section=16" title="Edit section: External links"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://www.exploratorium.edu/complexity/CompLexicon/catastrophe.html" rel="nofollow">CompLexicon: Catastrophe Theory</a></li>
+<li><a class="external text" href="https://web.archive.org/web/20051128035658/http://perso.wanadoo.fr/l.d.v.dujardin/ct/eng_index.html" rel="nofollow">Catastrophe teacher</a></li>
+<li><a class="external text" href="https://www.compadre.org/osp/items/detail.cfm?ID=11996" rel="nofollow">Java simulation of Zeeman's catastrophe machine</a></li></ul>
+<div class="navbox-styles"><style data-mw-deduplicate="TemplateStyles:r1129693374">.mw-parser-output .hlist dl,.mw-parser-output .hlist ol,.mw-parser-output .hlist ul{margin:0;padding:0}.mw-parser-output .hlist dd,.mw-parser-output .hlist dt,.mw-parser-output .hlist li{margin:0;display:inline}.mw-parser-output .hlist.inline,.mw-parser-output .hlist.inline dl,.mw-parser-output .hlist.inline ol,.mw-parser-output .hlist.inline ul,.mw-parser-output .hlist dl dl,.mw-parser-output .hlist dl ol,.mw-parser-output .hlist dl ul,.mw-parser-output .hlist ol dl,.mw-parser-output .hlist ol ol,.mw-parser-output .hlist ol ul,.mw-parser-output .hlist ul dl,.mw-parser-output .hlist ul ol,.mw-parser-output .hlist ul ul{display:inline}.mw-parser-output .hlist .mw-empty-li{display:none}.mw-parser-output .hlist dt::after{content:": "}.mw-parser-output .hlist dd::after,.mw-parser-output .hlist li::after{content:" · ";font-weight:bold}.mw-parser-output .hlist dd:last-child::after,.mw-parser-output .hlist dt:last-child::after,.mw-parser-output .hlist li:last-child::after{content:none}.mw-parser-output .hlist dd dd:first-child::before,.mw-parser-output .hlist dd dt:first-child::before,.mw-parser-output .hlist dd li:first-child::before,.mw-parser-output .hlist dt dd:first-child::before,.mw-parser-output .hlist dt dt:first-child::before,.mw-parser-output .hlist dt li:first-child::before,.mw-parser-output .hlist li dd:first-child::before,.mw-parser-output .hlist li dt:first-child::before,.mw-parser-output .hlist li li:first-child::before{content:" (";font-weight:normal}.mw-parser-output .hlist dd dd:last-child::after,.mw-parser-output .hlist dd dt:last-child::after,.mw-parser-output .hlist dd li:last-child::after,.mw-parser-output .hlist dt dd:last-child::after,.mw-parser-output .hlist dt dt:last-child::after,.mw-parser-output .hlist dt li:last-child::after,.mw-parser-output .hlist li dd:last-child::after,.mw-parser-output .hlist li dt:last-child::after,.mw-parser-output .hlist li li:last-child::after{content:")";font-weight:normal}.mw-parser-output .hlist ol{counter-reset:listitem}.mw-parser-output .hlist ol>li{counter-increment:listitem}.mw-parser-output .hlist ol>li::before{content:" "counter(listitem)"\a0 "}.mw-parser-output .hlist dd ol>li:first-child::before,.mw-parser-output .hlist dt ol>li:first-child::before,.mw-parser-output .hlist li ol>li:first-child::before{content:" ("counter(listitem)"\a0 "}</style><style data-mw-deduplicate="TemplateStyles:r1236075235">.mw-parser-output .navbox{box-sizing:border-box;border:1px solid #a2a9b1;width:100%;clear:both;font-size:88%;text-align:center;padding:1px;margin:1em auto 0}.mw-parser-output .navbox .navbox{margin-top:0}.mw-parser-output .navbox+.navbox,.mw-parser-output .navbox+.navbox-styles+.navbox{margin-top:-1px}.mw-parser-output .navbox-inner,.mw-parser-output .navbox-subgroup{width:100%}.mw-parser-output .navbox-group,.mw-parser-output .navbox-title,.mw-parser-output .navbox-abovebelow{padding:0.25em 1em;line-height:1.5em;text-align:center}.mw-parser-output .navbox-group{white-space:nowrap;text-align:right}.mw-parser-output .navbox,.mw-parser-output .navbox-subgroup{background-color:#fdfdfd}.mw-parser-output .navbox-list{line-height:1.5em;border-color:#fdfdfd}.mw-parser-output .navbox-list-with-group{text-align:left;border-left-width:2px;border-left-style:solid}.mw-parser-output tr+tr>.navbox-abovebelow,.mw-parser-output tr+tr>.navbox-group,.mw-parser-output tr+tr>.navbox-image,.mw-parser-output tr+tr>.navbox-list{border-top:2px solid #fdfdfd}.mw-parser-output .navbox-title{background-color:#ccf}.mw-parser-output .navbox-abovebelow,.mw-parser-output .navbox-group,.mw-parser-output .navbox-subgroup .navbox-title{background-color:#ddf}.mw-parser-output .navbox-subgroup .navbox-group,.mw-parser-output .navbox-subgroup .navbox-abovebelow{background-color:#e6e6ff}.mw-parser-output .navbox-even{background-color:#f7f7f7}.mw-parser-output .navbox-odd{background-color:transparent}.mw-parser-output .navbox .hlist td dl,.mw-parser-output .navbox .hlist td ol,.mw-parser-output .navbox .hlist td ul,.mw-parser-output .navbox td.hlist dl,.mw-parser-output .navbox td.hlist ol,.mw-parser-output .navbox td.hlist ul{padding:0.125em 0}.mw-parser-output .navbox .navbar{display:block;font-size:100%}.mw-parser-output .navbox-title .navbar{float:left;text-align:left;margin-right:0.5em}body.skin--responsive .mw-parser-output .navbox-image img{max-width:none!important}@media print{body.ns-0 .mw-parser-output .navbox{display:none!important}}</style><style data-mw-deduplicate="TemplateStyles:r1038841319">.mw-parser-output .tooltip-dotted{border-bottom:1px dotted;cursor:help}</style></div><div aria-label="Navbox682" class="navbox authority-control" role="navigation" style="padding:3px"><table class="nowraplinks hlist navbox-inner" style="border-spacing:0;background:transparent;color:inherit"><tbody><tr><th class="navbox-group" scope="row" style="width:1%"><a href="/wiki/Help:Authority_control" title="Help:Authority control">Authority control databases</a>: National <span class="mw-valign-text-top noprint" typeof="mw:File/Frameless"><a href="https://www.wikidata.org/wiki/Q1345659#identifiers" title="Edit this at Wikidata"><img alt="Edit this at Wikidata" class="mw-file-element" data-file-height="20" data-file-width="20" decoding="async" height="10" src="//upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/10px-OOjs_UI_icon_edit-ltr-progressive.svg.png" srcset="//upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/15px-OOjs_UI_icon_edit-ltr-progressive.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png 2x" width="10"/></a></span></th><td class="navbox-list-with-group navbox-list navbox-odd" style="width:100%;padding:0"><div style="padding:0 0.25em"><ul><li><span class="uid"><a class="external text" href="https://id.ndl.go.jp/auth/ndlna/00576387" rel="nofollow">Japan</a></span></li><li><span class="uid"><span class="rt-commentedText tooltip tooltip-dotted" title="teorie katastrof"><a class="external text" href="https://aleph.nkp.cz/F/?func=find-c&amp;local_base=aut&amp;ccl_term=ica=ph195834&amp;CON_LNG=ENG" rel="nofollow">Czech Republic</a></span></span></li></ul></div></td></tr></tbody></table></div>
+<!-- 
+NewPP limit report
+Parsed by mw‐api‐int.eqiad.main‐bc8d67974‐6vnwl
+Cached time: 20250402071545
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.784 seconds
+Real time usage: 1.016 seconds
+Preprocessor visited node count: 4869/1000000
+Post‐expand include size: 54242/2097152 bytes
+Template argument size: 3227/2097152 bytes
+Highest expansion depth: 14/100
+Expensive parser function count: 8/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 81346/5000000 bytes
+Lua time usage: 0.509/10.000 seconds
+Lua memory usage: 18991197/52428800 bytes
+Number of Wikibase entities loaded: 1/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  842.922      1 -total
+ 25.31%  213.381     10 Template:Annotated_link
+ 23.50%  198.114      1 Template:Reflist
+ 12.33%  103.910      1 Template:Authority_control
+ 10.77%   90.822      1 Template:Short_description
+ 10.77%   90.815      2 Template:Cite_encyclopedia
+  7.34%   61.894      2 Template:Citation_needed
+  6.68%   56.274      2 Template:Pagetype
+  6.25%   52.662      7 Template:ISBN
+  6.12%   51.597      2 Template:Fix
+-->
+<!-- Saved in parser cache with key enwiki:pcache:434288:|#|:idhash:canonical and timestamp 20250402071545 and revision id 1283248107. Rendering was triggered because: api-parse
+ -->
+</meta></div>

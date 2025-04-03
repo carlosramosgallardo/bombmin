@@ -1,0 +1,779 @@
+<div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none">Mathematical connection between field theory and group theory</div>
+<figure typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Lattice_diagram_of_Q_adjoin_the_positive_square_roots_of_2_and_3,_its_subfields,_and_Galois_groups.svg"><img alt="Lattice of subgroups and subfields showing their corresponding Galois groups." class="mw-file-element" data-file-height="164" data-file-width="399" decoding="async" height="164" src="//upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Lattice_diagram_of_Q_adjoin_the_positive_square_roots_of_2_and_3%2C_its_subfields%2C_and_Galois_groups.svg/400px-Lattice_diagram_of_Q_adjoin_the_positive_square_roots_of_2_and_3%2C_its_subfields%2C_and_Galois_groups.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Lattice_diagram_of_Q_adjoin_the_positive_square_roots_of_2_and_3%2C_its_subfields%2C_and_Galois_groups.svg/600px-Lattice_diagram_of_Q_adjoin_the_positive_square_roots_of_2_and_3%2C_its_subfields%2C_and_Galois_groups.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Lattice_diagram_of_Q_adjoin_the_positive_square_roots_of_2_and_3%2C_its_subfields%2C_and_Galois_groups.svg/800px-Lattice_diagram_of_Q_adjoin_the_positive_square_roots_of_2_and_3%2C_its_subfields%2C_and_Galois_groups.svg.png 2x" width="400"/></a><figcaption>On the left, the <a class="mw-redirect" href="/wiki/Lattice_(order_theory)" title="Lattice (order theory)">lattice</a> diagram of the field obtained from <span class="texhtml"><b>Q</b></span> by adjoining the positive square roots of 2 and 3, together with its subfields; on the right, the corresponding lattice diagram of their Galois groups.</figcaption></figure>
+<p>In <a href="/wiki/Mathematics" title="Mathematics">mathematics</a>, <b>Galois theory</b>, originally introduced by <a href="/wiki/%C3%89variste_Galois" title="Évariste Galois">Évariste Galois</a>, provides a connection between <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">field theory</a> and <a href="/wiki/Group_theory" title="Group theory">group theory</a>. This connection, the <a href="/wiki/Fundamental_theorem_of_Galois_theory" title="Fundamental theorem of Galois theory">fundamental theorem of Galois theory</a>, allows reducing certain problems in field theory to group theory, which makes them simpler and easier to understand.
+</p><p>Galois introduced the subject for studying <a class="mw-redirect" href="/wiki/Root_of_a_function" title="Root of a function">roots</a> of <a href="/wiki/Polynomial" title="Polynomial">polynomials</a>. This allowed him to characterize the <a class="mw-redirect" href="/wiki/Polynomial_equation" title="Polynomial equation">polynomial equations</a> that are <b>solvable by radicals</b> in terms of properties of the <a href="/wiki/Permutation_group" title="Permutation group">permutation group</a> of their roots—an equation is by definition <i>solvable by radicals</i> if its roots may be expressed by a formula involving only <a href="/wiki/Integer" title="Integer">integers</a>, <a href="/wiki/Nth_root" title="Nth root"><span class="texhtml mvar" style="font-style:italic;">n</span>th roots</a>, and the four basic <a class="mw-redirect" href="/wiki/Arithmetic_operations" title="Arithmetic operations">arithmetic operations</a>. This widely generalizes the <a href="/wiki/Abel%E2%80%93Ruffini_theorem" title="Abel–Ruffini theorem">Abel–Ruffini theorem</a>, which asserts that a general polynomial of degree at least five cannot be solved by radicals. 
+</p><p>Galois theory has been used to solve classic problems including showing that two problems of antiquity cannot be solved as they were stated (<a href="/wiki/Doubling_the_cube" title="Doubling the cube">doubling the cube</a> and <a class="mw-redirect" href="/wiki/Trisecting_the_angle" title="Trisecting the angle">trisecting the angle</a>), and characterizing the <a href="/wiki/Regular_polygon" title="Regular polygon">regular polygons</a> that are <a href="/wiki/Constructible_polygon" title="Constructible polygon">constructible</a> (this characterization was previously given by <a class="mw-redirect" href="/wiki/Gauss" title="Gauss">Gauss</a> but without the proof that the list of constructible polygons was complete; all known proofs that this characterization is complete require Galois theory).
+</p><p>Galois' work was published by <a href="/wiki/Joseph_Liouville" title="Joseph Liouville">Joseph Liouville</a> fourteen years after his death. The theory took longer to become popular among mathematicians and to be well understood.
+</p><p>Galois theory has been generalized to <a href="/wiki/Galois_connection" title="Galois connection">Galois connections</a> and <a href="/wiki/Grothendieck%27s_Galois_theory" title="Grothendieck's Galois theory">Grothendieck's Galois theory</a>.
+</p>
+<meta property="mw:PageProp/toc">
+<div class="mw-heading mw-heading2"><h2 id="Application_to_classical_problems">Application to classical problems</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=1" title="Edit section: Application to classical problems"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The birth and development of Galois theory was caused by the following question, which was one of the main open mathematical questions until the beginning of 19th century:
+</p>
+<style data-mw-deduplicate="TemplateStyles:r1244412712">.mw-parser-output .templatequote{overflow:hidden;margin:1em 0;padding:0 32px}.mw-parser-output .templatequotecite{line-height:1.5em;text-align:left;margin-top:0}@media(min-width:500px){.mw-parser-output .templatequotecite{padding-left:1.6em}}</style><blockquote class="templatequote"><p>Does there exist a formula for the roots of a fifth (or higher) degree polynomial equation in terms of the coefficients of the polynomial, using only the usual algebraic operations (addition, subtraction, multiplication, division) and application of radicals (square roots, cube roots, etc)?</p></blockquote>
+<p>The <a href="/wiki/Abel%E2%80%93Ruffini_theorem" title="Abel–Ruffini theorem">Abel–Ruffini theorem</a> provides a counterexample proving that there are polynomial equations for which such a formula cannot exist. Galois' theory provides a much more complete answer to this question, by explaining why it <i>is</i> possible to solve some equations, including all those of degree four or lower, in the above manner, and why it is not possible for most equations of degree five or higher. Furthermore, it provides a means of determining whether a particular equation can be solved that is both conceptually clear and easily expressed as an <a href="/wiki/Algorithm" title="Algorithm">algorithm</a>.
+</p><p>Galois' theory also gives a clear insight into questions concerning problems in <a class="mw-redirect" href="/wiki/Compass_and_straightedge" title="Compass and straightedge">compass and straightedge</a> construction. It gives an elegant characterization of the ratios of lengths that can be constructed with this method. Using this, it becomes relatively easy to answer such classical problems of <a href="/wiki/Geometry" title="Geometry">geometry</a> as
+</p>
+<ol><li>Which <a href="/wiki/Regular_polygon" title="Regular polygon">regular polygons</a> are <a href="/wiki/Constructible_polygon" title="Constructible polygon">constructible</a>?<sup class="reference" id="cite_ref-Stewart_1-0"><a href="#cite_note-Stewart-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup></li>
+<li>Why is it not possible to <a href="/wiki/Angle_trisection" title="Angle trisection">trisect every angle</a> using a <a class="mw-redirect" href="/wiki/Compass-and-straightedge_construction" title="Compass-and-straightedge construction">compass and a straightedge</a>?<sup class="reference" id="cite_ref-Stewart_1-1"><a href="#cite_note-Stewart-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup></li>
+<li>Why is <a href="/wiki/Doubling_the_cube" title="Doubling the cube">doubling the cube</a> not possible with the same method?</li></ol>
+<div class="mw-heading mw-heading2"><h2 id="History">History</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=2" title="Edit section: History"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1236090951">.mw-parser-output .hatnote{font-style:italic}.mw-parser-output div.hatnote{padding-left:1.6em;margin-bottom:0.5em}.mw-parser-output .hatnote i{font-style:normal}.mw-parser-output .hatnote+link+.hatnote{margin-top:-0.5em}@media print{body.ns-0 .mw-parser-output .hatnote{display:none!important}}</style><div class="hatnote navigation-not-searchable" role="note">See also: <a href="/wiki/Abstract_algebra#Early_group_theory" title="Abstract algebra">Abstract algebra § Early group theory</a></div>
+<div class="mw-heading mw-heading3"><h3 id="Pre-history">Pre-history</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=3" title="Edit section: Pre-history"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Galois' theory originated in the study of <a class="mw-redirect" href="/wiki/Symmetric_functions" title="Symmetric functions">symmetric functions</a> – the coefficients of a <a href="/wiki/Monic_polynomial" title="Monic polynomial">monic polynomial</a> are (<a href="/wiki/Up_to" title="Up to">up to</a> sign) the <a href="/wiki/Elementary_symmetric_polynomial" title="Elementary symmetric polynomial">elementary symmetric polynomials</a> in the roots. For instance, <span class="texhtml">(<i>x</i> – <i>a</i>)(<i>x</i> – <i>b</i>) = <i>x</i><sup>2</sup> – (<i>a</i> + <i>b</i>)<i>x</i> + <i>ab</i></span>, where 1, <span class="texhtml"><i>a</i> + <i>b</i></span> and <span class="texhtml"><i>ab</i></span> are the elementary polynomials of degree 0, 1 and 2 in two variables.
+</p><p>This was first formalized by the 16th-century French mathematician <a href="/wiki/Fran%C3%A7ois_Vi%C3%A8te" title="François Viète">François Viète</a>, in <a class="mw-redirect" href="/wiki/Vi%C3%A8te%27s_formulas" title="Viète's formulas">Viète's formulas</a>, for the case of positive real roots. In the opinion of the 18th-century British mathematician <a href="/wiki/Charles_Hutton" title="Charles Hutton">Charles Hutton</a>,<sup class="reference" id="cite_ref-2"><a href="#cite_note-2"><span class="cite-bracket">[</span>2<span class="cite-bracket">]</span></a></sup> the expression of coefficients of a polynomial in terms of the roots (not only for positive roots) was first understood by the 17th-century French mathematician <a href="/wiki/Albert_Girard" title="Albert Girard">Albert Girard</a>; Hutton writes:
+</p>
+<blockquote><p>...[Girard was] the first person who understood the general doctrine of the formation of the coefficients of the powers from the sum of the roots and their products. He was the first who discovered the rules for summing the powers of the roots of any equation.</p></blockquote>
+<p>In this vein, the <a href="/wiki/Discriminant" title="Discriminant">discriminant</a> is a symmetric function in the roots that reflects properties of the roots – it is zero if and only if the polynomial has a multiple root, and for quadratic and cubic polynomials it is positive if and only if all roots are real and distinct, and negative if and only if there is a pair of distinct complex conjugate roots. See <a href="/wiki/Discriminant#Nature_of_the_roots" title="Discriminant">Discriminant:Nature of the roots</a> for details.
+</p><p>The cubic was first partly solved by the 15–16th-century Italian mathematician <a href="/wiki/Scipione_del_Ferro" title="Scipione del Ferro">Scipione del Ferro</a>, who did not however publish his results; this method, though, only solved one type of cubic equation. This solution was then rediscovered independently in 1535 by <a class="mw-redirect" href="/wiki/Niccol%C3%B2_Fontana_Tartaglia" title="Niccolò Fontana Tartaglia">Niccolò Fontana Tartaglia</a>, who shared it with <a href="/wiki/Gerolamo_Cardano" title="Gerolamo Cardano">Gerolamo Cardano</a>, asking him to not publish it. Cardano then extended this to numerous other cases, using similar arguments; see more details at <a href="/wiki/Cubic_equation#Cardano's_method" title="Cubic equation">Cardano's method</a>. After the discovery of del Ferro's work, he felt that Tartaglia's method was no longer secret, and thus he published his solution in his 1545 <i><a class="mw-redirect" href="/wiki/Ars_Magna_(Gerolamo_Cardano)" title="Ars Magna (Gerolamo Cardano)">Ars Magna</a>.</i><sup class="reference" id="cite_ref-3"><a href="#cite_note-3"><span class="cite-bracket">[</span>3<span class="cite-bracket">]</span></a></sup> His student <a href="/wiki/Lodovico_Ferrari" title="Lodovico Ferrari">Lodovico Ferrari</a> solved the quartic polynomial; his solution was also included in <i>Ars Magna.</i> In this book, however, Cardano did not provide a "general formula" for the solution of a cubic equation, as he had neither <a class="mw-redirect" href="/wiki/Complex_numbers" title="Complex numbers">complex numbers</a> at his disposal, nor the algebraic notation to be able to describe a general cubic equation. With the benefit of modern notation and complex numbers, the formulae in this book do work in the general case, but Cardano did not know this.  It was <a href="/wiki/Rafael_Bombelli" title="Rafael Bombelli">Rafael Bombelli</a> who managed to understand how to work with complex numbers in order to solve all forms of cubic equation.
+</p><p>A further step was the 1770 paper <i>Réflexions sur la résolution algébrique des équations</i> by the French-Italian mathematician <a class="mw-redirect" href="/wiki/Joseph_Louis_Lagrange" title="Joseph Louis Lagrange">Joseph Louis Lagrange</a>, in his method of <a class="mw-redirect" href="/wiki/Lagrange_resolvents" title="Lagrange resolvents">Lagrange resolvents</a>, where he analyzed Cardano's and Ferrari's solution of cubics and quartics by considering them in terms of <i>permutations</i> of the roots, which yielded an auxiliary polynomial of lower degree, providing a unified understanding of the solutions and laying the groundwork for group theory and Galois' theory. Crucially, however, he did not consider <i>composition</i> of permutations. Lagrange's method did not extend to quintic equations or higher, because the resolvent had higher degree.
+</p><p>The quintic was almost proven to have no general solutions by radicals by <a class="mw-redirect" href="/wiki/Paolo_Ruffini_(mathematician)" title="Paolo Ruffini (mathematician)">Paolo Ruffini</a> in 1799, whose key insight was to use <a href="/wiki/Permutation_group" title="Permutation group">permutation <i>groups</i></a>, not just a single permutation. His solution contained a gap, which Cauchy considered minor, though this was not patched until the work of the Norwegian mathematician <a href="/wiki/Niels_Henrik_Abel" title="Niels Henrik Abel">Niels Henrik Abel</a>, who published a proof in 1824, thus establishing the <a href="/wiki/Abel%E2%80%93Ruffini_theorem" title="Abel–Ruffini theorem">Abel–Ruffini theorem</a>.
+</p><p>While Ruffini and Abel established that the <i>general</i> quintic could not be solved, some <i>particular</i> quintics can be solved, such as <span class="texhtml"><i>x</i><sup>5</sup> - 1 = 0</span>, and the precise criterion by which a <i>given</i> quintic or higher polynomial could be determined to be solvable or not was given by <a href="/wiki/%C3%89variste_Galois" title="Évariste Galois">Évariste Galois</a>, who showed that whether a polynomial was solvable or not was equivalent to whether or not the permutation group of its roots – in modern terms, its <a href="/wiki/Galois_group" title="Galois group">Galois group</a> – had a certain structure – in modern terms, whether or not it was a <a href="/wiki/Solvable_group" title="Solvable group">solvable group</a>. This group was always solvable for polynomials of degree four or less, but not always so for polynomials of degree five and greater, which explains why there is no general solution in higher degrees.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (January 2025)">citation needed</span></a></i>]</sup>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Galois'_writings"><span id="Galois.27_writings"></span>Galois' writings</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=4" title="Edit section: Galois' writings"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-default-size" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Evariste_Galois.jpg"><img alt="Évariste Galois" class="mw-file-element" data-file-height="737" data-file-width="534" decoding="async" height="304" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Evariste_Galois.jpg/220px-Evariste_Galois.jpg" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Evariste_Galois.jpg/330px-Evariste_Galois.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Evariste_Galois.jpg/440px-Evariste_Galois.jpg 2x" width="220"/></a><figcaption>A portrait of Évariste Galois aged about 15</figcaption></figure>
+<p>In 1830 Galois (at the age of 18) submitted to the <a class="mw-redirect" href="/wiki/Paris_Academy_of_Sciences" title="Paris Academy of Sciences">Paris Academy of Sciences</a> a memoir on his theory of solvability by radicals; Galois' paper was ultimately rejected in 1831 as being too sketchy and for giving a condition in terms of the roots of the equation instead of its coefficients. Galois then died in a duel in 1832, and his paper, "<i>Mémoire sur les conditions de résolubilité des équations par radicaux</i>", remained unpublished until 1846 when it was published by <a href="/wiki/Joseph_Liouville" title="Joseph Liouville">Joseph Liouville</a> accompanied by some of his own explanations.<sup class="reference" id="cite_ref-Tignol2001_4-0"><a href="#cite_note-Tignol2001-4"><span class="cite-bracket">[</span>4<span class="cite-bracket">]</span></a></sup> Prior to this publication, Liouville announced Galois' result to the Academy in a speech he gave on 4 July 1843.<sup class="reference" id="cite_ref-5"><a href="#cite_note-5"><span class="cite-bracket">[</span>5<span class="cite-bracket">]</span></a></sup> According to Allan Clark, Galois's characterization "dramatically supersedes the work of Abel and Ruffini."<sup class="reference" id="cite_ref-Clark1984_6-0"><a href="#cite_note-Clark1984-6"><span class="cite-bracket">[</span>6<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Aftermath">Aftermath</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=5" title="Edit section: Aftermath"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Galois' theory was notoriously difficult for his contemporaries to understand, especially to the level where they could expand on it. For example, in his 1846 commentary, Liouville completely missed the group-theoretic core of Galois' method.<sup class="reference" id="cite_ref-Wussing2007_7-0"><a href="#cite_note-Wussing2007-7"><span class="cite-bracket">[</span>7<span class="cite-bracket">]</span></a></sup> <a class="mw-redirect" href="/wiki/Joseph_Alfred_Serret" title="Joseph Alfred Serret">Joseph Alfred Serret</a> who attended some of Liouville's talks, included Galois' theory in his 1866 (third edition) of his textbook <i>Cours d'algèbre supérieure</i>. Serret's pupil, <a href="/wiki/Camille_Jordan" title="Camille Jordan">Camille Jordan</a>, had an even better understanding reflected in his 1870 book <i>Traité des substitutions et des équations algébriques</i>. Outside France, Galois' theory remained more obscure for a longer period. In Britain, <a href="/wiki/Arthur_Cayley" title="Arthur Cayley">Cayley</a> failed to grasp its depth and popular British algebra textbooks did not even mention Galois' theory until well after the turn of the century. In Germany, Kronecker's writings focused more on Abel's result. <a href="/wiki/Richard_Dedekind" title="Richard Dedekind">Dedekind</a> wrote little about Galois' theory, but lectured on it at Göttingen in 1858, showing a very good understanding.<sup class="reference" id="cite_ref-Scharlau1981_8-0"><a href="#cite_note-Scharlau1981-8"><span class="cite-bracket">[</span>8<span class="cite-bracket">]</span></a></sup> <a href="/wiki/Eugen_Netto" title="Eugen Netto">Eugen Netto</a>'s books of the 1880s, based on Jordan's <i>Traité</i>, made Galois theory accessible to a wider German and American audience as did <a href="/wiki/Heinrich_Martin_Weber" title="Heinrich Martin Weber">Heinrich Martin Weber</a>'s  1895 algebra textbook.<sup class="reference" id="cite_ref-GaloisNeumann2011_9-0"><a href="#cite_note-GaloisNeumann2011-9"><span class="cite-bracket">[</span>9<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Permutation_group_approach">Permutation group approach</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=6" title="Edit section: Permutation group approach"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1251242444">.mw-parser-output .ambox{border:1px solid #a2a9b1;border-left:10px solid #36c;background-color:#fbfbfb;box-sizing:border-box}.mw-parser-output .ambox+link+.ambox,.mw-parser-output .ambox+link+style+.ambox,.mw-parser-output .ambox+link+link+.ambox,.mw-parser-output .ambox+.mw-empty-elt+link+.ambox,.mw-parser-output .ambox+.mw-empty-elt+link+style+.ambox,.mw-parser-output .ambox+.mw-empty-elt+link+link+.ambox{margin-top:-1px}html body.mediawiki .mw-parser-output .ambox.mbox-small-left{margin:4px 1em 4px 0;overflow:hidden;width:238px;border-collapse:collapse;font-size:88%;line-height:1.25em}.mw-parser-output .ambox-speedy{border-left:10px solid #b32424;background-color:#fee7e6}.mw-parser-output .ambox-delete{border-left:10px solid #b32424}.mw-parser-output .ambox-content{border-left:10px solid #f28500}.mw-parser-output .ambox-style{border-left:10px solid #fc3}.mw-parser-output .ambox-move{border-left:10px solid #9932cc}.mw-parser-output .ambox-protection{border-left:10px solid #a2a9b1}.mw-parser-output .ambox .mbox-text{border:none;padding:0.25em 0.5em;width:100%}.mw-parser-output .ambox .mbox-image{border:none;padding:2px 0 2px 0.5em;text-align:center}.mw-parser-output .ambox .mbox-imageright{border:none;padding:2px 0.5em 2px 0;text-align:center}.mw-parser-output .ambox .mbox-empty-cell{border:none;padding:0;width:1px}.mw-parser-output .ambox .mbox-image-div{width:52px}@media(min-width:720px){.mw-parser-output .ambox{margin:0 10%}}@media print{body.ns-0 .mw-parser-output .ambox{display:none!important}}</style><table class="box-Unreferenced_section plainlinks metadata ambox ambox-content ambox-Unreferenced" role="presentation"><tbody><tr><td class="mbox-image"><div class="mbox-image-div"><span typeof="mw:File"><a class="mw-file-description" href="/wiki/File:Question_book-new.svg"><img alt="" class="mw-file-element" data-file-height="399" data-file-width="512" decoding="async" height="39" src="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/50px-Question_book-new.svg.png" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/75px-Question_book-new.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/100px-Question_book-new.svg.png 2x" width="50"/></a></span></div></td><td class="mbox-text"><div class="mbox-text-span">This section <b>does not <a href="/wiki/Wikipedia:Citing_sources" title="Wikipedia:Citing sources">cite</a> any <a href="/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">sources</a></b>.<span class="hide-when-compact"> Please help <a href="/wiki/Special:EditPage/Galois_theory" title="Special:EditPage/Galois theory">improve this section</a> by <a href="/wiki/Help:Referencing_for_beginners" title="Help:Referencing for beginners">adding citations to reliable sources</a>. Unsourced material may be challenged and <a href="/wiki/Wikipedia:Verifiability#Burden_of_evidence" title="Wikipedia:Verifiability">removed</a>.</span> <span class="date-container"><i>(<span class="date">June 2023</span>)</i></span><span class="hide-when-compact"><i> (<small><a href="/wiki/Help:Maintenance_template_removal" title="Help:Maintenance template removal">Learn how and when to remove this message</a></small>)</i></span></div></td></tr></tbody></table>
+<p>Given a polynomial, it may be that some of the roots are connected by various <a href="/wiki/Algebraic_equation" title="Algebraic equation">algebraic equations</a>. For example, it may be that for two of the roots, say <span class="texhtml"><i>A</i></span> and <span class="texhtml"><i>B</i></span>, that <span class="texhtml"><i>A</i><sup>2</sup> + 5<i>B</i><sup>3</sup> = 7</span>. The central idea of Galois' theory is to consider <a href="/wiki/Permutation" title="Permutation">permutations</a> (or rearrangements) of the roots such that <i>any</i> algebraic equation satisfied by the roots is <i>still satisfied</i> after the roots have been permuted. Originally, the theory had been developed for algebraic equations whose coefficients are <a href="/wiki/Rational_number" title="Rational number">rational numbers</a>. It extends naturally to equations with coefficients in any <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">field</a>, but this will not be considered in the simple examples below.<sup class="reference" id="cite_ref-10"><a href="#cite_note-10"><span class="cite-bracket">[</span>10<span class="cite-bracket">]</span></a></sup>
+</p><p>These permutations together form a <a href="/wiki/Permutation_group" title="Permutation group">permutation group</a>, also called the <a href="/wiki/Galois_group" title="Galois group">Galois group</a> of the polynomial, which is explicitly described in the following examples.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Quadratic_equation">Quadratic equation</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=7" title="Edit section: Quadratic equation"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Consider the <a href="/wiki/Quadratic_equation" title="Quadratic equation">quadratic equation</a>
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle x^{2}-4x+1=0.}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<mn>4</mn>
+<mi>x</mi>
+<mo>+</mo>
+<mn>1</mn>
+<mo>=</mo>
+<mn>0.</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle x^{2}-4x+1=0.}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle x^{2}-4x+1=0.}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/342145147f24c6b581f0a8c28a363d786c97db1c" style="vertical-align: -0.505ex; width:16.627ex; height:2.843ex;"/></span></dd></dl>
+<p>By using the <a href="/wiki/Quadratic_equation#Quadratic_formula_and_its_derivation" title="Quadratic equation">quadratic formula</a>, we find that the two roots are
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{aligned}A&amp;=2+{\sqrt {3}},\\B&amp;=2-{\sqrt {3}}.\end{aligned}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnalign="right left right left right left right left right left right left" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true" rowspacing="3pt">
+<mtr>
+<mtd>
+<mi>A</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mn>2</mn>
+<mo>+</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>3</mn>
+</msqrt>
+</mrow>
+<mo>,</mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>B</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mn>2</mn>
+<mo>−<!-- − --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>3</mn>
+</msqrt>
+</mrow>
+<mo>.</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}A&amp;=2+{\sqrt {3}},\\B&amp;=2-{\sqrt {3}}.\end{aligned}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{aligned}A&amp;=2+{\sqrt {3}},\\B&amp;=2-{\sqrt {3}}.\end{aligned}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/993c5d948a344fb610802744e0262b1c1b579b39" style="vertical-align: -2.505ex; width:13.362ex; height:6.176ex;"/></span></dd></dl>
+<p>Examples of algebraic equations satisfied by <span class="texhtml"><i>A</i></span> and <span class="texhtml"><i>B</i></span> include
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle A+B=4,}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>A</mi>
+<mo>+</mo>
+<mi>B</mi>
+<mo>=</mo>
+<mn>4</mn>
+<mo>,</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle A+B=4,}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle A+B=4,}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/69d52609915959af00b9e3f74e98f71d78dc5e99" style="vertical-align: -0.671ex; width:11.255ex; height:2.509ex;"/></span></dd></dl>
+<p>and
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle AB=1.}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>A</mi>
+<mi>B</mi>
+<mo>=</mo>
+<mn>1.</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle AB=1.}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle AB=1.}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d81de0a8b2d5a0a72b4901e24b55d375eae3568b" style="vertical-align: -0.338ex; width:8.415ex; height:2.176ex;"/></span></dd></dl>
+<p>If we exchange <span class="texhtml"><i>A</i></span> and <span class="texhtml"><i>B</i></span> in either of the last two equations we obtain another true statement. For example, the equation <span class="texhtml"><i>A</i> + <i>B</i> = 4</span> becomes <span class="texhtml"><i>B</i> + <i>A</i> = 4</span>. It is more generally true that this holds for <i>every</i> possible <a href="/wiki/Algebraic_equation" title="Algebraic equation">algebraic relation</a> between <span class="texhtml"><i>A</i></span> and <span class="texhtml"><i>B</i></span> such that all <a class="mw-redirect" href="/wiki/Coefficients" title="Coefficients">coefficients</a> are <a href="/wiki/Rational_number" title="Rational number">rational</a>; that is, in any such relation, swapping <span class="texhtml"><i>A</i></span> and <span class="texhtml"><i>B</i></span> yields another true relation. This results from the theory of <a href="/wiki/Symmetric_polynomial" title="Symmetric polynomial">symmetric polynomials</a>, which, in this case, may be replaced by formula manipulations involving the <a href="/wiki/Binomial_theorem" title="Binomial theorem">binomial theorem</a>.
+</p><p>One might object that <span class="texhtml"><i>A</i></span> and <span class="texhtml"><i>B</i></span> are related by the algebraic equation <span class="texhtml"><i>A</i> − <i>B</i> − 2<span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">3</span></span> = 0</span>, which does not remain true when <span class="texhtml"><i>A</i></span> and <span class="texhtml"><i>B</i></span> are exchanged. However, this relation is not considered here, because it has the coefficient <span class="texhtml">−2<span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">3</span></span></span> which is <a class="mw-redirect" href="/wiki/Quadratic_irrational#Square_root_of_non-square_is_irrational" title="Quadratic irrational">not rational</a>.
+</p><p>We conclude that the Galois group of the polynomial <span class="texhtml"><i>x</i><sup>2</sup> − 4<i>x</i> + 1</span> consists of two permutations: the <a href="/wiki/Permutation#Circular_permutations" title="Permutation">identity</a> permutation which leaves <span class="texhtml"><i>A</i></span> and <span class="texhtml"><i>B</i></span> untouched, and the <a class="mw-redirect" href="/wiki/Transposition_(mathematics)" title="Transposition (mathematics)">transposition</a> permutation which exchanges <span class="texhtml"><i>A</i></span> and <span class="texhtml"><i>B</i></span>. As all groups with two elements are <a href="/wiki/Group_isomorphism" title="Group isomorphism">isomorphic</a>, this Galois group is isomorphic to the <a href="/wiki/Multiplicative_group" title="Multiplicative group">multiplicative group</a> <span class="texhtml">{1, −1}</span>.
+</p><p>A similar discussion applies to any quadratic polynomial <span class="texhtml"><i>ax</i><sup>2</sup> + <i>bx</i> + <i>c</i></span>, where <span class="texhtml"><i>a</i></span>, <span class="texhtml"><i>b</i></span> and <span class="texhtml"><i>c</i></span> are rational numbers.
+</p>
+<ul><li>If the polynomial has rational roots, for example <span class="texhtml"><i>x</i><sup>2</sup> − 4<i>x</i> + 4 = (<i>x</i> − 2)<sup>2</sup></span>, or <span class="texhtml"><i>x</i><sup>2</sup> − 3<i>x</i> + 2 = (<i>x</i> − 2)(<i>x</i> − 1)</span>, then the Galois group is trivial; that is, it contains only the identity permutation. In this example, if <span class="texhtml"><i>A</i> = 2</span> and <span class="texhtml"><i>B</i> = 1</span> then <span class="texhtml"><i>A</i> − <i>B</i> = 1</span> is no longer true when <span class="texhtml"><i>A</i></span> and <span class="texhtml"><i>B</i></span> are swapped.</li>
+<li>If it has two <a href="/wiki/Irrational_number" title="Irrational number">irrational</a> roots, for example <span class="texhtml"><i>x</i><sup>2</sup> − 2</span>, then the Galois group contains two permutations, just as in the above example.</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Quartic_equation">Quartic equation</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=8" title="Edit section: Quartic equation"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Consider the polynomial
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle x^{4}-10x^{2}+1.}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>4</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<mn>10</mn>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<mn>1.</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle x^{4}-10x^{2}+1.}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle x^{4}-10x^{2}+1.}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/477f567f7761161afe2647c66a36561ea92a7a28" style="vertical-align: -0.505ex; width:14.583ex; height:2.843ex;"/></span></dd></dl>
+<p><a href="/wiki/Completing_the_square" title="Completing the square">Completing the square</a> in an unusual way, it can also be written as
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (x^{2}-1)^{2}-8x^{2}=(x^{2}-1-2x{\sqrt {2}})(x^{2}-1+2x{\sqrt {2}}).}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+<msup>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<mn>8</mn>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>=</mo>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+<mo>−<!-- − --></mo>
+<mn>2</mn>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>2</mn>
+</msqrt>
+</mrow>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+<mo>+</mo>
+<mn>2</mn>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>2</mn>
+</msqrt>
+</mrow>
+<mo stretchy="false">)</mo>
+<mo>.</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (x^{2}-1)^{2}-8x^{2}=(x^{2}-1-2x{\sqrt {2}})(x^{2}-1+2x{\sqrt {2}}).}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (x^{2}-1)^{2}-8x^{2}=(x^{2}-1-2x{\sqrt {2}})(x^{2}-1+2x{\sqrt {2}}).}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3ca813013f9b342b83b8c531e815310323081152" style="vertical-align: -0.838ex; width:52.636ex; height:3.176ex;"/></span></dd></dl>
+<p>By applying the <a href="/wiki/Quadratic_formula" title="Quadratic formula">quadratic formula</a> to each factor, one sees that the four roots are  
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{aligned}A&amp;={\sqrt {2}}+{\sqrt {3}},\\B&amp;={\sqrt {2}}-{\sqrt {3}},\\C&amp;=-{\sqrt {2}}+{\sqrt {3}},\\D&amp;=-{\sqrt {2}}-{\sqrt {3}}.\end{aligned}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnalign="right left right left right left right left right left right left" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true" rowspacing="3pt">
+<mtr>
+<mtd>
+<mi>A</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>2</mn>
+</msqrt>
+</mrow>
+<mo>+</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>3</mn>
+</msqrt>
+</mrow>
+<mo>,</mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>B</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>2</mn>
+</msqrt>
+</mrow>
+<mo>−<!-- − --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>3</mn>
+</msqrt>
+</mrow>
+<mo>,</mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>C</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mo>−<!-- − --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>2</mn>
+</msqrt>
+</mrow>
+<mo>+</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>3</mn>
+</msqrt>
+</mrow>
+<mo>,</mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>D</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mo>−<!-- − --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>2</mn>
+</msqrt>
+</mrow>
+<mo>−<!-- − --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>3</mn>
+</msqrt>
+</mrow>
+<mo>.</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}A&amp;={\sqrt {2}}+{\sqrt {3}},\\B&amp;={\sqrt {2}}-{\sqrt {3}},\\C&amp;=-{\sqrt {2}}+{\sqrt {3}},\\D&amp;=-{\sqrt {2}}-{\sqrt {3}}.\end{aligned}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{aligned}A&amp;={\sqrt {2}}+{\sqrt {3}},\\B&amp;={\sqrt {2}}-{\sqrt {3}},\\C&amp;=-{\sqrt {2}}+{\sqrt {3}},\\D&amp;=-{\sqrt {2}}-{\sqrt {3}}.\end{aligned}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2fbfb9c5da1b413b121b3cd7e26b5a7a16b74b5a" style="vertical-align: -5.671ex; width:17.266ex; height:12.509ex;"/></span></dd></dl>
+<p>Among the 24 possible <a href="/wiki/Permutation" title="Permutation">permutations</a> of these four roots, four are particularly simple, those consisting in the sign change  of 0, 1, or 2 square roots. They form a group that is isomorphic to the <a href="/wiki/Klein_four-group" title="Klein four-group">Klein four-group</a>. 
+</p><p>Galois theory implies that, since the polynomial is irreducible, the Galois group has at least four elements. For proving that the Galois group consists of these four permutations, it suffices thus to show that every element of the Galois group is determined by the image of <span class="texhtml mvar" style="font-style:italic;">A</span>, which can be shown as follows.
+</p><p>The members of the Galois group must preserve any algebraic equation with rational coefficients involving <span class="texhtml"><i>A</i></span>, <span class="texhtml"><i>B</i></span>, <span class="texhtml"><i>C</i></span> and <span class="texhtml"><i>D</i></span>.
+</p><p>Among these equations, we have:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{aligned}AB&amp;=-1\\AC&amp;=1\\A+D&amp;=0\end{aligned}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnalign="right left right left right left right left right left right left" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true" rowspacing="3pt">
+<mtr>
+<mtd>
+<mi>A</mi>
+<mi>B</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>A</mi>
+<mi>C</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mn>1</mn>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>A</mi>
+<mo>+</mo>
+<mi>D</mi>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mn>0</mn>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}AB&amp;=-1\\AC&amp;=1\\A+D&amp;=0\end{aligned}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{aligned}AB&amp;=-1\\AC&amp;=1\\A+D&amp;=0\end{aligned}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fbb2bb61510c203458cf62c7ec10ac2b493daa32" style="vertical-align: -3.838ex; width:13.328ex; height:8.843ex;"/></span></dd></dl>
+<p>It follows that, if <span class="texhtml"><i>φ</i></span> is a permutation that belongs to the Galois group, we must have:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{aligned}\varphi (B)&amp;={\frac {-1}{\varphi (A)}},\\\varphi (C)&amp;={\frac {1}{\varphi (A)}},\\\varphi (D)&amp;=-\varphi (A).\end{aligned}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnalign="right left right left right left right left right left right left" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true" rowspacing="3pt">
+<mtr>
+<mtd>
+<mi>φ<!-- φ --></mi>
+<mo stretchy="false">(</mo>
+<mi>B</mi>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+<mrow>
+<mi>φ<!-- φ --></mi>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+</mfrac>
+</mrow>
+<mo>,</mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>φ<!-- φ --></mi>
+<mo stretchy="false">(</mo>
+<mi>C</mi>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mn>1</mn>
+<mrow>
+<mi>φ<!-- φ --></mi>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+</mfrac>
+</mrow>
+<mo>,</mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>φ<!-- φ --></mi>
+<mo stretchy="false">(</mo>
+<mi>D</mi>
+<mo stretchy="false">)</mo>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mo>−<!-- − --></mo>
+<mi>φ<!-- φ --></mi>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+<mo>.</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}\varphi (B)&amp;={\frac {-1}{\varphi (A)}},\\\varphi (C)&amp;={\frac {1}{\varphi (A)}},\\\varphi (D)&amp;=-\varphi (A).\end{aligned}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{aligned}\varphi (B)&amp;={\frac {-1}{\varphi (A)}},\\\varphi (C)&amp;={\frac {1}{\varphi (A)}},\\\varphi (D)&amp;=-\varphi (A).\end{aligned}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7f1869ccef67ed19dcf2cc73280f8a133d7e1fc7" style="vertical-align: -7.005ex; width:16.631ex; height:15.176ex;"/></span></dd></dl>
+<p>This implies that the permutation is well defined by the image of <span class="texhtml"><i>A</i></span>, and that the Galois group has 4 elements, which are:
+</p>
+<dl><dd><span class="texhtml">(<i>A</i>, <i>B</i>, <i>C</i>, <i>D</i>) → (<i>A</i>, <i>B</i>, <i>C</i>, <i>D</i>)</span><span class="nowrap">     </span>(identity)</dd>
+<dd><span class="texhtml">(<i>A</i>, <i>B</i>, <i>C</i>, <i>D</i>) → (<i>B</i>, <i>A</i>, <i>D</i>, <i>C</i>)</span><span class="nowrap">     </span>(change of sign of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\sqrt {3}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>3</mn>
+</msqrt>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\sqrt {3}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\sqrt {3}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3b19c09494138b5082459afac7f9a8d99c546fcd" style="vertical-align: -0.671ex; width:3.098ex; height:2.843ex;"/></span>)</dd>
+<dd><span class="texhtml">(<i>A</i>, <i>B</i>, <i>C</i>, <i>D</i>) → (<i>C</i>, <i>D</i>, <i>A</i>, <i>B</i>)</span><span class="nowrap">     </span>(change of sign of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\sqrt {2}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<msqrt>
+<mn>2</mn>
+</msqrt>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\sqrt {2}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\sqrt {2}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b4afc1e27d418021bf10898eb44a7f5f315735ff" style="vertical-align: -0.671ex; width:3.098ex; height:3.009ex;"/></span>)</dd>
+<dd><span class="texhtml">(<i>A</i>, <i>B</i>, <i>C</i>, <i>D</i>) → (<i>D</i>, <i>C</i>, <i>B</i>, <i>A</i>)</span><span class="nowrap">     </span>(change of sign of both square roots)</dd></dl>
+<p>This implies that the Galois group is isomorphic to the <a href="/wiki/Klein_four-group" title="Klein four-group">Klein four-group</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Modern_approach_by_field_theory">Modern approach by field theory</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=9" title="Edit section: Modern approach by field theory"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1251242444" rel="mw-deduplicated-inline-style"><table class="box-Unreferenced_section plainlinks metadata ambox ambox-content ambox-Unreferenced" role="presentation"><tbody><tr><td class="mbox-image"><div class="mbox-image-div"><span typeof="mw:File"><a class="mw-file-description" href="/wiki/File:Question_book-new.svg"><img alt="" class="mw-file-element" data-file-height="399" data-file-width="512" decoding="async" height="39" src="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/50px-Question_book-new.svg.png" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/75px-Question_book-new.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/99/Question_book-new.svg/100px-Question_book-new.svg.png 2x" width="50"/></a></span></div></td><td class="mbox-text"><div class="mbox-text-span">This section <b>does not <a href="/wiki/Wikipedia:Citing_sources" title="Wikipedia:Citing sources">cite</a> any <a href="/wiki/Wikipedia:Verifiability" title="Wikipedia:Verifiability">sources</a></b>.<span class="hide-when-compact"> Please help <a href="/wiki/Special:EditPage/Galois_theory" title="Special:EditPage/Galois theory">improve this section</a> by <a href="/wiki/Help:Referencing_for_beginners" title="Help:Referencing for beginners">adding citations to reliable sources</a>. Unsourced material may be challenged and <a href="/wiki/Wikipedia:Verifiability#Burden_of_evidence" title="Wikipedia:Verifiability">removed</a>.</span> <span class="date-container"><i>(<span class="date">June 2023</span>)</i></span><span class="hide-when-compact"><i> (<small><a href="/wiki/Help:Maintenance_template_removal" title="Help:Maintenance template removal">Learn how and when to remove this message</a></small>)</i></span></div></td></tr></tbody></table>
+<p>In the modern approach, one starts with a <a href="/wiki/Field_extension" title="Field extension">field extension</a> <span class="texhtml"><i>L</i>/<i>K</i></span> (read "<span class="texhtml"><i>L</i></span> over <span class="texhtml"><i>K</i></span>"), and examines the group of <a href="/wiki/Automorphism" title="Automorphism">automorphisms</a> of <span class="texhtml"><i>L</i></span> that fix <span class="texhtml"><i>K</i></span>. See the article on <a href="/wiki/Galois_group" title="Galois group">Galois groups</a> for further explanation and examples.
+</p><p>The connection between the two approaches is as follows. The coefficients of the polynomial in question should be chosen from the base field <span class="texhtml"><i>K</i></span>. The top field <span class="texhtml"><i>L</i></span> should be the field obtained by adjoining the roots of the polynomial in question to the base field <span class="texhtml"><i>K</i></span>. Any permutation of the roots which respects algebraic equations as described above gives rise to an automorphism of <span class="texhtml"><i>L</i>/<i>K</i></span>, and vice versa.
+</p><p>In the first example above, we were studying the extension <span class="texhtml"><b>Q</b>(<span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">3</span></span>)/<b>Q</b></span>, where <span class="texhtml"><b>Q</b></span> is the field of <a href="/wiki/Rational_number" title="Rational number">rational numbers</a>, and <span class="texhtml"><b>Q</b>(<span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">3</span></span>)</span> is the field obtained from <span class="texhtml"><b>Q</b></span> by adjoining <span class="texhtml"><span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">3</span></span></span>. In the second example, we were studying the extension <span class="texhtml"><b>Q</b>(<i>A</i>,<i>B</i>,<i>C</i>,<i>D</i>)/<b>Q</b></span>.
+</p><p>There are several advantages to the modern approach over the permutation group approach.
+</p>
+<ul><li>It permits a far simpler statement of the <a href="/wiki/Fundamental_theorem_of_Galois_theory" title="Fundamental theorem of Galois theory">fundamental theorem of Galois theory</a>.</li>
+<li>The use of base fields other than <span class="texhtml"><b>Q</b></span> is crucial in many areas of mathematics. For example, in <a href="/wiki/Algebraic_number_theory" title="Algebraic number theory">algebraic number theory</a>, one often does Galois theory using <a class="mw-redirect" href="/wiki/Number_field" title="Number field">number fields</a>, <a href="/wiki/Finite_field" title="Finite field">finite fields</a> or <a href="/wiki/Local_field" title="Local field">local fields</a> as the base field.</li>
+<li>It allows one to more easily study infinite extensions. Again this is important in algebraic number theory, where for example one often discusses the <a href="/wiki/Absolute_Galois_group" title="Absolute Galois group">absolute Galois group</a> of <span class="texhtml"><b>Q</b></span>, defined to be the Galois group of <span class="texhtml"><i>K</i>/<b>Q</b></span> where <span class="texhtml"><i>K</i></span> is an <a href="/wiki/Algebraic_closure" title="Algebraic closure">algebraic closure</a> of <span class="texhtml"><b>Q</b></span>.</li>
+<li>It allows for consideration of <a class="mw-redirect" href="/wiki/Inseparable_extension" title="Inseparable extension">inseparable extensions</a>. This issue does not arise in the classical framework, since it was always implicitly assumed that arithmetic took place in <a href="/wiki/Characteristic_(algebra)" title="Characteristic (algebra)">characteristic</a> zero, but nonzero characteristic arises frequently in number theory and in <a href="/wiki/Algebraic_geometry" title="Algebraic geometry">algebraic geometry</a>.</li>
+<li>It removes the rather artificial reliance on chasing roots of polynomials. That is, different polynomials may yield the same extension fields, and the modern approach recognizes the connection between these polynomials.</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Solvable_groups_and_solution_by_radicals">Solvable groups and solution by radicals</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=10" title="Edit section: Solvable groups and solution by radicals"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The notion of a <a href="/wiki/Solvable_group" title="Solvable group">solvable group</a> in <a href="/wiki/Group_theory" title="Group theory">group theory</a> allows one to determine whether a polynomial is solvable in radicals, depending on whether its Galois group has the property of solvability. In essence, each field extension <span class="texhtml"><i>L</i>/<i>K</i></span> corresponds to a <a class="mw-redirect" href="/wiki/Factor_group" title="Factor group">factor group</a> in a <a href="/wiki/Composition_series" title="Composition series">composition series</a> of the Galois group. If a factor group in the composition series is <a href="/wiki/Cyclic_group" title="Cyclic group">cyclic</a> of order <span class="texhtml"><i>n</i></span>, and if in the corresponding field extension <span class="texhtml"><i>L</i>/<i>K</i></span> the field <span class="texhtml"><i>K</i></span> already  contains a <a href="/wiki/Root_of_unity" title="Root of unity">primitive <span class="texhtml"><i>n</i></span>th root of unity</a>, then it is a radical extension and the elements of <span class="texhtml"><i>L</i></span> can then be expressed using the <span class="texhtml"><i>n</i></span>th root of some element of <span class="texhtml"><i>K</i></span>.
+</p><p>If all the factor groups in its composition series are cyclic, the Galois group is called <i>solvable</i>, and all of the elements of the corresponding field can be found by repeatedly taking roots, products, and sums of elements from the base field (usually <span class="texhtml"><b>Q</b></span>).
+</p><p>One of the great triumphs of Galois Theory was the proof that for every <span class="texhtml"><i>n</i> &gt; 4</span>, there exist polynomials of degree <span class="texhtml"><i>n</i></span> which are not solvable by radicals (this was proven independently, using a similar method, by <a href="/wiki/Niels_Henrik_Abel" title="Niels Henrik Abel">Niels Henrik Abel</a> a few years before, and is the <a href="/wiki/Abel%E2%80%93Ruffini_theorem" title="Abel–Ruffini theorem">Abel–Ruffini theorem</a>), and a systematic way for testing whether a specific polynomial is solvable by radicals. The Abel–Ruffini theorem results from the fact that for <span class="texhtml"><i>n</i> &gt; 4</span> the <a href="/wiki/Symmetric_group" title="Symmetric group">symmetric group</a> <span class="texhtml"><i>S</i><sub><i>n</i></sub></span> contains a <a href="/wiki/Simple_group" title="Simple group">simple</a>, noncyclic, <a href="/wiki/Normal_subgroup" title="Normal subgroup">normal subgroup</a>, namely the <a href="/wiki/Alternating_group" title="Alternating group">alternating group</a> <span class="texhtml"><i>A</i><sub><i>n</i></sub></span>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="A_non-solvable_quintic_example"><span class="anchor" id="Abel-Ruffini_theorem"></span>A non-solvable quintic example</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=11" title="Edit section: A non-solvable quintic example"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-default-size mw-halign-right" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Non_solvable_quintic.svg"><img class="mw-file-element" data-file-height="512" data-file-width="512" decoding="async" height="220" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/10/Non_solvable_quintic.svg/220px-Non_solvable_quintic.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/10/Non_solvable_quintic.svg/330px-Non_solvable_quintic.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/10/Non_solvable_quintic.svg/440px-Non_solvable_quintic.svg.png 2x" width="220"/></a><figcaption>For the polynomial <span class="texhtml"><i>f</i>(<i>x</i>) = <i>x</i><sup>5</sup> − <i>x</i> − 1</span>, the lone real root <span class="texhtml"><i>x</i> = 1.1673...</span> is algebraic, but not expressible in terms of radicals. The other four roots are <a class="mw-redirect" href="/wiki/Complex_numbers" title="Complex numbers">complex numbers</a>.</figcaption></figure>
+<p><a href="/wiki/Bartel_Leendert_van_der_Waerden" title="Bartel Leendert van der Waerden">Van der Waerden</a><sup class="reference" id="cite_ref-11"><a href="#cite_note-11"><span class="cite-bracket">[</span>11<span class="cite-bracket">]</span></a></sup> cites the polynomial <span class="texhtml"><i>f</i>(<i>x</i>) = <i>x</i><sup>5</sup> − <i>x</i> − 1</span>.  
+</p><p>By the <a href="/wiki/Rational_root_theorem" title="Rational root theorem">rational root theorem</a>, this has no rational zeroes. 
+</p><p>Neither does it have linear factors modulo 2 or 3.
+</p><p>The Galois group of <span class="texhtml"><i>f</i>(<i>x</i>)</span> modulo 2 is cyclic of order 6, because <span class="texhtml"><i>f</i>(<i>x</i>)</span> modulo 2 factors into polynomials of orders 2 and 3, <span class="texhtml">(<i>x</i><sup>2</sup> + <i>x</i> + 1)(<i>x</i><sup>3</sup> + <i>x</i><sup>2</sup> + 1)</span>.
+</p><p><span class="texhtml"><i>f</i>(<i>x</i>)</span> modulo 3 has no linear or quadratic factor, and hence is irreducible.  Thus its modulo 3 Galois group contains an element of order 5.
+</p><p>It is known<sup class="reference" id="cite_ref-12"><a href="#cite_note-12"><span class="cite-bracket">[</span>12<span class="cite-bracket">]</span></a></sup> that a Galois group modulo a prime is isomorphic to a subgroup of the Galois group over the rationals.  A permutation group on 5 objects with elements of orders 6 and 5 must be the symmetric group <span class="texhtml"><i>S</i><sub>5</sub></span>, which is therefore the Galois group of <span class="texhtml"><i>f</i>(<i>x</i>)</span>. 
+</p><p>This is one of the simplest examples of a non-solvable quintic polynomial.  According to <a href="/wiki/Serge_Lang" title="Serge Lang">Serge Lang</a>, <a href="/wiki/Emil_Artin" title="Emil Artin">Emil Artin</a> was fond of this example.<sup class="reference" id="cite_ref-13"><a href="#cite_note-13"><span class="cite-bracket">[</span>13<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Inverse_Galois_problem">Inverse Galois problem</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=12" title="Edit section: Inverse Galois problem"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Inverse_Galois_problem" title="Inverse Galois problem">Inverse Galois problem</a></div>
+<p>The <i>inverse Galois problem</i> is to find a field extension with a given Galois group.
+</p><p>As long as one does not also specify the <a href="/wiki/Ground_field" title="Ground field">ground field</a>, the problem is not very difficult, and all finite groups do occur as Galois groups.
+For showing this, one may proceed as follows. Choose a field <span class="texhtml"><i>K</i></span> and a finite group <span class="texhtml"><i>G</i></span>.  <a href="/wiki/Cayley%27s_theorem" title="Cayley's theorem">Cayley's theorem</a> says that <span class="texhtml"><i>G</i></span> is (up to isomorphism) a subgroup of the <a href="/wiki/Symmetric_group" title="Symmetric group">symmetric group</a> <span class="texhtml"><i>S</i></span> on the elements of <span class="texhtml"><i>G</i></span>. Choose indeterminates <span class="texhtml">{<i>x</i><sub><i>α</i></sub>}</span>, one for each element <span class="texhtml"><i>α</i></span> of <span class="texhtml"><i>G</i></span>, and adjoin them to <span class="texhtml"><i>K</i></span> to get the field <span class="texhtml"><i>F</i> = <i>K</i>({<i>x</i><sub><i>α</i></sub>})</span>. Contained within <span class="texhtml"><i>F</i></span> is the field <span class="texhtml"><i>L</i></span> of symmetric <a href="/wiki/Rational_function" title="Rational function">rational functions</a> in the <span class="texhtml">{<i>x</i><sub><i>α</i></sub>}</span>.  The Galois group of <span class="texhtml"><i>F</i>/<i>L</i></span> is <span class="texhtml"><i>S</i></span>, by a basic result of Emil Artin.  <span class="texhtml"><i>G</i></span> acts on <span class="texhtml"><i>F</i></span> by restriction of action of <span class="texhtml"><i>S</i></span>. If the <a class="mw-redirect" href="/wiki/Fixed_field" title="Fixed field">fixed field</a> of this action is <span class="texhtml"><i>M</i></span>, then, by the <a href="/wiki/Fundamental_theorem_of_Galois_theory" title="Fundamental theorem of Galois theory">fundamental theorem of Galois theory</a>, the Galois group of <span class="texhtml"><i>F</i>/<i>M</i></span> is <span class="texhtml"><i>G</i></span>.
+</p><p>On the other hand, it is an open problem whether every finite group is the Galois group of a field extension of the field <span class="texhtml"><b>Q</b></span> of the rational numbers. <a href="/wiki/Igor_Shafarevich" title="Igor Shafarevich">Igor Shafarevich</a> proved that every solvable finite group is the Galois group of some extension of <span class="texhtml"><b>Q</b></span>. Various people have solved the inverse Galois problem for selected non-Abelian <a href="/wiki/Simple_group" title="Simple group">simple groups</a>. Existence of solutions has been shown for all but possibly one (<a href="/wiki/Mathieu_group" title="Mathieu group">Mathieu group</a> <span class="texhtml"><i>M</i><sub>23</sub></span>) of the 26 sporadic simple groups. There is even a polynomial with integral coefficients whose Galois group is the <a href="/wiki/Monster_group" title="Monster group">Monster group</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Inseparable_extensions">Inseparable extensions</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=13" title="Edit section: Inseparable extensions"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>In the form mentioned above, including in particular the <a href="/wiki/Fundamental_theorem_of_Galois_theory" title="Fundamental theorem of Galois theory">fundamental theorem of Galois theory</a>, the theory only considers Galois extensions, which are in particular separable. General field extensions can be split into a separable, followed by a <a class="mw-redirect" href="/wiki/Purely_inseparable_field_extension" title="Purely inseparable field extension">purely inseparable field extension</a>. For a purely inseparable extension <i>F</i> / <i>K</i>, there is a Galois theory where the Galois group is replaced by the <a href="/wiki/Vector_space" title="Vector space">vector space</a> of <a href="/wiki/Derivation_(differential_algebra)" title="Derivation (differential algebra)">derivations</a>, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle Der_{K}(F,F)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>D</mi>
+<mi>e</mi>
+<msub>
+<mi>r</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>K</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>F</mi>
+<mo>,</mo>
+<mi>F</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle Der_{K}(F,F)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle Der_{K}(F,F)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a8c2f0d356734dd17b68cde666fe8535e33943ac" style="vertical-align: -0.838ex; width:12.074ex; height:2.843ex;"/></span>, i.e., <i>K</i>-<a href="/wiki/Linear_map" title="Linear map">linear endomorphisms</a> of <i>F</i> satisfying the Leibniz rule. In this correspondence, an intermediate field <i>E</i> is assigned <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle Der_{E}(F,F)\subset Der_{K}(F,F)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>D</mi>
+<mi>e</mi>
+<msub>
+<mi>r</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>E</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>F</mi>
+<mo>,</mo>
+<mi>F</mi>
+<mo stretchy="false">)</mo>
+<mo>⊂<!-- ⊂ --></mo>
+<mi>D</mi>
+<mi>e</mi>
+<msub>
+<mi>r</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>K</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>F</mi>
+<mo>,</mo>
+<mi>F</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle Der_{E}(F,F)\subset Der_{K}(F,F)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle Der_{E}(F,F)\subset Der_{K}(F,F)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b13dd105af5bf64a1c76f6ee7194c5858bb500d2" style="vertical-align: -0.838ex; width:27.042ex; height:2.843ex;"/></span>. Conversely, a <a href="/wiki/Linear_subspace" title="Linear subspace">subspace</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle V\subset Der_{K}(F,F)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>V</mi>
+<mo>⊂<!-- ⊂ --></mo>
+<mi>D</mi>
+<mi>e</mi>
+<msub>
+<mi>r</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>K</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>F</mi>
+<mo>,</mo>
+<mi>F</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle V\subset Der_{K}(F,F)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle V\subset Der_{K}(F,F)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8a088a09a0f692f4b36bf3ae76dd7c2a6946ae09" style="vertical-align: -0.838ex; width:16.96ex; height:2.843ex;"/></span> satisfying appropriate further conditions is mapped to <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \{x\in F,f(x)=0\ \forall f\in V\}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo fence="false" stretchy="false">{</mo>
+<mi>x</mi>
+<mo>∈<!-- ∈ --></mo>
+<mi>F</mi>
+<mo>,</mo>
+<mi>f</mi>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mn>0</mn>
+<mtext> </mtext>
+<mi mathvariant="normal">∀<!-- ∀ --></mi>
+<mi>f</mi>
+<mo>∈<!-- ∈ --></mo>
+<mi>V</mi>
+<mo fence="false" stretchy="false">}</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \{x\in F,f(x)=0\ \forall f\in V\}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \{x\in F,f(x)=0\ \forall f\in V\}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/56862712631dba4afc2fa4921b26b67e1a6018e9" style="vertical-align: -0.838ex; width:25.728ex; height:2.843ex;"/></span>. Under the assumption <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle F^{p}\subset K}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>F</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msup>
+<mo>⊂<!-- ⊂ --></mo>
+<mi>K</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle F^{p}\subset K}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle F^{p}\subset K}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0ba38aea5214fb78d674113e771a64d429f86389" style="vertical-align: -0.338ex; width:8.038ex; height:2.343ex;"/></span>, <a href="#CITEREFJacobson1944">Jacobson (1944)</a> showed that this establishes a one-to-one correspondence. The condition imposed by Jacobson has been removed by <a href="#CITEREFBrantnerWaldron2020">Brantner &amp; Waldron (2020)</a>, by giving a correspondence using notions of <a href="/wiki/Derived_algebraic_geometry" title="Derived algebraic geometry">derived algebraic geometry</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=14" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="/wiki/Galois_group" title="Galois group">Galois group</a> for more examples</li>
+<li><a href="/wiki/Fundamental_theorem_of_Galois_theory" title="Fundamental theorem of Galois theory">Fundamental theorem of Galois theory</a></li>
+<li><a href="/wiki/Differential_Galois_theory" title="Differential Galois theory">Differential Galois theory</a> for a Galois theory of differential equations</li>
+<li><a href="/wiki/Grothendieck%27s_Galois_theory" title="Grothendieck's Galois theory">Grothendieck's Galois theory</a> for a vast generalization of Galois theory</li>
+<li><a href="/wiki/Topological_Galois_theory" title="Topological Galois theory">Topological Galois theory</a></li>
+<li><a href="/wiki/Artin%E2%80%93Schreier_theory" title="Artin–Schreier theory">Artin–Schreier theory</a>, a sub-field of Galois theory</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Notes">Notes</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=15" title="Edit section: Notes"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1239543626">.mw-parser-output .reflist{margin-bottom:0.5em;list-style-type:decimal}@media screen{.mw-parser-output .reflist{font-size:90%}}.mw-parser-output .reflist .references{font-size:100%;margin-bottom:0;list-style-type:inherit}.mw-parser-output .reflist-columns-2{column-width:30em}.mw-parser-output .reflist-columns-3{column-width:25em}.mw-parser-output .reflist-columns{margin-top:0.3em}.mw-parser-output .reflist-columns ol{margin-top:0}.mw-parser-output .reflist-columns li{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .reflist-upper-alpha{list-style-type:upper-alpha}.mw-parser-output .reflist-upper-roman{list-style-type:upper-roman}.mw-parser-output .reflist-lower-alpha{list-style-type:lower-alpha}.mw-parser-output .reflist-lower-greek{list-style-type:lower-greek}.mw-parser-output .reflist-lower-roman{list-style-type:lower-roman}</style><div class="reflist">
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-Stewart-1"><span class="mw-cite-backlink">^ <a href="#cite_ref-Stewart_1-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Stewart_1-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><style data-mw-deduplicate="TemplateStyles:r1238218222">.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#d33)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#d33)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite class="citation book cs1" id="CITEREFStewart1989"><a href="/wiki/Ian_Stewart_(mathematician)" title="Ian Stewart (mathematician)">Stewart, Ian</a> (1989). <i>Galois Theory</i>. Chapman and Hall. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-412-34550-1" title="Special:BookSources/0-412-34550-1"><bdi>0-412-34550-1</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Galois+Theory&amp;rft.pub=Chapman+and+Hall&amp;rft.date=1989&amp;rft.isbn=0-412-34550-1&amp;rft.aulast=Stewart&amp;rft.aufirst=Ian&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><a href="#CITEREFFunkhouser1930">Funkhouser 1930</a></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><a href="#CITEREFCardano1545">Cardano 1545</a></span>
+</li>
+<li id="cite_note-Tignol2001-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-Tignol2001_4-0">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFTignol2001"><a href="/wiki/Jean-Pierre_Tignol" title="Jean-Pierre Tignol">Tignol, Jean-Pierre</a> (2001). <span class="id-lock-limited" title="Free access subject to limited trial, subscription normally required"><a class="external text" href="https://archive.org/details/galoistheoryalge00tign_325" rel="nofollow"><i>Galois' Theory of Algebraic Equations</i></a></span>. World Scientific. pp. <a class="external text" href="https://archive.org/details/galoistheoryalge00tign_325/page/n242" rel="nofollow">232</a>–3, 302. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-981-02-4541-2" title="Special:BookSources/978-981-02-4541-2"><bdi>978-981-02-4541-2</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Galois%27+Theory+of+Algebraic+Equations&amp;rft.pages=232-3%2C+302&amp;rft.pub=World+Scientific&amp;rft.date=2001&amp;rft.isbn=978-981-02-4541-2&amp;rft.aulast=Tignol&amp;rft.aufirst=Jean-Pierre&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fgaloistheoryalge00tign_325&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></link></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text">Stewart, 3rd ed., p. xxiii</span>
+</li>
+<li id="cite_note-Clark1984-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-Clark1984_6-0">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFClark1984">Clark, Allan (1984) [1971]. <i>Elements of Abstract Algebra</i>. Courier. p. 131. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-486-14035-3" title="Special:BookSources/978-0-486-14035-3"><bdi>978-0-486-14035-3</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Elements+of+Abstract+Algebra&amp;rft.pages=131&amp;rft.pub=Courier&amp;rft.date=1984&amp;rft.isbn=978-0-486-14035-3&amp;rft.aulast=Clark&amp;rft.aufirst=Allan&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></link></span>
+</li>
+<li id="cite_note-Wussing2007-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-Wussing2007_7-0">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFWussing2007">Wussing, Hans (2007). <i>The Genesis of the Abstract Group Concept: A Contribution to the History of the Origin of Abstract Group Theory</i>. Courier. p. 118. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-486-45868-7" title="Special:BookSources/978-0-486-45868-7"><bdi>978-0-486-45868-7</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+Genesis+of+the+Abstract+Group+Concept%3A+A+Contribution+to+the+History+of+the+Origin+of+Abstract+Group+Theory&amp;rft.pages=118&amp;rft.pub=Courier&amp;rft.date=2007&amp;rft.isbn=978-0-486-45868-7&amp;rft.aulast=Wussing&amp;rft.aufirst=Hans&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></link></span>
+</li>
+<li id="cite_note-Scharlau1981-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-Scharlau1981_8-0">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFScharlauDedekindDedekind1981">Scharlau, Winfried; Dedekind, Ilse; Dedekind, Richard (1981). <a class="external text" href="http://www.gbv.de/dms/ilmenau/toc/023900512.PDF" rel="nofollow"><i>Richard Dedekind 1831–1981; eine Würdigung zu seinem 150. Geburtstag</i></a> <span class="cs1-format">(PDF)</span>. Braunschweig: Vieweg. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/9783528084981" title="Special:BookSources/9783528084981"><bdi>9783528084981</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Richard+Dedekind+1831%E2%80%931981%3B+eine+W%C3%BCrdigung+zu+seinem+150.+Geburtstag&amp;rft.place=Braunschweig&amp;rft.pub=Vieweg&amp;rft.date=1981&amp;rft.isbn=9783528084981&amp;rft.aulast=Scharlau&amp;rft.aufirst=Winfried&amp;rft.au=Dedekind%2C+Ilse&amp;rft.au=Dedekind%2C+Richard&amp;rft_id=http%3A%2F%2Fwww.gbv.de%2Fdms%2Filmenau%2Ftoc%2F023900512.PDF&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></link></span>
+</li>
+<li id="cite_note-GaloisNeumann2011-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-GaloisNeumann2011_9-0">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFGaloisNeumann2011">Galois, Évariste; Neumann, Peter M. (2011). <i>The Mathematical Writings of Évariste Galois</i>. European Mathematical Society. p. 10. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-3-03719-104-0" title="Special:BookSources/978-3-03719-104-0"><bdi>978-3-03719-104-0</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+Mathematical+Writings+of+%C3%89variste+Galois&amp;rft.pages=10&amp;rft.pub=European+Mathematical+Society&amp;rft.date=2011&amp;rft.isbn=978-3-03719-104-0&amp;rft.aulast=Galois&amp;rft.aufirst=%C3%89variste&amp;rft.au=Neumann%2C+Peter+M.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></link></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text">"Lecture Notes on Galois Theory". <i>UC Davis</i>.<a class="external free" href="https://www.math.ucdavis.edu/~egorskiy/MAT150C-s17/Galois.pdf" rel="nofollow">https://www.math.ucdavis.edu/~egorskiy/MAT150C-s17/Galois.pdf</a></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11">^</a></b></span> <span class="reference-text">van der Waerden, Modern Algebra (1949 English edn.), Vol. 1, Section 61, p.191</span>
+</li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-12">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFPrasolov2004">Prasolov, V.V. (2004). "5 Galois Theory Theorem 5.4.5(a)". <i>Polynomials</i>. Algorithms and Computation in Mathematics. Vol. 11. Springer. pp. <span class="nowrap">181–</span>218. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2F978-3-642-03980-5_5" rel="nofollow">10.1007/978-3-642-03980-5_5</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-3-642-03979-9" title="Special:BookSources/978-3-642-03979-9"><bdi>978-3-642-03979-9</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=5+Galois+Theory+Theorem+5.4.5%28a%29&amp;rft.btitle=Polynomials&amp;rft.series=Algorithms+and+Computation+in+Mathematics&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E181-%3C%2Fspan%3E218&amp;rft.pub=Springer&amp;rft.date=2004&amp;rft_id=info%3Adoi%2F10.1007%2F978-3-642-03980-5_5&amp;rft.isbn=978-3-642-03979-9&amp;rft.aulast=Prasolov&amp;rft.aufirst=V.V.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></link></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFLang1994"><a href="/wiki/Serge_Lang" title="Serge Lang">Lang, Serge</a> (1994). <a class="external text" href="https://books.google.com/books?id=u5eGtA0YalgC&amp;pg=PA" rel="nofollow"><i>Algebraic Number Theory</i></a>. Graduate Texts in Mathematics. Vol. 110. Springer. p. 121. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/9780387942254" title="Special:BookSources/9780387942254"><bdi>9780387942254</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Algebraic+Number+Theory&amp;rft.series=Graduate+Texts+in+Mathematics&amp;rft.pages=121&amp;rft.pub=Springer&amp;rft.date=1994&amp;rft.isbn=9780387942254&amp;rft.aulast=Lang&amp;rft.aufirst=Serge&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3Du5eGtA0YalgC%26pg%3DPA&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></link></span>
+</li>
+</ol></div></div>
+<div class="mw-heading mw-heading2"><h2 id="References">References</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=16" title="Edit section: References"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFArtin1998"><a href="/wiki/Emil_Artin" title="Emil Artin">Artin, Emil</a> (1998) [1944]. <i>Galois Theory</i>. Dover. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-486-62342-4" title="Special:BookSources/0-486-62342-4"><bdi>0-486-62342-4</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Galois+Theory&amp;rft.pub=Dover&amp;rft.date=1998&amp;rft.isbn=0-486-62342-4&amp;rft.aulast=Artin&amp;rft.aufirst=Emil&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFBewersdorff2006"><a href="/wiki/J%C3%B6rg_Bewersdorff" title="Jörg Bewersdorff">Bewersdorff, Jörg</a> (2006). <i>Galois Theory for Beginners: A Historical Perspective</i>. The Student Mathematical Library. Vol. 35. American Mathematical Society. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1090%2Fstml%2F035" rel="nofollow">10.1090/stml/035</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-8218-3817-2" title="Special:BookSources/0-8218-3817-2"><bdi>0-8218-3817-2</bdi></a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:118256821" rel="nofollow">118256821</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Galois+Theory+for+Beginners%3A+A+Historical+Perspective&amp;rft.series=The+Student+Mathematical+Library&amp;rft.pub=American+Mathematical+Society&amp;rft.date=2006&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A118256821%23id-name%3DS2CID&amp;rft_id=info%3Adoi%2F10.1090%2Fstml%2F035&amp;rft.isbn=0-8218-3817-2&amp;rft.aulast=Bewersdorff&amp;rft.aufirst=J%C3%B6rg&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFBrantnerWaldron2020">Brantner, Lukas; Waldron, Joe (2020), <i>Purely Inseparable Galois theory I: The Fundamental Theorem</i>, <a class="mw-redirect" href="/wiki/ArXiv_(identifier)" title="ArXiv (identifier)">arXiv</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://arxiv.org/abs/2010.15707" rel="nofollow">2010.15707</a></span></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Purely+Inseparable+Galois+theory+I%3A+The+Fundamental+Theorem&amp;rft.date=2020&amp;rft_id=info%3Aarxiv%2F2010.15707&amp;rft.aulast=Brantner&amp;rft.aufirst=Lukas&amp;rft.au=Waldron%2C+Joe&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1 cs1-prop-foreign-lang-source" id="CITEREFCardano1545"><a href="/wiki/Gerolamo_Cardano" title="Gerolamo Cardano">Cardano, Gerolamo</a> (1545). <a class="external text" href="https://web.archive.org/web/20080626092254/http://www.filosofia.unimi.it/cardano/testi/operaomnia/vol_4_s_4.pdf" rel="nofollow"><i>Artis Magnæ</i></a> <span class="cs1-format">(PDF)</span> (in Latin). Archived from <a class="external text" href="http://www.filosofia.unimi.it/cardano/testi/operaomnia/vol_4_s_4.pdf" rel="nofollow">the original</a> <span class="cs1-format">(PDF)</span> on 2008-06-26<span class="reference-accessdate">. Retrieved <span class="nowrap">2015-01-10</span></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Artis+Magn%C3%A6&amp;rft.date=1545&amp;rft.aulast=Cardano&amp;rft.aufirst=Gerolamo&amp;rft_id=http%3A%2F%2Fwww.filosofia.unimi.it%2Fcardano%2Ftesti%2Foperaomnia%2Fvol_4_s_4.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFEdwards1984"><a href="/wiki/Harold_Edwards_(mathematician)" title="Harold Edwards (mathematician)">Edwards, Harold M.</a> (1984). <span class="id-lock-registration" title="Free registration required"><a class="external text" href="https://archive.org/details/galoistheory00edwa_0" rel="nofollow"><i>Galois Theory</i></a></span>. Springer-Verlag. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-387-90980-X" title="Special:BookSources/0-387-90980-X"><bdi>0-387-90980-X</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Galois+Theory&amp;rft.pub=Springer-Verlag&amp;rft.date=1984&amp;rft.isbn=0-387-90980-X&amp;rft.aulast=Edwards&amp;rft.aufirst=Harold+M.&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fgaloistheory00edwa_0&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span> <i>(Galois' original paper, with extensive background and commentary.)</i></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFFunkhouser1930"><a href="/wiki/Howard_G._Funkhouser" title="Howard G. Funkhouser">Funkhouser, H. Gray</a> (1930). "A short account of the history of symmetric functions of roots of equations". <i>American Mathematical Monthly</i>. <b>37</b> (7): <span class="nowrap">357–</span>365. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.2307%2F2299273" rel="nofollow">10.2307/2299273</a>. <a class="mw-redirect" href="/wiki/JSTOR_(identifier)" title="JSTOR (identifier)">JSTOR</a> <a class="external text" href="https://www.jstor.org/stable/2299273" rel="nofollow">2299273</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=American+Mathematical+Monthly&amp;rft.atitle=A+short+account+of+the+history+of+symmetric+functions+of+roots+of+equations&amp;rft.volume=37&amp;rft.issue=7&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E357-%3C%2Fspan%3E365&amp;rft.date=1930&amp;rft_id=info%3Adoi%2F10.2307%2F2299273&amp;rft_id=https%3A%2F%2Fwww.jstor.org%2Fstable%2F2299273%23id-name%3DJSTOR&amp;rft.aulast=Funkhouser&amp;rft.aufirst=H.+Gray&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2"><a class="external text" href="https://www.encyclopediaofmath.org/index.php?title=Galois_theory" rel="nofollow">"Galois theory"</a>, <i><a href="/wiki/Encyclopedia_of_Mathematics" title="Encyclopedia of Mathematics">Encyclopedia of Mathematics</a></i>, <a href="/wiki/European_Mathematical_Society" title="European Mathematical Society">EMS Press</a>, 2001 [1994]</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Galois+theory&amp;rft.btitle=Encyclopedia+of+Mathematics&amp;rft.pub=EMS+Press&amp;rft.date=2001&amp;rft_id=https%3A%2F%2Fwww.encyclopediaofmath.org%2Findex.php%3Ftitle%3DGalois_theory&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFJacobson1944">Jacobson, Nathan (1944), "Galois theory of purely inseparable fields of exponent one", <i>Amer. J. Math.</i>, <b>66</b> (4): <span class="nowrap">645–</span>648, <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.2307%2F2371772" rel="nofollow">10.2307/2371772</a>, <a class="mw-redirect" href="/wiki/JSTOR_(identifier)" title="JSTOR (identifier)">JSTOR</a> <a class="external text" href="https://www.jstor.org/stable/2371772" rel="nofollow">2371772</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Amer.+J.+Math.&amp;rft.atitle=Galois+theory+of+purely+inseparable+fields+of+exponent+one&amp;rft.volume=66&amp;rft.issue=4&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E645-%3C%2Fspan%3E648&amp;rft.date=1944&amp;rft_id=info%3Adoi%2F10.2307%2F2371772&amp;rft_id=https%3A%2F%2Fwww.jstor.org%2Fstable%2F2371772%23id-name%3DJSTOR&amp;rft.aulast=Jacobson&amp;rft.aufirst=Nathan&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFJacobson1985"><a href="/wiki/Nathan_Jacobson" title="Nathan Jacobson">Jacobson, Nathan</a> (1985). <i>Basic Algebra I</i> (2nd ed.). W. H. Freeman. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-7167-1480-9" title="Special:BookSources/0-7167-1480-9"><bdi>0-7167-1480-9</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Basic+Algebra+I&amp;rft.edition=2nd&amp;rft.pub=W.+H.+Freeman&amp;rft.date=1985&amp;rft.isbn=0-7167-1480-9&amp;rft.aulast=Jacobson&amp;rft.aufirst=Nathan&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span> <i>(Chapter 4 gives an introduction to the field-theoretic approach to Galois theory.)</i></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFJanelidzeBorceux2001">Janelidze, G.; Borceux, Francis (2001). <i>Galois Theories</i>. <a href="/wiki/Cambridge_University_Press" title="Cambridge University Press">Cambridge University Press</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-521-80309-0" title="Special:BookSources/978-0-521-80309-0"><bdi>978-0-521-80309-0</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Galois+Theories&amp;rft.pub=Cambridge+University+Press&amp;rft.date=2001&amp;rft.isbn=978-0-521-80309-0&amp;rft.aulast=Janelidze&amp;rft.aufirst=G.&amp;rft.au=Borceux%2C+Francis&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span> (This book introduces the reader to the Galois theory  of <a class="mw-redirect" href="/wiki/Grothendieck" title="Grothendieck">Grothendieck</a>, and some generalisations, leading to Galois <a class="mw-redirect" href="/wiki/Groupoids" title="Groupoids">groupoids</a>.)</li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFLang1994"><a href="/wiki/Serge_Lang" title="Serge Lang">Lang, Serge</a> (1994). <i>Algebraic Number Theory</i>. Berlin, New York: <a class="mw-redirect" href="/wiki/Springer-Verlag" title="Springer-Verlag">Springer-Verlag</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-387-94225-4" title="Special:BookSources/978-0-387-94225-4"><bdi>978-0-387-94225-4</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Algebraic+Number+Theory&amp;rft.place=Berlin%2C+New+York&amp;rft.pub=Springer-Verlag&amp;rft.date=1994&amp;rft.isbn=978-0-387-94225-4&amp;rft.aulast=Lang&amp;rft.aufirst=Serge&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFPostnikov2004">Postnikov, M. M. (2004). <i>Foundations of Galois Theory</i>. Dover Publications. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-486-43518-0" title="Special:BookSources/0-486-43518-0"><bdi>0-486-43518-0</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Foundations+of+Galois+Theory&amp;rft.pub=Dover+Publications&amp;rft.date=2004&amp;rft.isbn=0-486-43518-0&amp;rft.aulast=Postnikov&amp;rft.aufirst=M.+M.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFRotman1998">Rotman, Joseph (1998). <i>Galois Theory</i> (2nd ed.). Springer. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-387-98541-7" title="Special:BookSources/0-387-98541-7"><bdi>0-387-98541-7</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Galois+Theory&amp;rft.edition=2nd&amp;rft.pub=Springer&amp;rft.date=1998&amp;rft.isbn=0-387-98541-7&amp;rft.aulast=Rotman&amp;rft.aufirst=Joseph&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFVölklein1996">Völklein, Helmut (1996). <span class="id-lock-registration" title="Free registration required"><a class="external text" href="https://archive.org/details/groupsasgaloisgr0000volk" rel="nofollow"><i>Groups as Galois groups: an introduction</i></a></span>. <a href="/wiki/Cambridge_University_Press" title="Cambridge University Press">Cambridge University Press</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-521-56280-5" title="Special:BookSources/978-0-521-56280-5"><bdi>978-0-521-56280-5</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Groups+as+Galois+groups%3A+an+introduction&amp;rft.pub=Cambridge+University+Press&amp;rft.date=1996&amp;rft.isbn=978-0-521-56280-5&amp;rft.aulast=V%C3%B6lklein&amp;rft.aufirst=Helmut&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fgroupsasgaloisgr0000volk&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1 cs1-prop-foreign-lang-source" id="CITEREFvan_der_Waerden1931"><a href="/wiki/Bartel_Leendert_van_der_Waerden" title="Bartel Leendert van der Waerden">van der Waerden, Bartel Leendert</a> (1931). <i>Moderne Algebra</i> (in German). Berlin: Springer.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Moderne+Algebra&amp;rft.place=Berlin&amp;rft.pub=Springer&amp;rft.date=1931&amp;rft.aulast=van+der+Waerden&amp;rft.aufirst=Bartel+Leendert&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span>.   <b>English translation</b> (of 2nd revised edition): <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1"><span class="id-lock-registration" title="Free registration required"><a class="external text" href="https://archive.org/details/modernalgebra02waer" rel="nofollow"><i>Modern Algebra</i></a></span>. New York: Frederick Ungar. 1949.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Modern+Algebra&amp;rft.place=New+York&amp;rft.pub=Frederick+Ungar&amp;rft.date=1949&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fmodernalgebra02waer&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AGalois+theory"></span> <i>(Later republished in English by Springer under the title "Algebra".)</i></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="External_links">External links</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Galois_theory&amp;action=edit&amp;section=17" title="Edit section: External links"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><span class="noviewer" typeof="mw:File"><a class="mw-file-description" href="/wiki/File:Wiktionary-logo-en-v2.svg"><img alt="" class="mw-file-element" data-file-height="512" data-file-width="512" decoding="async" height="16" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/20px-Wiktionary-logo-en-v2.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/40px-Wiktionary-logo-en-v2.svg.png 1.5x" width="16"/></a></span> The dictionary definition of <a class="extiw" href="https://en.wiktionary.org/wiki/Galois_theory" title="wiktionary:Galois theory"><i>Galois theory</i></a> at Wiktionary</li>
+<li><span class="noviewer" typeof="mw:File"><a class="mw-file-description" href="/wiki/File:Commons-logo.svg"><img alt="" class="mw-file-element" data-file-height="1376" data-file-width="1024" decoding="async" height="16" src="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/20px-Commons-logo.svg.png" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/40px-Commons-logo.svg.png 2x" width="12"/></a></span> Media related to <a class="extiw" href="https://commons.wikimedia.org/wiki/Category:Galois_theory" title="commons:Category:Galois theory">Galois theory</a> at Wikimedia Commons</li></ul>
+<div class="navbox-styles"><style data-mw-deduplicate="TemplateStyles:r1129693374">.mw-parser-output .hlist dl,.mw-parser-output .hlist ol,.mw-parser-output .hlist ul{margin:0;padding:0}.mw-parser-output .hlist dd,.mw-parser-output .hlist dt,.mw-parser-output .hlist li{margin:0;display:inline}.mw-parser-output .hlist.inline,.mw-parser-output .hlist.inline dl,.mw-parser-output .hlist.inline ol,.mw-parser-output .hlist.inline ul,.mw-parser-output .hlist dl dl,.mw-parser-output .hlist dl ol,.mw-parser-output .hlist dl ul,.mw-parser-output .hlist ol dl,.mw-parser-output .hlist ol ol,.mw-parser-output .hlist ol ul,.mw-parser-output .hlist ul dl,.mw-parser-output .hlist ul ol,.mw-parser-output .hlist ul ul{display:inline}.mw-parser-output .hlist .mw-empty-li{display:none}.mw-parser-output .hlist dt::after{content:": "}.mw-parser-output .hlist dd::after,.mw-parser-output .hlist li::after{content:" · ";font-weight:bold}.mw-parser-output .hlist dd:last-child::after,.mw-parser-output .hlist dt:last-child::after,.mw-parser-output .hlist li:last-child::after{content:none}.mw-parser-output .hlist dd dd:first-child::before,.mw-parser-output .hlist dd dt:first-child::before,.mw-parser-output .hlist dd li:first-child::before,.mw-parser-output .hlist dt dd:first-child::before,.mw-parser-output .hlist dt dt:first-child::before,.mw-parser-output .hlist dt li:first-child::before,.mw-parser-output .hlist li dd:first-child::before,.mw-parser-output .hlist li dt:first-child::before,.mw-parser-output .hlist li li:first-child::before{content:" (";font-weight:normal}.mw-parser-output .hlist dd dd:last-child::after,.mw-parser-output .hlist dd dt:last-child::after,.mw-parser-output .hlist dd li:last-child::after,.mw-parser-output .hlist dt dd:last-child::after,.mw-parser-output .hlist dt dt:last-child::after,.mw-parser-output .hlist dt li:last-child::after,.mw-parser-output .hlist li dd:last-child::after,.mw-parser-output .hlist li dt:last-child::after,.mw-parser-output .hlist li li:last-child::after{content:")";font-weight:normal}.mw-parser-output .hlist ol{counter-reset:listitem}.mw-parser-output .hlist ol>li{counter-increment:listitem}.mw-parser-output .hlist ol>li::before{content:" "counter(listitem)"\a0 "}.mw-parser-output .hlist dd ol>li:first-child::before,.mw-parser-output .hlist dt ol>li:first-child::before,.mw-parser-output .hlist li ol>li:first-child::before{content:" ("counter(listitem)"\a0 "}</style><style data-mw-deduplicate="TemplateStyles:r1236075235">.mw-parser-output .navbox{box-sizing:border-box;border:1px solid #a2a9b1;width:100%;clear:both;font-size:88%;text-align:center;padding:1px;margin:1em auto 0}.mw-parser-output .navbox .navbox{margin-top:0}.mw-parser-output .navbox+.navbox,.mw-parser-output .navbox+.navbox-styles+.navbox{margin-top:-1px}.mw-parser-output .navbox-inner,.mw-parser-output .navbox-subgroup{width:100%}.mw-parser-output .navbox-group,.mw-parser-output .navbox-title,.mw-parser-output .navbox-abovebelow{padding:0.25em 1em;line-height:1.5em;text-align:center}.mw-parser-output .navbox-group{white-space:nowrap;text-align:right}.mw-parser-output .navbox,.mw-parser-output .navbox-subgroup{background-color:#fdfdfd}.mw-parser-output .navbox-list{line-height:1.5em;border-color:#fdfdfd}.mw-parser-output .navbox-list-with-group{text-align:left;border-left-width:2px;border-left-style:solid}.mw-parser-output tr+tr>.navbox-abovebelow,.mw-parser-output tr+tr>.navbox-group,.mw-parser-output tr+tr>.navbox-image,.mw-parser-output tr+tr>.navbox-list{border-top:2px solid #fdfdfd}.mw-parser-output .navbox-title{background-color:#ccf}.mw-parser-output .navbox-abovebelow,.mw-parser-output .navbox-group,.mw-parser-output .navbox-subgroup .navbox-title{background-color:#ddf}.mw-parser-output .navbox-subgroup .navbox-group,.mw-parser-output .navbox-subgroup .navbox-abovebelow{background-color:#e6e6ff}.mw-parser-output .navbox-even{background-color:#f7f7f7}.mw-parser-output .navbox-odd{background-color:transparent}.mw-parser-output .navbox .hlist td dl,.mw-parser-output .navbox .hlist td ol,.mw-parser-output .navbox .hlist td ul,.mw-parser-output .navbox td.hlist dl,.mw-parser-output .navbox td.hlist ol,.mw-parser-output .navbox td.hlist ul{padding:0.125em 0}.mw-parser-output .navbox .navbar{display:block;font-size:100%}.mw-parser-output .navbox-title .navbar{float:left;text-align:left;margin-right:0.5em}body.skin--responsive .mw-parser-output .navbox-image img{max-width:none!important}@media print{body.ns-0 .mw-parser-output .navbox{display:none!important}}</style><style data-mw-deduplicate="TemplateStyles:r1038841319">.mw-parser-output .tooltip-dotted{border-bottom:1px dotted;cursor:help}</style><link href="mw-data:TemplateStyles:r1038841319" rel="mw-deduplicated-inline-style"/><link href="mw-data:TemplateStyles:r1038841319" rel="mw-deduplicated-inline-style"/><link href="mw-data:TemplateStyles:r1038841319" rel="mw-deduplicated-inline-style"/></div><div aria-label="Navbox1569" class="navbox authority-control" role="navigation" style="padding:3px"><table class="nowraplinks hlist navbox-inner" style="border-spacing:0;background:transparent;color:inherit"><tbody><tr><th class="navbox-group" scope="row" style="width:1%"><a href="/wiki/Help:Authority_control" title="Help:Authority control">Authority control databases</a>: National <span class="mw-valign-text-top noprint" typeof="mw:File/Frameless"><a href="https://www.wikidata.org/wiki/Q92552#identifiers" title="Edit this at Wikidata"><img alt="Edit this at Wikidata" class="mw-file-element" data-file-height="20" data-file-width="20" decoding="async" height="10" src="//upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/10px-OOjs_UI_icon_edit-ltr-progressive.svg.png" srcset="//upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/15px-OOjs_UI_icon_edit-ltr-progressive.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png 2x" width="10"/></a></span></th><td class="navbox-list-with-group navbox-list navbox-odd" style="width:100%;padding:0"><div style="padding:0 0.25em"><ul><li><span class="uid"><a class="external text" href="https://d-nb.info/gnd/4155901-0" rel="nofollow">Germany</a></span></li><li><span class="uid"><span class="rt-commentedText tooltip tooltip-dotted" title="Galois theory"><a class="external text" href="https://id.loc.gov/authorities/sh85052872" rel="nofollow">United States</a></span></span></li><li><span class="uid"><span class="rt-commentedText tooltip tooltip-dotted" title="Galois, Théorie de"><a class="external text" href="https://catalogue.bnf.fr/ark:/12148/cb119587869" rel="nofollow">France</a></span></span></li><li><span class="uid"><span class="rt-commentedText tooltip tooltip-dotted" title="Galois, Théorie de"><a class="external text" href="https://data.bnf.fr/ark:/12148/cb119587869" rel="nofollow">BnF data</a></span></span></li><li><span class="uid"><a class="external text" href="https://id.ndl.go.jp/auth/ndlna/00562218" rel="nofollow">Japan</a></span></li><li><span class="uid"><span class="rt-commentedText tooltip tooltip-dotted" title="Galoisova teorie"><a class="external text" href="https://aleph.nkp.cz/F/?func=find-c&amp;local_base=aut&amp;ccl_term=ica=ph135380&amp;CON_LNG=ENG" rel="nofollow">Czech Republic</a></span></span></li><li><span class="uid"><a class="external text" href="https://www.nli.org.il/en/authorities/987007558074605171" rel="nofollow">Israel</a></span></li></ul></div></td></tr></tbody></table></div>
+<!-- 
+NewPP limit report
+Parsed by mw‐web.eqiad.main‐6df8dbf59d‐88ptv
+Cached time: 20250331025819
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.688 seconds
+Real time usage: 0.935 seconds
+Preprocessor visited node count: 8461/1000000
+Post‐expand include size: 85772/2097152 bytes
+Template argument size: 12446/2097152 bytes
+Highest expansion depth: 12/100
+Expensive parser function count: 5/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 76436/5000000 bytes
+Lua time usage: 0.410/10.000 seconds
+Lua memory usage: 7840526/52428800 bytes
+Number of Wikibase entities loaded: 1/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  758.440      1 -total
+ 22.00%  166.855     20 Template:Cite_book
+ 18.10%  137.275      1 Template:Reflist
+ 15.78%  119.687      1 Template:Authority_control
+ 14.21%  107.743    119 Template:Math
+  9.74%   73.889      1 Template:Short_description
+  5.94%   45.067      2 Template:Pagetype
+  5.94%   45.055      2 Template:Harvtxt
+  5.83%   44.235      1 Template:Citation_needed
+  5.00%   37.947      1 Template:Fix
+-->
+<!-- Saved in parser cache with key enwiki:pcache:61316:|#|:idhash:canonical and timestamp 20250331025819 and revision id 1268770818. Rendering was triggered because: page-view
+ -->
+</link></link></meta></div>

@@ -1,0 +1,124 @@
+<div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>In <a href="/wiki/Mathematics" title="Mathematics">mathematics</a>, <b>obstruction theory</b> is a name given to two different <a class="mw-redirect" href="/wiki/Mathematical_theory" title="Mathematical theory">mathematical theories</a>, both of which yield <a class="mw-redirect" href="/wiki/Cohomological" title="Cohomological">cohomological</a> <a href="/wiki/Invariant_(mathematics)" title="Invariant (mathematics)">invariants</a>.
+</p><p>In the original work of <a href="/wiki/Eduard_Stiefel" title="Eduard Stiefel">Stiefel</a> and <a href="/wiki/Hassler_Whitney" title="Hassler Whitney">Whitney</a>, <a href="/wiki/Characteristic_class" title="Characteristic class">characteristic classes</a> were defined as obstructions to the existence of certain fields of linear independent <a href="/wiki/Vector_field" title="Vector field">vectors</a>. Obstruction theory turns out to be an application of cohomology theory to the problem of constructing a <a href="/wiki/Section_(fiber_bundle)" title="Section (fiber bundle)">cross-section</a> of a <a href="/wiki/Fiber_bundle" title="Fiber bundle">bundle</a>.
+</p>
+<meta property="mw:PageProp/toc">
+<div class="mw-heading mw-heading2"><h2 id="In_homotopy_theory">In homotopy theory</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Obstruction_theory&amp;action=edit&amp;section=1" title="Edit section: In homotopy theory"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The older meaning for obstruction theory in <a href="/wiki/Homotopy_theory" title="Homotopy theory">homotopy theory</a> relates to the procedure, inductive with respect to dimension, for extending a <a class="mw-redirect" href="/wiki/Continuous_mapping" title="Continuous mapping">continuous mapping</a> defined on a <a href="/wiki/Simplicial_complex" title="Simplicial complex">simplicial complex</a>, or <a href="/wiki/CW_complex" title="CW complex">CW complex</a>. It is traditionally called <i>Eilenberg obstruction theory</i>, after <a href="/wiki/Samuel_Eilenberg" title="Samuel Eilenberg">Samuel Eilenberg</a>. It involves <a class="mw-redirect" href="/wiki/Cohomology_group" title="Cohomology group">cohomology groups</a> with coefficients in <a href="/wiki/Homotopy_group" title="Homotopy group">homotopy groups</a> to define obstructions to extensions. For example, with a mapping from a simplicial complex <i>X</i> to another, <i>Y</i>, defined initially on the <a class="mw-redirect" href="/wiki/0-skeleton" title="0-skeleton">0-skeleton</a> of <i>X</i> (the vertices of <i>X</i>), an extension to the 1-skeleton will be possible whenever the image of the 0-skeleton will belong to the same <a class="mw-redirect" href="/wiki/Path-connected" title="Path-connected">path-connected</a> component of <i>Y</i>. Extending from the 1-skeleton to the 2-skeleton means defining the mapping on each solid triangle from <i>X</i>, given the mapping already defined on its boundary edges. Likewise, then extending the mapping to the 3-skeleton involves extending the mapping to each solid 3-simplex of <i>X</i>, given the mapping already defined on its boundary.
+</p><p>At some point, say extending the mapping from the (n-1)-skeleton of <i>X</i> to the n-skeleton of <i>X</i>, this procedure might be impossible. In that case, one can assign to each n-simplex the homotopy class <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \pi _{n-1}(Y)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>π<!-- π --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>Y</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \pi _{n-1}(Y)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \pi _{n-1}(Y)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2ea07deba00fca02da4fd96278cd923df1498789" style="vertical-align: -0.838ex; width:8.227ex; height:2.843ex;"/></span> of the mapping already defined on its boundary, (at least one of which will be non-zero). These assignments define an <a href="/wiki/Cohomology" title="Cohomology">n-cochain</a>  with coefficients in <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \pi _{n-1}(Y)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>π<!-- π --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>Y</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \pi _{n-1}(Y)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \pi _{n-1}(Y)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2ea07deba00fca02da4fd96278cd923df1498789" style="vertical-align: -0.838ex; width:8.227ex; height:2.843ex;"/></span>. Amazingly, this cochain turns out to be a <b>cocycle</b> and so defines a <a href="/wiki/Cohomology" title="Cohomology">cohomology</a> class in the nth cohomology group of <i>X</i> with coefficients in <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \pi _{n-1}(Y)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>π<!-- π --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>Y</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \pi _{n-1}(Y)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \pi _{n-1}(Y)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2ea07deba00fca02da4fd96278cd923df1498789" style="vertical-align: -0.838ex; width:8.227ex; height:2.843ex;"/></span>. When this cohomology class is equal to 0, it turns out that the mapping may be modified within its homotopy class on the (n-1)-skeleton of <i>X</i> so that the mapping may be extended to the n-skeleton of <i>X</i>.  If the class is not equal to zero, it is called the obstruction to extending the mapping over the n-skeleton, given its homotopy class on the (n-1)-skeleton.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Obstruction_to_extending_a_section_of_a_principal_bundle">Obstruction to extending a section of a principal bundle</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Obstruction_theory&amp;action=edit&amp;section=2" title="Edit section: Obstruction to extending a section of a principal bundle"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading4"><h4 id="Construction">Construction</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Obstruction_theory&amp;action=edit&amp;section=3" title="Edit section: Construction"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Suppose that <span class="texhtml mvar" style="font-style:italic;">B</span> is a <a class="mw-redirect" href="/wiki/Simply_connected" title="Simply connected">simply connected</a> simplicial complex and that <span class="texhtml"><i>p</i> : <i>E</i> → <i>B</i></span> is a <a href="/wiki/Fibration" title="Fibration">fibration</a> with fiber <span class="texhtml mvar" style="font-style:italic;">F</span>.  Furthermore, assume that we have a partially defined <a href="/wiki/Section_(fiber_bundle)" title="Section (fiber bundle)">section</a> <span class="texhtml"> <i>σ</i><sub><i>n</i></sub> : <i>B</i><sub><i>n</i></sub> → <i>E</i></span> on the <a href="/wiki/N-skeleton" title="N-skeleton"><span class="texhtml mvar" style="font-style:italic;">n</span>-skeleton</a> of <span class="texhtml mvar" style="font-style:italic;">B</span>.
+</p><p>For every <span class="texhtml">(<i>n</i> + 1)</span>-simplex <span class="texhtml mvar" style="font-style:italic;">Δ</span> in <span class="texhtml mvar" style="font-style:italic;">B</span>, <span class="texhtml"><i>σ</i><sub><i>n</i></sub></span> can be restricted to the boundary <span class="texhtml"><i>∂Δ</i></span> (which is a topological <a href="/wiki/N-sphere" title="N-sphere"><span class="texhtml mvar" style="font-style:italic;">n</span>-sphere</a>). Because <span class="texhtml mvar" style="font-style:italic;">p</span> sends each <span class="texhtml"><i>σ</i><sub><i>n</i></sub>(<i>∂Δ</i>)</span> back to <span class="texhtml mvar" style="font-style:italic;">∂Δ</span>, <span class="texhtml"><i>σ</i><sub><i>n</i></sub></span> defines a map from the <span class="texhtml mvar" style="font-style:italic;">n</span>-sphere to <span class="texhtml"><i>p</i><sup>−1</sup>(<i>Δ</i>)</span>. Because fibrations satisfy the homotopy lifting property, and <span class="texhtml mvar" style="font-style:italic;">Δ</span> is <a href="/wiki/Contractible_space" title="Contractible space">contractible</a>; <span class="texhtml"><i>p</i><sup>−1</sup>(<i>Δ</i>)</span> is <a class="mw-redirect" href="/wiki/Homotopy_equivalent" title="Homotopy equivalent">homotopy equivalent</a> to <span class="texhtml mvar" style="font-style:italic;">F</span>. So this partially defined section assigns an element of <span class="texhtml"><a href="/wiki/Homotopy_group" title="Homotopy group"><i>π</i><sub><i>n</i></sub>(<i>F</i>)</a></span> to every <span class="texhtml">(<i>n</i> + 1)</span>-simplex.  This is precisely the data of a <span class="texhtml"><i>π</i><sub><i>n</i></sub>(<i>F</i>)</span>-valued <a href="/wiki/Simplicial_homology" title="Simplicial homology">simplicial</a> <a href="/wiki/Cohomology#definition" title="Cohomology">cochain</a> of degree <span class="texhtml"><i>n</i> + 1</span> on <span class="texhtml mvar" style="font-style:italic;">B</span>, i.e. an element of <span class="texhtml"><i>C</i><sup><i>n</i> + 1</sup>(B; <i>π</i><sub><i>n</i></sub>(<i>F</i>))</span>.  This cochain is called the <b>obstruction cochain</b> because it being the zero means that all of these elements of <span class="texhtml"><i>π</i><sub><i>n</i></sub>(<i>F</i>)</span> are trivial, which means that our partially defined section can be extended to the <span class="texhtml">(<i>n</i> + 1)</span>-skeleton by using the homotopy between (the partially defined section on the boundary of each <span class="texhtml mvar" style="font-style:italic;">Δ</span>) and the constant map.
+</p><p>The fact that this cochain came from a partially defined section (as opposed to an arbitrary collection of maps from all the boundaries of all the <span class="texhtml">(<i>n</i> + 1)</span>-simplices) can be used to prove that this cochain is a cocycle.  If one started with a different partially defined section <span class="texhtml"><i>σ</i><sub><i>n</i></sub></span> that agreed with the original on the <span class="texhtml">(<i>n</i> − 1)</span>-skeleton, then one can also prove that the resulting cocycle would differ from the first by a coboundary.  Therefore we have a well-defined element of the cohomology group <span class="texhtml"><i>H</i><sup><i>n</i> + 1</sup>(<i>B</i>; <i>π</i><sub><i>n</i></sub>(<i>F</i>))</span> such that if a partially defined section on the <span class="texhtml">(<i>n</i> + 1)</span>-skeleton exists that agrees with the given choice on the <span class="texhtml">(<i>n</i> − 1)</span>-skeleton, then this cohomology class must be trivial.
+</p><p>The converse is also true if one allows such things as <i>homotopy sections</i>, i.e. a map <span class="texhtml"><i>σ</i> : <i>B</i> → <i>E</i></span> such that <span class="texhtml"><i>p</i> ∘ <i>σ</i></span> is homotopic (as opposed to equal) to the identity map on <span class="texhtml mvar" style="font-style:italic;">B</span>.  Thus it provides a complete invariant of the existence of sections up to homotopy on the <span class="texhtml">(<i>n</i> + 1)</span>-skeleton.
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Applications">Applications</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Obstruction_theory&amp;action=edit&amp;section=4" title="Edit section: Applications"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>By inducting over <span class="texhtml mvar" style="font-style:italic;">n</span>, one can construct a <i>first obstruction to a section</i> as the first of the above cohomology classes that is non-zero.</li>
+<li>This can be used to find obstructions to trivializations of <a href="/wiki/Principal_bundle#Trivializations_and_cross_sections" title="Principal bundle">principal bundles</a>.</li>
+<li>Because <a href="/wiki/Homotopy_fiber" title="Homotopy fiber">any map can be turned into a fibration</a>, this construction can be used to see if there are obstructions to the existence of a lift (up to homotopy) of a map into <span class="texhtml mvar" style="font-style:italic;">B</span> to a map into <span class="texhtml mvar" style="font-style:italic;">E</span> even if <span class="texhtml"><i>p</i> : <i>E</i> → <i>B</i></span> is not a fibration.</li>
+<li>It is crucial to the construction of <a href="/wiki/Postnikov_system" title="Postnikov system">Postnikov systems</a>.</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="In_geometric_topology">In geometric topology</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Obstruction_theory&amp;action=edit&amp;section=5" title="Edit section: In geometric topology"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>In <a href="/wiki/Geometric_topology" title="Geometric topology">geometric topology</a>, obstruction theory is concerned with when a <a href="/wiki/Topological_manifold" title="Topological manifold">topological manifold</a> has a <a class="mw-redirect" href="/wiki/Piecewise_linear_structure" title="Piecewise linear structure">piecewise linear structure</a>, and when a piecewise linear manifold has a <a href="/wiki/Differential_structure" title="Differential structure">differential structure</a>.
+</p><p>In dimension at most 2 (Rado), and 3 (Moise), the notions of topological manifolds and piecewise linear manifolds coincide. In dimension 4 they are not the same.
+</p><p>In dimensions at most 6 the notions of piecewise linear manifolds and differentiable manifolds coincide.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="In_surgery_theory">In surgery theory</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Obstruction_theory&amp;action=edit&amp;section=6" title="Edit section: In surgery theory"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The two basic questions of <a href="/wiki/Surgery_theory" title="Surgery theory">surgery theory</a> are whether a topological space with <i>n</i>-dimensional <a href="/wiki/Poincar%C3%A9_duality" title="Poincaré duality">Poincaré duality</a> is <a class="mw-redirect" href="/wiki/Homotopy_equivalent" title="Homotopy equivalent">homotopy equivalent</a> to an <i>n</i>-dimensional <a href="/wiki/Manifold" title="Manifold">manifold</a>, and also whether a <a class="mw-redirect" href="/wiki/Homotopy_equivalence" title="Homotopy equivalence">homotopy equivalence</a> of <i>n</i>-dimensional manifolds is <a class="mw-redirect" href="/wiki/Homotopic" title="Homotopic">homotopic</a> to a <a href="/wiki/Diffeomorphism" title="Diffeomorphism">diffeomorphism</a>. In both cases there are two obstructions for <i>n&gt;9</i>, a primary <a href="/wiki/Topological_K-theory" title="Topological K-theory">topological K-theory</a> obstruction to the existence of a <a href="/wiki/Vector_bundle" title="Vector bundle">vector bundle</a>: if this vanishes there exists a <a href="/wiki/Normal_invariant" title="Normal invariant">normal map</a>, allowing the definition of the secondary <a href="/wiki/Surgery_theory" title="Surgery theory">surgery obstruction</a> in <a href="/wiki/L-theory" title="L-theory">algebraic L-theory</a> to performing surgery on the normal map to obtain a <a class="mw-redirect" href="/wiki/Homotopy_equivalence" title="Homotopy equivalence">homotopy equivalence</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Obstruction_theory&amp;action=edit&amp;section=7" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="/wiki/Kirby%E2%80%93Siebenmann_class" title="Kirby–Siebenmann class">Kirby–Siebenmann class</a></li>
+<li><a href="/wiki/Wall%27s_finiteness_obstruction" title="Wall's finiteness obstruction">Wall's finiteness obstruction</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="References">References</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Obstruction_theory&amp;action=edit&amp;section=8" title="Edit section: References"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><style data-mw-deduplicate="TemplateStyles:r1238218222">.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#d33)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#d33)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite class="citation cs2" id="CITEREFHusemöller1994">Husemöller, Dale (1994), <i>Fibre Bundles</i>, Springer Verlag, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-387-94087-1" title="Special:BookSources/0-387-94087-1"><bdi>0-387-94087-1</bdi></a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Fibre+Bundles&amp;rft.pub=Springer+Verlag&amp;rft.date=1994&amp;rft.isbn=0-387-94087-1&amp;rft.aulast=Husem%C3%B6ller&amp;rft.aufirst=Dale&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AObstruction+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFSteenrod1951"><a href="/wiki/Norman_Steenrod" title="Norman Steenrod">Steenrod, Norman</a> (1951), <i>The Topology of Fibre Bundles</i>, Princeton University Press, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-691-08055-0" title="Special:BookSources/0-691-08055-0"><bdi>0-691-08055-0</bdi></a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+Topology+of+Fibre+Bundles&amp;rft.pub=Princeton+University+Press&amp;rft.date=1951&amp;rft.isbn=0-691-08055-0&amp;rft.aulast=Steenrod&amp;rft.aufirst=Norman&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AObstruction+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFScorpan2005">Scorpan, Alexandru (2005). <i>The wild world of 4-manifolds</i>. American Mathematical Society. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-8218-3749-4" title="Special:BookSources/0-8218-3749-4"><bdi>0-8218-3749-4</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+wild+world+of+4-manifolds&amp;rft.pub=American+Mathematical+Society&amp;rft.date=2005&amp;rft.isbn=0-8218-3749-4&amp;rft.aulast=Scorpan&amp;rft.aufirst=Alexandru&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AObstruction+theory"></span></link></li></ul>
+<!-- 
+NewPP limit report
+Parsed by mw‐web.codfw.main‐b574f7ddb‐bjf8f
+Cached time: 20250313140723
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.124 seconds
+Real time usage: 0.187 seconds
+Preprocessor visited node count: 1490/1000000
+Post‐expand include size: 9628/2097152 bytes
+Template argument size: 2255/2097152 bytes
+Highest expansion depth: 8/100
+Expensive parser function count: 1/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 6708/5000000 bytes
+Lua time usage: 0.066/10.000 seconds
+Lua memory usage: 2895779/52428800 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  106.547      1 -total
+ 62.04%   66.099      2 Template:Citation
+ 29.90%   31.860     26 Template:Math
+  4.62%    4.922      1 Template:Cite_book
+  4.01%    4.271     26 Template:Main_other
+  1.51%    1.608     18 Template:Mvar
+-->
+<!-- Saved in parser cache with key enwiki:pcache:2179639:|#|:idhash:canonical and timestamp 20250313140723 and revision id 1252603302. Rendering was triggered because: page-view
+ -->
+</meta></div>

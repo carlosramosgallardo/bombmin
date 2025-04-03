@@ -1,0 +1,917 @@
+<div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><style data-mw-deduplicate="TemplateStyles:r1236090951">.mw-parser-output .hatnote{font-style:italic}.mw-parser-output div.hatnote{padding-left:1.6em;margin-bottom:0.5em}.mw-parser-output .hatnote i{font-style:normal}.mw-parser-output .hatnote+link+.hatnote{margin-top:-0.5em}@media print{body.ns-0 .mw-parser-output .hatnote{display:none!important}}</style><div class="hatnote navigation-not-searchable" role="note">This article is about a mathematical concept. For other uses, see <a class="mw-disambig" href="/wiki/Ring_theory_(disambiguation)" title="Ring theory (disambiguation)">Ring theory (disambiguation)</a>.</div>
+<div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none">Branch of algebra</div>
+<style data-mw-deduplicate="TemplateStyles:r1129693374">.mw-parser-output .hlist dl,.mw-parser-output .hlist ol,.mw-parser-output .hlist ul{margin:0;padding:0}.mw-parser-output .hlist dd,.mw-parser-output .hlist dt,.mw-parser-output .hlist li{margin:0;display:inline}.mw-parser-output .hlist.inline,.mw-parser-output .hlist.inline dl,.mw-parser-output .hlist.inline ol,.mw-parser-output .hlist.inline ul,.mw-parser-output .hlist dl dl,.mw-parser-output .hlist dl ol,.mw-parser-output .hlist dl ul,.mw-parser-output .hlist ol dl,.mw-parser-output .hlist ol ol,.mw-parser-output .hlist ol ul,.mw-parser-output .hlist ul dl,.mw-parser-output .hlist ul ol,.mw-parser-output .hlist ul ul{display:inline}.mw-parser-output .hlist .mw-empty-li{display:none}.mw-parser-output .hlist dt::after{content:": "}.mw-parser-output .hlist dd::after,.mw-parser-output .hlist li::after{content:" · ";font-weight:bold}.mw-parser-output .hlist dd:last-child::after,.mw-parser-output .hlist dt:last-child::after,.mw-parser-output .hlist li:last-child::after{content:none}.mw-parser-output .hlist dd dd:first-child::before,.mw-parser-output .hlist dd dt:first-child::before,.mw-parser-output .hlist dd li:first-child::before,.mw-parser-output .hlist dt dd:first-child::before,.mw-parser-output .hlist dt dt:first-child::before,.mw-parser-output .hlist dt li:first-child::before,.mw-parser-output .hlist li dd:first-child::before,.mw-parser-output .hlist li dt:first-child::before,.mw-parser-output .hlist li li:first-child::before{content:" (";font-weight:normal}.mw-parser-output .hlist dd dd:last-child::after,.mw-parser-output .hlist dd dt:last-child::after,.mw-parser-output .hlist dd li:last-child::after,.mw-parser-output .hlist dt dd:last-child::after,.mw-parser-output .hlist dt dt:last-child::after,.mw-parser-output .hlist dt li:last-child::after,.mw-parser-output .hlist li dd:last-child::after,.mw-parser-output .hlist li dt:last-child::after,.mw-parser-output .hlist li li:last-child::after{content:")";font-weight:normal}.mw-parser-output .hlist ol{counter-reset:listitem}.mw-parser-output .hlist ol>li{counter-increment:listitem}.mw-parser-output .hlist ol>li::before{content:" "counter(listitem)"\a0 "}.mw-parser-output .hlist dd ol>li:first-child::before,.mw-parser-output .hlist dt ol>li:first-child::before,.mw-parser-output .hlist li ol>li:first-child::before{content:" ("counter(listitem)"\a0 "}</style><style data-mw-deduplicate="TemplateStyles:r1126788409">.mw-parser-output .plainlist ol,.mw-parser-output .plainlist ul{line-height:inherit;list-style:none;margin:0;padding:0}.mw-parser-output .plainlist ol li,.mw-parser-output .plainlist ul li{margin-bottom:0}</style><style data-mw-deduplicate="TemplateStyles:r1246091330">.mw-parser-output .sidebar{width:22em;float:right;clear:right;margin:0.5em 0 1em 1em;background:var(--background-color-neutral-subtle,#f8f9fa);border:1px solid var(--border-color-base,#a2a9b1);padding:0.2em;text-align:center;line-height:1.4em;font-size:88%;border-collapse:collapse;display:table}body.skin-minerva .mw-parser-output .sidebar{display:table!important;float:right!important;margin:0.5em 0 1em 1em!important}.mw-parser-output .sidebar-subgroup{width:100%;margin:0;border-spacing:0}.mw-parser-output .sidebar-left{float:left;clear:left;margin:0.5em 1em 1em 0}.mw-parser-output .sidebar-none{float:none;clear:both;margin:0.5em 1em 1em 0}.mw-parser-output .sidebar-outer-title{padding:0 0.4em 0.2em;font-size:125%;line-height:1.2em;font-weight:bold}.mw-parser-output .sidebar-top-image{padding:0.4em}.mw-parser-output .sidebar-top-caption,.mw-parser-output .sidebar-pretitle-with-top-image,.mw-parser-output .sidebar-caption{padding:0.2em 0.4em 0;line-height:1.2em}.mw-parser-output .sidebar-pretitle{padding:0.4em 0.4em 0;line-height:1.2em}.mw-parser-output .sidebar-title,.mw-parser-output .sidebar-title-with-pretitle{padding:0.2em 0.8em;font-size:145%;line-height:1.2em}.mw-parser-output .sidebar-title-with-pretitle{padding:0.1em 0.4em}.mw-parser-output .sidebar-image{padding:0.2em 0.4em 0.4em}.mw-parser-output .sidebar-heading{padding:0.1em 0.4em}.mw-parser-output .sidebar-content{padding:0 0.5em 0.4em}.mw-parser-output .sidebar-content-with-subgroup{padding:0.1em 0.4em 0.2em}.mw-parser-output .sidebar-above,.mw-parser-output .sidebar-below{padding:0.3em 0.8em;font-weight:bold}.mw-parser-output .sidebar-collapse .sidebar-above,.mw-parser-output .sidebar-collapse .sidebar-below{border-top:1px solid #aaa;border-bottom:1px solid #aaa}.mw-parser-output .sidebar-navbar{text-align:right;font-size:115%;padding:0 0.4em 0.4em}.mw-parser-output .sidebar-list-title{padding:0 0.4em;text-align:left;font-weight:bold;line-height:1.6em;font-size:105%}.mw-parser-output .sidebar-list-title-c{padding:0 0.4em;text-align:center;margin:0 3.3em}@media(max-width:640px){body.mediawiki .mw-parser-output .sidebar{width:100%!important;clear:both;float:none!important;margin-left:0!important;margin-right:0!important}}body.skin--responsive .mw-parser-output .sidebar a>img{max-width:none!important}@media screen{html.skin-theme-clientpref-night .mw-parser-output .sidebar:not(.notheme) .sidebar-list-title,html.skin-theme-clientpref-night .mw-parser-output .sidebar:not(.notheme) .sidebar-title-with-pretitle{background:transparent!important}html.skin-theme-clientpref-night .mw-parser-output .sidebar:not(.notheme) .sidebar-title-with-pretitle a{color:var(--color-progressive)!important}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .sidebar:not(.notheme) .sidebar-list-title,html.skin-theme-clientpref-os .mw-parser-output .sidebar:not(.notheme) .sidebar-title-with-pretitle{background:transparent!important}html.skin-theme-clientpref-os .mw-parser-output .sidebar:not(.notheme) .sidebar-title-with-pretitle a{color:var(--color-progressive)!important}}@media print{body.ns-0 .mw-parser-output .sidebar{display:none!important}}</style><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><table class="sidebar sidebar-collapse nomobile nowraplinks plainlist"><tbody><tr><th class="sidebar-title" style="display:block;margin-bottom:0.35em;"><a href="/wiki/Algebraic_structure" title="Algebraic structure">Algebraic structures</a></th></tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Group_(mathematics)" title="Group (mathematics)">Group</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;">
+<ul><li><a href="/wiki/Group_(mathematics)" title="Group (mathematics)">Group</a></li>
+<li><a href="/wiki/Semigroup" title="Semigroup">Semigroup</a> / <a href="/wiki/Monoid" title="Monoid">Monoid</a></li>
+<li><a href="/wiki/Racks_and_quandles" title="Racks and quandles">Rack and quandle</a></li>
+<li><a href="/wiki/Quasigroup" title="Quasigroup">Quasigroup and loop</a></li></ul>
+<div class="hlist">
+<ul><li><a href="/wiki/Abelian_group" title="Abelian group">Abelian group</a></li>
+<li><a href="/wiki/Magma_(algebra)" title="Magma (algebra)">Magma</a></li>
+<li><a href="/wiki/Lie_group" title="Lie group">Lie group</a></li></ul>
+</div>
+<i><a href="/wiki/Group_theory" title="Group theory">Group theory</a></i></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">Ring</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;"><div class="hlist">
+<ul><li><a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">Ring</a></li>
+<li><a href="/wiki/Rng_(algebra)" title="Rng (algebra)">Rng</a></li>
+<li><a href="/wiki/Semiring" title="Semiring">Semiring</a></li>
+<li><a href="/wiki/Near-ring" title="Near-ring">Near-ring</a></li>
+<li><a href="/wiki/Commutative_ring" title="Commutative ring">Commutative ring</a></li>
+<li><a href="/wiki/Domain_(ring_theory)" title="Domain (ring theory)">Domain</a></li>
+<li><a href="/wiki/Integral_domain" title="Integral domain">Integral domain</a></li>
+<li><a href="/wiki/Field_(mathematics)" title="Field (mathematics)">Field</a></li>
+<li><a href="/wiki/Division_ring" title="Division ring">Division ring</a></li>
+<li><a href="/wiki/Lie_algebra#Lie_ring" title="Lie algebra">Lie ring</a></li></ul>
+</div>
+<i><a class="mw-selflink selflink">Ring theory</a></i></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Lattice_(order)" title="Lattice (order)">Lattice</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;"><div class="hlist">
+<ul><li><a href="/wiki/Lattice_(order)" title="Lattice (order)">Lattice</a></li>
+<li><a href="/wiki/Semilattice" title="Semilattice">Semilattice</a></li>
+<li><a href="/wiki/Complemented_lattice" title="Complemented lattice">Complemented lattice</a></li>
+<li><a href="/wiki/Total_order" title="Total order">Total order</a></li>
+<li><a href="/wiki/Heyting_algebra" title="Heyting algebra">Heyting algebra</a></li>
+<li><a href="/wiki/Boolean_algebra_(structure)" title="Boolean algebra (structure)">Boolean algebra</a></li></ul>
+</div>
+<ul><li><a href="/wiki/Map_of_lattices" title="Map of lattices">Map of lattices</a></li>
+<li><i><a href="/wiki/Lattice_(order)" title="Lattice (order)">Lattice theory</a></i></li></ul></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Module_(mathematics)" title="Module (mathematics)">Module</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;"><div class="hlist">
+<ul><li><a href="/wiki/Module_(mathematics)" title="Module (mathematics)">Module</a></li>
+<li><a href="/wiki/Group_with_operators" title="Group with operators">Group with operators</a></li>
+<li><a href="/wiki/Vector_space" title="Vector space">Vector space</a></li></ul>
+</div>
+<ul><li><i><a href="/wiki/Linear_algebra" title="Linear algebra">Linear algebra</a></i></li></ul></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Algebra_over_a_field" title="Algebra over a field">Algebra</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;">
+<ul><li><a href="/wiki/Algebra_over_a_field" title="Algebra over a field">Algebra</a></li></ul>
+<div class="hlist">
+<ul><li><a href="/wiki/Associative_algebra" title="Associative algebra">Associative</a></li>
+<li><a href="/wiki/Non-associative_algebra" title="Non-associative algebra">Non-associative</a></li>
+<li><a href="/wiki/Composition_algebra" title="Composition algebra">Composition algebra</a></li>
+<li><a href="/wiki/Lie_algebra" title="Lie algebra">Lie algebra</a></li>
+<li><a href="/wiki/Graded_ring" title="Graded ring">Graded</a></li>
+<li><a href="/wiki/Bialgebra" title="Bialgebra">Bialgebra</a></li>
+<li><a href="/wiki/Hopf_algebra" title="Hopf algebra">Hopf algebra</a></li></ul>
+</div></div></div></td>
+</tr><tr><td class="sidebar-navbar"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><style data-mw-deduplicate="TemplateStyles:r1239400231">.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:"[ "}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:" ]"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a>span,.mw-parser-output .navbar a>abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}html.skin-theme-clientpref-night .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}@media(prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}}@media print{.mw-parser-output .navbar{display:none!important}}</style><div class="navbar plainlinks hlist navbar-mini"><ul><li class="nv-view"><a href="/wiki/Template:Algebraic_structures" title="Template:Algebraic structures"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Algebraic_structures" title="Template talk:Algebraic structures"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a href="/wiki/Special:EditPage/Template:Algebraic_structures" title="Special:EditPage/Template:Algebraic structures"><abbr title="Edit this template">e</abbr></a></li></ul></div></link></td></tr></tbody></table>
+<link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"/><link href="mw-data:TemplateStyles:r1126788409" rel="mw-deduplicated-inline-style"/><link href="mw-data:TemplateStyles:r1246091330" rel="mw-deduplicated-inline-style"/><table class="sidebar sidebar-collapse nomobile nowraplinks plainlist" style="width: 20.5em;"><tbody><tr><th class="sidebar-title" style="padding-bottom:0.4em;"><span style="font-size: 8pt; font-weight: none"><a href="/wiki/Algebraic_structure" title="Algebraic structure">Algebraic structure</a> → Ring theory</span><br/><a class="mw-selflink selflink">Ring theory</a></th></tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)">Basic concepts</div><div class="sidebar-list-content mw-collapsible-content" style="text-align: left;"><b><a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">Rings</a></b>
+<dl><dd>• <a href="/wiki/Subring" title="Subring">Subrings</a></dd>
+<dd>• <a href="/wiki/Ideal_(ring_theory)" title="Ideal (ring theory)">Ideal</a></dd>
+<dd>• <a href="/wiki/Quotient_ring" title="Quotient ring">Quotient ring</a>
+<dl><dd>• <a href="/wiki/Fractional_ideal" title="Fractional ideal">Fractional ideal</a></dd>
+<dd>• <a href="/wiki/Total_ring_of_fractions" title="Total ring of fractions">Total ring of fractions</a></dd></dl></dd>
+<dd>• <a href="/wiki/Product_of_rings" title="Product of rings">Product of rings</a></dd>
+<dd>• <a href="/wiki/Free_product_of_associative_algebras" title="Free product of associative algebras">Free product of associative algebras</a></dd>
+<dd>• <a href="/wiki/Tensor_product_of_algebras" title="Tensor product of algebras">Tensor product of algebras</a></dd></dl>
+<p><b><a href="/wiki/Ring_homomorphism" title="Ring homomorphism">Ring homomorphisms</a></b>
+</p>
+<dl><dd>• <a href="/wiki/Kernel_(algebra)#Ring_homomorphisms" title="Kernel (algebra)">Kernel</a></dd>
+<dd>• <a href="/wiki/Inner_automorphism#Ring_case" title="Inner automorphism">Inner automorphism</a></dd>
+<dd>• <a href="/wiki/Frobenius_endomorphism" title="Frobenius endomorphism">Frobenius endomorphism</a></dd></dl>
+<p><b><a href="/wiki/Algebraic_structure" title="Algebraic structure">Algebraic structures</a></b>
+</p>
+<dl><dd>• <a href="/wiki/Module_(mathematics)" title="Module (mathematics)">Module</a></dd>
+<dd>• <a href="/wiki/Associative_algebra" title="Associative algebra">Associative algebra</a></dd>
+<dd>• <a href="/wiki/Graded_ring" title="Graded ring">Graded ring</a></dd>
+<dd>• <a class="mw-redirect" href="/wiki/Involutive_ring" title="Involutive ring">Involutive ring</a></dd>
+<dd>• <a href="/wiki/Category_of_rings" title="Category of rings">Category of rings</a>
+<dl><dd>• <a href="/wiki/Integer" title="Integer">Initial ring</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {Z} }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {Z} }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {Z} }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/449494a083e0a1fda2b61c62b2f09b6bee4633dc" style="vertical-align: -0.338ex; width:1.55ex; height:2.176ex;"/></span></dd>
+<dd>• <a href="/wiki/Zero_ring" title="Zero ring">Terminal ring</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle 0=\mathbb {Z} /1\mathbb {Z} }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mn>0</mn>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<mn>1</mn>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle 0=\mathbb {Z} /1\mathbb {Z} }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle 0=\mathbb {Z} /1\mathbb {Z} }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e45ab495cb8cfbac68a9322af662c3d6c7dbe494" style="vertical-align: -0.838ex; width:9.686ex; height:2.843ex;"/></span></dd></dl></dd></dl>
+<p><b>Related structures</b>
+</p>
+<dl><dd>• <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">Field</a>
+<dl><dd>• <a href="/wiki/Finite_field" title="Finite field">Finite field</a></dd></dl></dd>
+<dd>• <a class="mw-redirect" href="/wiki/Non-associative_ring" title="Non-associative ring">Non-associative ring</a>
+<dl><dd>• <a class="mw-redirect" href="/wiki/Lie_ring" title="Lie ring">Lie ring</a></dd>
+<dd>• <a class="mw-redirect" href="/wiki/Jordan_ring" title="Jordan ring">Jordan ring</a></dd></dl></dd>
+<dd>• <a href="/wiki/Semiring" title="Semiring">Semiring</a>
+<dl><dd>• <a href="/wiki/Semifield" title="Semifield">Semifield</a></dd></dl></dd></dl></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Commutative_algebra" title="Commutative algebra">Commutative algebra</a></div><div class="sidebar-list-content mw-collapsible-content" style="text-align: left;"><b><a href="/wiki/Commutative_ring" title="Commutative ring">Commutative rings</a></b>
+<dl><dd>• <a href="/wiki/Integral_domain" title="Integral domain">Integral domain</a>
+<dl><dd>• <a href="/wiki/Integrally_closed_domain" title="Integrally closed domain">Integrally closed domain</a></dd>
+<dd>• <a href="/wiki/GCD_domain" title="GCD domain">GCD domain</a></dd>
+<dd>• <a href="/wiki/Unique_factorization_domain" title="Unique factorization domain">Unique factorization domain</a></dd>
+<dd>• <a href="/wiki/Principal_ideal_domain" title="Principal ideal domain">Principal ideal domain</a></dd>
+<dd>• <a href="/wiki/Euclidean_domain" title="Euclidean domain">Euclidean domain</a></dd>
+<dd>• <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">Field</a>
+<dl><dd>• <a href="/wiki/Finite_field" title="Finite field">Finite field</a></dd></dl></dd>
+<dd>• <a href="/wiki/Polynomial_ring" title="Polynomial ring">Polynomial ring</a></dd>
+<dd>• <a class="mw-redirect" href="/wiki/Formal_power_series_ring" title="Formal power series ring">Formal power series ring</a></dd></dl></dd></dl>
+<p><b><a href="/wiki/Algebraic_number_theory" title="Algebraic number theory">Algebraic number theory</a></b>
+</p>
+<dl><dd>• <a href="/wiki/Algebraic_number_field" title="Algebraic number field">Algebraic number field</a></dd>
+<dd>• <a class="mw-redirect" href="/wiki/Integers_modulo_n" title="Integers modulo n">Integers modulo <span class="texhtml mvar" style="font-style:italic;">n</span></a></dd>
+<dd>• <a href="/wiki/Ring_of_integers" title="Ring of integers">Ring of integers</a></dd>
+<dd>• <a class="mw-redirect" href="/wiki/P-adic_integer" title="P-adic integer"><i>p</i>-adic integers</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {Z} _{p}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {Z} _{p}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {Z} _{p}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dbc1df7227ef11fe88dccd2dae3adc7bbdeae5f4" style="vertical-align: -1.005ex; width:2.609ex; height:2.843ex;"/></span></dd>
+<dd>• <a href="/wiki/P-adic_number" title="P-adic number"><i>p</i>-adic numbers</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {Q} _{p}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Q</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {Q} _{p}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {Q} _{p}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/35f44bc6894c682710705f3ea74f33042e0acc3e" style="vertical-align: -1.005ex; width:2.867ex; height:2.843ex;"/></span></dd>
+<dd>• <a href="/wiki/Pr%C3%BCfer_group#The_Prüfer_group_as_a_ring" title="Prüfer group">Prüfer <i>p</i>-ring</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {Z} (p^{\infty })}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>p</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="normal">∞<!-- ∞ --></mi>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {Z} (p^{\infty })}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {Z} (p^{\infty })}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/14af623e08c241266c125ad927dd35086ec8ce90" style="vertical-align: -0.838ex; width:6.404ex; height:2.843ex;"/></span></dd></dl></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a class="mw-redirect" href="/wiki/Noncommutative_algebra" title="Noncommutative algebra">Noncommutative algebra</a></div><div class="sidebar-list-content mw-collapsible-content" style="text-align: left;"><b><a href="/wiki/Noncommutative_ring" title="Noncommutative ring">Noncommutative rings</a></b>
+<dl><dd>• <a href="/wiki/Division_ring" title="Division ring">Division ring</a></dd>
+<dd>• <a href="/wiki/Semiprimitive_ring" title="Semiprimitive ring">Semiprimitive ring</a></dd>
+<dd>• <a href="/wiki/Simple_ring" title="Simple ring">Simple ring</a></dd>
+<dd>• <a class="mw-redirect" href="/wiki/Commutator_(ring_theory)" title="Commutator (ring theory)">Commutator</a></dd></dl>
+<p><b><a href="/wiki/Noncommutative_algebraic_geometry" title="Noncommutative algebraic geometry">Noncommutative algebraic geometry</a></b>
+</p><p><b><a href="/wiki/Free_algebra" title="Free algebra">Free algebra</a></b>
+</p><p><b><a href="/wiki/Clifford_algebra" title="Clifford algebra">Clifford algebra</a></b>
+</p>
+<dl><dd>• <a href="/wiki/Geometric_algebra" title="Geometric algebra">Geometric algebra</a></dd></dl>
+<b><a href="/wiki/Operator_algebra" title="Operator algebra">Operator algebra</a></b></div></div></td>
+</tr><tr><td class="sidebar-navbar"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"/><link href="mw-data:TemplateStyles:r1239400231" rel="mw-deduplicated-inline-style"/><div class="navbar plainlinks hlist navbar-mini"><ul><li class="nv-view"><a href="/wiki/Template:Ring_theory_sidebar" title="Template:Ring theory sidebar"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Ring_theory_sidebar" title="Template talk:Ring theory sidebar"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a href="/wiki/Special:EditPage/Template:Ring_theory_sidebar" title="Special:EditPage/Template:Ring theory sidebar"><abbr title="Edit this template">e</abbr></a></li></ul></div></td></tr></tbody></table>
+<p>In <a href="/wiki/Algebra" title="Algebra">algebra</a>, <b>ring theory</b> is the study of <a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">rings</a>, <a href="/wiki/Algebraic_structure" title="Algebraic structure">algebraic structures</a> in which addition and multiplication are defined and have similar properties to those operations defined for the <a href="/wiki/Integer" title="Integer">integers</a>. Ring theory studies the structure of rings; their <a class="mw-redirect" href="/wiki/Representation_of_an_algebra" title="Representation of an algebra">representations</a>, or, in different language, <a class="mw-redirect" href="/wiki/Module_(ring_theory)" title="Module (ring theory)">modules</a>; special classes of rings (<a href="/wiki/Group_ring" title="Group ring">group rings</a>, <a href="/wiki/Division_ring" title="Division ring">division rings</a>, <a href="/wiki/Universal_enveloping_algebra" title="Universal enveloping algebra">universal enveloping algebras</a>); related structures like <a href="/wiki/Rng_(algebra)" title="Rng (algebra)">rngs</a>; as well as an array of properties that prove to be of interest both within the theory itself and for its applications, such as <a href="/wiki/Homological_algebra" title="Homological algebra">homological properties</a> and <a href="/wiki/Polynomial_identity_ring" title="Polynomial identity ring">polynomial identities</a>.
+</p><p><a href="/wiki/Commutative_ring" title="Commutative ring">Commutative rings</a> are much better understood than noncommutative ones. <a href="/wiki/Algebraic_geometry" title="Algebraic geometry">Algebraic geometry</a> and <a href="/wiki/Algebraic_number_theory" title="Algebraic number theory">algebraic number theory</a>, which provide many natural examples of commutative rings, have driven much of the development of commutative ring theory, which is now, under the name of <i><a href="/wiki/Commutative_algebra" title="Commutative algebra">commutative algebra</a></i>, a major area of modern mathematics. Because these three fields (algebraic geometry, algebraic number theory and commutative algebra) are so intimately connected it is usually difficult and meaningless to decide which field a particular result belongs to. For example, <a href="/wiki/Hilbert%27s_Nullstellensatz" title="Hilbert's Nullstellensatz">Hilbert's Nullstellensatz</a> is a theorem which is fundamental for algebraic geometry, and is stated and proved in terms of commutative algebra. Similarly, <a href="/wiki/Fermat%27s_Last_Theorem" title="Fermat's Last Theorem">Fermat's Last Theorem</a> is stated in terms of elementary <a href="/wiki/Arithmetic" title="Arithmetic">arithmetic</a>, which is a part of commutative algebra, but its proof involves deep results of both algebraic number theory and algebraic geometry.
+</p><p><a href="/wiki/Noncommutative_ring" title="Noncommutative ring">Noncommutative rings</a> are quite different in flavour, since more unusual behavior can arise. While the theory has developed in its own right, a fairly recent trend has sought to parallel the commutative development by building the theory of certain classes of noncommutative rings in a geometric fashion as if they were rings of <a href="/wiki/Function_(mathematics)" title="Function (mathematics)">functions</a> on (non-existent) 'noncommutative spaces'. This trend started in the 1980s with the development of <a href="/wiki/Noncommutative_geometry" title="Noncommutative geometry">noncommutative geometry</a> and with the discovery of <a href="/wiki/Quantum_group" title="Quantum group">quantum groups</a>. It has led to a better understanding of noncommutative rings, especially noncommutative <a href="/wiki/Noetherian_ring" title="Noetherian ring">Noetherian rings</a>.<sup class="reference" id="cite_ref-FOOTNOTEGoodearlWarfield1989_1-0"><a href="#cite_note-FOOTNOTEGoodearlWarfield1989-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup>
+</p><p>For the definitions of a ring and basic concepts and their properties, see <i><a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">Ring (mathematics)</a></i>. The definitions of terms used throughout ring theory may be found in <i><a href="/wiki/Glossary_of_ring_theory" title="Glossary of ring theory">Glossary of ring theory</a></i>.
+</p>
+<meta property="mw:PageProp/toc">
+<div class="mw-heading mw-heading2"><h2 id="Commutative_rings">Commutative rings</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=1" title="Edit section: Commutative rings"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"/><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Commutative_algebra" title="Commutative algebra">Commutative algebra</a></div>
+<p>A ring is called <i>commutative</i> if its multiplication is <a class="mw-redirect" href="/wiki/Commutative" title="Commutative">commutative</a>. Commutative rings resemble familiar number systems, and various definitions for commutative rings are designed to formalize properties of the <a href="/wiki/Integer" title="Integer">integers</a>. Commutative rings are also important in <a href="/wiki/Algebraic_geometry" title="Algebraic geometry">algebraic geometry</a>. In commutative ring theory, numbers are often replaced by <a href="/wiki/Ideal_(ring_theory)" title="Ideal (ring theory)">ideals</a>, and the definition of the <a href="/wiki/Prime_ideal" title="Prime ideal">prime ideal</a> tries to capture the essence of <a href="/wiki/Prime_number" title="Prime number">prime numbers</a>. <a href="/wiki/Integral_domain" title="Integral domain">Integral domains</a>, non-trivial commutative rings where no two non-zero elements multiply to give zero, generalize another property of the integers and serve as the proper realm to study divisibility. <a href="/wiki/Principal_ideal_domain" title="Principal ideal domain">Principal ideal domains</a> are integral domains in which every ideal can be generated by a single element, another property shared by the integers. <a href="/wiki/Euclidean_domain" title="Euclidean domain">Euclidean domains</a> are integral domains in which the <a href="/wiki/Greatest_common_divisor" title="Greatest common divisor">Euclidean algorithm</a> can be carried out. Important examples of commutative rings can be constructed as rings of <a href="/wiki/Polynomial" title="Polynomial">polynomials</a> and their factor rings.  Summary: <a href="/wiki/Euclidean_domain" title="Euclidean domain">Euclidean domain</a> ⊂ <a href="/wiki/Principal_ideal_domain" title="Principal ideal domain">principal ideal domain</a> ⊂ <a href="/wiki/Unique_factorization_domain" title="Unique factorization domain">unique factorization domain</a> ⊂ <a href="/wiki/Integral_domain" title="Integral domain">integral domain</a> ⊂ <a href="/wiki/Commutative_ring" title="Commutative ring">commutative ring</a>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Algebraic_geometry">Algebraic geometry</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=2" title="Edit section: Algebraic geometry"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"/><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Algebraic_geometry" title="Algebraic geometry">Algebraic geometry</a></div>
+<p><a href="/wiki/Algebraic_geometry" title="Algebraic geometry">Algebraic geometry</a> is in many ways the mirror image of commutative algebra. This correspondence started with <a href="/wiki/Hilbert%27s_Nullstellensatz" title="Hilbert's Nullstellensatz">Hilbert's Nullstellensatz</a> that establishes a one-to-one correspondence between the points of an <a href="/wiki/Algebraic_variety" title="Algebraic variety">algebraic variety</a>, and the <a href="/wiki/Maximal_ideal" title="Maximal ideal">maximal ideals</a> of its <a class="mw-redirect" href="/wiki/Coordinate_ring" title="Coordinate ring">coordinate ring</a>. This correspondence has been enlarged and systematized for translating (and proving) most geometrical properties of algebraic varieties into algebraic properties of associated commutative rings. <a href="/wiki/Alexander_Grothendieck" title="Alexander Grothendieck">Alexander Grothendieck</a> completed this by introducing <a href="/wiki/Scheme_(mathematics)" title="Scheme (mathematics)">schemes</a>, a generalization of algebraic varieties, which may be built from any commutative ring. More precisely, 
+the <a href="/wiki/Spectrum_of_a_ring" title="Spectrum of a ring">spectrum</a> of a commutative ring is the space of its prime ideals equipped with <a href="/wiki/Zariski_topology" title="Zariski topology">Zariski topology</a>, and augmented with a <a href="/wiki/Sheaf_(mathematics)" title="Sheaf (mathematics)">sheaf</a> of rings. These objects are the "affine schemes" (generalization of <a class="mw-redirect" href="/wiki/Affine_varieties" title="Affine varieties">affine varieties</a>), and a general scheme is then obtained by "gluing together" (by purely algebraic methods) several such affine schemes, in analogy to the way of constructing a <a href="/wiki/Manifold" title="Manifold">manifold</a> by gluing together the <a class="mw-redirect" href="/wiki/Chart_(topology)" title="Chart (topology)">charts</a> of an <a href="/wiki/Atlas_(topology)" title="Atlas (topology)">atlas</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Noncommutative_rings">Noncommutative rings</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=3" title="Edit section: Noncommutative rings"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"/><div class="hatnote navigation-not-searchable" role="note">Main articles: <a href="/wiki/Noncommutative_ring" title="Noncommutative ring">Noncommutative ring</a>, <a href="/wiki/Noncommutative_algebraic_geometry" title="Noncommutative algebraic geometry">Noncommutative algebraic geometry</a>, and <a href="/wiki/Noncommutative_geometry" title="Noncommutative geometry">Noncommutative geometry</a></div>
+<p>Noncommutative rings resemble rings of <a href="/wiki/Matrix_(mathematics)" title="Matrix (mathematics)">matrices</a> in many respects. Following the model of <a href="/wiki/Algebraic_geometry" title="Algebraic geometry">algebraic geometry</a>, attempts have been made recently at defining <a href="/wiki/Noncommutative_geometry" title="Noncommutative geometry">noncommutative geometry</a> based on noncommutative rings.
+Noncommutative rings and <a href="/wiki/Associative_algebra" title="Associative algebra">associative algebras</a> (rings that are also <a href="/wiki/Vector_space" title="Vector space">vector spaces</a>) are often studied via their <a href="/wiki/Category_theory" title="Category theory">categories</a> of modules. A <a href="/wiki/Module_(mathematics)" title="Module (mathematics)">module</a> over a ring is an abelian <a href="/wiki/Group_(mathematics)" title="Group (mathematics)">group</a> that the ring acts on as a ring of <a href="/wiki/Endomorphism" title="Endomorphism">endomorphisms</a>, very much akin to the way <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">fields</a> (integral domains in which every non-zero element is invertible) act on vector spaces. Examples of noncommutative rings are given by rings of square <a href="/wiki/Matrix_(mathematics)" title="Matrix (mathematics)">matrices</a> or more generally by rings of endomorphisms of abelian groups or modules, and by <a href="/wiki/Monoid_ring" title="Monoid ring">monoid rings</a>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Representation_theory">Representation theory</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=4" title="Edit section: Representation theory"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"/><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Representation_theory" title="Representation theory">Representation theory</a></div>
+<p><a href="/wiki/Representation_theory" title="Representation theory">Representation theory</a> is a branch of <a href="/wiki/Mathematics" title="Mathematics">mathematics</a> that draws heavily on non-commutative rings. It studies <a href="/wiki/Abstract_algebra" title="Abstract algebra">abstract</a> <a href="/wiki/Algebraic_structure" title="Algebraic structure">algebraic structures</a> by <i>representing</i> their <a class="mw-redirect" href="/wiki/Element_(set_theory)" title="Element (set theory)">elements</a> as <a class="mw-redirect" href="/wiki/Linear_transformation" title="Linear transformation">linear transformations</a> of <a href="/wiki/Vector_space" title="Vector space">vector spaces</a>, and studies
+<a href="/wiki/Module_(mathematics)" title="Module (mathematics)">modules</a> over these abstract algebraic structures. In essence, a representation makes an abstract algebraic object more concrete by describing its elements by <a href="/wiki/Matrix_(mathematics)" title="Matrix (mathematics)">matrices</a> and the <a href="/wiki/Algebraic_operation" title="Algebraic operation">algebraic operations</a> in terms of <a href="/wiki/Matrix_addition" title="Matrix addition">matrix addition</a> and <a href="/wiki/Matrix_multiplication" title="Matrix multiplication">matrix multiplication</a>, which is non-commutative. The <a href="/wiki/Algebra" title="Algebra">algebraic</a> objects amenable to such a description include <a href="/wiki/Group_(mathematics)" title="Group (mathematics)">groups</a>, <a href="/wiki/Associative_algebra" title="Associative algebra">associative algebras</a> and <a href="/wiki/Lie_algebra" title="Lie algebra">Lie algebras</a>. The most prominent of these (and historically the first) is the <a href="/wiki/Group_representation" title="Group representation">representation theory of groups</a>, in which elements of a group are represented by invertible matrices in such a way that the group operation is matrix multiplication.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Some_relevant_theorems">Some relevant theorems</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=5" title="Edit section: Some relevant theorems"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>General
+</p>
+<ul><li><a class="mw-redirect" href="/wiki/Isomorphism_theorem#Rings" title="Isomorphism theorem">Isomorphism theorems for rings</a></li>
+<li><a href="/wiki/Nakayama%27s_lemma" title="Nakayama's lemma">Nakayama's lemma</a></li></ul>
+<p>Structure theorems
+</p>
+<ul><li>The <a class="mw-redirect" href="/wiki/Artin%E2%80%93Wedderburn_theorem" title="Artin–Wedderburn theorem">Artin–Wedderburn theorem</a> determines the structure of <a class="mw-redirect" href="/wiki/Semisimple_ring" title="Semisimple ring">semisimple rings</a></li>
+<li>The <a href="/wiki/Jacobson_density_theorem" title="Jacobson density theorem">Jacobson density theorem</a> determines the structure of <a href="/wiki/Primitive_ring" title="Primitive ring">primitive rings</a></li>
+<li><a href="/wiki/Goldie%27s_theorem" title="Goldie's theorem">Goldie's theorem</a> determines the structure of <a class="mw-redirect" href="/wiki/Semiprime_ideal" title="Semiprime ideal">semiprime</a> <a class="mw-redirect" href="/wiki/Goldie_ring" title="Goldie ring">Goldie rings</a></li>
+<li>The <a class="mw-redirect" href="/wiki/Zariski%E2%80%93Samuel_theorem" title="Zariski–Samuel theorem">Zariski–Samuel theorem</a> determines the structure of a commutative <a href="/wiki/Principal_ideal_ring" title="Principal ideal ring">principal ideal ring</a></li>
+<li>The <a href="/wiki/Hopkins%E2%80%93Levitzki_theorem" title="Hopkins–Levitzki theorem">Hopkins–Levitzki theorem</a> gives necessary and sufficient conditions for a <a href="/wiki/Noetherian_ring" title="Noetherian ring">Noetherian ring</a> to be an <a href="/wiki/Artinian_ring" title="Artinian ring">Artinian ring</a></li>
+<li><a class="mw-redirect" href="/wiki/Morita_theory" title="Morita theory">Morita theory</a> consists of theorems determining when two rings have "equivalent" module categories</li>
+<li><a href="/wiki/Cartan%E2%80%93Brauer%E2%80%93Hua_theorem" title="Cartan–Brauer–Hua theorem">Cartan–Brauer–Hua theorem</a> gives insight on the structure of <a href="/wiki/Division_ring" title="Division ring">division rings</a></li>
+<li><a href="/wiki/Wedderburn%27s_little_theorem" title="Wedderburn's little theorem">Wedderburn's little theorem</a> states that finite <a href="/wiki/Domain_(ring_theory)" title="Domain (ring theory)">domains</a> are <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">fields</a></li></ul>
+<p>Other
+</p>
+<ul><li>The <a href="/wiki/Skolem%E2%80%93Noether_theorem" title="Skolem–Noether theorem">Skolem–Noether theorem</a> characterizes the <a href="/wiki/Automorphism" title="Automorphism">automorphisms</a> of <a href="/wiki/Simple_ring" title="Simple ring">simple rings</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Structures_and_invariants_of_rings">Structures and invariants of rings</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=6" title="Edit section: Structures and invariants of rings"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Dimension_of_a_commutative_ring">Dimension of a commutative ring</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=7" title="Edit section: Dimension of a commutative ring"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"/><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Dimension_theory_(algebra)" title="Dimension theory (algebra)">Dimension theory (algebra)</a></div>
+<p>In this section, <i>R</i> denotes a commutative ring.  The <a href="/wiki/Krull_dimension" title="Krull dimension">Krull dimension</a> of <i>R</i> is the supremum of the lengths <i>n</i> of all the chains of prime ideals <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {p}}_{0}\subsetneq {\mathfrak {p}}_{1}\subsetneq \cdots \subsetneq {\mathfrak {p}}_{n}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>⊊<!-- ⊊ --></mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>⊊<!-- ⊊ --></mo>
+<mo>⋯<!-- ⋯ --></mo>
+<mo>⊊<!-- ⊊ --></mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {p}}_{0}\subsetneq {\mathfrak {p}}_{1}\subsetneq \cdots \subsetneq {\mathfrak {p}}_{n}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {p}}_{0}\subsetneq {\mathfrak {p}}_{1}\subsetneq \cdots \subsetneq {\mathfrak {p}}_{n}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/94228ef0ec667607ca4877fcd2ba608dd4e01e12" style="vertical-align: -0.838ex; width:18.833ex; height:2.509ex;"/></span>. It turns out that the polynomial ring <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle k[t_{1},\cdots ,t_{n}]}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>k</mi>
+<mo stretchy="false">[</mo>
+<msub>
+<mi>t</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<mo>⋯<!-- ⋯ --></mo>
+<mo>,</mo>
+<msub>
+<mi>t</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo stretchy="false">]</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle k[t_{1},\cdots ,t_{n}]}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle k[t_{1},\cdots ,t_{n}]}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7477914d65fe98232e423e6846e35d60ac7feb1e" style="vertical-align: -0.838ex; width:11.635ex; height:2.843ex;"/></span> over a field <i>k</i> has dimension <i>n</i>. The fundamental theorem of dimension theory states that the following numbers coincide for a noetherian local ring <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (R,{\mathfrak {m}})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<mi>R</mi>
+<mo>,</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">m</mi>
+</mrow>
+</mrow>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (R,{\mathfrak {m}})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (R,{\mathfrak {m}})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ebc7ca7df33a28043ce2652f9e0e717c1cbc2a57" style="vertical-align: -0.838ex; width:6.39ex; height:2.843ex;"/></span>:<sup class="reference" id="cite_ref-2"><a href="#cite_note-2"><span class="cite-bracket">[</span>2<span class="cite-bracket">]</span></a></sup>
+</p>
+<ul><li>The Krull dimension of <i>R</i>.</li>
+<li>The minimum number of the generators of the <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {m}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">m</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {m}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {m}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/adc0e9162e96758157a34a6e44967288b481a7cd" style="vertical-align: -0.338ex; width:1.783ex; height:1.676ex;"/></span>-primary ideals.</li>
+<li>The dimension of the graded ring <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \textstyle \operatorname {gr} _{\mathfrak {m}}(R)=\bigoplus _{k\geq 0}{\mathfrak {m}}^{k}/{{\mathfrak {m}}^{k+1}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mstyle displaystyle="false" scriptlevel="0">
+<msub>
+<mi>gr</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">m</mi>
+</mrow>
+</mrow>
+</msub>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>R</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<munder>
+<mo>⨁<!-- ⨁ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+<mo>≥<!-- ≥ --></mo>
+<mn>0</mn>
+</mrow>
+</munder>
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">m</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+</mrow>
+</msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">m</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+<mo>+</mo>
+<mn>1</mn>
+</mrow>
+</msup>
+</mrow>
+</mstyle>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \textstyle \operatorname {gr} _{\mathfrak {m}}(R)=\bigoplus _{k\geq 0}{\mathfrak {m}}^{k}/{{\mathfrak {m}}^{k+1}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \textstyle \operatorname {gr} _{\mathfrak {m}}(R)=\bigoplus _{k\geq 0}{\mathfrak {m}}^{k}/{{\mathfrak {m}}^{k+1}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ed10b5d57efc9fb4f05ace4128deddf1aff0b1c7" style="vertical-align: -1.171ex; width:25.402ex; height:3.343ex;"/></span> (equivalently, 1 plus the degree of its <a class="mw-redirect" href="/wiki/Hilbert_polynomial" title="Hilbert polynomial">Hilbert polynomial</a>).</li></ul>
+<p>A commutative ring <i>R</i> is said to be <a href="/wiki/Catenary_ring" title="Catenary ring">catenary</a> if for every pair of prime ideals <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {p}}\subset {\mathfrak {p}}'}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mo>⊂<!-- ⊂ --></mo>
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mo>′</mo>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {p}}\subset {\mathfrak {p}}'}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {p}}\subset {\mathfrak {p}}'}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6947eda09ec2a12bcdd83a023dfa51cdeb4ffb7c" style="vertical-align: -0.671ex; width:6.108ex; height:2.843ex;"/></span>, there exists a finite chain of prime ideals <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {p}}={\mathfrak {p}}_{0}\subsetneq \cdots \subsetneq {\mathfrak {p}}_{n}={\mathfrak {p}}'}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mo>=</mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>⊊<!-- ⊊ --></mo>
+<mo>⋯<!-- ⋯ --></mo>
+<mo>⊊<!-- ⊊ --></mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mo>′</mo>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {p}}={\mathfrak {p}}_{0}\subsetneq \cdots \subsetneq {\mathfrak {p}}_{n}={\mathfrak {p}}'}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {p}}={\mathfrak {p}}_{0}\subsetneq \cdots \subsetneq {\mathfrak {p}}_{n}={\mathfrak {p}}'}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8713dbeac26d67adfd8aaef79436aa0fa4f91057" style="vertical-align: -0.838ex; width:22.724ex; height:3.009ex;"/></span> that is maximal in the sense that it is impossible to insert an additional prime ideal between two ideals in the chain, and all such maximal chains between <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {p}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {p}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {p}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a14c125cdf81ac25d76edc2e8d557302c9f555a9" style="vertical-align: -0.671ex; width:1.162ex; height:2.176ex;"/></span> and  <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {p}}'}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mo>′</mo>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {p}}'}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {p}}'}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d274a1000a4769f708f2dc3f2705fa0bd3734caf" style="vertical-align: -0.671ex; width:1.847ex; height:2.843ex;"/></span> have the same length.  Practically all noetherian rings that appear in applications are catenary.  Ratliff proved that a noetherian local integral domain <i>R</i> is catenary if and only if for every prime ideal <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {p}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {p}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {p}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a14c125cdf81ac25d76edc2e8d557302c9f555a9" style="vertical-align: -0.671ex; width:1.162ex; height:2.176ex;"/></span>,
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \operatorname {dim} R=\operatorname {ht} {\mathfrak {p}}+\operatorname {dim} R/{\mathfrak {p}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>dim</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mi>R</mi>
+<mo>=</mo>
+<mi>ht</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mo>+</mo>
+<mi>dim</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mi>R</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \operatorname {dim} R=\operatorname {ht} {\mathfrak {p}}+\operatorname {dim} R/{\mathfrak {p}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \operatorname {dim} R=\operatorname {ht} {\mathfrak {p}}+\operatorname {dim} R/{\mathfrak {p}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/bd15855ca0dbc251b6ab7eb467b99bba3c47df02" style="vertical-align: -0.838ex; width:24.063ex; height:2.843ex;"/></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \operatorname {ht} {\mathfrak {p}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ht</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \operatorname {ht} {\mathfrak {p}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \operatorname {ht} {\mathfrak {p}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a6970032ad031a1f1486b204942b78a52ad1518a" style="vertical-align: -0.671ex; width:3.747ex; height:2.509ex;"/></span> is the <a class="mw-redirect" href="/wiki/Height_(ring_theory)" title="Height (ring theory)">height</a> of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {p}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {p}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {p}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a14c125cdf81ac25d76edc2e8d557302c9f555a9" style="vertical-align: -0.671ex; width:1.162ex; height:2.176ex;"/></span>.<sup class="reference" id="cite_ref-3"><a href="#cite_note-3"><span class="cite-bracket">[</span>3<span class="cite-bracket">]</span></a></sup>
+</p><p>If <i>R</i> is an integral domain that is a finitely generated <i>k</i>-algebra, then its dimension is the <a class="mw-redirect" href="/wiki/Transcendence_degree" title="Transcendence degree">transcendence degree</a> of its field of fractions over <i>k</i>. If <i>S</i> is an <a class="mw-redirect" href="/wiki/Integral_extension" title="Integral extension">integral extension</a> of a commutative ring <i>R</i>, then <i>S</i> and <i>R</i> have the same dimension.
+</p><p>Closely related concepts are those of <a href="/wiki/Depth_(ring_theory)" title="Depth (ring theory)">depth</a> and <a href="/wiki/Global_dimension" title="Global dimension">global dimension</a>. In general, if <i>R</i> is a noetherian local ring, then the depth of <i>R</i> is less than or equal to the dimension of <i>R</i>. When the equality holds, <i>R</i> is called a <a href="/wiki/Cohen%E2%80%93Macaulay_ring" title="Cohen–Macaulay ring">Cohen–Macaulay ring</a>. A <a href="/wiki/Regular_local_ring" title="Regular local ring">regular local ring</a> is an example of a Cohen–Macaulay ring. It is a theorem of Serre that <i>R</i> is a regular local ring if and only if it has finite global dimension and in that case the global dimension is the Krull dimension of <i>R</i>. The significance of this is that a global dimension is a <a href="/wiki/Homological_algebra" title="Homological algebra">homological</a> notion.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Morita_equivalence">Morita equivalence</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=8" title="Edit section: Morita equivalence"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"/><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Morita_equivalence" title="Morita equivalence">Morita equivalence</a></div>
+<p>Two rings <i>R</i>, <i>S</i> are said to be <a class="mw-redirect" href="/wiki/Morita_equivalent" title="Morita equivalent">Morita equivalent</a> if the category of left modules over <i>R</i> is equivalent to the category of left modules over <i>S</i>. In fact, two commutative rings which are Morita equivalent must be isomorphic, so the notion does not add anything new to the <a href="/wiki/Category_theory" title="Category theory">category</a> of commutative rings. However, commutative rings can be Morita equivalent to noncommutative rings, so Morita equivalence is coarser than isomorphism. Morita equivalence is especially important in algebraic topology and functional analysis.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Finitely_generated_projective_module_over_a_ring_and_Picard_group">Finitely generated projective module over a ring and Picard group</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=9" title="Edit section: Finitely generated projective module over a ring and Picard group"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Let <i>R</i> be a commutative ring and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbf {P} (R)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="bold">P</mi>
+</mrow>
+<mo stretchy="false">(</mo>
+<mi>R</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbf {P} (R)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbf {P} (R)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ff4f79d01868c03ef35e0e21e4f98a56ab1c5dfb" style="vertical-align: -0.838ex; width:5.4ex; height:2.843ex;"/></span> the set of isomorphism classes of finitely generated <a href="/wiki/Projective_module" title="Projective module">projective modules</a> over <i>R</i>; let also <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbf {P} _{n}(R)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="bold">P</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>R</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbf {P} _{n}(R)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbf {P} _{n}(R)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/994766f2f6efb0f664a7c8abf4126f7bedc55d11" style="vertical-align: -0.838ex; width:6.618ex; height:2.843ex;"/></span> subsets consisting of those with constant rank <i>n</i>. (The rank of a module <i>M</i> is the continuous function <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \operatorname {Spec} R\to \mathbb {Z} ,\,{\mathfrak {p}}\mapsto \dim M\otimes _{R}k({\mathfrak {p}})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>Spec</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mi>R</mi>
+<mo stretchy="false">→<!-- → --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mo>,</mo>
+<mspace width="thinmathspace"></mspace>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mo stretchy="false">↦<!-- ↦ --></mo>
+<mi>dim</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mi>M</mi>
+<msub>
+<mo>⊗<!-- ⊗ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>R</mi>
+</mrow>
+</msub>
+<mi>k</mi>
+<mo stretchy="false">(</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">p</mi>
+</mrow>
+</mrow>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \operatorname {Spec} R\to \mathbb {Z} ,\,{\mathfrak {p}}\mapsto \dim M\otimes _{R}k({\mathfrak {p}})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \operatorname {Spec} R\to \mathbb {Z} ,\,{\mathfrak {p}}\mapsto \dim M\otimes _{R}k({\mathfrak {p}})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/aa98e0ba2052d7a943f39dd3301611050c2e2523" style="vertical-align: -0.838ex; width:33.37ex; height:2.843ex;"/></span>.<sup class="reference" id="cite_ref-4"><a href="#cite_note-4"><span class="cite-bracket">[</span>4<span class="cite-bracket">]</span></a></sup>) <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbf {P} _{1}(R)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="bold">P</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>R</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbf {P} _{1}(R)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbf {P} _{1}(R)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c722cf01d1558e66217a3e7699356dcec674def5" style="vertical-align: -0.838ex; width:6.454ex; height:2.843ex;"/></span> is usually denoted by Pic(<i>R</i>). It is an abelian group called the <a href="/wiki/Picard_group" title="Picard group">Picard group</a> of <i>R</i>.<sup class="reference" id="cite_ref-5"><a href="#cite_note-5"><span class="cite-bracket">[</span>5<span class="cite-bracket">]</span></a></sup> If <i>R</i> is an integral domain with the field of fractions <i>F</i> of <i>R</i>, then there is an exact sequence of groups:<sup class="reference" id="cite_ref-6"><a href="#cite_note-6"><span class="cite-bracket">[</span>6<span class="cite-bracket">]</span></a></sup>
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle 1\to R^{*}\to F^{*}{\overset {f\mapsto fR}{\to }}\operatorname {Cart} (R)\to \operatorname {Pic} (R)\to 1}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mn>1</mn>
+<mo stretchy="false">→<!-- → --></mo>
+<msup>
+<mi>R</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>∗<!-- ∗ --></mo>
+</mrow>
+</msup>
+<mo stretchy="false">→<!-- → --></mo>
+<msup>
+<mi>F</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>∗<!-- ∗ --></mo>
+</mrow>
+</msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mover>
+<mo stretchy="false">→<!-- → --></mo>
+<mrow>
+<mi>f</mi>
+<mo stretchy="false">↦<!-- ↦ --></mo>
+<mi>f</mi>
+<mi>R</mi>
+</mrow>
+</mover>
+</mrow>
+<mi>Cart</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>R</mi>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">→<!-- → --></mo>
+<mi>Pic</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>R</mi>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">→<!-- → --></mo>
+<mn>1</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle 1\to R^{*}\to F^{*}{\overset {f\mapsto fR}{\to }}\operatorname {Cart} (R)\to \operatorname {Pic} (R)\to 1}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle 1\to R^{*}\to F^{*}{\overset {f\mapsto fR}{\to }}\operatorname {Cart} (R)\to \operatorname {Pic} (R)\to 1}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/77183b4152362a6d4c04c19e21da894d5fcf34ce" style="vertical-align: -0.838ex; width:42.62ex; height:4.343ex;"/></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \operatorname {Cart} (R)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>Cart</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>R</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \operatorname {Cart} (R)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \operatorname {Cart} (R)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/10fe8444655a03d50210e8dd008ef5f7530a8ae2" style="vertical-align: -0.838ex; width:8.23ex; height:2.843ex;"/></span> is the set of <a href="/wiki/Fractional_ideal" title="Fractional ideal">fractional ideals</a> of <i>R</i>. If <i>R</i> is a <a class="mw-redirect" href="/wiki/Regular_ring" title="Regular ring">regular</a> domain (i.e., regular at any prime ideal), then Pic(R) is precisely the <a class="mw-redirect" href="/wiki/Divisor_class_group" title="Divisor class group">divisor class group</a> of <i>R</i>.<sup class="reference" id="cite_ref-7"><a href="#cite_note-7"><span class="cite-bracket">[</span>7<span class="cite-bracket">]</span></a></sup>
+</p><p>For example, if <i>R</i> is a principal ideal domain, then Pic(<i>R</i>) vanishes. In algebraic number theory, <i>R</i> will be taken to be the <a href="/wiki/Ring_of_integers" title="Ring of integers">ring of integers</a>, which is Dedekind and thus regular. It follows that Pic(<i>R</i>) is a finite group (<a class="mw-redirect" href="/wiki/Finiteness_of_class_number" title="Finiteness of class number">finiteness of class number</a>) that measures the deviation of the ring of integers from being a PID.
+</p><p>One can also consider the <a class="mw-redirect" href="/wiki/Group_completion" title="Group completion">group completion</a> of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbf {P} (R)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="bold">P</mi>
+</mrow>
+<mo stretchy="false">(</mo>
+<mi>R</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbf {P} (R)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbf {P} (R)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ff4f79d01868c03ef35e0e21e4f98a56ab1c5dfb" style="vertical-align: -0.838ex; width:5.4ex; height:2.843ex;"/></span>; this results in a commutative ring K<sub>0</sub>(R). Note that K<sub>0</sub>(R) = K<sub>0</sub>(S) if two commutative rings <i>R</i>, <i>S</i> are Morita equivalent.
+</p>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"/><div class="hatnote navigation-not-searchable" role="note">See also: <a href="/wiki/Algebraic_K-theory" title="Algebraic K-theory">Algebraic K-theory</a></div>
+<div class="mw-heading mw-heading3"><h3 id="Structure_of_noncommutative_rings">Structure of noncommutative rings</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=10" title="Edit section: Structure of noncommutative rings"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"/><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Noncommutative_ring" title="Noncommutative ring">Noncommutative ring</a></div>
+<p>The structure of a <a href="/wiki/Noncommutative_ring" title="Noncommutative ring">noncommutative ring</a> is more complicated than that of a commutative ring. For example, there exist <a href="/wiki/Simple_ring" title="Simple ring">simple</a> rings that contain no non-trivial proper (two-sided) ideals, yet contain non-trivial proper left or right ideals. Various invariants exist for commutative rings, whereas invariants of noncommutative rings are difficult to find. As an example, the <a href="/wiki/Nilradical_of_a_ring" title="Nilradical of a ring">nilradical of a ring</a>, the set of all nilpotent elements, is not necessarily an ideal unless the ring is commutative. Specifically, the set of all nilpotent elements in the ring of all <span class="nowrap"><i>n</i> × <i>n</i></span> matrices over a division ring never forms an ideal, irrespective of the division ring chosen. There are, however, analogues of the nilradical defined for noncommutative rings, that coincide with the nilradical when commutativity is assumed.
+</p><p>The concept of the <a href="/wiki/Jacobson_radical" title="Jacobson radical">Jacobson radical</a> of a ring; that is, the intersection of all right (left) <a href="/wiki/Annihilator_(ring_theory)" title="Annihilator (ring theory)">annihilators</a> of <a href="/wiki/Simple_module" title="Simple module">simple</a> right (left) modules over a ring, is one example. The fact that the Jacobson radical can be viewed as the intersection of all maximal right (left) ideals in the ring, shows how the internal structure of the ring is reflected by its modules. It is also a fact that the intersection of all maximal right ideals in a ring is the same as the intersection of all maximal left ideals in the ring, in the context of all rings; irrespective of whether the ring is commutative.
+</p><p>Noncommutative rings are an active area of research due to their ubiquity in mathematics. For instance, the ring of <i>n</i>-by-<i>n</i> <a href="/wiki/Matrix_(mathematics)" title="Matrix (mathematics)">matrices over a field</a> is noncommutative despite its natural occurrence in <a href="/wiki/Geometry" title="Geometry">geometry</a>, <a href="/wiki/Physics" title="Physics">physics</a> and many parts of mathematics. More generally, <a href="/wiki/Endomorphism_ring" title="Endomorphism ring">endomorphism rings</a> of abelian groups are rarely commutative, the simplest example being the endomorphism ring of the <a href="/wiki/Klein_four-group" title="Klein four-group">Klein four-group</a>.
+</p><p>One of the best-known strictly noncommutative ring is the <a class="mw-redirect" href="/wiki/Quaternions" title="Quaternions">quaternions</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Applications">Applications</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=11" title="Edit section: Applications"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="The_ring_of_integers_of_a_number_field">The ring of integers of a number field</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=12" title="Edit section: The ring of integers of a number field"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"/><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Ring_of_integers" title="Ring of integers">Ring of integers</a></div>
+<div class="mw-heading mw-heading3"><h3 id="The_coordinate_ring_of_an_algebraic_variety">The coordinate ring of an algebraic variety</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=13" title="Edit section: The coordinate ring of an algebraic variety"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If <i>X</i> is an <a class="mw-redirect" href="/wiki/Affine_algebraic_variety" title="Affine algebraic variety">affine algebraic variety</a>, then the set of all regular functions on <i>X</i> forms a ring called the <a class="mw-redirect" href="/wiki/Coordinate_ring" title="Coordinate ring">coordinate ring</a> of <i>X</i>. For a <a href="/wiki/Projective_variety" title="Projective variety">projective variety</a>, there is an analogous ring called the <a href="/wiki/Homogeneous_coordinate_ring" title="Homogeneous coordinate ring">homogeneous coordinate ring</a>. Those rings are essentially the same things as varieties: they correspond in essentially a unique way. This may be seen via either <a href="/wiki/Hilbert%27s_Nullstellensatz" title="Hilbert's Nullstellensatz">Hilbert's Nullstellensatz</a> or scheme-theoretic constructions (i.e., Spec and Proj).
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Ring_of_invariants">Ring of invariants</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=14" title="Edit section: Ring of invariants"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>A basic (and perhaps the most fundamental) question in the classical <a href="/wiki/Invariant_theory" title="Invariant theory">invariant theory</a> is to find and study polynomials in the polynomial ring <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle k[V]}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>k</mi>
+<mo stretchy="false">[</mo>
+<mi>V</mi>
+<mo stretchy="false">]</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle k[V]}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle k[V]}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1741d36e6904bb3d9bb000011dfe16bfe78cc0a1" style="vertical-align: -0.838ex; width:4.292ex; height:2.843ex;"/></span> that are invariant under the action of a finite group (or more generally reductive) <i>G</i> on <i>V</i>. The main example is the <a href="/wiki/Ring_of_symmetric_functions" title="Ring of symmetric functions">ring of symmetric polynomials</a>: <a href="/wiki/Symmetric_polynomial" title="Symmetric polynomial">symmetric polynomials</a> are polynomials that are invariant under permutation of variable. The <a class="mw-redirect" href="/wiki/Fundamental_theorem_of_symmetric_polynomials" title="Fundamental theorem of symmetric polynomials">fundamental theorem of symmetric polynomials</a> states that this ring is <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle R[\sigma _{1},\ldots ,\sigma _{n}]}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>R</mi>
+<mo stretchy="false">[</mo>
+<msub>
+<mi>σ<!-- σ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<mo>…<!-- … --></mo>
+<mo>,</mo>
+<msub>
+<mi>σ<!-- σ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo stretchy="false">]</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle R[\sigma _{1},\ldots ,\sigma _{n}]}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle R[\sigma _{1},\ldots ,\sigma _{n}]}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/313b253ff745149e0921fa0b04e2bcc8b7377923" style="vertical-align: -0.838ex; width:13.163ex; height:2.843ex;"/></span> where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \sigma _{i}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>σ<!-- σ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \sigma _{i}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \sigma _{i}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6ab3208a7d0c634ef720e03ff5a9949e8310edc4" style="vertical-align: -0.671ex; width:2.127ex; height:2.009ex;"/></span> are elementary symmetric polynomials.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="History">History</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=15" title="Edit section: History"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Commutative ring theory originated in algebraic number theory, algebraic geometry, and <a href="/wiki/Invariant_theory" title="Invariant theory">invariant theory</a>. Central to the development of these subjects were the rings of integers in algebraic number fields and algebraic function fields, and the rings of polynomials in two or more variables. Noncommutative ring theory began with attempts to extend the complex numbers to various <a href="/wiki/Hypercomplex_number" title="Hypercomplex number">hypercomplex number</a> systems. The genesis of the theories of commutative and noncommutative rings dates back to the early 19th century, while their maturity was achieved only in the third decade of the 20th century.
+</p><p>More precisely, <a href="/wiki/William_Rowan_Hamilton" title="William Rowan Hamilton">William Rowan Hamilton</a> put forth the <a href="/wiki/Quaternion" title="Quaternion">quaternions</a> and <a href="/wiki/Biquaternion" title="Biquaternion">biquaternions</a>; <a class="mw-redirect" href="/wiki/James_Cockle_(lawyer)" title="James Cockle (lawyer)">James Cockle</a> presented <a class="mw-redirect" href="/wiki/Tessarine" title="Tessarine">tessarines</a> and <a class="mw-redirect" href="/wiki/Coquaternion" title="Coquaternion">coquaternions</a>; and <a href="/wiki/William_Kingdon_Clifford" title="William Kingdon Clifford">William Kingdon Clifford</a> was an enthusiast of <a href="/wiki/Split-biquaternion" title="Split-biquaternion">split-biquaternions</a>, which he called <i>algebraic motors</i>. These noncommutative algebras, and the non-associative <a href="/wiki/Lie_algebra" title="Lie algebra">Lie algebras</a>, were studied within <a href="/wiki/Universal_algebra" title="Universal algebra">universal algebra</a> before the subject was divided into particular <a href="/wiki/Mathematical_structure" title="Mathematical structure">mathematical structure</a> types. One sign of re-organization was the use of <a href="/wiki/Direct_sum_of_modules#Direct_sum_of_algebras" title="Direct sum of modules">direct sums</a> to describe algebraic structure.
+</p><p>The various hypercomplex numbers were identified with <a href="/wiki/Matrix_ring" title="Matrix ring">matrix rings</a> by <a href="/wiki/Joseph_Wedderburn" title="Joseph Wedderburn">Joseph Wedderburn</a> (1908) and <a href="/wiki/Emil_Artin" title="Emil Artin">Emil Artin</a> (1928). Wedderburn's structure theorems were formulated for finite-dimensional <a href="/wiki/Algebra_over_a_field" title="Algebra over a field">algebras over a field</a> while Artin generalized them to <a href="/wiki/Artinian_ring" title="Artinian ring">Artinian rings</a>.
+</p><p>In 1920, <a href="/wiki/Emmy_Noether" title="Emmy Noether">Emmy Noether</a>, in collaboration with W. Schmeidler, published a paper about the <a href="/wiki/Ideal_theory" title="Ideal theory">theory of ideals</a> in which they defined <a href="/wiki/Ideal_(ring_theory)" title="Ideal (ring theory)">left and right ideals</a> in a <a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">ring</a>. The following year she published a landmark paper called <i>Idealtheorie in Ringbereichen</i>, analyzing <a href="/wiki/Ascending_chain_condition" title="Ascending chain condition">ascending chain conditions</a> with regard to (mathematical) ideals. Noted algebraist <a href="/wiki/Irving_Kaplansky" title="Irving Kaplansky">Irving Kaplansky</a> called this work "revolutionary";<sup class="reference" id="cite_ref-FOOTNOTEKimberling198118_8-0"><a href="#cite_note-FOOTNOTEKimberling198118-8"><span class="cite-bracket">[</span>8<span class="cite-bracket">]</span></a></sup> the publication gave rise to the term "<a href="/wiki/Noetherian_ring" title="Noetherian ring">Noetherian ring</a>", and several other mathematical objects being called <i><a class="mw-redirect" href="/wiki/Noetherian_(disambiguation)" title="Noetherian (disambiguation)">Noetherian</a></i>.<sup class="reference" id="cite_ref-FOOTNOTEKimberling198118_8-1"><a href="#cite_note-FOOTNOTEKimberling198118-8"><span class="cite-bracket">[</span>8<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-9"><a href="#cite_note-9"><span class="cite-bracket">[</span>9<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Notes">Notes</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=16" title="Edit section: Notes"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1239543626">.mw-parser-output .reflist{margin-bottom:0.5em;list-style-type:decimal}@media screen{.mw-parser-output .reflist{font-size:90%}}.mw-parser-output .reflist .references{font-size:100%;margin-bottom:0;list-style-type:inherit}.mw-parser-output .reflist-columns-2{column-width:30em}.mw-parser-output .reflist-columns-3{column-width:25em}.mw-parser-output .reflist-columns{margin-top:0.3em}.mw-parser-output .reflist-columns ol{margin-top:0}.mw-parser-output .reflist-columns li{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .reflist-upper-alpha{list-style-type:upper-alpha}.mw-parser-output .reflist-upper-roman{list-style-type:upper-roman}.mw-parser-output .reflist-lower-alpha{list-style-type:lower-alpha}.mw-parser-output .reflist-lower-greek{list-style-type:lower-greek}.mw-parser-output .reflist-lower-roman{list-style-type:lower-roman}</style><div class="reflist">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-FOOTNOTEGoodearlWarfield1989-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEGoodearlWarfield1989_1-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFGoodearlWarfield1989">Goodearl &amp; Warfield (1989)</a>.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><a href="#CITEREFMatsumura1989">Matsumura 1989</a>, Theorem 13.4</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><a href="#CITEREFMatsumura1989">Matsumura 1989</a>, Theorem 31.4</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><a href="#CITEREFWeibel2013">Weibel 2013</a>, Ch I, Definition 2.2.3</span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text"><a href="#CITEREFWeibel2013">Weibel 2013</a>, Definition preceding Proposition 3.2 in Ch I</span>
+</li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6">^</a></b></span> <span class="reference-text"><a href="#CITEREFWeibel2013">Weibel 2013</a>, Ch I, Proposition 3.5</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text"><a href="#CITEREFWeibel2013">Weibel 2013</a>, Ch I, Corollary 3.8.1</span>
+</li>
+<li id="cite_note-FOOTNOTEKimberling198118-8"><span class="mw-cite-backlink">^ <a href="#cite_ref-FOOTNOTEKimberling198118_8-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-FOOTNOTEKimberling198118_8-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><a href="#CITEREFKimberling1981">Kimberling 1981</a>, p. 18.</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><style data-mw-deduplicate="TemplateStyles:r1238218222">.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#d33)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#d33)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite class="citation cs2" id="CITEREFDick1981"><a href="/wiki/Auguste_Dick" title="Auguste Dick">Dick, Auguste</a> (1981), <i>Emmy Noether: 1882–1935</i>, translated by Blocher, H. I., <a href="/wiki/Birkh%C3%A4user" title="Birkhäuser">Birkhäuser</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/3-7643-3019-8" title="Special:BookSources/3-7643-3019-8"><bdi>3-7643-3019-8</bdi></a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Emmy+Noether%3A+1882%E2%80%931935&amp;rft.pub=Birkh%C3%A4user&amp;rft.date=1981&amp;rft.isbn=3-7643-3019-8&amp;rft.aulast=Dick&amp;rft.aufirst=Auguste&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span>, p. 44–45.</span>
+</li>
+</ol></div></div>
+<div class="mw-heading mw-heading2"><h2 id="References">References</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Ring_theory&amp;action=edit&amp;section=17" title="Edit section: References"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFAllenby1991">Allenby, R. B. J. T. (1991), <a class="external text" href="https://archive.org/details/ringsfieldsgroup0000alle/page/" rel="nofollow"><i>Rings, Fields and Groups</i></a> (Second ed.), Edward Arnold, London, p. <a class="external text" href="https://archive.org/details/ringsfieldsgroup0000alle/page/" rel="nofollow">xxvi+383</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-7131-3476-3" title="Special:BookSources/0-7131-3476-3"><bdi>0-7131-3476-3</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=1144518" rel="nofollow">1144518</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Rings%2C+Fields+and+Groups&amp;rft.pages=xxvi%2B383&amp;rft.edition=Second&amp;rft.pub=Edward+Arnold%2C+London&amp;rft.date=1991&amp;rft.isbn=0-7131-3476-3&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D1144518%23id-name%3DMR&amp;rft.aulast=Allenby&amp;rft.aufirst=R.+B.+J.+T.&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fringsfieldsgroup0000alle%2Fpage%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFBlythRobertson1985">Blyth, T.S.; Robertson, E.F. (1985), <i>Groups, Rings and Fields: Algebra through practice, Book 3</i>, Cambridge: <a href="/wiki/Cambridge_University_Press" title="Cambridge University Press">Cambridge University Press</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-521-27288-2" title="Special:BookSources/0-521-27288-2"><bdi>0-521-27288-2</bdi></a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Groups%2C+Rings+and+Fields%3A+Algebra+through+practice%2C+Book+3&amp;rft.place=Cambridge&amp;rft.pub=Cambridge+University+Press&amp;rft.date=1985&amp;rft.isbn=0-521-27288-2&amp;rft.aulast=Blyth&amp;rft.aufirst=T.S.&amp;rft.au=Robertson%2C+E.F.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFFaith1999">Faith, Carl (1999), <i>Rings and Things and a Fine Array of Twentieth Century Associative Algebra</i>, Mathematical Surveys and Monographs, vol. 65, Providence, RI: American Mathematical Society, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-8218-0993-8" title="Special:BookSources/0-8218-0993-8"><bdi>0-8218-0993-8</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=1657671" rel="nofollow">1657671</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Rings+and+Things+and+a+Fine+Array+of+Twentieth+Century+Associative+Algebra&amp;rft.place=Providence%2C+RI&amp;rft.series=Mathematical+Surveys+and+Monographs&amp;rft.pub=American+Mathematical+Society&amp;rft.date=1999&amp;rft.isbn=0-8218-0993-8&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D1657671%23id-name%3DMR&amp;rft.aulast=Faith&amp;rft.aufirst=Carl&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFGoodearlWarfield1989">Goodearl, K. R.; Warfield, R. B. Jr. (1989), <span class="id-lock-registration" title="Free registration required"><a class="external text" href="https://archive.org/details/introductiontono0000good" rel="nofollow"><i>An Introduction to Noncommutative Noetherian Rings</i></a></span>, London Mathematical Society Student Texts, vol. 16, Cambridge: <a href="/wiki/Cambridge_University_Press" title="Cambridge University Press">Cambridge University Press</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-521-36086-2" title="Special:BookSources/0-521-36086-2"><bdi>0-521-36086-2</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=1020298" rel="nofollow">1020298</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=An+Introduction+to+Noncommutative+Noetherian+Rings&amp;rft.place=Cambridge&amp;rft.series=London+Mathematical+Society+Student+Texts&amp;rft.pub=Cambridge+University+Press&amp;rft.date=1989&amp;rft.isbn=0-521-36086-2&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D1020298%23id-name%3DMR&amp;rft.aulast=Goodearl&amp;rft.aufirst=K.+R.&amp;rft.au=Warfield%2C+R.+B.+Jr.&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fintroductiontono0000good&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFJudson1997">Judson, Thomas W. (1997), <a class="external text" href="https://abstract.ups.edu" rel="nofollow"><i>Abstract Algebra: Theory and Applications</i></a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Abstract+Algebra%3A+Theory+and+Applications&amp;rft.date=1997&amp;rft.aulast=Judson&amp;rft.aufirst=Thomas+W.&amp;rft_id=https%3A%2F%2Fabstract.ups.edu&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFKimberling1981"><a href="/wiki/Clark_Kimberling" title="Clark Kimberling">Kimberling, Clark</a> (1981), "Emmy Noether and Her Influence", in Brewer, James W; Smith, Martha K (eds.), <i>Emmy Noether: A Tribute to Her Life and Work</i>, <a href="/wiki/Marcel_Dekker" title="Marcel Dekker">Marcel Dekker</a>, pp. <span class="nowrap">3–</span>61</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Emmy+Noether+and+Her+Influence&amp;rft.btitle=Emmy+Noether%3A+A+Tribute+to+Her+Life+and+Work&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E3-%3C%2Fspan%3E61&amp;rft.pub=Marcel+Dekker&amp;rft.date=1981&amp;rft.aulast=Kimberling&amp;rft.aufirst=Clark&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFLam1999">Lam, T. Y. (1999), <i>Lectures on Modules and Rings</i>, Graduate Texts in Mathematics, vol. 189, New York: <a class="mw-redirect" href="/wiki/Springer-Verlag" title="Springer-Verlag">Springer-Verlag</a>, <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2F978-1-4612-0525-8" rel="nofollow">10.1007/978-1-4612-0525-8</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-387-98428-3" title="Special:BookSources/0-387-98428-3"><bdi>0-387-98428-3</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=1653294" rel="nofollow">1653294</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Lectures+on+Modules+and+Rings&amp;rft.place=New+York&amp;rft.series=Graduate+Texts+in+Mathematics&amp;rft.pub=Springer-Verlag&amp;rft.date=1999&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D1653294%23id-name%3DMR&amp;rft_id=info%3Adoi%2F10.1007%2F978-1-4612-0525-8&amp;rft.isbn=0-387-98428-3&amp;rft.aulast=Lam&amp;rft.aufirst=T.+Y.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFLam2001">Lam, T. Y. (2001), <i>A First Course in Noncommutative Rings</i>, Graduate Texts in Mathematics, vol. 131 (Second ed.), New York: <a class="mw-redirect" href="/wiki/Springer-Verlag" title="Springer-Verlag">Springer-Verlag</a>, <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2F978-1-4419-8616-0" rel="nofollow">10.1007/978-1-4419-8616-0</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-387-95183-0" title="Special:BookSources/0-387-95183-0"><bdi>0-387-95183-0</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=1838439" rel="nofollow">1838439</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=A+First+Course+in+Noncommutative+Rings&amp;rft.place=New+York&amp;rft.series=Graduate+Texts+in+Mathematics&amp;rft.edition=Second&amp;rft.pub=Springer-Verlag&amp;rft.date=2001&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D1838439%23id-name%3DMR&amp;rft_id=info%3Adoi%2F10.1007%2F978-1-4419-8616-0&amp;rft.isbn=0-387-95183-0&amp;rft.aulast=Lam&amp;rft.aufirst=T.+Y.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFLam2003">Lam, T. Y. (2003), <i>Exercises in Classical Ring Theory</i>, Problem Books in Mathematics (Second ed.), New York: <a class="mw-redirect" href="/wiki/Springer-Verlag" title="Springer-Verlag">Springer-Verlag</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-387-00500-5" title="Special:BookSources/0-387-00500-5"><bdi>0-387-00500-5</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=2003255" rel="nofollow">2003255</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Exercises+in+Classical+Ring+Theory&amp;rft.place=New+York&amp;rft.series=Problem+Books+in+Mathematics&amp;rft.edition=Second&amp;rft.pub=Springer-Verlag&amp;rft.date=2003&amp;rft.isbn=0-387-00500-5&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D2003255%23id-name%3DMR&amp;rft.aulast=Lam&amp;rft.aufirst=T.+Y.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFMatsumura1989">Matsumura, Hideyuki (1989), <i>Commutative Ring Theory</i>, Cambridge Studies in Advanced Mathematics, vol. 8 (Second ed.), Cambridge, UK.: Cambridge University Press, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-521-36764-6" title="Special:BookSources/0-521-36764-6"><bdi>0-521-36764-6</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=1011461" rel="nofollow">1011461</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Commutative+Ring+Theory&amp;rft.place=Cambridge%2C+UK.&amp;rft.series=Cambridge+Studies+in+Advanced+Mathematics&amp;rft.edition=Second&amp;rft.pub=Cambridge+University+Press&amp;rft.date=1989&amp;rft.isbn=0-521-36764-6&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D1011461%23id-name%3DMR&amp;rft.aulast=Matsumura&amp;rft.aufirst=Hideyuki&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFMcConnellRobson2001">McConnell, J. C.; Robson, J. C. (2001), <i>Noncommutative Noetherian Rings</i>, Graduate Studies in Mathematics, vol. 30, Providence, RI: American Mathematical Society, <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1090%2Fgsm%2F030" rel="nofollow">10.1090/gsm/030</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-8218-2169-5" title="Special:BookSources/0-8218-2169-5"><bdi>0-8218-2169-5</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=1811901" rel="nofollow">1811901</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Noncommutative+Noetherian+Rings&amp;rft.place=Providence%2C+RI&amp;rft.series=Graduate+Studies+in+Mathematics&amp;rft.pub=American+Mathematical+Society&amp;rft.date=2001&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D1811901%23id-name%3DMR&amp;rft_id=info%3Adoi%2F10.1090%2Fgsm%2F030&amp;rft.isbn=0-8218-2169-5&amp;rft.aulast=McConnell&amp;rft.aufirst=J.+C.&amp;rft.au=Robson%2C+J.+C.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFO'ConnorRobertson2004">O'Connor, J. J.; Robertson, E. F. (September 2004), <a class="external text" href="https://mathshistory.st-andrews.ac.uk/HistTopics/Ring_theory" rel="nofollow">"The development of ring theory"</a>, <i>MacTutor History of Mathematics Archive</i></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=The+development+of+ring+theory&amp;rft.btitle=MacTutor+History+of+Mathematics+Archive&amp;rft.date=2004-09&amp;rft.aulast=O%27Connor&amp;rft.aufirst=J.+J.&amp;rft.au=Robertson%2C+E.+F.&amp;rft_id=https%3A%2F%2Fmathshistory.st-andrews.ac.uk%2FHistTopics%2FRing_theory&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFPierce1982">Pierce, Richard S. (1982), <span class="id-lock-registration" title="Free registration required"><a class="external text" href="https://archive.org/details/associativealgeb00pier_0" rel="nofollow"><i>Associative Algebras</i></a></span>, Graduate Texts in Mathematics, vol. 88, New York: <a class="mw-redirect" href="/wiki/Springer-Verlag" title="Springer-Verlag">Springer-Verlag</a>, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-387-90693-2" title="Special:BookSources/0-387-90693-2"><bdi>0-387-90693-2</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=0674652" rel="nofollow">0674652</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Associative+Algebras&amp;rft.place=New+York&amp;rft.series=Graduate+Texts+in+Mathematics&amp;rft.pub=Springer-Verlag&amp;rft.date=1982&amp;rft.isbn=0-387-90693-2&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D674652%23id-name%3DMR&amp;rft.aulast=Pierce&amp;rft.aufirst=Richard+S.&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fassociativealgeb00pier_0&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFRowen1988">Rowen, Louis H. (1988), <i>Ring Theory, Vol. I</i>, Pure and Applied Mathematics, vol. 127, Boston, MA: Academic Press, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-12-599841-4" title="Special:BookSources/0-12-599841-4"><bdi>0-12-599841-4</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=0940245" rel="nofollow">0940245</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Ring+Theory%2C+Vol.+I&amp;rft.place=Boston%2C+MA&amp;rft.series=Pure+and+Applied+Mathematics&amp;rft.pub=Academic+Press&amp;rft.date=1988&amp;rft.isbn=0-12-599841-4&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D940245%23id-name%3DMR&amp;rft.aulast=Rowen&amp;rft.aufirst=Louis+H.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span>. Vol. II, Pure and Applied Mathematics 128, <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-12-599842-2" title="Special:BookSources/0-12-599842-2">0-12-599842-2</a>.</li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2" id="CITEREFWeibel2013">Weibel, Charles A. (2013), <a class="external text" href="https://www.math.rutgers.edu/~weibel/Kbook.html" rel="nofollow"><i>The K-book: An introduction to algebraic K-theory</i></a>, Graduate Studies in Mathematics, vol. 145, Providence, RI: American Mathematical Society, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-8218-9132-2" title="Special:BookSources/978-0-8218-9132-2"><bdi>978-0-8218-9132-2</bdi></a>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=3076731" rel="nofollow">3076731</a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+K-book%3A+An+introduction+to+algebraic+K-theory&amp;rft.place=Providence%2C+RI&amp;rft.series=Graduate+Studies+in+Mathematics&amp;rft.pub=American+Mathematical+Society&amp;rft.date=2013&amp;rft.isbn=978-0-8218-9132-2&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D3076731%23id-name%3DMR&amp;rft.aulast=Weibel&amp;rft.aufirst=Charles+A.&amp;rft_id=https%3A%2F%2Fwww.math.rutgers.edu%2F~weibel%2FKbook.html&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ARing+theory"></span></li></ul>
+<!-- 
+NewPP limit report
+Parsed by mw‐web.eqiad.main‐6df8dbf59d‐8kzb2
+Cached time: 20250331032219
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.426 seconds
+Real time usage: 0.616 seconds
+Preprocessor visited node count: 2031/1000000
+Post‐expand include size: 60966/2097152 bytes
+Template argument size: 715/2097152 bytes
+Highest expansion depth: 14/100
+Expensive parser function count: 12/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 91667/5000000 bytes
+Lua time usage: 0.238/10.000 seconds
+Lua memory usage: 7263272/52428800 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  446.896      1 -total
+ 27.10%  121.096     16 Template:Citation
+ 26.55%  118.656      2 Template:Sidebar_with_collapsible_lists
+ 26.29%  117.485      1 Template:Algebraic_structures
+ 19.88%   88.844      1 Template:Reflist
+ 11.17%   49.897      1 Template:About
+  9.02%   40.326      5 Template:Startflatlist
+  8.59%   38.386      1 Template:Short_description
+  8.16%   36.480      1 Template:Sfnp
+  4.90%   21.901      7 Template:Main_other
+-->
+<!-- Saved in parser cache with key enwiki:pcache:250424:|#|:idhash:canonical and timestamp 20250331032219 and revision id 1249095180. Rendering was triggered because: page-view
+ -->
+</meta></link></link></link></link></link></link></link></link></link></link></div>

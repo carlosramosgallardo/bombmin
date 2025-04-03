@@ -1,0 +1,1565 @@
+<div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none">Mathematical study of waiting lines, or queues</div>
+<style data-mw-deduplicate="TemplateStyles:r1236090951">.mw-parser-output .hatnote{font-style:italic}.mw-parser-output div.hatnote{padding-left:1.6em;margin-bottom:0.5em}.mw-parser-output .hatnote i{font-style:normal}.mw-parser-output .hatnote+link+.hatnote{margin-top:-0.5em}@media print{body.ns-0 .mw-parser-output .hatnote{display:none!important}}</style><div class="hatnote navigation-not-searchable" role="note">"First come, first served" redirects here. For the Kool Keith album, see <a href="/wiki/First_Come,_First_Served" title="First Come, First Served">First Come, First Served</a>.</div>
+<figure class="mw-default-size mw-halign-right" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:ServidorParalelo.jpg"><img class="mw-file-element" data-file-height="551" data-file-width="643" decoding="async" height="189" src="//upload.wikimedia.org/wikipedia/commons/thumb/2/2b/ServidorParalelo.jpg/220px-ServidorParalelo.jpg" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/2b/ServidorParalelo.jpg/330px-ServidorParalelo.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/2b/ServidorParalelo.jpg/440px-ServidorParalelo.jpg 2x" width="220"/></a><figcaption><a href="#Queueing_networks">Queue networks</a> are systems in which single queues are connected by a routing network. In this image, servers are represented by circles, queues by a series of rectangles and the routing network by arrows. In the study of queue networks one typically tries to obtain the <a class="mw-redirect" href="/wiki/Equilibrium_distribution" title="Equilibrium distribution">equilibrium distribution</a> of the network, although in many applications the study of the <a href="/wiki/Transient_state" title="Transient state">transient state</a> is fundamental.</figcaption></figure>
+<p><b>Queueing theory</b> is the mathematical study of <a href="/wiki/Queue_area" title="Queue area">waiting lines</a>, or <a class="extiw" href="https://en.wiktionary.org/wiki/queue" title="wikt:queue">queues</a>.<sup class="reference" id="cite_ref-sun_1-0"><a href="#cite_note-sun-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup> A queueing model is constructed so that queue lengths and waiting time can be predicted.<sup class="reference" id="cite_ref-sun_1-1"><a href="#cite_note-sun-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup> Queueing theory is generally considered a branch of <a href="/wiki/Operations_research" title="Operations research">operations research</a> because the results are often used when making business decisions about the resources needed to provide a service.
+</p><p>Queueing theory has its origins in research by <a href="/wiki/Agner_Krarup_Erlang" title="Agner Krarup Erlang">Agner Krarup Erlang</a>, who created models to describe the system of incoming calls at the Copenhagen Telephone Exchange Company.<sup class="reference" id="cite_ref-sun_1-2"><a href="#cite_note-sun-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup> These ideas were seminal to the field of <a href="/wiki/Teletraffic_engineering" title="Teletraffic engineering">teletraffic engineering</a> and have since seen applications in <a href="/wiki/Telecommunications" title="Telecommunications">telecommunications</a>, <a href="/wiki/Traffic_engineering_(transportation)" title="Traffic engineering (transportation)">traffic engineering</a>, <a href="/wiki/Computing" title="Computing">computing</a>,<sup class="reference" id="cite_ref-2"><a href="#cite_note-2"><span class="cite-bracket">[</span>2<span class="cite-bracket">]</span></a></sup> <a href="/wiki/Project_management" title="Project management">project management</a>, and particularly <a href="/wiki/Industrial_engineering" title="Industrial engineering">industrial engineering</a>, where they are applied in the design of factories, shops, offices, and hospitals.<sup class="reference" id="cite_ref-3"><a href="#cite_note-3"><span class="cite-bracket">[</span>3<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-4"><a href="#cite_note-4"><span class="cite-bracket">[</span>4<span class="cite-bracket">]</span></a></sup>
+</p>
+<meta property="mw:PageProp/toc">
+<div class="mw-heading mw-heading2"><h2 id="Spelling">Spelling</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=1" title="Edit section: Spelling"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The spelling "queueing" over "queuing" is typically encountered in the academic research field. In fact, one of the flagship journals of the field is <i><a href="/wiki/Queueing_Systems" title="Queueing Systems">Queueing Systems</a></i>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Description">Description</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=2" title="Edit section: Description"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Queueing theory is one of the major areas of study in the discipline of <a href="/wiki/Management_science" title="Management science">management science</a>. Through management science, businesses are able to solve a variety of problems using different scientific and mathematical approaches. Queueing analysis is the probabilistic analysis of waiting lines, and thus the results, also referred to as the operating characteristics, are probabilistic rather than deterministic.<sup class="reference" id="cite_ref-taylor_2019_5-0"><a href="#cite_note-taylor_2019-5"><span class="cite-bracket">[</span>5<span class="cite-bracket">]</span></a></sup> The probability that n customers are in the queueing system, the average number of customers in the queueing system, the average number of customers in the waiting line, the average time spent by a customer in the total queuing system, the average time spent by a customer in the waiting line, and finally the probability that the server is busy or idle are all of the different operating characteristics that these queueing models compute.<sup class="reference" id="cite_ref-taylor_2019_5-1"><a href="#cite_note-taylor_2019-5"><span class="cite-bracket">[</span>5<span class="cite-bracket">]</span></a></sup> The overall goal of queueing analysis is to compute these characteristics for the current system and then test several alternatives that could lead to improvement. Computing the operating characteristics for the current system and comparing the values to the characteristics of the alternative systems allows managers to see the pros and cons of each potential option. These systems help in the final decision making process by showing ways to increase savings, reduce waiting time, improve efficiency, etc. The main queueing models that can be used are the single-server waiting line system and the multiple-server waiting line system, which are discussed further below. These models can be further differentiated depending on whether service times are constant or undefined, the queue length is finite, the calling population is finite, etc.<sup class="reference" id="cite_ref-taylor_2019_5-2"><a href="#cite_note-taylor_2019-5"><span class="cite-bracket">[</span>5<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Single_queueing_nodes">Single queueing nodes</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=3" title="Edit section: Single queueing nodes"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>A <i>queue</i> or <i>queueing node</i> can be thought of as nearly a <a href="/wiki/Black_box" title="Black box">black box</a>. <i>Jobs</i> (also called <i>customers</i> or <i>requests</i>, depending on the field) arrive to the queue, possibly wait some time, take some time being processed, and then depart from the queue.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Black_box_queue_diagram.png"><img class="mw-file-element" data-file-height="122" data-file-width="289" decoding="async" height="122" src="//upload.wikimedia.org/wikipedia/commons/a/a8/Black_box_queue_diagram.png" width="289"/></a><figcaption>A black box. Jobs arrive to, and depart from, the queue.</figcaption></figure>
+<p>However, the queueing node is not quite a pure black box since some information is needed about the inside of the queueing node. The queue has one or more <i>servers</i> which can each be paired with an arriving job. When the job is completed and departs, that server will again be free to be paired with another arriving job.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Queueing_node_service_digram.png"><img class="mw-file-element" data-file-height="274" data-file-width="399" decoding="async" height="274" src="//upload.wikimedia.org/wikipedia/commons/0/06/Queueing_node_service_digram.png" width="399"/></a><figcaption>A queueing node with 3 servers. Server <b>a</b> is idle, and thus an arrival is given to it to process. Server <b>b</b> is currently busy and will take some time before it can complete service of its job. Server <b>c</b> has just completed service of a job and thus will be next to receive an arriving job.</figcaption></figure>
+<p>An analogy often used is that of the cashier at a supermarket. Customers arrive, are processed by the cashier, and depart. Each cashier processes one customer at a time, and hence this is a queueing node with only one server. A setting where a customer will leave immediately if the cashier is busy when the customer arrives, is referred to as a queue with no <i>buffer</i> (or no <i>waiting area</i>). A setting with a waiting zone for up to <i>n</i> customers is called a queue with a buffer of size <i>n</i>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Birth-death_process">Birth-death process</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=4" title="Edit section: Birth-death process"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"><div class="hatnote navigation-not-searchable" role="note">See also: <a href="/wiki/Survival_analysis" title="Survival analysis">Survival analysis</a></div>
+<p>The behaviour of a single queue (also called a <i>queueing node</i>) can be described by a <a href="/wiki/Birth%E2%80%93death_process" title="Birth–death process">birth–death process</a>, which describes the arrivals and departures from the queue, along with the number of jobs currently in the system. If <i>k</i> denotes the number of jobs in the system (either being serviced or waiting if the queue has a buffer of waiting jobs), then an arrival increases <i>k</i> by 1 and a departure decreases <i>k</i> by 1.
+</p><p>The system transitions between values of <i>k</i> by "births" and "deaths", which occur at the arrival rates <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \lambda _{i}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \lambda _{i}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \lambda _{i}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/72fde940918edf84caf3d406cc7d31949166820f" style="vertical-align: -0.671ex; width:2.155ex; height:2.509ex;"/></span> and the departure rates <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mu _{i}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mu _{i}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mu _{i}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dea0a0293841cce9eef98b55e53a92b82ae59ee4" style="vertical-align: -0.838ex; width:2.201ex; height:2.176ex;"/></span> for each job <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle i}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>i</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle i}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle i}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/add78d8608ad86e54951b8c8bd6c8d8416533d20" style="vertical-align: -0.338ex; width:0.802ex; height:2.176ex;"/></span>. For a queue, these rates are generally considered not to vary with the number of jobs in the queue, so a single <a href="/wiki/Average" title="Average">average</a> rate of arrivals/departures per unit time is assumed. Under this assumption, this process has an arrival rate of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \lambda ={\text{avg}}(\lambda _{1},\lambda _{2},\dots ,\lambda _{k})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>λ<!-- λ --></mi>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>avg</mtext>
+</mrow>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<mo>…<!-- … --></mo>
+<mo>,</mo>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \lambda ={\text{avg}}(\lambda _{1},\lambda _{2},\dots ,\lambda _{k})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \lambda ={\text{avg}}(\lambda _{1},\lambda _{2},\dots ,\lambda _{k})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/51d649c6a53479477273095ca7d04d5fe906bfce" style="vertical-align: -0.838ex; width:23.29ex; height:2.843ex;"/></span> and a departure rate of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mu ={\text{avg}}(\mu _{1},\mu _{2},\dots ,\mu _{k})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>μ<!-- μ --></mi>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>avg</mtext>
+</mrow>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<mo>…<!-- … --></mo>
+<mo>,</mo>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mu ={\text{avg}}(\mu _{1},\mu _{2},\dots ,\mu _{k})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mu ={\text{avg}}(\mu _{1},\mu _{2},\dots ,\mu _{k})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fd14f9b6b1c5a8ca77e65b070ba29f05b971d6f5" style="vertical-align: -0.838ex; width:23.476ex; height:2.843ex;"/></span>.
+</p>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:BD-proces.png"><img class="mw-file-element" data-file-height="138" data-file-width="643" decoding="async" height="138" src="//upload.wikimedia.org/wikipedia/commons/2/28/BD-proces.png" width="643"/></a><figcaption>A birth–death process. The values in the circles represent the state of the system, which evolves based on arrival rates <i>λ<sub>i</sub></i> and departure rates <i>μ<sub>i</sub></i>.</figcaption></figure>
+<figure class="mw-halign-center" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Mm1_queue.svg"><img class="mw-file-element" data-file-height="119" data-file-width="292" decoding="async" height="102" src="//upload.wikimedia.org/wikipedia/commons/thumb/6/65/Mm1_queue.svg/250px-Mm1_queue.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/65/Mm1_queue.svg/375px-Mm1_queue.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/65/Mm1_queue.svg/500px-Mm1_queue.svg.png 2x" width="250"/></a><figcaption>A queue with 1 server, arrival rate <i>λ</i> and departure rate <i>μ</i></figcaption></figure>
+<div class="mw-heading mw-heading4"><h4 id="Balance_equations">Balance equations</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=5" title="Edit section: Balance equations"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The <a href="/wiki/Steady_state" title="Steady state">steady state</a> equations for the birth-and-death process, known as the <a href="/wiki/Balance_equation" title="Balance equation">balance equations</a>, are as follows. Here <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P_{n}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P_{n}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P_{n}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5949c8b1de44005a1af3a11188361f2a830842d1" style="vertical-align: -0.671ex; width:2.711ex; height:2.509ex;"/></span> denotes the steady state probability to be in state <i>n</i>.
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mu _{1}P_{1}=\lambda _{0}P_{0}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mu _{1}P_{1}=\lambda _{0}P_{0}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mu _{1}P_{1}=\lambda _{0}P_{0}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a7a4e5285814b8eea220253084ab8f82def8fba4" style="vertical-align: -0.838ex; width:13.057ex; height:2.676ex;"/></span></dd>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \lambda _{0}P_{0}+\mu _{2}P_{2}=(\lambda _{1}+\mu _{1})P_{1}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \lambda _{0}P_{0}+\mu _{2}P_{2}=(\lambda _{1}+\mu _{1})P_{1}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \lambda _{0}P_{0}+\mu _{2}P_{2}=(\lambda _{1}+\mu _{1})P_{1}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a51aff4e76af68ff0f33d4e8df7880aadfae1a7e" style="vertical-align: -0.838ex; width:27.959ex; height:2.843ex;"/></span></dd>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \lambda _{n-1}P_{n-1}+\mu _{n+1}P_{n+1}=(\lambda _{n}+\mu _{n})P_{n}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>+</mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>+</mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>+</mo>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \lambda _{n-1}P_{n-1}+\mu _{n+1}P_{n+1}=(\lambda _{n}+\mu _{n})P_{n}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \lambda _{n-1}P_{n-1}+\mu _{n+1}P_{n+1}=(\lambda _{n}+\mu _{n})P_{n}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cd1372440063dca352ad00370fdd7720bb8fd791" style="vertical-align: -0.838ex; width:37.511ex; height:2.843ex;"/></span></dd></dl>
+<p>The first two equations imply
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P_{1}={\frac {\lambda _{0}}{\mu _{1}}}P_{0}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+</mfrac>
+</mrow>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P_{1}={\frac {\lambda _{0}}{\mu _{1}}}P_{0}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P_{1}={\frac {\lambda _{0}}{\mu _{1}}}P_{0}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/cf82d5d7d9b0fa14ba1e64073b6b5a7f432980a2" style="vertical-align: -2.338ex; width:11.484ex; height:5.843ex;"/></span></dd></dl>
+<p>and
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P_{2}={\frac {\lambda _{1}}{\mu _{2}}}P_{1}+{\frac {1}{\mu _{2}}}(\mu _{1}P_{1}-\lambda _{0}P_{0})={\frac {\lambda _{1}}{\mu _{2}}}P_{1}={\frac {\lambda _{1}\lambda _{0}}{\mu _{2}\mu _{1}}}P_{0}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+</mfrac>
+</mrow>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mn>1</mn>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+</mfrac>
+</mrow>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>−<!-- − --></mo>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+</mfrac>
+</mrow>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</mrow>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P_{2}={\frac {\lambda _{1}}{\mu _{2}}}P_{1}+{\frac {1}{\mu _{2}}}(\mu _{1}P_{1}-\lambda _{0}P_{0})={\frac {\lambda _{1}}{\mu _{2}}}P_{1}={\frac {\lambda _{1}\lambda _{0}}{\mu _{2}\mu _{1}}}P_{0}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P_{2}={\frac {\lambda _{1}}{\mu _{2}}}P_{1}+{\frac {1}{\mu _{2}}}(\mu _{1}P_{1}-\lambda _{0}P_{0})={\frac {\lambda _{1}}{\mu _{2}}}P_{1}={\frac {\lambda _{1}\lambda _{0}}{\mu _{2}\mu _{1}}}P_{0}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/97f411f6bc8dbeb0d88db374f3efb34e9ef4ed5f" style="vertical-align: -2.338ex; width:52.554ex; height:5.843ex;"/></span>.</dd></dl>
+<p>By mathematical induction,
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P_{n}={\frac {\lambda _{n-1}\lambda _{n-2}\cdots \lambda _{0}}{\mu _{n}\mu _{n-1}\cdots \mu _{1}}}P_{0}=P_{0}\prod _{i=0}^{n-1}{\frac {\lambda _{i}}{\mu _{i+1}}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>2</mn>
+</mrow>
+</msub>
+<mo>⋯<!-- ⋯ --></mo>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+</mrow>
+<mrow>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>⋯<!-- ⋯ --></mo>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+</mrow>
+</mfrac>
+</mrow>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<munderover>
+<mo>∏<!-- ∏ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+<mo>=</mo>
+<mn>0</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</munderover>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+<mo>+</mo>
+<mn>1</mn>
+</mrow>
+</msub>
+</mfrac>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P_{n}={\frac {\lambda _{n-1}\lambda _{n-2}\cdots \lambda _{0}}{\mu _{n}\mu _{n-1}\cdots \mu _{1}}}P_{0}=P_{0}\prod _{i=0}^{n-1}{\frac {\lambda _{i}}{\mu _{i+1}}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P_{n}={\frac {\lambda _{n-1}\lambda _{n-2}\cdots \lambda _{0}}{\mu _{n}\mu _{n-1}\cdots \mu _{1}}}P_{0}=P_{0}\prod _{i=0}^{n-1}{\frac {\lambda _{i}}{\mu _{i+1}}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/55649d575f6f927af2f10ec5bc4c33c61b44ba14" style="vertical-align: -3.005ex; width:39.091ex; height:7.343ex;"/></span>.</dd></dl>
+<p>The condition <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \sum _{n=0}^{\infty }P_{n}=P_{0}+P_{0}\sum _{n=1}^{\infty }\prod _{i=0}^{n-1}{\frac {\lambda _{i}}{\mu _{i+1}}}=1}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<munderover>
+<mo>∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>=</mo>
+<mn>0</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="normal">∞<!-- ∞ --></mi>
+</mrow>
+</munderover>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<munderover>
+<mo>∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>=</mo>
+<mn>1</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="normal">∞<!-- ∞ --></mi>
+</mrow>
+</munderover>
+<munderover>
+<mo>∏<!-- ∏ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+<mo>=</mo>
+<mn>0</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</munderover>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+<mo>+</mo>
+<mn>1</mn>
+</mrow>
+</msub>
+</mfrac>
+</mrow>
+<mo>=</mo>
+<mn>1</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \sum _{n=0}^{\infty }P_{n}=P_{0}+P_{0}\sum _{n=1}^{\infty }\prod _{i=0}^{n-1}{\frac {\lambda _{i}}{\mu _{i+1}}}=1}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \sum _{n=0}^{\infty }P_{n}=P_{0}+P_{0}\sum _{n=1}^{\infty }\prod _{i=0}^{n-1}{\frac {\lambda _{i}}{\mu _{i+1}}}=1}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a63e8bb72ee3619d1be086ac4fc83a86ab1e2ac1" style="vertical-align: -3.005ex; width:34.487ex; height:7.343ex;"/></span> leads to
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P_{0}={\frac {1}{1+\sum _{n=1}^{\infty }\prod _{i=0}^{n-1}{\frac {\lambda _{i}}{\mu _{i+1}}}}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mn>1</mn>
+<mrow>
+<mn>1</mn>
+<mo>+</mo>
+<munderover>
+<mo>∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>=</mo>
+<mn>1</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="normal">∞<!-- ∞ --></mi>
+</mrow>
+</munderover>
+<munderover>
+<mo>∏<!-- ∏ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+<mo>=</mo>
+<mn>0</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</munderover>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<msub>
+<mi>λ<!-- λ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+<msub>
+<mi>μ<!-- μ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+<mo>+</mo>
+<mn>1</mn>
+</mrow>
+</msub>
+</mfrac>
+</mrow>
+</mrow>
+</mfrac>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P_{0}={\frac {1}{1+\sum _{n=1}^{\infty }\prod _{i=0}^{n-1}{\frac {\lambda _{i}}{\mu _{i+1}}}}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P_{0}={\frac {1}{1+\sum _{n=1}^{\infty }\prod _{i=0}^{n-1}{\frac {\lambda _{i}}{\mu _{i+1}}}}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8f069108a04b258551e4e7cc8da2e06c16ee6bf2" style="vertical-align: -4.171ex; width:26.701ex; height:7.509ex;"/></span></dd></dl>
+<p>which, together with the equation for <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P_{n}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P_{n}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P_{n}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5949c8b1de44005a1af3a11188361f2a830842d1" style="vertical-align: -0.671ex; width:2.711ex; height:2.509ex;"/></span> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (n\geq 1)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<mi>n</mi>
+<mo>≥<!-- ≥ --></mo>
+<mn>1</mn>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (n\geq 1)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (n\geq 1)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9ba2ba4672a730074e09f736217cd4dc797688c4" style="vertical-align: -0.838ex; width:7.465ex; height:2.843ex;"/></span>, fully describes the required steady state probabilities.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Kendall's_notation"><span id="Kendall.27s_notation"></span>Kendall's notation</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=6" title="Edit section: Kendall's notation"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Kendall%27s_notation" title="Kendall's notation">Kendall's notation</a></div>
+<p>Single queueing nodes are usually described using Kendall's notation in the form A/S/<i>c</i> where <i>A</i> describes the distribution of durations between each arrival to the queue, <i>S</i> the distribution of service times for jobs, and <i>c</i> the number of servers at the node.<sup class="reference" id="cite_ref-tijms_6-0"><a href="#cite_note-tijms-6"><span class="cite-bracket">[</span>6<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-7"><a href="#cite_note-7"><span class="cite-bracket">[</span>7<span class="cite-bracket">]</span></a></sup> For an example of the notation, the <a href="/wiki/M/M/1_queue" title="M/M/1 queue">M/M/1 queue</a> is a simple model where a single server serves jobs that arrive according to a <a class="mw-redirect" href="/wiki/Poisson_process" title="Poisson process">Poisson process</a> (where inter-arrival durations are <a class="mw-redirect" href="/wiki/Exponentially_distributed" title="Exponentially distributed">exponentially distributed</a>) and have exponentially distributed service times (the M denotes a <a class="mw-redirect" href="/wiki/Markov_process" title="Markov process">Markov process</a>). In an <a href="/wiki/M/G/1_queue" title="M/G/1 queue">M/G/1 queue</a>, the G stands for "general" and indicates an arbitrary <a href="/wiki/Probability_distribution" title="Probability distribution">probability distribution</a> for service times.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Example_analysis_of_an_M/M/1_queue"><span id="Example_analysis_of_an_M.2FM.2F1_queue"></span>Example analysis of an M/M/1 queue</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=7" title="Edit section: Example analysis of an M/M/1 queue"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Consider a queue with one server and the following characteristics:
+</p>
+<ul><li><i><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \lambda }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>λ<!-- λ --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \lambda }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \lambda }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b43d0ea3c9c025af1be9128e62a18fa74bedda2a" style="vertical-align: -0.338ex; width:1.355ex; height:2.176ex;"/></span></i>: the arrival rate (the reciprocal of the expected time between each customer arriving, e.g. 10 customers per second)</li>
+<li><i><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mu }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>μ<!-- μ --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mu }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mu }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9fd47b2a39f7a7856952afec1f1db72c67af6161" style="vertical-align: -0.838ex; width:1.402ex; height:2.176ex;"/></span></i>: the reciprocal of the mean service time (the expected number of consecutive service completions per the same unit time, e.g. per 30 seconds)</li>
+<li><i>n</i>: the parameter characterizing the number of customers in the system</li>
+<li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P_{n}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P_{n}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P_{n}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5949c8b1de44005a1af3a11188361f2a830842d1" style="vertical-align: -0.671ex; width:2.711ex; height:2.509ex;"/></span>: the probability of there being <i>n</i> customers in the system in steady state</li></ul>
+<p>Further, let <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle E_{n}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle E_{n}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle E_{n}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ad6b82f2a00af6c9efd4c16d4e99329605645c0c" style="vertical-align: -0.671ex; width:2.934ex; height:2.509ex;"/></span> represent the number of times the system enters state <i>n</i>, and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle L_{n}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>L</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle L_{n}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle L_{n}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ebec334cb04f246db1139e2ca6be0b957d2ef520" style="vertical-align: -0.671ex; width:2.801ex; height:2.509ex;"/></span> represent the number of times the system leaves state <i>n</i>. Then <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \left\vert E_{n}-L_{n}\right\vert \in \{0,1\}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow>
+<mo>|</mo>
+<mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>−<!-- − --></mo>
+<msub>
+<mi>L</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+</mrow>
+<mo>|</mo>
+</mrow>
+<mo>∈<!-- ∈ --></mo>
+<mo fence="false" stretchy="false">{</mo>
+<mn>0</mn>
+<mo>,</mo>
+<mn>1</mn>
+<mo fence="false" stretchy="false">}</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \left\vert E_{n}-L_{n}\right\vert \in \{0,1\}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \left\vert E_{n}-L_{n}\right\vert \in \{0,1\}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dfaafc34f6462bc71ab4a5194a0bb972f8fb7332" style="vertical-align: -0.838ex; width:18.394ex; height:2.843ex;"/></span> for all <i>n</i>. That is, the number of times the system leaves a state differs by at most 1 from the number of times it enters that state, since it will either return into that state at some time in the future (<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle E_{n}=L_{n}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<msub>
+<mi>L</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle E_{n}=L_{n}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle E_{n}=L_{n}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/89b7c47a5be1ac22f494b768c0f1b56e09544dc5" style="vertical-align: -0.671ex; width:8.833ex; height:2.509ex;"/></span>) or not (<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \left\vert E_{n}-L_{n}\right\vert =1}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow>
+<mo>|</mo>
+<mrow>
+<msub>
+<mi>E</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>−<!-- − --></mo>
+<msub>
+<mi>L</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+</mrow>
+<mo>|</mo>
+</mrow>
+<mo>=</mo>
+<mn>1</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \left\vert E_{n}-L_{n}\right\vert =1}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \left\vert E_{n}-L_{n}\right\vert =1}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d65367f17e71d4151a16ec5b659c183aeb415c2e" style="vertical-align: -0.838ex; width:14.13ex; height:2.843ex;"/></span>).
+</p><p>When the system arrives at a steady state, the arrival rate should be equal to the departure rate.
+</p><p>Thus the balance equations
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mu P_{1}=\lambda P_{0}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>μ<!-- μ --></mi>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mi>λ<!-- λ --></mi>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mu P_{1}=\lambda P_{0}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mu P_{1}=\lambda P_{0}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0cef41c1fd4cd03b9c4e2716b34e78137e79bc59" style="vertical-align: -0.838ex; width:10.948ex; height:2.676ex;"/></span></dd>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \lambda P_{0}+\mu P_{2}=(\lambda +\mu )P_{1}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>λ<!-- λ --></mi>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<mi>μ<!-- μ --></mi>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mo stretchy="false">(</mo>
+<mi>λ<!-- λ --></mi>
+<mo>+</mo>
+<mi>μ<!-- μ --></mi>
+<mo stretchy="false">)</mo>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \lambda P_{0}+\mu P_{2}=(\lambda +\mu )P_{1}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \lambda P_{0}+\mu P_{2}=(\lambda +\mu )P_{1}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e61a6b6f06fd2c96aa97cc3918aea6005781772f" style="vertical-align: -0.838ex; width:23.742ex; height:2.843ex;"/></span></dd>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \lambda P_{n-1}+\mu P_{n+1}=(\lambda +\mu )P_{n}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>λ<!-- λ --></mi>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<mi>μ<!-- μ --></mi>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>+</mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mo stretchy="false">(</mo>
+<mi>λ<!-- λ --></mi>
+<mo>+</mo>
+<mi>μ<!-- μ --></mi>
+<mo stretchy="false">)</mo>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \lambda P_{n-1}+\mu P_{n+1}=(\lambda +\mu )P_{n}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \lambda P_{n-1}+\mu P_{n+1}=(\lambda +\mu )P_{n}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d5b89b81570c52e1dc2e05762817f5fdc73b03f2" style="vertical-align: -0.838ex; width:28.436ex; height:2.843ex;"/></span></dd></dl>
+<p>imply
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P_{n}={\frac {\lambda }{\mu }}P_{n-1},\ n=1,2,\ldots }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mi>λ<!-- λ --></mi>
+<mi>μ<!-- μ --></mi>
+</mfrac>
+</mrow>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>,</mo>
+<mtext> </mtext>
+<mi>n</mi>
+<mo>=</mo>
+<mn>1</mn>
+<mo>,</mo>
+<mn>2</mn>
+<mo>,</mo>
+<mo>…<!-- … --></mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P_{n}={\frac {\lambda }{\mu }}P_{n-1},\ n=1,2,\ldots }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P_{n}={\frac {\lambda }{\mu }}P_{n-1},\ n=1,2,\ldots }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/40b487bcc4eb2e715c4bc6c0cdd2d4a738c39709" style="vertical-align: -2.338ex; width:26.082ex; height:5.843ex;"/></span></dd></dl>
+<p>The fact that <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P_{0}+P_{1}+\cdots =1}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>+</mo>
+<mo>⋯<!-- ⋯ --></mo>
+<mo>=</mo>
+<mn>1</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P_{0}+P_{1}+\cdots =1}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P_{0}+P_{1}+\cdots =1}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2c547fd67b3ec848ee87d9b1173aef5deacff28d" style="vertical-align: -0.671ex; width:17.758ex; height:2.509ex;"/></span> leads to the <a href="/wiki/Geometric_distribution" title="Geometric distribution">geometric distribution</a> formula
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle P_{n}=(1-\rho )\rho ^{n}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>P</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<mo stretchy="false">(</mo>
+<mn>1</mn>
+<mo>−<!-- − --></mo>
+<mi>ρ<!-- ρ --></mi>
+<mo stretchy="false">)</mo>
+<msup>
+<mi>ρ<!-- ρ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle P_{n}=(1-\rho )\rho ^{n}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle P_{n}=(1-\rho )\rho ^{n}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/008d712dff3854a99eb83857de02434f0ce48b4c" style="vertical-align: -0.838ex; width:15.244ex; height:2.843ex;"/></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \rho ={\frac {\lambda }{\mu }}&lt;1}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ρ<!-- ρ --></mi>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mi>λ<!-- λ --></mi>
+<mi>μ<!-- μ --></mi>
+</mfrac>
+</mrow>
+<mo>&lt;</mo>
+<mn>1</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \rho ={\frac {\lambda }{\mu }}&lt;1}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \rho ={\frac {\lambda }{\mu }}&lt;1}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dd6b4bc487c1cb0f02f86e51abae727c5c4a5ee5" style="vertical-align: -2.338ex; width:10.799ex; height:5.843ex;"/></span>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Simple_two-equation_queue">Simple two-equation queue</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=8" title="Edit section: Simple two-equation queue"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>A common basic queueing system is attributed to <a href="/wiki/Agner_Krarup_Erlang" title="Agner Krarup Erlang">Erlang</a> and is a modification of <a class="mw-redirect" href="/wiki/Little%27s_Law" title="Little's Law">Little's Law</a>. Given an arrival rate <i>λ</i>, a dropout rate <i>σ</i>, and a departure rate <i>μ</i>, length of the queue <i>L</i> is defined as:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle L={\frac {\lambda -\sigma }{\mu }}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>L</mi>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<mi>λ<!-- λ --></mi>
+<mo>−<!-- − --></mo>
+<mi>σ<!-- σ --></mi>
+</mrow>
+<mi>μ<!-- μ --></mi>
+</mfrac>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle L={\frac {\lambda -\sigma }{\mu }}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle L={\frac {\lambda -\sigma }{\mu }}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2e05024fcce4a8c1c414acc00b1ca517bea6c8e7" style="vertical-align: -2.338ex; width:11.043ex; height:5.843ex;"/></span>.</dd></dl>
+<p>Assuming an exponential distribution for the rates, the waiting time <i>W</i> can be defined as the proportion of arrivals that are served. This is equal to the exponential survival rate of those who do not drop out over the waiting period, giving:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\frac {\mu }{\lambda }}=e^{-W{\mu }}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mi>μ<!-- μ --></mi>
+<mi>λ<!-- λ --></mi>
+</mfrac>
+</mrow>
+<mo>=</mo>
+<msup>
+<mi>e</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>−<!-- − --></mo>
+<mi>W</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>μ<!-- μ --></mi>
+</mrow>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\frac {\mu }{\lambda }}=e^{-W{\mu }}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\frac {\mu }{\lambda }}=e^{-W{\mu }}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/504b727b98da9f16e4bdbedcaecb12e4de4dc522" style="vertical-align: -2.005ex; width:10.644ex; height:5.009ex;"/></span></dd></dl>
+<p>The second equation is commonly rewritten as:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle W={\frac {1}{\mu }}\mathrm {ln} {\frac {\lambda }{\mu }}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>W</mi>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mn>1</mn>
+<mi>μ<!-- μ --></mi>
+</mfrac>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="normal">l</mi>
+<mi mathvariant="normal">n</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mi>λ<!-- λ --></mi>
+<mi>μ<!-- μ --></mi>
+</mfrac>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle W={\frac {1}{\mu }}\mathrm {ln} {\frac {\lambda }{\mu }}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle W={\frac {1}{\mu }}\mathrm {ln} {\frac {\lambda }{\mu }}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/89cbeab3b567b6bf4b0be6a4f4e44222c885ec9b" style="vertical-align: -2.338ex; width:11.949ex; height:5.843ex;"/></span></dd></dl>
+<p>The two-stage one-box model is common in <a href="/wiki/Epidemiology" title="Epidemiology">epidemiology</a>.<sup class="reference" id="cite_ref-8"><a href="#cite_note-8"><span class="cite-bracket">[</span>8<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="History">History</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=9" title="Edit section: History"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><span class="anchor" id="Overview_of_the_development_of_the_theory"></span>
+</p><p>In 1909, <a href="/wiki/Agner_Krarup_Erlang" title="Agner Krarup Erlang">Agner Krarup Erlang</a>, a Danish engineer who worked for the Copenhagen Telephone Exchange, published the first paper on what would now be called queueing theory.<sup class="reference" id="cite_ref-9"><a href="#cite_note-9"><span class="cite-bracket">[</span>9<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-10"><a href="#cite_note-10"><span class="cite-bracket">[</span>10<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-11"><a href="#cite_note-11"><span class="cite-bracket">[</span>11<span class="cite-bracket">]</span></a></sup> He modeled the number of telephone calls arriving at an exchange by a <a class="mw-redirect" href="/wiki/Poisson_process" title="Poisson process">Poisson process</a> and solved the <a href="/wiki/M/D/1_queue" title="M/D/1 queue">M/D/1 queue</a> in 1917 and <a class="mw-redirect" href="/wiki/M/D/k_queue" title="M/D/k queue">M/D/<i>k</i> queueing</a> model in 1920.<sup class="reference" id="cite_ref-century_12-0"><a href="#cite_note-century-12"><span class="cite-bracket">[</span>12<span class="cite-bracket">]</span></a></sup> In Kendall's notation:
+</p>
+<ul><li>M stands for "Markov" or "memoryless", and means arrivals occur according to a Poisson process</li>
+<li>D stands for "deterministic", and means jobs arriving at the queue require a fixed amount of service</li>
+<li><i>k</i> describes the number of servers at the queueing node (<i>k</i> = 1, 2, 3, ...)</li></ul>
+<p>If the node has more jobs than servers, then jobs will queue and wait for service.
+</p><p>The <a class="mw-redirect" href="/wiki/M/G/1" title="M/G/1">M/G/1 queue</a> was solved by <a class="mw-redirect" href="/wiki/Felix_Pollaczek" title="Felix Pollaczek">Felix Pollaczek</a> in 1930,<sup class="reference" id="cite_ref-13"><a href="#cite_note-13"><span class="cite-bracket">[</span>13<span class="cite-bracket">]</span></a></sup> a solution later recast in probabilistic terms by <a href="/wiki/Aleksandr_Khinchin" title="Aleksandr Khinchin">Aleksandr Khinchin</a> and now known as the <a href="/wiki/Pollaczek%E2%80%93Khinchine_formula" title="Pollaczek–Khinchine formula">Pollaczek–Khinchine formula</a>.<sup class="reference" id="cite_ref-century_12-1"><a href="#cite_note-century-12"><span class="cite-bracket">[</span>12<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-century1_14-0"><a href="#cite_note-century1-14"><span class="cite-bracket">[</span>14<span class="cite-bracket">]</span></a></sup>
+</p><p>After the 1940s, queueing theory became an area of research interest to mathematicians.<sup class="reference" id="cite_ref-century1_14-1"><a href="#cite_note-century1-14"><span class="cite-bracket">[</span>14<span class="cite-bracket">]</span></a></sup> In 1953, <a href="/wiki/David_George_Kendall" title="David George Kendall">David George Kendall</a> solved the GI/M/<i>k</i> queue<sup class="reference" id="cite_ref-15"><a href="#cite_note-15"><span class="cite-bracket">[</span>15<span class="cite-bracket">]</span></a></sup> and introduced the modern notation for queues, now known as <a href="/wiki/Kendall%27s_notation" title="Kendall's notation">Kendall's notation</a>. In 1957, Pollaczek studied the GI/G/1 using an <a href="/wiki/Integral_equation" title="Integral equation">integral equation</a>.<sup class="reference" id="cite_ref-16"><a href="#cite_note-16"><span class="cite-bracket">[</span>16<span class="cite-bracket">]</span></a></sup> <a href="/wiki/John_Kingman" title="John Kingman">John Kingman</a> gave a formula for the <a href="/wiki/Mean_sojourn_time" title="Mean sojourn time">mean waiting time</a> in a <a href="/wiki/G/G/1_queue" title="G/G/1 queue">G/G/1 queue</a>, now known as <a href="/wiki/Kingman%27s_formula" title="Kingman's formula">Kingman's formula</a>.<sup class="reference" id="cite_ref-17"><a href="#cite_note-17"><span class="cite-bracket">[</span>17<span class="cite-bracket">]</span></a></sup>
+</p><p><a href="/wiki/Leonard_Kleinrock" title="Leonard Kleinrock">Leonard Kleinrock</a> worked on the application of queueing theory to <a href="/wiki/Message_switching" title="Message switching">message switching</a> in the early 1960s and <a href="/wiki/Packet_switching" title="Packet switching">packet switching</a> in the early 1970s. His initial contribution to this field was his doctoral thesis at the <a href="/wiki/Massachusetts_Institute_of_Technology" title="Massachusetts Institute of Technology">Massachusetts Institute of Technology</a> in 1962, published in book form in 1964. His theoretical work published in the early 1970s underpinned the use of packet switching in the <a href="/wiki/ARPANET" title="ARPANET">ARPANET</a>, a forerunner to the Internet.
+</p><p>The <a href="/wiki/Matrix_geometric_method" title="Matrix geometric method">matrix geometric method</a> and <a href="/wiki/Matrix_analytic_method" title="Matrix analytic method">matrix analytic methods</a> have allowed queues with <a href="/wiki/Phase-type_distribution" title="Phase-type distribution">phase-type distributed</a> inter-arrival and service time distributions to be considered.<sup class="reference" id="cite_ref-18"><a href="#cite_note-18"><span class="cite-bracket">[</span>18<span class="cite-bracket">]</span></a></sup>
+</p><p>Systems with coupled orbits are an important part in queueing theory in the application to wireless networks and signal processing.<sup class="reference" id="cite_ref-19"><a href="#cite_note-19"><span class="cite-bracket">[</span>19<span class="cite-bracket">]</span></a></sup>
+</p><p>Modern day application of queueing theory concerns among other things <a class="mw-redirect" href="/wiki/Product_development" title="Product development">product development</a> where (material) products have a spatiotemporal existence, in the sense that products have a certain volume and a certain duration.<sup class="reference" id="cite_ref-20"><a href="#cite_note-20"><span class="cite-bracket">[</span>20<span class="cite-bracket">]</span></a></sup>
+</p><p>Problems such as performance metrics for the <a href="/wiki/M/G/k_queue" title="M/G/k queue">M/G/<i>k</i> queue</a> remain an open problem.<sup class="reference" id="cite_ref-century_12-2"><a href="#cite_note-century-12"><span class="cite-bracket">[</span>12<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-century1_14-2"><a href="#cite_note-century1-14"><span class="cite-bracket">[</span>14<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Service_disciplines">Service disciplines</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=10" title="Edit section: Service disciplines"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Various scheduling policies can be used at queueing nodes:
+</p>
+<dl><dt><a href="/wiki/FIFO_(computing_and_electronics)" title="FIFO (computing and electronics)">First in, first out</a></dt>
+<dd><figure class="mw-default-size" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Fifo_queue.png"><img class="mw-file-element" data-file-height="540" data-file-width="773" decoding="async" height="154" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Fifo_queue.png/220px-Fifo_queue.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Fifo_queue.png/330px-Fifo_queue.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Fifo_queue.png/440px-Fifo_queue.png 2x" width="220"/></a><figcaption>First in first out (FIFO) queue example</figcaption></figure> Also called <i>first-come, first-served</i> (FCFS),<sup class="reference" id="cite_ref-Manuel_21-0"><a href="#cite_note-Manuel-21"><span class="cite-bracket">[</span>21<span class="cite-bracket">]</span></a></sup> this principle states that customers are served one at a time and that the customer that has been waiting the longest is served first.<sup class="reference" id="cite_ref-penttinen_22-0"><a href="#cite_note-penttinen-22"><span class="cite-bracket">[</span>22<span class="cite-bracket">]</span></a></sup></dd></dl>
+<dl><dt><a class="mw-redirect" href="/wiki/LIFO_(computing)" title="LIFO (computing)">Last in, first out</a></dt>
+<dd>This principle also serves customers one at a time, but the customer with the shortest <a href="/wiki/Mean_sojourn_time" title="Mean sojourn time">waiting time</a> will be served first.<sup class="reference" id="cite_ref-penttinen_22-1"><a href="#cite_note-penttinen-22"><span class="cite-bracket">[</span>22<span class="cite-bracket">]</span></a></sup> Also known as a <a class="mw-redirect" href="/wiki/Stack_(data_structure)" title="Stack (data structure)">stack</a>.</dd></dl>
+<dl><dt><a href="/wiki/Processor_sharing" title="Processor sharing">Processor sharing</a></dt>
+<dd>Service capacity is shared equally between customers.<sup class="reference" id="cite_ref-penttinen_22-2"><a href="#cite_note-penttinen-22"><span class="cite-bracket">[</span>22<span class="cite-bracket">]</span></a></sup></dd></dl>
+<dl><dt>Priority</dt>
+<dd>Customers with high priority are served first.<sup class="reference" id="cite_ref-penttinen_22-3"><a href="#cite_note-penttinen-22"><span class="cite-bracket">[</span>22<span class="cite-bracket">]</span></a></sup> Priority queues can be of two types: <i>non-preemptive</i> (where a job in service cannot be interrupted) and <i>preemptive</i> (where a job in service can be interrupted by a higher-priority job). No work is lost in either model.<sup class="reference" id="cite_ref-23"><a href="#cite_note-23"><span class="cite-bracket">[</span>23<span class="cite-bracket">]</span></a></sup></dd></dl>
+<dl><dt><a class="mw-redirect" href="/wiki/Shortest_job_first" title="Shortest job first">Shortest job first</a></dt>
+<dd>The next job to be served is the one with the smallest size.<sup class="reference" id="cite_ref-24"><a href="#cite_note-24"><span class="cite-bracket">[</span>24<span class="cite-bracket">]</span></a></sup></dd></dl>
+<dl><dt>Preemptive shortest job first</dt>
+<dd>The next job to be served is the one with the smallest original size.<sup class="reference" id="cite_ref-25"><a href="#cite_note-25"><span class="cite-bracket">[</span>25<span class="cite-bracket">]</span></a></sup></dd></dl>
+<dl><dt><a class="mw-redirect" href="/wiki/Shortest_remaining_processing_time" title="Shortest remaining processing time">Shortest remaining processing time</a></dt>
+<dd>The next job to serve is the one with the smallest remaining processing requirement.<sup class="reference" id="cite_ref-26"><a href="#cite_note-26"><span class="cite-bracket">[</span>26<span class="cite-bracket">]</span></a></sup></dd></dl>
+<dl><dt>Service facility</dt></dl>
+<ul><li>Single server: customers line up and there is only one server</li>
+<li>Several parallel servers (single queue): customers line up and there are several servers</li>
+<li>Several parallel servers (several queues): there are many counters and customers can decide for which to queue</li></ul>
+<dl><dt>Unreliable server</dt></dl>
+<p>Server failures occur according to a stochastic (random) process (usually Poisson) and are followed by setup periods during which the server is unavailable. The interrupted customer remains in the service area until server is fixed.<sup class="reference" id="cite_ref-27"><a href="#cite_note-27"><span class="cite-bracket">[</span>27<span class="cite-bracket">]</span></a></sup>
+</p>
+<dl><dt>Customer waiting behavior</dt></dl>
+<ul><li>Balking: customers decide not to join the queue if it is too long</li>
+<li>Jockeying: customers switch between queues if they think they will get served faster by doing so</li>
+<li>Reneging: customers leave the queue if they have waited too long for service</li></ul>
+<p>Arriving customers not served (either due to the queue having no buffer, or due to balking or reneging by the customer) are also known as <i>dropouts</i>. The average rate of dropouts is a significant parameter describing a queue.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Queueing_networks">Queueing networks</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=11" title="Edit section: Queueing networks"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Queue networks are systems in which multiple queues are connected by <i>customer routing</i>. When a customer is serviced at one node, it can join another node and queue for service, or leave the network.
+</p><p>For networks of <i>m</i> nodes, the state of the system can be described by an <i>m</i>–dimensional vector (<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, ..., <i>x</i><sub><i>m</i></sub>) where <i>x</i><sub><i>i</i></sub> represents the number of customers at each node.
+</p><p>The simplest non-trivial networks of queues are called <a href="/wiki/Jackson_network" title="Jackson network">tandem queues</a>.<sup class="reference" id="cite_ref-28"><a href="#cite_note-28"><span class="cite-bracket">[</span>28<span class="cite-bracket">]</span></a></sup> The first significant results in this area were <a href="/wiki/Jackson_network" title="Jackson network">Jackson networks</a>,<sup class="reference" id="cite_ref-29"><a href="#cite_note-29"><span class="cite-bracket">[</span>29<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-jackson_30-0"><a href="#cite_note-jackson-30"><span class="cite-bracket">[</span>30<span class="cite-bracket">]</span></a></sup> for which an efficient <a class="mw-redirect" href="/wiki/Product-form_stationary_distribution" title="Product-form stationary distribution">product-form stationary distribution</a> exists and the <a href="/wiki/Mean_value_analysis" title="Mean value analysis">mean value analysis</a><sup class="reference" id="cite_ref-31"><a href="#cite_note-31"><span class="cite-bracket">[</span>31<span class="cite-bracket">]</span></a></sup> (which allows average metrics such as throughput and sojourn times) can be computed.<sup class="reference" id="cite_ref-32"><a href="#cite_note-32"><span class="cite-bracket">[</span>32<span class="cite-bracket">]</span></a></sup> If the total number of customers in the network remains constant, the network is called a <i>closed network</i> and has been shown to also have a product–form stationary distribution by the <a href="/wiki/Gordon%E2%80%93Newell_theorem" title="Gordon–Newell theorem">Gordon–Newell theorem</a>.<sup class="reference" id="cite_ref-33"><a href="#cite_note-33"><span class="cite-bracket">[</span>33<span class="cite-bracket">]</span></a></sup> This result was extended to the <a href="/wiki/BCMP_network" title="BCMP network">BCMP network</a>,<sup class="reference" id="cite_ref-34"><a href="#cite_note-34"><span class="cite-bracket">[</span>34<span class="cite-bracket">]</span></a></sup> where a network with very general service time, regimes, and customer routing is shown to also exhibit a product–form stationary distribution. The <a href="/wiki/Normalizing_constant" title="Normalizing constant">normalizing constant</a> can be calculated with the <a href="/wiki/Buzen%27s_algorithm" title="Buzen's algorithm">Buzen's algorithm</a>, proposed in 1973.<sup class="reference" id="cite_ref-buzen-1973_35-0"><a href="#cite_note-buzen-1973-35"><span class="cite-bracket">[</span>35<span class="cite-bracket">]</span></a></sup>
+</p><p>Networks of customers have also been investigated, such as <a href="/wiki/Kelly_network" title="Kelly network">Kelly networks</a>, where customers of different classes experience different priority levels at different service nodes.<sup class="reference" id="cite_ref-36"><a href="#cite_note-36"><span class="cite-bracket">[</span>36<span class="cite-bracket">]</span></a></sup> Another type of network are <a class="mw-redirect" href="/wiki/G-networks" title="G-networks">G-networks</a>, first proposed by <a href="/wiki/Erol_Gelenbe" title="Erol Gelenbe">Erol Gelenbe</a> in 1993:<sup class="reference" id="cite_ref-37"><a href="#cite_note-37"><span class="cite-bracket">[</span>37<span class="cite-bracket">]</span></a></sup> these networks do not assume exponential time distributions like the classic Jackson network.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Routing_algorithms">Routing algorithms</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=12" title="Edit section: Routing algorithms"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"><div class="hatnote navigation-not-searchable" role="note">See also: <a href="/wiki/Stochastic_scheduling" title="Stochastic scheduling">Stochastic scheduling</a></div>
+<p>In discrete-time networks where there is a constraint on which service nodes can be active at any time, the max-weight scheduling algorithm chooses a service policy to give optimal throughput in the case that each job visits only a single-person service node.<sup class="reference" id="cite_ref-Manuel_21-1"><a href="#cite_note-Manuel-21"><span class="cite-bracket">[</span>21<span class="cite-bracket">]</span></a></sup> In the more general case where jobs can visit more than one node, <a href="/wiki/Backpressure_routing" title="Backpressure routing">backpressure routing</a> gives optimal throughput. A <a href="/wiki/Network_scheduler" title="Network scheduler">network scheduler</a> must choose a <a class="mw-redirect" href="/wiki/Queueing_algorithm" title="Queueing algorithm">queueing algorithm</a>, which affects the characteristics of the larger network.<sup class="reference" id="cite_ref-38"><a href="#cite_note-38"><span class="cite-bracket">[</span>38<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Mean-field_limits">Mean-field limits</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=13" title="Edit section: Mean-field limits"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><a class="mw-redirect" href="/wiki/Mean-field_model" title="Mean-field model">Mean-field models</a> consider the limiting behaviour of the <a href="/wiki/Empirical_measure" title="Empirical measure">empirical measure</a> (proportion of queues in different states) as the number of queues <i>m</i> approaches infinity. The impact of other queues on any given queue in the network is approximated by a differential equation. The deterministic model converges to the same stationary distribution as the original model.<sup class="reference" id="cite_ref-39"><a href="#cite_note-39"><span class="cite-bracket">[</span>39<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Heavy_traffic/diffusion_approximations"><span id="Heavy_traffic.2Fdiffusion_approximations"></span>Heavy traffic/diffusion approximations</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=14" title="Edit section: Heavy traffic/diffusion approximations"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Heavy_traffic_approximation" title="Heavy traffic approximation">Heavy traffic approximation</a></div>
+<p>In a system with high occupancy rates (utilisation near 1), a heavy traffic approximation can be used to approximate the queueing length process by a <a href="/wiki/Reflected_Brownian_motion" title="Reflected Brownian motion">reflected Brownian motion</a>,<sup class="reference" id="cite_ref-40"><a href="#cite_note-40"><span class="cite-bracket">[</span>40<span class="cite-bracket">]</span></a></sup> <a href="/wiki/Ornstein%E2%80%93Uhlenbeck_process" title="Ornstein–Uhlenbeck process">Ornstein–Uhlenbeck process</a>, or more general <a href="/wiki/Diffusion_process" title="Diffusion process">diffusion process</a>.<sup class="reference" id="cite_ref-41"><a href="#cite_note-41"><span class="cite-bracket">[</span>41<span class="cite-bracket">]</span></a></sup> The number of dimensions of the Brownian process is equal to the number of queueing nodes, with the diffusion restricted to the non-negative <a href="/wiki/Orthant" title="Orthant">orthant</a>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Fluid_limits">Fluid limits</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=15" title="Edit section: Fluid limits"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Fluid_limit" title="Fluid limit">Fluid limit</a></div>
+<p>Fluid models are continuous deterministic analogs of queueing networks obtained by taking the limit when the process is scaled in time and space, allowing heterogeneous objects. This scaled trajectory converges to a deterministic equation which allows the stability of the system to be proven. It is known that a queueing network can be stable but have an unstable fluid limit.<sup class="reference" id="cite_ref-42"><a href="#cite_note-42"><span class="cite-bracket">[</span>42<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Queueing_Applications">Queueing Applications</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=16" title="Edit section: Queueing Applications"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Queueing theory finds widespread application in computer science and information technology. In networking, for instance, queues are integral to routers and switches, where packets queue up for transmission. By applying queueing theory principles, designers can optimize these systems, ensuring responsive performance and efficient resource utilization.
+</p><p>Beyond the technological realm, queueing theory is relevant to everyday experiences. Whether waiting in line at a supermarket or for public transportation, understanding the principles of queueing theory provides valuable insights into optimizing these systems for enhanced user satisfaction. At some point, everyone will be involved in an aspect of queuing. What some may view to be an inconvenience could possibly be the most effective method.
+Queueing theory, a discipline rooted in applied mathematics and computer science, is a field dedicated to the study and analysis of queues, or waiting lines, and their implications across a diverse range of applications. This theoretical framework has proven instrumental in understanding and optimizing the efficiency of systems characterized by the presence of queues. The study of queues is essential in contexts such as traffic systems, computer networks, telecommunications, and service operations.
+</p><p>Queueing theory delves into various foundational concepts, with the arrival process and service process being central. The arrival process describes the manner in which entities join the queue over time, often modeled using stochastic processes like Poisson processes. The efficiency of queueing systems is gauged through key performance metrics. These include the average queue length, average wait time, and system throughput. These metrics provide insights into the system's functionality, guiding decisions aimed at enhancing performance and reducing wait times.<sup class="reference" id="cite_ref-43"><a href="#cite_note-43"><span class="cite-bracket">[</span>43<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-44"><a href="#cite_note-44"><span class="cite-bracket">[</span>44<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-45"><a href="#cite_note-45"><span class="cite-bracket">[</span>45<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=17" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1184024115">.mw-parser-output .div-col{margin-top:0.3em;column-width:30em}.mw-parser-output .div-col-small{font-size:90%}.mw-parser-output .div-col-rules{column-rule:1px solid #aaa}.mw-parser-output .div-col dl,.mw-parser-output .div-col ol,.mw-parser-output .div-col ul{margin-top:0}.mw-parser-output .div-col li,.mw-parser-output .div-col dd{page-break-inside:avoid;break-inside:avoid-column}</style><div class="div-col" style="column-width: 21em;">
+<ul><li><a href="/wiki/Ehrenfest_model" title="Ehrenfest model">Ehrenfest model</a></li>
+<li><a class="mw-redirect" href="/wiki/Erlang_unit" title="Erlang unit">Erlang unit</a></li>
+<li><a href="/wiki/Line_management" title="Line management">Line management</a></li>
+<li><a href="/wiki/Network_simulation" title="Network simulation">Network simulation</a></li>
+<li><a href="/wiki/Project_production_management" title="Project production management">Project production management</a></li>
+<li><a href="/wiki/Queue_area" title="Queue area">Queue area</a></li>
+<li><a class="mw-redirect" href="/wiki/Queueing_delay" title="Queueing delay">Queueing delay</a></li>
+<li><a class="mw-redirect" href="/wiki/Queue_management_system" title="Queue management system">Queue management system</a></li>
+<li><a href="/wiki/Queuing_Rule_of_Thumb" title="Queuing Rule of Thumb">Queuing Rule of Thumb</a></li>
+<li><a href="/wiki/Random_early_detection" title="Random early detection">Random early detection</a></li>
+<li><a href="/wiki/Renewal_theory" title="Renewal theory">Renewal theory</a></li>
+<li><a class="mw-redirect" href="/wiki/Throughput" title="Throughput">Throughput</a></li>
+<li><a href="/wiki/Scheduling_(computing)" title="Scheduling (computing)">Scheduling (computing)</a></li>
+<li><a class="mw-redirect" href="/wiki/Traffic_jam" title="Traffic jam">Traffic jam</a></li>
+<li><a href="/wiki/Traffic_generation_model" title="Traffic generation model">Traffic generation model</a></li>
+<li><a href="/wiki/Flow_network" title="Flow network">Flow network</a></li></ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="References">References</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=18" title="Edit section: References"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1239543626">.mw-parser-output .reflist{margin-bottom:0.5em;list-style-type:decimal}@media screen{.mw-parser-output .reflist{font-size:90%}}.mw-parser-output .reflist .references{font-size:100%;margin-bottom:0;list-style-type:inherit}.mw-parser-output .reflist-columns-2{column-width:30em}.mw-parser-output .reflist-columns-3{column-width:25em}.mw-parser-output .reflist-columns{margin-top:0.3em}.mw-parser-output .reflist-columns ol{margin-top:0}.mw-parser-output .reflist-columns li{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .reflist-upper-alpha{list-style-type:upper-alpha}.mw-parser-output .reflist-upper-roman{list-style-type:upper-roman}.mw-parser-output .reflist-lower-alpha{list-style-type:lower-alpha}.mw-parser-output .reflist-lower-greek{list-style-type:lower-greek}.mw-parser-output .reflist-lower-roman{list-style-type:lower-roman}</style><div class="reflist reflist-columns references-column-width" style="column-width: 30em;">
+<ol class="references">
+<li id="cite_note-sun-1"><span class="mw-cite-backlink">^ <a href="#cite_ref-sun_1-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-sun_1-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-sun_1-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><style data-mw-deduplicate="TemplateStyles:r1238218222">.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#d33)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#d33)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite class="citation book cs1" id="CITEREFSundarapandian2009">Sundarapandian, V. (2009). "7. Queueing Theory". <i>Probability, Statistics and Queueing Theory</i>. PHI Learning. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-81-203-3844-9" title="Special:BookSources/978-81-203-3844-9"><bdi>978-81-203-3844-9</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=7.+Queueing+Theory&amp;rft.btitle=Probability%2C+Statistics+and+Queueing+Theory&amp;rft.pub=PHI+Learning&amp;rft.date=2009&amp;rft.isbn=978-81-203-3844-9&amp;rft.aulast=Sundarapandian&amp;rft.aufirst=V.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation web cs1" id="CITEREFLawrence_W._Dowdy,_Virgilio_A.F._Almeida">Lawrence W. Dowdy, Virgilio A.F. Almeida, Daniel A. Menasce. <a class="external text" href="http://www.cs.gmu.edu/~menasce/perfbyd/" rel="nofollow">"Performance by Design: Computer Capacity Planning by Example"</a>. <a class="external text" href="https://web.archive.org/web/20160506025515/http://cs.gmu.edu/~menasce/perfbyd/" rel="nofollow">Archived</a> from the original on 2016-05-06<span class="reference-accessdate">. Retrieved <span class="nowrap">2009-07-08</span></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Performance+by+Design%3A+Computer+Capacity+Planning+by+Example&amp;rft.aulast=Lawrence+W.+Dowdy%2C+Virgilio+A.F.+Almeida&amp;rft.aufirst=Daniel+A.+Menasce&amp;rft_id=http%3A%2F%2Fwww.cs.gmu.edu%2F~menasce%2Fperfbyd%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></link></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation news cs1" id="CITEREFSchlechter2009">Schlechter, Kira (March 2, 2009). <a class="external text" href="http://www.pennlive.com/midstate/index.ssf/2009/03/hershey_med_to_open_redesigned.html" rel="nofollow">"Hershey Medical Center to open redesigned emergency room"</a>. <i>The Patriot-News</i>. <a class="external text" href="https://web.archive.org/web/20160629151917/http://www.pennlive.com/midstate/index.ssf/2009/03/hershey_med_to_open_redesigned.html" rel="nofollow">Archived</a> from the original on June 29, 2016<span class="reference-accessdate">. Retrieved <span class="nowrap">March 12,</span> 2009</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=The+Patriot-News&amp;rft.atitle=Hershey+Medical+Center+to+open+redesigned+emergency+room&amp;rft.date=2009-03-02&amp;rft.aulast=Schlechter&amp;rft.aufirst=Kira&amp;rft_id=http%3A%2F%2Fwww.pennlive.com%2Fmidstate%2Findex.ssf%2F2009%2F03%2Fhershey_med_to_open_redesigned.html&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></link></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFMayhew,_LesSmith,_David2006">Mayhew, Les; Smith, David (December 2006). <a class="external text" href="https://web.archive.org/web/20210907100556/https://openaccess.city.ac.uk/id/eprint/2309/" rel="nofollow"><i>Using queuing theory to analyse completion times in accident and emergency departments in the light of the Government 4-hour target</i></a>. <a class="mw-redirect" href="/wiki/Cass_Business_School" title="Cass Business School">Cass Business School</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-1-905752-06-5" title="Special:BookSources/978-1-905752-06-5"><bdi>978-1-905752-06-5</bdi></a>. Archived from <a class="external text" href="https://openaccess.city.ac.uk/id/eprint/2309/" rel="nofollow">the original</a> on September 7, 2021<span class="reference-accessdate">. Retrieved <span class="nowrap">2008-05-20</span></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Using+queuing+theory+to+analyse+completion+times+in+accident+and+emergency+departments+in+the+light+of+the+Government+4-hour+target&amp;rft.pub=Cass+Business+School&amp;rft.date=2006-12&amp;rft.isbn=978-1-905752-06-5&amp;rft.au=Mayhew%2C+Les&amp;rft.au=Smith%2C+David&amp;rft_id=https%3A%2F%2Fopenaccess.city.ac.uk%2Fid%2Feprint%2F2309%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></link></span>
+</li>
+<li id="cite_note-taylor_2019-5"><span class="mw-cite-backlink">^ <a href="#cite_ref-taylor_2019_5-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-taylor_2019_5-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-taylor_2019_5-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFTaylor2019">Taylor, Bernard W. (2019). <i>Introduction to management science</i> (13th ed.). New York: Pearson. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-13-473066-0" title="Special:BookSources/978-0-13-473066-0"><bdi>978-0-13-473066-0</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Introduction+to+management+science&amp;rft.place=New+York&amp;rft.edition=13th&amp;rft.pub=Pearson&amp;rft.date=2019&amp;rft.isbn=978-0-13-473066-0&amp;rft.aulast=Taylor&amp;rft.aufirst=Bernard+W.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></link></span>
+</li>
+<li id="cite_note-tijms-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-tijms_6-0">^</a></b></span> <span class="reference-text">Tijms, H.C, <i>Algorithmic Analysis of Queues</i>, Chapter 9 in  A First Course in Stochastic Models, Wiley, Chichester, 2003</span>
+</li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation journal cs1" id="CITEREFKendall1953"><a href="/wiki/David_George_Kendall" title="David George Kendall">Kendall, D. G.</a> (1953). <a class="external text" href="https://doi.org/10.1214%2Faoms%2F1177728975" rel="nofollow">"Stochastic Processes Occurring in the Theory of Queues and their Analysis by the Method of the Imbedded Markov Chain"</a>. <i>The Annals of Mathematical Statistics</i>. <b>24</b> (3): <span class="nowrap">338–</span>354. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://doi.org/10.1214%2Faoms%2F1177728975" rel="nofollow">10.1214/aoms/1177728975</a></span>. <a class="mw-redirect" href="/wiki/JSTOR_(identifier)" title="JSTOR (identifier)">JSTOR</a> <a class="external text" href="https://www.jstor.org/stable/2236285" rel="nofollow">2236285</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=The+Annals+of+Mathematical+Statistics&amp;rft.atitle=Stochastic+Processes+Occurring+in+the+Theory+of+Queues+and+their+Analysis+by+the+Method+of+the+Imbedded+Markov+Chain&amp;rft.volume=24&amp;rft.issue=3&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E338-%3C%2Fspan%3E354&amp;rft.date=1953&amp;rft_id=info%3Adoi%2F10.1214%2Faoms%2F1177728975&amp;rft_id=https%3A%2F%2Fwww.jstor.org%2Fstable%2F2236285%23id-name%3DJSTOR&amp;rft.aulast=Kendall&amp;rft.aufirst=D.+G.&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.1214%252Faoms%252F1177728975&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></link></span>
+</li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation journal cs1" id="CITEREFHernández-Suarez2010">Hernández-Suarez, Carlos (2010). <a class="external text" href="https://doi.org/10.3934%2Fmbe.2010.7.809" rel="nofollow">"An application of queuing theory to SIS and SEIS epidemic models"</a>. <i>Math. Biosci</i>. <b>7</b> (4): <span class="nowrap">809–</span>823. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://doi.org/10.3934%2Fmbe.2010.7.809" rel="nofollow">10.3934/mbe.2010.7.809</a></span>. <a class="mw-redirect" href="/wiki/PMID_(identifier)" title="PMID (identifier)">PMID</a> <a class="external text" href="https://pubmed.ncbi.nlm.nih.gov/21077709" rel="nofollow">21077709</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Math.+Biosci.&amp;rft.atitle=An+application+of+queuing+theory+to+SIS+and+SEIS+epidemic+models&amp;rft.volume=7&amp;rft.issue=4&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E809-%3C%2Fspan%3E823&amp;rft.date=2010&amp;rft_id=info%3Adoi%2F10.3934%2Fmbe.2010.7.809&amp;rft_id=info%3Apmid%2F21077709&amp;rft.aulast=Hern%C3%A1ndez-Suarez&amp;rft.aufirst=Carlos&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.3934%252Fmbe.2010.7.809&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></link></span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation web cs1"><a class="external text" href="http://pass.maths.org.uk/issue2/erlang/index.html" rel="nofollow">"Agner Krarup Erlang (1878-1929) | plus.maths.org"</a>. Pass.maths.org.uk. 1997-04-30. <a class="external text" href="https://web.archive.org/web/20081007225944/http://pass.maths.org.uk/issue2/erlang/index.html" rel="nofollow">Archived</a> from the original on 2008-10-07<span class="reference-accessdate">. Retrieved <span class="nowrap">2013-04-22</span></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Agner+Krarup+Erlang+%281878-1929%29+%26%23124%3B+plus.maths.org&amp;rft.pub=Pass.maths.org.uk&amp;rft.date=1997-04-30&amp;rft_id=http%3A%2F%2Fpass.maths.org.uk%2Fissue2%2Ferlang%2Findex.html&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></link></span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFAsmussenBoxma2009">Asmussen, S. R.; <a class="mw-redirect" href="/wiki/Onno_Boxma" title="Onno Boxma">Boxma, O. J.</a> (2009). "Editorial introduction". <i><a href="/wiki/Queueing_Systems" title="Queueing Systems">Queueing Systems</a></i>. <b>63</b> (<span class="nowrap">1–</span>4): <span class="nowrap">1–</span>2. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2Fs11134-009-9151-8" rel="nofollow">10.1007/s11134-009-9151-8</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:45664707" rel="nofollow">45664707</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Queueing+Systems&amp;rft.atitle=Editorial+introduction&amp;rft.volume=63&amp;rft.issue=%3Cspan+class%3D%22nowrap%22%3E1%E2%80%93%3C%2Fspan%3E4&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E1-%3C%2Fspan%3E2&amp;rft.date=2009&amp;rft_id=info%3Adoi%2F10.1007%2Fs11134-009-9151-8&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A45664707%23id-name%3DS2CID&amp;rft.aulast=Asmussen&amp;rft.aufirst=S.+R.&amp;rft.au=Boxma%2C+O.+J.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFErlang1909"><a href="/wiki/Agner_Krarup_Erlang" title="Agner Krarup Erlang">Erlang, Agner Krarup</a> (1909). <a class="external text" href="https://web.archive.org/web/20111001212934/http://oldwww.com.dtu.dk/teletraffic/erlangbook/pps131-137.pdf" rel="nofollow">"The theory of probabilities and telephone conversations"</a> <span class="cs1-format">(PDF)</span>. <i>Nyt Tidsskrift for Matematik B</i>. <b>20</b>: <span class="nowrap">33–</span>39. Archived from <a class="external text" href="http://oldwww.com.dtu.dk/teletraffic/erlangbook/pps131-137.pdf" rel="nofollow">the original</a> <span class="cs1-format">(PDF)</span> on 2011-10-01.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Nyt+Tidsskrift+for+Matematik+B&amp;rft.atitle=The+theory+of+probabilities+and+telephone+conversations&amp;rft.volume=20&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E33-%3C%2Fspan%3E39&amp;rft.date=1909&amp;rft.aulast=Erlang&amp;rft.aufirst=Agner+Krarup&amp;rft_id=http%3A%2F%2Foldwww.com.dtu.dk%2Fteletraffic%2Ferlangbook%2Fpps131-137.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-century-12"><span class="mw-cite-backlink">^ <a href="#cite_ref-century_12-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-century_12-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-century_12-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFKingman2009"><a href="/wiki/John_Kingman" title="John Kingman">Kingman, J. F. C.</a> (2009). "The first Erlang century—and the next". <i><a href="/wiki/Queueing_Systems" title="Queueing Systems">Queueing Systems</a></i>. <b>63</b> (<span class="nowrap">1–</span>4): <span class="nowrap">3–</span>4. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2Fs11134-009-9147-4" rel="nofollow">10.1007/s11134-009-9147-4</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:38588726" rel="nofollow">38588726</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Queueing+Systems&amp;rft.atitle=The+first+Erlang+century%E2%80%94and+the+next&amp;rft.volume=63&amp;rft.issue=%3Cspan+class%3D%22nowrap%22%3E1%E2%80%93%3C%2Fspan%3E4&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E3-%3C%2Fspan%3E4&amp;rft.date=2009&amp;rft_id=info%3Adoi%2F10.1007%2Fs11134-009-9147-4&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A38588726%23id-name%3DS2CID&amp;rft.aulast=Kingman&amp;rft.aufirst=J.+F.+C.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13">^</a></b></span> <span class="reference-text">Pollaczek, F., Ueber eine Aufgabe der Wahrscheinlichkeitstheorie, Math. Z. 1930</span>
+</li>
+<li id="cite_note-century1-14"><span class="mw-cite-backlink">^ <a href="#cite_ref-century1_14-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-century1_14-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-century1_14-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFWhittle2002"><a href="/wiki/Peter_Whittle_(mathematician)" title="Peter Whittle (mathematician)">Whittle, P.</a> (2002). <a class="external text" href="https://doi.org/10.1287%2Fopre.50.1.227.17792" rel="nofollow">"Applied Probability in Great Britain"</a>. <i><a href="/wiki/Operations_Research_(journal)" title="Operations Research (journal)">Operations Research</a></i>. <b>50</b> (1): <span class="nowrap">227–</span>239. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://doi.org/10.1287%2Fopre.50.1.227.17792" rel="nofollow">10.1287/opre.50.1.227.17792</a></span>. <a class="mw-redirect" href="/wiki/JSTOR_(identifier)" title="JSTOR (identifier)">JSTOR</a> <a class="external text" href="https://www.jstor.org/stable/3088474" rel="nofollow">3088474</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Operations+Research&amp;rft.atitle=Applied+Probability+in+Great+Britain&amp;rft.volume=50&amp;rft.issue=1&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E227-%3C%2Fspan%3E239&amp;rft.date=2002&amp;rft_id=info%3Adoi%2F10.1287%2Fopre.50.1.227.17792&amp;rft_id=https%3A%2F%2Fwww.jstor.org%2Fstable%2F3088474%23id-name%3DJSTOR&amp;rft.aulast=Whittle&amp;rft.aufirst=P.&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.1287%252Fopre.50.1.227.17792&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15">^</a></b></span> <span class="reference-text">Kendall, D.G.:Stochastic processes occurring in the theory of queues and their analysis by the method of the imbedded Markov chain, Ann. Math. Stat. 1953</span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-16">^</a></b></span> <span class="reference-text">Pollaczek, F., Problèmes Stochastiques posés par le phénomène de formation d'une queue</span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><b><a href="#cite_ref-17">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFKingmanAtiyah1961"><a href="/wiki/John_Kingman" title="John Kingman">Kingman, J. F. C.</a>; Atiyah (October 1961). "The single server queue in heavy traffic". <i><a href="/wiki/Mathematical_Proceedings_of_the_Cambridge_Philosophical_Society" title="Mathematical Proceedings of the Cambridge Philosophical Society">Mathematical Proceedings of the Cambridge Philosophical Society</a></i>. <b>57</b> (4): 902. <a class="mw-redirect" href="/wiki/Bibcode_(identifier)" title="Bibcode (identifier)">Bibcode</a>:<a class="external text" href="https://ui.adsabs.harvard.edu/abs/1961PCPS...57..902K" rel="nofollow">1961PCPS...57..902K</a>. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1017%2FS0305004100036094" rel="nofollow">10.1017/S0305004100036094</a>. <a class="mw-redirect" href="/wiki/JSTOR_(identifier)" title="JSTOR (identifier)">JSTOR</a> <a class="external text" href="https://www.jstor.org/stable/2984229" rel="nofollow">2984229</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:62590290" rel="nofollow">62590290</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Mathematical+Proceedings+of+the+Cambridge+Philosophical+Society&amp;rft.atitle=The+single+server+queue+in+heavy+traffic&amp;rft.volume=57&amp;rft.issue=4&amp;rft.pages=902&amp;rft.date=1961-10&amp;rft_id=info%3Adoi%2F10.1017%2FS0305004100036094&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A62590290%23id-name%3DS2CID&amp;rft_id=https%3A%2F%2Fwww.jstor.org%2Fstable%2F2984229%23id-name%3DJSTOR&amp;rft_id=info%3Abibcode%2F1961PCPS...57..902K&amp;rft.aulast=Kingman&amp;rft.aufirst=J.+F.+C.&amp;rft.au=Atiyah&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><b><a href="#cite_ref-18">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFRamaswami1988">Ramaswami, V. (1988). "A stable recursion for the steady state vector in markov chains of m/g/1 type". <i>Communications in Statistics. Stochastic Models</i>. <b>4</b>: <span class="nowrap">183–</span>188. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1080%2F15326348808807077" rel="nofollow">10.1080/15326348808807077</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Communications+in+Statistics.+Stochastic+Models&amp;rft.atitle=A+stable+recursion+for+the+steady+state+vector+in+markov+chains+of+m%2Fg%2F1+type&amp;rft.volume=4&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E183-%3C%2Fspan%3E188&amp;rft.date=1988&amp;rft_id=info%3Adoi%2F10.1080%2F15326348808807077&amp;rft.aulast=Ramaswami&amp;rft.aufirst=V.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><b><a href="#cite_ref-19">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFMorozov2017">Morozov, E. (2017). "Stability analysis of a multiclass retrial system withcoupled orbit queues". <i>Proceedings of 14th European Workshop</i>. Lecture Notes in Computer Science. Vol. 17. pp. <span class="nowrap">85–</span>98. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://doi.org/10.1007%2F978-3-319-66583-2_6" rel="nofollow">10.1007/978-3-319-66583-2_6</a></span>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-3-319-66582-5" title="Special:BookSources/978-3-319-66582-5"><bdi>978-3-319-66582-5</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Stability+analysis+of+a+multiclass+retrial+system+withcoupled+orbit+queues&amp;rft.btitle=Proceedings+of+14th+European+Workshop&amp;rft.series=Lecture+Notes+in+Computer+Science&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E85-%3C%2Fspan%3E98&amp;rft.date=2017&amp;rft_id=info%3Adoi%2F10.1007%2F978-3-319-66583-2_6&amp;rft.isbn=978-3-319-66582-5&amp;rft.aulast=Morozov&amp;rft.aufirst=E.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-20"><span class="mw-cite-backlink"><b><a href="#cite_ref-20">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFCarlsonFelder1992">Carlson, E.C.; Felder, R.M. (1992). <a class="external text" href="https://www.sciencedirect.com/science/article/abs/pii/0098135492800185" rel="nofollow">"Simulation and queueing network modeling of single-product production campaigns"</a>. <i>Computers &amp; Chemical Engineering</i>. <b>16</b> (7): <span class="nowrap">707–</span>718. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1016%2F0098-1354%2892%2980018-5" rel="nofollow">10.1016/0098-1354(92)80018-5</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Computers+%26+Chemical+Engineering&amp;rft.atitle=Simulation+and+queueing+network+modeling+of+single-product+production+campaigns&amp;rft.volume=16&amp;rft.issue=7&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E707-%3C%2Fspan%3E718&amp;rft.date=1992&amp;rft_id=info%3Adoi%2F10.1016%2F0098-1354%2892%2980018-5&amp;rft.aulast=Carlson&amp;rft.aufirst=E.C.&amp;rft.au=Felder%2C+R.M.&amp;rft_id=https%3A%2F%2Fwww.sciencedirect.com%2Fscience%2Farticle%2Fabs%2Fpii%2F0098135492800185&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-Manuel-21"><span class="mw-cite-backlink">^ <a href="#cite_ref-Manuel_21-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Manuel_21-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFManuel2011">Manuel, Laguna (2011). <a class="external text" href="https://books.google.com/books?id=d-V8c8YRJikC&amp;q=%22First-come%2C+first-served%22+business&amp;pg=PA178" rel="nofollow"><i>Business Process Modeling, Simulation and Design</i></a>. Pearson Education India. p. 178. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-81-317-6135-9" title="Special:BookSources/978-81-317-6135-9"><bdi>978-81-317-6135-9</bdi></a><span class="reference-accessdate">. Retrieved <span class="nowrap">6 October</span> 2017</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Business+Process+Modeling%2C+Simulation+and+Design&amp;rft.pages=178&amp;rft.pub=Pearson+Education+India&amp;rft.date=2011&amp;rft.isbn=978-81-317-6135-9&amp;rft.aulast=Manuel&amp;rft.aufirst=Laguna&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3Dd-V8c8YRJikC%26q%3D%2522First-come%252C%2Bfirst-served%2522%2Bbusiness%26pg%3DPA178&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-penttinen-22"><span class="mw-cite-backlink">^ <a href="#cite_ref-penttinen_22-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-penttinen_22-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-penttinen_22-2"><sup><i><b>c</b></i></sup></a> <a href="#cite_ref-penttinen_22-3"><sup><i><b>d</b></i></sup></a></span> <span class="reference-text">Penttinen A., <i>Chapter 8 – Queueing Systems</i>, Lecture Notes: S-38.145 - Introduction to Teletraffic Theory.</span>
+</li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><b><a href="#cite_ref-23">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFHarchol-Balter2012"><a href="/wiki/Mor_Harchol-Balter" title="Mor Harchol-Balter">Harchol-Balter, M.</a> (2012). "Scheduling: Non-Preemptive, Size-Based Policies". <i>Performance Modeling and Design of Computer Systems</i>. pp. <span class="nowrap">499–</span>507. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1017%2FCBO9781139226424.039" rel="nofollow">10.1017/CBO9781139226424.039</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-1-139-22642-4" title="Special:BookSources/978-1-139-22642-4"><bdi>978-1-139-22642-4</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Scheduling%3A+Non-Preemptive%2C+Size-Based+Policies&amp;rft.btitle=Performance+Modeling+and+Design+of+Computer+Systems&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E499-%3C%2Fspan%3E507&amp;rft.date=2012&amp;rft_id=info%3Adoi%2F10.1017%2FCBO9781139226424.039&amp;rft.isbn=978-1-139-22642-4&amp;rft.aulast=Harchol-Balter&amp;rft.aufirst=M.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><b><a href="#cite_ref-24">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFAndrew_S._TanenbaumHerbert_Bos2015">Andrew S. Tanenbaum; Herbert Bos (2015). <a class="external text" href="https://books.google.com/books?id=9gqnngEACAAJ" rel="nofollow"><i>Modern Operating Systems</i></a>. Pearson. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-13-359162-0" title="Special:BookSources/978-0-13-359162-0"><bdi>978-0-13-359162-0</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Modern+Operating+Systems&amp;rft.pub=Pearson&amp;rft.date=2015&amp;rft.isbn=978-0-13-359162-0&amp;rft.au=Andrew+S.+Tanenbaum&amp;rft.au=Herbert+Bos&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3D9gqnngEACAAJ&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><b><a href="#cite_ref-25">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFHarchol-Balter2012"><a href="/wiki/Mor_Harchol-Balter" title="Mor Harchol-Balter">Harchol-Balter, M.</a> (2012). "Scheduling: Preemptive, Size-Based Policies". <i>Performance Modeling and Design of Computer Systems</i>. pp. <span class="nowrap">508–</span>517. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1017%2FCBO9781139226424.040" rel="nofollow">10.1017/CBO9781139226424.040</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-1-139-22642-4" title="Special:BookSources/978-1-139-22642-4"><bdi>978-1-139-22642-4</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Scheduling%3A+Preemptive%2C+Size-Based+Policies&amp;rft.btitle=Performance+Modeling+and+Design+of+Computer+Systems&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E508-%3C%2Fspan%3E517&amp;rft.date=2012&amp;rft_id=info%3Adoi%2F10.1017%2FCBO9781139226424.040&amp;rft.isbn=978-1-139-22642-4&amp;rft.aulast=Harchol-Balter&amp;rft.aufirst=M.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-26"><span class="mw-cite-backlink"><b><a href="#cite_ref-26">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFHarchol-Balter2012"><a href="/wiki/Mor_Harchol-Balter" title="Mor Harchol-Balter">Harchol-Balter, M.</a> (2012). "Scheduling: SRPT and Fairness". <i>Performance Modeling and Design of Computer Systems</i>. pp. <span class="nowrap">518–</span>530. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1017%2FCBO9781139226424.041" rel="nofollow">10.1017/CBO9781139226424.041</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-1-139-22642-4" title="Special:BookSources/978-1-139-22642-4"><bdi>978-1-139-22642-4</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Scheduling%3A+SRPT+and+Fairness&amp;rft.btitle=Performance+Modeling+and+Design+of+Computer+Systems&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E518-%3C%2Fspan%3E530&amp;rft.date=2012&amp;rft_id=info%3Adoi%2F10.1017%2FCBO9781139226424.041&amp;rft.isbn=978-1-139-22642-4&amp;rft.aulast=Harchol-Balter&amp;rft.aufirst=M.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-27"><span class="mw-cite-backlink"><b><a href="#cite_ref-27">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFDimitriou2019">Dimitriou, I. (2019). "A Multiclass Retrial System With Coupled Orbits And Service Interruptions: Verification of Stability Conditions". <i>Proceedings of FRUCT 24</i>. <b>7</b>: <span class="nowrap">75–</span>82.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Proceedings+of+FRUCT+24&amp;rft.atitle=A+Multiclass+Retrial+System+With+Coupled+Orbits+And+Service+Interruptions%3A+Verification+of+Stability+Conditions&amp;rft.volume=7&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E75-%3C%2Fspan%3E82&amp;rft.date=2019&amp;rft.aulast=Dimitriou&amp;rft.aufirst=I.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-28"><span class="mw-cite-backlink"><b><a href="#cite_ref-28">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation web cs1"><a class="external text" href="http://www.stats.ox.ac.uk/~winkel/bs3a07l13-14.pdf#page=4" rel="nofollow">"Archived copy"</a> <span class="cs1-format">(PDF)</span>. <a class="external text" href="https://web.archive.org/web/20170329085928/http://www.stats.ox.ac.uk/~winkel/bs3a07l13-14.pdf#page=4" rel="nofollow">Archived</a> <span class="cs1-format">(PDF)</span> from the original on 2017-03-29<span class="reference-accessdate">. Retrieved <span class="nowrap">2018-08-02</span></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Archived+copy&amp;rft_id=http%3A%2F%2Fwww.stats.ox.ac.uk%2F~winkel%2Fbs3a07l13-14.pdf%23page%3D4&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span><span class="cs1-maint citation-comment"><code class="cs1-code">{{<a href="/wiki/Template:Cite_web" title="Template:Cite web">cite web</a>}}</code>:  CS1 maint: archived copy as title (<a href="/wiki/Category:CS1_maint:_archived_copy_as_title" title="Category:CS1 maint: archived copy as title">link</a>)</span></span>
+</li>
+<li id="cite_note-29"><span class="mw-cite-backlink"><b><a href="#cite_ref-29">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFJackson1957"><a href="/wiki/James_R._Jackson" title="James R. Jackson">Jackson, J. R.</a> (1957). "Networks of Waiting Lines". <i>Operations Research</i>. <b>5</b> (4): <span class="nowrap">518–</span>521. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1287%2Fopre.5.4.518" rel="nofollow">10.1287/opre.5.4.518</a>. <a class="mw-redirect" href="/wiki/JSTOR_(identifier)" title="JSTOR (identifier)">JSTOR</a> <a class="external text" href="https://www.jstor.org/stable/167249" rel="nofollow">167249</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Operations+Research&amp;rft.atitle=Networks+of+Waiting+Lines&amp;rft.volume=5&amp;rft.issue=4&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E518-%3C%2Fspan%3E521&amp;rft.date=1957&amp;rft_id=info%3Adoi%2F10.1287%2Fopre.5.4.518&amp;rft_id=https%3A%2F%2Fwww.jstor.org%2Fstable%2F167249%23id-name%3DJSTOR&amp;rft.aulast=Jackson&amp;rft.aufirst=J.+R.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-jackson-30"><span class="mw-cite-backlink"><b><a href="#cite_ref-jackson_30-0">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFJackson1963">Jackson, James R. (Oct 1963). "Jobshop-like Queueing Systems". <i><a class="mw-redirect" href="/wiki/Management_Science:_A_Journal_of_the_Institute_for_Operations_Research_and_the_Management_Sciences" title="Management Science: A Journal of the Institute for Operations Research and the Management Sciences">Management Science</a></i>. <b>10</b> (1): <span class="nowrap">131–</span>142. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1287%2Fmnsc.1040.0268" rel="nofollow">10.1287/mnsc.1040.0268</a>. <a class="mw-redirect" href="/wiki/JSTOR_(identifier)" title="JSTOR (identifier)">JSTOR</a> <a class="external text" href="https://www.jstor.org/stable/2627213" rel="nofollow">2627213</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Management+Science&amp;rft.atitle=Jobshop-like+Queueing+Systems&amp;rft.volume=10&amp;rft.issue=1&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E131-%3C%2Fspan%3E142&amp;rft.date=1963-10&amp;rft_id=info%3Adoi%2F10.1287%2Fmnsc.1040.0268&amp;rft_id=https%3A%2F%2Fwww.jstor.org%2Fstable%2F2627213%23id-name%3DJSTOR&amp;rft.aulast=Jackson&amp;rft.aufirst=James+R.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-31"><span class="mw-cite-backlink"><b><a href="#cite_ref-31">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFReiserLavenberg1980">Reiser, M.; Lavenberg, S. S. (1980). <a class="external text" href="https://doi.org/10.1145%2F322186.322195" rel="nofollow">"Mean-Value Analysis of Closed Multichain Queuing Networks"</a>. <i><a href="/wiki/Journal_of_the_ACM" title="Journal of the ACM">Journal of the ACM</a></i>. <b>27</b> (2): 313. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://doi.org/10.1145%2F322186.322195" rel="nofollow">10.1145/322186.322195</a></span>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:8694947" rel="nofollow">8694947</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Journal+of+the+ACM&amp;rft.atitle=Mean-Value+Analysis+of+Closed+Multichain+Queuing+Networks&amp;rft.volume=27&amp;rft.issue=2&amp;rft.pages=313&amp;rft.date=1980&amp;rft_id=info%3Adoi%2F10.1145%2F322186.322195&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A8694947%23id-name%3DS2CID&amp;rft.aulast=Reiser&amp;rft.aufirst=M.&amp;rft.au=Lavenberg%2C+S.+S.&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.1145%252F322186.322195&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-32"><span class="mw-cite-backlink"><b><a href="#cite_ref-32">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFVan_Dijk1993">Van Dijk, N. M. (1993). <a class="external text" href="https://research.vu.nl/ws/files/73611045/Scanjob%20199100081" rel="nofollow">"On the arrival theorem for communication networks"</a>. <i>Computer Networks and ISDN Systems</i>. <b>25</b> (10): <span class="nowrap">1135–</span>2013. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1016%2F0169-7552%2893%2990073-D" rel="nofollow">10.1016/0169-7552(93)90073-D</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:45218280" rel="nofollow">45218280</a>. <a class="external text" href="https://web.archive.org/web/20190924062816/https://research.vu.nl/ws/files/73611045/Scanjob%2520199100081" rel="nofollow">Archived</a> from the original on 2019-09-24<span class="reference-accessdate">. Retrieved <span class="nowrap">2019-09-24</span></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Computer+Networks+and+ISDN+Systems&amp;rft.atitle=On+the+arrival+theorem+for+communication+networks&amp;rft.volume=25&amp;rft.issue=10&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E1135-%3C%2Fspan%3E2013&amp;rft.date=1993&amp;rft_id=info%3Adoi%2F10.1016%2F0169-7552%2893%2990073-D&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A45218280%23id-name%3DS2CID&amp;rft.aulast=Van+Dijk&amp;rft.aufirst=N.+M.&amp;rft_id=https%3A%2F%2Fresearch.vu.nl%2Fws%2Ffiles%2F73611045%2FScanjob%2520199100081&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-33"><span class="mw-cite-backlink"><b><a href="#cite_ref-33">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFGordonNewell1967">Gordon, W. J.; <a href="/wiki/Gordon_F._Newell" title="Gordon F. Newell">Newell, G. F.</a> (1967). "Closed Queuing Systems with Exponential Servers". <i><a href="/wiki/Operations_Research_(journal)" title="Operations Research (journal)">Operations Research</a></i>. <b>15</b> (2): 254. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1287%2Fopre.15.2.254" rel="nofollow">10.1287/opre.15.2.254</a>. <a class="mw-redirect" href="/wiki/JSTOR_(identifier)" title="JSTOR (identifier)">JSTOR</a> <a class="external text" href="https://www.jstor.org/stable/168557" rel="nofollow">168557</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Operations+Research&amp;rft.atitle=Closed+Queuing+Systems+with+Exponential+Servers&amp;rft.volume=15&amp;rft.issue=2&amp;rft.pages=254&amp;rft.date=1967&amp;rft_id=info%3Adoi%2F10.1287%2Fopre.15.2.254&amp;rft_id=https%3A%2F%2Fwww.jstor.org%2Fstable%2F168557%23id-name%3DJSTOR&amp;rft.aulast=Gordon&amp;rft.aufirst=W.+J.&amp;rft.au=Newell%2C+G.+F.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-34"><span class="mw-cite-backlink"><b><a href="#cite_ref-34">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFBaskettChandyMuntzPalacios1975">Baskett, F.; <a href="/wiki/K._Mani_Chandy" title="K. Mani Chandy">Chandy, K. Mani</a>; Muntz, R.R.; Palacios, F.G. (1975). <a class="external text" href="https://doi.org/10.1145%2F321879.321887" rel="nofollow">"Open, closed and mixed networks of queues with different classes of customers"</a>. <i>Journal of the ACM</i>. <b>22</b> (2): <span class="nowrap">248–</span>260. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://doi.org/10.1145%2F321879.321887" rel="nofollow">10.1145/321879.321887</a></span>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:15204199" rel="nofollow">15204199</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Journal+of+the+ACM&amp;rft.atitle=Open%2C+closed+and+mixed+networks+of+queues+with+different+classes+of+customers&amp;rft.volume=22&amp;rft.issue=2&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E248-%3C%2Fspan%3E260&amp;rft.date=1975&amp;rft_id=info%3Adoi%2F10.1145%2F321879.321887&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A15204199%23id-name%3DS2CID&amp;rft.aulast=Baskett&amp;rft.aufirst=F.&amp;rft.au=Chandy%2C+K.+Mani&amp;rft.au=Muntz%2C+R.R.&amp;rft.au=Palacios%2C+F.G.&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.1145%252F321879.321887&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-buzen-1973-35"><span class="mw-cite-backlink"><b><a href="#cite_ref-buzen-1973_35-0">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFBuzen1973"><a href="/wiki/Jeffrey_P._Buzen" title="Jeffrey P. Buzen">Buzen, J. P.</a> (1973). <a class="external text" href="http://www-unix.ecs.umass.edu/~krishna/ece673/buzen.pdf" rel="nofollow">"Computational algorithms for closed queueing networks with exponential servers"</a> <span class="cs1-format">(PDF)</span>. <i>Communications of the ACM</i>. <b>16</b> (9): <span class="nowrap">527–</span>531. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1145%2F362342.362345" rel="nofollow">10.1145/362342.362345</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:10702" rel="nofollow">10702</a>. <a class="external text" href="https://web.archive.org/web/20160513192804/http://www-unix.ecs.umass.edu/~krishna/ece673/buzen.pdf" rel="nofollow">Archived</a> <span class="cs1-format">(PDF)</span> from the original on 2016-05-13<span class="reference-accessdate">. Retrieved <span class="nowrap">2015-09-01</span></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Communications+of+the+ACM&amp;rft.atitle=Computational+algorithms+for+closed+queueing+networks+with+exponential+servers&amp;rft.volume=16&amp;rft.issue=9&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E527-%3C%2Fspan%3E531&amp;rft.date=1973&amp;rft_id=info%3Adoi%2F10.1145%2F362342.362345&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A10702%23id-name%3DS2CID&amp;rft.aulast=Buzen&amp;rft.aufirst=J.+P.&amp;rft_id=http%3A%2F%2Fwww-unix.ecs.umass.edu%2F~krishna%2Fece673%2Fbuzen.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-36"><span class="mw-cite-backlink"><b><a href="#cite_ref-36">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFKelly1975"><a href="/wiki/Frank_Kelly_(mathematician)" title="Frank Kelly (mathematician)">Kelly, F. P.</a> (1975). "Networks of Queues with Customers of Different Types". <i>Journal of Applied Probability</i>. <b>12</b> (3): <span class="nowrap">542–</span>554. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.2307%2F3212869" rel="nofollow">10.2307/3212869</a>. <a class="mw-redirect" href="/wiki/JSTOR_(identifier)" title="JSTOR (identifier)">JSTOR</a> <a class="external text" href="https://www.jstor.org/stable/3212869" rel="nofollow">3212869</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:51917794" rel="nofollow">51917794</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Journal+of+Applied+Probability&amp;rft.atitle=Networks+of+Queues+with+Customers+of+Different+Types&amp;rft.volume=12&amp;rft.issue=3&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E542-%3C%2Fspan%3E554&amp;rft.date=1975&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A51917794%23id-name%3DS2CID&amp;rft_id=https%3A%2F%2Fwww.jstor.org%2Fstable%2F3212869%23id-name%3DJSTOR&amp;rft_id=info%3Adoi%2F10.2307%2F3212869&amp;rft.aulast=Kelly&amp;rft.aufirst=F.+P.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-37"><span class="mw-cite-backlink"><b><a href="#cite_ref-37">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFGelenbe1993"><a href="/wiki/Erol_Gelenbe" title="Erol Gelenbe">Gelenbe, Erol</a> (Sep 1993). "G-Networks with Triggered Customer Movement". <i>Journal of Applied Probability</i>. <b>30</b> (3): <span class="nowrap">742–</span>748. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.2307%2F3214781" rel="nofollow">10.2307/3214781</a>. <a class="mw-redirect" href="/wiki/JSTOR_(identifier)" title="JSTOR (identifier)">JSTOR</a> <a class="external text" href="https://www.jstor.org/stable/3214781" rel="nofollow">3214781</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:121673725" rel="nofollow">121673725</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Journal+of+Applied+Probability&amp;rft.atitle=G-Networks+with+Triggered+Customer+Movement&amp;rft.volume=30&amp;rft.issue=3&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E742-%3C%2Fspan%3E748&amp;rft.date=1993-09&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A121673725%23id-name%3DS2CID&amp;rft_id=https%3A%2F%2Fwww.jstor.org%2Fstable%2F3214781%23id-name%3DJSTOR&amp;rft_id=info%3Adoi%2F10.2307%2F3214781&amp;rft.aulast=Gelenbe&amp;rft.aufirst=Erol&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-38"><span class="mw-cite-backlink"><b><a href="#cite_ref-38">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFNewell1982">Newell, G. F. (1982). <a class="external text" href="https://doi.org/10.1007/978-94-009-5970-5" rel="nofollow">"Applications of Queueing Theory"</a>. <i>SpringerLink</i>. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2F978-94-009-5970-5" rel="nofollow">10.1007/978-94-009-5970-5</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-94-009-5972-9" title="Special:BookSources/978-94-009-5972-9"><bdi>978-94-009-5972-9</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=SpringerLink&amp;rft.atitle=Applications+of+Queueing+Theory&amp;rft.date=1982&amp;rft_id=info%3Adoi%2F10.1007%2F978-94-009-5970-5&amp;rft.isbn=978-94-009-5972-9&amp;rft.aulast=Newell&amp;rft.aufirst=G.+F.&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.1007%2F978-94-009-5970-5&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-39"><span class="mw-cite-backlink"><b><a href="#cite_ref-39">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFBobbioGribaudoTelek2008">Bobbio, A.; Gribaudo, M.; Telek, M. S. (2008). "Analysis of Large Scale Interacting Systems by Mean Field Method". <i>2008 Fifth International Conference on Quantitative Evaluation of Systems</i>. p. 215. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1109%2FQEST.2008.47" rel="nofollow">10.1109/QEST.2008.47</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-7695-3360-5" title="Special:BookSources/978-0-7695-3360-5"><bdi>978-0-7695-3360-5</bdi></a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:2714909" rel="nofollow">2714909</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Analysis+of+Large+Scale+Interacting+Systems+by+Mean+Field+Method&amp;rft.btitle=2008+Fifth+International+Conference+on+Quantitative+Evaluation+of+Systems&amp;rft.pages=215&amp;rft.date=2008&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A2714909%23id-name%3DS2CID&amp;rft_id=info%3Adoi%2F10.1109%2FQEST.2008.47&amp;rft.isbn=978-0-7695-3360-5&amp;rft.aulast=Bobbio&amp;rft.aufirst=A.&amp;rft.au=Gribaudo%2C+M.&amp;rft.au=Telek%2C+M.+S.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-40"><span class="mw-cite-backlink"><b><a href="#cite_ref-40">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFChenWhitt1993">Chen, H.; Whitt, W. (1993). "Diffusion approximations for open queueing networks with service interruptions". <i><a href="/wiki/Queueing_Systems" title="Queueing Systems">Queueing Systems</a></i>. <b>13</b> (4): 335. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2FBF01149260" rel="nofollow">10.1007/BF01149260</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:1180930" rel="nofollow">1180930</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Queueing+Systems&amp;rft.atitle=Diffusion+approximations+for+open+queueing+networks+with+service+interruptions&amp;rft.volume=13&amp;rft.issue=4&amp;rft.pages=335&amp;rft.date=1993&amp;rft_id=info%3Adoi%2F10.1007%2FBF01149260&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A1180930%23id-name%3DS2CID&amp;rft.aulast=Chen&amp;rft.aufirst=H.&amp;rft.au=Whitt%2C+W.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-41"><span class="mw-cite-backlink"><b><a href="#cite_ref-41">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFYamada1995">Yamada, K. (1995). <a class="external text" href="https://doi.org/10.1214%2Faoap%2F1177004602" rel="nofollow">"Diffusion Approximation for Open State-Dependent Queueing Networks in the Heavy Traffic Situation"</a>. <i>The Annals of Applied Probability</i>. <b>5</b> (4): <span class="nowrap">958–</span>982. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://doi.org/10.1214%2Faoap%2F1177004602" rel="nofollow">10.1214/aoap/1177004602</a></span>. <a class="mw-redirect" href="/wiki/JSTOR_(identifier)" title="JSTOR (identifier)">JSTOR</a> <a class="external text" href="https://www.jstor.org/stable/2245101" rel="nofollow">2245101</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=The+Annals+of+Applied+Probability&amp;rft.atitle=Diffusion+Approximation+for+Open+State-Dependent+Queueing+Networks+in+the+Heavy+Traffic+Situation&amp;rft.volume=5&amp;rft.issue=4&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E958-%3C%2Fspan%3E982&amp;rft.date=1995&amp;rft_id=info%3Adoi%2F10.1214%2Faoap%2F1177004602&amp;rft_id=https%3A%2F%2Fwww.jstor.org%2Fstable%2F2245101%23id-name%3DJSTOR&amp;rft.aulast=Yamada&amp;rft.aufirst=K.&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.1214%252Faoap%252F1177004602&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-42"><span class="mw-cite-backlink"><b><a href="#cite_ref-42">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFBramson1999">Bramson, M. (1999). <a class="external text" href="https://doi.org/10.1214%2Faoap%2F1029962815" rel="nofollow">"A stable queueing network with unstable fluid model"</a>. <i>The Annals of Applied Probability</i>. <b>9</b> (3): <span class="nowrap">818–</span>853. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://doi.org/10.1214%2Faoap%2F1029962815" rel="nofollow">10.1214/aoap/1029962815</a></span>. <a class="mw-redirect" href="/wiki/JSTOR_(identifier)" title="JSTOR (identifier)">JSTOR</a> <a class="external text" href="https://www.jstor.org/stable/2667284" rel="nofollow">2667284</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=The+Annals+of+Applied+Probability&amp;rft.atitle=A+stable+queueing+network+with+unstable+fluid+model&amp;rft.volume=9&amp;rft.issue=3&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E818-%3C%2Fspan%3E853&amp;rft.date=1999&amp;rft_id=info%3Adoi%2F10.1214%2Faoap%2F1029962815&amp;rft_id=https%3A%2F%2Fwww.jstor.org%2Fstable%2F2667284%23id-name%3DJSTOR&amp;rft.aulast=Bramson&amp;rft.aufirst=M.&amp;rft_id=https%3A%2F%2Fdoi.org%2F10.1214%252Faoap%252F1029962815&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></span>
+</li>
+<li id="cite_note-43"><span class="mw-cite-backlink"><b><a href="#cite_ref-43">^</a></b></span> <span class="reference-text">Gross, D., &amp; Harris, C. M. (1998). <i>Fundamentals of Queueing Theory</i>. John Wiley &amp; Sons.</span>
+</li>
+<li id="cite_note-44"><span class="mw-cite-backlink"><b><a href="#cite_ref-44">^</a></b></span> <span class="reference-text">Kleinrock, L. (1976). <i>Queueing Systems: Volume I - Theory</i>. Wiley.</span>
+</li>
+<li id="cite_note-45"><span class="mw-cite-backlink"><b><a href="#cite_ref-45">^</a></b></span> <span class="reference-text">Cooper, B. F., &amp; Mitrani, I. (1985). <i>Queueing Networks: A Fundamental Approach</i>. John Wiley &amp; Sons.</span>
+</li>
+</ol></div>
+<div class="mw-heading mw-heading2"><h2 id="Further_reading">Further reading</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=19" title="Edit section: Further reading"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFGrossCarl_M._Harris1998">Gross, Donald; Carl M. Harris (1998). <i>Fundamentals of Queueing Theory</i>. Wiley. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-471-32812-4" title="Special:BookSources/978-0-471-32812-4"><bdi>978-0-471-32812-4</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Fundamentals+of+Queueing+Theory&amp;rft.pub=Wiley&amp;rft.date=1998&amp;rft.isbn=978-0-471-32812-4&amp;rft.aulast=Gross&amp;rft.aufirst=Donald&amp;rft.au=Carl+M.+Harris&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span> <a class="external text" href="https://books.google.com/books?id=K3lQGeCtAJgC" rel="nofollow">Online</a></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFZukerman2013">Zukerman, Moshe (2013). <a class="external text" href="http://www.ee.cityu.edu.hk/~zukerman/classnotes.pdf" rel="nofollow"><i>Introduction to Queueing Theory and Stochastic Teletraffic Models</i></a> <span class="cs1-format">(PDF)</span>. <a class="mw-redirect" href="/wiki/ArXiv_(identifier)" title="ArXiv (identifier)">arXiv</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://arxiv.org/abs/1307.2968" rel="nofollow">1307.2968</a></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Introduction+to+Queueing+Theory+and+Stochastic+Teletraffic+Models&amp;rft.date=2013&amp;rft_id=info%3Aarxiv%2F1307.2968&amp;rft.aulast=Zukerman&amp;rft.aufirst=Moshe&amp;rft_id=http%3A%2F%2Fwww.ee.cityu.edu.hk%2F~zukerman%2Fclassnotes.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFDeitel1984">Deitel, Harvey M. (1984) [1982]. <a class="external text" href="https://archive.org/details/introductiontoopdeit00deit/page/673" rel="nofollow"><i>An introduction to operating systems</i></a> (revisited first ed.). Addison-Wesley. p. <a class="external text" href="https://archive.org/details/introductiontoopdeit00deit/page/673" rel="nofollow">673</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-201-14502-1" title="Special:BookSources/978-0-201-14502-1"><bdi>978-0-201-14502-1</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=An+introduction+to+operating+systems&amp;rft.pages=673&amp;rft.edition=revisited+first&amp;rft.pub=Addison-Wesley&amp;rft.date=1984&amp;rft.isbn=978-0-201-14502-1&amp;rft.aulast=Deitel&amp;rft.aufirst=Harvey+M.&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fintroductiontoopdeit00deit%2Fpage%2F673&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span> chap.15, pp. 380–412</li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFGelenbeIsi_Mitrani2010">Gelenbe, Erol; Isi Mitrani (2010). <a class="external text" href="https://www.researchgate.net/publication/345903225" rel="nofollow"><i>Analysis and Synthesis of Computer Systems</i></a>. World Scientific 2nd Edition. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-1-908978-42-4" title="Special:BookSources/978-1-908978-42-4"><bdi>978-1-908978-42-4</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Analysis+and+Synthesis+of+Computer+Systems&amp;rft.pub=World+Scientific+2nd+Edition&amp;rft.date=2010&amp;rft.isbn=978-1-908978-42-4&amp;rft.aulast=Gelenbe&amp;rft.aufirst=Erol&amp;rft.au=Isi+Mitrani&amp;rft_id=https%3A%2F%2Fwww.researchgate.net%2Fpublication%2F345903225&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFNewell1971">Newell, Gordron F. (1 June 1971). <i>Applications of Queueing Theory</i>. Chapman and Hall.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Applications+of+Queueing+Theory&amp;rft.pub=Chapman+and+Hall&amp;rft.date=1971-06-01&amp;rft.aulast=Newell&amp;rft.aufirst=Gordron+F.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></li>
+<li>Leonard Kleinrock, <a class="external text" href="http://www.lk.cs.ucla.edu/bibliography-public_reports.html" rel="nofollow">Information Flow in Large Communication Nets</a>, (MIT, Cambridge, May 31, 1961) Proposal for a Ph.D. Thesis</li>
+<li>Leonard Kleinrock. <i>Information Flow in Large Communication Nets</i> (RLE Quarterly Progress Report, July 1961)</li>
+<li>Leonard Kleinrock. <i>Communication Nets: Stochastic Message Flow and Delay</i> (McGraw-Hill, New York, 1964)</li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFKleinrock1975"><a href="/wiki/Leonard_Kleinrock" title="Leonard Kleinrock">Kleinrock, Leonard</a> (2 January 1975). <span class="id-lock-registration" title="Free registration required"><a class="external text" href="https://archive.org/details/queueingsystems02klei" rel="nofollow"><i>Queueing Systems: Volume I – Theory</i></a></span>. New York: Wiley Interscience. pp. <a class="external text" href="https://archive.org/details/queueingsystems02klei/page/417" rel="nofollow">417</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-471-49110-1" title="Special:BookSources/978-0-471-49110-1"><bdi>978-0-471-49110-1</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Queueing+Systems%3A+Volume+I+%E2%80%93+Theory&amp;rft.place=New+York&amp;rft.pages=417&amp;rft.pub=Wiley+Interscience&amp;rft.date=1975-01-02&amp;rft.isbn=978-0-471-49110-1&amp;rft.aulast=Kleinrock&amp;rft.aufirst=Leonard&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fqueueingsystems02klei&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFKleinrock1976"><a href="/wiki/Leonard_Kleinrock" title="Leonard Kleinrock">Kleinrock, Leonard</a> (22 April 1976). <a class="external text" href="https://archive.org/details/queueingsystems00klei/page/576" rel="nofollow"><i>Queueing Systems: Volume II – Computer Applications</i></a>. New York: Wiley Interscience. pp. <a class="external text" href="https://archive.org/details/queueingsystems00klei/page/576" rel="nofollow">576</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-471-49111-8" title="Special:BookSources/978-0-471-49111-8"><bdi>978-0-471-49111-8</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Queueing+Systems%3A+Volume+II+%E2%80%93+Computer+Applications&amp;rft.place=New+York&amp;rft.pages=576&amp;rft.pub=Wiley+Interscience&amp;rft.date=1976-04-22&amp;rft.isbn=978-0-471-49111-8&amp;rft.aulast=Kleinrock&amp;rft.aufirst=Leonard&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fqueueingsystems00klei%2Fpage%2F576&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFLazowskaJohn_ZahorjanG._Scott_GrahamKenneth_C._Sevcik1984">Lazowska, Edward D.; John Zahorjan; G. Scott Graham; Kenneth C. Sevcik (1984). <a class="external text" href="https://archive.org/details/quantitativesyst00lazo" rel="nofollow"><i>Quantitative System Performance: Computer System Analysis Using Queueing Network Models</i></a>. Prentice-Hall, Inc. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-13-746975-8" title="Special:BookSources/978-0-13-746975-8"><bdi>978-0-13-746975-8</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Quantitative+System+Performance%3A+Computer+System+Analysis+Using+Queueing+Network+Models&amp;rft.pub=Prentice-Hall%2C+Inc&amp;rft.date=1984&amp;rft.isbn=978-0-13-746975-8&amp;rft.aulast=Lazowska&amp;rft.aufirst=Edward+D.&amp;rft.au=John+Zahorjan&amp;rft.au=G.+Scott+Graham&amp;rft.au=Kenneth+C.+Sevcik&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fquantitativesyst00lazo&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFJon_KleinbergÉva_Tardos2013">Jon Kleinberg; Éva Tardos (30 June 2013). <a class="external text" href="https://books.google.com/books?id=ROiUngEACAAJ" rel="nofollow"><i>Algorithm Design</i></a>. Pearson. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-1-292-02394-6" title="Special:BookSources/978-1-292-02394-6"><bdi>978-1-292-02394-6</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Algorithm+Design&amp;rft.pub=Pearson&amp;rft.date=2013-06-30&amp;rft.isbn=978-1-292-02394-6&amp;rft.au=Jon+Kleinberg&amp;rft.au=%C3%89va+Tardos&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3DROiUngEACAAJ&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AQueueing+theory"></span></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="External_links">External links</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Queueing_theory&amp;action=edit&amp;section=20" title="Edit section: External links"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1235681985">.mw-parser-output .side-box{margin:4px 0;box-sizing:border-box;border:1px solid #aaa;font-size:88%;line-height:1.25em;background-color:var(--background-color-interactive-subtle,#f8f9fa);display:flow-root}.mw-parser-output .side-box-abovebelow,.mw-parser-output .side-box-text{padding:0.25em 0.9em}.mw-parser-output .side-box-image{padding:2px 0 2px 0.9em;text-align:center}.mw-parser-output .side-box-imageright{padding:2px 0.9em 2px 0;text-align:center}@media(min-width:500px){.mw-parser-output .side-box-flex{display:flex;align-items:center}.mw-parser-output .side-box-text{flex:1;min-width:0}}@media(min-width:720px){.mw-parser-output .side-box{width:238px}.mw-parser-output .side-box-right{clear:right;float:right;margin-left:1em}.mw-parser-output .side-box-left{margin-right:1em}}</style><style data-mw-deduplicate="TemplateStyles:r1237033735">@media print{body.ns-0 .mw-parser-output .sistersitebox{display:none!important}}@media screen{html.skin-theme-clientpref-night .mw-parser-output .sistersitebox img[src*="Wiktionary-logo-en-v2.svg"]{background-color:white}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .sistersitebox img[src*="Wiktionary-logo-en-v2.svg"]{background-color:white}}</style><div class="side-box side-box-right plainlinks sistersitebox"><style data-mw-deduplicate="TemplateStyles:r1126788409">.mw-parser-output .plainlist ol,.mw-parser-output .plainlist ul{line-height:inherit;list-style:none;margin:0;padding:0}.mw-parser-output .plainlist ol li,.mw-parser-output .plainlist ul li{margin-bottom:0}</style>
+<div class="side-box-flex">
+<div class="side-box-image"><span class="noviewer" typeof="mw:File"><a class="mw-file-description" href="/wiki/File:Wiktionary-logo-en-v2.svg"><img alt="" class="mw-file-element" data-file-height="512" data-file-width="512" decoding="async" height="40" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/40px-Wiktionary-logo-en-v2.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/60px-Wiktionary-logo-en-v2.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiktionary-logo-en-v2.svg/80px-Wiktionary-logo-en-v2.svg.png 2x" width="40"/></a></span></div>
+<div class="side-box-text plainlist">Look up <i><b><a class="extiw" href="https://en.wiktionary.org/wiki/queueing" title="wiktionary:queueing">queueing</a></b></i> or <i><b><a class="extiw" href="https://en.wiktionary.org/wiki/queuing" title="wiktionary:queuing">queuing</a></b></i> in Wiktionary, the free dictionary.</div></div>
+</div>
+<ul><li><a class="external text" href="http://people.revoledu.com/kardi/tutorial/Queuing/index.html" rel="nofollow">Teknomo's Queueing theory tutorial and calculators</a></li>
+<li><a class="external text" href="http://www.netlab.tkk.fi/opetus/s383143/kalvot/english.shtml" rel="nofollow">Virtamo's Queueing Theory Course</a></li>
+<li><a class="external text" href="http://web2.uwindsor.ca/math/hlynka/queue.html" rel="nofollow">Myron Hlynka's Queueing Theory Page</a></li>
+<li><a class="external text" href="http://line-solver.sf.net" rel="nofollow">LINE: a general-purpose engine to solve queueing models</a></li></ul>
+<p><br/>
+</p>
+<div class="navbox-styles"><style data-mw-deduplicate="TemplateStyles:r1129693374">.mw-parser-output .hlist dl,.mw-parser-output .hlist ol,.mw-parser-output .hlist ul{margin:0;padding:0}.mw-parser-output .hlist dd,.mw-parser-output .hlist dt,.mw-parser-output .hlist li{margin:0;display:inline}.mw-parser-output .hlist.inline,.mw-parser-output .hlist.inline dl,.mw-parser-output .hlist.inline ol,.mw-parser-output .hlist.inline ul,.mw-parser-output .hlist dl dl,.mw-parser-output .hlist dl ol,.mw-parser-output .hlist dl ul,.mw-parser-output .hlist ol dl,.mw-parser-output .hlist ol ol,.mw-parser-output .hlist ol ul,.mw-parser-output .hlist ul dl,.mw-parser-output .hlist ul ol,.mw-parser-output .hlist ul ul{display:inline}.mw-parser-output .hlist .mw-empty-li{display:none}.mw-parser-output .hlist dt::after{content:": "}.mw-parser-output .hlist dd::after,.mw-parser-output .hlist li::after{content:" · ";font-weight:bold}.mw-parser-output .hlist dd:last-child::after,.mw-parser-output .hlist dt:last-child::after,.mw-parser-output .hlist li:last-child::after{content:none}.mw-parser-output .hlist dd dd:first-child::before,.mw-parser-output .hlist dd dt:first-child::before,.mw-parser-output .hlist dd li:first-child::before,.mw-parser-output .hlist dt dd:first-child::before,.mw-parser-output .hlist dt dt:first-child::before,.mw-parser-output .hlist dt li:first-child::before,.mw-parser-output .hlist li dd:first-child::before,.mw-parser-output .hlist li dt:first-child::before,.mw-parser-output .hlist li li:first-child::before{content:" (";font-weight:normal}.mw-parser-output .hlist dd dd:last-child::after,.mw-parser-output .hlist dd dt:last-child::after,.mw-parser-output .hlist dd li:last-child::after,.mw-parser-output .hlist dt dd:last-child::after,.mw-parser-output .hlist dt dt:last-child::after,.mw-parser-output .hlist dt li:last-child::after,.mw-parser-output .hlist li dd:last-child::after,.mw-parser-output .hlist li dt:last-child::after,.mw-parser-output .hlist li li:last-child::after{content:")";font-weight:normal}.mw-parser-output .hlist ol{counter-reset:listitem}.mw-parser-output .hlist ol>li{counter-increment:listitem}.mw-parser-output .hlist ol>li::before{content:" "counter(listitem)"\a0 "}.mw-parser-output .hlist dd ol>li:first-child::before,.mw-parser-output .hlist dt ol>li:first-child::before,.mw-parser-output .hlist li ol>li:first-child::before{content:" ("counter(listitem)"\a0 "}</style><style data-mw-deduplicate="TemplateStyles:r1236075235">.mw-parser-output .navbox{box-sizing:border-box;border:1px solid #a2a9b1;width:100%;clear:both;font-size:88%;text-align:center;padding:1px;margin:1em auto 0}.mw-parser-output .navbox .navbox{margin-top:0}.mw-parser-output .navbox+.navbox,.mw-parser-output .navbox+.navbox-styles+.navbox{margin-top:-1px}.mw-parser-output .navbox-inner,.mw-parser-output .navbox-subgroup{width:100%}.mw-parser-output .navbox-group,.mw-parser-output .navbox-title,.mw-parser-output .navbox-abovebelow{padding:0.25em 1em;line-height:1.5em;text-align:center}.mw-parser-output .navbox-group{white-space:nowrap;text-align:right}.mw-parser-output .navbox,.mw-parser-output .navbox-subgroup{background-color:#fdfdfd}.mw-parser-output .navbox-list{line-height:1.5em;border-color:#fdfdfd}.mw-parser-output .navbox-list-with-group{text-align:left;border-left-width:2px;border-left-style:solid}.mw-parser-output tr+tr>.navbox-abovebelow,.mw-parser-output tr+tr>.navbox-group,.mw-parser-output tr+tr>.navbox-image,.mw-parser-output tr+tr>.navbox-list{border-top:2px solid #fdfdfd}.mw-parser-output .navbox-title{background-color:#ccf}.mw-parser-output .navbox-abovebelow,.mw-parser-output .navbox-group,.mw-parser-output .navbox-subgroup .navbox-title{background-color:#ddf}.mw-parser-output .navbox-subgroup .navbox-group,.mw-parser-output .navbox-subgroup .navbox-abovebelow{background-color:#e6e6ff}.mw-parser-output .navbox-even{background-color:#f7f7f7}.mw-parser-output .navbox-odd{background-color:transparent}.mw-parser-output .navbox .hlist td dl,.mw-parser-output .navbox .hlist td ol,.mw-parser-output .navbox .hlist td ul,.mw-parser-output .navbox td.hlist dl,.mw-parser-output .navbox td.hlist ol,.mw-parser-output .navbox td.hlist ul{padding:0.125em 0}.mw-parser-output .navbox .navbar{display:block;font-size:100%}.mw-parser-output .navbox-title .navbar{float:left;text-align:left;margin-right:0.5em}body.skin--responsive .mw-parser-output .navbox-image img{max-width:none!important}@media print{body.ns-0 .mw-parser-output .navbox{display:none!important}}</style></div><div aria-labelledby="Queueing_theory265" class="navbox" role="navigation" style="padding:3px"><table class="nowraplinks mw-collapsible uncollapsed navbox-inner" style="border-spacing:0;background:transparent;color:inherit"><tbody><tr><th class="navbox-title" colspan="2" scope="col"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"/><style data-mw-deduplicate="TemplateStyles:r1239400231">.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:"[ "}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:" ]"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a>span,.mw-parser-output .navbar a>abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}html.skin-theme-clientpref-night .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}@media(prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}}@media print{.mw-parser-output .navbar{display:none!important}}</style><div class="navbar plainlinks hlist navbar-mini"><ul><li class="nv-view"><a href="/wiki/Template:Queueing_theory" title="Template:Queueing theory"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Queueing_theory" title="Template talk:Queueing theory"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a href="/wiki/Special:EditPage/Template:Queueing_theory" title="Special:EditPage/Template:Queueing theory"><abbr title="Edit this template">e</abbr></a></li></ul></div><div id="Queueing_theory265" style="font-size:114%;margin:0 4em"><a class="mw-selflink selflink">Queueing theory</a></div></th></tr><tr><th class="navbox-group" scope="row" style="width:1%">Single queueing nodes</th><td class="navbox-list-with-group navbox-list navbox-odd hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/D/M/1_queue" title="D/M/1 queue">D/M/1 queue</a></li>
+<li><a href="/wiki/M/D/1_queue" title="M/D/1 queue">M/D/1 queue</a></li>
+<li><a href="/wiki/M/D/c_queue" title="M/D/c queue">M/D/c queue</a></li>
+<li><a href="/wiki/M/M/1_queue" title="M/M/1 queue">M/M/1 queue</a>
+<ul><li><a href="/wiki/Burke%27s_theorem" title="Burke's theorem">Burke's theorem</a></li></ul></li>
+<li><a href="/wiki/M/M/c_queue" title="M/M/c queue">M/M/c queue</a></li>
+<li><a href="/wiki/M/M/%E2%88%9E_queue" title="M/M/∞ queue">M/M/∞ queue</a></li>
+<li><a href="/wiki/M/G/1_queue" title="M/G/1 queue">M/G/1 queue</a>
+<ul><li><a href="/wiki/Pollaczek%E2%80%93Khinchine_formula" title="Pollaczek–Khinchine formula">Pollaczek–Khinchine formula</a></li>
+<li><a href="/wiki/Matrix_analytic_method" title="Matrix analytic method">Matrix analytic method</a></li></ul></li>
+<li><a href="/wiki/M/G/k_queue" title="M/G/k queue">M/G/k queue</a></li>
+<li><a href="/wiki/G/M/1_queue" title="G/M/1 queue">G/M/1 queue</a></li>
+<li><a href="/wiki/G/G/1_queue" title="G/G/1 queue">G/G/1 queue</a>
+<ul><li><a href="/wiki/Kingman%27s_formula" title="Kingman's formula">Kingman's formula</a></li>
+<li><a href="/wiki/Lindley_equation" title="Lindley equation">Lindley equation</a></li></ul></li>
+<li><a href="/wiki/Fork%E2%80%93join_queue" title="Fork–join queue">Fork–join queue</a></li>
+<li><a href="/wiki/Bulk_queue" title="Bulk queue">Bulk queue</a></li></ul>
+</div></td></tr><tr><th class="navbox-group" scope="row" style="width:1%">Arrival processes</th><td class="navbox-list-with-group navbox-list navbox-even hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Poisson_point_process" title="Poisson point process">Poisson point process</a></li>
+<li><a href="/wiki/Markovian_arrival_process" title="Markovian arrival process">Markovian arrival process</a></li>
+<li><a href="/wiki/Rational_arrival_process" title="Rational arrival process">Rational arrival process</a></li></ul>
+</div></td></tr><tr><th class="navbox-group" scope="row" style="width:1%">Queueing networks</th><td class="navbox-list-with-group navbox-list navbox-odd hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Jackson_network" title="Jackson network">Jackson network</a>
+<ul><li><a href="/wiki/Traffic_equations" title="Traffic equations">Traffic equations</a></li></ul></li>
+<li><a href="/wiki/Gordon%E2%80%93Newell_theorem" title="Gordon–Newell theorem">Gordon–Newell theorem</a>
+<ul><li><a href="/wiki/Mean_value_analysis" title="Mean value analysis">Mean value analysis</a></li>
+<li><a href="/wiki/Buzen%27s_algorithm" title="Buzen's algorithm">Buzen's algorithm</a></li></ul></li>
+<li><a href="/wiki/Kelly_network" title="Kelly network">Kelly network</a></li>
+<li><a href="/wiki/G-network" title="G-network">G-network</a></li>
+<li><a href="/wiki/BCMP_network" title="BCMP network">BCMP network</a></li></ul>
+</div></td></tr><tr><th class="navbox-group" scope="row" style="width:1%">Service policies</th><td class="navbox-list-with-group navbox-list navbox-even hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/FIFO_(computing_and_electronics)" title="FIFO (computing and electronics)">FIFO</a></li>
+<li><a class="mw-redirect" href="/wiki/LIFO_(computing)" title="LIFO (computing)">LIFO</a></li>
+<li><a href="/wiki/Processor_sharing" title="Processor sharing">Processor sharing</a></li>
+<li><a href="/wiki/Round-robin_scheduling" title="Round-robin scheduling">Round-robin</a></li>
+<li><a href="/wiki/Shortest_job_next" title="Shortest job next">Shortest job next</a></li>
+<li><a href="/wiki/Shortest_remaining_time" title="Shortest remaining time">Shortest remaining time</a></li></ul>
+</div></td></tr><tr><th class="navbox-group" scope="row" style="width:1%">Key concepts</th><td class="navbox-list-with-group navbox-list navbox-odd hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Continuous-time_Markov_chain" title="Continuous-time Markov chain">Continuous-time Markov chain</a></li>
+<li><a href="/wiki/Kendall%27s_notation" title="Kendall's notation">Kendall's notation</a></li>
+<li><a href="/wiki/Little%27s_law" title="Little's law">Little's law</a></li>
+<li><a href="/wiki/Product-form_solution" title="Product-form solution">Product-form solution</a>
+<ul><li><a href="/wiki/Balance_equation" title="Balance equation">Balance equation</a></li>
+<li><a href="/wiki/Quasireversibility" title="Quasireversibility">Quasireversibility</a></li>
+<li><a href="/wiki/Flow-equivalent_server_method" title="Flow-equivalent server method">Flow-equivalent server method</a></li></ul></li>
+<li><a href="/wiki/Arrival_theorem" title="Arrival theorem">Arrival theorem</a></li>
+<li><a href="/wiki/Decomposition_method_(queueing_theory)" title="Decomposition method (queueing theory)">Decomposition method</a></li>
+<li><a href="/wiki/Bene%C5%A1_method" title="Beneš method">Beneš method</a></li></ul>
+</div></td></tr><tr><th class="navbox-group" scope="row" style="width:1%">Limit theorems</th><td class="navbox-list-with-group navbox-list navbox-even hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Fluid_limit" title="Fluid limit">Fluid limit</a></li>
+<li><a href="/wiki/Mean-field_theory" title="Mean-field theory">Mean-field theory</a></li>
+<li><a href="/wiki/Heavy_traffic_approximation" title="Heavy traffic approximation">Heavy traffic approximation</a>
+<ul><li><a href="/wiki/Reflected_Brownian_motion" title="Reflected Brownian motion">Reflected Brownian motion</a></li></ul></li></ul>
+</div></td></tr><tr><th class="navbox-group" scope="row" style="width:1%">Extensions</th><td class="navbox-list-with-group navbox-list navbox-odd hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Fluid_queue" title="Fluid queue">Fluid queue</a></li>
+<li><a href="/wiki/Layered_queueing_network" title="Layered queueing network">Layered queueing network</a></li>
+<li><a href="/wiki/Polling_system" title="Polling system">Polling system</a></li>
+<li><a href="/wiki/Adversarial_queueing_network" title="Adversarial queueing network">Adversarial queueing network</a></li>
+<li><a href="/wiki/Loss_network" title="Loss network">Loss network</a></li>
+<li><a href="/wiki/Retrial_queue" title="Retrial queue">Retrial queue</a></li></ul>
+</div></td></tr><tr><th class="navbox-group" scope="row" style="width:1%"><a href="/wiki/Information_system" title="Information system">Information systems</a></th><td class="navbox-list-with-group navbox-list navbox-even hlist" style="width:100%;padding:0"><div style="padding:0 0.25em">
+<ul><li><a href="/wiki/Data_buffer" title="Data buffer">Data buffer</a></li>
+<li><a href="/wiki/Erlang_(unit)" title="Erlang (unit)">Erlang (unit)</a></li>
+<li><a href="/wiki/Erlang_distribution" title="Erlang distribution">Erlang distribution</a></li>
+<li><a href="/wiki/Flow_control_(data)" title="Flow control (data)">Flow control (data)</a></li>
+<li><a href="/wiki/Message_queue" title="Message queue">Message queue</a></li>
+<li><a href="/wiki/Network_congestion" title="Network congestion">Network congestion</a></li>
+<li><a href="/wiki/Network_scheduler" title="Network scheduler">Network scheduler</a></li>
+<li><a href="/wiki/Pipeline_(software)" title="Pipeline (software)">Pipeline (software)</a></li>
+<li><a href="/wiki/Quality_of_service" title="Quality of service">Quality of service</a></li>
+<li><a href="/wiki/Scheduling_(computing)" title="Scheduling (computing)">Scheduling (computing)</a></li>
+<li><a href="/wiki/Teletraffic_engineering" title="Teletraffic engineering">Teletraffic engineering</a></li></ul>
+</div></td></tr><tr><td class="navbox-abovebelow" colspan="2"><div><span class="noviewer" typeof="mw:File"><span title="Category"><img alt="" class="mw-file-element" data-file-height="185" data-file-width="180" decoding="async" height="16" src="//upload.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/16px-Symbol_category_class.svg.png" srcset="//upload.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/23px-Symbol_category_class.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/31px-Symbol_category_class.svg.png 2x" width="16"/></span></span> <a href="/wiki/Category:Queueing_theory" title="Category:Queueing theory">Category</a></div></td></tr></tbody></table></div>
+<div class="navbox-styles"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"/><link href="mw-data:TemplateStyles:r1236075235" rel="mw-deduplicated-inline-style"/><style data-mw-deduplicate="TemplateStyles:r1038841319">.mw-parser-output .tooltip-dotted{border-bottom:1px dotted;cursor:help}</style></div><div aria-labelledby="Authority_control_databases_frameless&amp;#124;text-top&amp;#124;10px&amp;#124;alt=Edit_this_at_Wikidata&amp;#124;link=https&amp;#58;//www.wikidata.org/wiki/Q847526#identifiers&amp;#124;class=noprint&amp;#124;Edit_this_at_Wikidata1220" class="navbox authority-control" role="navigation" style="padding:3px"><table class="nowraplinks hlist mw-collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit"><tbody><tr><th class="navbox-title" colspan="2" scope="col"><div id="Authority_control_databases_frameless&amp;#124;text-top&amp;#124;10px&amp;#124;alt=Edit_this_at_Wikidata&amp;#124;link=https&amp;#58;//www.wikidata.org/wiki/Q847526#identifiers&amp;#124;class=noprint&amp;#124;Edit_this_at_Wikidata1220" style="font-size:114%;margin:0 4em"><a href="/wiki/Help:Authority_control" title="Help:Authority control">Authority control databases</a> <span class="mw-valign-text-top noprint" typeof="mw:File/Frameless"><a href="https://www.wikidata.org/wiki/Q847526#identifiers" title="Edit this at Wikidata"><img alt="Edit this at Wikidata" class="mw-file-element" data-file-height="20" data-file-width="20" decoding="async" height="10" src="//upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/10px-OOjs_UI_icon_edit-ltr-progressive.svg.png" srcset="//upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/15px-OOjs_UI_icon_edit-ltr-progressive.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png 2x" width="10"/></a></span></div></th></tr><tr><th class="navbox-group" scope="row" style="width:1%">International</th><td class="navbox-list-with-group navbox-list navbox-odd" style="width:100%;padding:0"><div style="padding:0 0.25em"><ul><li><span class="uid"><a class="external text" href="http://id.worldcat.org/fast/1085713/" rel="nofollow">FAST</a></span></li></ul></div></td></tr><tr><th class="navbox-group" scope="row" style="width:1%">National</th><td class="navbox-list-with-group navbox-list navbox-even" style="width:100%;padding:0"><div style="padding:0 0.25em"><ul><li><span class="uid"><a class="external text" href="https://d-nb.info/gnd/4255044-0" rel="nofollow">Germany</a></span></li><li><span class="uid"><a class="external text" href="https://id.loc.gov/authorities/sh85109832" rel="nofollow">United States</a></span></li><li><span class="uid"><a class="external text" href="https://catalogue.bnf.fr/ark:/12148/cb12647707b" rel="nofollow">France</a></span></li><li><span class="uid"><a class="external text" href="https://data.bnf.fr/ark:/12148/cb12647707b" rel="nofollow">BnF data</a></span></li><li><span class="uid"><a class="external text" href="https://id.ndl.go.jp/auth/ndlna/00567524" rel="nofollow">Japan</a></span></li><li><span class="uid"><span class="rt-commentedText tooltip tooltip-dotted" title="teorie hromadné obsluhy"><a class="external text" href="https://aleph.nkp.cz/F/?func=find-c&amp;local_base=aut&amp;ccl_term=ica=ph276803&amp;CON_LNG=ENG" rel="nofollow">Czech Republic</a></span></span></li><li><span class="uid"><a class="external text" href="https://www.nli.org.il/en/authorities/987007553435905171" rel="nofollow">Israel</a></span></li></ul></div></td></tr></tbody></table></div>
+<!-- 
+NewPP limit report
+Parsed by mw‐web.eqiad.main‐65bf7dbd64‐6q9c2
+Cached time: 20250325193115
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.603 seconds
+Real time usage: 0.835 seconds
+Preprocessor visited node count: 3336/1000000
+Post‐expand include size: 119284/2097152 bytes
+Template argument size: 1138/2097152 bytes
+Highest expansion depth: 12/100
+Expensive parser function count: 8/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 183012/5000000 bytes
+Lua time usage: 0.365/10.000 seconds
+Lua memory usage: 5743512/52428800 bytes
+Number of Wikibase entities loaded: 1/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  601.970      1 -total
+ 44.57%  268.299      1 Template:Reflist
+ 26.14%  157.341     19 Template:Cite_book
+ 15.89%   95.638     23 Template:Cite_journal
+ 13.71%   82.537      1 Template:Queueing_theory
+ 13.53%   81.464      1 Template:Short_description
+ 12.29%   74.003      1 Template:Navbox
+  7.31%   43.987      2 Template:Pagetype
+  6.28%   37.780      1 Template:Authority_control
+  4.44%   26.745      5 Template:Main_other
+-->
+<!-- Saved in parser cache with key enwiki:pcache:50578:|#|:idhash:canonical and timestamp 20250325193115 and revision id 1268995479. Rendering was triggered because: page-view
+ -->
+</link></link></link></link></link></meta></div>

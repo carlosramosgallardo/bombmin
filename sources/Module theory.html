@@ -1,0 +1,584 @@
+<div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none">Generalization of vector spaces from fields to rings</div>
+<style data-mw-deduplicate="TemplateStyles:r1251242444">.mw-parser-output .ambox{border:1px solid #a2a9b1;border-left:10px solid #36c;background-color:#fbfbfb;box-sizing:border-box}.mw-parser-output .ambox+link+.ambox,.mw-parser-output .ambox+link+style+.ambox,.mw-parser-output .ambox+link+link+.ambox,.mw-parser-output .ambox+.mw-empty-elt+link+.ambox,.mw-parser-output .ambox+.mw-empty-elt+link+style+.ambox,.mw-parser-output .ambox+.mw-empty-elt+link+link+.ambox{margin-top:-1px}html body.mediawiki .mw-parser-output .ambox.mbox-small-left{margin:4px 1em 4px 0;overflow:hidden;width:238px;border-collapse:collapse;font-size:88%;line-height:1.25em}.mw-parser-output .ambox-speedy{border-left:10px solid #b32424;background-color:#fee7e6}.mw-parser-output .ambox-delete{border-left:10px solid #b32424}.mw-parser-output .ambox-content{border-left:10px solid #f28500}.mw-parser-output .ambox-style{border-left:10px solid #fc3}.mw-parser-output .ambox-move{border-left:10px solid #9932cc}.mw-parser-output .ambox-protection{border-left:10px solid #a2a9b1}.mw-parser-output .ambox .mbox-text{border:none;padding:0.25em 0.5em;width:100%}.mw-parser-output .ambox .mbox-image{border:none;padding:2px 0 2px 0.5em;text-align:center}.mw-parser-output .ambox .mbox-imageright{border:none;padding:2px 0.5em 2px 0;text-align:center}.mw-parser-output .ambox .mbox-empty-cell{border:none;padding:0;width:1px}.mw-parser-output .ambox .mbox-image-div{width:52px}@media(min-width:720px){.mw-parser-output .ambox{margin:0 10%}}@media print{body.ns-0 .mw-parser-output .ambox{display:none!important}}</style><table class="box-More_footnotes_needed plainlinks metadata ambox ambox-style ambox-More_footnotes_needed" role="presentation"><tbody><tr><td class="mbox-image"><div class="mbox-image-div"><span typeof="mw:File"><span><img alt="" class="mw-file-element" data-file-height="48" data-file-width="48" decoding="async" height="40" src="//upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Text_document_with_red_question_mark.svg/40px-Text_document_with_red_question_mark.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Text_document_with_red_question_mark.svg/60px-Text_document_with_red_question_mark.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Text_document_with_red_question_mark.svg/80px-Text_document_with_red_question_mark.svg.png 2x" width="40"/></span></span></div></td><td class="mbox-text"><div class="mbox-text-span">This article includes a list of <a href="/wiki/Wikipedia:Citing_sources#General_references" title="Wikipedia:Citing sources">general references</a>, but <b>it lacks sufficient corresponding <a href="/wiki/Wikipedia:Citing_sources#Inline_citations" title="Wikipedia:Citing sources">inline citations</a></b>.<span class="hide-when-compact"> Please help to <a href="/wiki/Wikipedia:WikiProject_Reliability" title="Wikipedia:WikiProject Reliability">improve</a> this article by <a href="/wiki/Wikipedia:When_to_cite" title="Wikipedia:When to cite">introducing</a> more precise citations.</span> <span class="date-container"><i>(<span class="date">May 2015</span>)</i></span><span class="hide-when-compact"><i> (<small><a href="/wiki/Help:Maintenance_template_removal" title="Help:Maintenance template removal">Learn how and when to remove this message</a></small>)</i></span></div></td></tr></tbody></table>
+<style data-mw-deduplicate="TemplateStyles:r1129693374">.mw-parser-output .hlist dl,.mw-parser-output .hlist ol,.mw-parser-output .hlist ul{margin:0;padding:0}.mw-parser-output .hlist dd,.mw-parser-output .hlist dt,.mw-parser-output .hlist li{margin:0;display:inline}.mw-parser-output .hlist.inline,.mw-parser-output .hlist.inline dl,.mw-parser-output .hlist.inline ol,.mw-parser-output .hlist.inline ul,.mw-parser-output .hlist dl dl,.mw-parser-output .hlist dl ol,.mw-parser-output .hlist dl ul,.mw-parser-output .hlist ol dl,.mw-parser-output .hlist ol ol,.mw-parser-output .hlist ol ul,.mw-parser-output .hlist ul dl,.mw-parser-output .hlist ul ol,.mw-parser-output .hlist ul ul{display:inline}.mw-parser-output .hlist .mw-empty-li{display:none}.mw-parser-output .hlist dt::after{content:": "}.mw-parser-output .hlist dd::after,.mw-parser-output .hlist li::after{content:" · ";font-weight:bold}.mw-parser-output .hlist dd:last-child::after,.mw-parser-output .hlist dt:last-child::after,.mw-parser-output .hlist li:last-child::after{content:none}.mw-parser-output .hlist dd dd:first-child::before,.mw-parser-output .hlist dd dt:first-child::before,.mw-parser-output .hlist dd li:first-child::before,.mw-parser-output .hlist dt dd:first-child::before,.mw-parser-output .hlist dt dt:first-child::before,.mw-parser-output .hlist dt li:first-child::before,.mw-parser-output .hlist li dd:first-child::before,.mw-parser-output .hlist li dt:first-child::before,.mw-parser-output .hlist li li:first-child::before{content:" (";font-weight:normal}.mw-parser-output .hlist dd dd:last-child::after,.mw-parser-output .hlist dd dt:last-child::after,.mw-parser-output .hlist dd li:last-child::after,.mw-parser-output .hlist dt dd:last-child::after,.mw-parser-output .hlist dt dt:last-child::after,.mw-parser-output .hlist dt li:last-child::after,.mw-parser-output .hlist li dd:last-child::after,.mw-parser-output .hlist li dt:last-child::after,.mw-parser-output .hlist li li:last-child::after{content:")";font-weight:normal}.mw-parser-output .hlist ol{counter-reset:listitem}.mw-parser-output .hlist ol>li{counter-increment:listitem}.mw-parser-output .hlist ol>li::before{content:" "counter(listitem)"\a0 "}.mw-parser-output .hlist dd ol>li:first-child::before,.mw-parser-output .hlist dt ol>li:first-child::before,.mw-parser-output .hlist li ol>li:first-child::before{content:" ("counter(listitem)"\a0 "}</style><style data-mw-deduplicate="TemplateStyles:r1126788409">.mw-parser-output .plainlist ol,.mw-parser-output .plainlist ul{line-height:inherit;list-style:none;margin:0;padding:0}.mw-parser-output .plainlist ol li,.mw-parser-output .plainlist ul li{margin-bottom:0}</style><style data-mw-deduplicate="TemplateStyles:r1246091330">.mw-parser-output .sidebar{width:22em;float:right;clear:right;margin:0.5em 0 1em 1em;background:var(--background-color-neutral-subtle,#f8f9fa);border:1px solid var(--border-color-base,#a2a9b1);padding:0.2em;text-align:center;line-height:1.4em;font-size:88%;border-collapse:collapse;display:table}body.skin-minerva .mw-parser-output .sidebar{display:table!important;float:right!important;margin:0.5em 0 1em 1em!important}.mw-parser-output .sidebar-subgroup{width:100%;margin:0;border-spacing:0}.mw-parser-output .sidebar-left{float:left;clear:left;margin:0.5em 1em 1em 0}.mw-parser-output .sidebar-none{float:none;clear:both;margin:0.5em 1em 1em 0}.mw-parser-output .sidebar-outer-title{padding:0 0.4em 0.2em;font-size:125%;line-height:1.2em;font-weight:bold}.mw-parser-output .sidebar-top-image{padding:0.4em}.mw-parser-output .sidebar-top-caption,.mw-parser-output .sidebar-pretitle-with-top-image,.mw-parser-output .sidebar-caption{padding:0.2em 0.4em 0;line-height:1.2em}.mw-parser-output .sidebar-pretitle{padding:0.4em 0.4em 0;line-height:1.2em}.mw-parser-output .sidebar-title,.mw-parser-output .sidebar-title-with-pretitle{padding:0.2em 0.8em;font-size:145%;line-height:1.2em}.mw-parser-output .sidebar-title-with-pretitle{padding:0.1em 0.4em}.mw-parser-output .sidebar-image{padding:0.2em 0.4em 0.4em}.mw-parser-output .sidebar-heading{padding:0.1em 0.4em}.mw-parser-output .sidebar-content{padding:0 0.5em 0.4em}.mw-parser-output .sidebar-content-with-subgroup{padding:0.1em 0.4em 0.2em}.mw-parser-output .sidebar-above,.mw-parser-output .sidebar-below{padding:0.3em 0.8em;font-weight:bold}.mw-parser-output .sidebar-collapse .sidebar-above,.mw-parser-output .sidebar-collapse .sidebar-below{border-top:1px solid #aaa;border-bottom:1px solid #aaa}.mw-parser-output .sidebar-navbar{text-align:right;font-size:115%;padding:0 0.4em 0.4em}.mw-parser-output .sidebar-list-title{padding:0 0.4em;text-align:left;font-weight:bold;line-height:1.6em;font-size:105%}.mw-parser-output .sidebar-list-title-c{padding:0 0.4em;text-align:center;margin:0 3.3em}@media(max-width:640px){body.mediawiki .mw-parser-output .sidebar{width:100%!important;clear:both;float:none!important;margin-left:0!important;margin-right:0!important}}body.skin--responsive .mw-parser-output .sidebar a>img{max-width:none!important}@media screen{html.skin-theme-clientpref-night .mw-parser-output .sidebar:not(.notheme) .sidebar-list-title,html.skin-theme-clientpref-night .mw-parser-output .sidebar:not(.notheme) .sidebar-title-with-pretitle{background:transparent!important}html.skin-theme-clientpref-night .mw-parser-output .sidebar:not(.notheme) .sidebar-title-with-pretitle a{color:var(--color-progressive)!important}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .sidebar:not(.notheme) .sidebar-list-title,html.skin-theme-clientpref-os .mw-parser-output .sidebar:not(.notheme) .sidebar-title-with-pretitle{background:transparent!important}html.skin-theme-clientpref-os .mw-parser-output .sidebar:not(.notheme) .sidebar-title-with-pretitle a{color:var(--color-progressive)!important}}@media print{body.ns-0 .mw-parser-output .sidebar{display:none!important}}</style><table class="sidebar sidebar-collapse nomobile nowraplinks plainlist" style="width: 20.5em;"><tbody><tr><th class="sidebar-title" style="padding-bottom:0.4em;"><span style="font-size: 8pt; font-weight: none"><a href="/wiki/Algebraic_structure" title="Algebraic structure">Algebraic structure</a> → Ring theory</span><br/><a href="/wiki/Ring_theory" title="Ring theory">Ring theory</a></th></tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)">Basic concepts</div><div class="sidebar-list-content mw-collapsible-content" style="text-align: left;"><b><a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">Rings</a></b>
+<dl><dd>• <a href="/wiki/Subring" title="Subring">Subrings</a></dd>
+<dd>• <a href="/wiki/Ideal_(ring_theory)" title="Ideal (ring theory)">Ideal</a></dd>
+<dd>• <a href="/wiki/Quotient_ring" title="Quotient ring">Quotient ring</a>
+<dl><dd>• <a href="/wiki/Fractional_ideal" title="Fractional ideal">Fractional ideal</a></dd>
+<dd>• <a href="/wiki/Total_ring_of_fractions" title="Total ring of fractions">Total ring of fractions</a></dd></dl></dd>
+<dd>• <a href="/wiki/Product_of_rings" title="Product of rings">Product of rings</a></dd>
+<dd>• <a href="/wiki/Free_product_of_associative_algebras" title="Free product of associative algebras">Free product of associative algebras</a></dd>
+<dd>• <a href="/wiki/Tensor_product_of_algebras" title="Tensor product of algebras">Tensor product of algebras</a></dd></dl>
+<p><b><a href="/wiki/Ring_homomorphism" title="Ring homomorphism">Ring homomorphisms</a></b>
+</p>
+<dl><dd>• <a href="/wiki/Kernel_(algebra)#Ring_homomorphisms" title="Kernel (algebra)">Kernel</a></dd>
+<dd>• <a href="/wiki/Inner_automorphism#Ring_case" title="Inner automorphism">Inner automorphism</a></dd>
+<dd>• <a href="/wiki/Frobenius_endomorphism" title="Frobenius endomorphism">Frobenius endomorphism</a></dd></dl>
+<p><b><a href="/wiki/Algebraic_structure" title="Algebraic structure">Algebraic structures</a></b>
+</p>
+<dl><dd>• <a class="mw-selflink selflink">Module</a></dd>
+<dd>• <a href="/wiki/Associative_algebra" title="Associative algebra">Associative algebra</a></dd>
+<dd>• <a href="/wiki/Graded_ring" title="Graded ring">Graded ring</a></dd>
+<dd>• <a class="mw-redirect" href="/wiki/Involutive_ring" title="Involutive ring">Involutive ring</a></dd>
+<dd>• <a href="/wiki/Category_of_rings" title="Category of rings">Category of rings</a>
+<dl><dd>• <a href="/wiki/Integer" title="Integer">Initial ring</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {Z} }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {Z} }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {Z} }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/449494a083e0a1fda2b61c62b2f09b6bee4633dc" style="vertical-align: -0.338ex; width:1.55ex; height:2.176ex;"/></span></dd>
+<dd>• <a href="/wiki/Zero_ring" title="Zero ring">Terminal ring</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle 0=\mathbb {Z} /1\mathbb {Z} }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mn>0</mn>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>/</mo>
+</mrow>
+<mn>1</mn>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle 0=\mathbb {Z} /1\mathbb {Z} }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle 0=\mathbb {Z} /1\mathbb {Z} }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e45ab495cb8cfbac68a9322af662c3d6c7dbe494" style="vertical-align: -0.838ex; width:9.686ex; height:2.843ex;"/></span></dd></dl></dd></dl>
+<p><b>Related structures</b>
+</p>
+<dl><dd>• <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">Field</a>
+<dl><dd>• <a href="/wiki/Finite_field" title="Finite field">Finite field</a></dd></dl></dd>
+<dd>• <a class="mw-redirect" href="/wiki/Non-associative_ring" title="Non-associative ring">Non-associative ring</a>
+<dl><dd>• <a class="mw-redirect" href="/wiki/Lie_ring" title="Lie ring">Lie ring</a></dd>
+<dd>• <a class="mw-redirect" href="/wiki/Jordan_ring" title="Jordan ring">Jordan ring</a></dd></dl></dd>
+<dd>• <a href="/wiki/Semiring" title="Semiring">Semiring</a>
+<dl><dd>• <a href="/wiki/Semifield" title="Semifield">Semifield</a></dd></dl></dd></dl></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Commutative_algebra" title="Commutative algebra">Commutative algebra</a></div><div class="sidebar-list-content mw-collapsible-content" style="text-align: left;"><b><a href="/wiki/Commutative_ring" title="Commutative ring">Commutative rings</a></b>
+<dl><dd>• <a href="/wiki/Integral_domain" title="Integral domain">Integral domain</a>
+<dl><dd>• <a href="/wiki/Integrally_closed_domain" title="Integrally closed domain">Integrally closed domain</a></dd>
+<dd>• <a href="/wiki/GCD_domain" title="GCD domain">GCD domain</a></dd>
+<dd>• <a href="/wiki/Unique_factorization_domain" title="Unique factorization domain">Unique factorization domain</a></dd>
+<dd>• <a href="/wiki/Principal_ideal_domain" title="Principal ideal domain">Principal ideal domain</a></dd>
+<dd>• <a href="/wiki/Euclidean_domain" title="Euclidean domain">Euclidean domain</a></dd>
+<dd>• <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">Field</a>
+<dl><dd>• <a href="/wiki/Finite_field" title="Finite field">Finite field</a></dd></dl></dd>
+<dd>• <a href="/wiki/Polynomial_ring" title="Polynomial ring">Polynomial ring</a></dd>
+<dd>• <a class="mw-redirect" href="/wiki/Formal_power_series_ring" title="Formal power series ring">Formal power series ring</a></dd></dl></dd></dl>
+<p><b><a href="/wiki/Algebraic_number_theory" title="Algebraic number theory">Algebraic number theory</a></b>
+</p>
+<dl><dd>• <a href="/wiki/Algebraic_number_field" title="Algebraic number field">Algebraic number field</a></dd>
+<dd>• <a class="mw-redirect" href="/wiki/Integers_modulo_n" title="Integers modulo n">Integers modulo <span class="texhtml mvar" style="font-style:italic;">n</span></a></dd>
+<dd>• <a href="/wiki/Ring_of_integers" title="Ring of integers">Ring of integers</a></dd>
+<dd>• <a class="mw-redirect" href="/wiki/P-adic_integer" title="P-adic integer"><i>p</i>-adic integers</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {Z} _{p}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {Z} _{p}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {Z} _{p}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/dbc1df7227ef11fe88dccd2dae3adc7bbdeae5f4" style="vertical-align: -1.005ex; width:2.609ex; height:2.843ex;"/></span></dd>
+<dd>• <a href="/wiki/P-adic_number" title="P-adic number"><i>p</i>-adic numbers</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {Q} _{p}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Q</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>p</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {Q} _{p}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {Q} _{p}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/35f44bc6894c682710705f3ea74f33042e0acc3e" style="vertical-align: -1.005ex; width:2.867ex; height:2.843ex;"/></span></dd>
+<dd>• <a href="/wiki/Pr%C3%BCfer_group#The_Prüfer_group_as_a_ring" title="Prüfer group">Prüfer <i>p</i>-ring</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathbb {Z} (p^{\infty })}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="double-struck">Z</mi>
+</mrow>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>p</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="normal">∞<!-- ∞ --></mi>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathbb {Z} (p^{\infty })}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathbb {Z} (p^{\infty })}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/14af623e08c241266c125ad927dd35086ec8ce90" style="vertical-align: -0.838ex; width:6.404ex; height:2.843ex;"/></span></dd></dl></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a class="mw-redirect" href="/wiki/Noncommutative_algebra" title="Noncommutative algebra">Noncommutative algebra</a></div><div class="sidebar-list-content mw-collapsible-content" style="text-align: left;"><b><a href="/wiki/Noncommutative_ring" title="Noncommutative ring">Noncommutative rings</a></b>
+<dl><dd>• <a href="/wiki/Division_ring" title="Division ring">Division ring</a></dd>
+<dd>• <a href="/wiki/Semiprimitive_ring" title="Semiprimitive ring">Semiprimitive ring</a></dd>
+<dd>• <a href="/wiki/Simple_ring" title="Simple ring">Simple ring</a></dd>
+<dd>• <a class="mw-redirect" href="/wiki/Commutator_(ring_theory)" title="Commutator (ring theory)">Commutator</a></dd></dl>
+<p><b><a href="/wiki/Noncommutative_algebraic_geometry" title="Noncommutative algebraic geometry">Noncommutative algebraic geometry</a></b>
+</p><p><b><a href="/wiki/Free_algebra" title="Free algebra">Free algebra</a></b>
+</p><p><b><a href="/wiki/Clifford_algebra" title="Clifford algebra">Clifford algebra</a></b>
+</p>
+<dl><dd>• <a href="/wiki/Geometric_algebra" title="Geometric algebra">Geometric algebra</a></dd></dl>
+<b><a href="/wiki/Operator_algebra" title="Operator algebra">Operator algebra</a></b></div></div></td>
+</tr><tr><td class="sidebar-navbar"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><style data-mw-deduplicate="TemplateStyles:r1239400231">.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:"[ "}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:" ]"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a>span,.mw-parser-output .navbar a>abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}html.skin-theme-clientpref-night .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}@media(prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}}@media print{.mw-parser-output .navbar{display:none!important}}</style><div class="navbar plainlinks hlist navbar-mini"><ul><li class="nv-view"><a href="/wiki/Template:Ring_theory_sidebar" title="Template:Ring theory sidebar"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Ring_theory_sidebar" title="Template talk:Ring theory sidebar"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a href="/wiki/Special:EditPage/Template:Ring_theory_sidebar" title="Special:EditPage/Template:Ring theory sidebar"><abbr title="Edit this template">e</abbr></a></li></ul></div></link></td></tr></tbody></table>
+<link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1126788409" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1246091330" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"/><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"/><table class="sidebar sidebar-collapse nomobile nowraplinks plainlist"><tbody><tr><th class="sidebar-title" style="display:block;margin-bottom:0.35em;"><a href="/wiki/Algebraic_structure" title="Algebraic structure">Algebraic structures</a></th></tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Group_(mathematics)" title="Group (mathematics)">Group</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;">
+<ul><li><a href="/wiki/Group_(mathematics)" title="Group (mathematics)">Group</a></li>
+<li><a href="/wiki/Semigroup" title="Semigroup">Semigroup</a> / <a href="/wiki/Monoid" title="Monoid">Monoid</a></li>
+<li><a href="/wiki/Racks_and_quandles" title="Racks and quandles">Rack and quandle</a></li>
+<li><a href="/wiki/Quasigroup" title="Quasigroup">Quasigroup and loop</a></li></ul>
+<div class="hlist">
+<ul><li><a href="/wiki/Abelian_group" title="Abelian group">Abelian group</a></li>
+<li><a href="/wiki/Magma_(algebra)" title="Magma (algebra)">Magma</a></li>
+<li><a href="/wiki/Lie_group" title="Lie group">Lie group</a></li></ul>
+</div>
+<i><a href="/wiki/Group_theory" title="Group theory">Group theory</a></i></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">Ring</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;"><div class="hlist">
+<ul><li><a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">Ring</a></li>
+<li><a href="/wiki/Rng_(algebra)" title="Rng (algebra)">Rng</a></li>
+<li><a href="/wiki/Semiring" title="Semiring">Semiring</a></li>
+<li><a href="/wiki/Near-ring" title="Near-ring">Near-ring</a></li>
+<li><a href="/wiki/Commutative_ring" title="Commutative ring">Commutative ring</a></li>
+<li><a href="/wiki/Domain_(ring_theory)" title="Domain (ring theory)">Domain</a></li>
+<li><a href="/wiki/Integral_domain" title="Integral domain">Integral domain</a></li>
+<li><a href="/wiki/Field_(mathematics)" title="Field (mathematics)">Field</a></li>
+<li><a href="/wiki/Division_ring" title="Division ring">Division ring</a></li>
+<li><a href="/wiki/Lie_algebra#Lie_ring" title="Lie algebra">Lie ring</a></li></ul>
+</div>
+<i><a href="/wiki/Ring_theory" title="Ring theory">Ring theory</a></i></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Lattice_(order)" title="Lattice (order)">Lattice</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;"><div class="hlist">
+<ul><li><a href="/wiki/Lattice_(order)" title="Lattice (order)">Lattice</a></li>
+<li><a href="/wiki/Semilattice" title="Semilattice">Semilattice</a></li>
+<li><a href="/wiki/Complemented_lattice" title="Complemented lattice">Complemented lattice</a></li>
+<li><a href="/wiki/Total_order" title="Total order">Total order</a></li>
+<li><a href="/wiki/Heyting_algebra" title="Heyting algebra">Heyting algebra</a></li>
+<li><a href="/wiki/Boolean_algebra_(structure)" title="Boolean algebra (structure)">Boolean algebra</a></li></ul>
+</div>
+<ul><li><a href="/wiki/Map_of_lattices" title="Map of lattices">Map of lattices</a></li>
+<li><i><a href="/wiki/Lattice_(order)" title="Lattice (order)">Lattice theory</a></i></li></ul></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a class="mw-selflink selflink">Module</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;"><div class="hlist">
+<ul><li><a class="mw-selflink selflink">Module</a></li>
+<li><a href="/wiki/Group_with_operators" title="Group with operators">Group with operators</a></li>
+<li><a href="/wiki/Vector_space" title="Vector space">Vector space</a></li></ul>
+</div>
+<ul><li><i><a href="/wiki/Linear_algebra" title="Linear algebra">Linear algebra</a></i></li></ul></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Algebra_over_a_field" title="Algebra over a field">Algebra</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;">
+<ul><li><a href="/wiki/Algebra_over_a_field" title="Algebra over a field">Algebra</a></li></ul>
+<div class="hlist">
+<ul><li><a href="/wiki/Associative_algebra" title="Associative algebra">Associative</a></li>
+<li><a href="/wiki/Non-associative_algebra" title="Non-associative algebra">Non-associative</a></li>
+<li><a href="/wiki/Composition_algebra" title="Composition algebra">Composition algebra</a></li>
+<li><a href="/wiki/Lie_algebra" title="Lie algebra">Lie algebra</a></li>
+<li><a href="/wiki/Graded_ring" title="Graded ring">Graded</a></li>
+<li><a href="/wiki/Bialgebra" title="Bialgebra">Bialgebra</a></li>
+<li><a href="/wiki/Hopf_algebra" title="Hopf algebra">Hopf algebra</a></li></ul>
+</div></div></div></td>
+</tr><tr><td class="sidebar-navbar"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"/><link href="mw-data:TemplateStyles:r1239400231" rel="mw-deduplicated-inline-style"/><div class="navbar plainlinks hlist navbar-mini"><ul><li class="nv-view"><a href="/wiki/Template:Algebraic_structures" title="Template:Algebraic structures"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Algebraic_structures" title="Template talk:Algebraic structures"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a href="/wiki/Special:EditPage/Template:Algebraic_structures" title="Special:EditPage/Template:Algebraic structures"><abbr title="Edit this template">e</abbr></a></li></ul></div></td></tr></tbody></table>
+<p>In <a href="/wiki/Mathematics" title="Mathematics">mathematics</a>, a <b>module</b> is a generalization of the notion of <a href="/wiki/Vector_space" title="Vector space">vector space</a> in which the <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">field</a> of <a href="/wiki/Scalar_(mathematics)" title="Scalar (mathematics)">scalars</a> is replaced by a (not necessarily <a href="/wiki/Commutative_ring" title="Commutative ring">commutative</a>) <a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">ring</a>. The concept of a <i>module</i> also generalizes the notion of an <a href="/wiki/Abelian_group" title="Abelian group">abelian group</a>, since the abelian groups are exactly the modules over the ring of <a href="/wiki/Integer" title="Integer">integers</a>.<sup class="reference" id="cite_ref-1"><a href="#cite_note-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup>
+</p><p>Like a vector space, a module is an additive abelian group, and scalar multiplication is <a href="/wiki/Distributive_property" title="Distributive property">distributive</a> over the operations of addition between elements of the ring or module and is <a href="/wiki/Semigroup_action" title="Semigroup action">compatible</a> with the ring multiplication.
+</p><p>Modules are very closely related to the <a href="/wiki/Representation_theory" title="Representation theory">representation theory</a> of <a href="/wiki/Group_(mathematics)" title="Group (mathematics)">groups</a>. They are also one of the central notions of <a href="/wiki/Commutative_algebra" title="Commutative algebra">commutative algebra</a> and <a href="/wiki/Homological_algebra" title="Homological algebra">homological algebra</a>, and are used widely in <a href="/wiki/Algebraic_geometry" title="Algebraic geometry">algebraic geometry</a> and <a href="/wiki/Algebraic_topology" title="Algebraic topology">algebraic topology</a>.
+</p>
+<meta property="mw:PageProp/toc">
+<div class="mw-heading mw-heading2"><h2 id="Introduction_and_definition">Introduction and definition</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=1" title="Edit section: Introduction and definition"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Motivation">Motivation</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=2" title="Edit section: Motivation"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>In a vector space, the set of <a href="/wiki/Scalar_(mathematics)" title="Scalar (mathematics)">scalars</a> is a <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">field</a> and acts on the vectors by scalar multiplication, subject to certain axioms such as the <a class="mw-redirect" href="/wiki/Distributive_law" title="Distributive law">distributive law</a>.  In a module, the scalars need only be a <a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">ring</a>, so the module concept represents a significant generalization.  In commutative algebra, both <a href="/wiki/Ideal_(ring_theory)" title="Ideal (ring theory)">ideals</a> and <a href="/wiki/Quotient_ring" title="Quotient ring">quotient rings</a> are modules, so that many arguments about ideals or quotient rings can be combined into a single argument about modules.  In non-commutative algebra, the distinction between left ideals, ideals, and modules becomes more pronounced, though some ring-theoretic conditions can be expressed either about left ideals or left modules.
+</p><p>Much of the theory of modules consists of extending as many of the desirable properties of vector spaces as possible to the realm of modules over a "<a class="mw-redirect" href="/wiki/Well-behaved" title="Well-behaved">well-behaved</a>" ring, such as a <a href="/wiki/Principal_ideal_domain" title="Principal ideal domain">principal ideal domain</a>. However, modules can be quite a bit more complicated than vector spaces; for instance, not all modules have a <a href="/wiki/Basis_(linear_algebra)" title="Basis (linear algebra)">basis</a>, and, even for those that do (<a href="/wiki/Free_module" title="Free module">free modules</a>), the number of elements in a basis need not be the same for all bases (that is to say that they may not have a unique <a href="/wiki/Free_module#Definition" title="Free module">rank</a>) if the underlying ring does not satisfy the <a href="/wiki/Invariant_basis_number" title="Invariant basis number">invariant basis number</a> condition, unlike vector spaces, which always have a (possibly infinite) basis whose <a href="/wiki/Cardinality" title="Cardinality">cardinality</a> is then unique. (These last two assertions require the <a href="/wiki/Axiom_of_choice" title="Axiom of choice">axiom of choice</a> in general, but not in the case of <a class="mw-redirect" href="/wiki/Finite-dimensional" title="Finite-dimensional">finite-dimensional</a> vector spaces, or certain well-behaved infinite-dimensional vector spaces such as <a href="/wiki/Lp_space" title="Lp space">L<sup><i>p</i></sup> spaces</a>.)
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Formal_definition">Formal definition</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=3" title="Edit section: Formal definition"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Suppose that <i>R</i> is a <a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">ring</a>, and 1 is its multiplicative identity.
+A <b>left <i>R</i>-module</b> <i>M</i> consists of an <a href="/wiki/Abelian_group" title="Abelian group">abelian group</a> <span class="nowrap">(<i>M</i>, +)</span> and an operation <span class="nowrap"><b>·</b> : <i>R</i> × <i>M</i> → <i>M</i></span> such that for all <i>r</i>, <i>s</i> in <i>R</i> and <i>x</i>, <i>y</i> in <i>M</i>, we have
+</p>
+<ol><li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle r\cdot (x+y)=r\cdot x+r\cdot y}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>r</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo>+</mo>
+<mi>y</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>r</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>x</mi>
+<mo>+</mo>
+<mi>r</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>y</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle r\cdot (x+y)=r\cdot x+r\cdot y}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle r\cdot (x+y)=r\cdot x+r\cdot y}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e135713749ad83932bd05eae55a4788a5e3412c3" style="vertical-align: -0.838ex; width:23.742ex; height:2.843ex;"/></span>,</li>
+<li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (r+s)\cdot x=r\cdot x+s\cdot x}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<mi>r</mi>
+<mo>+</mo>
+<mi>s</mi>
+<mo stretchy="false">)</mo>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>x</mi>
+<mo>=</mo>
+<mi>r</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>x</mi>
+<mo>+</mo>
+<mi>s</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>x</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (r+s)\cdot x=r\cdot x+s\cdot x}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (r+s)\cdot x=r\cdot x+s\cdot x}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c9f8981e6a9c302ab83827b0438bc17f6e86796c" style="vertical-align: -0.838ex; width:23.893ex; height:2.843ex;"/></span>,</li>
+<li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (rs)\cdot x=r\cdot (s\cdot x)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<mi>r</mi>
+<mi>s</mi>
+<mo stretchy="false">)</mo>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>x</mi>
+<mo>=</mo>
+<mi>r</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mo stretchy="false">(</mo>
+<mi>s</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (rs)\cdot x=r\cdot (s\cdot x)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (rs)\cdot x=r\cdot (s\cdot x)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5f4d4274dd9abe9c72744668b47f8c6e2d86c05d" style="vertical-align: -0.838ex; width:18.692ex; height:2.843ex;"/></span>,</li>
+<li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle 1\cdot x=x.}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mn>1</mn>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>x</mi>
+<mo>=</mo>
+<mi>x</mi>
+<mo>.</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle 1\cdot x=x.}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle 1\cdot x=x.}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6df6fbe6791389457f3711e555c8f46ce20defc6" style="vertical-align: -0.338ex; width:9.246ex; height:2.176ex;"/></span></li></ol>
+<p>The operation · is called <i>scalar multiplication</i>.  Often the symbol · is omitted, but in this article we use it and reserve juxtaposition for multiplication in <i>R</i>. One may write <sub><i>R</i></sub><i>M</i> to emphasize that <i>M</i> is a left <i>R</i>-module.  A <b>right <i>R</i>-module</b> <i>M</i><sub><i>R</i></sub> is defined similarly in terms of an operation <span class="nowrap">· : <i>M</i> × <i>R</i> → <i>M</i></span>.
+</p><p>The qualificative of left- or right-module does not depend on whether the scalars are written on the left or on the right, but on the property 3: if, in the above definition, the property 3 is replaced by 
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle (rs)\cdot x=s\cdot (r\cdot x),}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">(</mo>
+<mi>r</mi>
+<mi>s</mi>
+<mo stretchy="false">)</mo>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>x</mi>
+<mo>=</mo>
+<mi>s</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mo stretchy="false">(</mo>
+<mi>r</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>,</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle (rs)\cdot x=s\cdot (r\cdot x),}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle (rs)\cdot x=s\cdot (r\cdot x),}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/788d185005325e887b3443d5a02b940ec5fe557f" style="vertical-align: -0.838ex; width:19.339ex; height:2.843ex;"/></span></dd></dl>
+<p>one gets a right-module, even if the scalars are written on the left. However, writing the scalars on the left for left-modules and on the right for right modules makes the manipulation of property 3 much easier.
+</p><p>Authors who do not require rings to be <a class="mw-redirect" href="/wiki/Unital_algebra" title="Unital algebra">unital</a> omit condition 4 in the definition above; they would call the structures defined above "unital left <i>R</i>-modules". In this article, consistent with the <a href="/wiki/Glossary_of_ring_theory" title="Glossary of ring theory">glossary of ring theory</a>, all rings and modules are assumed to be unital.<sup class="reference" id="cite_ref-DummitFoote_2-0"><a href="#cite_note-DummitFoote-2"><span class="cite-bracket">[</span>2<span class="cite-bracket">]</span></a></sup>
+</p><p>An (<i>R</i>,<i>S</i>)-<a href="/wiki/Bimodule" title="Bimodule">bimodule</a> is an abelian group together with both a left scalar multiplication · by elements of <i>R</i> and a right scalar multiplication ∗ by elements of <i>S</i>, making it simultaneously a left <i>R</i>-module and a right <i>S</i>-module, satisfying the additional condition <span class="nowrap">(<i>r</i> · <i>x</i>) ∗ <i>s</i> = <i>r</i> ⋅ (<i>x</i> ∗ <i>s</i>)</span> for all <i>r</i> in <i>R</i>, <i>x</i> in <i>M</i>, and <i>s</i> in <i>S</i>.
+</p><p>If <i>R</i> is <a href="/wiki/Commutative_ring" title="Commutative ring">commutative</a>, then left <i>R</i>-modules are the same as right <i>R</i>-modules and are simply called <i>R</i>-modules. Most often the scalars are written on the left in this case.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Examples">Examples</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=4" title="Edit section: Examples"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>If <i>K</i> is a <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">field</a>, then <i>K</i>-modules are called <i>K</i>-<a href="/wiki/Vector_space" title="Vector space">vector spaces</a> (vector spaces over <i>K</i>).</li>
+<li>If <i>K</i> is a field, and <i>K</i>[<i>x</i>] a univariate <a href="/wiki/Polynomial_ring" title="Polynomial ring">polynomial ring</a>, then a <a href="/wiki/Polynomial_ring#Modules" title="Polynomial ring"><i>K</i>[<i>x</i>]-module</a> <i>M</i> is a <i>K</i>-module with an additional action of <i>x</i> on <i>M</i> by a group homomorphism that commutes with the action of <i>K</i> on <i>M</i>. In other words, a <i>K</i>[<i>x</i>]-module is a <i>K</i>-vector space <i>M</i> combined with a <a href="/wiki/Linear_map" title="Linear map">linear map</a> from <i>M</i> to <i>M</i>. Applying the <a href="/wiki/Structure_theorem_for_finitely_generated_modules_over_a_principal_ideal_domain" title="Structure theorem for finitely generated modules over a principal ideal domain">structure theorem for finitely generated modules over a principal ideal domain</a> to this example shows the existence of the <a class="mw-redirect" href="/wiki/Rational_canonical_form" title="Rational canonical form">rational</a> and <a href="/wiki/Jordan_normal_form" title="Jordan normal form">Jordan canonical</a> forms.</li>
+<li>The concept of a <b>Z</b>-module agrees with the notion of an abelian group. That is, every <a href="/wiki/Abelian_group" title="Abelian group">abelian group</a> is a module over the ring of <a href="/wiki/Integer" title="Integer">integers</a> <b>Z</b> in a unique way. For <span class="nowrap"><i>n</i> &gt; 0</span>, let <span class="nowrap"><i>n</i> ⋅ <i>x</i> = <i>x</i> + <i>x</i> + ... + <i>x</i></span> (<i>n</i> summands), <span class="nowrap">0 ⋅ <i>x</i> = 0</span>, and <span class="nowrap">(−<i>n</i>) ⋅ <i>x</i> = −(<i>n</i> ⋅ <i>x</i>)</span>. Such a module need not have a <a href="/wiki/Basis_(linear_algebra)" title="Basis (linear algebra)">basis</a>—groups containing <a class="mw-redirect" href="/wiki/Torsion_element" title="Torsion element">torsion elements</a> do not. (For example, in the group of integers <a href="/wiki/Modular_arithmetic" title="Modular arithmetic">modulo</a> 3, one cannot find even one element that satisfies the definition of a <a class="mw-redirect" href="/wiki/Linearly_independent" title="Linearly independent">linearly independent</a> set, since when an integer such as 3 or 6 multiplies an element, the result is 0. However, if a <a href="/wiki/Finite_field" title="Finite field">finite field</a> is considered as a module over the same finite field taken as a ring, it is a vector space and does have a basis.)</li>
+<li>The <a class="mw-redirect" href="/wiki/Decimal_fractions" title="Decimal fractions">decimal fractions</a> (including negative ones) form a module over the integers. Only <a href="/wiki/Singleton_(mathematics)" title="Singleton (mathematics)">singletons</a> are linearly independent sets, but there is no singleton that can serve as a basis, so the module has no basis and no <a class="mw-redirect" href="/wiki/Rank_of_a_free_module" title="Rank of a free module">rank</a>, in the usual sense of linear algebra. However this module has a <a class="mw-redirect" href="/wiki/Torsion-free_rank" title="Torsion-free rank">torsion-free rank</a> equal to 1.</li>
+<li>If <i>R</i> is any ring and <i>n</i> a <a href="/wiki/Natural_number" title="Natural number">natural number</a>, then the <a href="/wiki/Cartesian_product" title="Cartesian product">cartesian product</a> <i>R</i><sup><i>n</i></sup> is both a left and right <i>R</i>-module over <i>R</i> if we use the component-wise operations. Hence when <span class="nowrap"><i>n</i> = 1</span>, <i>R</i> is an <i>R</i>-module, where the scalar multiplication is just ring multiplication. The case <span class="nowrap"><i>n</i> = 0</span> yields the trivial <i>R</i>-module {0} consisting only of its identity element. Modules of this type are called <a href="/wiki/Free_module" title="Free module">free</a> and if <i>R</i> has <a href="/wiki/Invariant_basis_number" title="Invariant basis number">invariant basis number</a> (e.g. any commutative ring or field) the number <i>n</i> is then the rank of the free module.</li>
+<li>If M<sub><i>n</i></sub>(<i>R</i>) is the ring of <span class="nowrap"><i>n</i> × <i>n</i></span> <a href="/wiki/Matrix_(mathematics)" title="Matrix (mathematics)">matrices</a> over a ring <i>R</i>, <i>M</i> is an M<sub><i>n</i></sub>(<i>R</i>)-module, and <i>e</i><sub><i>i</i></sub> is the <span class="nowrap"><i>n</i> × <i>n</i></span> matrix with 1 in the <span class="nowrap">(<i>i</i>, <i>i</i>)</span>-entry (and zeros elsewhere), then <i>e</i><sub><i>i</i></sub><i>M</i> is an <i>R</i>-module, since <span class="nowrap"><i>re</i><sub><i>i</i></sub><i>m</i> = <i>e</i><sub><i>i</i></sub><i>rm</i> ∈ <i>e</i><sub><i>i</i></sub><i>M</i></span>. So <i>M</i> breaks up as the <a href="/wiki/Direct_sum" title="Direct sum">direct sum</a> of <i>R</i>-modules, <span class="nowrap"><i>M</i> = <i>e</i><sub>1</sub><i>M</i> ⊕ ... ⊕ <i>e</i><sub><i>n</i></sub><i>M</i></span>. Conversely, given an <i>R</i>-module <i>M</i><sub>0</sub>, then <i>M</i><sub>0</sub><sup>⊕<i>n</i></sup> is an M<sub><i>n</i></sub>(<i>R</i>)-module. In fact, the <a href="/wiki/Category_of_modules" title="Category of modules">category of <i>R</i>-modules</a> and the <a href="/wiki/Category_(mathematics)" title="Category (mathematics)">category</a> of M<sub><i>n</i></sub>(<i>R</i>)-modules are <a href="/wiki/Equivalence_of_categories" title="Equivalence of categories">equivalent</a>. The special case is that the module <i>M</i> is just <i>R</i> as a module over itself, then <i>R</i><sup><i>n</i></sup> is an M<sub><i>n</i></sub>(<i>R</i>)-module.</li>
+<li>If <i>S</i> is a <a href="/wiki/Empty_set" title="Empty set">nonempty</a> <a href="/wiki/Set_(mathematics)" title="Set (mathematics)">set</a>, <i>M</i> is a left <i>R</i>-module, and <i>M</i><sup><i>S</i></sup> is the collection of all <a href="/wiki/Function_(mathematics)" title="Function (mathematics)">functions</a> <span class="nowrap"><i>f</i> : <i>S</i> → <i>M</i></span>, then with addition and scalar multiplication in <i>M</i><sup><i>S</i></sup> defined pointwise by <span class="nowrap">(<i>f</i> + <i>g</i>)(<i>s</i>) = <i>f</i>(<i>s</i>) + <i>g</i>(<i>s</i>)</span> and <span class="nowrap">(<i>rf</i>)(<i>s</i>) = <i>rf</i>(<i>s</i>)</span>, <i>M</i><sup><i>S</i></sup> is a left <i>R</i>-module.  The right <i>R</i>-module case is analogous.  In particular, if <i>R</i> is commutative then the collection of <i>R-module homomorphisms</i> <span class="nowrap"><i>h</i> : <i>M</i> → <i>N</i></span> (see below) is an <i>R</i>-module (and in fact a <i>submodule</i> of <i>N</i><sup><i>M</i></sup>).</li>
+<li>If <i>X</i> is a <a class="mw-redirect" href="/wiki/Smooth_manifold" title="Smooth manifold">smooth manifold</a>, then the <a class="mw-redirect" href="/wiki/Smooth_function" title="Smooth function">smooth functions</a> from <i>X</i> to the <a href="/wiki/Real_number" title="Real number">real numbers</a> form a ring <i>C</i><sup>∞</sup>(<i>X</i>). The set of all smooth <a href="/wiki/Vector_field" title="Vector field">vector fields</a> defined on <i>X</i> forms a module over <i>C</i><sup>∞</sup>(<i>X</i>), and so do the <a href="/wiki/Tensor_field" title="Tensor field">tensor fields</a> and the <a href="/wiki/Differential_form" title="Differential form">differential forms</a> on <i>X</i>.  More generally, the sections of any <a href="/wiki/Vector_bundle" title="Vector bundle">vector bundle</a> form a <a href="/wiki/Projective_module" title="Projective module">projective module</a> over <i>C</i><sup>∞</sup>(<i>X</i>), and by <a class="mw-redirect" href="/wiki/Swan%27s_theorem" title="Swan's theorem">Swan's theorem</a>, every projective module is isomorphic to the module of sections of some vector bundle; the <a href="/wiki/Category_(mathematics)" title="Category (mathematics)">category</a> of <i>C</i><sup>∞</sup>(<i>X</i>)-modules and the category of vector bundles over <i>X</i> are <a href="/wiki/Equivalence_of_categories" title="Equivalence of categories">equivalent</a>.</li>
+<li>If <i>R</i> is any ring and <i>I</i> is any <a class="mw-redirect" href="/wiki/Ring_ideal" title="Ring ideal">left ideal</a> in <i>R</i>, then <i>I</i> is a left <i>R</i>-module, and analogously right ideals in <i>R</i> are right <i>R</i>-modules.</li>
+<li>If <i>R</i> is a ring, we can define the <a href="/wiki/Opposite_ring" title="Opposite ring">opposite ring</a> <i>R</i><sup>op</sup>, which has the same <a class="mw-redirect" href="/wiki/Underlying_set" title="Underlying set">underlying set</a> and the same addition operation, but the opposite multiplication:  if <span class="nowrap"><i>ab</i> = <i>c</i></span> in <i>R</i>, then <span class="nowrap"><i>ba</i> = <i>c</i></span> in <i>R</i><sup>op</sup>.  Any <i>left</i> <i>R</i>-module <i>M</i> can then be seen to be a <i>right</i> module over <i>R</i><sup>op</sup>, and any right module over <i>R</i> can be considered a left module over <i>R</i><sup>op</sup>.</li>
+<li><a class="mw-redirect" href="/wiki/Glossary_of_Lie_algebras#Representation_theory" title="Glossary of Lie algebras">Modules over a Lie algebra</a> are (associative algebra) modules over its <a href="/wiki/Universal_enveloping_algebra" title="Universal enveloping algebra">universal enveloping algebra</a>.</li>
+<li>If <i>R</i> and <i>S</i> are rings with a <a href="/wiki/Ring_homomorphism" title="Ring homomorphism">ring homomorphism</a> <span class="nowrap"><i>φ</i> : <i>R</i> → <i>S</i></span>, then every <i>S</i>-module <i>M</i> is an <i>R</i>-module by defining <span class="nowrap"><i>rm</i> = <i>φ</i>(<i>r</i>)<i>m</i></span>. In particular, <i>S</i> itself is such an <i>R</i>-module.</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Submodules_and_homomorphisms">Submodules and homomorphisms</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=5" title="Edit section: Submodules and homomorphisms"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Suppose <i>M</i> is a left <i>R</i>-module and <i>N</i> is a <a href="/wiki/Subgroup" title="Subgroup">subgroup</a> of <i>M</i>.  Then <i>N</i> is a <b>submodule</b> (or more explicitly an <i>R</i>-submodule) if for any <i>n</i> in <i>N</i> and any <i>r</i> in <i>R</i>, the product <span class="nowrap"><i>r</i> ⋅ <i>n</i></span> (or <span class="nowrap"><i>n</i> ⋅ <i>r</i></span> for a right <i>R</i>-module) is in <i>N</i>.
+</p><p>If <i>X</i> is any <a href="/wiki/Subset" title="Subset">subset</a> of an <i>R</i>-module <i>M</i>, then the submodule spanned by <i>X</i> is defined to be <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\textstyle \langle X\rangle =\,\bigcap _{N\supseteq X}N}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="false" scriptlevel="0">
+<mo fence="false" stretchy="false">⟨<!-- ⟨ --></mo>
+<mi>X</mi>
+<mo fence="false" stretchy="false">⟩<!-- ⟩ --></mo>
+<mo>=</mo>
+<mspace width="thinmathspace"></mspace>
+<munder>
+<mo>⋂<!-- ⋂ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>N</mi>
+<mo>⊇<!-- ⊇ --></mo>
+<mi>X</mi>
+</mrow>
+</munder>
+<mi>N</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\textstyle \langle X\rangle =\,\bigcap _{N\supseteq X}N}</annotation>
+</semantics>
+</math></span><img alt="{\textstyle \langle X\rangle =\,\bigcap _{N\supseteq X}N}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f9f579dff530e616643d4a18a802f99d2421b756" style="vertical-align: -1.171ex; width:16.032ex; height:3.176ex;"/></span> where <i>N</i> runs over the submodules of <i>M</i> that contain <i>X</i>, or explicitly <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\textstyle \left\{\sum _{i=1}^{k}r_{i}x_{i}\mid r_{i}\in R,x_{i}\in X\right\}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="false" scriptlevel="0">
+<mrow>
+<mo>{</mo>
+<mrow>
+<munderover>
+<mo>∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+<mo>=</mo>
+<mn>1</mn>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>k</mi>
+</mrow>
+</munderover>
+<msub>
+<mi>r</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+<mo>∣<!-- ∣ --></mo>
+<msub>
+<mi>r</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+<mo>∈<!-- ∈ --></mo>
+<mi>R</mi>
+<mo>,</mo>
+<msub>
+<mi>x</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+<mo>∈<!-- ∈ --></mo>
+<mi>X</mi>
+</mrow>
+<mo>}</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\textstyle \left\{\sum _{i=1}^{k}r_{i}x_{i}\mid r_{i}\in R,x_{i}\in X\right\}}</annotation>
+</semantics>
+</math></span><img alt="{\textstyle \left\{\sum _{i=1}^{k}r_{i}x_{i}\mid r_{i}\in R,x_{i}\in X\right\}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2584f3f85ad70bd4371292d114304e779ef08870" style="vertical-align: -1.838ex; width:29.194ex; height:4.843ex;"/></span>, which is important in the definition of <a href="/wiki/Tensor_product_of_modules" title="Tensor product of modules">tensor products of modules</a>.<sup class="reference" id="cite_ref-3"><a href="#cite_note-3"><span class="cite-bracket">[</span>3<span class="cite-bracket">]</span></a></sup>
+</p><p>The set of submodules of a given module <i>M</i>, together with the two binary operations + (the module spanned by the union of the arguments) and ∩, forms a <a href="/wiki/Lattice_(order)" title="Lattice (order)">lattice</a> that satisfies the <b><a href="/wiki/Modular_lattice" title="Modular lattice">modular law</a></b>:
+Given submodules <i>U</i>, <i>N</i><sub>1</sub>, <i>N</i><sub>2</sub> of <i>M</i> such that <span class="nowrap"><i>N</i><sub>1</sub> ⊆ <i>N</i><sub>2</sub></span>, then the following two submodules are equal: <span class="nowrap">(<i>N</i><sub>1</sub> + <i>U</i>) ∩ <i>N</i><sub>2</sub> = <i>N</i><sub>1</sub> + (<i>U</i> ∩ <i>N</i><sub>2</sub>)</span>.
+</p><p>If <i>M</i> and <i>N</i> are left <i>R</i>-modules, then a <a href="/wiki/Map_(mathematics)" title="Map (mathematics)">map</a> <span class="nowrap"><i>f</i> : <i>M</i> → <i>N</i></span> is a <b><a href="/wiki/Module_homomorphism" title="Module homomorphism">homomorphism of <i>R</i>-modules</a></b> if for any <i>m</i>, <i>n</i> in <i>M</i> and <i>r</i>, <i>s</i> in <i>R</i>,
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle f(r\cdot m+s\cdot n)=r\cdot f(m)+s\cdot f(n)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>f</mi>
+<mo stretchy="false">(</mo>
+<mi>r</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>m</mi>
+<mo>+</mo>
+<mi>s</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>n</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>r</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>f</mi>
+<mo stretchy="false">(</mo>
+<mi>m</mi>
+<mo stretchy="false">)</mo>
+<mo>+</mo>
+<mi>s</mi>
+<mo>⋅<!-- ⋅ --></mo>
+<mi>f</mi>
+<mo stretchy="false">(</mo>
+<mi>n</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle f(r\cdot m+s\cdot n)=r\cdot f(m)+s\cdot f(n)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle f(r\cdot m+s\cdot n)=r\cdot f(m)+s\cdot f(n)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b5f36f8380e1c4a1342beadbdbe56964377ac42a" style="vertical-align: -0.838ex; width:35.908ex; height:2.843ex;"/></span>.</dd></dl>
+<p>This, like any <a href="/wiki/Homomorphism" title="Homomorphism">homomorphism</a> of mathematical objects, is just a mapping that preserves the structure of the objects.  Another name for a homomorphism of <i>R</i>-modules is an <i>R</i>-<a href="/wiki/Linear_map" title="Linear map">linear map</a>.
+</p><p>A <a class="mw-redirect" href="/wiki/Bijective" title="Bijective">bijective</a> module homomorphism <span class="nowrap"><i>f</i> : <i>M</i> → <i>N</i></span> is called a module <a href="/wiki/Isomorphism" title="Isomorphism">isomorphism</a>, and the two modules <i>M</i> and <i>N</i> are called <b>isomorphic</b>. Two isomorphic modules are identical for all practical purposes, differing solely in the notation for their elements.
+</p><p>The <a href="/wiki/Kernel_(algebra)" title="Kernel (algebra)">kernel</a> of a module homomorphism <span class="nowrap"><i>f</i> : <i>M</i> → <i>N</i></span> is the submodule of <i>M</i> consisting of all elements that are sent to zero by <i>f</i>, and the <a href="/wiki/Image_(mathematics)" title="Image (mathematics)">image</a> of <i>f</i> is the submodule of <i>N</i> consisting of values <i>f</i>(<i>m</i>) for all elements <i>m</i> of <i>M</i>.<sup class="reference" id="cite_ref-4"><a href="#cite_note-4"><span class="cite-bracket">[</span>4<span class="cite-bracket">]</span></a></sup> The <a class="mw-redirect" href="/wiki/Isomorphism_theorem" title="Isomorphism theorem">isomorphism theorems</a> familiar from groups and vector spaces are also valid for <i>R</i>-modules.
+</p><p>Given a ring <i>R</i>, the set of all left <i>R</i>-modules together with their module homomorphisms forms an <a href="/wiki/Abelian_category" title="Abelian category">abelian category</a>, denoted by <i>R</i>-<b>Mod</b> (see <a href="/wiki/Category_of_modules" title="Category of modules">category of modules</a>).
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Types_of_modules">Types of modules</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=6" title="Edit section: Types of modules"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1236090951">.mw-parser-output .hatnote{font-style:italic}.mw-parser-output div.hatnote{padding-left:1.6em;margin-bottom:0.5em}.mw-parser-output .hatnote i{font-style:normal}.mw-parser-output .hatnote+link+.hatnote{margin-top:-0.5em}@media print{body.ns-0 .mw-parser-output .hatnote{display:none!important}}</style><div class="hatnote navigation-not-searchable" role="note">See also: <a href="/wiki/Glossary_of_module_theory" title="Glossary of module theory">Glossary of module theory</a></div>
+<dl><dt>Finitely generated</dt>
+<dd>An <i>R</i>-module <i>M</i> is <a href="/wiki/Finitely_generated_module" title="Finitely generated module">finitely generated</a> if there exist finitely many elements <i>x</i><sub>1</sub>, ..., <i>x</i><sub><i>n</i></sub> in <i>M</i> such that every element of <i>M</i> is a <a href="/wiki/Linear_combination" title="Linear combination">linear combination</a> of those elements with coefficients from the ring <i>R</i>.</dd>
+<dt>Cyclic</dt>
+<dd>A module is called a <a href="/wiki/Cyclic_module" title="Cyclic module">cyclic module</a> if it is generated by one element.</dd>
+<dt>Free</dt>
+<dd>A <a href="/wiki/Free_module" title="Free module">free <i>R</i>-module</a> is a module that has a basis, or equivalently, one that is isomorphic to a <a href="/wiki/Direct_sum_of_modules" title="Direct sum of modules">direct sum</a> of copies of the ring <i>R</i>. These are the modules that behave very much like vector spaces.</dd>
+<dt>Projective</dt>
+<dd><a href="/wiki/Projective_module" title="Projective module">Projective modules</a> are <a class="mw-redirect" href="/wiki/Direct_summand" title="Direct summand">direct summands</a> of free modules and share many of their desirable properties.</dd>
+<dt>Injective</dt>
+<dd><a href="/wiki/Injective_module" title="Injective module">Injective modules</a> are defined dually to projective modules.</dd>
+<dt>Flat</dt>
+<dd>A module is called <a href="/wiki/Flat_module" title="Flat module">flat</a> if taking the <a href="/wiki/Tensor_product_of_modules" title="Tensor product of modules">tensor product</a> of it with any <a href="/wiki/Exact_sequence" title="Exact sequence">exact sequence</a> of <i>R</i>-modules preserves exactness.</dd>
+<dt>Torsionless</dt>
+<dd>A module is called <a href="/wiki/Torsionless_module" title="Torsionless module">torsionless</a> if it embeds into its <a href="/wiki/Dual_module" title="Dual module">algebraic dual</a>.</dd>
+<dt>Simple</dt>
+<dd>A <a href="/wiki/Simple_module" title="Simple module">simple module</a> <i>S</i> is a module that is not {0} and whose only submodules are {0} and <i>S</i>.  Simple modules are sometimes called <i>irreducible</i>.<sup class="reference" id="cite_ref-5"><a href="#cite_note-5"><span class="cite-bracket">[</span>5<span class="cite-bracket">]</span></a></sup></dd>
+<dt>Semisimple</dt>
+<dd>A <a href="/wiki/Semisimple_module" title="Semisimple module">semisimple module</a> is a direct sum (finite or not) of simple modules.  Historically these modules are also called <i>completely reducible</i>.</dd>
+<dt>Indecomposable</dt>
+<dd>An <a href="/wiki/Indecomposable_module" title="Indecomposable module">indecomposable module</a> is a non-zero module that cannot be written as a <a href="/wiki/Direct_sum_of_modules" title="Direct sum of modules">direct sum</a> of two non-zero submodules. Every simple module is indecomposable, but there are indecomposable modules that are not simple (e.g. <a href="/wiki/Uniform_module" title="Uniform module">uniform modules</a>).</dd>
+<dt>Faithful</dt>
+<dd>A <a class="mw-redirect" href="/wiki/Faithful_module" title="Faithful module">faithful module</a> <i>M</i> is one where the action of each <span class="nowrap"><i>r</i> ≠ 0</span> in <i>R</i> on <i>M</i> is nontrivial (i.e. <span class="nowrap"><i>r</i> ⋅ <i>x</i> ≠ 0</span> for some <i>x</i> in <i>M</i>).  Equivalently, the <a href="/wiki/Annihilator_(ring_theory)" title="Annihilator (ring theory)">annihilator</a> of <i>M</i> is the <a class="mw-redirect" href="/wiki/Zero_ideal" title="Zero ideal">zero ideal</a>.</dd>
+<dt>Torsion-free</dt>
+<dd>A <a href="/wiki/Torsion-free_module" title="Torsion-free module">torsion-free module</a> is a module over a ring such that 0 is the only element annihilated by a regular element (non <a class="mw-redirect" href="/wiki/Zero-divisor" title="Zero-divisor">zero-divisor</a>) of the ring, equivalently <span class="nowrap"><i>rm</i> = 0</span> implies <span class="nowrap"><i>r</i> = 0</span> or <span class="nowrap"><i>m</i> = 0</span>.</dd>
+<dt>Noetherian</dt>
+<dd>A <a href="/wiki/Noetherian_module" title="Noetherian module">Noetherian module</a> is a module that satisfies the <a href="/wiki/Ascending_chain_condition" title="Ascending chain condition">ascending chain condition</a> on submodules, that is, every increasing chain of submodules becomes stationary after finitely many steps.  Equivalently, every submodule is finitely generated.</dd>
+<dt>Artinian</dt>
+<dd>An <a href="/wiki/Artinian_module" title="Artinian module">Artinian module</a> is a module that satisfies the <a class="mw-redirect" href="/wiki/Descending_chain_condition" title="Descending chain condition">descending chain condition</a> on submodules, that is, every decreasing chain of submodules becomes stationary after finitely many steps.</dd>
+<dt>Graded</dt>
+<dd>A <a class="mw-redirect" href="/wiki/Graded_module" title="Graded module">graded module</a> is a module with a decomposition as a direct sum <span class="nowrap"><i>M</i> = <span style="font-size:140%;">⨁</span><sub><i>x</i></sub> <i>M</i><sub><i>x</i></sub></span> over a <a href="/wiki/Graded_ring" title="Graded ring">graded ring</a> <span class="nowrap"><i>R</i> = <span style="font-size:140%;">⨁</span><sub><i>x</i></sub> <i>R</i><sub><i>x</i></sub></span> such that <span class="nowrap"><i>R</i><sub><i>x</i></sub><i>M</i><sub><i>y</i></sub> ⊆ <i>M</i><sub><i>x</i>+<i>y</i></sub></span> for all <i>x</i> and <i>y</i>.</dd>
+<dt>Uniform</dt>
+<dd>A <a href="/wiki/Uniform_module" title="Uniform module">uniform module</a> is a module in which all pairs of nonzero submodules have nonzero intersection.</dd></dl>
+<div class="mw-heading mw-heading2"><h2 id="Further_notions">Further notions</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=7" title="Edit section: Further notions"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Relation_to_representation_theory">Relation to representation theory</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=8" title="Edit section: Relation to representation theory"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>A representation of a group <i>G</i> over a field <i>k</i> is a module over the <a href="/wiki/Group_ring" title="Group ring">group ring</a> <i>k</i>[<i>G</i>].
+</p><p>If <i>M</i> is a left <i>R</i>-module, then the <i>action</i> of an element <i>r</i> in <i>R</i> is defined to be the map <span class="nowrap"><i>M</i> → <i>M</i></span> that sends each <i>x</i> to <i>rx</i> (or <i>xr</i> in the case of a right module), and is necessarily a <a href="/wiki/Group_homomorphism" title="Group homomorphism">group endomorphism</a> of the abelian group <span class="nowrap">(<i>M</i>, +)</span>.  The set of all group endomorphisms of <i>M</i> is denoted End<sub><b>Z</b></sub>(<i>M</i>) and forms a ring under addition and <a href="/wiki/Function_composition" title="Function composition">composition</a>, and sending a ring element <i>r</i> of <i>R</i> to its action actually defines a <a href="/wiki/Ring_homomorphism" title="Ring homomorphism">ring homomorphism</a> from <i>R</i> to End<sub><b>Z</b></sub>(<i>M</i>).
+</p><p>Such a ring homomorphism <span class="nowrap"><i>R</i> → End<sub><b>Z</b></sub>(<i>M</i>)</span> is called a <i>representation</i> of the abelian group <i>M</i> over the ring <i>R</i>; an alternative and equivalent way of defining left <i>R</i>-modules is to say that a left <i>R</i>-module is an abelian group <i>M</i> together with a representation of <i>M</i> over <i>R</i>. Such a representation <span class="nowrap"><i>R</i> → End<sub><b>Z</b></sub>(<i>M</i>)</span> may also be called a <i>ring action</i> of <i>R</i> on <i>M</i>.
+</p><p>A representation is called <i>faithful</i> if the map <span class="nowrap"><i>R</i> → End<sub><b>Z</b></sub>(<i>M</i>)</span> is <a class="mw-redirect" href="/wiki/Injective" title="Injective">injective</a>. In terms of modules, this means that if <i>r</i> is an element of <i>R</i> such that <span class="nowrap"><i>rx</i> = 0</span> for all <i>x</i> in <i>M</i>, then <span class="nowrap"><i>r</i> = 0</span>. Every abelian group is a faithful module over the <a href="/wiki/Integer" title="Integer">integers</a> or over the <a href="/wiki/Modular_arithmetic" title="Modular arithmetic">ring of integers modulo <i>n</i></a>, <b>Z</b>/<i>n</i><b>Z</b>, for some <i>n</i>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Generalizations">Generalizations</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=9" title="Edit section: Generalizations"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>A ring <i>R</i> corresponds to a <a href="/wiki/Preadditive_category" title="Preadditive category">preadditive category</a> <b>R</b> with a single <a class="mw-redirect" href="/wiki/Object_(category_theory)" title="Object (category theory)">object</a>. With this understanding, a left <i>R</i>-module is just a covariant <a class="mw-redirect" href="/wiki/Additive_functor" title="Additive functor">additive functor</a> from <b>R</b> to the <a href="/wiki/Category_of_abelian_groups" title="Category of abelian groups">category <b>Ab</b> of abelian groups</a>, and right <i>R</i>-modules are contravariant additive functors. This suggests that, if <b>C</b> is any preadditive category, a covariant additive functor from <b>C</b> to <b>Ab</b> should be considered a generalized left module over <b>C</b>. These functors form a <a href="/wiki/Functor_category" title="Functor category">functor category</a> <b>C</b>-<b>Mod</b>, which is the natural generalization of the module category <i>R</i>-<b>Mod</b>.
+</p><p>Modules over <i>commutative</i> rings can be generalized in a different direction: take a <a href="/wiki/Ringed_space" title="Ringed space">ringed space</a> (<i>X</i>, O<sub><i>X</i></sub>) and consider the <a href="/wiki/Sheaf_(mathematics)" title="Sheaf (mathematics)">sheaves</a> of O<sub><i>X</i></sub>-modules (see <a href="/wiki/Sheaf_of_modules" title="Sheaf of modules">sheaf of modules</a>). These form a category O<sub><i>X</i></sub>-<b>Mod</b>, and play an important role in modern <a href="/wiki/Algebraic_geometry" title="Algebraic geometry">algebraic geometry</a>. If <i>X</i> has only a single point, then this is a module category in the old sense over the commutative ring O<sub><i>X</i></sub>(<i>X</i>).
+</p><p>One can also consider modules over a <a href="/wiki/Semiring" title="Semiring">semiring</a>. Modules over rings are abelian groups, but modules over semirings are only <a class="mw-redirect" href="/wiki/Commutative" title="Commutative">commutative</a> <a href="/wiki/Monoid" title="Monoid">monoids</a>. Most applications of modules are still possible. In particular, for any <a href="/wiki/Semiring" title="Semiring">semiring</a> <i>S</i>, the matrices over <i>S</i> form a semiring over which the tuples of elements from <i>S</i> are a module (in this generalized sense only). This allows a further generalization of the concept of <a href="/wiki/Vector_space" title="Vector space">vector space</a> incorporating the semirings from theoretical computer science.
+</p><p>Over <a class="mw-redirect" href="/wiki/Near-rings" title="Near-rings">near-rings</a>, one can consider near-ring modules, a nonabelian generalization of modules.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (May 2015)">citation needed</span></a></i>]</sup>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=10" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="/wiki/Group_ring" title="Group ring">Group ring</a></li>
+<li><a class="mw-redirect" href="/wiki/Algebra_(ring_theory)" title="Algebra (ring theory)">Algebra (ring theory)</a></li>
+<li><a class="mw-redirect" href="/wiki/Module_(model_theory)" title="Module (model theory)">Module (model theory)</a></li>
+<li><a href="/wiki/Module_spectrum" title="Module spectrum">Module spectrum</a></li>
+<li><a href="/wiki/Annihilator_(ring_theory)" title="Annihilator (ring theory)">Annihilator</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Notes">Notes</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=11" title="Edit section: Notes"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1239543626">.mw-parser-output .reflist{margin-bottom:0.5em;list-style-type:decimal}@media screen{.mw-parser-output .reflist{font-size:90%}}.mw-parser-output .reflist .references{font-size:100%;margin-bottom:0;list-style-type:inherit}.mw-parser-output .reflist-columns-2{column-width:30em}.mw-parser-output .reflist-columns-3{column-width:25em}.mw-parser-output .reflist-columns{margin-top:0.3em}.mw-parser-output .reflist-columns ol{margin-top:0}.mw-parser-output .reflist-columns li{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .reflist-upper-alpha{list-style-type:upper-alpha}.mw-parser-output .reflist-upper-roman{list-style-type:upper-roman}.mw-parser-output .reflist-lower-alpha{list-style-type:lower-alpha}.mw-parser-output .reflist-lower-greek{list-style-type:lower-greek}.mw-parser-output .reflist-lower-roman{list-style-type:lower-roman}</style><div class="reflist">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text">Hungerford (1974) <i>Algebra</i>, Springer, p 169: "Modules over a ring are a generalization of abelian groups (which are modules over Z)."</span>
+</li>
+<li id="cite_note-DummitFoote-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-DummitFoote_2-0">^</a></b></span> <span class="reference-text"><style data-mw-deduplicate="TemplateStyles:r1238218222">.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#d33)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#d33)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite class="citation book cs1" id="CITEREFDummit,_David_S.Foote,_Richard_M.2004">Dummit, David S. &amp; Foote, Richard M. (2004). <i>Abstract Algebra</i>. Hoboken, NJ: John Wiley &amp; Sons, Inc. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-471-43334-7" title="Special:BookSources/978-0-471-43334-7"><bdi>978-0-471-43334-7</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Abstract+Algebra&amp;rft.place=Hoboken%2C+NJ&amp;rft.pub=John+Wiley+%26+Sons%2C+Inc.&amp;rft.date=2004&amp;rft.isbn=978-0-471-43334-7&amp;rft.au=Dummit%2C+David+S.&amp;rft.au=Foote%2C+Richard+M.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AModule+%28mathematics%29"></span></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation web cs1" id="CITEREFMcgerty2016">Mcgerty, Kevin (2016). <a class="external text" href="http://people.maths.ox.ac.uk/mcgerty/Algebra%20II.pdf" rel="nofollow">"ALGEBRA II: RINGS AND MODULES"</a> <span class="cs1-format">(PDF)</span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=ALGEBRA+II%3A+RINGS+AND+MODULES&amp;rft.date=2016&amp;rft.aulast=Mcgerty&amp;rft.aufirst=Kevin&amp;rft_id=http%3A%2F%2Fpeople.maths.ox.ac.uk%2Fmcgerty%2FAlgebra%2520II.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AModule+%28mathematics%29"></span></span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation web cs1" id="CITEREFAsh">Ash, Robert. <a class="external text" href="https://faculty.math.illinois.edu/~r-ash/Algebra/Chapter4.pdf" rel="nofollow">"Module Fundamentals"</a> <span class="cs1-format">(PDF)</span>. <i>Abstract Algebra: The Basic Graduate Year</i>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=unknown&amp;rft.jtitle=Abstract+Algebra%3A+The+Basic+Graduate+Year&amp;rft.atitle=Module+Fundamentals&amp;rft.aulast=Ash&amp;rft.aufirst=Robert&amp;rft_id=https%3A%2F%2Ffaculty.math.illinois.edu%2F~r-ash%2FAlgebra%2FChapter4.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AModule+%28mathematics%29"></span></span>
+</li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text">Jacobson (1964), <a class="external text" href="https://books.google.com/books?id=KlMDjaJxZAkC&amp;pg=PA4" rel="nofollow">p. 4</a>, Def. 1</span>
+</li>
+</ol></div></div>
+<div class="mw-heading mw-heading2"><h2 id="References">References</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=12" title="Edit section: References"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>F.W. Anderson and K.R. Fuller: <i>Rings and Categories of Modules</i>, Graduate Texts in Mathematics, Vol. 13, 2nd Ed., Springer-Verlag, New York, 1992, <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/0-387-97845-3" title="Special:BookSources/0-387-97845-3">0-387-97845-3</a>, <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/3-540-97845-3" title="Special:BookSources/3-540-97845-3">3-540-97845-3</a></li>
+<li><a href="/wiki/Nathan_Jacobson" title="Nathan Jacobson">Nathan Jacobson</a>. <i>Structure of rings</i>. Colloquium publications, Vol. 37, 2nd Ed., AMS Bookstore, 1964, <link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-8218-1037-8" title="Special:BookSources/978-0-8218-1037-8">978-0-8218-1037-8</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="External_links">External links</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Module_(mathematics)&amp;action=edit&amp;section=13" title="Edit section: External links"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation cs2"><a class="external text" href="https://www.encyclopediaofmath.org/index.php?title=Module" rel="nofollow">"Module"</a>, <i><a href="/wiki/Encyclopedia_of_Mathematics" title="Encyclopedia of Mathematics">Encyclopedia of Mathematics</a></i>, <a href="/wiki/European_Mathematical_Society" title="European Mathematical Society">EMS Press</a>, 2001 [1994]</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=Module&amp;rft.btitle=Encyclopedia+of+Mathematics&amp;rft.pub=EMS+Press&amp;rft.date=2001&amp;rft_id=https%3A%2F%2Fwww.encyclopediaofmath.org%2Findex.php%3Ftitle%3DModule&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AModule+%28mathematics%29"></span></li>
+<li><a class="external text" href="https://ncatlab.org/nlab/show/module" rel="nofollow">module</a> at the <a href="/wiki/NLab" title="NLab"><i>n</i>Lab</a></li></ul>
+<div class="navbox-styles"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"/><style data-mw-deduplicate="TemplateStyles:r1236075235">.mw-parser-output .navbox{box-sizing:border-box;border:1px solid #a2a9b1;width:100%;clear:both;font-size:88%;text-align:center;padding:1px;margin:1em auto 0}.mw-parser-output .navbox .navbox{margin-top:0}.mw-parser-output .navbox+.navbox,.mw-parser-output .navbox+.navbox-styles+.navbox{margin-top:-1px}.mw-parser-output .navbox-inner,.mw-parser-output .navbox-subgroup{width:100%}.mw-parser-output .navbox-group,.mw-parser-output .navbox-title,.mw-parser-output .navbox-abovebelow{padding:0.25em 1em;line-height:1.5em;text-align:center}.mw-parser-output .navbox-group{white-space:nowrap;text-align:right}.mw-parser-output .navbox,.mw-parser-output .navbox-subgroup{background-color:#fdfdfd}.mw-parser-output .navbox-list{line-height:1.5em;border-color:#fdfdfd}.mw-parser-output .navbox-list-with-group{text-align:left;border-left-width:2px;border-left-style:solid}.mw-parser-output tr+tr>.navbox-abovebelow,.mw-parser-output tr+tr>.navbox-group,.mw-parser-output tr+tr>.navbox-image,.mw-parser-output tr+tr>.navbox-list{border-top:2px solid #fdfdfd}.mw-parser-output .navbox-title{background-color:#ccf}.mw-parser-output .navbox-abovebelow,.mw-parser-output .navbox-group,.mw-parser-output .navbox-subgroup .navbox-title{background-color:#ddf}.mw-parser-output .navbox-subgroup .navbox-group,.mw-parser-output .navbox-subgroup .navbox-abovebelow{background-color:#e6e6ff}.mw-parser-output .navbox-even{background-color:#f7f7f7}.mw-parser-output .navbox-odd{background-color:transparent}.mw-parser-output .navbox .hlist td dl,.mw-parser-output .navbox .hlist td ol,.mw-parser-output .navbox .hlist td ul,.mw-parser-output .navbox td.hlist dl,.mw-parser-output .navbox td.hlist ol,.mw-parser-output .navbox td.hlist ul{padding:0.125em 0}.mw-parser-output .navbox .navbar{display:block;font-size:100%}.mw-parser-output .navbox-title .navbar{float:left;text-align:left;margin-right:0.5em}body.skin--responsive .mw-parser-output .navbox-image img{max-width:none!important}@media print{body.ns-0 .mw-parser-output .navbox{display:none!important}}</style><style data-mw-deduplicate="TemplateStyles:r1038841319">.mw-parser-output .tooltip-dotted{border-bottom:1px dotted;cursor:help}</style></div><div aria-labelledby="Authority_control_databases_frameless&amp;#124;text-top&amp;#124;10px&amp;#124;alt=Edit_this_at_Wikidata&amp;#124;link=https&amp;#58;//www.wikidata.org/wiki/Q18848#identifiers&amp;#124;class=noprint&amp;#124;Edit_this_at_Wikidata1310" class="navbox authority-control" role="navigation" style="padding:3px"><table class="nowraplinks hlist mw-collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit"><tbody><tr><th class="navbox-title" colspan="2" scope="col"><div id="Authority_control_databases_frameless&amp;#124;text-top&amp;#124;10px&amp;#124;alt=Edit_this_at_Wikidata&amp;#124;link=https&amp;#58;//www.wikidata.org/wiki/Q18848#identifiers&amp;#124;class=noprint&amp;#124;Edit_this_at_Wikidata1310" style="font-size:114%;margin:0 4em"><a href="/wiki/Help:Authority_control" title="Help:Authority control">Authority control databases</a> <span class="mw-valign-text-top noprint" typeof="mw:File/Frameless"><a href="https://www.wikidata.org/wiki/Q18848#identifiers" title="Edit this at Wikidata"><img alt="Edit this at Wikidata" class="mw-file-element" data-file-height="20" data-file-width="20" decoding="async" height="10" src="//upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/10px-OOjs_UI_icon_edit-ltr-progressive.svg.png" srcset="//upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/15px-OOjs_UI_icon_edit-ltr-progressive.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png 2x" width="10"/></a></span></div></th></tr><tr><th class="navbox-group" scope="row" style="width:1%">International</th><td class="navbox-list-with-group navbox-list navbox-odd" style="width:100%;padding:0"><div style="padding:0 0.25em"><ul><li><span class="uid"><a class="external text" href="http://id.worldcat.org/fast/1024523/" rel="nofollow">FAST</a></span></li></ul></div></td></tr><tr><th class="navbox-group" scope="row" style="width:1%">National</th><td class="navbox-list-with-group navbox-list navbox-even" style="width:100%;padding:0"><div style="padding:0 0.25em"><ul><li><span class="uid"><a class="external text" href="https://id.loc.gov/authorities/sh85086470" rel="nofollow">United States</a></span></li><li><span class="uid"><a class="external text" href="https://catalogue.bnf.fr/ark:/12148/cb13163015r" rel="nofollow">France</a></span></li><li><span class="uid"><a class="external text" href="https://data.bnf.fr/ark:/12148/cb13163015r" rel="nofollow">BnF data</a></span></li><li><span class="uid"><a class="external text" href="https://id.ndl.go.jp/auth/ndlna/00564457" rel="nofollow">Japan</a></span></li><li><span class="uid"><span class="rt-commentedText tooltip tooltip-dotted" title="moduly (algebra)"><a class="external text" href="https://aleph.nkp.cz/F/?func=find-c&amp;local_base=aut&amp;ccl_term=ica=ph211266&amp;CON_LNG=ENG" rel="nofollow">Czech Republic</a></span></span></li><li><span class="uid"><a class="external text" href="https://datos.bne.es/resource/XX526925" rel="nofollow">Spain</a></span></li><li><span class="uid"><a class="external text" href="https://www.nli.org.il/en/authorities/987007541015705171" rel="nofollow">Israel</a></span></li></ul></div></td></tr><tr><th class="navbox-group" scope="row" style="width:1%">Other</th><td class="navbox-list-with-group navbox-list navbox-odd" style="width:100%;padding:0"><div style="padding:0 0.25em"><ul><li><span class="uid"><a class="external text" href="https://www.idref.fr/027814572" rel="nofollow">IdRef</a></span></li></ul></div></td></tr></tbody></table></div>
+<!-- 
+NewPP limit report
+Parsed by mw‐web.eqiad.main‐6df8dbf59d‐h5vhm
+Cached time: 20250331025756
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.410 seconds
+Real time usage: 0.579 seconds
+Preprocessor visited node count: 2440/1000000
+Post‐expand include size: 50447/2097152 bytes
+Template argument size: 3454/2097152 bytes
+Highest expansion depth: 14/100
+Expensive parser function count: 4/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 71561/5000000 bytes
+Lua time usage: 0.242/10.000 seconds
+Lua memory usage: 5616796/52428800 bytes
+Number of Wikibase entities loaded: 1/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  449.967      1 -total
+ 20.77%   93.457      2 Template:Sidebar_with_collapsible_lists
+ 19.50%   87.749      1 Template:Ring_theory_sidebar
+ 19.28%   86.745      1 Template:Reflist
+ 15.08%   67.869      1 Template:Cite_book
+ 14.19%   63.841      1 Template:Short_description
+ 12.22%   54.972      1 Template:Authority_control
+ 12.10%   54.462      1 Template:More_footnotes
+ 10.49%   47.193      1 Template:Ambox
+  8.05%   36.244      2 Template:Pagetype
+-->
+<!-- Saved in parser cache with key enwiki:pcache:276410:|#|:idhash:canonical and timestamp 20250331025756 and revision id 1282438098. Rendering was triggered because: page-view
+ -->
+</meta></link></link></link></link></link></link></link></link></link></link></link></div>

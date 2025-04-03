@@ -3,20 +3,33 @@
 import { useState, useEffect, useRef } from 'react';
 
 export default function Board({ account, setGameMessage, setGameCompleted, setGameData }) {
-  const [problem, setProblem] = useState(null);
+  const [problem, setProblem] = useState(null); // Ahora contendrá { masked, answer, source }
   const [userAnswer, setUserAnswer] = useState('');
   const [elapsedTime, setElapsedTime] = useState(0);
   const [preGameCountdown, setPreGameCountdown] = useState(3);
   const [isDisabled, setIsDisabled] = useState(true);
 
+  // Puedes usar el precio de participación si deseas mantener la lógica de recompensa
   const PARTICIPATION_PRICE = parseFloat(process.env.NEXT_PUBLIC_PARTICIPATION_PRICE);
   const preGameIntervalRef = useRef(null);
   const solveIntervalRef = useRef(null);
 
   useEffect(() => {
-    generateNewProblem();
+    // Se carga la frase (problem) desde el JSON
+    const fetchPhrase = async () => {
+      try {
+        const res = await fetch('/math_phrases.json');
+        const phrases = await res.json();
+        const chosen = phrases[Math.floor(Math.random() * phrases.length)];
+        setProblem(chosen);
+      } catch (error) {
+        console.error('Error fetching phrase:', error);
+      }
+    };
 
-    // Pre-game countdown: 3 segundos
+    fetchPhrase();
+
+    // Cuenta regresiva pre-juego: 3 segundos
     preGameIntervalRef.current = setInterval(() => {
       setPreGameCountdown((prev) => {
         if (prev <= 1) {
@@ -34,23 +47,6 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
     };
   }, []);
 
-  const generateNewProblem = () => {
-    const num1 = Math.floor(Math.random() * 50) + 10;
-    const num2 = Math.floor(Math.random() * 20) + 5;
-    const operation = ['+', '-', '*'][Math.floor(Math.random() * 3)];
-
-    let result;
-    if (operation === '+') result = num1 + num2;
-    if (operation === '-') result = num1 - num2;
-    if (operation === '*') result = num1 * num2;
-
-    setProblem({ num1, num2, operation, result });
-    setUserAnswer('');
-    setElapsedTime(0);
-    setGameCompleted(false);
-    setGameData(null);
-  };
-
   const startSolveTimer = () => {
     setIsDisabled(false);
     const startTime = Date.now();
@@ -59,9 +55,9 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
       const timePassed = Date.now() - startTime;
       setElapsedTime(timePassed);
 
-      if (timePassed >= 10000) {
+      if (timePassed >= 10000) { // Límite de 10 segundos para adivinar
         clearInterval(solveIntervalRef.current);
-        setGameMessage('⏳ Time exceeded! No mining reward.');
+        setGameMessage('⏳ Time exceeded! No reward.');
         finalizeGame(false, 0);
       }
     }, 100);
@@ -72,49 +68,49 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
     clearInterval(solveIntervalRef.current);
     const totalTime = elapsedTime;
-    const correct = parseInt(userAnswer, 10) === problem.result;
+    // Comparamos ignorando espacios y mayúsculas/minúsculas
+    const correct = userAnswer.trim().toLowerCase() === problem.answer.trim().toLowerCase();
 
-    let miningAmount = 0;
+    let reward = 0;
 
     if (correct) {
       if (totalTime <= 5000) {
         // Recompensa positiva basada en la rapidez
-        miningAmount = PARTICIPATION_PRICE * ((5000 - totalTime) / 5000);
+        reward = PARTICIPATION_PRICE * ((5000 - totalTime) / 5000);
       } else {
-        // Penalización por respuesta lenta (hasta -10% del valor del token)
+        // Penalización por respuesta lenta (hasta -10% del valor)
         const overTime = Math.min(totalTime - 5000, 5000);
         const penaltyRatio = overTime / 5000;
-        miningAmount = -PARTICIPATION_PRICE * 0.10 * penaltyRatio;
+        reward = -PARTICIPATION_PRICE * 0.10 * penaltyRatio;
       }
 
-      const displayAmount =
-        Math.abs(miningAmount) < 0.00000001
+      const displayReward =
+        Math.abs(reward) < 0.00000001
           ? '< 0.00000001'
-          : miningAmount.toFixed(8);
+          : reward.toFixed(8);
 
-      // Si no hay wallet conectada, muestra mensaje alternativo
       const message = account
-      ? `Inject MM3 now: ${displayAmount}`
-      : `Connect your wallet to proceed with injecting MM3: ${displayAmount}. Metamask wallets are free, and MathsMine3 is completely free to play. No funds needed.`;    
+        ? `Inject MM3 now: ${displayReward}`
+        : `Connect your wallet to proceed with injecting MM3: ${displayReward}.`;
       setGameMessage(message);
     } else {
-      setGameMessage('❌ Incorrect! No mining reward.');
+      setGameMessage('❌ Incorrect! No reward.');
     }
 
-    finalizeGame(correct, miningAmount);
+    finalizeGame(correct, reward);
   };
 
-  const finalizeGame = (isCorrect, miningAmount) => {
+  const finalizeGame = (isCorrect, reward) => {
     setIsDisabled(true);
     setGameCompleted(true);
 
     setGameData({
       wallet: account,
-      problem: `${problem.num1} ${problem.operation} ${problem.num2}`,
+      problem: problem.masked, // Guardamos la frase con la palabra oculta
       user_answer: userAnswer,
       is_correct: isCorrect,
       time_ms: elapsedTime,
-      mining_reward: miningAmount,
+      reward: reward,
     });
   };
 
@@ -123,8 +119,8 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
       <div className="bg-[#0b0f19] p-4 rounded-xl">
         {problem && (
           <>
-            <p className="text-xl font-mono text-[#22d3ee]">
-              {problem.num1} {problem.operation} {problem.num2} = ?
+            <p className="text-xl font-serif text-[#22d3ee]">
+              {problem.masked}
             </p>
             <p className="text-sm text-[#22d3ee]">
               Time elapsed:{' '}
@@ -141,16 +137,16 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
             <div className="flex justify-center items-center gap-2 mt-4">
               <input
-                type="number"
+                type="text"
                 value={userAnswer}
                 onChange={(e) => setUserAnswer(e.target.value)}
-                className="w-24 border border-[#22d3ee] bg-transparent px-2 py-1 rounded text-[#22d3ee] text-center font-mono focus:outline-none"
+                className="w-64 border border-[#22d3ee] bg-transparent px-2 py-1 rounded text-[#22d3ee] text-center font-serif focus:outline-none"
                 disabled={isDisabled}
-                placeholder="Answer"
+                placeholder="Your guess"
               />
               <button
                 onClick={checkAnswer}
-                className={`px-4 py-1 rounded font-mono border border-[#22d3ee] ${
+                className={`px-4 py-1 rounded font-serif border border-[#22d3ee] ${
                   isDisabled
                     ? 'bg-gray-600 cursor-not-allowed text-gray-300'
                     : 'bg-[#22d3ee] text-[#0b0f19] hover:bg-[#1e293b]'

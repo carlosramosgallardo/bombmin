@@ -1,0 +1,1961 @@
+<div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none">Concept in mathematical group theory</div>
+<style data-mw-deduplicate="TemplateStyles:r1236090951">.mw-parser-output .hatnote{font-style:italic}.mw-parser-output div.hatnote{padding-left:1.6em;margin-bottom:0.5em}.mw-parser-output .hatnote i{font-style:normal}.mw-parser-output .hatnote+link+.hatnote{margin-top:-0.5em}@media print{body.ns-0 .mw-parser-output .hatnote{display:none!important}}</style><div class="hatnote navigation-not-searchable" role="note">This article is about the use of the term character theory in mathematics. For related senses of the word character, see <a href="/wiki/Character_(mathematics)" title="Character (mathematics)">Character (mathematics)</a>.</div>
+<p>In <a href="/wiki/Mathematics" title="Mathematics">mathematics</a>, more specifically in <a href="/wiki/Group_theory" title="Group theory">group theory</a>, the <b>character</b> of a <a href="/wiki/Group_representation" title="Group representation">group representation</a> is a <a href="/wiki/Function_(mathematics)" title="Function (mathematics)">function</a> on the <a href="/wiki/Group_(mathematics)" title="Group (mathematics)">group</a> that associates to each group element the <a href="/wiki/Trace_(linear_algebra)" title="Trace (linear algebra)">trace</a> of the corresponding <a href="/wiki/Matrix_(mathematics)" title="Matrix (mathematics)">matrix</a>. The character carries the essential information about the representation in a more condensed form. <a class="mw-redirect" href="/wiki/Georg_Frobenius" title="Georg Frobenius">Georg Frobenius</a> initially developed <a href="/wiki/Representation_theory_of_finite_groups" title="Representation theory of finite groups">representation theory of finite groups</a> entirely based on the characters, and without any explicit matrix realization of representations themselves. This is possible because a <a href="/wiki/Complex_number" title="Complex number">complex</a> representation of a <a href="/wiki/Finite_group" title="Finite group">finite group</a> is determined (up to <a href="/wiki/Isomorphism" title="Isomorphism">isomorphism</a>) by its character. The situation with representations over a <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">field</a> of positive <a href="/wiki/Characteristic_(algebra)" title="Characteristic (algebra)">characteristic</a>, so-called "modular representations", is more delicate, but <a href="/wiki/Richard_Brauer" title="Richard Brauer">Richard Brauer</a> developed a powerful theory of characters in this case as well. Many deep theorems on the structure of finite groups use characters of <a href="/wiki/Modular_representation_theory" title="Modular representation theory">modular representations</a>.
+</p>
+<meta property="mw:PageProp/toc">
+<div class="mw-heading mw-heading2"><h2 id="Applications">Applications</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=1" title="Edit section: Applications"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Characters of <a href="/wiki/Irreducible_representation" title="Irreducible representation">irreducible representations</a> encode many important properties of a group and can thus be used to study its structure. Character theory is an essential tool in the <a href="/wiki/Classification_of_finite_simple_groups" title="Classification of finite simple groups">classification of finite simple groups</a>. Close to half of the <a href="/wiki/Mathematical_proof" title="Mathematical proof">proof</a> of the <a href="/wiki/Feit%E2%80%93Thompson_theorem" title="Feit–Thompson theorem">Feit–Thompson theorem</a> involves intricate calculations with character values. Easier, but still essential, results that use character theory include <a href="/wiki/Burnside%27s_theorem" title="Burnside's theorem">Burnside's theorem</a> (a purely group-theoretic proof of Burnside's theorem has since been found, but that proof came over half a century after Burnside's original proof), and a theorem of <a href="/wiki/Richard_Brauer" title="Richard Brauer">Richard Brauer</a> and <a href="/wiki/Michio_Suzuki_(mathematician)" title="Michio Suzuki (mathematician)">Michio Suzuki</a> stating that a finite <a href="/wiki/Simple_group" title="Simple group">simple group</a> cannot have a <a class="mw-redirect" href="/wiki/Generalized_quaternion_group" title="Generalized quaternion group">generalized quaternion group</a> as its <a href="/wiki/Sylow_theorems" title="Sylow theorems">Sylow <span class="texhtml">2</span>-subgroup</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Definitions">Definitions</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=2" title="Edit section: Definitions"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Let <span class="texhtml mvar" style="font-style:italic;">V</span> be a <a href="/wiki/Dimension_(vector_space)" title="Dimension (vector space)">finite-dimensional</a> <a href="/wiki/Vector_space" title="Vector space">vector space</a> over a <a href="/wiki/Field_(mathematics)" title="Field (mathematics)">field</a> <span class="texhtml mvar" style="font-style:italic;">F</span> and let <span class="texhtml"><i>ρ</i> : <i>G</i> → GL(<i>V</i>)</span> be a <a href="/wiki/Group_representation" title="Group representation">representation</a> of a group <span class="texhtml mvar" style="font-style:italic;">G</span> on <span class="texhtml mvar" style="font-style:italic;">V</span>. The <b>character</b> of <span class="texhtml mvar" style="font-style:italic;">ρ</span> is the function <span class="texhtml"><i>χ<sub>ρ</sub></i> : <i>G</i> → <i>F</i></span> given by
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho }(g)=\operatorname {Tr} (\rho (g))}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>Tr</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>ρ<!-- ρ --></mi>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho }(g)=\operatorname {Tr} (\rho (g))}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho }(g)=\operatorname {Tr} (\rho (g))}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5871035a66dd718181eca944e0a3c9af6277d2b4" style="vertical-align: -1.005ex; width:17.087ex; height:3.009ex;"/></span></dd></dl>
+<p>where <span class="texhtml">Tr</span> is the <a href="/wiki/Trace_(linear_algebra)" title="Trace (linear algebra)">trace</a>.
+</p><p>A character <span class="texhtml"><i>χ<sub>ρ</sub></i></span> is called <b>irreducible</b> or <b>simple</b> if <span class="texhtml mvar" style="font-style:italic;">ρ</span> is an <a href="/wiki/Irreducible_representation" title="Irreducible representation">irreducible representation</a>.  The <b>degree</b> of the character <span class="texhtml mvar" style="font-style:italic;">χ</span> is the <a class="mw-redirect" href="/wiki/Dimension_of_a_representation" title="Dimension of a representation">dimension</a> of <span class="texhtml mvar" style="font-style:italic;">ρ</span>; in characteristic zero this is equal to the value <span class="texhtml"><i>χ</i>(1)</span>. A character of degree 1 is called <b>linear</b>. When <span class="texhtml mvar" style="font-style:italic;">G</span> is finite and <span class="texhtml mvar" style="font-style:italic;">F</span> has characteristic zero, the <b>kernel</b> of the character <span class="texhtml"><i>χ<sub>ρ</sub></i></span> is the <a href="/wiki/Normal_subgroup" title="Normal subgroup">normal subgroup</a>:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \ker \chi _{\rho }:=\left\lbrace g\in G\mid \chi _{\rho }(g)=\chi _{\rho }(1)\right\rbrace ,}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ker</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo>:=</mo>
+<mrow>
+<mo>{</mo>
+<mrow>
+<mi>g</mi>
+<mo>∈<!-- ∈ --></mo>
+<mi>G</mi>
+<mo>∣<!-- ∣ --></mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mn>1</mn>
+<mo stretchy="false">)</mo>
+</mrow>
+<mo>}</mo>
+</mrow>
+<mo>,</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \ker \chi _{\rho }:=\left\lbrace g\in G\mid \chi _{\rho }(g)=\chi _{\rho }(1)\right\rbrace ,}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \ker \chi _{\rho }:=\left\lbrace g\in G\mid \chi _{\rho }(g)=\chi _{\rho }(1)\right\rbrace ,}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f21f6a0273c35cdaeda6a05bd4da502f6b9f8cc2" style="vertical-align: -1.005ex; width:34.991ex; height:3.009ex;"/></span></dd></dl>
+<p>which is precisely the kernel of the representation <span class="texhtml mvar" style="font-style:italic;">ρ</span>. However, the character is <i>not</i> a group homomorphism in general.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Properties">Properties</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=3" title="Edit section: Properties"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>Characters are <a href="/wiki/Class_function" title="Class function">class functions</a>, that is, they each take a constant value on a given <a href="/wiki/Conjugacy_class" title="Conjugacy class">conjugacy class</a>. More precisely, the set of irreducible characters of a given group <span class="texhtml mvar" style="font-style:italic;">G</span> into a field <span class="texhtml mvar" style="font-style:italic;">F</span> form a <a href="/wiki/Basis_(linear_algebra)" title="Basis (linear algebra)">basis</a> of the <span class="texhtml mvar" style="font-style:italic;">F</span>-vector space of all class functions <span class="texhtml"><i>G</i> → <i>F</i></span>.</li>
+<li><a href="/wiki/Representation_theory#Equivariant_maps_and_isomorphisms" title="Representation theory">Isomorphic</a> representations have the same characters. Over a field of <a href="/wiki/Characteristic_(algebra)" title="Characteristic (algebra)">characteristic</a> <span class="texhtml">0</span>, two representations are isomorphic <a href="/wiki/If_and_only_if" title="If and only if">if and only if</a> they have the same character.<sup class="reference" id="cite_ref-1"><a href="#cite_note-1"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup></li>
+<li>If a representation is the <a class="mw-redirect" href="/wiki/Direct_sum_of_representations" title="Direct sum of representations">direct sum</a> of <a href="/wiki/Subrepresentation" title="Subrepresentation">subrepresentations</a>, then the corresponding character is the sum of the characters of those subrepresentations.</li>
+<li>If a character of the finite group <span class="texhtml mvar" style="font-style:italic;">G</span> is restricted to a <a href="/wiki/Subgroup" title="Subgroup">subgroup</a> <span class="texhtml mvar" style="font-style:italic;">H</span>, then the result is also a character of <span class="texhtml mvar" style="font-style:italic;">H</span>.</li>
+<li>Every character value <span class="texhtml"><i>χ</i>(<i>g</i>)</span> is a sum of <span class="texhtml mvar" style="font-style:italic;">n</span> <span class="texhtml mvar" style="font-style:italic;">m</span>-th <a class="mw-redirect" href="/wiki/Roots_of_unity" title="Roots of unity">roots of unity</a>, where <span class="texhtml mvar" style="font-style:italic;">n</span> is the degree (that is, the dimension of the associated vector space) of the representation with character <span class="texhtml mvar" style="font-style:italic;">χ</span> and <span class="texhtml mvar" style="font-style:italic;">m</span> is the <a href="/wiki/Order_(group_theory)" title="Order (group theory)">order</a> of <span class="texhtml mvar" style="font-style:italic;">g</span>. In particular, when <span class="texhtml"><i>F</i> = <b>C</b></span>, every such character value is an <a href="/wiki/Algebraic_integer" title="Algebraic integer">algebraic integer</a>.</li>
+<li>If <span class="texhtml"><i>F</i> = <b>C</b></span> and <span class="texhtml mvar" style="font-style:italic;">χ</span> is irreducible, then  <span class="mwe-math-element"><span class="mwe-math-mathml-display mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle [G:C_{G}(x)]{\frac {\chi (x)}{\chi (1)}}}" display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">[</mo>
+<mi>G</mi>
+<mo>:</mo>
+<msub>
+<mi>C</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>G</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">]</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mrow>
+<mi>χ<!-- χ --></mi>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+<mrow>
+<mi>χ<!-- χ --></mi>
+<mo stretchy="false">(</mo>
+<mn>1</mn>
+<mo stretchy="false">)</mo>
+</mrow>
+</mfrac>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle [G:C_{G}(x)]{\frac {\chi (x)}{\chi (1)}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle [G:C_{G}(x)]{\frac {\chi (x)}{\chi (1)}}}" aria-hidden="true" class="mwe-math-fallback-image-display mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/43d45c086b0cb3b5a9332f5c93ac326a1a775bf0" style="vertical-align: -2.671ex; width:16.813ex; height:6.509ex;"/></span> is an <a href="/wiki/Algebraic_integer" title="Algebraic integer">algebraic integer</a> for all <span class="texhtml mvar" style="font-style:italic;">x</span> in <span class="texhtml mvar" style="font-style:italic;">G</span>.</li>
+<li>If <span class="texhtml mvar" style="font-style:italic;">F</span> is <a class="mw-redirect" href="/wiki/Algebraically_closed" title="Algebraically closed">algebraically closed</a> and <span class="texhtml"><a class="mw-redirect" href="/wiki/Characteristic_of_a_ring" title="Characteristic of a ring">char</a>(<i>F</i>)</span> does not divide the <a class="mw-redirect" href="/wiki/Order_of_a_group" title="Order of a group">order</a> of <span class="texhtml mvar" style="font-style:italic;">G</span>, then the number of irreducible characters of <span class="texhtml mvar" style="font-style:italic;">G</span> is equal to the number of <a href="/wiki/Conjugacy_class" title="Conjugacy class">conjugacy classes</a> of <span class="texhtml mvar" style="font-style:italic;">G</span>. Furthermore, in this case, the degrees of the irreducible characters are divisors of the order of <span class="texhtml mvar" style="font-style:italic;">G</span> (and they even divide <span class="texhtml">[<i>G</i> : <i>Z</i>(<i>G</i>)]</span> if <span class="texhtml"><i>F</i> = <b>C</b></span>).</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Arithmetic_properties">Arithmetic properties</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=4" title="Edit section: Arithmetic properties"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Let ρ and σ be representations of <span class="texhtml mvar" style="font-style:italic;">G</span>. Then the following identities hold:
+</p>
+<ul><li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho \oplus \sigma }=\chi _{\rho }+\chi _{\sigma }}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+<mo>⊕<!-- ⊕ --></mo>
+<mi>σ<!-- σ --></mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo>+</mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>σ<!-- σ --></mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho \oplus \sigma }=\chi _{\rho }+\chi _{\sigma }}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho \oplus \sigma }=\chi _{\rho }+\chi _{\sigma }}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/46df2a45d045b757a2957962028eda9cf730b114" style="vertical-align: -1.005ex; width:15.86ex; height:2.676ex;"/></span></li>
+<li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho \otimes \sigma }=\chi _{\rho }\cdot \chi _{\sigma }}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+<mo>⊗<!-- ⊗ --></mo>
+<mi>σ<!-- σ --></mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo>⋅<!-- ⋅ --></mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>σ<!-- σ --></mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho \otimes \sigma }=\chi _{\rho }\cdot \chi _{\sigma }}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho \otimes \sigma }=\chi _{\rho }\cdot \chi _{\sigma }}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d7de65cb0fe1d215307b08ab298574b1034e31cd" style="vertical-align: -1.005ex; width:14.698ex; height:2.343ex;"/></span></li>
+<li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho ^{*}}={\overline {\chi _{\rho }}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<msup>
+<mi>ρ<!-- ρ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>∗<!-- ∗ --></mo>
+</mrow>
+</msup>
+</mrow>
+</msub>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mover>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo accent="false">¯<!-- ¯ --></mo>
+</mover>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho ^{*}}={\overline {\chi _{\rho }}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho ^{*}}={\overline {\chi _{\rho }}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/21f625844bda3e46eec88ff74a2b80364a9fa31b" style="vertical-align: -1.005ex; width:9.12ex; height:3.009ex;"/></span></li>
+<li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{{\scriptscriptstyle {\rm {{Alt}^{2}}}}\rho }(g)={\tfrac {1}{2}}\!\left[\left(\chi _{\rho }(g)\right)^{2}-\chi _{\rho }(g^{2})\right]}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="false" scriptlevel="2">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="normal">A</mi>
+<mi mathvariant="normal">l</mi>
+<mi mathvariant="normal">t</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="false" scriptlevel="0">
+<mfrac>
+<mn>1</mn>
+<mn>2</mn>
+</mfrac>
+</mstyle>
+</mrow>
+<mspace width="negativethinmathspace"></mspace>
+<mrow>
+<mo>[</mo>
+<mrow>
+<msup>
+<mrow>
+<mo>(</mo>
+<mrow>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+<mo>)</mo>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>−<!-- − --></mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>g</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mrow>
+<mo>]</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{{\scriptscriptstyle {\rm {{Alt}^{2}}}}\rho }(g)={\tfrac {1}{2}}\!\left[\left(\chi _{\rho }(g)\right)^{2}-\chi _{\rho }(g^{2})\right]}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{{\scriptscriptstyle {\rm {{Alt}^{2}}}}\rho }(g)={\tfrac {1}{2}}\!\left[\left(\chi _{\rho }(g)\right)^{2}-\chi _{\rho }(g^{2})\right]}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9910b16063a19f9e275232665129d571dabf0a61" style="vertical-align: -1.838ex; width:32.791ex; height:4.843ex;"/></span></li>
+<li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{{\scriptscriptstyle {\rm {{Sym}^{2}}}}\rho }(g)={\tfrac {1}{2}}\!\left[\left(\chi _{\rho }(g)\right)^{2}+\chi _{\rho }(g^{2})\right]}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="false" scriptlevel="2">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="normal">S</mi>
+<mi mathvariant="normal">y</mi>
+<mi mathvariant="normal">m</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="false" scriptlevel="0">
+<mfrac>
+<mn>1</mn>
+<mn>2</mn>
+</mfrac>
+</mstyle>
+</mrow>
+<mspace width="negativethinmathspace"></mspace>
+<mrow>
+<mo>[</mo>
+<mrow>
+<msup>
+<mrow>
+<mo>(</mo>
+<mrow>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+<mo>)</mo>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo>+</mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>g</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mrow>
+<mo>]</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{{\scriptscriptstyle {\rm {{Sym}^{2}}}}\rho }(g)={\tfrac {1}{2}}\!\left[\left(\chi _{\rho }(g)\right)^{2}+\chi _{\rho }(g^{2})\right]}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{{\scriptscriptstyle {\rm {{Sym}^{2}}}}\rho }(g)={\tfrac {1}{2}}\!\left[\left(\chi _{\rho }(g)\right)^{2}+\chi _{\rho }(g^{2})\right]}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8b25d62167586f95ccca96a97b83ebd283086903" style="vertical-align: -1.838ex; width:33.458ex; height:4.843ex;"/></span></li></ul>
+<p>where <span class="texhtml"><i>ρ</i>⊕<i>σ</i></span> is the <a class="mw-redirect" href="/wiki/Direct_sum_of_representations" title="Direct sum of representations">direct sum</a>, <span class="texhtml"><i>ρ</i>⊗<i>σ</i></span> is the <a href="/wiki/Tensor_product" title="Tensor product">tensor product</a>, <span class="texhtml"><i>ρ</i><sup>∗</sup></span> denotes the <a href="/wiki/Conjugate_transpose" title="Conjugate transpose">conjugate transpose</a> of <span class="texhtml mvar" style="font-style:italic;">ρ</span>, and <span class="texhtml">Alt<sup>2</sup></span> is the <a href="/wiki/Exterior_algebra" title="Exterior algebra">alternating product</a> <span class="texhtml">Alt<sup>2</sup><i>ρ</i> = <i>ρ</i> ∧ <i>ρ</i></span> and <span class="texhtml">Sym<sup>2</sup></span> is the <a class="mw-redirect" href="/wiki/Symmetric_square" title="Symmetric square">symmetric square</a>, which is determined by
+<span class="mwe-math-element"><span class="mwe-math-mathml-display mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \rho \otimes \rho =\left(\rho \wedge \rho \right)\oplus {\textrm {Sym}}^{2}\rho .}" display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ρ<!-- ρ --></mi>
+<mo>⊗<!-- ⊗ --></mo>
+<mi>ρ<!-- ρ --></mi>
+<mo>=</mo>
+<mrow>
+<mo>(</mo>
+<mrow>
+<mi>ρ<!-- ρ --></mi>
+<mo>∧<!-- ∧ --></mo>
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+<mo>)</mo>
+</mrow>
+<mo>⊕<!-- ⊕ --></mo>
+<msup>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mtext>Sym</mtext>
+</mrow>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mi>ρ<!-- ρ --></mi>
+<mo>.</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \rho \otimes \rho =\left(\rho \wedge \rho \right)\oplus {\textrm {Sym}}^{2}\rho .}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \rho \otimes \rho =\left(\rho \wedge \rho \right)\oplus {\textrm {Sym}}^{2}\rho .}" aria-hidden="true" class="mwe-math-fallback-image-display mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/854f2d10c8c2c9fb5568639d7d6b636f654cd434" style="vertical-align: -0.838ex; width:25.338ex; height:3.176ex;"/></span>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Character_tables">Character tables</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=5" title="Edit section: Character tables"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"><div class="hatnote navigation-not-searchable" role="note">Further information: <a href="/wiki/Character_table" title="Character table">Character table</a></div>
+<p>The irreducible <a href="/wiki/Complex_number" title="Complex number">complex</a> characters of a finite group form a <b>character table</b> which encodes much useful information about the group <span class="texhtml mvar" style="font-style:italic;">G</span> in a compact form.  Each row is labelled by an irreducible representation and the entries in the row are the characters of the representation on the respective conjugacy class of <span class="texhtml mvar" style="font-style:italic;">G</span>. The columns are labelled by (representatives of) the conjugacy classes of <span class="texhtml mvar" style="font-style:italic;">G</span>. It is customary to label the first row by the character of the <b><a href="/wiki/Trivial_representation" title="Trivial representation">trivial representation</a></b>, which is the trivial action of <span class="texhtml mvar" style="font-style:italic;">G</span> on a 1-dimensional vector space by <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \rho (g)=1}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ρ<!-- ρ --></mi>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mn>1</mn>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \rho (g)=1}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \rho (g)=1}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6b8c56aed62088c75987e4de332b97e6ec0519da" style="vertical-align: -0.838ex; width:8.388ex; height:2.843ex;"/></span> for all <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle g\in G}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>g</mi>
+<mo>∈<!-- ∈ --></mo>
+<mi>G</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle g\in G}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle g\in G}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b1be73903416a0dd94b8cbc2268ce480810c0e62" style="vertical-align: -0.671ex; width:5.783ex; height:2.509ex;"/></span>. Each entry in the first row is therefore 1. Similarly, it is customary to label the first column by the identity. Therefore, the first column contains the degree of each irreducible character.
+</p><p>Here is the character table of
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle C_{3}=\langle u\mid u^{3}=1\rangle ,}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>C</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msub>
+<mo>=</mo>
+<mo fence="false" stretchy="false">⟨<!-- ⟨ --></mo>
+<mi>u</mi>
+<mo>∣<!-- ∣ --></mo>
+<msup>
+<mi>u</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>3</mn>
+</mrow>
+</msup>
+<mo>=</mo>
+<mn>1</mn>
+<mo fence="false" stretchy="false">⟩<!-- ⟩ --></mo>
+<mo>,</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle C_{3}=\langle u\mid u^{3}=1\rangle ,}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle C_{3}=\langle u\mid u^{3}=1\rangle ,}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a2eb97ca5f9a3480f5c9f1f23827b9ea0adffd10" style="vertical-align: -0.838ex; width:18.182ex; height:3.176ex;"/></span></dd></dl>
+<p>the <a href="/wiki/Cyclic_group" title="Cyclic group">cyclic group</a> with three elements and generator <i>u</i>:
+</p>
+<table class="wikitable">
+<tbody><tr>
+<td> 
+</td>
+<td><span class="texhtml">(1)</span>
+</td>
+<td><span class="texhtml">(<i>u</i>)</span>
+</td>
+<td><span class="texhtml">(<i>u</i><sup>2</sup>)</span>
+</td></tr>
+<tr>
+<td><span class="texhtml"><b>1</b></span>
+</td>
+<td><span class="texhtml">1</span>
+</td>
+<td><span class="texhtml">1</span>
+</td>
+<td><span class="texhtml">1</span>
+</td></tr>
+<tr>
+<td><span class="texhtml"><i>χ</i><sub>1</sub></span>
+</td>
+<td><span class="texhtml">1</span>
+</td>
+<td><span class="texhtml mvar" style="font-style:italic;">ω</span>
+</td>
+<td><span class="texhtml"><i>ω</i><sup>2</sup></span>
+</td></tr>
+<tr>
+<td><span class="texhtml"><i>χ</i><sub>2</sub></span>
+</td>
+<td><span class="texhtml">1</span>
+</td>
+<td><span class="texhtml"><i>ω</i><sup>2</sup></span>
+</td>
+<td><span class="texhtml mvar" style="font-style:italic;">ω</span>
+</td></tr>
+</tbody></table>
+<p>where <span class="texhtml mvar" style="font-style:italic;">ω</span> is a <a class="mw-redirect" href="/wiki/Primitive_root_of_unity" title="Primitive root of unity">primitive</a> third root of unity.
+</p><p>The character table is always square, because the number of irreducible representations is equal to the number of conjugacy classes.<sup class="reference" id="cite_ref-2"><a href="#cite_note-2"><span class="cite-bracket">[</span>2<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Orthogonality_relations">Orthogonality relations</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=6" title="Edit section: Orthogonality relations"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Schur_orthogonality_relations" title="Schur orthogonality relations">Schur orthogonality relations</a></div>
+<p>The space of complex-valued <a href="/wiki/Class_function" title="Class function">class functions</a> of a finite group <span class="texhtml mvar" style="font-style:italic;">G</span> has a natural <a class="mw-redirect" href="/wiki/Inner_product" title="Inner product">inner product</a>:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \left\langle \alpha ,\beta \right\rangle :={\frac {1}{|G|}}\sum _{g\in G}\alpha (g){\overline {\beta (g)}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow>
+<mo>⟨</mo>
+<mrow>
+<mi>α<!-- α --></mi>
+<mo>,</mo>
+<mi>β<!-- β --></mi>
+</mrow>
+<mo>⟩</mo>
+</mrow>
+<mo>:=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mfrac>
+<mn>1</mn>
+<mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mi>G</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mrow>
+</mfrac>
+</mrow>
+<munder>
+<mo>∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>g</mi>
+<mo>∈<!-- ∈ --></mo>
+<mi>G</mi>
+</mrow>
+</munder>
+<mi>α<!-- α --></mi>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mover>
+<mrow>
+<mi>β<!-- β --></mi>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+<mo accent="false">¯<!-- ¯ --></mo>
+</mover>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \left\langle \alpha ,\beta \right\rangle :={\frac {1}{|G|}}\sum _{g\in G}\alpha (g){\overline {\beta (g)}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \left\langle \alpha ,\beta \right\rangle :={\frac {1}{|G|}}\sum _{g\in G}\alpha (g){\overline {\beta (g)}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a0cd1ec0435ebf9338afc16b5a241dd8ee4780e5" style="vertical-align: -3.338ex; width:26.279ex; height:6.676ex;"/></span></dd></dl>
+<p>where <span class="texhtml"><span style="text-decoration:overline;"><i>β</i>(<i>g</i>)</span></span> is the <a href="/wiki/Complex_conjugate" title="Complex conjugate">complex conjugate</a> of <span class="texhtml"><i>β</i>(<i>g</i>)</span>. With respect to this inner product, the irreducible characters form an <a href="/wiki/Orthonormal_basis" title="Orthonormal basis">orthonormal basis</a> for the space of class-functions, and this yields the orthogonality relation for the rows of the character table:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \left\langle \chi _{i},\chi _{j}\right\rangle ={\begin{cases}0&amp;{\mbox{ if }}i\neq j,\\1&amp;{\mbox{ if }}i=j.\end{cases}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow>
+<mo>⟨</mo>
+<mrow>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>j</mi>
+</mrow>
+</msub>
+</mrow>
+<mo>⟩</mo>
+</mrow>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow>
+<mo>{</mo>
+<mtable columnalign="left left" columnspacing="1em" displaystyle="false" rowspacing=".2em">
+<mtr>
+<mtd>
+<mn>0</mn>
+</mtd>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="false" scriptlevel="0">
+<mtext> if </mtext>
+</mstyle>
+</mrow>
+<mi>i</mi>
+<mo>≠<!-- ≠ --></mo>
+<mi>j</mi>
+<mo>,</mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mn>1</mn>
+</mtd>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="false" scriptlevel="0">
+<mtext> if </mtext>
+</mstyle>
+</mrow>
+<mi>i</mi>
+<mo>=</mo>
+<mi>j</mi>
+<mo>.</mo>
+</mtd>
+</mtr>
+</mtable>
+<mo fence="true" stretchy="true" symmetric="true"></mo>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \left\langle \chi _{i},\chi _{j}\right\rangle ={\begin{cases}0&amp;{\mbox{ if }}i\neq j,\\1&amp;{\mbox{ if }}i=j.\end{cases}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \left\langle \chi _{i},\chi _{j}\right\rangle ={\begin{cases}0&amp;{\mbox{ if }}i\neq j,\\1&amp;{\mbox{ if }}i=j.\end{cases}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/741cb09a0d4dfea16328c2f1af9638aa5b13354d" style="vertical-align: -2.505ex; width:24.567ex; height:6.176ex;"/></span></dd></dl>
+<p>For <span class="texhtml"><i>g</i>, <i>h</i></span> in <span class="texhtml mvar" style="font-style:italic;">G</span>, applying the same inner product to the columns of the character table yields:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \sum _{\chi _{i}}\chi _{i}(g){\overline {\chi _{i}(h)}}={\begin{cases}\left|C_{G}(g)\right|,&amp;{\mbox{ if }}g,h{\mbox{ are conjugate }}\\0&amp;{\mbox{ otherwise.}}\end{cases}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<munder>
+<mo>∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+</mrow>
+</munder>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mover>
+<mrow>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>h</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+<mo accent="false">¯<!-- ¯ --></mo>
+</mover>
+</mrow>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow>
+<mo>{</mo>
+<mtable columnalign="left left" columnspacing="1em" displaystyle="false" rowspacing=".2em">
+<mtr>
+<mtd>
+<mrow>
+<mo>|</mo>
+<mrow>
+<msub>
+<mi>C</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>G</mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+<mo>|</mo>
+</mrow>
+<mo>,</mo>
+</mtd>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="false" scriptlevel="0">
+<mtext> if </mtext>
+</mstyle>
+</mrow>
+<mi>g</mi>
+<mo>,</mo>
+<mi>h</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="false" scriptlevel="0">
+<mtext> are conjugate </mtext>
+</mstyle>
+</mrow>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mn>0</mn>
+</mtd>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="false" scriptlevel="0">
+<mtext> otherwise.</mtext>
+</mstyle>
+</mrow>
+</mtd>
+</mtr>
+</mtable>
+<mo fence="true" stretchy="true" symmetric="true"></mo>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \sum _{\chi _{i}}\chi _{i}(g){\overline {\chi _{i}(h)}}={\begin{cases}\left|C_{G}(g)\right|,&amp;{\mbox{ if }}g,h{\mbox{ are conjugate }}\\0&amp;{\mbox{ otherwise.}}\end{cases}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \sum _{\chi _{i}}\chi _{i}(g){\overline {\chi _{i}(h)}}={\begin{cases}\left|C_{G}(g)\right|,&amp;{\mbox{ if }}g,h{\mbox{ are conjugate }}\\0&amp;{\mbox{ otherwise.}}\end{cases}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1c1e80b875db21d809521b6518adbc6d2a868c19" style="vertical-align: -3.338ex; width:51.406ex; height:7.009ex;"/></span></dd></dl>
+<p>where the sum is over all of the irreducible characters <span class="texhtml"><i>χ<sub>i</sub></i></span> of <span class="texhtml mvar" style="font-style:italic;">G</span> and the symbol <span class="texhtml">|<i>C<sub>G</sub></i>(<i>g</i>)|</span> denotes the order of the <a class="mw-redirect" href="/wiki/Centralizer" title="Centralizer">centralizer</a> of <span class="texhtml mvar" style="font-style:italic;">g</span>. Note that since <span class="texhtml mvar" style="font-style:italic;">g</span> and <span class="texhtml mvar" style="font-style:italic;">h</span> are conjugate iff they are in the same column of the character table, this implies that the columns of the character table are orthogonal.
+</p><p>The orthogonality relations can aid many computations including:
+</p>
+<ul><li>Decomposing an unknown character as a linear combination of irreducible characters.</li>
+<li>Constructing the complete character table when only some of the irreducible characters are known.</li>
+<li>Finding the orders of the centralizers of representatives of the conjugacy classes of a group.</li>
+<li>Finding the order of the group.</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Character_table_properties">Character table properties</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=7" title="Edit section: Character table properties"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Certain properties of the group <span class="texhtml mvar" style="font-style:italic;">G</span> can be deduced from its character table:
+</p>
+<ul><li>The order of <span class="texhtml mvar" style="font-style:italic;">G</span> is given by the sum of the squares of the entries of the first column (the degrees of the irreducible characters). More generally, the sum of the squares of the <a href="/wiki/Absolute_value" title="Absolute value">absolute values</a> of the entries in any column gives the order of the centralizer of an element of the corresponding conjugacy class.</li>
+<li>All normal subgroups of <span class="texhtml mvar" style="font-style:italic;">G</span> (and thus whether or not <span class="texhtml mvar" style="font-style:italic;">G</span> is simple) can be recognised from its character table. The <a class="mw-redirect" href="/wiki/Kernel_(group_theory)" title="Kernel (group theory)">kernel</a> of a character <span class="texhtml mvar" style="font-style:italic;">χ</span> is the set of elements <span class="texhtml mvar" style="font-style:italic;">g</span> in <span class="texhtml mvar" style="font-style:italic;">G</span> for which <span class="texhtml"><i>χ</i>(<i>g</i>) = <i>χ</i>(1)</span>; this is a normal subgroup of <span class="texhtml mvar" style="font-style:italic;">G</span>. Each normal subgroup of <span class="texhtml mvar" style="font-style:italic;">G</span> is the intersection of the kernels of some of the irreducible characters of <span class="texhtml mvar" style="font-style:italic;">G</span>.</li>
+<li>The <a href="/wiki/Commutator_subgroup" title="Commutator subgroup">commutator subgroup</a> of <span class="texhtml mvar" style="font-style:italic;">G</span> is the intersection of the kernels of the linear characters of <span class="texhtml mvar" style="font-style:italic;">G</span>.</li>
+<li>If <span class="texhtml mvar" style="font-style:italic;">G</span> is finite, then since the character table is square and has as many rows as conjugacy classes, it follows that <span class="texhtml mvar" style="font-style:italic;">G</span> is <a href="/wiki/Abelian_group" title="Abelian group">abelian</a> iff each conjugacy class is a singleton iff the character table of <span class="texhtml mvar" style="font-style:italic;">G</span> is <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle |G|\!\times \!|G|}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mi>G</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mspace width="negativethinmathspace"></mspace>
+<mo>×<!-- × --></mo>
+<mspace width="negativethinmathspace"></mspace>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+<mi>G</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo stretchy="false">|</mo>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle |G|\!\times \!|G|}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle |G|\!\times \!|G|}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/13ff398654ee7ddbe5282e5e9be6c5225b2fd1c7" style="vertical-align: -0.838ex; width:8.307ex; height:2.843ex;"/></span> iff each irreducible character is linear.</li>
+<li>It follows, using some results of <a href="/wiki/Richard_Brauer" title="Richard Brauer">Richard Brauer</a> from <a href="/wiki/Modular_representation_theory" title="Modular representation theory">modular representation theory</a>, that the prime divisors of the orders of the elements of each conjugacy class of a finite group can be deduced from its character table (an observation of <a href="/wiki/Graham_Higman" title="Graham Higman">Graham Higman</a>).</li></ul>
+<p>The character table does not in general determine the group <a href="/wiki/Up_to" title="Up to">up to</a> <a href="/wiki/Group_isomorphism" title="Group isomorphism">isomorphism</a>: for example, the <a href="/wiki/Quaternion_group" title="Quaternion group">quaternion group</a> <span class="texhtml mvar" style="font-style:italic;">Q</span> and the <a href="/wiki/Dihedral_group" title="Dihedral group">dihedral group</a> of <span class="texhtml">8</span> elements, <span class="texhtml"><i>D</i><sub>4</sub></span>, have the same character table. Brauer asked whether the character table, together with the knowledge of how the powers of elements of its conjugacy classes are distributed, determines a finite group up to isomorphism. In 1964, this was answered in the negative by <a class="mw-redirect" href="/wiki/E._C._Dade" title="E. C. Dade">E. C. Dade</a>.
+</p><p>The linear representations of <span class="texhtml mvar" style="font-style:italic;">G</span> are themselves a group under the <a href="/wiki/Tensor_product" title="Tensor product">tensor product</a>, since the tensor product of 1-dimensional vector spaces is again 1-dimensional. That is, if <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \rho _{1}:G\to V_{1}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>ρ<!-- ρ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>:</mo>
+<mi>G</mi>
+<mo stretchy="false">→<!-- → --></mo>
+<msub>
+<mi>V</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \rho _{1}:G\to V_{1}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \rho _{1}:G\to V_{1}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/19d45a64d166f00a45cd760832efdb22c9035c97" style="vertical-align: -0.838ex; width:12.044ex; height:2.676ex;"/></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \rho _{2}:G\to V_{2}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>ρ<!-- ρ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo>:</mo>
+<mi>G</mi>
+<mo stretchy="false">→<!-- → --></mo>
+<msub>
+<mi>V</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \rho _{2}:G\to V_{2}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \rho _{2}:G\to V_{2}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d6b2d1a9c6049b67576a6d0a616a8a9028db7c64" style="vertical-align: -0.838ex; width:12.044ex; height:2.676ex;"/></span> are linear representations, then <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \rho _{1}\otimes \rho _{2}(g)=(\rho _{1}(g)\otimes \rho _{2}(g))}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>ρ<!-- ρ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>⊗<!-- ⊗ --></mo>
+<msub>
+<mi>ρ<!-- ρ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>ρ<!-- ρ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mo>⊗<!-- ⊗ --></mo>
+<msub>
+<mi>ρ<!-- ρ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \rho _{1}\otimes \rho _{2}(g)=(\rho _{1}(g)\otimes \rho _{2}(g))}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \rho _{1}\otimes \rho _{2}(g)=(\rho _{1}(g)\otimes \rho _{2}(g))}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/895e80082ff1a619b6574e4b6c229d691095aab6" style="vertical-align: -0.838ex; width:28.389ex; height:2.843ex;"/></span> defines a new linear representation. This gives rise to a group of linear characters, called the <a href="/wiki/Character_group" title="Character group">character group</a> under the operation <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle [\chi _{1}*\chi _{2}](g)=\chi _{1}(g)\chi _{2}(g)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo stretchy="false">[</mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>∗<!-- ∗ --></mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo stretchy="false">]</mo>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle [\chi _{1}*\chi _{2}](g)=\chi _{1}(g)\chi _{2}(g)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle [\chi _{1}*\chi _{2}](g)=\chi _{1}(g)\chi _{2}(g)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c28a4ed83bb25996accc5d17cb08895707a89cf2" style="vertical-align: -0.838ex; width:25.4ex; height:2.843ex;"/></span>. This group is connected to <a href="/wiki/Dirichlet_character" title="Dirichlet character">Dirichlet characters</a> and <a href="/wiki/Fourier_analysis" title="Fourier analysis">Fourier analysis</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Induced_characters_and_Frobenius_reciprocity">Induced characters and Frobenius reciprocity</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=8" title="Edit section: Induced characters and Frobenius reciprocity"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"><div class="hatnote navigation-not-searchable" role="note">Main articles: <a href="/wiki/Induced_character" title="Induced character">Induced character</a> and <a href="/wiki/Frobenius_reciprocity" title="Frobenius reciprocity">Frobenius reciprocity</a></div>
+<p>The characters discussed in this section are assumed to be complex-valued. Let <span class="texhtml mvar" style="font-style:italic;">H</span> be a subgroup of the finite group <span class="texhtml mvar" style="font-style:italic;">G</span>. Given a character <span class="texhtml mvar" style="font-style:italic;">χ</span> of <span class="texhtml mvar" style="font-style:italic;">G</span>, let <span class="texhtml"><i>χ<sub>H</sub></i></span> denote its restriction to <span class="texhtml mvar" style="font-style:italic;">H</span>. Let <span class="texhtml mvar" style="font-style:italic;">θ</span> be a character of <span class="texhtml mvar" style="font-style:italic;">H</span>. <a href="/wiki/Ferdinand_Georg_Frobenius" title="Ferdinand Georg Frobenius">Ferdinand Georg Frobenius</a> showed how to construct a character of <span class="texhtml mvar" style="font-style:italic;">G</span> from <span class="texhtml mvar" style="font-style:italic;">θ</span>, using what is now known as <i><a href="/wiki/Frobenius_reciprocity" title="Frobenius reciprocity">Frobenius reciprocity</a></i>. Since the irreducible characters of <span class="texhtml mvar" style="font-style:italic;">G</span> form an orthonormal basis for the space of complex-valued class functions of <span class="texhtml mvar" style="font-style:italic;">G</span>, there is a unique class function <span class="texhtml"><i>θ<sup>G</sup></i></span> of <span class="texhtml mvar" style="font-style:italic;">G</span> with the property that
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \langle \theta ^{G},\chi \rangle _{G}=\langle \theta ,\chi _{H}\rangle _{H}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mo fence="false" stretchy="false">⟨<!-- ⟨ --></mo>
+<msup>
+<mi>θ<!-- θ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>G</mi>
+</mrow>
+</msup>
+<mo>,</mo>
+<mi>χ<!-- χ --></mi>
+<msub>
+<mo fence="false" stretchy="false">⟩<!-- ⟩ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>G</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<mo fence="false" stretchy="false">⟨<!-- ⟨ --></mo>
+<mi>θ<!-- θ --></mi>
+<mo>,</mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>H</mi>
+</mrow>
+</msub>
+<msub>
+<mo fence="false" stretchy="false">⟩<!-- ⟩ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>H</mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \langle \theta ^{G},\chi \rangle _{G}=\langle \theta ,\chi _{H}\rangle _{H}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \langle \theta ^{G},\chi \rangle _{G}=\langle \theta ,\chi _{H}\rangle _{H}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e14b789e6965307eede696f60e2277774cda338c" style="vertical-align: -0.838ex; width:20.307ex; height:3.176ex;"/></span></dd></dl>
+<p>for each irreducible character <span class="texhtml mvar" style="font-style:italic;">χ</span> of <span class="texhtml mvar" style="font-style:italic;">G</span> (the leftmost inner product is for class functions of <span class="texhtml mvar" style="font-style:italic;">G</span> and the rightmost inner product is for class functions of <span class="texhtml mvar" style="font-style:italic;">H</span>). Since the restriction of a character of <span class="texhtml mvar" style="font-style:italic;">G</span> to the subgroup <span class="texhtml mvar" style="font-style:italic;">H</span> is again a character of <span class="texhtml mvar" style="font-style:italic;">H</span>, this definition makes it clear that <span class="texhtml"><i>θ<sup>G</sup></i></span> is a non-negative <a href="/wiki/Integer" title="Integer">integer</a> combination of irreducible characters of <span class="texhtml mvar" style="font-style:italic;">G</span>, so is indeed a character of <span class="texhtml mvar" style="font-style:italic;">G</span>. It is known as <i>the character of</i> <span class="texhtml mvar" style="font-style:italic;">G</span> <i>induced from</i> <span class="texhtml mvar" style="font-style:italic;">θ</span>. The defining formula of Frobenius reciprocity can be extended to general complex-valued class functions.
+</p><p>Given a matrix representation <span class="texhtml mvar" style="font-style:italic;">ρ</span> of <span class="texhtml mvar" style="font-style:italic;">H</span>, Frobenius later gave an explicit way to construct a matrix representation of <span class="texhtml mvar" style="font-style:italic;">G</span>, known as the representation <a href="/wiki/Induced_representation" title="Induced representation">induced from</a> <span class="texhtml mvar" style="font-style:italic;">ρ</span>, and written analogously as <span class="texhtml"><i>ρ<sup>G</sup></i></span>. This led to an alternative description of the induced character <span class="texhtml"><i>θ<sup>G</sup></i></span>. This induced character vanishes on all elements of <span class="texhtml mvar" style="font-style:italic;">G</span> which are not conjugate to any element of <span class="texhtml mvar" style="font-style:italic;">H</span>. Since the induced character is a class function of <span class="texhtml mvar" style="font-style:italic;">G</span>, it is only now necessary to describe its values on elements of <span class="texhtml mvar" style="font-style:italic;">H</span>. If one writes <span class="texhtml mvar" style="font-style:italic;">G</span> as a <a href="/wiki/Disjoint_union" title="Disjoint union">disjoint union</a> of right <a href="/wiki/Coset" title="Coset">cosets</a> of <span class="texhtml mvar" style="font-style:italic;">H</span>, say
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle G=Ht_{1}\cup \ldots \cup Ht_{n},}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>G</mi>
+<mo>=</mo>
+<mi>H</mi>
+<msub>
+<mi>t</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>1</mn>
+</mrow>
+</msub>
+<mo>∪<!-- ∪ --></mo>
+<mo>…<!-- … --></mo>
+<mo>∪<!-- ∪ --></mo>
+<mi>H</mi>
+<msub>
+<mi>t</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>n</mi>
+</mrow>
+</msub>
+<mo>,</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle G=Ht_{1}\cup \ldots \cup Ht_{n},}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle G=Ht_{1}\cup \ldots \cup Ht_{n},}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b67807a9eb18655889807be846b8c35e44c92710" style="vertical-align: -0.671ex; width:21.54ex; height:2.509ex;"/></span></dd></dl>
+<p>then, given an element <span class="texhtml mvar" style="font-style:italic;">h</span> of <span class="texhtml mvar" style="font-style:italic;">H</span>, we have:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \theta ^{G}(h)=\sum _{i\ :\ t_{i}ht_{i}^{-1}\in H}\theta \left(t_{i}ht_{i}^{-1}\right).}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>θ<!-- θ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>G</mi>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mi>h</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<munder>
+<mo>∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+<mtext> </mtext>
+<mo>:</mo>
+<mtext> </mtext>
+<msub>
+<mi>t</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+<mi>h</mi>
+<msubsup>
+<mi>t</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msubsup>
+<mo>∈<!-- ∈ --></mo>
+<mi>H</mi>
+</mrow>
+</munder>
+<mi>θ<!-- θ --></mi>
+<mrow>
+<mo>(</mo>
+<mrow>
+<msub>
+<mi>t</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+</msub>
+<mi>h</mi>
+<msubsup>
+<mi>t</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>i</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msubsup>
+</mrow>
+<mo>)</mo>
+</mrow>
+<mo>.</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \theta ^{G}(h)=\sum _{i\ :\ t_{i}ht_{i}^{-1}\in H}\theta \left(t_{i}ht_{i}^{-1}\right).}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \theta ^{G}(h)=\sum _{i\ :\ t_{i}ht_{i}^{-1}\in H}\theta \left(t_{i}ht_{i}^{-1}\right).}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/32f55d8cb54f309e12e64fbd3684acce966e7b1e" style="vertical-align: -4.171ex; width:29.41ex; height:6.676ex;"/></span></dd></dl>
+<p>Because <span class="texhtml mvar" style="font-style:italic;">θ</span> is a class function of <span class="texhtml mvar" style="font-style:italic;">H</span>, this value does not depend on the particular choice of coset representatives.
+</p><p>This alternative description of the induced character sometimes allows explicit computation from relatively little information about the embedding of <span class="texhtml mvar" style="font-style:italic;">H</span> in <span class="texhtml mvar" style="font-style:italic;">G</span>, and is often useful for calculation of particular character tables. When <span class="texhtml mvar" style="font-style:italic;">θ</span> is the trivial character of <span class="texhtml mvar" style="font-style:italic;">H</span>, the induced character obtained is known as the <b>permutation character</b> of <span class="texhtml mvar" style="font-style:italic;">G</span> (on the cosets of <span class="texhtml mvar" style="font-style:italic;">H</span>).
+</p><p>The general technique of character induction and later refinements found numerous applications in <a href="/wiki/Group_theory#Finite_group_theory" title="Group theory">finite group theory</a> and elsewhere in mathematics, in the hands of mathematicians such as <a href="/wiki/Emil_Artin" title="Emil Artin">Emil Artin</a>, <a href="/wiki/Richard_Brauer" title="Richard Brauer">Richard Brauer</a>, <a href="/wiki/Walter_Feit" title="Walter Feit">Walter Feit</a> and <a href="/wiki/Michio_Suzuki_(mathematician)" title="Michio Suzuki (mathematician)">Michio Suzuki</a>, as well as Frobenius himself.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Mackey_decomposition">Mackey decomposition</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=9" title="Edit section: Mackey decomposition"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The Mackey decomposition was defined and explored by <a class="mw-redirect" href="/wiki/G._Mackey" title="G. Mackey">George Mackey</a> in the context of <a href="/wiki/Lie_group" title="Lie group">Lie groups</a>, but is a powerful tool in the character theory and representation theory of finite groups. Its basic form concerns the way a character (or module) induced from a subgroup <span class="texhtml mvar" style="font-style:italic;">H</span> of a finite group <span class="texhtml mvar" style="font-style:italic;">G</span> behaves on restriction back to a (possibly different) subgroup <span class="texhtml mvar" style="font-style:italic;">K</span> of <span class="texhtml mvar" style="font-style:italic;">G</span>, and makes use of the decomposition of <span class="texhtml mvar" style="font-style:italic;">G</span> into <span class="texhtml">(<i>H</i>, <i>K</i>)</span>-double cosets.
+</p><p>If <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\textstyle G=\bigcup _{t\in T}HtK}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="false" scriptlevel="0">
+<mi>G</mi>
+<mo>=</mo>
+<munder>
+<mo>⋃<!-- ⋃ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>t</mi>
+<mo>∈<!-- ∈ --></mo>
+<mi>T</mi>
+</mrow>
+</munder>
+<mi>H</mi>
+<mi>t</mi>
+<mi>K</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\textstyle G=\bigcup _{t\in T}HtK}</annotation>
+</semantics>
+</math></span><img alt="{\textstyle G=\bigcup _{t\in T}HtK}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/79ff49271da6a9c45c1595a3188861c63035b808" style="vertical-align: -1.005ex; width:15.297ex; height:3.009ex;"/></span> is a disjoint union, and <span class="texhtml mvar" style="font-style:italic;">θ</span> is a complex class function of <span class="texhtml mvar" style="font-style:italic;">H</span>, then Mackey's formula states that
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \left(\theta ^{G}\right)_{K}=\sum _{t\in T}\left(\left[\theta ^{t}\right]_{t^{-1}Ht\cap K}\right)^{K},}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow>
+<mo>(</mo>
+<msup>
+<mi>θ<!-- θ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>G</mi>
+</mrow>
+</msup>
+<mo>)</mo>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>K</mi>
+</mrow>
+</msub>
+<mo>=</mo>
+<munder>
+<mo>∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>t</mi>
+<mo>∈<!-- ∈ --></mo>
+<mi>T</mi>
+</mrow>
+</munder>
+<msup>
+<mrow>
+<mo>(</mo>
+<msub>
+<mrow>
+<mo>[</mo>
+<msup>
+<mi>θ<!-- θ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>t</mi>
+</mrow>
+</msup>
+<mo>]</mo>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<msup>
+<mi>t</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msup>
+<mi>H</mi>
+<mi>t</mi>
+<mo>∩<!-- ∩ --></mo>
+<mi>K</mi>
+</mrow>
+</msub>
+<mo>)</mo>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>K</mi>
+</mrow>
+</msup>
+<mo>,</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \left(\theta ^{G}\right)_{K}=\sum _{t\in T}\left(\left[\theta ^{t}\right]_{t^{-1}Ht\cap K}\right)^{K},}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \left(\theta ^{G}\right)_{K}=\sum _{t\in T}\left(\left[\theta ^{t}\right]_{t^{-1}Ht\cap K}\right)^{K},}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/312b7470e8c28873d072f83bbe60167a2861050b" style="vertical-align: -3.171ex; width:28.909ex; height:5.843ex;"/></span></dd></dl>
+<p>where <span class="texhtml"><i>θ<sup>t</sup></i></span> is the class function of <span class="texhtml"><i>t</i><sup>−1</sup><i>Ht</i></span> defined by <span class="texhtml"><i>θ<sup>t</sup></i>(<i>t</i><sup>−1</sup><i>ht</i>) = <i>θ</i>(<i>h</i>)</span> for all <span class="texhtml mvar" style="font-style:italic;">h</span> in <span class="texhtml mvar" style="font-style:italic;">H</span>. There is a similar formula for the restriction of an induced module to a subgroup, which holds for representations over any <a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">ring</a>, and has applications in a wide variety of algebraic and <a href="/wiki/Topology" title="Topology">topological</a> contexts.
+</p><p>Mackey decomposition, in conjunction with Frobenius reciprocity, yields a well-known and useful formula for the inner product of two class functions <span class="texhtml mvar" style="font-style:italic;">θ</span> and <span class="texhtml mvar" style="font-style:italic;">ψ</span> induced from respective subgroups <span class="texhtml mvar" style="font-style:italic;">H</span> and <span class="texhtml mvar" style="font-style:italic;">K</span>, whose utility lies in the fact that it only depends on how conjugates of <span class="texhtml mvar" style="font-style:italic;">H</span> and <span class="texhtml mvar" style="font-style:italic;">K</span> intersect each other. The formula (with its derivation) is:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{aligned}\left\langle \theta ^{G},\psi ^{G}\right\rangle &amp;=\left\langle \left(\theta ^{G}\right)_{K},\psi \right\rangle \\&amp;=\sum _{t\in T}\left\langle \left(\left[\theta ^{t}\right]_{t^{-1}Ht\cap K}\right)^{K},\psi \right\rangle \\&amp;=\sum _{t\in T}\left\langle \left(\theta ^{t}\right)_{t^{-1}Ht\cap K},\psi _{t^{-1}Ht\cap K}\right\rangle ,\end{aligned}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mtable columnalign="right left right left right left right left right left right left" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true" rowspacing="3pt">
+<mtr>
+<mtd>
+<mrow>
+<mo>⟨</mo>
+<mrow>
+<msup>
+<mi>θ<!-- θ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>G</mi>
+</mrow>
+</msup>
+<mo>,</mo>
+<msup>
+<mi>ψ<!-- ψ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>G</mi>
+</mrow>
+</msup>
+</mrow>
+<mo>⟩</mo>
+</mrow>
+</mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<mrow>
+<mo>⟨</mo>
+<mrow>
+<msub>
+<mrow>
+<mo>(</mo>
+<msup>
+<mi>θ<!-- θ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>G</mi>
+</mrow>
+</msup>
+<mo>)</mo>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>K</mi>
+</mrow>
+</msub>
+<mo>,</mo>
+<mi>ψ<!-- ψ --></mi>
+</mrow>
+<mo>⟩</mo>
+</mrow>
+</mtd>
+</mtr>
+<mtr>
+<mtd></mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<munder>
+<mo>∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>t</mi>
+<mo>∈<!-- ∈ --></mo>
+<mi>T</mi>
+</mrow>
+</munder>
+<mrow>
+<mo>⟨</mo>
+<mrow>
+<msup>
+<mrow>
+<mo>(</mo>
+<msub>
+<mrow>
+<mo>[</mo>
+<msup>
+<mi>θ<!-- θ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>t</mi>
+</mrow>
+</msup>
+<mo>]</mo>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<msup>
+<mi>t</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msup>
+<mi>H</mi>
+<mi>t</mi>
+<mo>∩<!-- ∩ --></mo>
+<mi>K</mi>
+</mrow>
+</msub>
+<mo>)</mo>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>K</mi>
+</mrow>
+</msup>
+<mo>,</mo>
+<mi>ψ<!-- ψ --></mi>
+</mrow>
+<mo>⟩</mo>
+</mrow>
+</mtd>
+</mtr>
+<mtr>
+<mtd></mtd>
+<mtd>
+<mi></mi>
+<mo>=</mo>
+<munder>
+<mo>∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>t</mi>
+<mo>∈<!-- ∈ --></mo>
+<mi>T</mi>
+</mrow>
+</munder>
+<mrow>
+<mo>⟨</mo>
+<mrow>
+<msub>
+<mrow>
+<mo>(</mo>
+<msup>
+<mi>θ<!-- θ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>t</mi>
+</mrow>
+</msup>
+<mo>)</mo>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<msup>
+<mi>t</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msup>
+<mi>H</mi>
+<mi>t</mi>
+<mo>∩<!-- ∩ --></mo>
+<mi>K</mi>
+</mrow>
+</msub>
+<mo>,</mo>
+<msub>
+<mi>ψ<!-- ψ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<msup>
+<mi>t</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mo>−<!-- − --></mo>
+<mn>1</mn>
+</mrow>
+</msup>
+<mi>H</mi>
+<mi>t</mi>
+<mo>∩<!-- ∩ --></mo>
+<mi>K</mi>
+</mrow>
+</msub>
+</mrow>
+<mo>⟩</mo>
+</mrow>
+<mo>,</mo>
+</mtd>
+</mtr>
+</mtable>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}\left\langle \theta ^{G},\psi ^{G}\right\rangle &amp;=\left\langle \left(\theta ^{G}\right)_{K},\psi \right\rangle \\&amp;=\sum _{t\in T}\left\langle \left(\left[\theta ^{t}\right]_{t^{-1}Ht\cap K}\right)^{K},\psi \right\rangle \\&amp;=\sum _{t\in T}\left\langle \left(\theta ^{t}\right)_{t^{-1}Ht\cap K},\psi _{t^{-1}Ht\cap K}\right\rangle ,\end{aligned}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{aligned}\left\langle \theta ^{G},\psi ^{G}\right\rangle &amp;=\left\langle \left(\theta ^{G}\right)_{K},\psi \right\rangle \\&amp;=\sum _{t\in T}\left\langle \left(\left[\theta ^{t}\right]_{t^{-1}Ht\cap K}\right)^{K},\psi \right\rangle \\&amp;=\sum _{t\in T}\left\langle \left(\theta ^{t}\right)_{t^{-1}Ht\cap K},\psi _{t^{-1}Ht\cap K}\right\rangle ,\end{aligned}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/eaedd2b0cf424d55c699ff6f591d6c9bd1b267ac" style="vertical-align: -7.171ex; width:40.905ex; height:15.509ex;"/></span></dd></dl>
+<p>(where <span class="texhtml mvar" style="font-style:italic;">T</span> is a full set of <span class="texhtml">(<i>H</i>, <i>K</i>)</span>-double coset representatives, as before). This formula is often used when <span class="texhtml mvar" style="font-style:italic;">θ</span> and <span class="texhtml mvar" style="font-style:italic;">ψ</span> are linear characters, in which case all the inner products appearing in the right hand sum are either <span class="texhtml">1</span> or <span class="texhtml">0</span>, depending on whether or not the linear characters <span class="texhtml"><i>θ<sup>t</sup></i></span> and <span class="texhtml mvar" style="font-style:italic;">ψ</span> have the same restriction to <span class="texhtml"><i>t</i><sup>−1</sup><i>Ht</i> ∩ <i>K</i></span>. If <span class="texhtml mvar" style="font-style:italic;">θ</span> and <span class="texhtml mvar" style="font-style:italic;">ψ</span> are both trivial characters, then the inner product simplifies to <span class="texhtml">|<i>T</i>|</span>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id='"Twisted"_dimension'><span id=".22Twisted.22_dimension"></span>"Twisted" dimension</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=10" title='Edit section: "Twisted" dimension'><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>One may interpret the character of a representation as the "twisted" <a href="/wiki/Dimension_(vector_space)" title="Dimension (vector space)">dimension of a vector space</a>.<sup class="reference" id="cite_ref-Gannon_3-0"><a href="#cite_note-Gannon-3"><span class="cite-bracket">[</span>3<span class="cite-bracket">]</span></a></sup> Treating the character as a function of the elements of the group <span class="texhtml"><i>χ</i>(<i>g</i>)</span>, its value at the <a href="/wiki/Identity_element" title="Identity element">identity</a> is the dimension of the space, since <span class="texhtml"><i>χ</i>(1) = Tr(<i>ρ</i>(1)) = Tr(<i>I<sub>V</sub></i>) = dim(<i>V</i>)</span>. Accordingly, one can view the other values of the character as "twisted" dimensions.<sup class="noprint Inline-Template" style="margin-left:0.1em; white-space:nowrap;">[<i><a href="/wiki/Wikipedia:Please_clarify" title="Wikipedia:Please clarify"><span title="recursive definition (June 2011)">clarification needed</span></a></i>]</sup>
+</p><p>One can find analogs or generalizations of statements about dimensions to statements about characters or representations. A sophisticated example of this occurs in the theory of <a href="/wiki/Monstrous_moonshine" title="Monstrous moonshine">monstrous moonshine</a>: the <a href="/wiki/J-invariant" title="J-invariant"><span class="texhtml mvar" style="font-style:italic;">j</span>-invariant</a> is the <a class="mw-redirect" href="/wiki/Graded_dimension" title="Graded dimension">graded dimension</a> of an infinite-dimensional graded representation of the <a href="/wiki/Monster_group" title="Monster group">Monster group</a>, and replacing the dimension with the character gives the <a class="mw-redirect" href="/wiki/McKay%E2%80%93Thompson_series" title="McKay–Thompson series">McKay–Thompson series</a> for each element of the Monster group.<sup class="reference" id="cite_ref-Gannon_3-1"><a href="#cite_note-Gannon-3"><span class="cite-bracket">[</span>3<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Characters_of_Lie_groups_and_Lie_algebras">Characters of Lie groups and Lie algebras</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=11" title="Edit section: Characters of Lie groups and Lie algebras"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"><div class="hatnote navigation-not-searchable" role="note">See also: <a href="/wiki/Weyl_character_formula" title="Weyl character formula">Weyl character formula</a> and <a href="/wiki/Algebraic_character" title="Algebraic character">Algebraic character</a></div>
+<p>If <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle G}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>G</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle G}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle G}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f5f3c8921a3b352de45446a6789b104458c9f90b" style="vertical-align: -0.338ex; width:1.827ex; height:2.176ex;"/></span> is a <a href="/wiki/Lie_group" title="Lie group">Lie group</a> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \rho }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ρ<!-- ρ --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \rho }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \rho }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1f7d439671d1289b6a816e6af7a304be40608d64" style="vertical-align: -0.838ex; width:1.202ex; height:2.176ex;"/></span> a finite-dimensional representation of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle G}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>G</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle G}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle G}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f5f3c8921a3b352de45446a6789b104458c9f90b" style="vertical-align: -0.338ex; width:1.827ex; height:2.176ex;"/></span>, the character <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho }}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho }}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho }}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a85b3961ece00c5b8c11b99e15681289526dadb6" style="vertical-align: -1.005ex; width:2.537ex; height:2.343ex;"/></span> of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \rho }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ρ<!-- ρ --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \rho }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \rho }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1f7d439671d1289b6a816e6af7a304be40608d64" style="vertical-align: -0.838ex; width:1.202ex; height:2.176ex;"/></span> is defined precisely as for any group as
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho }(g)=\operatorname {Tr} (\rho (g))}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>Tr</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>ρ<!-- ρ --></mi>
+<mo stretchy="false">(</mo>
+<mi>g</mi>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho }(g)=\operatorname {Tr} (\rho (g))}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho }(g)=\operatorname {Tr} (\rho (g))}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/5871035a66dd718181eca944e0a3c9af6277d2b4" style="vertical-align: -1.005ex; width:17.087ex; height:3.009ex;"/></span>.</dd></dl>
+<p>Meanwhile, if <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {g}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">g</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {g}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {g}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/40a913b1503ed9ec94361b99f7fd59ef60705c28" style="vertical-align: -0.671ex; width:1.172ex; height:2.009ex;"/></span> is a <a href="/wiki/Lie_algebra" title="Lie algebra">Lie algebra</a> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \rho }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ρ<!-- ρ --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \rho }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \rho }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1f7d439671d1289b6a816e6af7a304be40608d64" style="vertical-align: -0.838ex; width:1.202ex; height:2.176ex;"/></span> a finite-dimensional representation of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {g}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">g</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {g}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {g}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/40a913b1503ed9ec94361b99f7fd59ef60705c28" style="vertical-align: -0.671ex; width:1.172ex; height:2.009ex;"/></span>, we can define the character <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho }}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho }}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho }}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a85b3961ece00c5b8c11b99e15681289526dadb6" style="vertical-align: -1.005ex; width:2.537ex; height:2.343ex;"/></span> by
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho }(X)=\operatorname {Tr} (e^{\rho (X)})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>X</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>Tr</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>e</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+<mo stretchy="false">(</mo>
+<mi>X</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho }(X)=\operatorname {Tr} (e^{\rho (X)})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho }(X)=\operatorname {Tr} (e^{\rho (X)})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ecbd51a1dea73a9d4aeb67ef57bbbc26914c5cdd" style="vertical-align: -1.005ex; width:18.669ex; height:3.509ex;"/></span>.</dd></dl>
+<p>The character will satisfy <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho }(\operatorname {Ad} _{g}(X))=\chi _{\rho }(X)}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<msub>
+<mi>Ad</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>g</mi>
+</mrow>
+</msub>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>X</mi>
+<mo stretchy="false">)</mo>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>X</mi>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho }(\operatorname {Ad} _{g}(X))=\chi _{\rho }(X)}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho }(\operatorname {Ad} _{g}(X))=\chi _{\rho }(X)}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/72ccdd0532a94934e83a5b7b8c20695172f440bc" style="vertical-align: -1.005ex; width:21.618ex; height:3.009ex;"/></span> for all <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle g}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>g</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle g}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle g}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d3556280e66fe2c0d0140df20935a6f057381d77" style="vertical-align: -0.671ex; width:1.116ex; height:2.009ex;"/></span> in the associated Lie group <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle G}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>G</mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle G}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle G}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f5f3c8921a3b352de45446a6789b104458c9f90b" style="vertical-align: -0.338ex; width:1.827ex; height:2.176ex;"/></span> and all <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle X\in {\mathfrak {g}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>X</mi>
+<mo>∈<!-- ∈ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">g</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle X\in {\mathfrak {g}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle X\in {\mathfrak {g}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/db578a65a37022dc84959dfc2a19f694ef4b46a7" style="vertical-align: -0.671ex; width:5.992ex; height:2.509ex;"/></span>. If we have a Lie group representation and an associated Lie algebra representation, the character <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho }}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho }}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho }}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a85b3961ece00c5b8c11b99e15681289526dadb6" style="vertical-align: -1.005ex; width:2.537ex; height:2.343ex;"/></span> of the Lie algebra representation is related to the character <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \mathrm {X} _{\rho }}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="normal">X</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \mathrm {X} _{\rho }}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \mathrm {X} _{\rho }}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8bf543418394e145e4cff1e5947b9affb44a046f" style="vertical-align: -1.005ex; width:2.825ex; height:2.843ex;"/></span> of the group representation by the formula
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho }(X)=\mathrm {X} _{\rho }(e^{X})}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>X</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<msub>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="normal">X</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<msup>
+<mi>e</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>X</mi>
+</mrow>
+</msup>
+<mo stretchy="false">)</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho }(X)=\mathrm {X} _{\rho }(e^{X})}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho }(X)=\mathrm {X} _{\rho }(e^{X})}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4064367e772ddc5b9e2314205212891246f63e0b" style="vertical-align: -1.005ex; width:16.775ex; height:3.343ex;"/></span>.</dd></dl>
+<p>Suppose now that <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {g}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">g</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {g}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {g}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/40a913b1503ed9ec94361b99f7fd59ef60705c28" style="vertical-align: -0.671ex; width:1.172ex; height:2.009ex;"/></span> is a complex <a href="/wiki/Semisimple_Lie_algebra" title="Semisimple Lie algebra">semisimple Lie algebra</a> with Cartan subalgebra <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {h}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">h</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {h}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {h}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b8f80a9d9b4cf9b0b6f562d5eff0f290da478ebe" style="vertical-align: -0.671ex; width:1.211ex; height:2.509ex;"/></span>. The value of the character <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho }}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho }}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho }}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a85b3961ece00c5b8c11b99e15681289526dadb6" style="vertical-align: -1.005ex; width:2.537ex; height:2.343ex;"/></span> of an irreducible representation <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \rho }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ρ<!-- ρ --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \rho }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \rho }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1f7d439671d1289b6a816e6af7a304be40608d64" style="vertical-align: -0.838ex; width:1.202ex; height:2.176ex;"/></span> of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {g}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">g</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {g}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {g}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/40a913b1503ed9ec94361b99f7fd59ef60705c28" style="vertical-align: -0.671ex; width:1.172ex; height:2.009ex;"/></span> is determined by its values on <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {h}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">h</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {h}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {h}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b8f80a9d9b4cf9b0b6f562d5eff0f290da478ebe" style="vertical-align: -0.671ex; width:1.211ex; height:2.509ex;"/></span>. The restriction of the character to <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {h}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">h</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {h}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {h}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b8f80a9d9b4cf9b0b6f562d5eff0f290da478ebe" style="vertical-align: -0.671ex; width:1.211ex; height:2.509ex;"/></span> can easily be computed in terms of the <a class="mw-redirect" href="/wiki/Weight_space_(representation_theory)" title="Weight space (representation theory)">weight spaces</a>, as follows:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \chi _{\rho }(H)=\sum _{\lambda }m_{\lambda }e^{\lambda (H)},\quad H\in {\mathfrak {h}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>χ<!-- χ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>ρ<!-- ρ --></mi>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>H</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<munder>
+<mo>∑<!-- ∑ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>λ<!-- λ --></mi>
+</mrow>
+</munder>
+<msub>
+<mi>m</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>λ<!-- λ --></mi>
+</mrow>
+</msub>
+<msup>
+<mi>e</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>λ<!-- λ --></mi>
+<mo stretchy="false">(</mo>
+<mi>H</mi>
+<mo stretchy="false">)</mo>
+</mrow>
+</msup>
+<mo>,</mo>
+<mspace width="1em"></mspace>
+<mi>H</mi>
+<mo>∈<!-- ∈ --></mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">h</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \chi _{\rho }(H)=\sum _{\lambda }m_{\lambda }e^{\lambda (H)},\quad H\in {\mathfrak {h}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \chi _{\rho }(H)=\sum _{\lambda }m_{\lambda }e^{\lambda (H)},\quad H\in {\mathfrak {h}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7833d80467b0a6e46b4fdda08e0461236beefce9" style="vertical-align: -3.005ex; width:30.966ex; height:5.509ex;"/></span>,</dd></dl>
+<p>where the sum is over all <a href="/wiki/Weight_(representation_theory)" title="Weight (representation theory)">weights</a> <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \lambda }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>λ<!-- λ --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \lambda }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \lambda }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b43d0ea3c9c025af1be9128e62a18fa74bedda2a" style="vertical-align: -0.338ex; width:1.355ex; height:2.176ex;"/></span> of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \rho }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>ρ<!-- ρ --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \rho }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \rho }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1f7d439671d1289b6a816e6af7a304be40608d64" style="vertical-align: -0.838ex; width:1.202ex; height:2.176ex;"/></span> and where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle m_{\lambda }}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msub>
+<mi>m</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>λ<!-- λ --></mi>
+</mrow>
+</msub>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle m_{\lambda }}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle m_{\lambda }}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d094220f3fa459abfc2d84a2e23d9a01e5519a8b" style="vertical-align: -0.671ex; width:3.231ex; height:2.009ex;"/></span> is the multiplicity of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle \lambda }" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>λ<!-- λ --></mi>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle \lambda }</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle \lambda }" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b43d0ea3c9c025af1be9128e62a18fa74bedda2a" style="vertical-align: -0.338ex; width:1.355ex; height:2.176ex;"/></span>.<sup class="reference" id="cite_ref-4"><a href="#cite_note-4"><span class="cite-bracket">[</span>4<span class="cite-bracket">]</span></a></sup>
+</p><p>The (restriction to <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\mathfrak {h}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="fraktur">h</mi>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\mathfrak {h}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\mathfrak {h}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b8f80a9d9b4cf9b0b6f562d5eff0f290da478ebe" style="vertical-align: -0.671ex; width:1.211ex; height:2.509ex;"/></span> of the) character can be computed more explicitly by the Weyl character formula.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=12" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="/wiki/Irreducible_representation#Applications_in_theoretical_physics_and_chemistry" title="Irreducible representation">Irreducible representation § Applications in theoretical physics and chemistry</a></li>
+<li><a href="/wiki/Association_scheme" title="Association scheme">Association schemes</a>, a combinatorial generalization of group-character theory.</li>
+<li><a href="/wiki/Clifford_theory" title="Clifford theory">Clifford theory</a>, introduced by <a class="mw-redirect" href="/wiki/A._H._Clifford" title="A. H. Clifford">A. H. Clifford</a> in 1937, yields information about the restriction of a complex irreducible character of a finite group <span class="texhtml mvar" style="font-style:italic;">G</span> to a normal subgroup <span class="texhtml mvar" style="font-style:italic;">N</span>.</li>
+<li><a href="/wiki/Frobenius_formula" title="Frobenius formula">Frobenius formula</a></li>
+<li><a href="/wiki/Real_element" title="Real element">Real element</a>, a group element <i>g</i> such that <i>χ</i>(<i>g</i>) is a real number for all characters <i>χ</i></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="References">References</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=13" title="Edit section: References"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1239543626">.mw-parser-output .reflist{margin-bottom:0.5em;list-style-type:decimal}@media screen{.mw-parser-output .reflist{font-size:90%}}.mw-parser-output .reflist .references{font-size:100%;margin-bottom:0;list-style-type:inherit}.mw-parser-output .reflist-columns-2{column-width:30em}.mw-parser-output .reflist-columns-3{column-width:25em}.mw-parser-output .reflist-columns{margin-top:0.3em}.mw-parser-output .reflist-columns ol{margin-top:0}.mw-parser-output .reflist-columns li{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .reflist-upper-alpha{list-style-type:upper-alpha}.mw-parser-output .reflist-upper-roman{list-style-type:upper-roman}.mw-parser-output .reflist-lower-alpha{list-style-type:lower-alpha}.mw-parser-output .reflist-lower-greek{list-style-type:lower-greek}.mw-parser-output .reflist-lower-roman{list-style-type:lower-roman}</style><div class="reflist">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text">Nicolas Bourbaki, <i>Algèbre</i>, Springer-Verlag, 2012, Chap. 8, p392</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text">Serre, §2.5</span>
+</li>
+<li id="cite_note-Gannon-3"><span class="mw-cite-backlink">^ <a href="#cite_ref-Gannon_3-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Gannon_3-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text">(<a href="#CITEREFGannon2006">Gannon 2006</a>)</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4">^</a></b></span> <span class="reference-text"><a href="#CITEREFHall2015">Hall 2015</a> Proposition 10.12</span>
+</li>
+</ol></div></div>
+<style data-mw-deduplicate="TemplateStyles:r1239549316">.mw-parser-output .refbegin{margin-bottom:0.5em}.mw-parser-output .refbegin-hanging-indents>ul{margin-left:0}.mw-parser-output .refbegin-hanging-indents>ul>li{margin-left:0;padding-left:3.2em;text-indent:-3.2em}.mw-parser-output .refbegin-hanging-indents ul,.mw-parser-output .refbegin-hanging-indents ul li{list-style:none}@media(max-width:720px){.mw-parser-output .refbegin-hanging-indents>ul>li{padding-left:1.6em;text-indent:-1.6em}}.mw-parser-output .refbegin-columns{margin-top:0.3em}.mw-parser-output .refbegin-columns ul{margin-top:0}.mw-parser-output .refbegin-columns li{page-break-inside:avoid;break-inside:avoid-column}@media screen{.mw-parser-output .refbegin{font-size:90%}}</style><div class="refbegin" style="">
+<ul><li>Lecture 2 of <style data-mw-deduplicate="TemplateStyles:r1238218222">.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#d33)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#d33)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite class="citation book cs1" id="CITEREFFultonHarris1991"><a href="/wiki/William_Fulton_(mathematician)" title="William Fulton (mathematician)">Fulton, William</a>; <a href="/wiki/Joe_Harris_(mathematician)" title="Joe Harris (mathematician)">Harris, Joe</a> (1991). <i>Representation theory. A first course</i>. <a href="/wiki/Graduate_Texts_in_Mathematics" title="Graduate Texts in Mathematics">Graduate Texts in Mathematics</a>, Readings in Mathematics. Vol. 129. New York: Springer-Verlag. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2F978-1-4612-0979-9" rel="nofollow">10.1007/978-1-4612-0979-9</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-387-97495-8" title="Special:BookSources/978-0-387-97495-8"><bdi>978-0-387-97495-8</bdi></a>. <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=1153249" rel="nofollow">1153249</a>. <a class="mw-redirect" href="/wiki/OCLC_(identifier)" title="OCLC (identifier)">OCLC</a> <a class="external text" href="https://search.worldcat.org/oclc/246650103" rel="nofollow">246650103</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Representation+theory.+A+first+course&amp;rft.place=New+York&amp;rft.series=Graduate+Texts+in+Mathematics%2C+Readings+in+Mathematics&amp;rft.pub=Springer-Verlag&amp;rft.date=1991&amp;rft_id=info%3Aoclcnum%2F246650103&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D1153249%23id-name%3DMR&amp;rft_id=info%3Adoi%2F10.1007%2F978-1-4612-0979-9&amp;rft.isbn=978-0-387-97495-8&amp;rft.aulast=Fulton&amp;rft.aufirst=William&amp;rft.au=Harris%2C+Joe&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACharacter+theory"></span> <a class="external text" href="http://isites.harvard.edu/fs/docs/icb.topic1381051.files/fulton-harris-representation-theory.pdf" rel="nofollow">online</a></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFGannon2006">Gannon, Terry (2006). <i>Moonshine beyond the Monster: The Bridge Connecting Algebra, Modular Forms and Physics</i>. Cambridge University Press. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-521-83531-2" title="Special:BookSources/978-0-521-83531-2"><bdi>978-0-521-83531-2</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Moonshine+beyond+the+Monster%3A+The+Bridge+Connecting+Algebra%2C+Modular+Forms+and+Physics&amp;rft.pub=Cambridge+University+Press&amp;rft.date=2006&amp;rft.isbn=978-0-521-83531-2&amp;rft.aulast=Gannon&amp;rft.aufirst=Terry&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACharacter+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation cs2" id="CITEREFHall2015">Hall, Brian C. (2015), <i>Lie groups, Lie algebras, and representations: An elementary introduction</i>, Graduate Texts in Mathematics, vol. 222 (2nd ed.), Springer, <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-3319134666" title="Special:BookSources/978-3319134666"><bdi>978-3319134666</bdi></a></cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Lie+groups%2C+Lie+algebras%2C+and+representations%3A+An+elementary+introduction&amp;rft.series=Graduate+Texts+in+Mathematics&amp;rft.edition=2nd&amp;rft.pub=Springer&amp;rft.date=2015&amp;rft.isbn=978-3319134666&amp;rft.aulast=Hall&amp;rft.aufirst=Brian+C.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACharacter+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFIsaacs1994">Isaacs, I.M. (1994). <i>Character Theory of Finite Groups</i> (Corrected reprint of the 1976 original, published by Academic Press. ed.). Dover. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-486-68014-9" title="Special:BookSources/978-0-486-68014-9"><bdi>978-0-486-68014-9</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Character+Theory+of+Finite+Groups&amp;rft.edition=Corrected+reprint+of+the+1976+original%2C+published+by+Academic+Press.&amp;rft.pub=Dover&amp;rft.date=1994&amp;rft.isbn=978-0-486-68014-9&amp;rft.aulast=Isaacs&amp;rft.aufirst=I.M.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACharacter+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFJamesLiebeck2001">James, Gordon; <a href="/wiki/Martin_Liebeck" title="Martin Liebeck">Liebeck, Martin</a> (2001). <i>Representations and Characters of Groups (2nd ed.)</i>. Cambridge University Press. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-521-00392-6" title="Special:BookSources/978-0-521-00392-6"><bdi>978-0-521-00392-6</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Representations+and+Characters+of+Groups+%282nd+ed.%29&amp;rft.pub=Cambridge+University+Press&amp;rft.date=2001&amp;rft.isbn=978-0-521-00392-6&amp;rft.aulast=James&amp;rft.aufirst=Gordon&amp;rft.au=Liebeck%2C+Martin&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACharacter+theory"></span></link></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"><cite class="citation book cs1" id="CITEREFSerre1977"><a class="mw-redirect" href="/wiki/J.-P._Serre" title="J.-P. Serre">Serre, Jean-Pierre</a> (1977). <span class="id-lock-registration" title="Free registration required"><a class="external text" href="https://archive.org/details/linearrepresenta1977serr" rel="nofollow"><i>Linear Representations of Finite Groups</i></a></span>. Graduate Texts in Mathematics. Vol. 42. Translated from the second French edition by Leonard L. Scott. New York-Heidelberg: Springer-Verlag. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2F978-1-4684-9458-7" rel="nofollow">10.1007/978-1-4684-9458-7</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-387-90190-9" title="Special:BookSources/978-0-387-90190-9"><bdi>978-0-387-90190-9</bdi></a>. <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=0450380" rel="nofollow">0450380</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Linear+Representations+of+Finite+Groups&amp;rft.place=New+York-Heidelberg&amp;rft.series=Graduate+Texts+in+Mathematics&amp;rft.pub=Springer-Verlag&amp;rft.date=1977&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D0450380%23id-name%3DMR&amp;rft_id=info%3Adoi%2F10.1007%2F978-1-4684-9458-7&amp;rft.isbn=978-0-387-90190-9&amp;rft.aulast=Serre&amp;rft.aufirst=Jean-Pierre&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Flinearrepresenta1977serr&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ACharacter+theory"></span></link></li></ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="External_links">External links</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Character_theory&amp;action=edit&amp;section=14" title="Edit section: External links"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://planetmath.org/Character" rel="nofollow">Character</a> at <a href="/wiki/PlanetMath" title="PlanetMath">PlanetMath</a>.</li></ul>
+<div class="navbox-styles"><style data-mw-deduplicate="TemplateStyles:r1129693374">.mw-parser-output .hlist dl,.mw-parser-output .hlist ol,.mw-parser-output .hlist ul{margin:0;padding:0}.mw-parser-output .hlist dd,.mw-parser-output .hlist dt,.mw-parser-output .hlist li{margin:0;display:inline}.mw-parser-output .hlist.inline,.mw-parser-output .hlist.inline dl,.mw-parser-output .hlist.inline ol,.mw-parser-output .hlist.inline ul,.mw-parser-output .hlist dl dl,.mw-parser-output .hlist dl ol,.mw-parser-output .hlist dl ul,.mw-parser-output .hlist ol dl,.mw-parser-output .hlist ol ol,.mw-parser-output .hlist ol ul,.mw-parser-output .hlist ul dl,.mw-parser-output .hlist ul ol,.mw-parser-output .hlist ul ul{display:inline}.mw-parser-output .hlist .mw-empty-li{display:none}.mw-parser-output .hlist dt::after{content:": "}.mw-parser-output .hlist dd::after,.mw-parser-output .hlist li::after{content:" · ";font-weight:bold}.mw-parser-output .hlist dd:last-child::after,.mw-parser-output .hlist dt:last-child::after,.mw-parser-output .hlist li:last-child::after{content:none}.mw-parser-output .hlist dd dd:first-child::before,.mw-parser-output .hlist dd dt:first-child::before,.mw-parser-output .hlist dd li:first-child::before,.mw-parser-output .hlist dt dd:first-child::before,.mw-parser-output .hlist dt dt:first-child::before,.mw-parser-output .hlist dt li:first-child::before,.mw-parser-output .hlist li dd:first-child::before,.mw-parser-output .hlist li dt:first-child::before,.mw-parser-output .hlist li li:first-child::before{content:" (";font-weight:normal}.mw-parser-output .hlist dd dd:last-child::after,.mw-parser-output .hlist dd dt:last-child::after,.mw-parser-output .hlist dd li:last-child::after,.mw-parser-output .hlist dt dd:last-child::after,.mw-parser-output .hlist dt dt:last-child::after,.mw-parser-output .hlist dt li:last-child::after,.mw-parser-output .hlist li dd:last-child::after,.mw-parser-output .hlist li dt:last-child::after,.mw-parser-output .hlist li li:last-child::after{content:")";font-weight:normal}.mw-parser-output .hlist ol{counter-reset:listitem}.mw-parser-output .hlist ol>li{counter-increment:listitem}.mw-parser-output .hlist ol>li::before{content:" "counter(listitem)"\a0 "}.mw-parser-output .hlist dd ol>li:first-child::before,.mw-parser-output .hlist dt ol>li:first-child::before,.mw-parser-output .hlist li ol>li:first-child::before{content:" ("counter(listitem)"\a0 "}</style><style data-mw-deduplicate="TemplateStyles:r1236075235">.mw-parser-output .navbox{box-sizing:border-box;border:1px solid #a2a9b1;width:100%;clear:both;font-size:88%;text-align:center;padding:1px;margin:1em auto 0}.mw-parser-output .navbox .navbox{margin-top:0}.mw-parser-output .navbox+.navbox,.mw-parser-output .navbox+.navbox-styles+.navbox{margin-top:-1px}.mw-parser-output .navbox-inner,.mw-parser-output .navbox-subgroup{width:100%}.mw-parser-output .navbox-group,.mw-parser-output .navbox-title,.mw-parser-output .navbox-abovebelow{padding:0.25em 1em;line-height:1.5em;text-align:center}.mw-parser-output .navbox-group{white-space:nowrap;text-align:right}.mw-parser-output .navbox,.mw-parser-output .navbox-subgroup{background-color:#fdfdfd}.mw-parser-output .navbox-list{line-height:1.5em;border-color:#fdfdfd}.mw-parser-output .navbox-list-with-group{text-align:left;border-left-width:2px;border-left-style:solid}.mw-parser-output tr+tr>.navbox-abovebelow,.mw-parser-output tr+tr>.navbox-group,.mw-parser-output tr+tr>.navbox-image,.mw-parser-output tr+tr>.navbox-list{border-top:2px solid #fdfdfd}.mw-parser-output .navbox-title{background-color:#ccf}.mw-parser-output .navbox-abovebelow,.mw-parser-output .navbox-group,.mw-parser-output .navbox-subgroup .navbox-title{background-color:#ddf}.mw-parser-output .navbox-subgroup .navbox-group,.mw-parser-output .navbox-subgroup .navbox-abovebelow{background-color:#e6e6ff}.mw-parser-output .navbox-even{background-color:#f7f7f7}.mw-parser-output .navbox-odd{background-color:transparent}.mw-parser-output .navbox .hlist td dl,.mw-parser-output .navbox .hlist td ol,.mw-parser-output .navbox .hlist td ul,.mw-parser-output .navbox td.hlist dl,.mw-parser-output .navbox td.hlist ol,.mw-parser-output .navbox td.hlist ul{padding:0.125em 0}.mw-parser-output .navbox .navbar{display:block;font-size:100%}.mw-parser-output .navbox-title .navbar{float:left;text-align:left;margin-right:0.5em}body.skin--responsive .mw-parser-output .navbox-image img{max-width:none!important}@media print{body.ns-0 .mw-parser-output .navbox{display:none!important}}</style></div><div aria-labelledby="Authority_control_databases_frameless&amp;#124;text-top&amp;#124;10px&amp;#124;alt=Edit_this_at_Wikidata&amp;#124;link=https&amp;#58;//www.wikidata.org/wiki/Q600043#identifiers&amp;#124;class=noprint&amp;#124;Edit_this_at_Wikidata939" class="navbox authority-control" role="navigation" style="padding:3px"><table class="nowraplinks hlist mw-collapsible autocollapse navbox-inner" style="border-spacing:0;background:transparent;color:inherit"><tbody><tr><th class="navbox-title" colspan="2" scope="col"><div id="Authority_control_databases_frameless&amp;#124;text-top&amp;#124;10px&amp;#124;alt=Edit_this_at_Wikidata&amp;#124;link=https&amp;#58;//www.wikidata.org/wiki/Q600043#identifiers&amp;#124;class=noprint&amp;#124;Edit_this_at_Wikidata939" style="font-size:114%;margin:0 4em"><a href="/wiki/Help:Authority_control" title="Help:Authority control">Authority control databases</a> <span class="mw-valign-text-top noprint" typeof="mw:File/Frameless"><a href="https://www.wikidata.org/wiki/Q600043#identifiers" title="Edit this at Wikidata"><img alt="Edit this at Wikidata" class="mw-file-element" data-file-height="20" data-file-width="20" decoding="async" height="10" src="//upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/10px-OOjs_UI_icon_edit-ltr-progressive.svg.png" srcset="//upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/15px-OOjs_UI_icon_edit-ltr-progressive.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/8/8a/OOjs_UI_icon_edit-ltr-progressive.svg/20px-OOjs_UI_icon_edit-ltr-progressive.svg.png 2x" width="10"/></a></span></div></th></tr><tr><th class="navbox-group" scope="row" style="width:1%">International</th><td class="navbox-list-with-group navbox-list navbox-odd" style="width:100%;padding:0"><div style="padding:0 0.25em"><ul><li><span class="uid"><a class="external text" href="http://id.worldcat.org/fast/852300/" rel="nofollow">FAST</a></span></li></ul></div></td></tr><tr><th class="navbox-group" scope="row" style="width:1%">National</th><td class="navbox-list-with-group navbox-list navbox-even" style="width:100%;padding:0"><div style="padding:0 0.25em"><ul><li><span class="uid"><a class="external text" href="https://d-nb.info/gnd/4158438-7" rel="nofollow">Germany</a></span></li><li><span class="uid"><a class="external text" href="https://id.loc.gov/authorities/sh85022626" rel="nofollow">United States</a></span></li><li><span class="uid"><a class="external text" href="https://catalogue.bnf.fr/ark:/12148/cb11982528r" rel="nofollow">France</a></span></li><li><span class="uid"><a class="external text" href="https://data.bnf.fr/ark:/12148/cb11982528r" rel="nofollow">BnF data</a></span></li><li><span class="uid"><a class="external text" href="https://www.nli.org.il/en/authorities/987007284794105171" rel="nofollow">Israel</a></span></li></ul></div></td></tr><tr><th class="navbox-group" scope="row" style="width:1%">Other</th><td class="navbox-list-with-group navbox-list navbox-odd" style="width:100%;padding:0"><div style="padding:0 0.25em"><ul><li><span class="uid"><a class="external text" href="https://www.idref.fr/027877663" rel="nofollow">IdRef</a></span></li></ul></div></td></tr></tbody></table></div>
+<!-- 
+NewPP limit report
+Parsed by mw‐web.eqiad.main‐6df8dbf59d‐ds8sb
+Cached time: 20250331030309
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.453 seconds
+Real time usage: 0.668 seconds
+Preprocessor visited node count: 4865/1000000
+Post‐expand include size: 41608/2097152 bytes
+Template argument size: 5696/2097152 bytes
+Highest expansion depth: 12/100
+Expensive parser function count: 9/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 25287/5000000 bytes
+Lua time usage: 0.239/10.000 seconds
+Lua memory usage: 7166087/52428800 bytes
+Number of Wikibase entities loaded: 1/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  484.428      1 -total
+ 17.58%   85.184      5 Template:Cite_book
+ 17.52%   84.865      1 Template:Short_description
+ 16.36%   79.246      1 Template:Authority_control
+ 15.14%   73.357      1 Template:Fulton-Harris
+ 10.83%   52.477     59 Template:Math
+ 10.49%   50.795      2 Template:Pagetype
+  9.54%   46.219      1 Template:Reflist
+  7.12%   34.507      1 Template:Clarify
+  6.26%   30.337      1 Template:Harv
+-->
+<!-- Saved in parser cache with key enwiki:pcache:691741:|#|:idhash:canonical and timestamp 20250331030309 and revision id 1263363503. Rendering was triggered because: page-view
+ -->
+</link></link></link></link></meta></div>

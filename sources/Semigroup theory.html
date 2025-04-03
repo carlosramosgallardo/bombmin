@@ -1,0 +1,804 @@
+<div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none">Algebraic structure consisting of a set with an associative binary operation</div>
+<figure class="mw-halign-right" typeof="mw:File/Thumb"><a class="mw-file-description" href="/wiki/File:Magma_to_group4.svg"><img class="mw-file-element" data-file-height="371" data-file-width="410" decoding="async" height="271" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Magma_to_group4.svg/330px-Magma_to_group4.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Magma_to_group4.svg/450px-Magma_to_group4.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Magma_to_group4.svg/600px-Magma_to_group4.svg.png 2x" width="300"/></a><figcaption>Algebraic structures between <a href="/wiki/Magma_(algebra)" title="Magma (algebra)">magmas</a> and <a href="/wiki/Group_(mathematics)" title="Group (mathematics)">groups</a>: A <i>semigroup</i> is a <a href="/wiki/Magma_(algebra)" title="Magma (algebra)">magma</a> with <a href="/wiki/Associative_property" title="Associative property">associativity</a>. A <a href="/wiki/Monoid" title="Monoid">monoid</a> is a <i>semigroup</i> with an <a href="/wiki/Identity_element" title="Identity element">identity element</a>.</figcaption></figure>
+<p>In mathematics, a <b>semigroup</b> is an <a href="/wiki/Algebraic_structure" title="Algebraic structure">algebraic structure</a> consisting of a <a href="/wiki/Set_(mathematics)" title="Set (mathematics)">set</a> together with an <a class="mw-redirect" href="/wiki/Associative" title="Associative">associative</a> internal <a href="/wiki/Binary_operation" title="Binary operation">binary operation</a> on it.
+</p><p>The binary operation of a semigroup is most often denoted multiplicatively (just notation, not necessarily the elementary arithmetic <a href="/wiki/Multiplication" title="Multiplication">multiplication</a>): <span class="nowrap"><i>x</i> ⋅ <i>y</i></span>, or simply <i>xy</i>, denotes the result of applying the semigroup operation to the <a href="/wiki/Ordered_pair" title="Ordered pair">ordered pair</a> <span class="nowrap">(<i>x</i>, <i>y</i>)</span>. Associativity is formally expressed as that <span class="nowrap">(<i>x</i> ⋅ <i>y</i>) ⋅ <i>z</i> = <i>x</i> ⋅ (<i>y</i> ⋅ <i>z</i>)</span> for all <i>x</i>, <i>y</i> and <i>z</i> in the semigroup.
+</p><p>Semigroups may be considered a special case of <a href="/wiki/Magma_(algebra)" title="Magma (algebra)">magmas</a>, where the operation is associative, or as a generalization of <a href="/wiki/Group_(mathematics)" title="Group (mathematics)">groups</a>, without requiring the existence of an identity element or inverses.<sup class="reference" id="cite_ref-1"><a href="#cite_note-1"><span class="cite-bracket">[</span>a<span class="cite-bracket">]</span></a></sup> As in the case of groups or magmas, the semigroup operation need not be <a class="mw-redirect" href="/wiki/Commutativity" title="Commutativity">commutative</a>, so <span class="nowrap"><i>x</i> ⋅ <i>y</i></span> is not necessarily equal to <span class="nowrap"><i>y</i> ⋅ <i>x</i></span>; a well-known example of an operation that is associative but non-commutative is <a href="/wiki/Matrix_multiplication" title="Matrix multiplication">matrix multiplication</a>. If the semigroup operation is commutative, then the semigroup is called a <i>commutative semigroup</i> or (less often than in the <a href="/wiki/Abelian_group" title="Abelian group">analogous case of groups</a>) it may be called an <i>abelian semigroup</i>.
+</p><p>A <a href="/wiki/Monoid" title="Monoid">monoid</a> is an algebraic structure intermediate between semigroups and groups, and is a semigroup having an <a href="/wiki/Identity_element" title="Identity element">identity element</a>, thus obeying all but one of the axioms of a group: existence of inverses is not required of a monoid. A natural example is <a href="/wiki/String_(computer_science)" title="String (computer science)">strings</a> with <a href="/wiki/Concatenation" title="Concatenation">concatenation</a> as the binary operation, and the empty string as the identity element. Restricting to non-empty <a href="/wiki/String_(computer_science)" title="String (computer science)">strings</a> gives an example of a semigroup that is not a monoid. Positive <a href="/wiki/Integer" title="Integer">integers</a> with addition form a commutative semigroup that is not a monoid, whereas the non-negative <a href="/wiki/Integer" title="Integer">integers</a> do form a monoid. A semigroup without an identity element can be easily turned into a monoid by just adding an identity element. Consequently, monoids are studied in the theory of semigroups rather than in group theory. Semigroups should not be confused with <a href="/wiki/Quasigroup" title="Quasigroup">quasigroups</a>, which are generalization of groups in a different direction; the operation in a quasigroup need not be associative but quasigroups <a href="/wiki/Group_(mathematics)#Division" title="Group (mathematics)">preserve from groups</a> the notion of <a href="/wiki/Division_(mathematics)" title="Division (mathematics)">division</a>. Division in semigroups (or in monoids) is not possible in general.
+</p><p>The formal study of semigroups began in the early 20th century. Early results include <a href="/wiki/Transformation_semigroup#Cayley_representation" title="Transformation semigroup">a Cayley theorem for semigroups</a> realizing any semigroup as a <a href="/wiki/Transformation_semigroup" title="Transformation semigroup">transformation semigroup</a>, in which arbitrary functions replace the role of bijections in group theory. A deep result in the classification of finite semigroups is <a href="/wiki/Krohn%E2%80%93Rhodes_theory" title="Krohn–Rhodes theory">Krohn–Rhodes theory</a>, analogous to the <a class="mw-redirect" href="/wiki/Jordan%E2%80%93H%C3%B6lder_decomposition" title="Jordan–Hölder decomposition">Jordan–Hölder decomposition</a> for finite groups. Some other techniques for studying semigroups, like <a href="/wiki/Green%27s_relations" title="Green's relations">Green's relations</a>, do not resemble anything in group theory.
+</p><p>The theory of finite semigroups has been of particular importance in <a href="/wiki/Theoretical_computer_science" title="Theoretical computer science">theoretical computer science</a> since the 1950s because of the natural link between finite semigroups and <a class="mw-redirect" href="/wiki/Finite_automata" title="Finite automata">finite automata</a> via the <a href="/wiki/Syntactic_monoid" title="Syntactic monoid">syntactic monoid</a>.  In <a href="/wiki/Probability_theory" title="Probability theory">probability theory</a>, semigroups are associated with <a class="mw-redirect" href="/wiki/Markov_process" title="Markov process">Markov processes</a>.<sup class="reference" id="cite_ref-FOOTNOTEFeller1971_2-0"><a href="#cite_note-FOOTNOTEFeller1971-2"><span class="cite-bracket">[</span>1<span class="cite-bracket">]</span></a></sup> In other areas of <a href="/wiki/Applied_mathematics" title="Applied mathematics">applied mathematics</a>, semigroups are fundamental models for <a href="/wiki/Linear_time-invariant_system" title="Linear time-invariant system">linear time-invariant systems</a>.  In <a class="mw-redirect" href="/wiki/Partial_differential_equations" title="Partial differential equations">partial differential equations</a>, a semigroup is associated to any equation whose spatial evolution is independent of time.
+</p><p>There are numerous <a href="/wiki/Special_classes_of_semigroups" title="Special classes of semigroups">special classes of semigroups</a>, semigroups with additional properties, which appear in particular applications. Some of these classes are even closer to groups by exhibiting some additional but not all properties of a group. Of these we mention: <a href="/wiki/Regular_semigroup" title="Regular semigroup">regular semigroups</a>, <a href="/wiki/Orthodox_semigroup" title="Orthodox semigroup">orthodox semigroups</a>, <a href="/wiki/Semigroup_with_involution" title="Semigroup with involution">semigroups with involution</a>, <a href="/wiki/Inverse_semigroup" title="Inverse semigroup">inverse semigroups</a> and <a href="/wiki/Cancellative_semigroup" title="Cancellative semigroup">cancellative semigroups</a>. There are also interesting classes of semigroups that do not contain any groups except the <a href="/wiki/Trivial_group" title="Trivial group">trivial group</a>; examples of the latter kind are <a class="mw-redirect" href="/wiki/Band_(mathematics)" title="Band (mathematics)">bands</a> and their commutative subclass – <a href="/wiki/Semilattice" title="Semilattice">semilattices</a>, which are also <a href="/wiki/Category:Ordered_algebraic_structures" title="Category:Ordered algebraic structures">ordered algebraic structures</a>.
+</p>
+<style data-mw-deduplicate="TemplateStyles:r1129693374">.mw-parser-output .hlist dl,.mw-parser-output .hlist ol,.mw-parser-output .hlist ul{margin:0;padding:0}.mw-parser-output .hlist dd,.mw-parser-output .hlist dt,.mw-parser-output .hlist li{margin:0;display:inline}.mw-parser-output .hlist.inline,.mw-parser-output .hlist.inline dl,.mw-parser-output .hlist.inline ol,.mw-parser-output .hlist.inline ul,.mw-parser-output .hlist dl dl,.mw-parser-output .hlist dl ol,.mw-parser-output .hlist dl ul,.mw-parser-output .hlist ol dl,.mw-parser-output .hlist ol ol,.mw-parser-output .hlist ol ul,.mw-parser-output .hlist ul dl,.mw-parser-output .hlist ul ol,.mw-parser-output .hlist ul ul{display:inline}.mw-parser-output .hlist .mw-empty-li{display:none}.mw-parser-output .hlist dt::after{content:": "}.mw-parser-output .hlist dd::after,.mw-parser-output .hlist li::after{content:" · ";font-weight:bold}.mw-parser-output .hlist dd:last-child::after,.mw-parser-output .hlist dt:last-child::after,.mw-parser-output .hlist li:last-child::after{content:none}.mw-parser-output .hlist dd dd:first-child::before,.mw-parser-output .hlist dd dt:first-child::before,.mw-parser-output .hlist dd li:first-child::before,.mw-parser-output .hlist dt dd:first-child::before,.mw-parser-output .hlist dt dt:first-child::before,.mw-parser-output .hlist dt li:first-child::before,.mw-parser-output .hlist li dd:first-child::before,.mw-parser-output .hlist li dt:first-child::before,.mw-parser-output .hlist li li:first-child::before{content:" (";font-weight:normal}.mw-parser-output .hlist dd dd:last-child::after,.mw-parser-output .hlist dd dt:last-child::after,.mw-parser-output .hlist dd li:last-child::after,.mw-parser-output .hlist dt dd:last-child::after,.mw-parser-output .hlist dt dt:last-child::after,.mw-parser-output .hlist dt li:last-child::after,.mw-parser-output .hlist li dd:last-child::after,.mw-parser-output .hlist li dt:last-child::after,.mw-parser-output .hlist li li:last-child::after{content:")";font-weight:normal}.mw-parser-output .hlist ol{counter-reset:listitem}.mw-parser-output .hlist ol>li{counter-increment:listitem}.mw-parser-output .hlist ol>li::before{content:" "counter(listitem)"\a0 "}.mw-parser-output .hlist dd ol>li:first-child::before,.mw-parser-output .hlist dt ol>li:first-child::before,.mw-parser-output .hlist li ol>li:first-child::before{content:" ("counter(listitem)"\a0 "}</style><style data-mw-deduplicate="TemplateStyles:r1126788409">.mw-parser-output .plainlist ol,.mw-parser-output .plainlist ul{line-height:inherit;list-style:none;margin:0;padding:0}.mw-parser-output .plainlist ol li,.mw-parser-output .plainlist ul li{margin-bottom:0}</style><style data-mw-deduplicate="TemplateStyles:r1246091330">.mw-parser-output .sidebar{width:22em;float:right;clear:right;margin:0.5em 0 1em 1em;background:var(--background-color-neutral-subtle,#f8f9fa);border:1px solid var(--border-color-base,#a2a9b1);padding:0.2em;text-align:center;line-height:1.4em;font-size:88%;border-collapse:collapse;display:table}body.skin-minerva .mw-parser-output .sidebar{display:table!important;float:right!important;margin:0.5em 0 1em 1em!important}.mw-parser-output .sidebar-subgroup{width:100%;margin:0;border-spacing:0}.mw-parser-output .sidebar-left{float:left;clear:left;margin:0.5em 1em 1em 0}.mw-parser-output .sidebar-none{float:none;clear:both;margin:0.5em 1em 1em 0}.mw-parser-output .sidebar-outer-title{padding:0 0.4em 0.2em;font-size:125%;line-height:1.2em;font-weight:bold}.mw-parser-output .sidebar-top-image{padding:0.4em}.mw-parser-output .sidebar-top-caption,.mw-parser-output .sidebar-pretitle-with-top-image,.mw-parser-output .sidebar-caption{padding:0.2em 0.4em 0;line-height:1.2em}.mw-parser-output .sidebar-pretitle{padding:0.4em 0.4em 0;line-height:1.2em}.mw-parser-output .sidebar-title,.mw-parser-output .sidebar-title-with-pretitle{padding:0.2em 0.8em;font-size:145%;line-height:1.2em}.mw-parser-output .sidebar-title-with-pretitle{padding:0.1em 0.4em}.mw-parser-output .sidebar-image{padding:0.2em 0.4em 0.4em}.mw-parser-output .sidebar-heading{padding:0.1em 0.4em}.mw-parser-output .sidebar-content{padding:0 0.5em 0.4em}.mw-parser-output .sidebar-content-with-subgroup{padding:0.1em 0.4em 0.2em}.mw-parser-output .sidebar-above,.mw-parser-output .sidebar-below{padding:0.3em 0.8em;font-weight:bold}.mw-parser-output .sidebar-collapse .sidebar-above,.mw-parser-output .sidebar-collapse .sidebar-below{border-top:1px solid #aaa;border-bottom:1px solid #aaa}.mw-parser-output .sidebar-navbar{text-align:right;font-size:115%;padding:0 0.4em 0.4em}.mw-parser-output .sidebar-list-title{padding:0 0.4em;text-align:left;font-weight:bold;line-height:1.6em;font-size:105%}.mw-parser-output .sidebar-list-title-c{padding:0 0.4em;text-align:center;margin:0 3.3em}@media(max-width:640px){body.mediawiki .mw-parser-output .sidebar{width:100%!important;clear:both;float:none!important;margin-left:0!important;margin-right:0!important}}body.skin--responsive .mw-parser-output .sidebar a>img{max-width:none!important}@media screen{html.skin-theme-clientpref-night .mw-parser-output .sidebar:not(.notheme) .sidebar-list-title,html.skin-theme-clientpref-night .mw-parser-output .sidebar:not(.notheme) .sidebar-title-with-pretitle{background:transparent!important}html.skin-theme-clientpref-night .mw-parser-output .sidebar:not(.notheme) .sidebar-title-with-pretitle a{color:var(--color-progressive)!important}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .sidebar:not(.notheme) .sidebar-list-title,html.skin-theme-clientpref-os .mw-parser-output .sidebar:not(.notheme) .sidebar-title-with-pretitle{background:transparent!important}html.skin-theme-clientpref-os .mw-parser-output .sidebar:not(.notheme) .sidebar-title-with-pretitle a{color:var(--color-progressive)!important}}@media print{body.ns-0 .mw-parser-output .sidebar{display:none!important}}</style><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><table class="sidebar sidebar-collapse nomobile nowraplinks plainlist"><tbody><tr><th class="sidebar-title" style="display:block;margin-bottom:0.35em;"><a href="/wiki/Algebraic_structure" title="Algebraic structure">Algebraic structures</a></th></tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Group_(mathematics)" title="Group (mathematics)">Group</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;">
+<ul><li><a href="/wiki/Group_(mathematics)" title="Group (mathematics)">Group</a></li>
+<li><a class="mw-selflink selflink">Semigroup</a> / <a href="/wiki/Monoid" title="Monoid">Monoid</a></li>
+<li><a href="/wiki/Racks_and_quandles" title="Racks and quandles">Rack and quandle</a></li>
+<li><a href="/wiki/Quasigroup" title="Quasigroup">Quasigroup and loop</a></li></ul>
+<div class="hlist">
+<ul><li><a href="/wiki/Abelian_group" title="Abelian group">Abelian group</a></li>
+<li><a href="/wiki/Magma_(algebra)" title="Magma (algebra)">Magma</a></li>
+<li><a href="/wiki/Lie_group" title="Lie group">Lie group</a></li></ul>
+</div>
+<i><a href="/wiki/Group_theory" title="Group theory">Group theory</a></i></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">Ring</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;"><div class="hlist">
+<ul><li><a href="/wiki/Ring_(mathematics)" title="Ring (mathematics)">Ring</a></li>
+<li><a href="/wiki/Rng_(algebra)" title="Rng (algebra)">Rng</a></li>
+<li><a href="/wiki/Semiring" title="Semiring">Semiring</a></li>
+<li><a href="/wiki/Near-ring" title="Near-ring">Near-ring</a></li>
+<li><a href="/wiki/Commutative_ring" title="Commutative ring">Commutative ring</a></li>
+<li><a href="/wiki/Domain_(ring_theory)" title="Domain (ring theory)">Domain</a></li>
+<li><a href="/wiki/Integral_domain" title="Integral domain">Integral domain</a></li>
+<li><a href="/wiki/Field_(mathematics)" title="Field (mathematics)">Field</a></li>
+<li><a href="/wiki/Division_ring" title="Division ring">Division ring</a></li>
+<li><a href="/wiki/Lie_algebra#Lie_ring" title="Lie algebra">Lie ring</a></li></ul>
+</div>
+<i><a href="/wiki/Ring_theory" title="Ring theory">Ring theory</a></i></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Lattice_(order)" title="Lattice (order)">Lattice</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;"><div class="hlist">
+<ul><li><a href="/wiki/Lattice_(order)" title="Lattice (order)">Lattice</a></li>
+<li><a href="/wiki/Semilattice" title="Semilattice">Semilattice</a></li>
+<li><a href="/wiki/Complemented_lattice" title="Complemented lattice">Complemented lattice</a></li>
+<li><a href="/wiki/Total_order" title="Total order">Total order</a></li>
+<li><a href="/wiki/Heyting_algebra" title="Heyting algebra">Heyting algebra</a></li>
+<li><a href="/wiki/Boolean_algebra_(structure)" title="Boolean algebra (structure)">Boolean algebra</a></li></ul>
+</div>
+<ul><li><a href="/wiki/Map_of_lattices" title="Map of lattices">Map of lattices</a></li>
+<li><i><a href="/wiki/Lattice_(order)" title="Lattice (order)">Lattice theory</a></i></li></ul></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Module_(mathematics)" title="Module (mathematics)">Module</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;"><div class="hlist">
+<ul><li><a href="/wiki/Module_(mathematics)" title="Module (mathematics)">Module</a></li>
+<li><a href="/wiki/Group_with_operators" title="Group with operators">Group with operators</a></li>
+<li><a href="/wiki/Vector_space" title="Vector space">Vector space</a></li></ul>
+</div>
+<ul><li><i><a href="/wiki/Linear_algebra" title="Linear algebra">Linear algebra</a></i></li></ul></div></div></td>
+</tr><tr><td class="sidebar-content">
+<div class="sidebar-list mw-collapsible mw-collapsed"><div class="sidebar-list-title" style="text-align:center;;color: var(--color-base)"><a href="/wiki/Algebra_over_a_field" title="Algebra over a field">Algebra</a>-like</div><div class="sidebar-list-content mw-collapsible-content" style="border-top:1px solid #aaa;border-bottom:1px solid #aaa;">
+<ul><li><a href="/wiki/Algebra_over_a_field" title="Algebra over a field">Algebra</a></li></ul>
+<div class="hlist">
+<ul><li><a href="/wiki/Associative_algebra" title="Associative algebra">Associative</a></li>
+<li><a href="/wiki/Non-associative_algebra" title="Non-associative algebra">Non-associative</a></li>
+<li><a href="/wiki/Composition_algebra" title="Composition algebra">Composition algebra</a></li>
+<li><a href="/wiki/Lie_algebra" title="Lie algebra">Lie algebra</a></li>
+<li><a href="/wiki/Graded_ring" title="Graded ring">Graded</a></li>
+<li><a href="/wiki/Bialgebra" title="Bialgebra">Bialgebra</a></li>
+<li><a href="/wiki/Hopf_algebra" title="Hopf algebra">Hopf algebra</a></li></ul>
+</div></div></div></td>
+</tr><tr><td class="sidebar-navbar"><link href="mw-data:TemplateStyles:r1129693374" rel="mw-deduplicated-inline-style"><style data-mw-deduplicate="TemplateStyles:r1239400231">.mw-parser-output .navbar{display:inline;font-size:88%;font-weight:normal}.mw-parser-output .navbar-collapse{float:left;text-align:left}.mw-parser-output .navbar-boxtext{word-spacing:0}.mw-parser-output .navbar ul{display:inline-block;white-space:nowrap;line-height:inherit}.mw-parser-output .navbar-brackets::before{margin-right:-0.125em;content:"[ "}.mw-parser-output .navbar-brackets::after{margin-left:-0.125em;content:" ]"}.mw-parser-output .navbar li{word-spacing:-0.125em}.mw-parser-output .navbar a>span,.mw-parser-output .navbar a>abbr{text-decoration:inherit}.mw-parser-output .navbar-mini abbr{font-variant:small-caps;border-bottom:none;text-decoration:none;cursor:inherit}.mw-parser-output .navbar-ct-full{font-size:114%;margin:0 7em}.mw-parser-output .navbar-ct-mini{font-size:114%;margin:0 4em}html.skin-theme-clientpref-night .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}@media(prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .navbar li a abbr{color:var(--color-base)!important}}@media print{.mw-parser-output .navbar{display:none!important}}</style><div class="navbar plainlinks hlist navbar-mini"><ul><li class="nv-view"><a href="/wiki/Template:Algebraic_structures" title="Template:Algebraic structures"><abbr title="View this template">v</abbr></a></li><li class="nv-talk"><a href="/wiki/Template_talk:Algebraic_structures" title="Template talk:Algebraic structures"><abbr title="Discuss this template">t</abbr></a></li><li class="nv-edit"><a href="/wiki/Special:EditPage/Template:Algebraic_structures" title="Special:EditPage/Template:Algebraic structures"><abbr title="Edit this template">e</abbr></a></li></ul></div></link></td></tr></tbody></table>
+<meta property="mw:PageProp/toc">
+<div class="mw-heading mw-heading2"><h2 id="Definition">Definition</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=1" title="Edit section: Definition"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>A semigroup is a <a href="/wiki/Set_(mathematics)" title="Set (mathematics)">set</a> <i>S</i> together with a <a href="/wiki/Binary_operation" title="Binary operation">binary operation</a> ⋅ (that is, a <a href="/wiki/Function_(mathematics)" title="Function (mathematics)">function</a> <span class="nowrap">⋅ : <i>S</i> × <i>S</i> → <i>S</i></span>) that satisfies the <a href="/wiki/Associative_property" title="Associative property">associative property</a>:
+</p>
+<dl><dd>For all <i>a</i>, <i>b</i>, <i>c</i> ∈ <i>S</i>, the equation <span class="nowrap">(<i>a</i> ⋅ <i>b</i>) ⋅ <i>c</i> = <i>a</i> ⋅ (<i>b</i> ⋅ <i>c</i>)</span> holds.</dd></dl>
+<p>More succinctly, a semigroup is an associative <a href="/wiki/Magma_(algebra)" title="Magma (algebra)">magma</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Examples_of_semigroups">Examples of semigroups</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=2" title="Edit section: Examples of semigroups"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="/wiki/Empty_semigroup" title="Empty semigroup">Empty semigroup</a>: the <a href="/wiki/Empty_set" title="Empty set">empty set</a> forms a semigroup with the <a class="mw-redirect" href="/wiki/Empty_function" title="Empty function">empty function</a> as the binary operation.</li>
+<li><a class="mw-redirect" href="/wiki/Semigroup_with_one_element" title="Semigroup with one element">Semigroup with one element</a>: there is essentially only one (specifically, only one <a href="/wiki/Up_to" title="Up to">up to</a> <a href="/wiki/Isomorphism" title="Isomorphism">isomorphism</a>), the singleton {<i>a</i>} with operation <span class="nowrap"><i>a</i> · <i>a</i> = <i>a</i></span>.</li>
+<li><a href="/wiki/Semigroup_with_two_elements" title="Semigroup with two elements">Semigroup with two elements</a>: there are five that are essentially different.</li>
+<li>A <a href="/wiki/Null_semigroup" title="Null semigroup">null semigroup</a> on any nonempty set with a chosen zero, or a <a href="/wiki/Null_semigroup" title="Null semigroup">left/right zero semigroup</a> on any set.</li>
+<li>The "flip-flop" monoid: a <a href="/wiki/Semigroup_with_three_elements" title="Semigroup with three elements">semigroup with three elements</a> representing the three operations on a switch – set, reset, and do nothing.</li>
+<li>The set of positive <a href="/wiki/Integer" title="Integer">integers</a> with addition. (With 0 included, this becomes a <a href="/wiki/Monoid" title="Monoid">monoid</a>.)</li>
+<li>The set of <a href="/wiki/Integer" title="Integer">integers</a> with minimum or maximum. (With positive/negative infinity included, this becomes a monoid.)</li>
+<li>Square <a href="/wiki/Nonnegative_matrix" title="Nonnegative matrix">nonnegative matrices</a> of a given size with matrix multiplication.</li>
+<li>Any <a class="mw-redirect" href="/wiki/Ring_ideal" title="Ring ideal">ideal</a> of a <a class="mw-redirect" href="/wiki/Ring_(algebra)" title="Ring (algebra)">ring</a> with the multiplication of the ring.</li>
+<li>The set of all finite <a href="/wiki/String_(computer_science)" title="String (computer science)">strings</a> over a fixed alphabet Σ with <a href="/wiki/Concatenation" title="Concatenation">concatenation</a> of strings as the semigroup operation – the so-called "<a class="mw-redirect" href="/wiki/Free_semigroup" title="Free semigroup">free semigroup</a> over Σ". With the empty string included, this semigroup becomes the <a href="/wiki/Free_monoid" title="Free monoid">free monoid</a> over Σ.</li>
+<li>A <a href="/wiki/Probability_distribution" title="Probability distribution">probability distribution</a> <i>F</i> together with all <a href="/wiki/Convolution_power" title="Convolution power">convolution powers</a> of <i>F</i>, with convolution as the operation. This is called a convolution semigroup.</li>
+<li><a href="/wiki/Transformation_semigroup" title="Transformation semigroup">Transformation semigroups</a> and <a class="mw-redirect" href="/wiki/Transformation_monoid" title="Transformation monoid">monoids</a>.</li>
+<li>The set of <a href="/wiki/Continuous_function" title="Continuous function">continuous functions</a>  from a <a href="/wiki/Topological_space" title="Topological space">topological space</a> to itself with composition of functions forms a monoid with the <a href="/wiki/Identity_function" title="Identity function">identity function</a> acting as the identity. More generally, the <a href="/wiki/Endomorphism" title="Endomorphism">endomorphisms</a> of any object of a <a href="/wiki/Category_(mathematics)" title="Category (mathematics)">category</a> form a monoid under composition.</li>
+<li>The product of faces of an <a href="/wiki/Arrangement_of_hyperplanes" title="Arrangement of hyperplanes">arrangement of hyperplanes</a>.</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Basic_concepts">Basic concepts</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=3" title="Edit section: Basic concepts"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Identity_and_zero">Identity and zero</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=4" title="Edit section: Identity and zero"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>A <b><a class="mw-redirect" href="/wiki/Left_identity" title="Left identity">left identity</a></b> of a semigroup <i>S</i> (or more generally, <a href="/wiki/Magma_(algebra)" title="Magma (algebra)">magma</a>) is an element <i>e</i> such that for all <i>x</i> in <i>S</i>, <span class="nowrap"><i>e</i> ⋅ <i>x</i> = <i>x</i></span>.  Similarly, a <b><a class="mw-redirect" href="/wiki/Right_identity" title="Right identity">right identity</a></b> is an element <i>f</i> such that for all <i>x</i> in <i>S</i>, <span class="nowrap"><i>x</i> ⋅ <i>f</i> = <i>x</i></span>. Left and right identities are both called <b>one-sided identities</b>.  A semigroup may have one or more left identities but no right identity, and vice versa.
+</p><p>A <b>two-sided identity</b> (or just <b>identity</b>) is an element that is both a left and right identity.  Semigroups with a two-sided identity are called <b><a href="/wiki/Monoid" title="Monoid">monoids</a></b>.  A semigroup may have at most one two-sided identity.  If a semigroup has a two-sided identity, then the two-sided identity is the only one-sided identity in the semigroup.  If a semigroup has both a left identity and a right identity, then it has a two-sided identity (which is therefore the unique one-sided identity).
+</p><p>A semigroup <i>S</i> without identity may be <a href="/wiki/Embedding" title="Embedding">embedded</a> in a monoid formed by adjoining an element <span class="nowrap"><i>e</i> ∉ <i>S</i></span> to <i>S</i> and defining <span class="nowrap"><i>e</i> ⋅ <i>s</i> = <i>s</i> ⋅ <i>e</i> = <i>s</i></span> for all <span class="nowrap"><i>s</i> ∈ <i>S</i> ∪ {<i>e</i>}</span>.<sup class="reference" id="cite_ref-FOOTNOTEJacobson200930ex._5_3-0"><a href="#cite_note-FOOTNOTEJacobson200930ex._5-3"><span class="cite-bracket">[</span>2<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-FOOTNOTELawson1998[httpsbooksgooglecombooksid_F78nQEACAAJpgPA20dq22adjoininganidentity22_20]_4-0"><a href="#cite_note-FOOTNOTELawson1998[httpsbooksgooglecombooksid_F78nQEACAAJpgPA20dq22adjoininganidentity22_20]-4"><span class="cite-bracket">[</span>3<span class="cite-bracket">]</span></a></sup> The notation <i>S</i><sup>1</sup> denotes a monoid obtained from <i>S</i> by adjoining an identity <i>if necessary</i> (<span class="nowrap"><i>S</i><sup>1</sup> = <i>S</i></span> for a monoid).<sup class="reference" id="cite_ref-FOOTNOTELawson1998[httpsbooksgooglecombooksid_F78nQEACAAJpgPA20dq22adjoininganidentity22_20]_4-1"><a href="#cite_note-FOOTNOTELawson1998[httpsbooksgooglecombooksid_F78nQEACAAJpgPA20dq22adjoininganidentity22_20]-4"><span class="cite-bracket">[</span>3<span class="cite-bracket">]</span></a></sup>
+</p><p>Similarly, every magma has at most one <a href="/wiki/Absorbing_element" title="Absorbing element">absorbing element</a>, which in semigroup theory is called a <b>zero</b>. Analogous to the above construction, for every semigroup <i>S</i>, one can define <i>S</i><sup>0</sup>, a semigroup with 0 that embeds <i>S</i>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Subsemigroups_and_ideals">Subsemigroups and ideals</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=5" title="Edit section: Subsemigroups and ideals"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The semigroup operation induces an operation on the collection of its subsets: given subsets <i>A</i> and <i>B</i> of a semigroup <i>S</i>, their product <span class="texhtml"><i>A</i> · <i>B</i></span>, written commonly as <i>AB</i>, is the set <span class="texhtml">{ <i>ab</i> | <i>a</i> ∈ <i>A</i> and <i>b</i> ∈ <i>B</i> }.</span> (This notion is defined identically as <a href="/wiki/Product_of_group_subsets" title="Product of group subsets">it is for groups</a>.) In terms of this operation, a subset <i>A</i> is called
+</p>
+<ul><li>a <b>subsemigroup</b> if <i>AA</i> is a subset of <i>A</i>,</li>
+<li>a <b>right ideal</b> if <i>AS</i> is a subset of <i>A</i>, and</li>
+<li>a <b>left ideal</b> if <i>SA</i> is a subset of <i>A</i>.</li></ul>
+<p>If <i>A</i> is both a left ideal and a right ideal then it is called an <b>ideal</b> (or a <b>two-sided ideal</b>).
+</p><p>If <i>S</i> is a semigroup, then the intersection of any collection of subsemigroups of <i>S</i> is also a subsemigroup of <i>S</i>.
+So the subsemigroups of <i>S</i> form a <a href="/wiki/Complete_lattice" title="Complete lattice">complete lattice</a>.
+</p><p>An example of a semigroup with no minimal ideal is the set of positive integers under addition. The minimal ideal of a <a class="mw-redirect" href="/wiki/Commutative" title="Commutative">commutative</a> semigroup, when it exists, is a group.
+</p><p><a href="/wiki/Green%27s_relations" title="Green's relations">Green's relations</a>, a set of five <a href="/wiki/Equivalence_relation" title="Equivalence relation">equivalence relations</a> that characterise the elements in terms of the <a href="/wiki/Principal_ideal" title="Principal ideal">principal ideals</a> they generate, are important tools for analysing the ideals of a semigroup and related notions of structure.
+</p><p>The subset with the property that every element commutes with any other element of the semigroup is called the <b><a href="/wiki/Center_(algebra)" title="Center (algebra)">center</a></b> of the semigroup.<sup class="reference" id="cite_ref-KilpKilʹp2000_5-0"><a href="#cite_note-KilpKilʹp2000-5"><span class="cite-bracket">[</span>4<span class="cite-bracket">]</span></a></sup> The center of a semigroup is actually a subsemigroup.<sup class="reference" id="cite_ref-Li͡apin1968_6-0"><a href="#cite_note-Li͡apin1968-6"><span class="cite-bracket">[</span>5<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Homomorphisms_and_congruences">Homomorphisms and congruences</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=6" title="Edit section: Homomorphisms and congruences"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>A <b>semigroup <a href="/wiki/Homomorphism" title="Homomorphism">homomorphism</a></b> is a function that preserves semigroup structure.  A function <span class="texhtml"><i>f</i> : <i>S</i> → <i>T</i></span> between two semigroups is a homomorphism if the equation
+</p>
+<dl><dd><span class="texhtml"><i>f</i>(<i>ab</i>) = <i>f</i>(<i>a</i>)<i>f</i>(<i>b</i>)</span>.</dd></dl>
+<p>holds for all elements <i>a</i>, <i>b</i> in <i>S</i>, i.e. the result is the same when performing the semigroup operation after or before applying the map <i>f</i>.
+</p><p>A semigroup homomorphism between monoids preserves identity if it is a <a class="mw-redirect" href="/wiki/Monoid_homomorphism" title="Monoid homomorphism">monoid homomorphism</a>. But there are semigroup homomorphisms that are not monoid homomorphisms, e.g. the canonical embedding of a semigroup <i>S</i> without identity into <i>S</i><sup>1</sup>. Conditions characterizing monoid homomorphisms are discussed further. Let <span class="texhtml"><i>f</i> : <i>S</i><sub>0</sub> → <i>S</i><sub>1</sub></span> be a semigroup homomorphism. The image of <i>f</i> is also a semigroup. If <i>S</i><sub>0</sub> is a monoid with an identity element <i>e</i><sub>0</sub>, then <i>f</i>(<i>e</i><sub>0</sub>) is the identity element in the image of <i>f</i>. If <i>S</i><sub>1</sub> is also a monoid with an identity element <i>e</i><sub>1</sub> and <i>e</i><sub>1</sub> belongs to the image of <i>f</i>, then <span class="texhtml"><i>f</i>(<i>e</i><sub>0</sub>) = <i>e</i><sub>1</sub></span>, i.e. <i>f</i> is a monoid homomorphism. Particularly, if <i>f</i> is <a class="mw-redirect" href="/wiki/Surjective" title="Surjective">surjective</a>, then it is a monoid homomorphism.
+</p><p>Two semigroups <i>S</i> and <i>T</i> are said to be <b><a href="/wiki/Isomorphism" title="Isomorphism">isomorphic</a></b> if there exists a <a class="mw-redirect" href="/wiki/Bijective" title="Bijective">bijective</a> semigroup homomorphism <span class="texhtml"><i>f</i> : <i>S</i> → <i>T</i></span>. Isomorphic semigroups have the same structure.
+</p><p>A <b>semigroup congruence</b> ~ is an <a href="/wiki/Equivalence_relation" title="Equivalence relation">equivalence relation</a> that is compatible with the semigroup operation. That is, a subset <span class="texhtml">~ ⊆ <i>S</i> × <i>S</i></span> that is an equivalence relation and <span class="texhtml"><i>x</i> ~ <i>y</i></span> and <span class="texhtml"><i>u</i> ~ <i>v</i></span> implies <span class="texhtml"><i>xu</i> ~ <i>yv</i></span> for every <i>x</i>, <i>y</i>, <i>u</i>, <i>v</i> in <i>S</i>. Like any equivalence relation, a semigroup congruence ~ induces <a href="/wiki/Equivalence_class" title="Equivalence class">congruence classes</a>
+</p>
+<dl><dd>[<i>a</i>]<sub>~</sub> = {<i>x</i> ∈ <i>S</i> | <i>x</i> ~ <i>a</i>}</dd></dl>
+<p>and the semigroup operation induces a binary operation ∘ on the congruence classes:
+</p>
+<dl><dd>[<i>u</i>]<sub>~</sub> ∘ [<i>v</i>]<sub>~</sub> = [<i>uv</i>]<sub>~</sub></dd></dl>
+<p>Because ~ is a congruence, the set of all congruence classes of ~ forms a semigroup with ∘, called the <b>quotient semigroup</b> or <b>factor semigroup</b>, and denoted <span class="texhtml"><i>S</i> / ~</span>. The mapping <span class="texhtml"><i>x</i> ↦ [<i>x</i>]<sub>~</sub></span> is a semigroup homomorphism, called the <b>quotient map</b>, <b>canonical <a class="mw-redirect" href="/wiki/Surjection" title="Surjection">surjection</a></b> or <b>projection</b>; if <i>S</i> is a monoid then quotient semigroup is a monoid with identity [1]<sub>~</sub>. Conversely, the <a href="/wiki/Kernel_(set_theory)" title="Kernel (set theory)">kernel</a> of any semigroup homomorphism is a semigroup congruence. These results are nothing more than a particularization of the <a href="/wiki/Isomorphism_theorems#First_Isomorphism_Theorem_4" title="Isomorphism theorems">first isomorphism theorem in universal algebra</a>.  Congruence classes and factor monoids are the objects of study in <a class="mw-redirect" href="/wiki/String_rewriting_system" title="String rewriting system">string rewriting systems</a>.
+</p><p>A <b>nuclear congruence</b> on <i>S</i> is one that is the kernel of an endomorphism of <i>S</i>.<sup class="reference" id="cite_ref-FOOTNOTELothaire2011463_7-0"><a href="#cite_note-FOOTNOTELothaire2011463-7"><span class="cite-bracket">[</span>6<span class="cite-bracket">]</span></a></sup>
+</p><p>A semigroup <i>S</i> satisfies the <b>maximal condition on congruences</b> if any family of congruences on <i>S</i>, ordered by inclusion, has a maximal element.  By <a href="/wiki/Zorn%27s_lemma" title="Zorn's lemma">Zorn's lemma</a>, this is equivalent to saying that the <a href="/wiki/Ascending_chain_condition" title="Ascending chain condition">ascending chain condition</a> holds: there is no infinite strictly ascending chain of congruences on <i>S</i>.<sup class="reference" id="cite_ref-FOOTNOTELothaire2011465_8-0"><a href="#cite_note-FOOTNOTELothaire2011465-8"><span class="cite-bracket">[</span>7<span class="cite-bracket">]</span></a></sup>
+</p><p>Every ideal <i>I</i> of a semigroup induces a factor semigroup, the <a href="/wiki/Rees_factor_semigroup" title="Rees factor semigroup">Rees factor semigroup</a>, via the congruence ρ defined by <span class="texhtml"><i>x</i> ρ <i>y</i></span> if either <span class="texhtml"><i>x</i> = <i>y</i></span>, or both <i>x</i> and <i>y</i> are in <i>I</i>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Quotients_and_divisions">Quotients and divisions</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=7" title="Edit section: Quotients and divisions"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The following notions<sup class="reference" id="cite_ref-9"><a href="#cite_note-9"><span class="cite-bracket">[</span>8<span class="cite-bracket">]</span></a></sup> introduce the idea that a semigroup is contained in another one.
+</p><p>A semigroup <i>T</i> is a quotient of a semigroup <i>S</i> if there is a surjective semigroup morphism from <i>S</i> to <i>T</i>. For example, <span class="nowrap">(<b>Z</b>/2<b>Z</b>, +)</span> is a quotient of <span class="nowrap">(<b>Z</b>/4<b>Z</b>, +)</span>, using the morphism consisting of taking the remainder modulo 2 of an integer.
+</p><p>A semigroup <i>T</i> divides a semigroup <i>S</i>, denoted <span class="nowrap"><i>T</i> ≼ <i>S</i></span> if <i>T</i> is a quotient of a subsemigroup <i>S</i>. In particular, subsemigroups of <i>S</i> divides <i>T</i>, while it is not necessarily the case that there are a quotient of <i>S</i>.
+</p><p>Both of those relations are transitive.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Structure_of_semigroups">Structure of semigroups</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=8" title="Edit section: Structure of semigroups"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>For any subset <i>A</i> of <i>S</i> there is a smallest subsemigroup <i>T</i> of <i>S</i> that contains <i>A</i>, and we say that <i>A</i> <b>generates</b> <i>T</i>. A single element <i>x</i> of <i>S</i> generates the subsemigroup <span class="texhtml">{ <i>x</i><sup><i>n</i></sup> | <i>n</i> ∈ <b>Z</b><sup>+</sup> }</span>. If this is finite, then <i>x</i> is said to be of <b>finite order</b>, otherwise it is of <b>infinite order</b>.
+A semigroup is said to be <b>periodic</b> if all of its elements are of finite order.
+A semigroup generated by a single element is said to be <a href="/wiki/Monogenic_semigroup" title="Monogenic semigroup">monogenic</a> (or <a class="mw-redirect" href="/wiki/Cyclic_semigroup" title="Cyclic semigroup">cyclic</a>). If a monogenic semigroup is infinite then it is isomorphic to the semigroup of positive <a href="/wiki/Integer" title="Integer">integers</a> with the operation of addition.
+If it is finite and nonempty, then it must contain at least one <a class="mw-redirect" href="/wiki/Idempotent" title="Idempotent">idempotent</a>.
+It follows that every nonempty periodic semigroup has at least one idempotent.
+</p><p>A subsemigroup that is also a group is called a <b><a href="/wiki/Subgroup" title="Subgroup">subgroup</a></b>. There is a close relationship between the subgroups of a semigroup and its idempotents. Each subgroup contains exactly one idempotent, namely the identity element of the subgroup. For each idempotent <i>e</i> of the semigroup there is a unique maximal subgroup containing <i>e</i>. Each maximal subgroup arises in this way, so there is a one-to-one correspondence between idempotents and maximal subgroups. Here the term <i><a href="/wiki/Maximal_subgroup" title="Maximal subgroup">maximal subgroup</a></i> differs from its standard use in group theory.
+</p><p>More can often be said when the order is finite. For example, every nonempty finite semigroup is periodic, and has a minimal <a href="/wiki/Ideal_(ring_theory)" title="Ideal (ring theory)">ideal</a> and at least one idempotent. The number of finite semigroups of a given size (greater than 1) is (obviously) larger than the number of groups of the same size. For example, of the sixteen possible "multiplication tables" for a set of two elements <span class="texhtml">{<i>a</i>, <i>b</i>}</span>, eight form semigroups<sup class="reference" id="cite_ref-10"><a href="#cite_note-10"><span class="cite-bracket">[</span>b<span class="cite-bracket">]</span></a></sup> whereas only four of these are monoids and only two form groups. For more on the structure of finite semigroups, see <i><a href="/wiki/Krohn%E2%80%93Rhodes_theory" title="Krohn–Rhodes theory">Krohn–Rhodes theory</a></i>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Special_classes_of_semigroups">Special classes of semigroups</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=9" title="Edit section: Special classes of semigroups"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1236090951">.mw-parser-output .hatnote{font-style:italic}.mw-parser-output div.hatnote{padding-left:1.6em;margin-bottom:0.5em}.mw-parser-output .hatnote i{font-style:normal}.mw-parser-output .hatnote+link+.hatnote{margin-top:-0.5em}@media print{body.ns-0 .mw-parser-output .hatnote{display:none!important}}</style><div class="hatnote navigation-not-searchable" role="note">Main article: <a href="/wiki/Special_classes_of_semigroups" title="Special classes of semigroups">Special classes of semigroups</a></div>
+<ul><li>A <a href="/wiki/Monoid" title="Monoid">monoid</a> is a semigroup with an <a href="/wiki/Identity_element" title="Identity element">identity element</a>.</li>
+<li>A <a href="/wiki/Group_(mathematics)" title="Group (mathematics)">group</a> is a monoid in which every element has an <a href="/wiki/Inverse_element" title="Inverse element">inverse element</a>.</li>
+<li>A subsemigroup is a <a href="/wiki/Subset" title="Subset">subset</a> of a semigroup that is closed under the semigroup operation.</li>
+<li>A <a href="/wiki/Cancellative_semigroup" title="Cancellative semigroup">cancellative semigroup</a> is one having the <a href="/wiki/Cancellation_property" title="Cancellation property">cancellation property</a>:<sup class="reference" id="cite_ref-FOOTNOTECliffordPreston20103_11-0"><a href="#cite_note-FOOTNOTECliffordPreston20103-11"><span class="cite-bracket">[</span>9<span class="cite-bracket">]</span></a></sup> <span class="nowrap"><i>a</i> · <i>b</i> = <i>a</i> · <i>c</i></span> implies <span class="nowrap"><i>b</i> = <i>c</i></span> and similarly for <span class="nowrap"><i>b</i> · <i>a</i> = <i>c</i> · <i>a</i></span>. Every group is a cancellative semigroup, and every finite cancellative semigroup is a group.</li>
+<li>A <a href="/wiki/Band_(algebra)" title="Band (algebra)">band</a> is a semigroup whose operation is <a class="mw-redirect" href="/wiki/Idempotent" title="Idempotent">idempotent</a>.</li>
+<li>A <a href="/wiki/Semilattice" title="Semilattice">semilattice</a> is a semigroup whose operation is idempotent and <a class="mw-redirect" href="/wiki/Commutativity" title="Commutativity">commutative</a>.</li>
+<li><a class="mw-redirect" href="/wiki/0-simple" title="0-simple">0-simple</a> semigroups.</li>
+<li><a href="/wiki/Transformation_semigroup" title="Transformation semigroup">Transformation semigroups</a>: any finite semigroup <i>S</i> can be represented by transformations of a (state-) set <i>Q</i> of at most <span class="nowrap">|<span class="nowrap" style="padding-left:0.1em; padding-right:0.1em;"><i>S</i></span>| + 1</span> states. Each element <i>x</i> of <i>S</i> then maps <i>Q</i> into itself <span class="nowrap"><i>x</i> : <i>Q</i> → <i>Q</i></span> and sequence <i>xy</i> is defined by <span class="nowrap"><i>q</i>(<i>xy</i>) = (<i>qx</i>)<i>y</i></span> for each <i>q</i> in <i>Q</i>. Sequencing clearly is an associative operation, here equivalent to <a href="/wiki/Function_composition" title="Function composition">function composition</a>. This representation is basic for any <a href="/wiki/Automaton" title="Automaton">automaton</a> or <a href="/wiki/Finite-state_machine" title="Finite-state machine">finite-state machine</a> (FSM).</li>
+<li>The <a href="/wiki/Bicyclic_semigroup" title="Bicyclic semigroup">bicyclic semigroup</a> is in fact a monoid, which can be described as the <a class="mw-redirect" href="/wiki/Free_semigroup" title="Free semigroup">free semigroup</a> on two generators <i>p</i> and <i>q</i>, under the relation <span class="nowrap"><i>pq</i> = 1</span>.</li>
+<li><a href="/wiki/C0-semigroup" title="C0-semigroup">C<sub>0</sub>-semigroups</a>.</li>
+<li><a href="/wiki/Regular_semigroup" title="Regular semigroup">Regular semigroups</a>. Every element <i>x</i> has at least one inverse <i>y</i> that satisfies <span class="nowrap"><i>xyx</i> = <i>x</i></span> and <span class="nowrap"><i>yxy</i> = <i>y</i></span>; the elements <i>x</i> and <i>y</i> are sometimes called "mutually inverse".</li>
+<li><a href="/wiki/Inverse_semigroup" title="Inverse semigroup">Inverse semigroups</a> are regular semigroups where every element has exactly one inverse. Alternatively, a regular semigroup is inverse if and only if any two idempotents commute.</li>
+<li>Affine semigroup: a semigroup that is isomorphic to a finitely-generated subsemigroup of Z<sup>d</sup>.  These semigroups have applications to <a href="/wiki/Commutative_algebra" title="Commutative algebra">commutative algebra</a>.</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Structure_theorem_for_commutative_semigroups">Structure theorem for commutative semigroups</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=10" title="Edit section: Structure theorem for commutative semigroups"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>There is a structure theorem for commutative semigroups in terms of <a href="/wiki/Semilattice" title="Semilattice">semilattices</a>.<sup class="reference" id="cite_ref-FOOTNOTEGrillet2001_12-0"><a href="#cite_note-FOOTNOTEGrillet2001-12"><span class="cite-bracket">[</span>10<span class="cite-bracket">]</span></a></sup> A semilattice (or more precisely a meet-semilattice) <span class="texhtml">(<i>L</i>, ≤)</span> is a <a href="/wiki/Partially_ordered_set" title="Partially ordered set">partially ordered set</a> where every pair of elements <span class="texhtml"><i>a</i>, <i>b</i> ∈ <i>L</i></span> has a <a class="mw-redirect" href="/wiki/Greatest_lower_bound" title="Greatest lower bound">greatest lower bound</a>, denoted <span class="texhtml"><i>a</i> ∧ <i>b</i></span>.  The operation ∧ makes <i>L</i> into a semigroup that satisfies the additional <a href="/wiki/Idempotence" title="Idempotence">idempotence</a> law <span class="texhtml"><i>a</i> ∧ <i>a</i> = <i>a</i></span>.
+</p><p>Given a homomorphism <span class="texhtml"><i>f</i> : <i>S</i> → <i>L</i></span> from an arbitrary semigroup to a semilattice, each inverse image <span class="texhtml"><i>S</i><sub><i>a</i></sub> = <span style="padding-right:0.15em;"><i>f</i></span><sup>−1</sup>{<i>a</i>}</span> is a (possibly empty) semigroup.  Moreover, <i>S</i> becomes <b>graded</b> by <i>L</i>, in the sense that <span class="texhtml"><i>S</i><sub><i>a</i></sub><i>S</i><sub><i>b</i></sub> ⊆ <i>S</i><sub><i>a</i>∧<i>b</i></sub></span>.
+</p><p>If <i>f</i> is onto, the semilattice <i>L</i> is isomorphic to the <a href="/wiki/Quotient" title="Quotient">quotient</a> of <i>S</i> by the equivalence relation ~ such that <span class="texhtml"><i>x</i> ~ <i>y</i></span> if and only if <span class="texhtml"><i>f</i>(<i>x</i>) = <i>f</i>(<i>y</i>)</span>.  This equivalence relation is a semigroup congruence, as defined above.
+</p><p>Whenever we take the quotient of a commutative semigroup by a congruence, we get another commutative semigroup.  The structure theorem says that for any commutative semigroup <i>S</i>, there is a finest congruence ~ such that the quotient of <i>S</i> by this equivalence relation is a semilattice.  Denoting this semilattice by <i>L</i>, we get a homomorphism <i>f</i> from <i>S</i> onto <i>L</i>.  As mentioned, <i>S</i> becomes graded by this semilattice.
+</p><p>Furthermore, the components <i>S</i><sub><i>a</i></sub> are all <a href="/wiki/Special_classes_of_semigroups" title="Special classes of semigroups">Archimedean semigroups</a>.  An Archimedean semigroup is one where given any pair of elements <i>x</i>, <i>y </i>, there exists an element <i>z</i> and <span class="texhtml"><i>n</i> &gt; 0</span> such that <span class="texhtml"><i>x</i><sup><i>n</i></sup> = <i>yz</i></span>.
+</p><p>The Archimedean property follows immediately from the ordering in the semilattice <i>L</i>, since with this ordering we have <span class="texhtml"><i>f</i>(<i>x</i>) ≤ <i>f</i>(<i>y</i>)</span> if and only if <span class="texhtml"><i>x</i><sup><i>n</i></sup> = <i>yz</i></span> for some <i>z</i> and <span class="texhtml"><i>n</i> &gt; 0</span>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Group_of_fractions">Group of fractions</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=11" title="Edit section: Group of fractions"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The <b>group of fractions</b> or <b>group completion</b> of a semigroup <i>S</i> is the <a href="/wiki/Group_(mathematics)" title="Group (mathematics)">group</a> <span class="nowrap"><i>G</i> = <i>G</i>(<i>S</i>)</span> generated by the elements of <i>S</i> as generators and all equations <span class="nowrap"><i>xy</i> = <i>z</i></span> that hold true in <i>S</i> as <a href="/wiki/Presentation_of_a_group" title="Presentation of a group">relations</a>.<sup class="reference" id="cite_ref-13"><a href="#cite_note-13"><span class="cite-bracket">[</span>11<span class="cite-bracket">]</span></a></sup>  There is an obvious semigroup homomorphism <span class="nowrap"><i>j</i> : <i>S</i> → <i>G</i>(<i>S</i>)</span> that sends each element of <i>S</i> to the corresponding generator. This has a <a href="/wiki/Universal_property" title="Universal property">universal property</a> for morphisms from <i>S</i> to a group:<sup class="reference" id="cite_ref-14"><a href="#cite_note-14"><span class="cite-bracket">[</span>12<span class="cite-bracket">]</span></a></sup>  given any group <i>H</i> and any semigroup homomorphism <span class="nowrap"><i>k</i> : <i>S</i> → <i>H</i></span>, there exists a unique <a href="/wiki/Group_homomorphism" title="Group homomorphism">group homomorphism</a> <span class="nowrap"><i>f</i> : <i>G</i> → <i>H</i></span> with <span class="nowrap"><i>k</i> = <i>fj</i></span>. We may think of <i>G</i> as the "most general" group that contains a homomorphic image of <i>S</i>.
+</p><p>An important question is to characterize those semigroups for which this map is an embedding.  This need not always be the case: for example, take <i>S</i> to be the semigroup of subsets of some set <i>X</i> with <a class="mw-redirect" href="/wiki/Set-theoretic_intersection" title="Set-theoretic intersection">set-theoretic intersection</a> as the binary operation (this is an example of a semilattice).  Since <span class="nowrap"><i>A</i>.<i>A</i> = <i>A</i></span> holds for all elements of <i>S</i>, this must be true for all generators of <i>G</i>(<i>S</i>) as well, which is therefore the <a href="/wiki/Trivial_group" title="Trivial group">trivial group</a>.  It is clearly necessary for embeddability that <i>S</i> have the <a href="/wiki/Cancellation_property" title="Cancellation property">cancellation property</a>.  When <i>S</i> is commutative this condition is also sufficient<sup class="reference" id="cite_ref-FOOTNOTECliffordPreston196134_15-0"><a href="#cite_note-FOOTNOTECliffordPreston196134-15"><span class="cite-bracket">[</span>13<span class="cite-bracket">]</span></a></sup> and the <a href="/wiki/Grothendieck_group" title="Grothendieck group">Grothendieck group</a> of the semigroup provides a construction of the group of fractions.  The problem for non-commutative semigroups can be traced to the first substantial paper on semigroups.<sup class="reference" id="cite_ref-FOOTNOTESuschkewitsch1928_16-0"><a href="#cite_note-FOOTNOTESuschkewitsch1928-16"><span class="cite-bracket">[</span>14<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-17"><a href="#cite_note-17"><span class="cite-bracket">[</span>15<span class="cite-bracket">]</span></a></sup> <a href="/wiki/Anatoly_Maltsev" title="Anatoly Maltsev">Anatoly Maltsev</a> gave necessary and sufficient conditions for embeddability in 1937.<sup class="reference" id="cite_ref-18"><a href="#cite_note-18"><span class="cite-bracket">[</span>16<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Semigroup_methods_in_partial_differential_equations">Semigroup methods in partial differential equations</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=12" title="Edit section: Semigroup methods in partial differential equations"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1236090951" rel="mw-deduplicated-inline-style"><div class="hatnote navigation-not-searchable" role="note">Further information: <a href="/wiki/C0-semigroup" title="C0-semigroup">C0-semigroup</a></div>
+<p>Semigroup theory can be used to study some problems in the field of <a class="mw-redirect" href="/wiki/Partial_differential_equations" title="Partial differential equations">partial differential equations</a>.  Roughly speaking, the semigroup approach is to regard a time-dependent partial differential equation as an <a href="/wiki/Ordinary_differential_equation" title="Ordinary differential equation">ordinary differential equation</a> on a function space.  For example, consider the following initial/boundary value problem for the <a href="/wiki/Heat_equation" title="Heat equation">heat equation</a> on the spatial <a href="/wiki/Interval_(mathematics)" title="Interval (mathematics)">interval</a> <span class="nowrap">(0, 1) ⊂ <b>R</b></span> and times <span class="nowrap"><i>t</i> ≥ 0</span>:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{cases}\partial _{t}u(t,x)=\partial _{x}^{2}u(t,x),&amp;x\in (0,1),t&gt;0;\\u(t,x)=0,&amp;x\in \{0,1\},t&gt;0;\\u(t,x)=u_{0}(x),&amp;x\in (0,1),t=0.\end{cases}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow>
+<mo>{</mo>
+<mtable columnalign="left left" columnspacing="1em" displaystyle="false" rowspacing=".2em">
+<mtr>
+<mtd>
+<msub>
+<mi mathvariant="normal">∂<!-- ∂ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>t</mi>
+</mrow>
+</msub>
+<mi>u</mi>
+<mo stretchy="false">(</mo>
+<mi>t</mi>
+<mo>,</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<msubsup>
+<mi mathvariant="normal">∂<!-- ∂ --></mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mi>x</mi>
+</mrow>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msubsup>
+<mi>u</mi>
+<mo stretchy="false">(</mo>
+<mi>t</mi>
+<mo>,</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>,</mo>
+</mtd>
+<mtd>
+<mi>x</mi>
+<mo>∈<!-- ∈ --></mo>
+<mo stretchy="false">(</mo>
+<mn>0</mn>
+<mo>,</mo>
+<mn>1</mn>
+<mo stretchy="false">)</mo>
+<mo>,</mo>
+<mi>t</mi>
+<mo>&gt;</mo>
+<mn>0</mn>
+<mo>;</mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>u</mi>
+<mo stretchy="false">(</mo>
+<mi>t</mi>
+<mo>,</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mn>0</mn>
+<mo>,</mo>
+</mtd>
+<mtd>
+<mi>x</mi>
+<mo>∈<!-- ∈ --></mo>
+<mo fence="false" stretchy="false">{</mo>
+<mn>0</mn>
+<mo>,</mo>
+<mn>1</mn>
+<mo fence="false" stretchy="false">}</mo>
+<mo>,</mo>
+<mi>t</mi>
+<mo>&gt;</mo>
+<mn>0</mn>
+<mo>;</mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>u</mi>
+<mo stretchy="false">(</mo>
+<mi>t</mi>
+<mo>,</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<msub>
+<mi>u</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo stretchy="false">(</mo>
+<mi>x</mi>
+<mo stretchy="false">)</mo>
+<mo>,</mo>
+</mtd>
+<mtd>
+<mi>x</mi>
+<mo>∈<!-- ∈ --></mo>
+<mo stretchy="false">(</mo>
+<mn>0</mn>
+<mo>,</mo>
+<mn>1</mn>
+<mo stretchy="false">)</mo>
+<mo>,</mo>
+<mi>t</mi>
+<mo>=</mo>
+<mn>0.</mn>
+</mtd>
+</mtr>
+</mtable>
+<mo fence="true" stretchy="true" symmetric="true"></mo>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{cases}\partial _{t}u(t,x)=\partial _{x}^{2}u(t,x),&amp;x\in (0,1),t&gt;0;\\u(t,x)=0,&amp;x\in \{0,1\},t&gt;0;\\u(t,x)=u_{0}(x),&amp;x\in (0,1),t=0.\end{cases}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{cases}\partial _{t}u(t,x)=\partial _{x}^{2}u(t,x),&amp;x\in (0,1),t&gt;0;\\u(t,x)=0,&amp;x\in \{0,1\},t&gt;0;\\u(t,x)=u_{0}(x),&amp;x\in (0,1),t=0.\end{cases}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d337d3ff73b5d8f49f9770464ca11848a0ac322b" style="vertical-align: -3.838ex; width:42.673ex; height:8.843ex;"/></span></dd></dl>
+<p>Let <span class="nowrap"><i>X</i> = <i>L</i><sup>2</sup>((0, 1) <b>R</b>)</span> be the <a href="/wiki/Lp_space" title="Lp space"><i>L</i><sup><i>p</i></sup> space</a> of square-integrable real-valued functions with domain the interval <span class="nowrap">(0, 1)</span> and let <i>A</i> be the second-derivative operator with <a href="/wiki/Domain_of_a_function" title="Domain of a function">domain</a>
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle D(A)={\big \{}u\in H^{2}((0,1);\mathbf {R} ){\big |}u(0)=u(1)=0{\big \}},}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>D</mi>
+<mo stretchy="false">(</mo>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mo maxsize="1.2em" minsize="1.2em">{</mo>
+</mrow>
+</mrow>
+<mi>u</mi>
+<mo>∈<!-- ∈ --></mo>
+<msup>
+<mi>H</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+<mo stretchy="false">(</mo>
+<mo stretchy="false">(</mo>
+<mn>0</mn>
+<mo>,</mo>
+<mn>1</mn>
+<mo stretchy="false">)</mo>
+<mo>;</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mi mathvariant="bold">R</mi>
+</mrow>
+<mo stretchy="false">)</mo>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mo maxsize="1.2em" minsize="1.2em">|</mo>
+</mrow>
+</mrow>
+<mi>u</mi>
+<mo stretchy="false">(</mo>
+<mn>0</mn>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>u</mi>
+<mo stretchy="false">(</mo>
+<mn>1</mn>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mn>0</mn>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mo maxsize="1.2em" minsize="1.2em">}</mo>
+</mrow>
+</mrow>
+<mo>,</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle D(A)={\big \{}u\in H^{2}((0,1);\mathbf {R} ){\big |}u(0)=u(1)=0{\big \}},}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle D(A)={\big \{}u\in H^{2}((0,1);\mathbf {R} ){\big |}u(0)=u(1)=0{\big \}},}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a91375fe5bc379321d74a05656af1519ad6bd04d" style="vertical-align: -1.005ex; width:45.884ex; height:3.343ex;"/></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle H^{2}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<msup>
+<mi>H</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>2</mn>
+</mrow>
+</msup>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle H^{2}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle H^{2}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4b83c19c3fd9d50029b321e1d964aeba09f984e3" style="vertical-align: -0.338ex; width:3.158ex; height:2.676ex;"/></span> is a <a href="/wiki/Sobolev_space" title="Sobolev space">Sobolev space</a>. Then the above initial/boundary value problem can be interpreted as an initial value problem for an ordinary differential equation on the space <i>X</i>:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle {\begin{cases}{\dot {u}}(t)=Au(t);\\u(0)=u_{0}.\end{cases}}}" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mrow class="MJX-TeXAtom-ORD">
+<mrow>
+<mo>{</mo>
+<mtable columnalign="left left" columnspacing="1em" displaystyle="false" rowspacing=".2em">
+<mtr>
+<mtd>
+<mrow class="MJX-TeXAtom-ORD">
+<mrow class="MJX-TeXAtom-ORD">
+<mover>
+<mi>u</mi>
+<mo>˙<!-- ˙ --></mo>
+</mover>
+</mrow>
+</mrow>
+<mo stretchy="false">(</mo>
+<mi>t</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>A</mi>
+<mi>u</mi>
+<mo stretchy="false">(</mo>
+<mi>t</mi>
+<mo stretchy="false">)</mo>
+<mo>;</mo>
+</mtd>
+</mtr>
+<mtr>
+<mtd>
+<mi>u</mi>
+<mo stretchy="false">(</mo>
+<mn>0</mn>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<msub>
+<mi>u</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>.</mo>
+</mtd>
+</mtr>
+</mtable>
+<mo fence="true" stretchy="true" symmetric="true"></mo>
+</mrow>
+</mrow>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle {\begin{cases}{\dot {u}}(t)=Au(t);\\u(0)=u_{0}.\end{cases}}}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle {\begin{cases}{\dot {u}}(t)=Au(t);\\u(0)=u_{0}.\end{cases}}}" aria-hidden="true" class="mwe-math-fallback-image-inline mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0d4c703bb4dfab791ed48a7dd9c7c7304b6d2b6f" style="vertical-align: -2.505ex; width:15.94ex; height:6.176ex;"/></span></dd></dl>
+<p>On an heuristic level, the solution to this problem "ought" to be
+<span class="mwe-math-element"><span class="mwe-math-mathml-display mwe-math-mathml-a11y" style="display: none;"><math alttext="{\displaystyle u(t)=\exp(tA)u_{0}.}" display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+<semantics>
+<mrow class="MJX-TeXAtom-ORD">
+<mstyle displaystyle="true" scriptlevel="0">
+<mi>u</mi>
+<mo stretchy="false">(</mo>
+<mi>t</mi>
+<mo stretchy="false">)</mo>
+<mo>=</mo>
+<mi>exp</mi>
+<mo>⁡<!-- ⁡ --></mo>
+<mo stretchy="false">(</mo>
+<mi>t</mi>
+<mi>A</mi>
+<mo stretchy="false">)</mo>
+<msub>
+<mi>u</mi>
+<mrow class="MJX-TeXAtom-ORD">
+<mn>0</mn>
+</mrow>
+</msub>
+<mo>.</mo>
+</mstyle>
+</mrow>
+<annotation encoding="application/x-tex">{\displaystyle u(t)=\exp(tA)u_{0}.}</annotation>
+</semantics>
+</math></span><img alt="{\displaystyle u(t)=\exp(tA)u_{0}.}" aria-hidden="true" class="mwe-math-fallback-image-display mw-invert skin-invert" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/fba837efb042e5e1a3c31c16a49b9914da84042e" style="vertical-align: -0.838ex; width:18.052ex; height:2.843ex;"/></span>
+However, for a rigorous treatment, a meaning must be given to the <a href="/wiki/Exponentiation" title="Exponentiation">exponential</a> of <i>tA</i>.  As a function of <i>t</i>, exp(<i>tA</i>) is a semigroup of operators from <i>X</i> to itself, taking the initial state <i>u</i><sub>0</sub> at time <span class="nowrap"><i>t</i> = 0</span> to the state <span class="nowrap"><i>u</i>(<i>t</i>) = exp(<i>tA</i>)<i>u</i><sub>0</sub></span> at time <i>t</i>.  The operator <i>A</i> is said to be the <a class="mw-redirect" href="/wiki/C0_semigroup#Infinitesimal_generator" title="C0 semigroup">infinitesimal generator</a> of the semigroup.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="History">History</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=13" title="Edit section: History"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The study of semigroups trailed behind that of other algebraic structures with more complex axioms such as <a href="/wiki/Group_(mathematics)" title="Group (mathematics)">groups</a> or <a class="mw-redirect" href="/wiki/Ring_(algebra)" title="Ring (algebra)">rings</a>. A number of sources<sup class="reference" id="cite_ref-19"><a href="#cite_note-19"><span class="cite-bracket">[</span>17<span class="cite-bracket">]</span></a></sup><sup class="reference" id="cite_ref-Hollings_20-0"><a href="#cite_note-Hollings-20"><span class="cite-bracket">[</span>18<span class="cite-bracket">]</span></a></sup> attribute the first use of the term (in French) to J.-A. de Séguier in <i>Élements de la Théorie des Groupes Abstraits</i> (Elements of the Theory of Abstract Groups) in 1904. The term is used in English in 1908 in Harold Hinton's <i>Theory of Groups of Finite Order</i>.
+</p><p><a href="/wiki/Anton_Sushkevich" title="Anton Sushkevich">Anton Sushkevich</a> obtained the first non-trivial results about semigroups. His 1928 paper "Über die endlichen Gruppen ohne das Gesetz der eindeutigen Umkehrbarkeit" ("On finite groups without the rule of unique invertibility") determined the structure of finite <a class="mw-redirect" href="/wiki/Simple_semigroup" title="Simple semigroup">simple semigroups</a> and showed that the minimal ideal (or <a href="/wiki/Green%27s_relations" title="Green's relations">Green's relations</a> J-class) of a finite semigroup is simple.<sup class="reference" id="cite_ref-Hollings_20-1"><a href="#cite_note-Hollings-20"><span class="cite-bracket">[</span>18<span class="cite-bracket">]</span></a></sup> From that point on, the foundations of semigroup theory were further laid by <a href="/wiki/David_Rees_(mathematician)" title="David Rees (mathematician)">David Rees</a>, <a class="mw-redirect" href="/wiki/James_Alexander_Green" title="James Alexander Green">James Alexander Green</a>, <a class="new" href="/w/index.php?title=Evgenii_Sergeevich_Lyapin&amp;action=edit&amp;redlink=1" title="Evgenii Sergeevich Lyapin (page does not exist)">Evgenii Sergeevich Lyapin</a><span class="noprint" style="font-size:85%; font-style: normal;"> [<a class="extiw" href="https://fr.wikipedia.org/wiki/Evgueni_Liapine" title="fr:Evgueni Liapine">fr</a>]</span>, <a href="/wiki/Alfred_H._Clifford" title="Alfred H. Clifford">Alfred H. Clifford</a> and <a href="/wiki/Gordon_Preston" title="Gordon Preston">Gordon Preston</a>. The latter two published a two-volume monograph on semigroup theory in 1961 and 1967 respectively. In 1970, a new periodical called <i><a href="/wiki/Semigroup_Forum" title="Semigroup Forum">Semigroup Forum</a></i> (currently published by <a class="mw-redirect" href="/wiki/Springer_Verlag" title="Springer Verlag">Springer Verlag</a>) became one of the few mathematical journals devoted entirely to semigroup theory.
+</p><p>The <a href="/wiki/Representation_theory" title="Representation theory">representation theory</a> of semigroups was developed in 1963 by <a class="mw-redirect" href="/wiki/Boris_Schein" title="Boris Schein">Boris Schein</a> using <a href="/wiki/Binary_relation" title="Binary relation">binary relations</a> on a set <i>A</i> and <a href="/wiki/Composition_of_relations" title="Composition of relations">composition of relations</a> for the semigroup product.<sup class="reference" id="cite_ref-21"><a href="#cite_note-21"><span class="cite-bracket">[</span>19<span class="cite-bracket">]</span></a></sup>  At an algebraic conference in 1972 Schein surveyed the literature on B<sub><i>A</i></sub>, the semigroup of relations on <i>A</i>.<sup class="reference" id="cite_ref-22"><a href="#cite_note-22"><span class="cite-bracket">[</span>20<span class="cite-bracket">]</span></a></sup> In 1997 Schein and <a href="/wiki/Ralph_McKenzie" title="Ralph McKenzie">Ralph McKenzie</a> proved that every semigroup is isomorphic to a transitive semigroup of binary relations.<sup class="reference" id="cite_ref-23"><a href="#cite_note-23"><span class="cite-bracket">[</span>21<span class="cite-bracket">]</span></a></sup>
+</p><p>In recent years researchers in the field have become more specialized with dedicated monographs appearing on important classes of semigroups, like <a href="/wiki/Inverse_semigroup" title="Inverse semigroup">inverse semigroups</a>, as well as monographs focusing on applications in <a class="new" href="/w/index.php?title=Algebraic_automata_theory&amp;action=edit&amp;redlink=1" title="Algebraic automata theory (page does not exist)">algebraic automata theory</a>, particularly for finite automata, and also in <a href="/wiki/Functional_analysis" title="Functional analysis">functional analysis</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Generalizations">Generalizations</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=14" title="Edit section: Generalizations"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table class="floatright" style="font-size:90%">
+<caption style="background:#cee0f2; padding:0.2em 0.4em 0.2em; text-align:center; font-size:130%; line-height:1.2em; font-weight: bold">Group-like structures
+</caption>
+<tbody><tr>
+<th>
+</th>
+<th><a class="mw-redirect" href="/wiki/Total_function" title="Total function">Total</a>
+</th>
+<th><a href="/wiki/Associative_property" title="Associative property">Associative</a>
+</th>
+<th><a href="/wiki/Identity_element" title="Identity element">Identity</a>
+</th>
+<th><a href="/wiki/Quasigroup" title="Quasigroup"><style data-mw-deduplicate="TemplateStyles:r1038841319">'"`UNIQ--templatestyles-0000006E-QINU`"'</style><span class="rt-commentedText tooltip tooltip-dotted" title="Here, divisibility refers specifically to the quasigroup axioms">Divisible</span></a>
+</th>
+<th><a href="/wiki/Commutative_property" title="Commutative property">Commutative</a>
+</th></tr>
+<tr>
+<th><a href="/wiki/Partial_groupoid" title="Partial groupoid">Partial magma</a>
+</th>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded
+</td></tr>
+<tr>
+<th><a href="/wiki/Semigroupoid" title="Semigroupoid">Semigroupoid</a>
+</th>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded
+</td></tr>
+<tr>
+<th><a href="/wiki/Category_(mathematics)" title="Category (mathematics)">Small category</a>
+</th>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded
+</td></tr>
+<tr>
+<th><a href="/wiki/Groupoid" title="Groupoid">Groupoid</a>
+</th>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded
+</td></tr>
+<tr>
+<th>Commutative <a href="/wiki/Groupoid" title="Groupoid">groupoid</a>
+</th>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required
+</td></tr>
+<tr>
+<th><a href="/wiki/Magma_(algebra)" title="Magma (algebra)">Magma</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded
+</td></tr>
+<tr>
+<th>Commutative <a href="/wiki/Magma_(algebra)" title="Magma (algebra)">magma</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required
+</td></tr>
+<tr>
+<th><a href="/wiki/Quasigroup" title="Quasigroup">Quasigroup</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded
+</td></tr>
+<tr>
+<th>Commutative <a href="/wiki/Quasigroup" title="Quasigroup">quasigroup</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required
+</td></tr>
+<tr>
+<th><a class="mw-redirect" href="/wiki/Unital_magma" title="Unital magma">Unital magma</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded
+</td></tr>
+<tr>
+<th>Commutative <a class="mw-redirect" href="/wiki/Unital_magma" title="Unital magma">unital magma</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required
+</td></tr>
+<tr>
+<th><a class="mw-redirect" href="/wiki/Loop_(algebra)" title="Loop (algebra)">Loop</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded
+</td></tr>
+<tr>
+<th>Commutative <a class="mw-redirect" href="/wiki/Loop_(algebra)" title="Loop (algebra)">loop</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required
+</td></tr>
+<tr>
+<th><a class="mw-selflink selflink">Semigroup</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded
+</td></tr>
+<tr>
+<th>Commutative <a class="mw-selflink selflink">semigroup</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required
+</td></tr>
+<tr>
+<th>Associative <a href="/wiki/Quasigroup" title="Quasigroup">quasigroup</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded
+</td></tr>
+<tr>
+<th>Commutative-and-associative <a href="/wiki/Quasigroup" title="Quasigroup">quasigroup</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required
+</td></tr>
+<tr>
+<th><a href="/wiki/Monoid" title="Monoid">Monoid</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded
+</td></tr>
+<tr>
+<th><a class="mw-redirect" href="/wiki/Commutative_monoid" title="Commutative monoid">Commutative monoid</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required
+</td></tr>
+<tr>
+<th><a href="/wiki/Group_(mathematics)" title="Group (mathematics)">Group</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-no" style="background:#FFC7C7;color:black;vertical-align:middle;text-align:center;">Unneeded
+</td></tr>
+<tr>
+<th><a href="/wiki/Abelian_group" title="Abelian group">Abelian group</a>
+</th>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required</td>
+<td class="table-yes" style="background:#9EFF9E;color:black;vertical-align:middle;text-align:center;">Required
+</td></tr></tbody></table>
+<p>If the associativity axiom of a semigroup is dropped, the result is a <a class="mw-redirect" href="/wiki/Magma_(mathematics)" title="Magma (mathematics)">magma</a>, which is nothing more than a set <i>M</i> equipped with a <a href="/wiki/Binary_operation" title="Binary operation">binary operation</a> that is closed <span class="nowrap"><i>M</i> × <i>M</i> → <i>M</i></span>.
+</p><p>Generalizing in a different direction, an <b><i>n</i>-ary semigroup</b> (also <b><i>n</i>-semigroup</b>, <b>polyadic semigroup</b> or <b>multiary semigroup</b>) is a generalization of a semigroup to a set <i>G</i> with a <a href="/wiki/Arity" title="Arity"><i>n</i>-ary operation</a> instead of a binary operation.<sup class="reference" id="cite_ref-24"><a href="#cite_note-24"><span class="cite-bracket">[</span>22<span class="cite-bracket">]</span></a></sup> The associative law is generalized as follows: ternary associativity is <span class="nowrap">(<i>abc</i>)<i>de</i> = <i>a</i>(<i>bcd</i>)<i>e</i> = <i>ab</i>(<i>cde</i>)</span>, i.e. the string <i>abcde</i> with any three adjacent elements bracketed. <i>n</i>-ary associativity is a string of length <span class="nowrap"><i>n</i> + (<i>n</i> − 1)</span> with any <i>n</i> adjacent elements bracketed. A 2-ary semigroup is just a semigroup. Further axioms lead to an <a href="/wiki/N-ary_group" title="N-ary group"><i>n</i>-ary group</a>.
+</p><p>A third generalization is the <a href="/wiki/Semigroupoid" title="Semigroupoid">semigroupoid</a>, in which the requirement that the binary relation be total is lifted. As categories generalize monoids in the same way, a semigroupoid behaves much like a category but lacks identities.
+</p><p>Infinitary generalizations of commutative semigroups have sometimes been considered by various authors.<sup class="reference" id="cite_ref-25"><a href="#cite_note-25"><span class="cite-bracket">[</span>c<span class="cite-bracket">]</span></a></sup>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=15" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="/wiki/Absorbing_element" title="Absorbing element">Absorbing element</a></li>
+<li><a href="/wiki/Biordered_set" title="Biordered set">Biordered set</a></li>
+<li><a href="/wiki/Compact_semigroup" title="Compact semigroup">Compact semigroup</a></li>
+<li><a href="/wiki/Empty_semigroup" title="Empty semigroup">Empty semigroup</a></li>
+<li><a href="/wiki/Generalized_inverse" title="Generalized inverse">Generalized inverse</a></li>
+<li><a href="/wiki/Identity_element" title="Identity element">Identity element</a></li>
+<li><a href="/wiki/Light%27s_associativity_test" title="Light's associativity test">Light's associativity test</a></li>
+<li><a href="/wiki/Principal_factor" title="Principal factor">Principal factor</a></li>
+<li><a class="mw-redirect" href="/wiki/Quantum_dynamical_semigroup" title="Quantum dynamical semigroup">Quantum dynamical semigroup</a></li>
+<li><a class="mw-redirect" href="/wiki/Semigroup_ring" title="Semigroup ring">Semigroup ring</a></li>
+<li><a href="/wiki/Weak_inverse" title="Weak inverse">Weak inverse</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Notes">Notes</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=16" title="Edit section: Notes"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1239543626">.mw-parser-output .reflist{margin-bottom:0.5em;list-style-type:decimal}@media screen{.mw-parser-output .reflist{font-size:90%}}.mw-parser-output .reflist .references{font-size:100%;margin-bottom:0;list-style-type:inherit}.mw-parser-output .reflist-columns-2{column-width:30em}.mw-parser-output .reflist-columns-3{column-width:25em}.mw-parser-output .reflist-columns{margin-top:0.3em}.mw-parser-output .reflist-columns ol{margin-top:0}.mw-parser-output .reflist-columns li{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .reflist-upper-alpha{list-style-type:upper-alpha}.mw-parser-output .reflist-upper-roman{list-style-type:upper-roman}.mw-parser-output .reflist-lower-alpha{list-style-type:lower-alpha}.mw-parser-output .reflist-lower-greek{list-style-type:lower-greek}.mw-parser-output .reflist-lower-roman{list-style-type:lower-roman}</style><div class="reflist reflist-lower-alpha">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text">The closure axiom is implied by the definition of a binary operation on a set. Some authors thus omit it and specify three axioms for a group and only one axiom (associativity) for a semigroup.</span>
+</li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text">Namely: the trivial semigroup in which (for all <i>x</i> and <i>y</i>) <span class="texhtml"><i>xy</i> = <i>a</i></span> and its counterpart in which <span class="texhtml"><i>xy</i> = <i>b</i></span>, the semigroups based on multiplication modulo 2 (choosing a or b as the identity element 1), the groups equivalent to addition modulo 2 (choosing a or b to be the identity element 0), and the semigroups in which the elements are either both left identities or both right identities.</span>
+</li>
+<li id="cite_note-25"><span class="mw-cite-backlink"><b><a href="#cite_ref-25">^</a></b></span> <span class="reference-text">See references in Udo Hebisch and Hanns Joachim  Weinert, <i>Semirings  and  Semifields</i>, in particular, Section 10, <i>Semirings  with  infinite sums</i>, in M.  Hazewinkel, Handbook of Algebra, Vol. 1, Elsevier, 1996. Notice that in this context the authors use the term <i>semimodule</i> in place of <i>semigroup</i>.</span>
+</li>
+</ol></div></div>
+<div class="mw-heading mw-heading2"><h2 id="Citations">Citations</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=17" title="Edit section: Citations"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<link href="mw-data:TemplateStyles:r1239543626" rel="mw-deduplicated-inline-style"/><div class="reflist">
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-FOOTNOTEFeller1971-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEFeller1971_2-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFFeller1971">Feller 1971</a></span>
+</li>
+<li id="cite_note-FOOTNOTEJacobson200930ex._5-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEJacobson200930ex._5_3-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFJacobson2009">Jacobson 2009</a>, p. 30, ex. 5</span>
+</li>
+<li id="cite_note-FOOTNOTELawson1998[httpsbooksgooglecombooksid_F78nQEACAAJpgPA20dq22adjoininganidentity22_20]-4"><span class="mw-cite-backlink">^ <a href="#cite_ref-FOOTNOTELawson1998[httpsbooksgooglecombooksid_F78nQEACAAJpgPA20dq22adjoininganidentity22_20]_4-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-FOOTNOTELawson1998[httpsbooksgooglecombooksid_F78nQEACAAJpgPA20dq22adjoininganidentity22_20]_4-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><a href="#CITEREFLawson1998">Lawson 1998</a>, p. <a class="external text" href="https://books.google.com/books?id=_F78nQEACAAJ&amp;pg=PA20&amp;dq=%22adjoining+an+identity%22" rel="nofollow">20</a></span>
+</li>
+<li id="cite_note-KilpKilʹp2000-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-KilpKilʹp2000_5-0">^</a></b></span> <span class="reference-text"><style data-mw-deduplicate="TemplateStyles:r1238218222">.mw-parser-output cite.citation{font-style:inherit;word-wrap:break-word}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .citation:target{background-color:rgba(0,127,255,0.133)}.mw-parser-output .id-lock-free.id-lock-free a{background:url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited.id-lock-limited a,.mw-parser-output .id-lock-registration.id-lock-registration a{background:url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription.id-lock-subscription a{background:url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-ws-icon a{background:url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-free a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-limited a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-registration a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .id-lock-subscription a,body:not(.skin-timeless):not(.skin-minerva) .mw-parser-output .cs1-ws-icon a{background-size:contain;padding:0 1em 0 0}.mw-parser-output .cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;color:var(--color-error,#d33)}.mw-parser-output .cs1-visible-error{color:var(--color-error,#d33)}.mw-parser-output .cs1-maint{display:none;color:#085;margin-left:0.3em}.mw-parser-output .cs1-kern-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}@media screen{.mw-parser-output .cs1-format{font-size:95%}html.skin-theme-clientpref-night .mw-parser-output .cs1-maint{color:#18911f}}@media screen and (prefers-color-scheme:dark){html.skin-theme-clientpref-os .mw-parser-output .cs1-maint{color:#18911f}}</style><cite class="citation book cs1" id="CITEREFKilpKnauerMikhalev2000">Kilp, Mati; Knauer, U.; Mikhalev, Aleksandr V. (2000). <a class="external text" href="https://books.google.com/books?id=4gPhmmW-EGcC&amp;pg=PA25" rel="nofollow"><i>Monoids, Acts, and Categories: With Applications to Wreath Products and Graphs : a Handbook for Students and Researchers</i></a>. Walter de Gruyter. p. 25. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-3-11-015248-7" title="Special:BookSources/978-3-11-015248-7"><bdi>978-3-11-015248-7</bdi></a>. <a class="mw-redirect" href="/wiki/Zbl_(identifier)" title="Zbl (identifier)">Zbl</a> <a class="external text" href="https://zbmath.org/?format=complete&amp;q=an:0945.20036" rel="nofollow">0945.20036</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Monoids%2C+Acts%2C+and+Categories%3A+With+Applications+to+Wreath+Products+and+Graphs+%3A+a+Handbook+for+Students+and+Researchers&amp;rft.pages=25&amp;rft.pub=Walter+de+Gruyter&amp;rft.date=2000&amp;rft_id=https%3A%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A0945.20036%23id-name%3DZbl&amp;rft.isbn=978-3-11-015248-7&amp;rft.aulast=Kilp&amp;rft.aufirst=Mati&amp;rft.au=Knauer%2C+U.&amp;rft.au=Mikhalev%2C+Aleksandr+V.&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3D4gPhmmW-EGcC%26pg%3DPA25&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></span>
+</li>
+<li id="cite_note-Li͡apin1968-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-Li͡apin1968_6-0">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFLi͡apin1968">Li͡apin, E. S. (1968). <a class="external text" href="https://books.google.com/books?id=G8pWKPp4tKwC&amp;pg=PA96" rel="nofollow"><i>Semigroups</i></a>. American Mathematical Soc. p. 96. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-8218-8641-0" title="Special:BookSources/978-0-8218-8641-0"><bdi>978-0-8218-8641-0</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Semigroups&amp;rft.pages=96&amp;rft.pub=American+Mathematical+Soc.&amp;rft.date=1968&amp;rft.isbn=978-0-8218-8641-0&amp;rft.aulast=Li%CD%A1apin&amp;rft.aufirst=E.+S.&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3DG8pWKPp4tKwC%26pg%3DPA96&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></span>
+</li>
+<li id="cite_note-FOOTNOTELothaire2011463-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTELothaire2011463_7-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFLothaire2011">Lothaire 2011</a>, p. 463</span>
+</li>
+<li id="cite_note-FOOTNOTELothaire2011465-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTELothaire2011465_8-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFLothaire2011">Lothaire 2011</a>, p. 465</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFPin2016">Pin, Jean-Éric (November 30, 2016). <a class="external text" href="http://www.liafa.jussieu.fr/~jep/PDF/MPRI/MPRI.pdf" rel="nofollow"><i>Mathematical Foundations of Automata Theory</i></a> <span class="cs1-format">(PDF)</span>. p. 19.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Mathematical+Foundations+of+Automata+Theory&amp;rft.pages=19&amp;rft.date=2016-11-30&amp;rft.aulast=Pin&amp;rft.aufirst=Jean-%C3%89ric&amp;rft_id=http%3A%2F%2Fwww.liafa.jussieu.fr%2F~jep%2FPDF%2FMPRI%2FMPRI.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></span>
+</li>
+<li id="cite_note-FOOTNOTECliffordPreston20103-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTECliffordPreston20103_11-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFCliffordPreston2010">Clifford &amp; Preston 2010</a>, p. 3</span>
+</li>
+<li id="cite_note-FOOTNOTEGrillet2001-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEGrillet2001_12-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFGrillet2001">Grillet 2001</a></span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFFarb2006">Farb, B. (2006). <i>Problems on mapping class groups and related topics</i>. Amer. Math. Soc. p. 357. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-8218-3838-9" title="Special:BookSources/978-0-8218-3838-9"><bdi>978-0-8218-3838-9</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Problems+on+mapping+class+groups+and+related+topics&amp;rft.pages=357&amp;rft.pub=Amer.+Math.+Soc.&amp;rft.date=2006&amp;rft.isbn=978-0-8218-3838-9&amp;rft.aulast=Farb&amp;rft.aufirst=B.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-14">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFAuslanderBuchsbaum1974">Auslander, M.; Buchsbaum, D. A. (1974). <i>Groups, rings, modules</i>. Harper &amp; Row. p. 50. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-06-040387-4" title="Special:BookSources/978-0-06-040387-4"><bdi>978-0-06-040387-4</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Groups%2C+rings%2C+modules&amp;rft.pages=50&amp;rft.pub=Harper+%26+Row&amp;rft.date=1974&amp;rft.isbn=978-0-06-040387-4&amp;rft.aulast=Auslander&amp;rft.aufirst=M.&amp;rft.au=Buchsbaum%2C+D.+A.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></span>
+</li>
+<li id="cite_note-FOOTNOTECliffordPreston196134-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTECliffordPreston196134_15-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFCliffordPreston1961">Clifford &amp; Preston 1961</a>, p. 34</span>
+</li>
+<li id="cite_note-FOOTNOTESuschkewitsch1928-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTESuschkewitsch1928_16-0">^</a></b></span> <span class="reference-text"><a href="#CITEREFSuschkewitsch1928">Suschkewitsch 1928</a></span>
+</li>
+<li id="cite_note-17"><span class="mw-cite-backlink"><b><a href="#cite_ref-17">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFPreston1990"><a href="/wiki/Gordon_Preston" title="Gordon Preston">Preston, G. B.</a> (1990). <a class="external text" href="https://web.archive.org/web/20090109045100/http://www.gap-system.org/~history/Extras/Preston_semigroups.html" rel="nofollow"><i>Personal reminiscences of the early history of semigroups</i></a>. Archived from <a class="external text" href="http://www.gap-system.org/~history/Extras/Preston_semigroups.html" rel="nofollow">the original</a> on 2009-01-09<span class="reference-accessdate">. Retrieved <span class="nowrap">2009-05-12</span></span>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Personal+reminiscences+of+the+early+history+of+semigroups&amp;rft.date=1990&amp;rft.aulast=Preston&amp;rft.aufirst=G.+B.&amp;rft_id=http%3A%2F%2Fwww.gap-system.org%2F~history%2FExtras%2FPreston_semigroups.html&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><b><a href="#cite_ref-18">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFMaltsev1937"><a href="/wiki/Anatoly_Maltsev" title="Anatoly Maltsev">Maltsev, A.</a> (1937). "On the immersion of an algebraic ring into a field". <i>Math. Annalen</i>. <b>113</b>: <span class="nowrap">686–</span>691. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2FBF01571659" rel="nofollow">10.1007/BF01571659</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:122295935" rel="nofollow">122295935</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Math.+Annalen&amp;rft.atitle=On+the+immersion+of+an+algebraic+ring+into+a+field&amp;rft.volume=113&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E686-%3C%2Fspan%3E691&amp;rft.date=1937&amp;rft_id=info%3Adoi%2F10.1007%2FBF01571659&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A122295935%23id-name%3DS2CID&amp;rft.aulast=Maltsev&amp;rft.aufirst=A.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></span>
+</li>
+<li id="cite_note-19"><span class="mw-cite-backlink"><b><a href="#cite_ref-19">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation web cs1"><a class="external text" href="http://jeff560.tripod.com/s.html" rel="nofollow">"Earliest Known Uses of Some of the Words of Mathematics"</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Earliest+Known+Uses+of+Some+of+the+Words+of+Mathematics&amp;rft_id=http%3A%2F%2Fjeff560.tripod.com%2Fs.html&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></span>
+</li>
+<li id="cite_note-Hollings-20"><span class="mw-cite-backlink">^ <a href="#cite_ref-Hollings_20-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Hollings_20-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation web cs1"><a class="external text" href="https://www.webcitation.org/5kmeaTTMB?url=http://uk.geocities.com/cdhollings/suschkewitsch3.pdf" rel="nofollow">"An account of Suschkewitsch's paper by Christopher Hollings"</a> <span class="cs1-format">(PDF)</span>. Archived from <a class="external text" href="http://uk.geocities.com/cdhollings/suschkewitsch3.pdf" rel="nofollow">the original</a> <span class="cs1-format">(PDF)</span> on 2009-10-25.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=An+account+of+Suschkewitsch%27s+paper+by+Christopher+Hollings&amp;rft_id=http%3A%2F%2Fuk.geocities.com%2Fcdhollings%2Fsuschkewitsch3.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></span>
+</li>
+<li id="cite_note-21"><span class="mw-cite-backlink"><b><a href="#cite_ref-21">^</a></b></span> <span class="reference-text">B. M. Schein (1963) "Representations of semigroups by means of binary relations" (Russian), <a href="/wiki/Matematicheskii_Sbornik" title="Matematicheskii Sbornik">Matematicheskii Sbornik</a> 60: 292–303 <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=0153760" rel="nofollow">0153760</a></span>
+</li>
+<li id="cite_note-22"><span class="mw-cite-backlink"><b><a href="#cite_ref-22">^</a></b></span> <span class="reference-text">B. M. Schein (1972) <i>Miniconference on semigroup Theory</i>, <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=0401970" rel="nofollow">0401970</a></span>
+</li>
+<li id="cite_note-23"><span class="mw-cite-backlink"><b><a href="#cite_ref-23">^</a></b></span> <span class="reference-text">B. M. Schein &amp; R. McKenzie (1997) "Every semigroup is isomorphic to a transitive semigroup of binary relations", <a href="/wiki/Transactions_of_the_American_Mathematical_Society" title="Transactions of the American Mathematical Society">Transactions of the American Mathematical Society</a> 349(1): 271–85 <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=1370647" rel="nofollow">1370647</a></span>
+</li>
+<li id="cite_note-24"><span class="mw-cite-backlink"><b><a href="#cite_ref-24">^</a></b></span> <span class="reference-text"><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFDudek2001">Dudek, W.A. (2001). <a class="external text" href="https://web.archive.org/web/20090714003319/http://www.quasigroups.eu/contents/contents8.php?m=trzeci" rel="nofollow">"On some old problems in <i>n</i>-ary groups"</a>. <i>Quasigroups and Related Systems</i>. <b>8</b>: <span class="nowrap">15–</span>36. Archived from <a class="external text" href="http://www.quasigroups.eu/contents/contents8.php?m=trzeci" rel="nofollow">the original</a> on 2009-07-14.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Quasigroups+and+Related+Systems&amp;rft.atitle=On+some+old+problems+in+n-ary+groups&amp;rft.volume=8&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E15-%3C%2Fspan%3E36&amp;rft.date=2001&amp;rft.aulast=Dudek&amp;rft.aufirst=W.A.&amp;rft_id=http%3A%2F%2Fwww.quasigroups.eu%2Fcontents%2Fcontents8.php%3Fm%3Dtrzeci&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></span>
+</li>
+</ol></div></div>
+<div class="mw-heading mw-heading2"><h2 id="References">References</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=18" title="Edit section: References"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<style data-mw-deduplicate="TemplateStyles:r1239549316">.mw-parser-output .refbegin{margin-bottom:0.5em}.mw-parser-output .refbegin-hanging-indents>ul{margin-left:0}.mw-parser-output .refbegin-hanging-indents>ul>li{margin-left:0;padding-left:3.2em;text-indent:-3.2em}.mw-parser-output .refbegin-hanging-indents ul,.mw-parser-output .refbegin-hanging-indents ul li{list-style:none}@media(max-width:720px){.mw-parser-output .refbegin-hanging-indents>ul>li{padding-left:1.6em;text-indent:-1.6em}}.mw-parser-output .refbegin-columns{margin-top:0.3em}.mw-parser-output .refbegin-columns ul{margin-top:0}.mw-parser-output .refbegin-columns li{page-break-inside:avoid;break-inside:avoid-column}@media screen{.mw-parser-output .refbegin{font-size:90%}}</style><div class="refbegin" style="">
+<div class="mw-heading mw-heading3"><h3 id="General_references">General references</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=19" title="Edit section: General references"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFHowie1995"><a href="/wiki/John_Mackintosh_Howie" title="John Mackintosh Howie">Howie, John M.</a> (1995). <i>Fundamentals of Semigroup Theory</i>. Clarendon Press. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-19-851194-6" title="Special:BookSources/978-0-19-851194-6"><bdi>978-0-19-851194-6</bdi></a>. <a class="mw-redirect" href="/wiki/Zbl_(identifier)" title="Zbl (identifier)">Zbl</a> <a class="external text" href="https://zbmath.org/?format=complete&amp;q=an:0835.20077" rel="nofollow">0835.20077</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Fundamentals+of+Semigroup+Theory&amp;rft.pub=Clarendon+Press&amp;rft.date=1995&amp;rft_id=https%3A%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A0835.20077%23id-name%3DZbl&amp;rft.isbn=978-0-19-851194-6&amp;rft.aulast=Howie&amp;rft.aufirst=John+M.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFCliffordPreston1961"><a href="/wiki/Alfred_H._Clifford" title="Alfred H. Clifford">Clifford, Alfred Hoblitzelle</a>; <a href="/wiki/Gordon_Preston" title="Gordon Preston">Preston, Gordon Bamford</a> (1961). <a class="external text" href="https://books.google.com/books?id=4vXG2rjCUmUC" rel="nofollow"><i>The Algebraic Theory of Semigroups</i></a>. Vol. 1. American Mathematical Society. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-8218-0271-7" title="Special:BookSources/978-0-8218-0271-7"><bdi>978-0-8218-0271-7</bdi></a>. <a class="mw-redirect" href="/wiki/Zbl_(identifier)" title="Zbl (identifier)">Zbl</a> <a class="external text" href="https://zbmath.org/?format=complete&amp;q=an:0111.03403" rel="nofollow">0111.03403</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+Algebraic+Theory+of+Semigroups&amp;rft.pub=American+Mathematical+Society&amp;rft.date=1961&amp;rft_id=https%3A%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A0111.03403%23id-name%3DZbl&amp;rft.isbn=978-0-8218-0271-7&amp;rft.aulast=Clifford&amp;rft.aufirst=Alfred+Hoblitzelle&amp;rft.au=Preston%2C+Gordon+Bamford&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3D4vXG2rjCUmUC&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFCliffordPreston2010"><a href="/wiki/Alfred_H._Clifford" title="Alfred H. Clifford">Clifford, Alfred Hoblitzelle</a>; <a href="/wiki/Gordon_Preston" title="Gordon Preston">Preston, Gordon Bamford</a> (2010) [1967]. <a class="external text" href="https://books.google.com/books?id=756KAwAAQBAJ" rel="nofollow"><i>The algebraic theory of semigroups</i></a>. Vol. 2. <a href="/wiki/American_Mathematical_Society" title="American Mathematical Society">American Mathematical Society</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-8218-0272-4" title="Special:BookSources/978-0-8218-0272-4"><bdi>978-0-8218-0272-4</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=The+algebraic+theory+of+semigroups&amp;rft.pub=American+Mathematical+Society&amp;rft.date=2010&amp;rft.isbn=978-0-8218-0272-4&amp;rft.aulast=Clifford&amp;rft.aufirst=Alfred+Hoblitzelle&amp;rft.au=Preston%2C+Gordon+Bamford&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3D756KAwAAQBAJ&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFGrillet1995">Grillet, Pierre Antoine (1995). <a class="external text" href="https://books.google.com/books?id=yM544W1N2UUC" rel="nofollow"><i>Semigroups: An Introduction to the Structure Theory</i></a>. Marcel Dekker. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-8247-9662-4" title="Special:BookSources/978-0-8247-9662-4"><bdi>978-0-8247-9662-4</bdi></a>. <a class="mw-redirect" href="/wiki/Zbl_(identifier)" title="Zbl (identifier)">Zbl</a> <a class="external text" href="https://zbmath.org/?format=complete&amp;q=an:0830.20079" rel="nofollow">0830.20079</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Semigroups%3A+An+Introduction+to+the+Structure+Theory&amp;rft.pub=Marcel+Dekker&amp;rft.date=1995&amp;rft_id=https%3A%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A0830.20079%23id-name%3DZbl&amp;rft.isbn=978-0-8247-9662-4&amp;rft.aulast=Grillet&amp;rft.aufirst=Pierre+Antoine&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3DyM544W1N2UUC&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFGrillet2001">Grillet, Pierre Antoine (2001). <a class="external text" href="https://books.google.com/books?id=7QOOxYbCpggC" rel="nofollow"><i>Commutative Semigroups</i></a>. Springer Verlag. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-7923-7067-3" title="Special:BookSources/978-0-7923-7067-3"><bdi>978-0-7923-7067-3</bdi></a>. <a class="mw-redirect" href="/wiki/Zbl_(identifier)" title="Zbl (identifier)">Zbl</a> <a class="external text" href="https://zbmath.org/?format=complete&amp;q=an:1040.20048" rel="nofollow">1040.20048</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Commutative+Semigroups&amp;rft.pub=Springer+Verlag&amp;rft.date=2001&amp;rft_id=https%3A%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A1040.20048%23id-name%3DZbl&amp;rft.isbn=978-0-7923-7067-3&amp;rft.aulast=Grillet&amp;rft.aufirst=Pierre+Antoine&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3D7QOOxYbCpggC&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFHollings2009">Hollings, Christopher (2009). "The Early Development of the Algebraic Theory of Semigroups". <i><a href="/wiki/Archive_for_History_of_Exact_Sciences" title="Archive for History of Exact Sciences">Archive for History of Exact Sciences</a></i>. <b>63</b> (5): <span class="nowrap">497–</span>536. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2Fs00407-009-0044-3" rel="nofollow">10.1007/s00407-009-0044-3</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:123422715" rel="nofollow">123422715</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Archive+for+History+of+Exact+Sciences&amp;rft.atitle=The+Early+Development+of+the+Algebraic+Theory+of+Semigroups&amp;rft.volume=63&amp;rft.issue=5&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E497-%3C%2Fspan%3E536&amp;rft.date=2009&amp;rft_id=info%3Adoi%2F10.1007%2Fs00407-009-0044-3&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A123422715%23id-name%3DS2CID&amp;rft.aulast=Hollings&amp;rft.aufirst=Christopher&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFHollings2014">Hollings, Christopher (2014). <i>Mathematics across the Iron Curtain: A History of the Algebraic Theory of Semigroups</i>. American Mathematical Society. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-1-4704-1493-1" title="Special:BookSources/978-1-4704-1493-1"><bdi>978-1-4704-1493-1</bdi></a>. <a class="mw-redirect" href="/wiki/Zbl_(identifier)" title="Zbl (identifier)">Zbl</a> <a class="external text" href="https://zbmath.org/?format=complete&amp;q=an:1317.20001" rel="nofollow">1317.20001</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Mathematics+across+the+Iron+Curtain%3A+A+History+of+the+Algebraic+Theory+of+Semigroups&amp;rft.pub=American+Mathematical+Society&amp;rft.date=2014&amp;rft_id=https%3A%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A1317.20001%23id-name%3DZbl&amp;rft.isbn=978-1-4704-1493-1&amp;rft.aulast=Hollings&amp;rft.aufirst=Christopher&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFPetrich1973">Petrich, Mario (1973). <i>Introduction to Semigroups</i>. Charles E. Merrill. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-675-09062-9" title="Special:BookSources/978-0-675-09062-9"><bdi>978-0-675-09062-9</bdi></a>. <a class="mw-redirect" href="/wiki/Zbl_(identifier)" title="Zbl (identifier)">Zbl</a> <a class="external text" href="https://zbmath.org/?format=complete&amp;q=an:0321.20037" rel="nofollow">0321.20037</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Introduction+to+Semigroups&amp;rft.pub=Charles+E.+Merrill&amp;rft.date=1973&amp;rft_id=https%3A%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A0321.20037%23id-name%3DZbl&amp;rft.isbn=978-0-675-09062-9&amp;rft.aulast=Petrich&amp;rft.aufirst=Mario&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Specific_references">Specific references</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Semigroup&amp;action=edit&amp;section=20" title="Edit section: Specific references"><span>edit</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFFeller1971"><a href="/wiki/William_Feller" title="William Feller">Feller, William</a> (1971). <i>An introduction to probability theory and its applications</i>. Vol. II (2nd ed.). Wiley. <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=0270403" rel="nofollow">0270403</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=An+introduction+to+probability+theory+and+its+applications&amp;rft.edition=2nd&amp;rft.pub=Wiley&amp;rft.date=1971&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D0270403%23id-name%3DMR&amp;rft.aulast=Feller&amp;rft.aufirst=William&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFHillePhillips1974"><a href="/wiki/Einar_Hille" title="Einar Hille">Hille, Einar</a>; <a class="mw-redirect" href="/wiki/Ralph_Phillips_(mathematician)" title="Ralph Phillips (mathematician)">Phillips, Ralph S.</a> (1974). <a class="external text" href="https://books.google.com/books?id=gf2VAwAAQBAJ" rel="nofollow"><i>Functional analysis and semi-groups</i></a>. <a href="/wiki/American_Mathematical_Society" title="American Mathematical Society">American Mathematical Society</a>. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0821874646" title="Special:BookSources/978-0821874646"><bdi>978-0821874646</bdi></a>. <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=0423094" rel="nofollow">0423094</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Functional+analysis+and+semi-groups&amp;rft.pub=American+Mathematical+Society&amp;rft.date=1974&amp;rft.isbn=978-0821874646&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D0423094%23id-name%3DMR&amp;rft.aulast=Hille&amp;rft.aufirst=Einar&amp;rft.au=Phillips%2C+Ralph+S.&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3Dgf2VAwAAQBAJ&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation journal cs1" id="CITEREFSuschkewitsch1928"><a href="/wiki/Anton_Sushkevich" title="Anton Sushkevich">Suschkewitsch, Anton</a> (1928). "Über die endlichen Gruppen ohne das Gesetz der eindeutigen Umkehrbarkeit". <i><a href="/wiki/Mathematische_Annalen" title="Mathematische Annalen">Mathematische Annalen</a></i>. <b>99</b> (1): <span class="nowrap">30–</span>50. <a class="mw-redirect" href="/wiki/Doi_(identifier)" title="Doi (identifier)">doi</a>:<a class="external text" href="https://doi.org/10.1007%2FBF01459084" rel="nofollow">10.1007/BF01459084</a>. <a class="mw-redirect" href="/wiki/Hdl_(identifier)" title="Hdl (identifier)">hdl</a>:<span class="id-lock-free" title="Freely accessible"><a class="external text" href="https://hdl.handle.net/10338.dmlcz%2F100078" rel="nofollow">10338.dmlcz/100078</a></span>. <a class="mw-redirect" href="/wiki/ISSN_(identifier)" title="ISSN (identifier)">ISSN</a> <a class="external text" href="https://search.worldcat.org/issn/0025-5831" rel="nofollow">0025-5831</a>. <a class="mw-redirect" href="/wiki/MR_(identifier)" title="MR (identifier)">MR</a> <a class="external text" href="https://mathscinet.ams.org/mathscinet-getitem?mr=1512437" rel="nofollow">1512437</a>. <a class="mw-redirect" href="/wiki/S2CID_(identifier)" title="S2CID (identifier)">S2CID</a> <a class="external text" href="https://api.semanticscholar.org/CorpusID:121081075" rel="nofollow">121081075</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Mathematische+Annalen&amp;rft.atitle=%C3%9Cber+die+endlichen+Gruppen+ohne+das+Gesetz+der+eindeutigen+Umkehrbarkeit&amp;rft.volume=99&amp;rft.issue=1&amp;rft.pages=%3Cspan+class%3D%22nowrap%22%3E30-%3C%2Fspan%3E50&amp;rft.date=1928&amp;rft_id=info%3Ahdl%2F10338.dmlcz%2F100078&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A121081075%23id-name%3DS2CID&amp;rft_id=info%3Adoi%2F10.1007%2FBF01459084&amp;rft.issn=0025-5831&amp;rft_id=https%3A%2F%2Fmathscinet.ams.org%2Fmathscinet-getitem%3Fmr%3D1512437%23id-name%3DMR&amp;rft.aulast=Suschkewitsch&amp;rft.aufirst=Anton&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFKantorovitz2009">Kantorovitz, Shmuel (2009). <a class="external text" href="https://books.google.com/books?id=bQdLAAAAQBAJ&amp;pg=PP5" rel="nofollow"><i>Topics in Operator Semigroups</i></a>. Springer. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-8176-4932-6" title="Special:BookSources/978-0-8176-4932-6"><bdi>978-0-8176-4932-6</bdi></a>. <a class="mw-redirect" href="/wiki/Zbl_(identifier)" title="Zbl (identifier)">Zbl</a> <a class="external text" href="https://zbmath.org/?format=complete&amp;q=an:1187.47003" rel="nofollow">1187.47003</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Topics+in+Operator+Semigroups&amp;rft.pub=Springer&amp;rft.date=2009&amp;rft_id=https%3A%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A1187.47003%23id-name%3DZbl&amp;rft.isbn=978-0-8176-4932-6&amp;rft.aulast=Kantorovitz&amp;rft.aufirst=Shmuel&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3DbQdLAAAAQBAJ%26pg%3DPP5&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFJacobson2009"><a href="/wiki/Nathan_Jacobson" title="Nathan Jacobson">Jacobson, Nathan</a> (2009). <i>Basic algebra</i>. Vol. 1 (2nd ed.). Dover. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-486-47189-1" title="Special:BookSources/978-0-486-47189-1"><bdi>978-0-486-47189-1</bdi></a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Basic+algebra&amp;rft.edition=2nd&amp;rft.pub=Dover&amp;rft.date=2009&amp;rft.isbn=978-0-486-47189-1&amp;rft.aulast=Jacobson&amp;rft.aufirst=Nathan&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFLawson1998">Lawson, Mark V. (1998). <i>Inverse semigroups: the theory of partial symmetries</i>. World Scientific. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-981-02-3316-7" title="Special:BookSources/978-981-02-3316-7"><bdi>978-981-02-3316-7</bdi></a>. <a class="mw-redirect" href="/wiki/Zbl_(identifier)" title="Zbl (identifier)">Zbl</a> <a class="external text" href="https://zbmath.org/?format=complete&amp;q=an:1079.20505" rel="nofollow">1079.20505</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Inverse+semigroups%3A+the+theory+of+partial+symmetries&amp;rft.pub=World+Scientific&amp;rft.date=1998&amp;rft_id=https%3A%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A1079.20505%23id-name%3DZbl&amp;rft.isbn=978-981-02-3316-7&amp;rft.aulast=Lawson&amp;rft.aufirst=Mark+V.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li>
+<li><link href="mw-data:TemplateStyles:r1238218222" rel="mw-deduplicated-inline-style"/><cite class="citation book cs1" id="CITEREFLothaire2011"><a href="/wiki/M._Lothaire" title="M. Lothaire">Lothaire, M.</a> (2011) [2002]. <i>Algebraic combinatorics on words</i>. Encyclopedia of Mathematics and Its Applications. Vol. 90. Cambridge University Press. <a class="mw-redirect" href="/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="/wiki/Special:BookSources/978-0-521-18071-9" title="Special:BookSources/978-0-521-18071-9"><bdi>978-0-521-18071-9</bdi></a>. <a class="mw-redirect" href="/wiki/Zbl_(identifier)" title="Zbl (identifier)">Zbl</a> <a class="external text" href="https://zbmath.org/?format=complete&amp;q=an:1221.68183" rel="nofollow">1221.68183</a>.</cite><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Algebraic+combinatorics+on+words&amp;rft.series=Encyclopedia+of+Mathematics+and+Its+Applications&amp;rft.pub=Cambridge+University+Press&amp;rft.date=2011&amp;rft_id=https%3A%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A1221.68183%23id-name%3DZbl&amp;rft.isbn=978-0-521-18071-9&amp;rft.aulast=Lothaire&amp;rft.aufirst=M.&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ASemigroup"></span></li></ul>
+</div>
+<!-- 
+NewPP limit report
+Parsed by mw‐web.codfw.main‐5c6f46dcf‐6mmvb
+Cached time: 20250331025916
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [vary‐revision‐sha1, show‐toc]
+CPU time usage: 0.534 seconds
+Real time usage: 0.688 seconds
+Preprocessor visited node count: 5453/1000000
+Post‐expand include size: 97697/2097152 bytes
+Template argument size: 8181/2097152 bytes
+Highest expansion depth: 12/100
+Expensive parser function count: 4/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 120879/5000000 bytes
+Lua time usage: 0.275/10.000 seconds
+Lua memory usage: 7374907/52428800 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  520.116      1 -total
+ 29.40%  152.908     19 Template:Cite_book
+ 29.15%  151.614      2 Template:Reflist
+ 15.74%   81.873      1 Template:Algebraic_structures
+ 15.39%   80.030      1 Template:Sidebar_with_collapsible_lists
+ 12.39%   64.423      1 Template:Short_description
+ 10.29%   53.501     10 Template:Sfn
+  6.78%   35.252      2 Template:Pagetype
+  5.57%   28.954      5 Template:Startflatlist
+  5.48%   28.525     33 Template:Math
+-->
+<!-- Saved in parser cache with key enwiki:pcache:27799:|#|:idhash:canonical and timestamp 20250331025916 and revision id 1277495271. Rendering was triggered because: page-view
+ -->
+</link></meta></link></link></link></link></link></link></link></link></link></link></div>
