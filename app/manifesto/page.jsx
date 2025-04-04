@@ -8,6 +8,7 @@ export default function ManifestoPage() {
       <div className="max-w-3xl w-full">
         <section className="mb-6">
           <p>
+          <h2 className="text-xl font-semibold mb-2">Manifesto</h2>
             As the global economy teeters under scrutiny, the desire for personal financial sovereignty grows stronger.
             MathsMine3 offers a symbolic stage: here, anyone can "mine" a fake token and interact with the ecosystem using the only identity that truly matters in Web3: a wallet.
           </p>
@@ -104,7 +105,7 @@ export default function ManifestoPage() {
         <section className="mb-6">
           <h2 className="text-xl font-semibold mb-2">Sources</h2>
           <p>
-            Sources:{' '}
+            Wikipedia:{' '}
             <a
               href="https://en.wikipedia.org/wiki/List_of_mathematical_theories"
               target="_blank"

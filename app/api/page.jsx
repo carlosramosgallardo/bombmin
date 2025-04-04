@@ -6,7 +6,6 @@ export default function ApiPage() {
   return (
     <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-white bg-black">
       <div className="max-w-2xl w-full">
-        <h1 className="text-2xl font-bold mb-6">Public API Documentation</h1>
 
         <p className="mb-6">
           MathsMine3 provides a public, read-only API that exposes real-time data related to token metrics, game contributions, and community polls. All endpoints return JSON responses.

@@ -26,7 +26,8 @@
   {
     "masked": "Archimedes used methods of exhaustion to estimate the area of a _____.",
     "answer": "circle",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/archimedes.png"
   },
   {
     "masked": "Euler introduced the formula e^(iπ)+1=_____ connecting complex numbers and trigonometry.",
