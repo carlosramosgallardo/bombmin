@@ -2,6 +2,16 @@
 
 import { useEffect, useState } from 'react';
 
+// Fisher-Yates shuffle to randomize the array
+function shuffleArray(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 export default function TheoryPage() {
   const [phrases, setPhrases] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,7 +19,11 @@ export default function TheoryPage() {
   useEffect(() => {
     fetch('/math_phrases.json')
       .then((res) => res.json())
-      .then((data) => setPhrases(data))
+      .then((data) => {
+        // Shuffle the data for a random order on each refresh
+        const shuffledData = shuffleArray(data);
+        setPhrases(shuffledData);
+      })
       .catch((err) => console.error('Error fetching JSON:', err));
   }, []);
 
@@ -53,14 +67,16 @@ export default function TheoryPage() {
         </section>
 
         <section className="mb-6 flex flex-col items-center">
-          <p className="mb-4 text-center">{fullPhrase}</p>
-          {currentPhrase.image && (
-            <img
-              src={currentPhrase.image}
-              alt={`Image for phrase ${currentIndex + 1}`}
-              className="max-w-full h-auto"
-            />
-          )}
+          <div className="p-6 bg-[#0b0f19] border border-[#22d3ee] rounded-lg shadow-lg w-full">
+            <p className="mb-4 text-center">{fullPhrase}</p>
+            {currentPhrase.image && (
+              <img
+                src={currentPhrase.image}
+                alt={`Image for phrase ${currentIndex + 1}`}
+                className="max-w-full h-auto"
+              />
+            )}
+          </div>
         </section>
 
         <section className="flex justify-between">
