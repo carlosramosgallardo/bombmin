@@ -184,120 +184,120 @@
     "masked": "Number theory is famous for studying the properties of _____ numbers.",
     "answer": "prime",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/prime_numbers_enigma.png"
   },
   {
     "masked": "Abstract algebra examines structures like groups and rings in _____ mathematics.",
     "answer": "algebra",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/futuristic_algebra_study.png"
   },
   {
     "masked": "Differential geometry applies calculus to study curves and _____.",
     "answer": "surfaces",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/exploring_differential_geometry.png"
   },
   {
     "masked": "Topology considers properties preserved under continuous _____ of shapes.",
     "answer": "deformations",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/surreal_topology_exploration.png"
   },
   {
     "masked": "A function maps elements from one set to another by a specific _____.",
     "answer": "rule",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/domain_and_codomain_mapping.png"
   },
   {
     "masked": "Symmetry in mathematics is analyzed using group _____.",
     "answer": "theory",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/geometric_symmetry_exploration.png"
   },
   {
     "masked": "Optimization seeks to maximize or minimize functions under given _____.",
     "answer": "constraints",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/3d_optimization_visualization.png"
   },
   {
     "masked": "A proof is a logical argument demonstrating an absolute mathematical _____.",
     "answer": "truth",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/teorem_in_marble_hall.png"
   },
   {
     "masked": "Euclid's parallel postulate distinguishes Euclidean from _____ geometry.",
     "answer": "non-Euclidean",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/contrasting_geometric_realms.png"
   },
   {
     "masked": "The study of limits is central to understanding _____ in calculus.",
     "answer": "continuity",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/visualizing_calculus_limits_simple.png"
   },
   {
     "masked": "A derivative represents the instantaneous rate of _____ of a function.",
     "answer": "change",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/dynamic_curve_derivatives.png"
   },
   {
     "masked": "In combinatorics, the factorial counts the number of _____ arrangements.",
     "answer": "permutations",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/factorial_tree_display.png"
   },
   {
     "masked": "Mathematical modeling uses equations to simulate real-world _____ phenomena.",
     "answer": "physical",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/holographic_math_lab.png"
   },
   {
     "masked": "A conjecture is an unproven statement believed to be _____.",
     "answer": "true",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/mathematical_curiosity_unveiled.png"
   },
   {
     "masked": "Complex analysis studies functions of a complex _____ variable.",
     "answer": "numeric",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/complex_plane_exploration.png"
   },
   {
     "masked": "A scalar has magnitude only, unlike a _____ which has direction.",
     "answer": "vector",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/vectors_and_scalars_explained.png"
   },
   {
     "masked": "The Law of Cosines generalizes the Pythagorean theorem for an _____ triangle.",
     "answer": "oblique",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/law_of_cosines.png"
   },
   {
-    "masked": "Calculus uses limits to rigorously define derivatives and _____s.",
+    "masked": "Calculus uses limits to rigorously define derivatives and _____.",
     "answer": "integrals",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/calculus_visualization.png"
   },
   {
     "masked": "Chaos examines deterministic systems that can behave _____ over time.",
     "answer": "unpredictably",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/chaos_theory_in_motion.png"
   },
   {
     "masked": "Convergence of a sequence in analysis means it approaches a specific _____.",
     "answer": "limit",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/convergence_of_sequences.png"
   }
 ]
