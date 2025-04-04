@@ -20,6 +20,8 @@ export default function TheoryPage() {
         <section className="mb-6">
           <p>
             Sources: Wikipedia: <a href="https://en.wikipedia.org/wiki/List_of_mathematical_theories" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">https://en.wikipedia.org/wiki/List_of_mathematical_theories</a>
+          </p>
+          <p>
             Please, report if you identify any inaccuracies or discrepancies.
           </p>
         </section>
