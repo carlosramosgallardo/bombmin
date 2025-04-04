@@ -1,5 +1,3 @@
-Below is the updated README file that reflects the unified Manifesto (which now includes all legal/disclaimer content) and the new naming for your Theory page ("Math to Mine"). It also includes the navigation links as you provided.
-
 ```markdown
 # MathsMine3
 
@@ -165,5 +163,3 @@ MathsMine3 is **not** a financial product.
 
 MIT © [botsandpods@gmail.com](https://github.com/carlosramosgallardo)
 ```
-
-In this updated README, the Manifesto page now unifies all the content (including legal disclaimers, privacy policy, terms of use, etc.) so that there's no separate "Legal" section. The Theory page has been renamed to "Math to Mine" to better reflect its purpose, and the navigation links have been updated accordingly.
