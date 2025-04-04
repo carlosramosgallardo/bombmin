@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 
 export default function TheoryPage() {
   const [phrases, setPhrases] = useState([]);
@@ -20,7 +19,7 @@ export default function TheoryPage() {
         
         <section className="mb-6">
           <p>
-            In this section, we present some mathematical phrases that encapsulate key concepts in geometry and calculus, based on public domain sources such as Wikipedia.
+            In this section, we present mathematical phrases that challenge your understanding of geometry and calculus. Try to guess the answer on your own before consulting any external resources.
           </p>
         </section>
 
@@ -28,17 +27,15 @@ export default function TheoryPage() {
           <table className="w-full border-collapse">
             <thead>
               <tr>
-                <th className="border border-gray-700 p-2">Masked Phrase</th>
-                <th className="border border-gray-700 p-2">Answer</th>
-                <th className="border border-gray-700 p-2">Source</th>
+                <th className="border border-gray-700 p-2">Mathematical Phrase</th>
+                <th className="border border-gray-700 p-2">Your Answer</th>
               </tr>
             </thead>
             <tbody>
               {phrases.map((item, index) => (
                 <tr key={index}>
                   <td className="border border-gray-700 p-2">{item.masked}</td>
-                  <td className="border border-gray-700 p-2">{item.answer}</td>
-                  <td className="border border-gray-700 p-2">{item.source}</td>
+                  <td className="border border-gray-700 p-2"></td>
                 </tr>
               ))}
             </tbody>
@@ -47,7 +44,7 @@ export default function TheoryPage() {
 
         <section className="legal text-xs text-gray-500 border-t border-gray-700 pt-4">
           <p>
-            The information presented in this section is for informational purposes only and is sourced from public domain sources, primarily Wikipedia.
+            The content in this section is provided for educational purposes only and is sourced from public domain materials, primarily Wikipedia.
           </p>
         </section>
       </div>

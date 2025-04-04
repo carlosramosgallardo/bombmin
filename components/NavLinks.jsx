@@ -12,7 +12,7 @@ export default function NavLinks({ className = '' }) {
 
   return (
     <div className={`text-base text-gray-400 space-x-3 ${className}`}>
-      <Link href="/" className={linkClass('/')}>Home</Link>
+      <Link href="/" className={linkClass('/')}>MM3</Link>
       <Link href="/theory" className={linkClass('/theory')}>Theory</Link>
       <Link href="/manifesto" className={linkClass('/manifesto')}>Manifesto</Link>
       <Link href="/pov" className={linkClass('/pov')}>PoV</Link>
