@@ -51,21 +51,6 @@ export default function TheoryPage() {
       <div className="max-w-3xl w-full">
         <h1 className="text-3xl font-bold mb-6">Theory</h1>
 
-        <section className="mb-6">
-          <p>
-            Sources: Wikipedia:{' '}
-            <a
-              href="https://en.wikipedia.org/wiki/List_of_mathematical_theories"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 underline"
-            >
-              https://en.wikipedia.org/wiki/List_of_mathematical_theories
-            </a>
-          </p>
-          <p>Please, report if you identify any inaccuracies or discrepancies.</p>
-        </section>
-
         <section className="mb-6 flex flex-col items-center">
           <div className="p-6 bg-[#0b0f19] border border-[#22d3ee] rounded-lg shadow-lg w-full">
             <p className="mb-4 text-center">{fullPhrase}</p>

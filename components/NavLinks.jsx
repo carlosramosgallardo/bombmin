@@ -18,7 +18,6 @@ export default function NavLinks({ className = '' }) {
       <Link href="/pov" className={linkClass('/pov')}>PoV</Link>
       <Link href="/poa" className={linkClass('/poa')}>PoA</Link>
       <Link href="/api" className={linkClass('/api')}>API</Link>
-      <Link href="/legal" className={linkClass('/legal')}>Legal</Link>
     </div>
   )
 }
