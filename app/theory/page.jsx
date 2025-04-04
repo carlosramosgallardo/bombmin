@@ -19,27 +19,23 @@ export default function TheoryPage() {
         
         <section className="mb-6">
           <p>
-            In this section, we present mathematical phrases that challenge your understanding of geometry and calculus. Try to guess the answer on your own before consulting any external resources.
+            In this section, we present the complete mathematical phrases with all words visible.
+            Enjoy exploring the full context, and feel free to check out the accompanying AI-generated images.
           </p>
         </section>
 
         <section className="mb-6">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr>
-                <th className="border border-gray-700 p-2">Mathematical Phrase</th>
-                <th className="border border-gray-700 p-2">Your Answer</th>
-              </tr>
-            </thead>
-            <tbody>
-              {phrases.map((item, index) => (
-                <tr key={index}>
-                  <td className="border border-gray-700 p-2">{item.masked}</td>
-                  <td className="border border-gray-700 p-2"></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          {phrases.map((item, index) => {
+            // Replace the blank with the answer to display the complete phrase.
+            const fullPhrase = item.masked.replace('_____', item.answer);
+            return (
+              <div key={index} className="mb-8">
+                <p className="mb-2">{fullPhrase}</p>
+                {/* Uncomment and replace the src with your AI-generated image URL when available */}
+                {/* <img src="/path/to/generated-image.jpg" alt="AI Generated" className="w-full" /> */}
+              </div>
+            );
+          })}
         </section>
 
         <section className="legal text-xs text-gray-500 border-t border-gray-700 pt-4">
