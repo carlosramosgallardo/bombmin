@@ -10,7 +10,7 @@ export default function TheoryPage() {
     fetch('/math_phrases.json')
       .then((res) => res.json())
       .then((data) => setPhrases(data))
-      .catch((err) => console.error('Error al cargar el JSON:', err));
+      .catch((err) => console.error('Error fetching JSON:', err));
   }, []);
 
   return (
@@ -20,7 +20,7 @@ export default function TheoryPage() {
         
         <section className="mb-6">
           <p>
-            En esta sección, presentamos algunas frases matemáticas que encapsulan conceptos clave en geometría y cálculo, basadas en fuentes de dominio público como Wikipedia.
+            In this section, we present some mathematical phrases that encapsulate key concepts in geometry and calculus, based on public domain sources such as Wikipedia.
           </p>
         </section>
 
@@ -28,9 +28,9 @@ export default function TheoryPage() {
           <table className="w-full border-collapse">
             <thead>
               <tr>
-                <th className="border border-gray-700 p-2">Frase enmascarada</th>
-                <th className="border border-gray-700 p-2">Respuesta</th>
-                <th className="border border-gray-700 p-2">Fuente</th>
+                <th className="border border-gray-700 p-2">Masked Phrase</th>
+                <th className="border border-gray-700 p-2">Answer</th>
+                <th className="border border-gray-700 p-2">Source</th>
               </tr>
             </thead>
             <tbody>
@@ -47,11 +47,10 @@ export default function TheoryPage() {
 
         <section className="legal text-xs text-gray-500 border-t border-gray-700 pt-4">
           <p>
-            La información presentada en esta sección tiene carácter meramente informativo y se extrae de fuentes de dominio público, principalmente Wikipedia.
+            The information presented in this section is for informational purposes only and is sourced from public domain sources, primarily Wikipedia.
           </p>
         </section>
       </div>
     </main>
   );
 }
-
