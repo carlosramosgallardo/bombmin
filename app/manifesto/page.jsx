@@ -6,7 +6,6 @@ export default function ManifestoPage() {
   return (
     <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
       <div className="max-w-3xl w-full">
-        <h1 className="text-3xl font-bold mb-6">Manifesto</h1>
 
         <section className="mb-6">
           <p>
