@@ -2,7 +2,8 @@
   {
     "masked": "Euclidean geometry studies shapes and lines in a _____ plane.",
     "answer": "flat",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/euclidean_geometry.png"
   },
   {
     "masked": "Pythagoras proved the _____ theorem relating triangle sides.",

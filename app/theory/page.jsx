@@ -19,8 +19,8 @@ export default function TheoryPage() {
         
         <section className="mb-6">
           <p>
-            In this section, we present the complete mathematical phrases with all words visible.
-            Enjoy exploring the full context, and feel free to check out the accompanying AI-generated images.
+            Sources: Wikipedia: <a href="https://en.wikipedia.org/wiki/List_of_mathematical_theories" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">https://en.wikipedia.org/wiki/List_of_mathematical_theories</a>
+            Please, report if you identify any inaccuracies or discrepancies.
           </p>
         </section>
 
@@ -36,12 +36,6 @@ export default function TheoryPage() {
               </div>
             );
           })}
-        </section>
-
-        <section className="legal text-xs text-gray-500 border-t border-gray-700 pt-4">
-          <p>
-            The content in this section is provided for educational purposes only and is sourced from public domain materials, primarily Wikipedia.
-          </p>
         </section>
       </div>
     </main>
