@@ -32,97 +32,116 @@
   {
     "masked": "Euler introduced the formula e^(iπ)+1=_____ connecting complex numbers and trigonometry.",
     "answer": "0",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/leonhard_euler.png"
   },
   {
     "masked": "Fibonacci's sequence appears in nature, such as in the arrangement of _____.",
     "answer": "leaves",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/fibonacci.png"
   },
   {
     "masked": "Non-Euclidean geometry explores spaces where parallel line postulates are _____.",
     "answer": "redefined",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/non_euclidean.png.png"
   },
   {
     "masked": "Statistics, a branch of mathematics, analyzes data to infer underlying _____.",
     "answer": "patterns",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/holographic_data_analysis.png"
   },
   {
     "masked": "Topology studies properties of spaces preserved under continuous _____.",
     "answer": "deformations",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/topological_transformations.png"
   },
   {
     "masked": "Set theory, founded by Cantor, revolutionized mathematics with the concept of _____.",
     "answer": "infinity",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Graph theory explores relationships modeled as nodes connected by _____.",
     "answer": "edges",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Number theory investigates properties of integers, including prime number _____.",
     "answer": "distribution",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Mathematical induction proves statements for all natural numbers by verifying the _____ step.",
     "answer": "inductive",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "A fractal displays self-similarity at every scale, revealing infinite _____.",
     "answer": "complexity",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Probability's law of large numbers guarantees convergence of averages with increasing sample _____.",
     "answer": "sizes",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Differential equations describe systems where change is related to current _____.",
     "answer": "state",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Mathematicians use proofs as logical arguments to establish mathematical _____.",
     "answer": "truths",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "The Riemann Hypothesis, a famous unsolved problem, concerns the zeros of the _____ function.",
     "answer": "zeta",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Complex numbers extend the real numbers by including the imaginary unit _____.",
     "answer": "i",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "The Fundamental Theorem of Calculus connects differentiation and _____.",
     "answer": "integration",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Rational numbers can be expressed as a ratio of two _____ numbers.",
     "answer": "integers",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Geometry studies points, lines, and angles in a _____ space.",
     "answer": "Euclidean",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "The binomial theorem expands expressions raised to a _____ power.",
     "answer": "natural",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Cantor's work in set theory introduced different sizes of the _____.",
