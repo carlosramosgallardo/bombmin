@@ -14,7 +14,8 @@
   {
     "masked": "Calculus, founded by Newton and Leibniz, studies change via _____.",
     "answer": "derivatives",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/newton_leibniz.png"
   },
   {
     "masked": "Algebra manipulates symbols to solve equations with unknown _____.",

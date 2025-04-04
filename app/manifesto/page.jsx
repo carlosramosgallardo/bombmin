@@ -103,9 +103,9 @@ export default function ManifestoPage() {
         </section>
 
         <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">Sources & Feedback</h2>
+          <h2 className="text-xl font-semibold mb-2">Sources</h2>
           <p>
-            Sources: Wikipedia:{' '}
+            Sources:{' '}
             <a
               href="https://en.wikipedia.org/wiki/List_of_mathematical_theories"
               target="_blank"
