@@ -63,214 +63,241 @@
     "masked": "Set theory, founded by Cantor, revolutionized mathematics with the concept of _____.",
     "answer": "infinity",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/exploring_infinite_realms.png"
   },
   {
     "masked": "Graph theory explores relationships modeled as nodes connected by _____.",
     "answer": "edges",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/analyzing_complex_networks.png"
   },
   {
     "masked": "Number theory investigates properties of integers, including prime number _____.",
     "answer": "distribution",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/mathematical_prime_odyssey.png"
   },
   {
     "masked": "Mathematical induction proves statements for all natural numbers by verifying the _____ step.",
     "answer": "inductive",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/staircase.png"
   },
   {
     "masked": "A fractal displays self-similarity at every scale, revealing infinite _____.",
     "answer": "complexity",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/infinite_fractal.png"
   },
   {
     "masked": "Probability's law of large numbers guarantees convergence of averages with increasing sample _____.",
     "answer": "sizes",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/law_of_large_numbers.png"
   },
   {
     "masked": "Differential equations describe systems where change is related to current _____.",
     "answer": "state",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/flowing_equations.jpg"
   },
   {
     "masked": "Mathematicians use proofs as logical arguments to establish mathematical _____.",
     "answer": "truths",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/theorem's_glowing_revelation.png"
   },
   {
     "masked": "The Riemann Hypothesis, a famous unsolved problem, concerns the zeros of the _____ function.",
     "answer": "zeta",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/riemann_mystery.png"
   },
   {
     "masked": "Complex numbers extend the real numbers by including the imaginary unit _____.",
     "answer": "i",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/complex_number_cosmos.png"
   },
   {
     "masked": "The Fundamental Theorem of Calculus connects differentiation and _____.",
     "answer": "integration",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/calculus_connections.png"
   },
   {
     "masked": "Rational numbers can be expressed as a ratio of two _____ numbers.",
     "answer": "integers",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/rational_numbers.png"
   },
   {
     "masked": "Geometry studies points, lines, and angles in a _____ space.",
     "answer": "Euclidean",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/geometry.png"
   },
   {
     "masked": "The binomial theorem expands expressions raised to a _____ power.",
     "answer": "natural",
     "source": "Wikipedia",
-    "image": "/images/"
+    "image": "/images/binomial_theorem_expansion.png"
   },
   {
     "masked": "Cantor's work in set theory introduced different sizes of the _____.",
     "answer": "infinite",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/cantor's_cosmic_infinities.png"
   },
   {
     "masked": "A matrix is a rectangular array used in _____ algebra calculations.",
     "answer": "linear",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/matrix.png"
   },
   {
     "masked": "Chaos theory examines systems that are extremely sensitive to initial _____.",
     "answer": "conditions",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/chaos_theory.png"
   },
   {
     "masked": "Probability theory quantifies uncertainty using the concept of _____ events.",
     "answer": "random",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/probability_in_motion.png"
   },
   {
     "masked": "Mathematical logic studies formal languages and their _____.",
     "answer": "semantics",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/abstract_mathematical_study.png"
+  
   },
   {
     "masked": "Fractals exhibit self-similarity, revealing infinite _____ at every scale.",
     "answer": "complexity",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/fractal_infinity_unfolds.png"
   },
   {
     "masked": "Number theory is famous for studying the properties of _____ numbers.",
     "answer": "prime",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Abstract algebra examines structures like groups and rings in _____ mathematics.",
     "answer": "algebra",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Differential geometry applies calculus to study curves and _____.",
     "answer": "surfaces",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Topology considers properties preserved under continuous _____ of shapes.",
     "answer": "deformations",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "A function maps elements from one set to another by a specific _____.",
     "answer": "rule",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Symmetry in mathematics is analyzed using group _____.",
     "answer": "theory",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Optimization seeks to maximize or minimize functions under given _____.",
     "answer": "constraints",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "A proof is a logical argument demonstrating an absolute mathematical _____.",
     "answer": "truth",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Euclid's parallel postulate distinguishes Euclidean from _____ geometry.",
     "answer": "non-Euclidean",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "The study of limits is central to understanding _____ in calculus.",
     "answer": "continuity",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "A derivative represents the instantaneous rate of _____ of a function.",
     "answer": "change",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "In combinatorics, the factorial counts the number of _____ arrangements.",
     "answer": "permutations",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Mathematical modeling uses equations to simulate real-world _____ phenomena.",
     "answer": "physical",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "A conjecture is an unproven statement believed to be _____.",
     "answer": "true",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Complex analysis studies functions of a complex _____ variable.",
     "answer": "numeric",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "A scalar has magnitude only, unlike a _____ which has direction.",
     "answer": "vector",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "The Law of Cosines generalizes the Pythagorean theorem for an _____ triangle.",
     "answer": "oblique",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Calculus uses limits to rigorously define derivatives and _____s.",
     "answer": "integrals",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Chaos examines deterministic systems that can behave _____ over time.",
     "answer": "unpredictably",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   },
   {
     "masked": "Convergence of a sequence in analysis means it approaches a specific _____.",
     "answer": "limit",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/"
   }
 ]
