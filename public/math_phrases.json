@@ -20,7 +20,8 @@
   {
     "masked": "Algebra manipulates symbols to solve equations with unknown _____.",
     "answer": "variables",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+      "image": "/images/variables.png"
   },
   {
     "masked": "Archimedes used methods of exhaustion to estimate the area of a _____.",

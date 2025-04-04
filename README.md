@@ -1,3 +1,6 @@
+Below is the updated README file that reflects the unified Manifesto (which now includes all legal/disclaimer content) and the new naming for your Theory page ("Math to Mine"). It also includes the navigation links as you provided.
+
+```markdown
 # MathsMine3
 
 ![MathsMine3 logo](public/MM.jpg)
@@ -6,7 +9,7 @@
 
 ## What is MathsMine3?
 
-The fake Web3 platform where mining means solving math challenges and people around the world propose and vote on ideas freely, openly, and transparently.
+Mine fake MM3 for free, learn math as you play, and use your voice to shape the community and the world through votes and polls.
 
 ---
 
@@ -35,7 +38,7 @@ The fake Web3 platform where mining means solving math challenges and people aro
 
 ---
 
-## Live Demo
+## Live Project
 
 [https://mathsmine3.xyz](https://mathsmine3.xyz)
 
@@ -47,10 +50,10 @@ The fake Web3 platform where mining means solving math challenges and people aro
 MathsMine3/
 ├── app/
 │   ├── api/                  # Public API endpoints (token-value, token-history, top-contributors, pov)
-│   ├── legal/                # Legal information pages
-│   ├── manifesto/            # Manifesto page
+│   ├── manifesto/            # Unified Manifesto page (Manifesto & Legal)
 │   ├── pov/                  # Proof of Vote pages (voting, leaderboard, etc.)
 │   ├── poa/                  # Proof of Ask page (create poll)
+│   ├── theory/               # Math to Mine (study math before mining)
 │   ├── globals.css           # Global CSS styles
 │   └── layout.jsx            # Application layout component
 ├── components/               # Reusable UI components (Header, Footer, Board, Leaderboard, ConnectAndPlay, TokenChart, NavLinks, etc.)
@@ -65,6 +68,17 @@ MathsMine3/
 ├── postcss.config.js         # PostCSS configuration
 └── README.md                 # This file
 ```
+
+---
+
+## Navigation (Apartados)
+
+- [Math to Mine](/theory)
+- [MM3](/)
+- [Manifesto](/manifesto)
+- [Proof of Vote](/pov)
+- [Proof of Ask](/poa)
+- [API](/api)
 
 ---
 
@@ -150,3 +164,6 @@ MathsMine3 is **not** a financial product.
 ## License
 
 MIT © [botsandpods@gmail.com](https://github.com/carlosramosgallardo)
+```
+
+In this updated README, the Manifesto page now unifies all the content (including legal disclaimers, privacy policy, terms of use, etc.) so that there's no separate "Legal" section. The Theory page has been renamed to "Math to Mine" to better reflect its purpose, and the navigation links have been updated accordingly.
