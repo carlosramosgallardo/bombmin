@@ -45,7 +45,7 @@
     "masked": "Non-Euclidean geometry explores spaces where parallel line postulates are _____.",
     "answer": "redefined",
     "source": "Wikipedia",
-    "image": "/images/non_euclidean.png.png"
+    "image": "/images/non_euclidean.png"
   },
   {
     "masked": "Statistics, a branch of mathematics, analyzes data to infer underlying _____.",
@@ -99,13 +99,13 @@
     "masked": "Differential equations describe systems where change is related to current _____.",
     "answer": "state",
     "source": "Wikipedia",
-    "image": "/images/flowing_equations.jpg"
+    "image": "/images/flowing_equations.png"
   },
   {
     "masked": "Mathematicians use proofs as logical arguments to establish mathematical _____.",
     "answer": "truths",
     "source": "Wikipedia",
-    "image": "/images/theorem's_glowing_revelation.png"
+    "image": "/images/theorems_glowing_revelation.png"
   },
   {
     "masked": "The Riemann Hypothesis, a famous unsolved problem, concerns the zeros of the _____ function.",
