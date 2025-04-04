@@ -27,18 +27,24 @@ export default function TheoryPage() {
         </section>
 
         <section className="mb-6">
-          {phrases.map((item, index) => {
-            // Replace the blank with the answer to display the complete phrase.
-            const fullPhrase = item.masked.replace('_____', item.answer);
-            return (
-              <div key={index} className="mb-8">
-                <p className="mb-2">{fullPhrase}</p>
-                {/* Uncomment and replace the src with your AI-generated image URL when available */}
-                {/* <img src="/path/to/generated-image.jpg" alt="AI Generated" className="w-full" /> */}
-              </div>
-            );
-          })}
-        </section>
+  {phrases.map((item, index) => {
+    // Replace the blank with the answer to display the complete phrase.
+    const fullPhrase = item.masked.replace('_____', item.answer);
+    return (
+      <div key={index} className="mb-8">
+        <p className="mb-2">{fullPhrase}</p>
+        {item.image && (
+          <img
+            src={item.image}
+            alt={`Image for phrase ${index + 1}`}
+            className="w-full"
+          />
+        )}
+      </div>
+    );
+  })}
+</section>
+
       </div>
     </main>
   );

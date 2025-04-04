@@ -8,7 +8,8 @@
   {
     "masked": "Pythagoras proved the _____ theorem relating triangle sides.",
     "answer": "Pythagorean",
-    "source": "Wikipedia"
+    "source": "Wikipedia",
+    "image": "/images/pythagoras.png"
   },
   {
     "masked": "Calculus, founded by Newton and Leibniz, studies change via _____.",
