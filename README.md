@@ -1,4 +1,3 @@
-```markdown
 # MathsMine3
 
 ![MathsMine3 logo](public/MM.jpg)
@@ -162,4 +161,4 @@ MathsMine3 is **not** a financial product.
 ## License
 
 MIT © [botsandpods@gmail.com](https://github.com/carlosramosgallardo)
-```
+
