@@ -6,7 +6,7 @@ export default function ManifestoPage() {
   return (
     <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
       <div className="max-w-3xl w-full">
-        <h1 className="text-3xl font-bold mb-6">Manifesto & Legal</h1>
+        <h1 className="text-3xl font-bold mb-6">Manifesto</h1>
 
         <section className="mb-6">
           <p>
@@ -18,7 +18,7 @@ export default function ManifestoPage() {
         <section className="mb-6">
           <p>
             Participation is completely free.
-            You can mine with a balance of zero, cancel the symbolic 0.00001 ETH transaction at any time, and still affect the system.
+            You can mine with a balance of zero and still affect the system.
             Donations are optional — impact is not.
           </p>
         </section>
