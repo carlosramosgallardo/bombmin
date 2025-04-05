@@ -6,7 +6,7 @@
 
 ## What is MathsMine3?
 
-Mine fake MM3 for free, learn math as you play, and use your voice to shape the community and the world through votes and polls.
+Master Math, Mine MM3, and Shape the Future with PoV & PoA.
 
 ---
 
