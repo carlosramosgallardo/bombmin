@@ -62,8 +62,7 @@ export default function Page() {
       <div className="w-full max-w-3xl mx-auto">
       <section className="mb-6">
           <p>
-          Mine fake MM3 for free, learn math as you play, and use your voice to shape the community and the world through votes and polls.
-          </p>
+          Master Math, Mine MM3, and Shape the Future with PoV & PoA.          </p>
         </section>
         {/* Game Board */}
         <div className="mb-12">
