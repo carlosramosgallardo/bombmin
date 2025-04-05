@@ -62,7 +62,8 @@ export default function Page() {
       <div className="w-full max-w-3xl mx-auto">
       <section className="mb-6">
           <p>
-          Master Math, Mine MM3, and Shape the Future with PoV & PoA.          </p>
+          Master Math, Mine MM3, and Shape the Future with PoV & PoA.
+          </p>
         </section>
         {/* Game Board */}
         <div className="mb-12">
