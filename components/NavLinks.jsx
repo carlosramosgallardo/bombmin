@@ -15,8 +15,8 @@ export default function NavLinks({ className = '' }) {
 
   return (
     <div className={`text-base text-gray-400 space-x-3 ${className}`}>
-      <Link href="/learn-math" className={linkClass('/learn-math')}>Learn Math</Link>
       <Link href="/" className={linkClass('/')}>MM3</Link>
+      <Link href="/learn-math" className={linkClass('/learn-math')}>Learn Math</Link>
       <Link href="/pov" className={linkClass('/pov')}>Proof of Vote</Link>
       <Link href="/poa" className={linkClass('/poa')}>Proof of Ask</Link>
       <Link href="/api" className={linkClass('/api')}>API</Link>

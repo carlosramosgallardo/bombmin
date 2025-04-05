@@ -10,8 +10,6 @@ export default function Footer() {
 
   return (
     <>
-      {/* Borde superior de ancho completo */}
-      <div className="w-full h-1 bg-gray-700" />
 
       <footer className="text-center text-sm text-gray-400 py-4 space-y-4">
 

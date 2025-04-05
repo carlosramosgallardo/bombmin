@@ -22,8 +22,6 @@ export default function Header() {
         <NavLinks className="mt-2" />
       </header>
 
-      {/* Borde inferior de ancho completo */}
-      <div className="w-full h-1 bg-gray-700" />
     </>
   )
 }
