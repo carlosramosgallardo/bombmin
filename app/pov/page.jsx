@@ -115,7 +115,6 @@ function PoVClientComponent() {
     <main className="flex flex-col items-center w-full pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
       {/* Contenedor interno con padding horizontal */}
       <div className="w-full max-w-3xl px-4">
-
         {pollData.length === 0 ? (
           <p className="text-gray-400">Loading poll data...</p>
         ) : (
@@ -152,7 +151,8 @@ function PoVClientComponent() {
                   </p>
 
                   {eligibilityChecked && canVote && (
-                    <div className="flex justify-center gap-4 mb-4">
+                    // Se añade flex-wrap para que en pantallas pequeñas los botones se acomoden en 2 líneas si es necesario
+                    <div className="flex flex-wrap justify-center gap-4 mb-4">
                       <button
                         onClick={() => handleVote(poll.id, 'yes')}
                         className="px-6 py-2 rounded-lg bg-[#22d3ee] text-black hover:bg-[#1dbbe0] transition"
