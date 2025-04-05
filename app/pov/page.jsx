@@ -159,13 +159,12 @@ function PoVClientComponent() {
                   key={poll.id}
                   className="mb-16 p-6 bg-[#0b0f19] border border-[#22d3ee] rounded-lg shadow-lg"
                 >
-                  <h2 className="text-lg font-medium mb-1 text-white">{poll.question}</h2>
+                  <h2 className="text-base font-medium mb-1 text-white">{poll.question}</h2>
                   <p className="text-base text-[#22d3ee] mb-4">
                     Created by: {maskWallet(poll.wallet_address)}
                   </p>
 
                   {eligibilityChecked && canVote && (
-                    // Se añade flex-wrap para que en pantallas pequeñas los botones se acomoden en 2 líneas si es necesario
                     <div className="flex flex-wrap justify-center gap-4 mb-4">
                       <button
                         onClick={() => handleVote(poll.id, 'yes')}

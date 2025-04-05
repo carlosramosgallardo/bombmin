@@ -115,7 +115,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
       <div className="bg-[#0b0f19] p-4 rounded-xl">
         {problem && (
           <>
-            <p className="text-xl font-serif text-[#22d3ee]">
+            <p className="text-base font-mono text-[#22d3ee]">
               {problem.masked}
             </p>
             <p className="text-sm text-[#22d3ee]">
