@@ -7,8 +7,8 @@ export default function ManifestoPage() {
     <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
       <div className="max-w-3xl w-full">
         <section className="mb-6">
-          <p>
           <h2 className="text-xl font-semibold mb-2">Manifesto</h2>
+          <p>
             As the global economy teeters under scrutiny, the desire for personal financial sovereignty grows stronger.
             MathsMine3 offers a symbolic stage: here, anyone can "mine" a fake token and interact with the ecosystem using the only identity that truly matters in Web3: a wallet.
           </p>

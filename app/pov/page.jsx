@@ -33,7 +33,8 @@ function PoVClientComponent() {
   const { address, isConnected } = useAccount();
   const [pollData, setPollData] = useState([]);
   const [resultsData, setResultsData] = useState({});
-  const [statusMessage, setStatusMessage] = useState('');
+  // Usamos un objeto para los mensajes por encuesta
+  const [statusMessages, setStatusMessages] = useState({});
   const [canVote, setCanVote] = useState(false);
   const [eligibilityChecked, setEligibilityChecked] = useState(false);
 
@@ -86,13 +87,19 @@ function PoVClientComponent() {
 
   const handleVote = async (pollId, vote) => {
     if (!isConnected || !address) {
-      setStatusMessage('Connect your wallet to vote.');
+      setStatusMessages((prev) => ({
+        ...prev,
+        [pollId]: 'Connect your wallet to vote.'
+      }));
       return;
     }
 
     // Verificación de elegibilidad para votar
     if (!canVote) {
-      setStatusMessage('You are not eligible to vote. You must have mined at least 0.00001 MM3.');
+      setStatusMessages((prev) => ({
+        ...prev,
+        [pollId]: 'You are not eligible to vote. You must have mined at least 0.00001 MM3.'
+      }));
       return;
     }
 
@@ -103,23 +110,34 @@ function PoVClientComponent() {
 
       if (error) {
         if (error.code === '23505') {
-          setStatusMessage('You have already voted in this poll.');
+          setStatusMessages((prev) => ({
+            ...prev,
+            [pollId]: 'You have already voted in this poll.'
+          }));
         } else {
-          setStatusMessage('Error submitting your vote.');
+          setStatusMessages((prev) => ({
+            ...prev,
+            [pollId]: 'Error submitting your vote.'
+          }));
+          console.error(error);
         }
-        console.error(error);
       } else {
-        setStatusMessage('Vote submitted successfully!');
+        setStatusMessages((prev) => ({
+          ...prev,
+          [pollId]: 'Vote submitted successfully!'
+        }));
       }
     } catch (err) {
       console.error('Unexpected error:', err);
-      setStatusMessage('An unexpected error occurred. Please try again.');
+      setStatusMessages((prev) => ({
+        ...prev,
+        [pollId]: 'An unexpected error occurred. Please try again.'
+      }));
     }
   };
 
   return (
     <main className="flex flex-col items-center w-full pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
-      {/* Contenedor interno con padding horizontal */}
       <div className="w-full max-w-3xl px-4">
         {/* Mensaje para usuario sin wallet conectada */}
         {!isConnected && (
@@ -145,10 +163,8 @@ function PoVClientComponent() {
             )}
 
             {pollData.map((poll, index) => {
-              // Obtenemos los votos para cada poll.
               const votes = resultsData[poll.id] || [];
               const totalVotes = votes.length;
-              // Contabilizamos votos para "yes" y "no".
               const voteCounts = votes.reduce((acc, v) => {
                 acc[v.vote] = (acc[v.vote] || 0) + 1;
                 return acc;
@@ -206,6 +222,11 @@ function PoVClientComponent() {
                     </div>
                   )}
 
+                  {/* Mensaje específico para esta encuesta */}
+                  {statusMessages[poll.id] && (
+                    <p className="mt-4 text-sm text-gray-300">{statusMessages[poll.id]}</p>
+                  )}
+
                   {index < pollData.length - 1 && (
                     <div className="w-full border-t border-gray-700/50 my-12 opacity-50" />
                   )}
@@ -213,10 +234,6 @@ function PoVClientComponent() {
               );
             })}
           </>
-        )}
-
-        {statusMessage && (
-          <p className="mt-4 text-sm text-gray-300">{statusMessage}</p>
         )}
       </div>
     </main>
