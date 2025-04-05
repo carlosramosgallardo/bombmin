@@ -18,7 +18,7 @@ export default function Header() {
         />
       </Link>
 
-      <section className="mb-6 px-6 py-3 bg-[#0b0f19] rounded-lg border border-[#22d3ee] shadow-md">
+      <section className="mb-6">
         <p className="text-base font-mono text-[#22d3ee]">
           Master Math, Mine MM3, and Shape the Future with PoV & PoA.
         </p>
