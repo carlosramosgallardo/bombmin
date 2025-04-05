@@ -121,7 +121,7 @@ function PoAClientComponent() {
           <>
             {hasCreatedPoll ? (
               <p className="text-base text-gray-500 text-center mb-2">
-                Connected as {maskWallet(address)}. Only one poll per wallet is allowed.
+                Connected as {maskWallet(address)}. Your poll has been published and is now available on PoV.
               </p>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
