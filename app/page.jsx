@@ -64,7 +64,7 @@ export default function Page() {
         <div className="mb-12">
           {account && (
             <p className="text-base text-gray-500 text-center mb-2">
-              Connected as: {account}
+              Connected as: {maskWallet(account)}
             </p>
           )}
           <Board

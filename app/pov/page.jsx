@@ -153,11 +153,11 @@ function PoVClientComponent() {
             {eligibilityChecked && isConnected && (
               !canVote ? (
                 <p className="text-base text-gray-400 italic tracking-wide mb-4">
-                  Connected as {address}. You must have mined at least 0.00001 MM3 to vote.
+                  Connected as {maskWallet(address)}. You must have mined at least 0.00001 MM3 to vote.
                 </p>
               ) : (
                 <p className="text-base text-gray-400 italic tracking-wide mb-4">
-                  Connected as: {address}
+                  Connected as: {maskWallet(address)}
                 </p>
               )
             )}
