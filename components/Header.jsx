@@ -24,6 +24,8 @@ export default function Header() {
         </p>
       </section>
 
+      <hr className="w-full border-t-2 border-[#22d3ee]" />
+
       <NavLinks className="mt-2" />
     </header>
   )
