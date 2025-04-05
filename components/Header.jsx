@@ -19,7 +19,7 @@ export default function Header() {
       </Link>
 
       <section className="mb-6">
-        <p className="text-base font-mono text-[#22d3ee]">
+        <p className="text-base font-mono text-[#22d3ee] text-center">
           Master Math, Mine MM3, and Shape the Future with PoV & PoA.
         </p>
       </section>
