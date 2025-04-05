@@ -15,6 +15,12 @@ const wagmiConfig = createConfig({
   },
 });
 
+// Función auxiliar para enmascarar la wallet
+const maskWallet = (wallet) => {
+  if (!wallet || wallet.length <= 10) return wallet;
+  return wallet.slice(0, 5) + '...' + wallet.slice(-5);
+};
+
 export default function PoVPage() {
   return (
     <WagmiConfig config={wagmiConfig}>
@@ -147,7 +153,7 @@ function PoVClientComponent() {
                 >
                   <h2 className="text-lg font-medium mb-1 text-white">{poll.question}</h2>
                   <p className="text-base text-[#22d3ee] mb-4">
-                    Created by: {poll.wallet_address}
+                    Created by: {maskWallet(poll.wallet_address)}
                   </p>
 
                   {eligibilityChecked && canVote && (
