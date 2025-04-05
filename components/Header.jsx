@@ -7,7 +7,6 @@ import NavLinks from '@/components/NavLinks'
 export default function Header() {
   return (
     <>
-
       <header className="w-full flex flex-col items-center py-8 space-y-2">
         <Link href="/" aria-label="Go to homepage">
           <Image

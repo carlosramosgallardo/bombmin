@@ -50,7 +50,7 @@ MathsMine3/
 │   ├── manifesto/            # Unified Manifesto page (Manifesto & Legal)
 │   ├── pov/                  # Proof of Vote pages (voting, leaderboard, etc.)
 │   ├── poa/                  # Proof of Ask page (create poll)
-│   ├── theory/               # Math to Mine (study math before mining)
+│   ├── learn-math/               # Math to Mine (study math before mining)
 │   ├── globals.css           # Global CSS styles
 │   └── layout.jsx            # Application layout component
 ├── components/               # Reusable UI components (Header, Footer, Board, Leaderboard, ConnectAndPlay, TokenChart, NavLinks, etc.)
@@ -70,7 +70,7 @@ MathsMine3/
 
 ## Navigation (Apartados)
 
-- [Math to Mine](/theory)
+- [Math to Mine](/learn-math)
 - [MM3](/)
 - [Manifesto](/manifesto)
 - [Proof of Vote](/pov)

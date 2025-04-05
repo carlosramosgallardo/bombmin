@@ -70,7 +70,7 @@ export default function Leaderboard() {
           {isLoading ? (
             <tr>
               <td colSpan="2" className="border border-[#22d3ee] px-4 py-2 text-center">
-                Loading leaderboard...
+                Loading leaderboard... {/* Texto a externalizar */}
               </td>
             </tr>
           ) : currentItems.length > 0 ? (
@@ -87,7 +87,7 @@ export default function Leaderboard() {
           ) : (
             <tr>
               <td colSpan="2" className="border border-[#22d3ee] px-4 py-2 text-center">
-                No leaderboard data available.
+                No leaderboard data available. {/* Texto a externalizar */}
               </td>
             </tr>
           )}

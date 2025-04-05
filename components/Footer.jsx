@@ -28,7 +28,7 @@ export default function Footer() {
           </div>
         </Link>
      
-      <div className="flex justify-center gap-4 text-blue-500 underline">
+        <div className="flex justify-center gap-4 text-blue-500 underline">
           <a href="https://www.youtube.com/@FreakingAI" target="_blank" rel="noopener noreferrer">YouTube</a>
           <a href="https://www.tiktok.com/@freakingai" target="_blank" rel="noopener noreferrer">TikTok</a>
           <a href="https://www.instagram.com/freakingai" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -42,7 +42,7 @@ export default function Footer() {
               className="underline text-blue-400 focus:outline-none"
               aria-label="Reveal email"
             >
-              Contact
+              Contact {/* Texto a externalizar */}
             </button>
           ) : (
             <a href="mailto:botsandpods@gmail.com" className="underline text-blue-400">
@@ -50,7 +50,7 @@ export default function Footer() {
             </a>
           )}
         </div>
-   </footer>
+      </footer>
     </>
   )
 }

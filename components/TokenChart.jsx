@@ -79,7 +79,7 @@ export default function TokenChart() {
       <div className="bg-[#0b0f19] rounded-xl overflow-hidden">
         <div className="text-sm text-right mb-3 p-2">
           <label htmlFor="range" className="mr-2 text-gray-300">
-            View range:
+            View range: {/* Texto a externalizar */}
           </label>
           <select
             id="range"
@@ -143,7 +143,7 @@ export default function TokenChart() {
           </ResponsiveContainer>
         ) : (
           <p className="text-center text-sm text-gray-400">
-            No chart data available yet.
+            No chart data available yet. {/* Texto a externalizar */}
           </p>
         )}
       </div>

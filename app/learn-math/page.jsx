@@ -12,7 +12,7 @@ function shuffleArray(array) {
   return arr;
 }
 
-export default function TheoryPage() {
+export default function LearnMathPage() {
   const [phrases, setPhrases] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 

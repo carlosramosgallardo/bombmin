@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 
 export default function Board({ account, setGameMessage, setGameCompleted, setGameData }) {
-  // problem contiene { masked, answer, source }
   const [problem, setProblem] = useState(null);
   const [userAnswer, setUserAnswer] = useState('');
   const [elapsedTime, setElapsedTime] = useState(0);
@@ -16,7 +15,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   const solveIntervalRef = useRef(null);
 
   useEffect(() => {
-    // Se carga aleatoriamente una frase (problem) desde un JSON de frases
+    // Carga aleatoria de una frase (problem) desde un JSON de frases
     const fetchPhrase = async () => {
       try {
         const res = await fetch('/math_phrases.json');
@@ -100,10 +99,10 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
     setIsDisabled(true);
     setGameCompleted(true);
 
-    // Se inserta en la BBDD el valor calculado en la columna "mining_reward"
+    // Inserta en la BBDD el valor calculado en la columna "mining_reward"
     setGameData({
       wallet: account,
-      problem: problem.masked, // La frase con la palabra oculta
+      problem: problem.masked, // Frase con la palabra oculta
       user_answer: userAnswer,
       is_correct: isCorrect,
       time_ms: elapsedTime,
@@ -139,7 +138,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
                 onChange={(e) => setUserAnswer(e.target.value)}
                 className="w-64 border border-[#22d3ee] bg-transparent px-2 py-1 rounded text-[#22d3ee] text-center font-serif focus:outline-none"
                 disabled={isDisabled}
-                placeholder="Your guess"
+                placeholder="Your guess"  // Texto a externalizar para i18n
               />
               <button
                 onClick={checkAnswer}
@@ -150,7 +149,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
                 }`}
                 disabled={isDisabled}
               >
-                Submit
+                Submit {/* Texto a externalizar */}
               </button>
             </div>
           </>
