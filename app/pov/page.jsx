@@ -121,12 +121,19 @@ function PoVClientComponent() {
     <main className="flex flex-col items-center w-full pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
       {/* Contenedor interno con padding horizontal */}
       <div className="w-full max-w-3xl px-4">
+        {/* Mensaje para usuario sin wallet conectada */}
+        {!isConnected && (
+          <p className="text-base text-gray-400 italic tracking-wide mb-4">
+            Connect your wallet to participate. To vote, you must have mined at least 0.00001 MM3.
+          </p>
+        )}
+
         {pollData.length === 0 ? (
           <p className="text-gray-400">Loading poll data...</p>
         ) : (
           <>
-            {eligibilityChecked &&
-              (!canVote ? (
+            {eligibilityChecked && isConnected && (
+              !canVote ? (
                 <p className="text-base text-gray-400 italic tracking-wide mb-4">
                   Connected as {address}. You must have mined at least 0.00001 MM3 to vote.
                 </p>
@@ -134,7 +141,8 @@ function PoVClientComponent() {
                 <p className="text-base text-gray-400 italic tracking-wide mb-4">
                   Connected as: {address}
                 </p>
-              ))}
+              )
+            )}
 
             {pollData.map((poll, index) => {
               // Obtenemos los votos para cada poll.

@@ -60,6 +60,9 @@ export default function Page() {
   return (
     <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-lg font-mono text-white bg-black">
       <div className="w-full max-w-3xl mx-auto">
+        <p>
+          Mine fake MM3 for free, learn math as you play, and use your voice to shape the community and the world through votes and polls.
+        </p>
         {/* Game Board */}
         <div className="mb-12">
           {account && (

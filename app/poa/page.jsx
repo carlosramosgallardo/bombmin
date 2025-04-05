@@ -14,6 +14,12 @@ const wagmiConfig = createConfig({
   },
 });
 
+// Función auxiliar para enmascarar la wallet
+const maskWallet = (wallet) => {
+  if (!wallet || wallet.length <= 10) return wallet;
+  return wallet.slice(0, 5) + '...' + wallet.slice(-5);
+};
+
 export default function PoAPage() {
   return (
     <WagmiConfig config={wagmiConfig}>
@@ -97,18 +103,25 @@ function PoAClientComponent() {
   return (
     <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-sm font-mono text-gray-200 bg-black min-h-screen">
       <div className="max-w-3xl w-full">
-
-        {eligibilityChecked && !canAsk && (
-          <p className="text-base italic tracking-wide mb-4">
-            Connected as {address}. You must have mined at least 0.00001 MM3 to create a poll.
+        {/* Mensaje para usuario sin wallet conectada */}
+        {!isConnected && (
+          <p className="text-base text-gray-400 italic tracking-wide mb-4">
+            Connect your wallet to create a poll. To participate, you must have mined at least 0.00001 MM3.
           </p>
         )}
 
-        {eligibilityChecked && canAsk && (
+        {/* Mensajes cuando hay wallet conectada */}
+        {isConnected && eligibilityChecked && !canAsk && (
+          <p className="text-base text-gray-400 italic tracking-wide mb-4">
+            Connected as {maskWallet(address)}. You must have mined at least 0.00001 MM3 to create a poll.
+          </p>
+        )}
+
+        {isConnected && eligibilityChecked && canAsk && (
           <>
             {hasCreatedPoll ? (
-              <p className="text-base italic tracking-wide mb-4">
-                Connected as {address}. Only one poll per wallet is allowed.
+              <p className="text-base text-gray-400 italic tracking-wide mb-4">
+                Connected as {maskWallet(address)}. Only one poll per wallet is allowed.
               </p>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
