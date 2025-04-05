@@ -53,6 +53,12 @@ export default function Leaderboard() {
   const currentItems = leaderboard.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(leaderboard.length / itemsPerPage);
 
+  // Función auxiliar para enmascarar la dirección de la wallet
+  const maskWallet = (wallet) => {
+    if (!wallet || wallet.length <= 10) return wallet;
+    return wallet.slice(0, 5) + '...' + wallet.slice(-5);
+  };
+
   return (
     <div className="w-full overflow-auto">
       <table className="table-fixed w-full mx-auto border border-[#22d3ee] rounded-xl text-sm md:text-base">
@@ -70,24 +76,24 @@ export default function Leaderboard() {
           {isLoading ? (
             <tr>
               <td colSpan="2" className="border border-[#22d3ee] px-4 py-2 text-center">
-                Loading leaderboard... {/* Texto a externalizar */}
+                Loading leaderboard...
               </td>
             </tr>
           ) : currentItems.length > 0 ? (
             currentItems.map((entry, index) => (
               <tr key={index} className="hover:bg-[#1e293b] transition">
                 <td className="border border-[#22d3ee] px-4 py-2 font-mono whitespace-normal break-words">
-                  {entry.wallet}
+                  {maskWallet(entry.wallet)}
                 </td>
                 <td className="border border-[#22d3ee] px-4 py-2 font-mono text-right">
-                  {Number(entry.total_eth).toFixed(6)}
+                  {entry.total_eth}
                 </td>
               </tr>
             ))
           ) : (
             <tr>
               <td colSpan="2" className="border border-[#22d3ee] px-4 py-2 text-center">
-                No leaderboard data available. {/* Texto a externalizar */}
+                No leaderboard data available.
               </td>
             </tr>
           )}
