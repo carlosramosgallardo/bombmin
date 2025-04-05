@@ -2,6 +2,11 @@ import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
 
+function maskWallet(wallet) {
+  if (!wallet || wallet.length <= 10) return wallet
+  return wallet.slice(0, 5) + '...' + wallet.slice(-5)
+}
+
 export async function GET() {
   const { data, error } = await supabase
     .from('polls')
@@ -13,5 +18,10 @@ export async function GET() {
     return new Response(JSON.stringify({ error: error.message }), { status: 500 })
   }
 
-  return new Response(JSON.stringify(data), { status: 200 })
+  const maskedData = data.map(poll => ({
+    ...poll,
+    wallet_address: maskWallet(poll.wallet_address)
+  }))
+
+  return new Response(JSON.stringify(maskedData), { status: 200 })
 }

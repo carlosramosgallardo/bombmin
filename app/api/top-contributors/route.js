@@ -10,6 +10,12 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 )
 
+// Función auxiliar para enmascarar la wallet
+function maskWallet(wallet) {
+  if (!wallet || wallet.length <= 10) return wallet
+  return wallet.slice(0, 5) + '...' + wallet.slice(-5)
+}
+
 export async function GET(req) {
   const ip =
     req.headers.get('x-forwarded-for') ?? req.headers.get('x-real-ip') ?? 'unknown'
@@ -77,7 +83,7 @@ export async function GET(req) {
   }
 
   const mapped = data.map(({ wallet, total_eth }) => ({
-    wallet,
+    wallet: maskWallet(wallet),
     totalImpact: parseFloat(total_eth)
   }))
 
