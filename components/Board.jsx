@@ -66,11 +66,9 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
   useEffect(() => {
     if (!gameMessage) return;
-
     setIsFading(false);
     const fadeTimer = setTimeout(() => setIsFading(true), 3500);
     const removeTimer = setTimeout(() => setLocalGameMessage(null), 4000);
-
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
@@ -78,9 +76,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   }, [gameMessage]);
 
   const showMessage = (msg, type = 'info', isToastOnly = false) => {
-    if (!isToastOnly) {
-      setGameMessage(msg);
-    }
+    if (!isToastOnly) setGameMessage(msg);
     setLocalGameMessage({ msg, type });
   };
 
@@ -90,7 +86,6 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
     solveIntervalRef.current = setInterval(() => {
       const timePassed = Date.now() - startTime;
       setElapsedTime(timePassed);
-
       if (timePassed >= 10000) {
         clearInterval(solveIntervalRef.current);
         showMessage('Time exceeded! No mining reward.', 'info', true);
@@ -101,7 +96,6 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
   const checkAnswer = () => {
     if (!problem || isDisabled) return;
-
     clearInterval(solveIntervalRef.current);
     const totalTime = elapsedTime;
     const correct = userAnswer.trim().toLowerCase() === problem.answer.trim().toLowerCase();
@@ -115,9 +109,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
         const penaltyRatio = overTime / 5000;
         miningAmount = -PARTICIPATION_PRICE * 0.10 * penaltyRatio;
       }
-
-      const displayAmount =
-        Math.abs(miningAmount) < 0.00000001 ? '< 0.00000001' : miningAmount.toFixed(8);
+      const displayAmount = Math.abs(miningAmount) < 0.00000001 ? '< 0.00000001' : miningAmount.toFixed(8);
       const message = account
         ? `Inject MM3 now: ${displayAmount}`
         : `Connect your wallet to proceed with injecting MM3: ${displayAmount}.`;
@@ -133,7 +125,6 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
     setIsDisabled(true);
     setLocalGameCompleted(true);
     setGameCompleted(true);
-
     setGameData({
       wallet: account,
       problem: problem.masked,
@@ -150,10 +141,10 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
         <div className="bg-[#0b0f19] p-4 rounded-xl">
           {problem && (
             <>
-              <div className="text-base font-mono text-[#22d3ee] flex flex-wrap justify-center items-center gap-1 text-center">
+              <div className="text-base font-mono text-[#22d3ee] flex flex-wrap justify-center items-center gap-1 text-center max-w-screen-sm mx-auto">
                 {problem.masked.includes('[MASK]')
                   ? problem.masked.split('[MASK]').map((part, index, arr) => (
-                      <span key={index} className="flex items-center gap-1 flex-wrap">
+                      <span key={index} className="flex items-center gap-1 flex-wrap justify-center text-center">
                         <span>{part}</span>
                         {index < arr.length - 1 && (
                           <span className="whitespace-nowrap flex items-center gap-1">
@@ -163,11 +154,9 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
                               value={userAnswer}
                               onChange={(e) => setUserAnswer(e.target.value)}
                               onKeyDown={(e) => {
-                                if (e.key === 'Enter' && !isDisabled) {
-                                  checkAnswer();
-                                }
+                                if (e.key === 'Enter' && !isDisabled) checkAnswer();
                               }}
-                              className="inline-block w-32 px-2 py-1 border-b-2 border-yellow-400 text-center font-mono text-yellow-200 bg-white/10 backdrop-blur-md placeholder-[#64748b] italic tracking-wider transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:shadow-[0_0_20px_rgba(253,224,71,0.6)] hover:shadow-[0_0_15px_rgba(253,224,71,0.4)] animate-pulse hover:scale-105"
+                              className="inline-block w-full max-w-[8rem] px-2 py-1 border-b-2 border-yellow-400 text-center font-mono text-yellow-200 bg-white/10 backdrop-blur-md placeholder-[#64748b] italic tracking-wider transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:shadow-[0_0_20px_rgba(253,224,71,0.6)] hover:shadow-[0_0_15px_rgba(253,224,71,0.4)] animate-pulse hover:scale-105"
                               placeholder="fill the gap"
                               disabled={isDisabled}
                             />
@@ -179,10 +168,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
               </div>
 
               <p className="text-sm text-[#22d3ee] mt-2">
-                Time elapsed:{' '}
-                <span className="text-yellow-300">
-                  {preGameCountdown > 0 ? 0 : elapsedTime} ms
-                </span>
+                Time elapsed: <span className="text-yellow-300">{preGameCountdown > 0 ? 0 : elapsedTime} ms</span>
               </p>
 
               {preGameCountdown > 0 && (
@@ -203,7 +189,6 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
                 >
                   Submit
                 </button>
-
                 {gameCompleted && (
                   <button
                     onClick={fetchPhrase}
