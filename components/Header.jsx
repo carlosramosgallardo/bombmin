@@ -21,7 +21,7 @@ export default function Header() {
 
         <section className="mb-6">
           <p className="text-base font-mono text-[#22d3ee] text-center">
-            <em>"Master Math, Mine MM3, and Shape the Future with PoV & PoA."</em>
+            <em>"Master Math, Mine MM3, and shape the future with PoV & PoA."</em>
           </p>
         </section>
 
@@ -29,9 +29,6 @@ export default function Header() {
 
         <NavLinks className="mt-2" />
       </header>
-
-      {/* Borde inferior de ancho completo */}
-      <div className="w-full h-1 bg-gray-700" />
     </>
   )
 }
