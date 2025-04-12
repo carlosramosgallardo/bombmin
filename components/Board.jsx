@@ -150,7 +150,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
         <div className="bg-[#0b0f19] p-4 rounded-xl">
           {problem && (
             <>
-              <div className="text-base font-mono text-[#22d3ee] flex flex-wrap justify-center items-center gap-1">
+              <div className="text-base font-mono text-[#22d3ee] flex flex-wrap justify-center items-center gap-1 text-center">
                 {problem.masked.includes('[MASK]')
                   ? problem.masked.split('[MASK]').map((part, index, arr) => (
                       <span key={index} className="flex items-center gap-1 flex-wrap">
