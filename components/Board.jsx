@@ -153,23 +153,25 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
               <div className="text-base font-mono text-[#22d3ee] flex flex-wrap justify-center items-center gap-1">
                 {problem.masked.includes('[MASK]')
                   ? problem.masked.split('[MASK]').map((part, index, arr) => (
-                      <span key={index}>
-                        {part}
+                      <span key={index} className="flex items-center gap-1 flex-wrap">
+                        <span>{part}</span>
                         {index < arr.length - 1 && (
-                          <input
-                            ref={inputRef}
-                            type="text"
-                            value={userAnswer}
-                            onChange={(e) => setUserAnswer(e.target.value)}
-                            onKeyDown={(e) => {
-                              if (e.key === 'Enter' && !isDisabled) {
-                                checkAnswer();
-                              }
-                            }}
-                            className="inline-block w-32 px-2 py-1 mx-1 border-b-2 border-yellow-400 text-center font-mono text-yellow-200 bg-white/10 backdrop-blur-md placeholder-[#64748b] italic tracking-wider transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:shadow-[0_0_20px_rgba(253,224,71,0.6)] hover:shadow-[0_0_15px_rgba(253,224,71,0.4)] animate-pulse hover:scale-105"
-                            placeholder="fill the gap"
-                            disabled={isDisabled}
-                          />
+                          <span className="whitespace-nowrap flex items-center gap-1">
+                            <input
+                              ref={inputRef}
+                              type="text"
+                              value={userAnswer}
+                              onChange={(e) => setUserAnswer(e.target.value)}
+                              onKeyDown={(e) => {
+                                if (e.key === 'Enter' && !isDisabled) {
+                                  checkAnswer();
+                                }
+                              }}
+                              className="inline-block w-32 px-2 py-1 border-b-2 border-yellow-400 text-center font-mono text-yellow-200 bg-white/10 backdrop-blur-md placeholder-[#64748b] italic tracking-wider transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:shadow-[0_0_20px_rgba(253,224,71,0.6)] hover:shadow-[0_0_15px_rgba(253,224,71,0.4)] animate-pulse hover:scale-105"
+                              placeholder="fill the gap"
+                              disabled={isDisabled}
+                            />
+                          </span>
                         )}
                       </span>
                     ))
@@ -206,10 +208,8 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
                   <button
                     onClick={fetchPhrase}
                     disabled={isRefreshing}
-                    className={`px-4 py-1 rounded-xl font-mono text-sm transition-all duration-300 ease-in-out border-2 ${
-                      isRefreshing
-                        ? 'bg-gray-700 border-gray-600 text-gray-400 animate-spin cursor-wait'
-                        : 'bg-[#0b0f19] border-[#22d3ee] text-[#22d3ee] hover:bg-[#1e293b] hover:text-yellow-300 hover:scale-105'
+                    className={`w-8 h-8 flex items-center justify-center text-lg ${
+                      isRefreshing ? 'animate-spin opacity-50 cursor-wait' : 'hover:text-yellow-300'
                     }`}
                     title="Try a new phrase"
                   >
