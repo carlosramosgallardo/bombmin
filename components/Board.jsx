@@ -146,22 +146,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
   return (
     <>
-      <div className="w-full mt-10 bg-gray-900 p-4 rounded-xl shadow-lg text-center relative">
-        {gameCompleted && (
-          <div className="absolute top-2 right-4">
-            <button
-              onClick={fetchPhrase}
-              disabled={isRefreshing}
-              className={`text-[#22d3ee] hover:text-yellow-300 text-xl transition-transform duration-300 ${
-                isRefreshing ? 'animate-spin opacity-50 cursor-not-allowed' : 'hover:rotate-180'
-              }`}
-              title="Try a new phrase"
-            >
-              🔄
-            </button>
-          </div>
-        )}
-
+      <div className="w-full mt-10 bg-gray-900 p-4 rounded-xl shadow-lg text-center">
         <div className="bg-[#0b0f19] p-4 rounded-xl">
           {problem && (
             <>
@@ -207,7 +192,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
               <div className="flex justify-center items-center gap-2 mt-4">
                 <button
                   onClick={checkAnswer}
-                  className={`px-4 py-1 mx-2 rounded-xl font-mono text-sm transition-all duration-300 ease-in-out border-2 ${
+                  className={`px-4 py-1 rounded-xl font-mono text-sm transition-all duration-300 ease-in-out border-2 ${
                     isDisabled
                       ? 'bg-gray-700 border-gray-600 text-gray-400 cursor-not-allowed'
                       : 'bg-yellow-300 text-[#0b0f19] border-yellow-400 shadow-[0_0_15px_rgba(253,224,71,0.4)] hover:bg-yellow-400 hover:shadow-[0_0_20px_rgba(253,224,71,0.6)] hover:scale-105'
@@ -216,6 +201,21 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
                 >
                   Submit
                 </button>
+
+                {gameCompleted && (
+                  <button
+                    onClick={fetchPhrase}
+                    disabled={isRefreshing}
+                    className={`px-4 py-1 rounded-xl font-mono text-sm transition-all duration-300 ease-in-out border-2 ${
+                      isRefreshing
+                        ? 'bg-gray-700 border-gray-600 text-gray-400 animate-spin cursor-wait'
+                        : 'bg-[#0b0f19] border-[#22d3ee] text-[#22d3ee] hover:bg-[#1e293b] hover:text-yellow-300 hover:scale-105'
+                    }`}
+                    title="Try a new phrase"
+                  >
+                    🔄
+                  </button>
+                )}
               </div>
             </>
           )}
