@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import supabase from '@/lib/supabaseClient';
 
 export default function Board({ account, setGameMessage, setGameCompleted, setGameData }) {
   const [problem, setProblem] = useState(null);
@@ -19,29 +18,46 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   const preGameIntervalRef = useRef(null);
   const solveIntervalRef = useRef(null);
 
+  const generateRandomMathProblem = () => {
+    const operators = ['+', '-', '*', '/'];
+    const op = operators[Math.floor(Math.random() * operators.length)];
+    let a = Math.floor(Math.random() * 20) + 1;
+    let b = Math.floor(Math.random() * 20) + 1;
+
+    if (op === '/' && b !== 0) {
+      a = a * b; // ensures division is clean
+    }
+
+    let answer;
+    switch (op) {
+      case '+': answer = a + b; break;
+      case '-': answer = a - b; break;
+      case '*': answer = a * b; break;
+      case '/': answer = a / b; break;
+    }
+
+    return {
+      type: 'math',
+      question: `${a} ${op} ${b} =`,
+      answer: answer.toString(),
+      masked: `${a} ${op} ${b} = [MASK]`,
+    };
+  };
+
   const fetchPhrase = async () => {
     setIsRefreshing(true);
     try {
-      const res = await fetch('/math_phrases.json');
-      const phrases = await res.json();
-      let chosen;
-      if (Math.random() < 0.3) {
-        // Generar operación básica
-        const a = Math.floor(Math.random() * 20 + 1);
-        const b = Math.floor(Math.random() * 10 + 1);
-        const ops = ['+', '-', '*', '/'];
-        const op = ops[Math.floor(Math.random() * ops.length)];
-        const expr = `${a} ${op} ${b}`;
-        let result = eval(expr);
-        if (op === '/') result = (a / b).toFixed(2);
-        chosen = {
-          masked: expr.replace(String(b), '[MASK]'),
-          answer: String(b),
-        };
+      const useMath = Math.random() < 0.5; // 50% chance
+      if (useMath) {
+        const generated = generateRandomMathProblem();
+        setProblem(generated);
       } else {
-        chosen = phrases[Math.floor(Math.random() * phrases.length)];
+        const res = await fetch('/math_phrases.json');
+        const phrases = await res.json();
+        const chosen = phrases[Math.floor(Math.random() * phrases.length)];
+        setProblem({ ...chosen, type: 'text' });
       }
-      setProblem(chosen);
+
       setUserAnswer('');
       setElapsedTime(0);
       setPreGameCountdown(3);
@@ -111,7 +127,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
     }, 100);
   };
 
-  const checkAnswer = async () => {
+  const checkAnswer = () => {
     if (!problem || isDisabled) return;
     clearInterval(solveIntervalRef.current);
     const totalTime = elapsedTime;
@@ -126,27 +142,11 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
         const penaltyRatio = overTime / 5000;
         miningAmount = -PARTICIPATION_PRICE * 0.10 * penaltyRatio;
       }
-
-      if (account) {
-        try {
-          await supabase.from('games').insert([
-            {
-              wallet: account,
-              problem: problem.masked,
-              user_answer: userAnswer,
-              is_correct: true,
-              time_ms: totalTime,
-              mining_reward: miningAmount,
-            },
-          ]);
-          showMessage(`Inject MM3 now: ${miningAmount.toFixed(8)}`, 'success');
-        } catch (error) {
-          console.error('Supabase insert error:', error);
-          showMessage('Could not save game result.', 'error');
-        }
-      } else {
-        showMessage('Correct! Connect your wallet to shape the system.', 'success');
-      }
+      const displayAmount = Math.abs(miningAmount) < 0.00000001 ? '< 0.00000001' : miningAmount.toFixed(8);
+      const message = account
+        ? `Inject MM3 now: ${displayAmount}`
+        : `Connect your wallet to proceed with injecting MM3: ${displayAmount}.`;
+      showMessage(message, 'success');
     } else {
       showMessage('Incorrect! No mining reward.', 'error', true);
     }
@@ -175,29 +175,45 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
           {problem && (
             <>
               <div className="text-base font-mono text-[#22d3ee] flex flex-wrap justify-center items-center gap-1 text-center max-w-screen-sm mx-auto">
-                {problem.masked.includes('[MASK]')
-                  ? problem.masked.split('[MASK]').map((part, index, arr) => (
-                      <span key={index} className="flex items-center gap-1 flex-wrap justify-center text-center">
-                        <span>{part}</span>
-                        {index < arr.length - 1 && (
-                          <span className="whitespace-nowrap flex items-center gap-1">
-                            <input
-                              ref={inputRef}
-                              type="text"
-                              value={userAnswer}
-                              onChange={(e) => setUserAnswer(e.target.value)}
-                              onKeyDown={(e) => {
-                                if (e.key === 'Enter' && !isDisabled) checkAnswer();
-                              }}
-                              className="inline-block w-full max-w-[8rem] px-2 py-1 border-b-2 border-yellow-400 text-center font-mono text-yellow-200 bg-white/10 backdrop-blur-md placeholder-[#64748b] italic tracking-wider transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:shadow-[0_0_20px_rgba(253,224,71,0.6)] hover:shadow-[0_0_15px_rgba(253,224,71,0.4)] animate-pulse hover:scale-105"
-                              placeholder="fill the gap"
-                              disabled={isDisabled}
-                            />
-                          </span>
-                        )}
-                      </span>
-                    ))
-                  : <span className="text-red-400">No [MASK] found in phrase!</span>}
+                {problem.type === 'math' ? (
+                  <>
+                    <span>{problem.question}</span>
+                    <input
+                      ref={inputRef}
+                      type="text"
+                      value={userAnswer}
+                      onChange={(e) => setUserAnswer(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' && !isDisabled) checkAnswer();
+                      }}
+                      className="inline-block w-full max-w-[8rem] ml-2 px-2 py-1 border-b-2 border-yellow-400 text-center font-mono text-yellow-200 bg-white/10 backdrop-blur-md placeholder-[#64748b] italic tracking-wider transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:shadow-[0_0_20px_rgba(253,224,71,0.6)] hover:shadow-[0_0_15px_rgba(253,224,71,0.4)] animate-pulse hover:scale-105"
+                      placeholder="?"
+                      disabled={isDisabled}
+                    />
+                  </>
+                ) : (
+                  problem.masked.split('[MASK]').map((part, index, arr) => (
+                    <span key={index} className="flex items-center gap-1 flex-wrap justify-center text-center">
+                      <span>{part}</span>
+                      {index < arr.length - 1 && (
+                        <span className="whitespace-nowrap flex items-center gap-1">
+                          <input
+                            ref={inputRef}
+                            type="text"
+                            value={userAnswer}
+                            onChange={(e) => setUserAnswer(e.target.value)}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' && !isDisabled) checkAnswer();
+                            }}
+                            className="inline-block w-full max-w-[8rem] px-2 py-1 border-b-2 border-yellow-400 text-center font-mono text-yellow-200 bg-white/10 backdrop-blur-md placeholder-[#64748b] italic tracking-wider transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:shadow-[0_0_20px_rgba(253,224,71,0.6)] hover:shadow-[0_0_15px_rgba(253,224,71,0.4)] animate-pulse hover:scale-105"
+                            placeholder="fill the gap"
+                            disabled={isDisabled}
+                          />
+                        </span>
+                      )}
+                    </span>
+                  ))
+                )}
               </div>
 
               <p className="text-sm text-[#22d3ee] mt-2">
