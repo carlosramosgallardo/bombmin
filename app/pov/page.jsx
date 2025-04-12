@@ -15,7 +15,6 @@ const wagmiConfig = createConfig({
   },
 });
 
-// Función auxiliar para enmascarar la wallet
 const maskWallet = (wallet) => {
   if (!wallet || wallet.length <= 10) return wallet;
   return wallet.slice(0, 5) + '...' + wallet.slice(-5);
@@ -33,7 +32,6 @@ function PoVClientComponent() {
   const { address, isConnected } = useAccount();
   const [pollData, setPollData] = useState([]);
   const [resultsData, setResultsData] = useState({});
-  // Usamos un objeto para los mensajes por encuesta
   const [statusMessages, setStatusMessages] = useState({});
   const [canVote, setCanVote] = useState(false);
   const [eligibilityChecked, setEligibilityChecked] = useState(false);
@@ -41,7 +39,6 @@ function PoVClientComponent() {
   useEffect(() => {
     const fetchPollsAndVotes = async () => {
       try {
-        // Consulta la tabla polls incluyendo el campo wallet_address.
         const { data: polls, error: pollError } = await supabase
           .from('polls')
           .select('id, question, wallet_address')
@@ -50,14 +47,12 @@ function PoVClientComponent() {
 
         if (pollError) throw pollError;
 
-        // Consulta la tabla poll_votes para obtener los votos.
         const { data: votes, error: votesError } = await supabase
           .from('poll_votes')
           .select('*');
 
         if (votesError) throw votesError;
 
-        // Agrupar los votos por poll_id.
         const groupedVotes = votes.reduce((acc, vote) => {
           if (!acc[vote.poll_id]) acc[vote.poll_id] = [];
           acc[vote.poll_id].push(vote);
@@ -94,7 +89,6 @@ function PoVClientComponent() {
       return;
     }
 
-    // Verificación de elegibilidad para votar
     if (!canVote) {
       setStatusMessages((prev) => ({
         ...prev,
@@ -119,7 +113,6 @@ function PoVClientComponent() {
             ...prev,
             [pollId]: 'Error submitting your vote.'
           }));
-          console.error(error);
         }
       } else {
         setStatusMessages((prev) => ({
@@ -139,7 +132,6 @@ function PoVClientComponent() {
   return (
     <main className="flex flex-col items-center w-full pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
       <div className="w-full max-w-3xl px-4">
-        {/* Mensaje para usuario sin wallet conectada */}
         {!isConnected && (
           <p className="text-base text-gray-500 text-center mb-2">
             Connect your wallet to participate. To vote, you must have mined at least 0.00001 MM3.
@@ -151,15 +143,11 @@ function PoVClientComponent() {
         ) : (
           <>
             {eligibilityChecked && isConnected && (
-              !canVote ? (
-                <p className="text-base text-gray-500 text-center mb-2">
-                  Connected as {maskWallet(address)}. You must have mined at least 0.00001 MM3 to vote.
-                </p>
-              ) : (
-                <p className="text-base text-gray-500 text-center mb-2">
-                  Connected as: {maskWallet(address)}
-                </p>
-              )
+              <p className="text-base text-gray-500 text-center mb-6">
+                {canVote
+                  ? `Connected as: ${maskWallet(address)}`
+                  : `Connected as ${maskWallet(address)}. You must have mined at least 0.00001 MM3 to vote.`}
+              </p>
             )}
 
             {pollData.map((poll, index) => {
@@ -173,7 +161,7 @@ function PoVClientComponent() {
               return (
                 <div
                   key={poll.id}
-                  className="mb-16 p-6 bg-[#0b0f19] border border-[#22d3ee] rounded-lg shadow-lg"
+                  className="p-6 bg-[#0b0f19] border border-[#22d3ee] rounded-lg shadow-lg mb-12 animate-fade-in"
                 >
                   <h2 className="text-base font-medium mb-1 text-white">{poll.question}</h2>
                   <p className="text-base text-[#22d3ee] mb-4">
@@ -212,7 +200,7 @@ function PoVClientComponent() {
                             </div>
                             <div className="w-full bg-gray-700 rounded h-3">
                               <div
-                                className={`h-3 rounded ${option === 'yes' ? 'bg-[#22d3ee]' : 'bg-[#1e86d1]'}`}
+                                className={`h-3 rounded transition-all duration-700 ${option === 'yes' ? 'bg-[#22d3ee]' : 'bg-[#1e86d1]'}`}
                                 style={{ width: `${percentage}%` }}
                               />
                             </div>
@@ -222,13 +210,8 @@ function PoVClientComponent() {
                     </div>
                   )}
 
-                  {/* Mensaje específico para esta encuesta */}
                   {statusMessages[poll.id] && (
                     <p className="mt-4 text-sm text-gray-300">{statusMessages[poll.id]}</p>
-                  )}
-
-                  {index < pollData.length - 1 && (
-                    <div className="w-full border-t border-gray-700/50 my-12 opacity-50" />
                   )}
                 </div>
               );
@@ -236,6 +219,23 @@ function PoVClientComponent() {
           </>
         )}
       </div>
+
+      <style jsx>{`
+        .animate-fade-in {
+          animation: fadeInUp 0.4s ease-out both;
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(12px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </main>
   );
 }
