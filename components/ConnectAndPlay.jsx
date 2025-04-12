@@ -38,7 +38,6 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
   const { data: walletClient } = useWalletClient();
 
   const [statusMessage, setStatusMessage] = useState('');
-  const [isProcessing, setIsProcessing] = useState(false);
   const [isDonating, setIsDonating] = useState(false);
 
   useEffect(() => {
@@ -47,49 +46,12 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
     }
   }, [isConnected, address, setAccount]);
 
-  const isEligible = gameCompleted && gameData?.is_correct === true;
-
   const handleMobileConnect = () => {
     const walletConnect = connectors.find(c => c.id === 'walletConnect');
     if (walletConnect) {
       connect({ connector: walletConnect });
     } else {
       open();
-    }
-  };
-
-  const handleGameSubmit = async () => {
-    if (!isConnected || !address) {
-      setStatusMessage('Connect your wallet first to save your play.');
-      return;
-    }
-
-    if (!isEligible) {
-      setStatusMessage('Answer correctly before submitting your play.');
-      return;
-    }
-
-    try {
-      setIsProcessing(true);
-
-      const fullGameData = {
-        ...gameData,
-        wallet: address,
-      };
-
-      const { error } = await supabase.from('games').insert([fullGameData]);
-      if (error) {
-        console.error('Supabase insert error:', error.message);
-        setStatusMessage('Oops! Could not save your play.');
-        return;
-      }
-
-      setStatusMessage('Your play has been recorded. Thank you for shaping the system.');
-    } catch (err) {
-      console.error('Error saving play:', err);
-      setStatusMessage('A glitch in the grid. Play was not saved.');
-    } finally {
-      setIsProcessing(false);
     }
   };
 
@@ -136,31 +98,17 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
           Connect Wallet
         </button>
       ) : (
-        <>
-          <button
-            onClick={handleGameSubmit}
-            disabled={!isEligible || isProcessing}
-            className={`px-4 py-2 mt-2 ml-2 rounded transition ${
-              !isEligible || isProcessing
-                ? 'bg-slate-700 cursor-not-allowed text-white'
-                : 'bg-slate-800 text-white hover:bg-slate-700'
-            }`}
-          >
-            {isProcessing ? 'Saving...' : 'Mine MM3'}
-          </button>
-
-          <button
-            onClick={handleDonation}
-            disabled={isDonating}
-            className={`px-4 py-2 mt-2 ml-2 rounded transition ${
-              isDonating
-                ? 'bg-slate-700 cursor-wait text-white'
-                : 'bg-slate-800 text-white hover:bg-slate-700'
-            }`}
-          >
-            {isDonating ? 'Rippling...' : 'Symbolic Disturbance'}
-          </button>
-        </>
+        <button
+          onClick={handleDonation}
+          disabled={isDonating}
+          className={`px-4 py-2 mt-2 ml-2 rounded transition ${
+            isDonating
+              ? 'bg-slate-700 cursor-wait text-white'
+              : 'bg-slate-800 text-white hover:bg-slate-700'
+          }`}
+        >
+          {isDonating ? 'Rippling...' : 'Symbolic Disturbance'}
+        </button>
       )}
 
       {statusMessage && (

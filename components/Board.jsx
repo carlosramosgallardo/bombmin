@@ -1,29 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-
-function generateMathProblem() {
-  const operations = ['+', '-', '*', '/'];
-  const op = operations[Math.floor(Math.random() * operations.length)];
-  let a = Math.floor(Math.random() * 20) + 1;
-  let b = Math.floor(Math.random() * 20) + 1;
-  if (op === '/') a = a * b;
-
-  let answer;
-  switch (op) {
-    case '+': answer = a + b; break;
-    case '-': answer = a - b; break;
-    case '*': answer = a * b; break;
-    case '/': answer = a / b; break;
-  }
-
-  return {
-    masked: `${a} ${op} ${b} = [MASK]`,
-    answer: answer.toString(),
-    source: 'generated',
-    image: null
-  };
-}
+import supabase from '@/lib/supabaseClient';
 
 export default function Board({ account, setGameMessage, setGameCompleted, setGameData }) {
   const [problem, setProblem] = useState(null);
@@ -44,12 +22,23 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   const fetchPhrase = async () => {
     setIsRefreshing(true);
     try {
+      const res = await fetch('/math_phrases.json');
+      const phrases = await res.json();
       let chosen;
       if (Math.random() < 0.3) {
-        chosen = generateMathProblem();
+        // Generar operación básica
+        const a = Math.floor(Math.random() * 20 + 1);
+        const b = Math.floor(Math.random() * 10 + 1);
+        const ops = ['+', '-', '*', '/'];
+        const op = ops[Math.floor(Math.random() * ops.length)];
+        const expr = `${a} ${op} ${b}`;
+        let result = eval(expr);
+        if (op === '/') result = (a / b).toFixed(2);
+        chosen = {
+          masked: expr.replace(String(b), '[MASK]'),
+          answer: String(b),
+        };
       } else {
-        const res = await fetch('/math_phrases.json');
-        const phrases = await res.json();
         chosen = phrases[Math.floor(Math.random() * phrases.length)];
       }
       setProblem(chosen);
@@ -122,7 +111,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
     }, 100);
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     if (!problem || isDisabled) return;
     clearInterval(solveIntervalRef.current);
     const totalTime = elapsedTime;
@@ -137,11 +126,27 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
         const penaltyRatio = overTime / 5000;
         miningAmount = -PARTICIPATION_PRICE * 0.10 * penaltyRatio;
       }
-      const displayAmount = Math.abs(miningAmount) < 0.00000001 ? '< 0.00000001' : miningAmount.toFixed(8);
-      const message = account
-        ? `Inject MM3 now: ${displayAmount}`
-        : `Connect your wallet to proceed with injecting MM3: ${displayAmount}.`;
-      showMessage(message, 'success');
+
+      if (account) {
+        try {
+          await supabase.from('games').insert([
+            {
+              wallet: account,
+              problem: problem.masked,
+              user_answer: userAnswer,
+              is_correct: true,
+              time_ms: totalTime,
+              mining_reward: miningAmount,
+            },
+          ]);
+          showMessage(`Inject MM3 now: ${miningAmount.toFixed(8)}`, 'success');
+        } catch (error) {
+          console.error('Supabase insert error:', error);
+          showMessage('Could not save game result.', 'error');
+        }
+      } else {
+        showMessage('Correct! Connect your wallet to shape the system.', 'success');
+      }
     } else {
       showMessage('Incorrect! No mining reward.', 'error', true);
     }
