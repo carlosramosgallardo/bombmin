@@ -44,7 +44,7 @@ export default function LearnMathPage() {
   }
 
   const currentPhrase = phrases[currentIndex];
-  const fullPhrase = currentPhrase.masked.replace('_____', currentPhrase.answer);
+  const fullPhrase = currentPhrase.masked.replace('[MASK]', currentPhrase.answer);
 
   return (
     <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-base font-mono text-gray-200 bg-black">
