@@ -1,12 +1,12 @@
 [
   {
-    "masked": "Euclidean geometry studies shapes and lines in a [MASK] plane.",
+    "masked": "Euclidean geometry studies shapes and lines in a [MASK] plane",
     "answer": "flat",
     "source": "Wikipedia",
     "image": "/images/euclidean_geometry.png"
   },
   {
-    "masked": "Pythagoras proved the [MASK] theorem relating triangle sides.",
+    "masked": "Pythagoras proved the [MASK] theorem relating triangle sides",
     "answer": "Pythagorean",
     "source": "Wikipedia",
     "image": "/images/pythagoras.png"
@@ -30,7 +30,7 @@
     "image": "/images/archimedes.png"
   },
   {
-    "masked": "Euler introduced the formula e^(iπ)+1=[MASK] connecting complex numbers and trigonometry.",
+    "masked": "Euler introduced the formula e^(iπ)+1=[MASK] connecting complex numbers and trigonometry",
     "answer": "0",
     "source": "Wikipedia",
     "image": "/images/leonhard_euler.png"
@@ -78,7 +78,7 @@
     "image": "/images/mathematical_prime_odyssey.png"
   },
   {
-    "masked": "Mathematical induction proves statements for all natural numbers by verifying the [MASK] step.",
+    "masked": "Mathematical induction proves statements for all natural numbers by verifying the [MASK] step",
     "answer": "inductive",
     "source": "Wikipedia",
     "image": "/images/staircase.png"
@@ -108,7 +108,7 @@
     "image": "/images/theorems_glowing_revelation.png"
   },
   {
-    "masked": "The Riemann Hypothesis, a famous unsolved problem, concerns the zeros of the [MASK] function.",
+    "masked": "The Riemann Hypothesis, a famous unsolved problem, concerns the zeros of the [MASK] function",
     "answer": "zeta",
     "source": "Wikipedia",
     "image": "/images/riemann_mystery.png"
@@ -126,19 +126,19 @@
     "image": "/images/calculus_connections.png"
   },
   {
-    "masked": "Rational numbers can be expressed as a ratio of two [MASK] numbers.",
+    "masked": "Rational numbers can be expressed as a ratio of two [MASK] numbers",
     "answer": "integers",
     "source": "Wikipedia",
     "image": "/images/rational_numbers.png"
   },
   {
-    "masked": "Geometry studies points, lines, and angles in a [MASK] space.",
+    "masked": "Geometry studies points, lines, and angles in a [MASK] space",
     "answer": "Euclidean",
     "source": "Wikipedia",
     "image": "/images/geometry.png"
   },
   {
-    "masked": "The binomial theorem expands expressions raised to a [MASK] power.",
+    "masked": "The binomial theorem expands expressions raised to a [MASK] power",
     "answer": "natural",
     "source": "Wikipedia",
     "image": "/images/binomial_theorem_expansion.png"
@@ -150,7 +150,7 @@
     "image": "/images/cantor's_cosmic_infinities.png"
   },
   {
-    "masked": "A matrix is a rectangular array used in [MASK] algebra calculations.",
+    "masked": "A matrix is a rectangular array used in [MASK] algebra calculations",
     "answer": "linear",
     "source": "Wikipedia",
     "image": "/images/matrix.png"
@@ -162,7 +162,7 @@
     "image": "/images/chaos_theory.png"
   },
   {
-    "masked": "Probability theory quantifies uncertainty using the concept of [MASK] events.",
+    "masked": "Probability theory quantifies uncertainty using the concept of [MASK] events",
     "answer": "random",
     "source": "Wikipedia",
     "image": "/images/probability_in_motion.png"
@@ -175,19 +175,19 @@
   
   },
   {
-    "masked": "Fractals exhibit self-similarity, revealing infinite [MASK] at every scale.",
+    "masked": "Fractals exhibit self-similarity, revealing infinite [MASK] at every scale",
     "answer": "complexity",
     "source": "Wikipedia",
     "image": "/images/fractal_infinity_unfolds.png"
   },
   {
-    "masked": "Number theory is famous for studying the properties of [MASK] numbers.",
+    "masked": "Number theory is famous for studying the properties of [MASK] numbers",
     "answer": "prime",
     "source": "Wikipedia",
     "image": "/images/prime_numbers_enigma.png"
   },
   {
-    "masked": "Abstract algebra examines structures like groups and rings in [MASK] mathematics.",
+    "masked": "Abstract algebra examines structures like groups and rings in [MASK] mathematics",
     "answer": "algebra",
     "source": "Wikipedia",
     "image": "/images/futuristic_algebra_study.png"
@@ -199,7 +199,7 @@
     "image": "/images/exploring_differential_geometry.png"
   },
   {
-    "masked": "Topology considers properties preserved under continuous [MASK] of shapes.",
+    "masked": "Topology considers properties preserved under continuous [MASK] of shapes",
     "answer": "deformations",
     "source": "Wikipedia",
     "image": "/images/surreal_topology_exploration.png"
@@ -229,31 +229,31 @@
     "image": "/images/teorem_in_marble_hall.png"
   },
   {
-    "masked": "Euclid's parallel postulate distinguishes Euclidean from [MASK] geometry.",
+    "masked": "Euclid's parallel postulate distinguishes Euclidean from [MASK] geometry",
     "answer": "non-Euclidean",
     "source": "Wikipedia",
     "image": "/images/contrasting_geometric_realms.png"
   },
   {
-    "masked": "The study of limits is central to understanding [MASK] in calculus.",
+    "masked": "The study of limits is central to understanding [MASK] in calculus",
     "answer": "continuity",
     "source": "Wikipedia",
     "image": "/images/visualizing_calculus_limits_simple.png"
   },
   {
-    "masked": "A derivative represents the instantaneous rate of [MASK] of a function.",
+    "masked": "A derivative represents the instantaneous rate of [MASK] of a function",
     "answer": "change",
     "source": "Wikipedia",
     "image": "/images/dynamic_curve_derivatives.png"
   },
   {
-    "masked": "In combinatorics, the factorial counts the number of [MASK] arrangements.",
+    "masked": "In combinatorics, the factorial counts the number of [MASK] arrangements",
     "answer": "permutations",
     "source": "Wikipedia",
     "image": "/images/factorial_tree_display.png"
   },
   {
-    "masked": "Mathematical modeling uses equations to simulate real-world [MASK] phenomena.",
+    "masked": "Mathematical modeling uses equations to simulate real-world [MASK] phenomena",
     "answer": "physical",
     "source": "Wikipedia",
     "image": "/images/holographic_math_lab.png"
@@ -265,19 +265,19 @@
     "image": "/images/mathematical_curiosity_unveiled.png"
   },
   {
-    "masked": "Complex analysis studies functions of a complex [MASK] variable.",
+    "masked": "Complex analysis studies functions of a complex [MASK] variable",
     "answer": "numeric",
     "source": "Wikipedia",
     "image": "/images/complex_plane_exploration.png"
   },
   {
-    "masked": "A scalar has magnitude only, unlike a [MASK] which has direction.",
+    "masked": "A scalar has magnitude only, unlike a [MASK] which has direction",
     "answer": "vector",
     "source": "Wikipedia",
     "image": "/images/vectors_and_scalars_explained.png"
   },
   {
-    "masked": "The Law of Cosines generalizes the Pythagorean theorem for an [MASK] triangle.",
+    "masked": "The Law of Cosines generalizes the Pythagorean theorem for an [MASK] triangle",
     "answer": "oblique",
     "source": "Wikipedia",
     "image": "/images/law_of_cosines.png"
@@ -289,7 +289,7 @@
     "image": "/images/calculus_visualization.png"
   },
   {
-    "masked": "Chaos examines deterministic systems that can behave [MASK] over time.",
+    "masked": "Chaos examines deterministic systems that can behave [MASK] over time",
     "answer": "unpredictably",
     "source": "Wikipedia",
     "image": "/images/chaos_theory_in_motion.png"
