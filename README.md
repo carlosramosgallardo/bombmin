@@ -6,7 +6,7 @@
 
 ## What is MathsMine3?
 
-Master Math, Mine MM3, and Shape the Future with PoV & PoA.
+The fake Web3 platform where mining means solving math challenges and people around the world propose and vote on ideas freely, openly, and transparently.
 
 ---
 
