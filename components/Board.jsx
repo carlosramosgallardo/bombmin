@@ -8,6 +8,8 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   const [elapsedTime, setElapsedTime] = useState(0);
   const [preGameCountdown, setPreGameCountdown] = useState(3);
   const [isDisabled, setIsDisabled] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const [gameCompleted, setLocalGameCompleted] = useState(false);
   const [gameMessage, setLocalGameMessage] = useState(null);
   const [isFading, setIsFading] = useState(false);
   const inputRef = useRef(null);
@@ -16,31 +18,40 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   const preGameIntervalRef = useRef(null);
   const solveIntervalRef = useRef(null);
 
+  const fetchPhrase = async () => {
+    setIsRefreshing(true);
+    try {
+      const res = await fetch('/math_phrases.json');
+      const phrases = await res.json();
+      const chosen = phrases[Math.floor(Math.random() * phrases.length)];
+      setProblem(chosen);
+      setUserAnswer('');
+      setElapsedTime(0);
+      setPreGameCountdown(3);
+      setIsDisabled(true);
+      setLocalGameCompleted(false);
+      setGameCompleted(false);
+      setLocalGameMessage(null);
+
+      preGameIntervalRef.current = setInterval(() => {
+        setPreGameCountdown((prev) => {
+          if (prev <= 1) {
+            clearInterval(preGameIntervalRef.current);
+            startSolveTimer();
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    } catch (error) {
+      console.error('Error fetching phrase:', error);
+    } finally {
+      setTimeout(() => setIsRefreshing(false), 500);
+    }
+  };
+
   useEffect(() => {
-    const fetchPhrase = async () => {
-      try {
-        const res = await fetch('/math_phrases.json');
-        const phrases = await res.json();
-        const chosen = phrases[Math.floor(Math.random() * phrases.length)];
-        setProblem(chosen);
-      } catch (error) {
-        console.error('Error fetching phrase:', error);
-      }
-    };
-
     fetchPhrase();
-
-    preGameIntervalRef.current = setInterval(() => {
-      setPreGameCountdown((prev) => {
-        if (prev <= 1) {
-          clearInterval(preGameIntervalRef.current);
-          startSolveTimer();
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
     return () => {
       clearInterval(preGameIntervalRef.current);
       clearInterval(solveIntervalRef.current);
@@ -120,6 +131,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
   const finalizeGame = (isCorrect, miningAmount) => {
     setIsDisabled(true);
+    setLocalGameCompleted(true);
     setGameCompleted(true);
 
     setGameData({
@@ -134,7 +146,22 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
   return (
     <>
-      <div className="w-full mt-10 bg-gray-900 p-4 rounded-xl shadow-lg text-center">
+      <div className="w-full mt-10 bg-gray-900 p-4 rounded-xl shadow-lg text-center relative">
+        {gameCompleted && (
+          <div className="absolute top-2 right-4">
+            <button
+              onClick={fetchPhrase}
+              disabled={isRefreshing}
+              className={`text-[#22d3ee] hover:text-yellow-300 text-xl transition-transform duration-300 ${
+                isRefreshing ? 'animate-spin opacity-50 cursor-not-allowed' : 'hover:rotate-180'
+              }`}
+              title="Try a new phrase"
+            >
+              🔄
+            </button>
+          </div>
+        )}
+
         <div className="bg-[#0b0f19] p-4 rounded-xl">
           {problem && (
             <>
@@ -195,7 +222,6 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
         </div>
       </div>
 
-      {/* Mensaje flotante */}
       {gameMessage && (
         <div
           className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 px-5 py-3 rounded-xl font-mono text-sm z-50 shadow-xl transition-all duration-500 ${
