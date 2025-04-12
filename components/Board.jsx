@@ -8,8 +8,9 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   const [elapsedTime, setElapsedTime] = useState(0);
   const [preGameCountdown, setPreGameCountdown] = useState(3);
   const [isDisabled, setIsDisabled] = useState(true);
-  const [gameMessage, setLocalGameMessage] = useState('');
+  const [gameMessage, setLocalGameMessage] = useState(null);
   const [isFading, setIsFading] = useState(false);
+  const inputRef = useRef(null);
 
   const PARTICIPATION_PRICE = parseFloat(process.env.NEXT_PUBLIC_PARTICIPATION_PRICE);
   const preGameIntervalRef = useRef(null);
@@ -47,17 +48,30 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   }, []);
 
   useEffect(() => {
+    if (!isDisabled && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isDisabled]);
+
+  useEffect(() => {
     if (!gameMessage) return;
 
     setIsFading(false);
     const fadeTimer = setTimeout(() => setIsFading(true), 3500);
-    const removeTimer = setTimeout(() => setLocalGameMessage(''), 4000);
+    const removeTimer = setTimeout(() => setLocalGameMessage(null), 4000);
 
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(removeTimer);
     };
   }, [gameMessage]);
+
+  const showMessage = (msg, type = 'info', isToastOnly = false) => {
+    if (!isToastOnly) {
+      setGameMessage(msg);
+    }
+    setLocalGameMessage({ msg, type });
+  };
 
   const startSolveTimer = () => {
     setIsDisabled(false);
@@ -68,15 +82,10 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
 
       if (timePassed >= 10000) {
         clearInterval(solveIntervalRef.current);
-        showMessage('⏳ Time exceeded! No mining reward.');
+        showMessage('Time exceeded! No mining reward.', 'info', true);
         finalizeGame(false, 0);
       }
     }, 100);
-  };
-
-  const showMessage = (msg) => {
-    setLocalGameMessage(msg);
-    setGameMessage(msg);
   };
 
   const checkAnswer = () => {
@@ -101,9 +110,9 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
       const message = account
         ? `Inject MM3 now: ${displayAmount}`
         : `Connect your wallet to proceed with injecting MM3: ${displayAmount}.`;
-      showMessage(message);
+      showMessage(message, 'success');
     } else {
-      showMessage('❌ Incorrect! No mining reward.');
+      showMessage('Incorrect! No mining reward.', 'error', true);
     }
 
     finalizeGame(correct, miningAmount);
@@ -130,21 +139,29 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
           {problem && (
             <>
               <div className="text-base font-mono text-[#22d3ee] flex flex-wrap justify-center items-center gap-1">
-                {problem.masked.split('___').map((part, index, arr) => (
-                  <span key={index}>
-                    {part}
-                    {index < arr.length - 1 && (
-                      <input
-                        type="text"
-                        value={userAnswer}
-                        onChange={(e) => setUserAnswer(e.target.value)}
-                        className="inline-block w-32 px-2 py-1 mx-1 border-b-2 border-yellow-400 text-center font-mono text-yellow-200 bg-white/10 backdrop-blur-md placeholder-[#64748b] italic tracking-wider transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:shadow-[0_0_20px_rgba(253,224,71,0.6)] hover:shadow-[0_0_15px_rgba(253,224,71,0.4)] animate-pulse hover:scale-105"
-                        placeholder="fill the gap"
-                        disabled={isDisabled}
-                      />
-                    )}
-                  </span>
-                ))}
+                {problem.masked.includes('[MASK]')
+                  ? problem.masked.split('[MASK]').map((part, index, arr) => (
+                      <span key={index}>
+                        {part}
+                        {index < arr.length - 1 && (
+                          <input
+                            ref={inputRef}
+                            type="text"
+                            value={userAnswer}
+                            onChange={(e) => setUserAnswer(e.target.value)}
+                            onKeyDown={(e) => {
+                              if (e.key === 'Enter' && !isDisabled) {
+                                checkAnswer();
+                              }
+                            }}
+                            className="inline-block w-32 px-2 py-1 mx-1 border-b-2 border-yellow-400 text-center font-mono text-yellow-200 bg-white/10 backdrop-blur-md placeholder-[#64748b] italic tracking-wider transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:shadow-[0_0_20px_rgba(253,224,71,0.6)] hover:shadow-[0_0_15px_rgba(253,224,71,0.4)] animate-pulse hover:scale-105"
+                            placeholder="fill the gap"
+                            disabled={isDisabled}
+                          />
+                        )}
+                      </span>
+                    ))
+                  : <span className="text-red-400">No [MASK] found in phrase!</span>}
               </div>
 
               <p className="text-sm text-[#22d3ee] mt-2">
@@ -178,14 +195,27 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
         </div>
       </div>
 
-      {/* Mensaje de resultado tipo toast */}
+      {/* Mensaje flotante */}
       {gameMessage && (
         <div
-          className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-[#0f172a] border border-yellow-400 text-yellow-300 px-4 py-2 rounded-xl shadow-xl font-mono text-sm z-50 transition-opacity duration-500 ${
+          className={`fixed bottom-6 left-1/2 transform -translate-x-1/2 px-5 py-3 rounded-xl font-mono text-sm z-50 shadow-xl transition-all duration-500 ${
             isFading ? 'opacity-0 translate-y-2' : 'opacity-100'
+          } ${
+            gameMessage.type === 'success'
+              ? 'bg-green-800 border border-green-400 text-green-200'
+              : gameMessage.type === 'error'
+              ? 'bg-red-800 border border-red-400 text-red-200'
+              : 'bg-[#0f172a] border border-yellow-400 text-yellow-300'
           }`}
         >
-          {gameMessage}
+          <span className="mr-2">
+            {gameMessage.type === 'success'
+              ? '✅'
+              : gameMessage.type === 'error'
+              ? '❌'
+              : '⏳'}
+          </span>
+          {gameMessage.msg}
         </div>
       )}
     </>
