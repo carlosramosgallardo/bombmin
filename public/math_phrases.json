@@ -12,19 +12,19 @@
     "image": "/images/pythagoras.png"
   },
   {
-    "masked": "Calculus, founded by Newton and Leibniz, studies change via [MASK].",
+    "masked": "Calculus, founded by Newton and Leibniz, studies change via [MASK]",
     "answer": "derivatives",
     "source": "Wikipedia",
     "image": "/images/newton_leibniz.png"
   },
   {
-    "masked": "Algebra manipulates symbols to solve equations with unknown [MASK].",
+    "masked": "Algebra manipulates symbols to solve equations with unknown [MASK]",
     "answer": "variables",
     "source": "Wikipedia",
       "image": "/images/variables.png"
   },
   {
-    "masked": "Archimedes used methods of exhaustion to estimate the area of a [MASK].",
+    "masked": "Archimedes used methods of exhaustion to estimate the area of a [MASK]",
     "answer": "circle",
     "source": "Wikipedia",
     "image": "/images/archimedes.png"
@@ -36,43 +36,43 @@
     "image": "/images/leonhard_euler.png"
   },
   {
-    "masked": "Fibonacci's sequence appears in nature, such as in the arrangement of [MASK].",
+    "masked": "Fibonacci's sequence appears in nature, such as in the arrangement of [MASK]",
     "answer": "leaves",
     "source": "Wikipedia",
     "image": "/images/fibonacci.png"
   },
   {
-    "masked": "Non-Euclidean geometry explores spaces where parallel line postulates are [MASK].",
+    "masked": "Non-Euclidean geometry explores spaces where parallel line postulates are [MASK]",
     "answer": "redefined",
     "source": "Wikipedia",
     "image": "/images/non_euclidean.png"
   },
   {
-    "masked": "Statistics, a branch of mathematics, analyzes data to infer underlying [MASK].",
+    "masked": "Statistics, a branch of mathematics, analyzes data to infer underlying [MASK]",
     "answer": "patterns",
     "source": "Wikipedia",
     "image": "/images/holographic_data_analysis.png"
   },
   {
-    "masked": "Topology studies properties of spaces preserved under continuous [MASK].",
+    "masked": "Topology studies properties of spaces preserved under continuous [MASK]",
     "answer": "deformations",
     "source": "Wikipedia",
     "image": "/images/topological_transformations.png"
   },
   {
-    "masked": "Set theory, founded by Cantor, revolutionized mathematics with the concept of [MASK].",
+    "masked": "Set theory, founded by Cantor, revolutionized mathematics with the concept of [MASK]",
     "answer": "infinity",
     "source": "Wikipedia",
     "image": "/images/exploring_infinite_realms.png"
   },
   {
-    "masked": "Graph theory explores relationships modeled as nodes connected by [MASK].",
+    "masked": "Graph theory explores relationships modeled as nodes connected by [MASK]",
     "answer": "edges",
     "source": "Wikipedia",
     "image": "/images/analyzing_complex_networks.png"
   },
   {
-    "masked": "Number theory investigates properties of integers, including prime number [MASK].",
+    "masked": "Number theory investigates properties of integers, including prime number [MASK]",
     "answer": "distribution",
     "source": "Wikipedia",
     "image": "/images/mathematical_prime_odyssey.png"
@@ -84,25 +84,25 @@
     "image": "/images/staircase.png"
   },
   {
-    "masked": "A fractal displays self-similarity at every scale, revealing infinite [MASK].",
+    "masked": "A fractal displays self-similarity at every scale, revealing infinite [MASK]",
     "answer": "complexity",
     "source": "Wikipedia",
     "image": "/images/infinite_fractal.png"
   },
   {
-    "masked": "Probability's law of large numbers guarantees convergence of averages with increasing sample [MASK].",
+    "masked": "Probability's law of large numbers guarantees convergence of averages with increasing sample [MASK]",
     "answer": "sizes",
     "source": "Wikipedia",
     "image": "/images/law_of_large_numbers.png"
   },
   {
-    "masked": "Differential equations describe systems where change is related to current [MASK].",
+    "masked": "Differential equations describe systems where change is related to current [MASK]",
     "answer": "state",
     "source": "Wikipedia",
     "image": "/images/flowing_equations.png"
   },
   {
-    "masked": "Mathematicians use proofs as logical arguments to establish mathematical [MASK].",
+    "masked": "Mathematicians use proofs as logical arguments to establish mathematical [MASK]",
     "answer": "truths",
     "source": "Wikipedia",
     "image": "/images/theorems_glowing_revelation.png"
@@ -114,13 +114,13 @@
     "image": "/images/riemann_mystery.png"
   },
   {
-    "masked": "Complex numbers extend the real numbers by including the imaginary unit [MASK].",
+    "masked": "Complex numbers extend the real numbers by including the imaginary unit [MASK]",
     "answer": "i",
     "source": "Wikipedia",
     "image": "/images/complex_number_cosmos.png"
   },
   {
-    "masked": "The Fundamental Theorem of Calculus connects differentiation and [MASK].",
+    "masked": "The Fundamental Theorem of Calculus connects differentiation and [MASK]",
     "answer": "integration",
     "source": "Wikipedia",
     "image": "/images/calculus_connections.png"
@@ -144,7 +144,7 @@
     "image": "/images/binomial_theorem_expansion.png"
   },
   {
-    "masked": "Cantor's work in set theory introduced different sizes of the [MASK].",
+    "masked": "Cantor's work in set theory introduced different sizes of the [MASK]",
     "answer": "infinite",
     "source": "Wikipedia",
     "image": "/images/cantor's_cosmic_infinities.png"
@@ -156,7 +156,7 @@
     "image": "/images/matrix.png"
   },
   {
-    "masked": "Chaos theory examines systems that are extremely sensitive to initial [MASK].",
+    "masked": "Chaos theory examines systems that are extremely sensitive to initial [MASK]",
     "answer": "conditions",
     "source": "Wikipedia",
     "image": "/images/chaos_theory.png"
@@ -168,7 +168,7 @@
     "image": "/images/probability_in_motion.png"
   },
   {
-    "masked": "Mathematical logic studies formal languages and their [MASK].",
+    "masked": "Mathematical logic studies formal languages and their [MASK]",
     "answer": "semantics",
     "source": "Wikipedia",
     "image": "/images/abstract_mathematical_study.png"
@@ -193,7 +193,7 @@
     "image": "/images/futuristic_algebra_study.png"
   },
   {
-    "masked": "Differential geometry applies calculus to study curves and [MASK].",
+    "masked": "Differential geometry applies calculus to study curves and [MASK]",
     "answer": "surfaces",
     "source": "Wikipedia",
     "image": "/images/exploring_differential_geometry.png"
@@ -205,25 +205,25 @@
     "image": "/images/surreal_topology_exploration.png"
   },
   {
-    "masked": "A function maps elements from one set to another by a specific [MASK].",
+    "masked": "A function maps elements from one set to another by a specific [MASK]",
     "answer": "rule",
     "source": "Wikipedia",
     "image": "/images/domain_and_codomain_mapping.png"
   },
   {
-    "masked": "Symmetry in mathematics is analyzed using group [MASK].",
+    "masked": "Symmetry in mathematics is analyzed using group [MASK]",
     "answer": "theory",
     "source": "Wikipedia",
     "image": "/images/geometric_symmetry_exploration.png"
   },
   {
-    "masked": "Optimization seeks to maximize or minimize functions under given [MASK].",
+    "masked": "Optimization seeks to maximize or minimize functions under given [MASK]",
     "answer": "constraints",
     "source": "Wikipedia",
     "image": "/images/3d_optimization_visualization.png"
   },
   {
-    "masked": "A proof is a logical argument demonstrating an absolute mathematical [MASK].",
+    "masked": "A proof is a logical argument demonstrating an absolute mathematical [MASK]",
     "answer": "truth",
     "source": "Wikipedia",
     "image": "/images/teorem_in_marble_hall.png"
@@ -259,7 +259,7 @@
     "image": "/images/holographic_math_lab.png"
   },
   {
-    "masked": "A conjecture is an unproven statement believed to be [MASK].",
+    "masked": "A conjecture is an unproven statement believed to be [MASK]",
     "answer": "true",
     "source": "Wikipedia",
     "image": "/images/mathematical_curiosity_unveiled.png"
@@ -283,7 +283,7 @@
     "image": "/images/law_of_cosines.png"
   },
   {
-    "masked": "Calculus uses limits to rigorously define derivatives and [MASK].",
+    "masked": "Calculus uses limits to rigorously define derivatives and [MASK]",
     "answer": "integrals",
     "source": "Wikipedia",
     "image": "/images/calculus_visualization.png"
@@ -295,7 +295,7 @@
     "image": "/images/chaos_theory_in_motion.png"
   },
   {
-    "masked": "Convergence of a sequence in analysis means it approaches a specific [MASK].",
+    "masked": "Convergence of a sequence in analysis means it approaches a specific [MASK]",
     "answer": "limit",
     "source": "Wikipedia",
     "image": "/images/convergence_of_sequences.png"
