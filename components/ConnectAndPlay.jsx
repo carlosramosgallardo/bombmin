@@ -37,14 +37,30 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
   const { connect, connectors } = useConnect();
   const { data: walletClient } = useWalletClient();
 
-  const [statusMessage, setStatusMessage] = useState('');
+  const [statusMessage, setStatusMessage] = useState(null);
   const [isDonating, setIsDonating] = useState(false);
+  const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
     if (isConnected && address && setAccount) {
       setAccount(address);
     }
   }, [isConnected, address, setAccount]);
+
+  useEffect(() => {
+    if (!statusMessage) return;
+    setIsFading(false);
+    const fadeTimer = setTimeout(() => setIsFading(true), 3500);
+    const removeTimer = setTimeout(() => setStatusMessage(null), 4000);
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
+  }, [statusMessage]);
+
+  const showToast = (msg, type = 'info') => {
+    setStatusMessage({ msg, type });
+  };
 
   const handleMobileConnect = () => {
     const walletConnect = connectors.find(c => c.id === 'walletConnect');
@@ -57,7 +73,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
 
   const handleDonation = async () => {
     if (!isConnected || !address) {
-      setStatusMessage('Connect your wallet before donating.');
+      showToast('Connect your wallet before donating.', 'error');
       return;
     }
 
@@ -65,7 +81,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
       setIsDonating(true);
 
       if (!walletClient?.transport?.request) {
-        setStatusMessage('This wallet does not support symbolic donations.');
+        showToast('This wallet does not support symbolic donations.', 'error');
         return;
       }
 
@@ -77,10 +93,10 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
         value: parseEther(process.env.NEXT_PUBLIC_PARTICIPATION_PRICE),
       });
 
-      setStatusMessage('Signal received. A ripple echoes through the field.');
+      showToast('Signal received. A ripple echoes through the field.', 'success');
     } catch (err) {
       console.error('Donation failed:', err);
-      setStatusMessage('Even hesitation shapes the system. Donation aborted.');
+      showToast('Even hesitation shapes the system. Donation aborted.', 'error');
     } finally {
       setIsDonating(false);
     }
@@ -89,32 +105,53 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
   const isAndroid = typeof window !== 'undefined' && /android/i.test(navigator.userAgent);
 
   return (
-    <div className="text-center my-4 space-y-4">
-      {!isConnected ? (
-        <button
-          onClick={isAndroid ? handleMobileConnect : open}
-          className="px-4 py-2 mt-2 ml-2 rounded bg-black text-white hover:bg-gray-900 transition"
-        >
-          Connect Wallet
-        </button>
-      ) : (
-        <button
-          onClick={handleDonation}
-          disabled={isDonating}
-          className={`px-4 py-2 mt-2 ml-2 rounded transition ${
-            isDonating
-              ? 'bg-slate-700 cursor-wait text-white'
-              : 'bg-slate-800 text-white hover:bg-slate-700'
-          }`}
-        >
-          {isDonating ? 'Rippling...' : 'Symbolic Disturbance'}
-        </button>
-      )}
+    <>
+      <div className="text-center my-4 space-y-4">
+        {!isConnected ? (
+          <button
+            onClick={isAndroid ? handleMobileConnect : open}
+            className="px-4 py-2 mt-2 ml-2 rounded bg-black text-white hover:bg-gray-900 transition"
+          >
+            Connect Wallet
+          </button>
+        ) : (
+          <button
+            onClick={handleDonation}
+            disabled={isDonating}
+            className={`px-4 py-2 mt-2 ml-2 rounded transition ${
+              isDonating
+                ? 'bg-slate-700 cursor-wait text-white'
+                : 'bg-slate-800 text-white hover:bg-slate-700'
+            }`}
+          >
+            {isDonating ? 'Rippling...' : 'Symbolic Disturbance'}
+          </button>
+        )}
+      </div>
 
       {statusMessage && (
-        <p className="text-sm text-indigo-500 mt-2">{statusMessage}</p>
+        <div
+          className={`fixed bottom-20 left-1/2 transform -translate-x-1/2 px-5 py-3 rounded-xl font-mono text-sm z-50 shadow-xl transition-all duration-500 ${
+            isFading ? 'opacity-0 translate-y-2' : 'opacity-100'
+          } ${
+            statusMessage.type === 'success'
+              ? 'bg-green-800 border border-green-400 text-green-200'
+              : statusMessage.type === 'error'
+              ? 'bg-red-800 border border-red-400 text-red-200'
+              : 'bg-[#0f172a] border border-yellow-400 text-yellow-300'
+          }`}
+        >
+          <span className="mr-2">
+            {statusMessage.type === 'success'
+              ? '✅'
+              : statusMessage.type === 'error'
+              ? '❌'
+              : 'ℹ️'}
+          </span>
+          {statusMessage.msg}
+        </div>
       )}
-    </div>
+    </>
   );
 }
 
