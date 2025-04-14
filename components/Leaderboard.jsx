@@ -9,7 +9,6 @@ export default function Leaderboard() {
   const itemsPerPage = 10;
   const [isLoading, setIsLoading] = useState(true);
 
-  // Cache settings: 60 segundos
   const cacheDuration = 60 * 1000;
   const cacheKey = 'leaderboard_data';
   const lastFetchTimeKey = 'leaderboard_last_fetch_time';
@@ -29,10 +28,9 @@ export default function Leaderboard() {
       }
 
       const { data, error } = await supabase
-        .from('leaderboard')
-        .select('wallet, total_eth')
-        .order('total_eth', { ascending: false })
-        .limit(10);
+        .from('leaderboard_with_nfts') // Usamos la vista extendida
+        .select('wallet, total_eth, nfts')
+        .order('total_eth', { ascending: false });
 
       if (error) {
         console.error('Failed to load leaderboard:', error);
@@ -53,7 +51,6 @@ export default function Leaderboard() {
   const currentItems = leaderboard.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(leaderboard.length / itemsPerPage);
 
-  // Función auxiliar para enmascarar la dirección de la wallet
   const maskWallet = (wallet) => {
     if (!wallet || wallet.length <= 10) return wallet;
     return wallet.slice(0, 5) + '...' + wallet.slice(-5);
@@ -83,7 +80,22 @@ export default function Leaderboard() {
             currentItems.map((entry, index) => (
               <tr key={index} className="hover:bg-[#1e293b] transition">
                 <td className="border border-[#22d3ee] px-4 py-2 font-mono whitespace-normal break-words">
-                  {maskWallet(entry.wallet)}
+                  <div className="flex items-center gap-1 flex-wrap">
+                    <span className="text-xs">{maskWallet(entry.wallet)}</span>
+                    {entry.nfts?.map((nft) => (
+                      <a
+                        href={`/nft/${nft.id}`}
+                        key={nft.id}
+                        title={nft.slug}
+                      >
+                        <img
+                          src={nft.image_url}
+                          alt={nft.slug}
+                          className="h-5 w-5 rounded-sm ml-1 hover:scale-105 transition"
+                        />
+                      </a>
+                    ))}
+                  </div>
                 </td>
                 <td className="border border-[#22d3ee] px-4 py-2 font-mono text-right">
                   {entry.total_eth}

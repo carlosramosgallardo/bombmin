@@ -10,14 +10,36 @@ CREATE TABLE games (
   created_at TIMESTAMP DEFAULT NOW()
 );
 
--- View to calculate the leaderboard: total MM3 mined per normalized wallet
-CREATE OR REPLACE VIEW leaderboard AS
+
+-- Table to register unlocked NFTs per wallet
+CREATE TABLE user_nfts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  wallet TEXT NOT NULL CHECK (wallet = LOWER(wallet)), -- Enforce lowercase at insert
+  nft_slug TEXT NOT NULL,
+  image_url TEXT NOT NULL,
+  unlocked_at TIMESTAMP DEFAULT NOW(),
+  UNIQUE (wallet, nft_slug)
+);
+
+
+-- View to extend the leaderboard with NFT data: adds an array of unlocked NFTs per wallet
+CREATE OR REPLACE VIEW leaderboard_with_nfts AS
 SELECT
-  LOWER(wallet) AS wallet,
-  SUM(mining_reward) AS total_eth
-FROM games
-WHERE is_correct = TRUE
-GROUP BY LOWER(wallet);
+  l.wallet,
+  l.total_eth,
+  COALESCE(
+    json_agg(json_build_object(
+      'id', u.id,
+      'slug', u.nft_slug,
+      'image_url', u.image_url
+    ) ORDER BY u.unlocked_at) 
+    FILTER (WHERE u.id IS NOT NULL), 
+    '[]'
+  ) AS nfts
+FROM leaderboard l
+LEFT JOIN user_nfts u ON LOWER(u.wallet) = l.wallet
+GROUP BY l.wallet, l.total_eth;
+
 
 -- View to calculate the total token value (accumulated reward)
 CREATE OR REPLACE VIEW token_value AS
