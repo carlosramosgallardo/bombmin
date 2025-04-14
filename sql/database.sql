@@ -10,16 +10,51 @@ CREATE TABLE games (
   created_at TIMESTAMP DEFAULT NOW()
 );
 
-
--- Table to register unlocked NFTs per wallet
-CREATE TABLE user_nfts (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  wallet TEXT NOT NULL CHECK (wallet = LOWER(wallet)), -- Enforce lowercase at insert
-  nft_slug TEXT NOT NULL,
-  image_url TEXT NOT NULL,
-  unlocked_at TIMESTAMP DEFAULT NOW(),
-  UNIQUE (wallet, nft_slug)
+CREATE TABLE nft_catalog (
+  slug TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  description TEXT,
+  image_url TEXT,
+  condition TEXT, -- texto explicativo
+  rarity TEXT DEFAULT 'common'
+    CHECK (rarity IN ('common', 'rare', 'epic', 'legendary'))
 );
+
+CREATE OR REPLACE VIEW computed_user_nfts AS
+WITH ranked AS (
+  SELECT
+    LOWER(wallet) AS wallet,
+    total_eth,
+    RANK() OVER (ORDER BY total_eth DESC) AS rank
+  FROM leaderboard
+),
+unique_top1 AS (
+  SELECT wallet
+  FROM ranked
+  WHERE rank = 1
+),
+tie_check AS (
+  SELECT COUNT(*) = 1 AS is_unique_top FROM ranked WHERE rank = 1
+),
+top_wallet_nft AS (
+  SELECT
+    LOWER(w.wallet) AS wallet,
+    'pi_constant' AS nft_slug
+  FROM unique_top1 w, tie_check t
+  WHERE t.is_unique_top
+)
+
+SELECT
+  nft.wallet,
+  nft.nft_slug,
+  c.image_url,
+  c.name,
+  c.description,
+  c.rarity
+FROM top_wallet_nft nft
+JOIN nft_catalog c ON c.slug = nft.nft_slug;
+
+
 
 
 -- View to extend the leaderboard with NFT data: adds an array of unlocked NFTs per wallet
@@ -29,16 +64,19 @@ SELECT
   l.total_eth,
   COALESCE(
     json_agg(json_build_object(
-      'id', u.id,
       'slug', u.nft_slug,
-      'image_url', u.image_url
-    ) ORDER BY u.unlocked_at) 
-    FILTER (WHERE u.id IS NOT NULL), 
+      'image_url', u.image_url,
+      'name', u.name,
+      'description', u.description,
+      'rarity', u.rarity
+    ) ORDER BY u.nft_slug)
+    FILTER (WHERE u.nft_slug IS NOT NULL),
     '[]'
   ) AS nfts
 FROM leaderboard l
-LEFT JOIN user_nfts u ON LOWER(u.wallet) = l.wallet
+LEFT JOIN computed_user_nfts u ON LOWER(u.wallet) = l.wallet
 GROUP BY l.wallet, l.total_eth;
+
 
 
 -- View to calculate the total token value (accumulated reward)
