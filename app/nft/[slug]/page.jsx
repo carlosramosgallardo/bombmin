@@ -1,14 +1,14 @@
 import supabase from '@/lib/supabaseClient';
 
-export const dynamic = 'force-dynamic'; // necesario si estás usando SSR sin static generation
+export const dynamic = 'force-dynamic'; // Necesario para SSR en App Router
 
 export default async function NFTPage({ params }) {
   const { slug } = params;
 
   const { data, error } = await supabase
     .from('computed_user_nfts')
-    .select('slug, name, description, image_url, rarity, wallet')
-    .eq('slug', slug)
+    .select('nft_slug, name, description, image_url, rarity, wallet')
+    .eq('nft_slug', slug)
     .limit(1)
     .maybeSingle();
 
@@ -28,7 +28,7 @@ export default async function NFTPage({ params }) {
       <div className="max-w-md w-full bg-[#1e293b] p-6 rounded-xl shadow-lg text-center">
         <img
           src={data.image_url}
-          alt={data.slug}
+          alt={data.nft_slug}
           className="w-48 h-48 mx-auto mb-4 rounded-lg"
         />
         <h1 className="text-2xl font-bold mb-2">{data.name}</h1>
