@@ -90,7 +90,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
 
       await signer.sendTransaction({
         to: process.env.NEXT_PUBLIC_ADMIN_WALLET,
-        value: parseEther(process.env.NEXT_PUBLIC_PARTICIPATION_PRICE),
+        value: parseEther(process.env.NEXT_PUBLIC_FAKE_MINING_PRICE),
       });
 
       showToast('Signal received. A ripple echoes through the field.', 'success');

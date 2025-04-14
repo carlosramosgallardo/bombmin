@@ -14,7 +14,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   const [isFading, setIsFading] = useState(false);
   const inputRef = useRef(null);
 
-  const PARTICIPATION_PRICE = parseFloat(process.env.NEXT_PUBLIC_PARTICIPATION_PRICE);
+  const PARTICIPATION_PRICE = parseFloat(process.env.NEXT_PUBLIC_FAKE_MINING_PRICE);
   const preGameIntervalRef = useRef(null);
   const solveIntervalRef = useRef(null);
 
