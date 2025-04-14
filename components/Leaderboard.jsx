@@ -28,7 +28,7 @@ export default function Leaderboard() {
       }
 
       const { data, error } = await supabase
-        .from('leaderboard_with_nfts') // Usamos la vista extendida
+        .from('leaderboard_with_nfts') // Vista extendida con NFTs
         .select('wallet, total_eth, nfts')
         .order('total_eth', { ascending: false });
 
@@ -84,9 +84,9 @@ export default function Leaderboard() {
                     <span className="text-xs">{maskWallet(entry.wallet)}</span>
                     {entry.nfts?.map((nft) => (
                       <a
-                        href={`/nft/${nft.id}`}
-                        key={nft.id}
-                        title={nft.slug}
+                        href={`/nft/${nft.slug}`}
+                        key={nft.slug}
+                        title={nft.name}
                       >
                         <img
                           src={nft.image_url}
