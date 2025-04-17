@@ -6,6 +6,7 @@ import Board from '@/components/Board';
 import Leaderboard from '@/components/Leaderboard';
 import TokenChart from '@/components/TokenChart';
 import supabase from '@/lib/supabaseClient';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import '@/app/globals.css';
 
