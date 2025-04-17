@@ -10,7 +10,7 @@ export default function Header() {
       <header className="w-full flex flex-col items-center py-8 space-y-4">
         <Link href="/" aria-label="Go to homepage">
           <Image
-            src="/MM.jpg"
+            src="/og-image.jpg"
             alt="MathsMine3 Logo"
             width={160}
             height={160}

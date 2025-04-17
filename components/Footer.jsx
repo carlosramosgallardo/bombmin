@@ -16,7 +16,7 @@ export default function Footer() {
         <Link href="/" aria-label="Go to homepage">
           <div className="flex justify-center mt-4">
             <Image
-              src="/MM.jpg"
+              src="/og-image.jpg"
               alt="MathsMine3 Logo"
               width={160}
               height={160}

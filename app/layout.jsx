@@ -13,7 +13,7 @@ export const metadata = {
     siteName: 'MathsMine3',
     images: [
       {
-        url: '/MM.jpg',
+        url: '/og-image.jpg',
         width: 800,
         height: 600,
       },
@@ -25,7 +25,7 @@ export const metadata = {
     creator: '@FreakingAI',
     title: 'MathsMine3',
     description: 'Master Math, Mine MM3, and Shape the Future with PoV & PoA.',
-    images: ['/MM.jpg'],
+    images: ['/og-image.jpg'],
   },
 };
 

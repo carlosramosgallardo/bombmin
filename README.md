@@ -1,6 +1,6 @@
 # MathsMine3
 
-![MathsMine3 logo](public/MM.jpg)
+![MathsMine3 logo](public/og-image.jpg)
 
 ---
 
