@@ -4,14 +4,14 @@
   "description": "Master Math, Mine MM3, and Shape the Future with PoV & PoA.",
   "author": "botsandpods@gmail.com",
   "license": "MIT",
-"scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "gen-sitemap": "npx next-sitemap --output ./tmp-sitemap && rm -f public/sitemap*.xml && cp tmp-sitemap/* public/",
-  "postbuild": "npm run gen-sitemap",
-  "clean-sitemap": "rm -rf tmp-sitemap"
-},
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "gen-sitemap": "npx next-sitemap --output ./tmp-sitemap && mkdir -p public && find tmp-sitemap -type f -exec cp {} public/ \\;",
+    "postbuild": "npm run gen-sitemap",
+    "clean-sitemap": "rm -rf tmp-sitemap"
+  },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1",
     "@tanstack/react-query": "^5.69.0",
