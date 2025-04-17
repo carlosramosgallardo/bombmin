@@ -1,54 +1,45 @@
-'use client';
+import supabase from '@/lib/supabaseClient';
 
-import { useEffect } from 'react';
-import Link from 'next/link';
+export const dynamic = 'force-dynamic'; // Necesario para SSR en App Router
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+export default async function NFTPage({ params }) {
+  const { slug } = params;
 
-export default function HomePage() {
-  useEffect(() => {
-    if (typeof window !== 'undefined' && GA_MEASUREMENT_ID) {
-      // Carga el script de Google Analytics
-      const script1 = document.createElement('script');
-      script1.async = true;
-      script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-      document.head.appendChild(script1);
+  const { data, error } = await supabase
+    .from('computed_user_nfts')
+    .select('nft_slug, name, description, image_url, rarity, wallet')
+    .eq('nft_slug', slug)
+    .limit(1)
+    .maybeSingle();
 
-      const script2 = document.createElement('script');
-      script2.innerHTML = `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${GA_MEASUREMENT_ID}');
-      `;
-      document.head.appendChild(script2);
-    }
-  }, []);
+  if (error || !data) {
+    return (
+      <div className="text-center mt-20 text-[#e11d48] font-mono">
+        NFT not found or currently unassigned.
+      </div>
+    );
+  }
+
+  const maskWallet = (wallet) =>
+    wallet ? `${wallet.slice(0, 5)}...${wallet.slice(-5)}` : '—';
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center p-8">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4">
-        Welcome to MathsMine3
-      </h1>
-      <p className="text-lg md:text-xl mb-8 max-w-2xl">
-        Master Math, Mine MM3, and Shape the Future with Proof of Vote and Ask.
-      </p>
-      <div className="flex flex-wrap gap-4 justify-center">
-        <Link href="/learn-math" className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 transition">
-          Start Mining
-        </Link>
-        <Link href="/pov" className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 transition">
-          Proof of Vote
-        </Link>
-        <Link href="/poa" className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 transition">
-          Proof of Ask
-        </Link>
-        <Link href="/manifesto" className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 transition">
-          Manifesto
-        </Link>
-        <Link href="/api" className="bg-white text-black px-6 py-2 rounded hover:bg-gray-200 transition">
-          API Docs
-        </Link>
+    <div className="flex flex-col items-center pt-10 pb-16 text-[#22d3ee] bg-[#0b0f19] px-4">
+      <div className="max-w-md w-full bg-[#1e293b] p-6 rounded-xl shadow-lg text-center">
+        <img
+          src={data.image_url}
+          alt={data.nft_slug}
+          className="w-48 h-48 mx-auto mb-4 rounded-lg"
+        />
+        <h1 className="text-2xl font-bold mb-2">{data.name}</h1>
+        <p className="text-sm text-gray-300 mb-4">{data.description}</p>
+        <div className="text-sm font-mono">
+          <span className="text-gray-400">Rarity:</span> {data.rarity}
+        </div>
+        <div className="text-sm font-mono mt-1">
+          <span className="text-gray-400">Owner:</span>{' '}
+          {data.wallet ? maskWallet(data.wallet) : 'Unassigned'}
+        </div>
       </div>
     </div>
   );
