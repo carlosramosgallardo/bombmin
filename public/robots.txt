@@ -1,5 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://mathsmine3.xyz/sitemap.xml
+# Host
+Host: https://mathsmine3.xyz
 
+# Sitemaps
+Sitemap: https://mathsmine3.xyz/sitemap.xml
