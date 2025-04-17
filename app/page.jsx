@@ -108,6 +108,10 @@ export default function Page() {
           <Leaderboard itemsPerPage={10} />
         </div>
       </div>
+
+      {/* Vercel Analytics */}
+      <Analytics />
+      <SpeedInsights />
     </main>
   );
 }
