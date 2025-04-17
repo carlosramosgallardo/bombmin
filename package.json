@@ -8,9 +8,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "gen-sitemap": "npx next-sitemap --output ./tmp-sitemap && mkdir -p public && find tmp-sitemap -type f -exec cp {} public/ \\;",
-    "postbuild": "npm run gen-sitemap",
-    "clean-sitemap": "rm -rf tmp-sitemap"
+    "gen-sitemap": "npx next-sitemap && echo '✅ sitemap.xml generado con éxito.'",
+    "postbuild": "npm run gen-sitemap"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1",
