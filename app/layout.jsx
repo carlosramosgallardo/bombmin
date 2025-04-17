@@ -27,7 +27,11 @@ export const metadata = {
     description: 'Master Math, Mine MM3, and Shape the Future with PoV & PoA.',
     images: ['/og-image.jpg'],
   },
+  verification: {
+    google: 'gDZ6YsrEQmEOyw0G5obPXV1HX5uPD0LTtAaltZNPhFk',
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (
