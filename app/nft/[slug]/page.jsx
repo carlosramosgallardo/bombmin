@@ -24,7 +24,7 @@ export default async function NFTPage({ params }) {
     wallet ? `${wallet.slice(0, 5)}...${wallet.slice(-5)}` : '—';
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-[#22d3ee] bg-[#0b0f19] px-4">
+    <div className="flex flex-col items-center pt-10 pb-16 text-[#22d3ee] bg-[#0b0f19] px-4">
       <div className="max-w-md w-full bg-[#1e293b] p-6 rounded-xl shadow-lg text-center">
         <img
           src={data.image_url}
