@@ -24,23 +24,42 @@ export default async function NFTPage({ params }) {
     wallet ? `${wallet.slice(0, 5)}...${wallet.slice(-5)}` : '—';
 
   return (
-    <div className="flex flex-col items-center pt-10 pb-16 text-[#22d3ee] bg-[#0b0f19] px-4">
-      <div className="max-w-md w-full bg-[#1e293b] p-6 rounded-xl shadow-lg text-center">
-        <img
-          src={data.image_url}
-          alt={data.nft_slug}
-          className="w-48 h-48 mx-auto mb-4 rounded-lg"
-        />
-        <h1 className="text-2xl font-bold mb-2">{data.name}</h1>
-        <p className="text-sm text-gray-300 mb-4">{data.description}</p>
-        <div className="text-sm font-mono">
-          <span className="text-gray-400">Rarity:</span> {data.rarity}
-        </div>
-        <div className="text-sm font-mono mt-1">
-          <span className="text-gray-400">Owner:</span>{' '}
-          {data.wallet ? maskWallet(data.wallet) : 'Unassigned'}
+    <main className="flex flex-col items-center w-full pt-10 pb-20 text-sm font-mono text-gray-200 bg-black">
+      <div className="w-full max-w-3xl px-4">
+        <div className="p-6 bg-[#0b0f19] border border-[#22d3ee] rounded-lg shadow-lg animate-fade-in text-center">
+          <img
+            src={data.image_url}
+            alt={data.nft_slug}
+            className="w-48 h-48 mx-auto mb-4 rounded-lg"
+          />
+          <h1 className="text-2xl font-bold mb-2 text-white">{data.name}</h1>
+          <p className="text-sm text-gray-300 mb-4">{data.description}</p>
+          <div className="text-sm font-mono">
+            <span className="text-gray-400">Rarity:</span> {data.rarity}
+          </div>
+          <div className="text-sm font-mono mt-1">
+            <span className="text-gray-400">Owner:</span>{' '}
+            {data.wallet ? maskWallet(data.wallet) : 'Unassigned'}
+          </div>
         </div>
       </div>
-    </div>
+
+      <style jsx>{`
+        .animate-fade-in {
+          animation: fadeInUp 0.4s ease-out both;
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(12px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
+    </main>
   );
 }
