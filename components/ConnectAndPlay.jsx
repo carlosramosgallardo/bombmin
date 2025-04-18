@@ -1,108 +1,119 @@
-'use client';
+'use client'
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import {
   createWeb3Modal,
-  useWeb3Modal,
-} from '@web3modal/wagmi/react';
+  useWeb3Modal
+} from '@web3modal/wagmi/react'
 import {
   WagmiConfig,
   createConfig,
   useAccount,
   useConnect,
   useWalletClient,
-  http,
-} from 'wagmi';
-import { mainnet } from 'wagmi/chains';
-import { BrowserProvider, parseEther } from 'ethers';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import supabase from '@/lib/supabaseClient';
+  http
+} from 'wagmi'
+import { mainnet } from 'wagmi/chains'
+import { BrowserProvider, parseEther } from 'ethers'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import supabase from '@/lib/supabaseClient'
 
-const queryClient = new QueryClient();
-const chains = [mainnet];
-const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
+// --- CONFIG GLOBAL ---
+const queryClient = new QueryClient()
+const chains = [mainnet]
+const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID
 
 const wagmiConfig = createConfig({
   chains,
   transports: {
-    [mainnet.id]: http(),
-  },
-});
+    [mainnet.id]: http()
+  }
+})
 
-createWeb3Modal({ wagmiConfig, projectId, chains });
+// --- AJUSTE: Web3Modal sin tracking ni almacenamiento extra ---
+createWeb3Modal({
+  wagmiConfig,
+  projectId,
+  chains,
+  enableAnalytics: false,
+  disableTelemetry: true,
+  enableOnramp: false,
+  themeMode: 'light'
+})
 
 function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount }) {
-  const { open } = useWeb3Modal();
-  const { address, isConnected } = useAccount();
-  const { connect, connectors } = useConnect();
-  const { data: walletClient } = useWalletClient();
+  const { open } = useWeb3Modal()
+  const { address, isConnected } = useAccount()
+  const { connect, connectors } = useConnect()
+  const { data: walletClient } = useWalletClient()
 
-  const [statusMessage, setStatusMessage] = useState(null);
-  const [isDonating, setIsDonating] = useState(false);
-  const [isFading, setIsFading] = useState(false);
+  const [statusMessage, setStatusMessage] = useState(null)
+  const [isDonating, setIsDonating] = useState(false)
+  const [isFading, setIsFading] = useState(false)
 
   useEffect(() => {
     if (isConnected && address && setAccount) {
-      setAccount(address);
+      setAccount(address)
     }
-  }, [isConnected, address, setAccount]);
+  }, [isConnected, address, setAccount])
 
   useEffect(() => {
-    if (!statusMessage) return;
-    setIsFading(false);
-    const fadeTimer = setTimeout(() => setIsFading(true), 3500);
-    const removeTimer = setTimeout(() => setStatusMessage(null), 4000);
+    if (!statusMessage) return
+    setIsFading(false)
+    const fadeTimer = setTimeout(() => setIsFading(true), 3500)
+    const removeTimer = setTimeout(() => setStatusMessage(null), 4000)
     return () => {
-      clearTimeout(fadeTimer);
-      clearTimeout(removeTimer);
-    };
-  }, [statusMessage]);
+      clearTimeout(fadeTimer)
+      clearTimeout(removeTimer)
+    }
+  }, [statusMessage])
 
   const showToast = (msg, type = 'info') => {
-    setStatusMessage({ msg, type });
-  };
+    setStatusMessage({ msg, type })
+  }
 
   const handleMobileConnect = () => {
-    const walletConnect = connectors.find(c => c.id === 'walletConnect');
+    const walletConnect = connectors.find(c => c.id === 'walletConnect')
     if (walletConnect) {
-      connect({ connector: walletConnect });
+      connect({ connector: walletConnect })
     } else {
-      open();
+      open()
     }
-  };
+  }
 
   const handleDonation = async () => {
     if (!isConnected || !address) {
-      showToast('Connect your wallet before donating.', 'error');
-      return;
+      showToast('Connect your wallet before donating.', 'error')
+      return
     }
 
     try {
-      setIsDonating(true);
+      setIsDonating(true)
 
       if (!walletClient?.transport?.request) {
-        showToast('This wallet does not support symbolic donations.', 'error');
-        return;
+        showToast('This wallet does not support symbolic donations.', 'error')
+        return
       }
 
-      const provider = new BrowserProvider(walletClient);
-      const signer = await provider.getSigner();
+      const provider = new BrowserProvider(walletClient)
+      const signer = await provider.getSigner()
 
       await signer.sendTransaction({
         to: process.env.NEXT_PUBLIC_ADMIN_WALLET,
-        value: parseEther(process.env.NEXT_PUBLIC_FAKE_MINING_PRICE),
-      });
+        value: parseEther(process.env.NEXT_PUBLIC_FAKE_MINING_PRICE)
+      })
 
-      showToast('Signal received. A ripple echoes through the field.', 'success');
+      showToast('Signal received. A ripple echoes through the field.', 'success')
     } catch (err) {
-      console.error('Donation failed:', err);
-      showToast('Even hesitation shapes the system. Donation aborted.', 'error');
+      console.error('Donation failed:', err)
+      showToast('Even hesitation shapes the system. Donation aborted.', 'error')
     } finally {
-      setIsDonating(false);
+      setIsDonating(false)
     }
-  };
+  }
 
-  const isAndroid = typeof window !== 'undefined' && /android/i.test(navigator.userAgent);
+  const isAndroid =
+    typeof window !== 'undefined' && /android/i.test(navigator.userAgent)
 
   return (
     <>
@@ -152,7 +163,7 @@ function ConnectAndPlayContent({ gameCompleted, gameData, account, setAccount })
         </div>
       )}
     </>
-  );
+  )
 }
 
 export default function ConnectAndPlay(props) {
@@ -162,5 +173,5 @@ export default function ConnectAndPlay(props) {
         <ConnectAndPlayContent {...props} />
       </QueryClientProvider>
     </WagmiConfig>
-  );
+  )
 }
