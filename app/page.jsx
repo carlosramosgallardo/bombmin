@@ -14,7 +14,6 @@ import '@/app/globals.css';
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const GA_ENABLED = process.env.NEXT_PUBLIC_GA_ENABLED === 'true';
 
-// Función auxiliar para enmascarar la wallet
 const maskWallet = (wallet) => {
   if (!wallet || wallet.length <= 10) return wallet;
   return wallet.slice(0, 5) + '...' + wallet.slice(-5);
