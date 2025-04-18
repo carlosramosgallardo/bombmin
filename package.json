@@ -4,13 +4,6 @@
   "description": "Master Math, Mine MM3, and Shape the Future with PoV & PoA.",
   "author": "botsandpods@gmail.com",
   "license": "MIT",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "gen-sitemap": "npx next-sitemap && echo '✅ sitemap.xml generado con éxito.'",
-    "postbuild": "npm run gen-sitemap"
-  },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1",
     "@tanstack/react-query": "^5.69.0",
@@ -20,7 +13,6 @@
     "@web3modal/wagmi": "^5.1.11",
     "ethers": "^6.13.5",
     "next": "^15.2.3",
-    "next-sitemap": "^4.2.3",
     "nextjs-google-analytics": "^2.3.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
