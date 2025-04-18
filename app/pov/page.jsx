@@ -161,7 +161,7 @@ function PoVClientComponent() {
               return (
                 <div
                   key={poll.id}
-                  className="p-6 bg-[#0b0f19] border border-[#22d3ee] rounded-lg shadow-lg mb-12 animate-fade-in"
+                  className="p-6 bg-[#0b0f19] border border-[#22d3ee] rounded-lg shadow-lg mb-12 animate-fadeInUp"
                 >
                   <h2 className="text-base font-medium mb-1 text-white">{poll.question}</h2>
                   <p className="text-base text-[#22d3ee] mb-4">
@@ -219,23 +219,6 @@ function PoVClientComponent() {
           </>
         )}
       </div>
-
-      <style jsx>{`
-        .animate-fade-in {
-          animation: fadeInUp 0.4s ease-out both;
-        }
-
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(12px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </main>
   );
 }
