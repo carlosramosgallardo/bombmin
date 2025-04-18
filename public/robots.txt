@@ -6,4 +6,4 @@ Allow: /
 Host: https://mathsmine3.xyz
 
 # Sitemaps
-Sitemap: https://mathsmine3.xyz/sitemap.xml
+Sitemap: https://mathsmine3.xyz/sitemap-0.xml 
