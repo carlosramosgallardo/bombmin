@@ -5,9 +5,6 @@ import { usePathname } from 'next/navigation'
 export default function NavLinks({ className = '' }) {
   const pathname = usePathname()
 
-  // Nota: Se ha cambiado la ruta y el texto para la sección de teoría de matemáticas.
-  // Ahora se usa "/learn-math" y "Learn Math" para mayor claridad.
-  // Para soporte multiidioma, externaliza estos textos y rutas según el idioma.
   const linkClass = (href) =>
     `underline hover:text-white ${
       pathname === href ? 'text-white font-semibold' : ''

@@ -25,7 +25,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
     let b = Math.floor(Math.random() * 20) + 1;
 
     if (op === '/' && b !== 0) {
-      a = a * b; // ensures division is clean
+      a = a * b; 
     }
 
     let answer;
@@ -47,7 +47,7 @@ export default function Board({ account, setGameMessage, setGameCompleted, setGa
   const fetchPhrase = async () => {
     setIsRefreshing(true);
     try {
-      const useMath = Math.random() < 0.5; // 50% chance
+      const useMath = Math.random() < 0.5; 
       if (useMath) {
         const generated = generateRandomMathProblem();
         setProblem(generated);

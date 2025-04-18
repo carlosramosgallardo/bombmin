@@ -14,7 +14,6 @@ const wagmiConfig = createConfig({
   },
 });
 
-// Función auxiliar para enmascarar la wallet
 const maskWallet = (wallet) => {
   if (!wallet || wallet.length <= 10) return wallet;
   return wallet.slice(0, 5) + '...' + wallet.slice(-5);
@@ -43,8 +42,7 @@ function PoAClientComponent() {
         setCanAsk(eligible);
         setEligibilityChecked(true);
 
-        // Consulta la tabla polls para ver si ya existe una encuesta para este wallet.
-        const { data, error } = await supabase
+            const { data, error } = await supabase
           .from('polls')
           .select('id')
           .eq('wallet_address', address)
@@ -68,14 +66,12 @@ function PoAClientComponent() {
       return;
     }
 
-    // Valida que la pregunta tenga máximo 20 palabras.
     const wordCount = question.trim().split(/\s+/).length;
     if (wordCount > 20) {
       setStatusMessage('The question must not exceed 20 words.');
       return;
     }
 
-    // Si ya se creó una encuesta para este wallet, no se permite otra.
     if (hasCreatedPoll) {
       setStatusMessage('Only one poll per wallet is allowed.');
       return;

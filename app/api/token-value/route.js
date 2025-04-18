@@ -15,10 +15,10 @@ export async function GET(req) {
     req.headers.get('x-forwarded-for') ?? req.headers.get('x-real-ip') ?? 'unknown'
   const endpoint = '/api/token-value'
 
-  // Registrar la petición
+
   await supabase.from('api_requests').insert({ ip, endpoint })
 
-  // Contar peticiones recientes
+
   const since = new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString()
 
   const { count, error: countError } = await supabase
@@ -49,7 +49,7 @@ export async function GET(req) {
     })
   }
 
-  // Query del valor del token
+
   const { data, error } = await supabase
     .from('token_value_timeseries')
     .select('cumulative_reward, hour')
@@ -66,7 +66,6 @@ export async function GET(req) {
     })
   }
 
-  // Respuesta con caché
   return new Response(
     JSON.stringify({
       value: parseFloat(data[0].cumulative_reward),

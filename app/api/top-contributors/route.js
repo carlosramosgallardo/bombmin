@@ -10,7 +10,6 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 )
 
-// Función auxiliar para enmascarar la wallet
 function maskWallet(wallet) {
   if (!wallet || wallet.length <= 10) return wallet
   return wallet.slice(0, 5) + '...' + wallet.slice(-5)
@@ -21,10 +20,8 @@ export async function GET(req) {
     req.headers.get('x-forwarded-for') ?? req.headers.get('x-real-ip') ?? 'unknown'
   const endpoint = '/api/top-contributors'
 
-  // Registrar la petición
   await supabase.from('api_requests').insert({ ip, endpoint })
 
-  // Calcular ventana
   const since = new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString()
 
   const { count, error: countError } = await supabase
@@ -55,7 +52,6 @@ export async function GET(req) {
     })
   }
 
-  // Obtener los top contributors
   const { data, error } = await supabase
     .from('leaderboard')
     .select('wallet, total_eth')

@@ -28,7 +28,7 @@ export default function Leaderboard() {
       }
 
       const { data, error } = await supabase
-        .from('leaderboard_with_nfts') // Vista extendida con NFTs
+        .from('leaderboard_with_nfts') 
         .select('wallet, total_eth, nfts')
         .order('total_eth', { ascending: false });
 

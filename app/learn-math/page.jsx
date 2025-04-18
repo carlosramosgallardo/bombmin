@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 
-// Fisher-Yates shuffle to randomize the array
 function shuffleArray(array) {
   const arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
@@ -20,7 +19,6 @@ export default function LearnMathPage() {
     fetch('/math_phrases.json')
       .then((res) => res.json())
       .then((data) => {
-        // Shuffle the data for a random order on each refresh
         const shuffledData = shuffleArray(data);
         setPhrases(shuffledData);
       })

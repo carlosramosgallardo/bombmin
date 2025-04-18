@@ -19,10 +19,8 @@ export async function GET(req) {
     req.headers.get('x-forwarded-for') ?? req.headers.get('x-real-ip') ?? 'unknown'
   const endpoint = '/api/pov/has-voted'
 
-  // Registrar petición
   await supabase.from('api_requests').insert({ ip, endpoint })
 
-  // Verificar límites
   const since = new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString()
 
   const { count, error: countError } = await supabase
@@ -46,7 +44,7 @@ export async function GET(req) {
     })
   }
 
-  // Validación básica
+
   if (!poll_id || !wallet) {
     return new Response(JSON.stringify({ error: 'Missing poll_id or wallet' }), {
       status: 400,
@@ -54,7 +52,6 @@ export async function GET(req) {
     })
   }
 
-  // Buscar si ya votó
   const { data, error } = await supabase
     .from('poll_votes')
     .select('id')

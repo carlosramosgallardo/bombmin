@@ -1,6 +1,6 @@
 import supabase from '@/lib/supabaseClient';
 
-export const dynamic = 'force-dynamic'; // Necesario para SSR en App Router
+export const dynamic = 'force-dynamic'; 
 
 export default async function NFTPage({ params }) {
   const { slug } = params;
