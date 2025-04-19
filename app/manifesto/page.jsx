@@ -53,7 +53,7 @@ export default function ManifestoPage() {
         </section>
 
         <section className="mb-6">
-          <h2 className="text-xl font-semibold mb-2>text-xl font-semibold mb-2</h2>
+          <h2 className="text-xl font-semibold mb-2">About</h2>
           <p className="leading-relaxed">
             MathsMine3 is a social and educational experiment designed as a Web3-inspired game. Players solve math challenges under time pressure to simulate a fictional mining system. No real tokens, blockchain assets, or cryptocurrencies are involved or generated. The platform is 100% free to play and for educational purposes only.
           </p>
@@ -86,8 +86,8 @@ export default function ManifestoPage() {
           </p>
         </section>
 
-        <section className="mb-6">text-xl font-semibold mb-2
-          <h2 className="">Copyright</h2>
+        <section className="mb-6">
+          <h2 className="text-xl font-semibold mb-2">Copyright</h2>
           <p className="leading-relaxed">
             MathsMine3 is an open-source project hosted on{' '}
             <a
