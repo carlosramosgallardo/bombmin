@@ -78,7 +78,7 @@ export default function Page() {
 
           {/* Hero section for SEO and users */}
           <section className="mb-12 text-center">
-            <h1 className="text-4xl font-bold mb-6">Master Math and Shape the Future with MathsMine3</h1>
+            <h1 className="text-xl font-semibold mt-8 mb-2">Master Math and Shape the Future with MathsMine3</h1>
             <p className="text-lg mb-4">
               MathsMine3 is a unique, open-source Web3 experiment where your brainpower mines MM3 tokens.
               Solve math puzzles and help shape the value of the MM3 token through Proof of Vote (PoV) and Proof of Ask (PoA).

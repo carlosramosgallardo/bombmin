@@ -31,7 +31,7 @@ export default async function NFTPage({ params }) {
           alt={data.nft_slug}
           className="w-48 h-48 mx-auto mb-4 rounded-lg"
         />
-        <h1 className="text-2xl font-bold mb-2">{data.name}</h1>
+        <h1 className="text-xl font-semibold mt-8 mb-2">{data.name}</h1>
         <p className="text-sm text-gray-300 mb-4">{data.description}</p>
         <div className="text-sm font-mono">
           <span className="text-gray-400">Rarity:</span> {data.rarity}
