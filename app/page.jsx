@@ -81,13 +81,8 @@ export default function Page() {
             <h1 className="text-4xl font-bold mb-6">Master Math and Shape the Future with MathsMine3</h1>
             <p className="text-lg mb-4">
               MathsMine3 is a unique, open-source Web3 experiment where your brainpower mines MM3 tokens.
-              Solve math puzzles, earn points, and help shape the value of the MM3 token through Proof of Vote (PoV) and Proof of Ask (PoA).
+              Solve math puzzles and help shape the value of the MM3 token through Proof of Vote (PoV) and Proof of Ask (PoA).
               Whether you're here to train your mind, experiment with token economics, or just have fun — you're in the right place.
-            </p>
-            <p className="text-base text-gray-400">
-              Connect your wallet, play the game, and influence the outcome of a fully on-chain social simulation — no gas fees required.
-              All decisions you make have real impact in the system. Fast correct answers mine in positive; slow or wrong answers mine in negative.
-              Join now and leave your mark on the MathsMine3 ledger.
             </p>
           </section>
 
