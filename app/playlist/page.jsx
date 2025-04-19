@@ -15,7 +15,7 @@ export default function PlaylistPage() {
               "@type": "VideoObject",
               "name": "MathsMine3 YouTube Playlist",
               "description": "Playlist for MathsMine3",
-              "thumbnailUrl": "https://mathsmine3.xyz/MM3_thumbnail.jpg",
+              "thumbnailUrl": "https://mathsmine3.xyz/images/MM3_thumbnail.jpg",
               "uploadDate": "2025-04-18",
               "embedUrl": "https://www.youtube.com/embed/videoseries?list=PLVnPpTxW6VSe486FBj1R7mzA2XczNYqXc",
               "publisher": {
