@@ -82,7 +82,6 @@ export default function Page() {
             <p className="text-base text-gray-500 text-center mb-2">
               MathsMine3 is a unique, open-source Web3 experiment where your brainpower mines MM3 tokens.
               Solve math puzzles and help shape the value of the MM3 token through Proof of Vote (PoV) and Proof of Ask (PoA).
-              Whether you're here to train your mind, experiment with token economics, or just have fun — you're in the right place.
             </p>
           </section>
 
