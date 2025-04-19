@@ -18,15 +18,6 @@ export default function Header() {
             priority
           />
         </Link>
-
-        <section className="mb-6">
-          <p className="text-base font-mono text-[#22d3ee] text-center">
-            <em>"Master Math, Mine MM3, and shape the future with PoV & PoA."</em>
-          </p>
-        </section>
-
-        <hr className="w-full border-t-2 border-[#22d3ee]" />
-
         <NavLinks className="mt-2" />
       </header>
     </>
