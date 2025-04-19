@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import ConnectAndPlay from '@/components/ConnectAndPlay';
 import Board from '@/components/Board';
 import Leaderboard from '@/components/Leaderboard';
@@ -65,52 +66,76 @@ export default function Page() {
   }, [gameData]);
 
   return (
-    <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-lg font-mono text-white bg-black">
-      <div className="w-full max-w-3xl mx-auto">
-        {/* Game Board */}
-        <div className="mb-12">
-          {account && (
-            <p className="text-base text-gray-500 text-center mb-2">
-              Connected as: {maskWallet(account)}
+    <>
+      <Head>
+        <title>MathsMine3 – Master Math, Mine MM3 & Shape the Future</title>
+        <meta name="description" content="Master Math, Mine MM3, and Shape the Future with PoV & PoA. A free Web3 experiment merging gamified learning and token economics." />
+        <link rel="canonical" href="https://mathsmine3.xyz/" />
+      </Head>
+
+      <main className="flex flex-col items-center w-full px-4 pt-10 pb-20 text-lg font-mono text-white bg-black">
+        <div className="w-full max-w-3xl mx-auto">
+
+          {/* Hero section for SEO and users */}
+          <section className="mb-12 text-center">
+            <h1 className="text-4xl font-bold mb-6">Master Math and Shape the Future with MathsMine3</h1>
+            <p className="text-lg mb-4">
+              MathsMine3 is a unique, open-source Web3 experiment where your brainpower mines MM3 tokens.
+              Solve math puzzles, earn points, and help shape the value of the MM3 token through Proof of Vote (PoV) and Proof of Ask (PoA).
+              Whether you're here to train your mind, experiment with token economics, or just have fun — you're in the right place.
             </p>
-          )}
-          <Board
-            account={account}
-            setGameMessage={setGameMessage}
-            setGameCompleted={setGameCompleted}
-            setGameData={setGameData}
-          />
-          {gameMessage && (
-            <div className="text-yellow-400 font-bold text-center mt-6 whitespace-pre-line animate-fade-in">
-              {gameMessage}
-            </div>
-          )}
+            <p className="text-base text-gray-400">
+              Connect your wallet, play the game, and influence the outcome of a fully on-chain social simulation — no gas fees required.
+              All decisions you make have real impact in the system. Fast correct answers mine in positive; slow or wrong answers mine in negative.
+              Join now and leave your mark on the MathsMine3 ledger.
+            </p>
+          </section>
+
+          {/* Game Board */}
+          <div className="mb-12">
+            {account && (
+              <p className="text-base text-gray-500 text-center mb-2">
+                Connected as: {maskWallet(account)}
+              </p>
+            )}
+            <Board
+              account={account}
+              setGameMessage={setGameMessage}
+              setGameCompleted={setGameCompleted}
+              setGameData={setGameData}
+            />
+            {gameMessage && (
+              <div className="text-yellow-400 font-bold text-center mt-6 whitespace-pre-line animate-fade-in">
+                {gameMessage}
+              </div>
+            )}
+          </div>
+
+          {/* Connect & Play */}
+          <div className="mb-12">
+            <ConnectAndPlay
+              account={account}
+              setAccount={setAccount}
+              gameCompleted={gameCompleted}
+              gameData={gameData}
+            />
+          </div>
+
+          {/* Token Chart */}
+          <div className="mb-16">
+            <TokenChart />
+          </div>
+
+          {/* Leaderboard */}
+          <div className="mb-16">
+            <Leaderboard itemsPerPage={10} />
+          </div>
         </div>
 
-        {/* Connect & Play */}
-        <div className="mb-12">
-          <ConnectAndPlay
-            account={account}
-            setAccount={setAccount}
-            gameCompleted={gameCompleted}
-            gameData={gameData}
-          />
-        </div>
-
-        {/* Token Chart */}
-        <div className="mb-16">
-          <TokenChart />
-        </div>
-
-        {/* Leaderboard */}
-        <div className="mb-16">
-          <Leaderboard itemsPerPage={10} />
-        </div>
-      </div>
-
-      {/* Vercel Analytics */}
-      <Analytics />
-      <SpeedInsights />
-    </main>
+        {/* Vercel Analytics */}
+        <Analytics />
+        <SpeedInsights />
+      </main>
+    </>
   );
 }

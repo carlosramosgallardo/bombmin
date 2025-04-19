@@ -16,6 +16,7 @@ export const metadata = {
         url: '/og-image.jpg',
         width: 800,
         height: 600,
+        alt: 'MathsMine3 Logo',
       },
     ],
     type: 'website',
@@ -32,10 +33,13 @@ export const metadata = {
   },
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="canonical" href="https://mathsmine3.xyz/" />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className="bg-black text-white font-mono">
         <Header />
         <main>
